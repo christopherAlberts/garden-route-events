@@ -12,6 +12,8 @@ TOWNS={
  "Mossel Bay":("Mossel Bay, Western Cape","Mossel Bay",True),
  "Hartenbos":("Hartenbos, Western Cape","Mossel Bay",True),
  "Groot Brak":("Great Brak River, Western Cape","Mossel Bay",True),
+ "Herbertsdale":("Herbertsdale, Western Cape","Mossel Bay",True),
+ "Klein Brak":("Klein Brakrivier, Western Cape","Mossel Bay",True),
  "Oudtshoorn":("Oudtshoorn, Western Cape","Garden Route",True),
  "Stilbaai":("Stilbaai, Western Cape","Hessequa (Stilbaai)",False),
  "Riversdale":("Riversdale, Western Cape","Hessequa (Stilbaai)",False),

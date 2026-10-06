@@ -147,10 +147,15 @@ add(title="Carpe Musicam! Magnificent Movie Music (George)",category="concert",s
     venue="Laerskool George-Suid",venue_address="",price_from="R180",ticket_url="https://carpemusicam.co.za/",
     source_url="https://www.georgeherald.com/Whatson",source_name="George Herald (What's On)",
     notes="Concert orchestra & choir play film music. Adults R180, scholars R60.")
-add(title="Etensuurkonsert: organ & choir (spring lunch-hour series opener)",category="concert",start_date="2026-10-07",time="13:10",town="George",
-    venue="NG Moedergemeente (Moederkerk)",venue_address="Courtenay Street, George",price_from="Free entry",ticket_url="",
+import json as _json, os as _os
+HER=_json.load(open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)),"herald_data.json")))
+_eo=HER["occ"]["Etensuurkonsert in Moederkerk"]
+add(title="Etensuurkonserte: weekly lunch-hour concerts in the Moederkerk",category="concert",start_date=_eo[0],end_date=_eo[-1],occurrences=_eo,
+    recurrence="Every Wednesday, 13:10 (about 50 minutes)",time="13:10",town="George",
+    venue="NG Moedergemeente (Moederkerk)",venue_address="Courtenay Street, George",price_from="Free entry (donations welcome)",ticket_url="",
     source_url="https://www.georgeherald.com/Whatson",source_name="George Herald (What's On)",
-    notes="Organist Gerrit Jordaan with the NG Kerk Hartenbos choir (cond. Marianne Rust); about 50 minutes, donations welcome.")
+    notes="Weekly lunch-hour concert series. The spring season opens on 7 Oct with organist Gerrit Jordaan and the NG Kerk Hartenbos choir (cond. Marianne Rust). Dates as listed in the George Herald diary.",
+    _img=HER["img"]["Etensuurkonserte lente reeks skop af"])
 
 # ---------------- Fun runs & walks (added 6 Oct 2026) ----------------
 add(title="MossMarch 2026 – community walk",category="funrun",start_date="2026-10-10",time="Registration from 07:00",town="Hartenbos",
@@ -268,3 +273,61 @@ add(title="Red Men Trail Run, Herold Wine Farm (18 km, 12 km & 5 km fun run)",ca
     price_from="R120 (5 km)",ticket_url="",source_url="https://startingline.co.za/events/red-men-trail-run-2027-sun-3-jan-2027-george-municipality-western-cape-b44c4c0d",source_name="Starting Line",
     alt_sources=["https://gotrail.run/en/event/red-men-trail-run"],
     notes="Morning trail run in the Outeniqua Mountains followed by a picnic and wine tasting. 5 km fun run R120 (medal); 12 km and 18 km R450 (incl. custom-label Herold wine). Limited to 200 entries; picnic meals bookable.")
+
+# ---------------- George Herald What's On diary (added 6 Oct 2026) ----------------
+GH="https://www.georgeherald.com/Whatson"; GHN="George Herald (What's On)"
+add(title="Grootbrak Leeskring: Morné Malan in conversation with Gerda Taljaard (Die grafdigter)",category="arts",start_date="2026-10-08",time="09:15 for 10:00",town="Groot Brak",
+    venue="NG Kerk Groot-Brakrivier (church hall)",venue_address="Groot-Brakrivier",price_from="R100 members / R120 non-members",ticket_url="",source_url=GH,source_name=GHN,
+    notes="Book club talk (Afrikaans): author Gerda Taljaard on her book Die grafdigter. Coffee and tea included. Enquiries: Etty Bosman 083 501 0845.",_img=HER["img"]["Grootbrak Leeskring"])
+_o=HER["occ"]["Midbrak-mark"]
+add(title="Midbrak-mark (Saturday market)",category="market",start_date=_o[0],end_date=_o[-1],occurrences=_o,recurrence="Every Saturday, 09:00-13:00",time="09:00-13:00",town="Groot Brak",
+    venue="OpiSpoor Pub & Grill",venue_address="Groot-Brakrivier station",price_from="",ticket_url="",source_url=GH,source_name=GHN,
+    notes="Weekly Saturday market at OpiSpoor Pub & Grill by the Great Brak River station.",_img=HER["img"]["Midbrak-mark"])
+_o=HER["occ"]["Brinkleys-mark"]
+add(title="Brinkleys-mark (Saturday market)",category="market",start_date=_o[0],end_date=_o[-1],occurrences=_o,recurrence="Every Saturday, 09:00-14:00",time="09:00-14:00",town="Klein Brak",
+    venue="Brinkleys River Village",venue_address="Klein-Brakrivier",price_from="",ticket_url="",source_url=GH,source_name=GHN,
+    notes="40+ stalls with fresh produce, handmade items, food and coffee every Saturday.",_img=HER["img"]["Brinkleys-mark"])
+_o=HER["occ"]["Show Ground Sunday"]
+add(title="Show Ground Sunday (market)",category="market",start_date=_o[0],end_date=_o[-1],occurrences=_o,recurrence="Every 2nd Sunday, 09:00-14:00",time="09:00-14:00",town="George",
+    venue="George Show Ground",venue_address="R102 Airport Road, George",price_from="Free entry",ticket_url="",source_url=GH,source_name=GHN,
+    notes="Local stalls, food and family fun; kids and dogs welcome. Fortnightly on Sundays (dates as listed in the Herald diary). Info: Etienne 061 044 1993.",_img=HER["img"]["Show Ground Sunday"])
+add(title="Mossel Bay Mayor's Breakfast (October) with Dr Ivan Meyer",category="community",start_date="2026-10-15",time="08:30-11:00",town="Mossel Bay",
+    venue="Mossel Bay Golf Club",venue_address="Mossel Bay Golf Club, Mossel Bay",price_from="",ticket_url="",source_url=GH,source_name=GHN,
+    notes="Monthly mayoral breakfast; guest speaker is Western Cape Minister of Agriculture, Economic Development and Tourism Dr Ivan Meyer. Bookings: Aydn Parrott 079 149 4703 (WhatsApp) or mayoroffice@mosselbay.gov.za.",_img=HER["img"]["Oktober-burgemeestersontbyt"])
+add(title="Posboom Philatelic Society 60th anniversary inter-club stamp exhibition",category="arts",start_date="2026-10-16",time="Public viewing 14:00-16:00",town="Mossel Bay",
+    venue="Granary Hall, Bartolomeu Dias Museum",venue_address="Bartolomeu Dias Museum Complex, Market Street, Mossel Bay",price_from="Free",ticket_url="",source_url=GH,source_name=GHN,
+    notes="Stamp clubs from Mossel Bay, George and Stilbaai meet (10:00-12:30); the exhibits are open to the public free of charge from 14:00 to 16:00.",_img=HER["img"]["Posboom-filatelistevereniging interklubbyeenkoms"])
+add(title="Klein Karoo Dust 4 Glory Challenge (family obstacle & trail event)",category="funrun",start_date="2026-10-17",time="06:00",town="Oudtshoorn",
+    venue="Wilgewandel Holiday Farm",venue_address="Wilgewandel Holiday Farm, Schoemanshoek, Oudtshoorn",price_from="",ticket_url="",source_url=GH,source_name=GHN,
+    notes="Fitness challenge with a choice of distances, trail running routes and safe obstacle courses for kids and families; on-site catering. Entries via Entry Ninja (limited).",_img=HER["img"]["Join the Klein Karoo Dust 4 Glory Challenge at Wilgewandel!"])
+add(title="Espectáculo: Marlise's School of Spanish Dance",category="arts",start_date="2026-10-17",time="18:30",town="George",
+    venue="Market Community Theatre",venue_address="Market Community Theatre, George",price_from="R150",ticket_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1598588884",
+    source_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1598588884",source_name="Webtickets",alt_sources=[GH],
+    notes="An evening of colourful Spanish (flamenco) dance by Marlise's School of Spanish Dance.",lat=-33.9777839,lng=22.495311,geo_source="event page")
+# Skipped: "Motion Art Academy: In The Beginning" (Herald lists 17 Oct 2026, but its poster reads 17-18 October 2025 with 2025 weekdays and
+# the Herald ran the same item in Oct 2025, so it looks like a recycled listing; no 2026 confirmation found).
+add(title="Oppi Pot: comedy with Johnnie Campher",category="arts",start_date="2026-10-18",time="18:00",town="Mossel Bay",
+    venue="Mossel Bay Town Hall",venue_address="Marsh Street, Mossel Bay",price_from="",ticket_url="",source_url=GH,source_name=GHN,
+    notes="Comedian Johnnie Campher's new show. Tickets on Webtickets or at Pick n Pay stores. Enquiries: 082 375 1910.",_img=HER["img"]["Oppi Pot with Johnnie Campher"])
+add(title="Schalk Bezuidenhout: Hey Hey Divorcé (stand-up comedy)",category="arts",start_date="2026-10-21",end_date="2026-10-23",time="19:00",town="George",
+    venue="George Arts Theatre",venue_address="125 York Street, George",price_from="R250",ticket_url="https://www.quicket.co.za/events/375531-hey-hey-divorc-21-23-october/",
+    source_url="https://www.quicket.co.za/events/375531-hey-hey-divorc-21-23-october/",source_name="Quicket",alt_sources=[GH],
+    notes="Raw, real stand-up about divorce. No under-16s.",lat=-33.9560661,lng=22.4579849,geo_source="event page",_img="https://images.quicket.co.za/0921787_0.jpeg")
+add(title="Schalk Bezuidenhout: Hey Hey Divorcé at Fancourt (stand-up comedy)",category="arts",start_date="2026-10-19",time="19:00-21:00",town="George",
+    venue="The Ballroom at Fancourt",venue_address="Montagu St, Blanco, George",price_from="",ticket_url="https://www.quicket.co.za/events/398647-schalk-bezuidenhout/",
+    source_url="https://www.quicket.co.za/events/398647-schalk-bezuidenhout/",source_name="Quicket",alt_sources=["https://www.quicket.co.za/events/398017-hey-hey-divorc/","https://fancourt.co.za/events1/schalk-bezuidenhout/"],
+    notes="An evening of comedy with a little Fancourt flair: Schalk brings Hey Hey Divorcé to the Fancourt Ballroom.",lat=-33.9558525,lng=22.4142456,geo_source="event page",_img="https://images.quicket.co.za/0991309_0.jpeg")
+add(title="Herbertsdale Oktoberfees",category="festival",start_date="2026-10-24",time="From 09:00",town="Herbertsdale",
+    venue="Athlone Plaas",venue_address="Athlone farm, Herbertsdale",price_from="",ticket_url="",source_url=GH,source_name=GHN,
+    notes="NG Kerk Herbertsdale's annual October fete on Athlone farm: local meat, vegetables and fruit, potjies, puddings and roosterkoek. Enquiries: Jan Labuschagne 082 555 1466.",_img=HER["img"]["Herbertsdale Oktoberfees"])
+add(title="Eerste vir Alles: Frank Opperman & Margit Meyer-Rödenbeck (Afrikaans comedy play)",category="arts",start_date="2026-10-24",end_date="2026-10-25",time="19:00",town="George",
+    venue="George Arts Theatre",venue_address="125 York Street, George",price_from="R250",ticket_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1601879662",
+    source_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1601879662",source_name="Webtickets",alt_sources=[GH],
+    notes="Romantic comedy play: two of SA's best storytellers play the original 'power couple' in a classic case of he said, she said.",lat=-33.9560661,lng=22.457985,geo_source="event page",_img=HER["img"]["Eerste vir alles met Frank Opperman en Margit Meyer-Rödenbeck"])
+
+# ---- NSRI (National Sea Rescue Institute) fundraiser runs ----
+add(title="Stilbaai NSRI 10 km & 6 km Fun Run (New Year's Eve)",category="funrun",start_date="2026-12-31",time="07:00",town="Stilbaai",
+    venue="NSRI Station, Main Road",venue_address="National Sea Rescue Institute, Main Rd, Stilbaai",price_from="",ticket_url="",
+    source_url="https://runningcalendar.co.za/events/stilbaai-10km/2026",source_name=RC,alt_sources=["https://racepass.com/za/races/stillbaai-10km"],
+    notes="Annual New Year's Eve run in aid of NSRI Stilbaai: 10 km race and 6 km fun run/walk, start and finish at the NSRI building. The route runs along the Goukou River, the sea and dunes. The 2025 edition drew about 1,200 runners. RunningCalendar lists only basic details so far; entry fees are still to be confirmed.",
+    lat=-34.3642194,lng=21.4335508,geo_source="event page")

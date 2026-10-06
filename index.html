@@ -4,10 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Garden Route Events · concerts, festivals, markets, fun runs & more</title>
-<meta name="description" content="Discover upcoming concerts, festivals, markets and musicals on the Garden Route (and the wider coast from Cape Town to Jeffreys Bay).">
+<meta name="description" content="Discover upcoming concerts, festivals, markets, fun runs, theatre and community events on the Garden Route (and the wider coast from Cape Town to Jeffreys Bay).">
 <meta name="theme-color" content="#0d3b2e">
-<meta property="og:title" content="Garden Route Events">
-<meta property="og:description" content="Concerts, festivals, markets & musicals from Mossel Bay to Tsitsikamma.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Garden Route Events">
+<meta property="og:title" content="Garden Route Events · what's on along the Garden Route">
+<meta property="og:description" content="Concerts, festivals, markets, fun runs & trail runs, musicals, theatre and community events from Mossel Bay to Tsitsikamma, 6 Oct 2026 – 28 Feb 2027. List, calendar and map.">
+<meta property="og:url" content="https://christopheralberts.github.io/garden-route-events/">
+<meta property="og:image" content="https://christopheralberts.github.io/garden-route-events/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Garden Route Events: what's on from Mossel Bay to Tsitsikamma">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d3b2e'/%3E%3Cpath d='M4 22c4-3 8-3 12 0s8 3 12 0v6H4z' fill='%233fb6a8'/%3E%3Cpath d='M9 18l4-9 4 9zM15 18l4-7 4 7z' fill='%23e9c46a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +32,7 @@
   <div class="hero-inner">
     <p class="eyebrow">Mossel Bay · George · Wilderness · Sedgefield · Knysna · Plett · Tsitsikamma</p>
     <h1>What's on along the <em>Garden Route</em></h1>
-    <p class="lede">Concerts, festivals, markets, fun runs, musicals &amp; community events: <span id="range">6 Oct 2026 – 28 Feb 2027</span>. Every listing links to its source page.</p>
+    <p class="lede">Concerts, festivals, markets, fun runs, musicals, theatre &amp; comedy and community events: <span id="range">6 Oct 2026 – 28 Feb 2027</span>. Every listing links to its source page.</p>
     <div class="hero-search">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 015.9 12.1l4.2 4.2-1.4 1.4-4.2-4.2A7.5 7.5 0 1110.5 3zm0 2a5.5 5.5 0 100 11 5.5 5.5 0 000-11z"/></svg>
       <input id="q" type="search" placeholder="Search artists, venues, markets, towns…" aria-label="Search events" autocomplete="off">
@@ -46,6 +54,7 @@
       <button data-cat="market"><i class="dot market"></i>Markets</button>
       <button data-cat="funrun"><i class="dot funrun"></i>Runs, walks &amp; trails</button>
       <button data-cat="musical"><i class="dot musical"></i>Musicals</button>
+      <button data-cat="arts"><i class="dot arts"></i>Arts &amp; culture</button>
       <button data-cat="community"><i class="dot community"></i>Church &amp; community</button>
     </div>
     <div class="selects">
@@ -79,6 +88,9 @@
   </section>
 </main>
 
+<div id="shareMenu" class="sharemenu" role="menu" hidden></div>
+<div id="evModal" class="modal" hidden><div id="evBox" class="mbox" role="dialog" aria-modal="true" aria-labelledby="evTitle"></div></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 <footer>
   <div class="foot-inner">
     <p><strong>Garden Route Events</strong> is an independent listing. Details come from ticketing sites, tourism calendars, venues and official event pages; each card links to its source. Dates and prices change, so check before you go.</p>

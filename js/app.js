@@ -7,18 +7,19 @@ var MONTHS=["2026-10","2026-11","2026-12","2027-01","2027-02"];
 var MN=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 var MNL=["January","February","March","April","May","June","July","August","September","October","November","December"];
 var DOW=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-var CATS={concert:"Concert",festival:"Festival",musical:"Musical",market:"Market",funrun:"Run / walk / trail",community:"Church / community"};
-var CATPL={concert:"concerts",festival:"festivals",musical:"musicals",market:"markets",funrun:"runs, walks & trails",community:"church & community"};
+var CATS={concert:"Concert",festival:"Festival",musical:"Musical",market:"Market",funrun:"Run / walk / trail",community:"Church / community",arts:"Arts & culture"};
+var CATPL={concert:"concerts",festival:"festivals",musical:"musicals",market:"markets",funrun:"runs, walks & trails",community:"church & community",arts:"arts & culture"};
 var ICON={
   concert:'<svg viewBox="0 0 24 24"><path d="M9 3v10.55A4 4 0 107 21a4 4 0 004-4V7h6V3H9z"/></svg>',
   festival:'<svg viewBox="0 0 24 24"><path d="M12 2l1 0v2.2l5-1.2v4l-5 1.2V8.9L21.5 21H15l-3-5-3 5H2.5L11 8.9V2z"/></svg>',
   musical:'<svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.5-5.4 4.6 1.7 7L12 17.3 5.7 21l1.7-7L2 9.4l7.1-.5z"/></svg>',
   funrun:'<svg viewBox="0 0 24 24"><path d="M13.5 5.5a2 2 0 100-4 2 2 0 000 4zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3A7.3 7.3 0 0019 13v-2a5 5 0 01-4.3-2.4l-1-1.6a2 2 0 00-1.7-1l-.8.1L6 8.3V13h2V9.6z"/></svg>',
   community:'<svg viewBox="0 0 24 24"><path d="M11 2h2v3h3v2h-3v3.2l7 4.1V22h-6v-4a2 2 0 00-4 0v4H4v-7.7l7-4.1V7H8V5h3z"/></svg>',
+  arts:'<svg viewBox="0 0 24 24"><path d="M3 3h9v7.5A4.5 4.5 0 017.5 15 4.5 4.5 0 013 10.5zm2.2 4.3h1.6V6.2H5.2zm3.5 0h1.6V6.2H8.7zM5.6 10a2 2 0 003.8 0zM12.5 9H21v7.5a4.5 4.5 0 01-9 0V14a6 6 0 00.5-3.5zm2 3.3h1.6v-1.6h-1.6zm3.4 0h1.6v-1.6h-1.6zm-3.3 4.4a2 2 0 003.8 0z"/></svg>',
   market:'<svg viewBox="0 0 24 24"><path d="M3 9h18l-1.8 11.2A1 1 0 0118.2 21H5.8a1 1 0 01-1-.8L3 9zm5.2-1L12 2.5 15.8 8h-2.4L12 5.9 10.6 8z"/></svg>'};
 var PIN='<svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7zm0 4.5A2.5 2.5 0 1012 11.5 2.5 2.5 0 0012 6.5z"/></svg>';
 var ARROW='<svg viewBox="0 0 24 24"><path d="M13 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.2l-4.6-4.6z"/></svg>';
-var S={scope:"gr",q:"",town:"",cat:"",month:"",view:"list",calMonth:null,calDay:null,off:false};
+var S={scope:"gr",q:"",town:"",cat:"",month:"",view:"list",calMonth:null,calDay:null,off:false,event:""};
 function isOff(e){return e.status==="postponed"||e.status==="cancelled"}
 var STL={"sold out":"Sold out",postponed:"Postponed",cancelled:"Cancelled"};
 function stBadge(e){return STL[e.status]?'<span class="status '+(isOff(e)?"off":"soldout")+'">'+STL[e.status]+'</span>':""}
@@ -45,12 +46,89 @@ function thumb(e,cls){
   if(e.image)return '<img src="'+esc(e.image)+'" alt="" loading="lazy" decoding="async">';
   return '<div class="ph '+e.category+'">'+ICON[e.category]+'</div>';
 }
+/* ---------- sharing & deep links ---------- */
+var LIVE="https://christopheralberts.github.io/garden-route-events/";
+var SHARE_ICON='<svg viewBox="0 0 24 24"><path d="M18 15.5a3 3 0 00-2.3 1.1l-6.8-3.4a3 3 0 000-2.4l6.8-3.4A3 3 0 1015 5.5l-6.8 3.4a3 3 0 100 6.2l6.8 3.4a3 3 0 103-3z"/></svg>';
+var WA_ICON='<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 000-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.1-1.2c0-.2-.2-.2-.5-.4z"/></svg>';
+var LINK_ICON='<svg viewBox="0 0 24 24"><path d="M10.6 13.4a1 1 0 001.4 0l4-4a3 3 0 00-4.2-4.2l-1.5 1.5 1.4 1.4 1.5-1.5a1 1 0 011.4 1.4l-4 4a1 1 0 000 1.4zm2.8-2.8a1 1 0 00-1.4 0l-4 4a3 3 0 004.2 4.2l1.5-1.5-1.4-1.4-1.5 1.5a1 1 0 01-1.4-1.4l4-4a1 1 0 000-1.4z"/></svg>';
+function base(){return /^https?:/.test(location.protocol)?location.origin+location.pathname:LIVE}
+function deep(e){return base()+"#event="+encodeURIComponent(e.id)}
+function byId(id){for(var i=0;i<EV.length;i++)if(EV[i].id===id)return EV[i];return null}
+function datesTxt(e){
+  if(occ(e)){var o=occ(e).filter(function(d){return d>=TODAY});return (e.recurrence||"Recurring")+(o.length?" · next "+fmt(pd(o[0]),true):"")}
+  var a=pd(e.start_date);if(!e.end_date||e.end_date===e.start_date)return fmt(a,true);
+  return fmt(a,a.getFullYear()!==pd(e.end_date).getFullYear())+" – "+fmt(pd(e.end_date),true)}
+function shareText(e){
+  var L=[e.title,"📅 "+datesTxt(e)+(e.time&&!occ(e)?" · "+e.time:""),"📍 "+[e.venue,e.town].filter(Boolean).join(", ")];
+  var p=priceTxt(e.price_from);if(p)L.push("💰 "+p);
+  if(STL[e.status])L.push("⚠️ "+STL[e.status]);
+  L.push((e.ticket_url?"🎟️ Tickets: ":"🔗 Event page: ")+link(e));
+  L.push("","More on Garden Route Events: "+deep(e));
+  return L.join("\n")}
+function waUrl(e){return "https://wa.me/?text="+encodeURIComponent(shareText(e))}
+function shareBtn(e){return '<button class="sharebtn" type="button" data-share="'+esc(e.id)+'" aria-haspopup="menu" aria-label="Share '+esc(e.title)+'">'+SHARE_ICON+'<span>Share</span></button>'}
+function toast(msg){var t=$("toast");t.textContent=msg;t.classList.add("on");clearTimeout(toast._t);toast._t=setTimeout(function(){t.classList.remove("on")},2200)}
+function copy(txt){
+  function fb(){var ta=document.createElement("textarea");ta.value=txt;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();
+    var ok=false;try{ok=document.execCommand("copy")}catch(x){}document.body.removeChild(ta);toast(ok?"Link copied":"Copy failed, long-press to copy: "+txt)}
+  if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(txt).then(function(){toast("Link copied")},fb);else fb()}
+function nativeShare(e){
+  if(!navigator.share)return false;
+  navigator.share({title:e.title,text:shareText(e).replace(/\n\nMore on Garden Route Events: .*$/,""),url:deep(e)}).catch(function(){});return true}
+function closeMenu(){var m=$("shareMenu");m.hidden=true;m.dataset.id=""}
+function openMenu(btn,id){
+  var e=byId(id);if(!e)return;var m=$("shareMenu");
+  if(m.dataset.id===id&&!m.hidden){closeMenu();return}
+  m.dataset.id=id;
+  m.innerHTML=(navigator.share?'<button type="button" data-act="native">'+SHARE_ICON+'Share via…</button>':'')+
+    '<a href="'+esc(waUrl(e))+'" target="_blank" rel="noopener" data-act="wa">'+WA_ICON+'WhatsApp</a>'+
+    '<button type="button" data-act="copy">'+LINK_ICON+'Copy link</button>'+
+    (S.event!==id?'<button type="button" data-act="details">'+ARROW+'Details</button>':'');
+  m.hidden=false;m._y=window.scrollY;
+  var r=btn.getBoundingClientRect(),w=m.offsetWidth,h=m.offsetHeight;
+  var left=Math.min(Math.max(8,r.left+r.width/2-w/2),window.innerWidth-w-8),top=r.bottom+6;
+  if(top+h>window.innerHeight-8)top=Math.max(8,r.top-h-6);
+  m.style.left=left+"px";m.style.top=top+"px";
+  var f=m.querySelector("button,a");if(f)f.focus({preventScroll:true});
+}
+function detailHtml(e){
+  var o=occ(e),L=esc(link(e)),p=priceTxt(e.price_from);
+  var od=o?o.filter(function(d){return d>=TODAY}):[];
+  return '<div class="mhead">'+(e.image?'<img src="'+esc(e.image)+'" alt="">':'<div class="ph '+e.category+'">'+ICON[e.category]+'</div>')+
+      '<span class="cat '+e.category+'">'+CATS[e.category]+'</span>'+stBadge(e)+'</div>'+
+    '<div class="mbody">'+(e.garden_route?'<span class="grtag">Garden Route</span>':'')+
+      '<h2 id="evTitle">'+esc(e.title)+'</h2>'+
+      '<div class="when">'+esc(datesTxt(e))+(e.time?" · "+esc(e.time):"")+'</div>'+
+      (od.length>1?'<div class="occ">'+od.length+' upcoming dates: '+od.slice(0,10).map(function(d){var x=pd(d);return x.getDate()+" "+MN[x.getMonth()]}).join(", ")+(od.length>10?", …":"")+'</div>':'')+
+      (e.status_note?'<div class="stnote'+(isOff(e)?" off":"")+'">'+esc(e.status_note)+'</div>':'')+
+      '<div class="where">'+PIN+'<span>'+esc(e.venue||"")+(e.venue?", ":"")+esc(e.town)+(e.venue_address&&e.venue_address!==e.venue?'<br><small>'+esc(e.venue_address)+'</small>':'')+'</span></div>'+
+      (p?'<div class="price">'+esc(p)+'</div>':'')+
+      (e.notes&&!/^(Quicket|Webtickets) category/.test(e.notes)?'<p class="mnotes">'+esc(e.notes)+'</p>':'')+
+      '<div class="mact"><a class="btn" href="'+L+'" target="_blank" rel="noopener">'+(e.ticket_url?"Tickets":"Event page")+ARROW+'</a>'+
+        (navigator.share?'<button type="button" class="btn ghostbtn" data-act-direct="native">'+SHARE_ICON+'Share</button>':'')+
+        '<a class="btn wa" href="'+esc(waUrl(e))+'" target="_blank" rel="noopener">'+WA_ICON+'WhatsApp</a>'+
+        '<button type="button" class="btn ghostbtn" data-act-direct="copy">'+LINK_ICON+'Copy link</button></div>'+
+      '<p class="msrc">Source: <a href="'+esc(e.source_url)+'" target="_blank" rel="noopener">'+esc(e.source_name)+'</a>'+(e.alt_sources&&e.alt_sources.length?' · also listed on '+e.alt_sources.length+' other site'+(e.alt_sources.length>1?"s":""):'')+' · checked '+esc(e.last_checked||"")+'</p>'+
+    '</div>';
+}
+function openEvent(id,push){
+  var e=byId(id);if(!e){S.event="";writeHash();return}
+  closeMenu();S.event=id;
+  var m=$("evModal");$("evBox").innerHTML='<button type="button" class="mclose" data-close aria-label="Close">×</button>'+detailHtml(e);
+  $("evBox").dataset.id=id;
+  if(m.hidden){openEvent._last=document.activeElement}
+  m.hidden=false;document.body.classList.add("modal-open");
+  writeHash();setTimeout(function(){var c=m.querySelector(".mclose");if(c)c.focus({preventScroll:true})},30);
+}
+function closeEvent(){var m=$("evModal");if(m.hidden)return;m.hidden=true;document.body.classList.remove("modal-open");S.event="";writeHash();
+  if(openEvent._last&&openEvent._last.focus)try{openEvent._last.focus({preventScroll:true})}catch(x){}}
 
 function init(data){
   EV=(data||[]).slice();
   $("built").textContent=window.EVENTS_BUILT||(EV[0]&&EV[0].last_checked)||"";
   var mo='<option value="">Any month</option>';MONTHS.forEach(function(m){mo+='<option value="'+m+'">'+monthLabel(m)+'</option>'});$("month").innerHTML=mo;
   readHash();buildTowns();syncControls();render();
+  if(S.event){if($("evModal").hidden||$("evBox").dataset.id!==S.event)openEvent(S.event)}
 }
 function scoped(){return EV.filter(function(e){return (S.scope==="all"||e.garden_route)&&endOf(e)>=TODAY&&(S.off||!isOff(e))})}
 function buildTowns(){
@@ -91,7 +169,7 @@ function card(e){
       '<div class="where">'+PIN+'<span>'+esc(e.venue||"")+(e.venue?", ":"")+esc(e.town)+'</span></div>'+
       (e.recurrence?'<div class="notes">'+esc(e.recurrence)+'</div>':(e.notes&&!/^(Quicket|Webtickets) category/.test(e.notes)?'<div class="notes">'+esc(e.notes)+'</div>':''))+
       '<div class="foot"><a class="btn" href="'+L+'" target="_blank" rel="noopener">'+(e.ticket_url?"Tickets":"Event page")+ARROW+'</a>'+(price?'<span class="price">'+esc(price)+'</span>':'')+
-      '<a class="src" href="'+esc(e.source_url)+'" target="_blank" rel="noopener" title="Source: '+esc(e.source_name)+'">via '+esc(e.source_name.replace(/\s*\(.*\)$/,""))+'</a></div>'+
+      shareBtn(e)+'<a class="src" href="'+esc(e.source_url)+'" target="_blank" rel="noopener" title="Source: '+esc(e.source_name)+'">via '+esc(e.source_name.replace(/\s*\(.*\)$/,""))+'</a></div>'+
     '</div></article>';
 }
 function grouped(list){
@@ -144,9 +222,9 @@ function renderDay(L){
 }
 function popup(g){
   return '<div class="pop">'+g.map(function(e){return '<div class="pe"><a class="pt" href="'+esc(link(e))+'" target="_blank" rel="noopener">'+thumb(e)+'</a><div><h4>'+esc(e.title)+'</h4><p>'+when(e)+(e.time?" · "+esc(e.time):"")+'<br>'+esc(e.venue||"")+(e.venue?", ":"")+esc(e.town)+'</p>'+
-    '<span class="pc '+e.category+'">'+CATS[e.category]+'</span>'+(STL[e.status]?'<span class="pc st'+(isOff(e)?" off":"")+'">'+STL[e.status]+'</span>':'')+(e.geo_source==="town centroid"?'<span style="font-size:.7rem;color:#888">approx.</span> ':'')+'<br><a class="go" href="'+esc(link(e))+'" target="_blank" rel="noopener">'+(e.ticket_url?"Tickets":"Event page")+' →</a></div></div>'}).join("")+'</div>';
+    '<span class="pc '+e.category+'">'+CATS[e.category]+'</span>'+(STL[e.status]?'<span class="pc st'+(isOff(e)?" off":"")+'">'+STL[e.status]+'</span>':'')+(e.geo_source==="town centroid"?'<span style="font-size:.7rem;color:#888">approx.</span> ':'')+'<br><a class="go" href="'+esc(link(e))+'" target="_blank" rel="noopener">'+(e.ticket_url?"Tickets":"Event page")+' →</a> <button type="button" class="go gshare" data-share="'+esc(e.id)+'">Share</button> <button type="button" class="go gshare" data-open="'+esc(e.id)+'">Details</button></div></div>'}).join("")+'</div>';
 }
-var COL={concert:"#2a6f97",festival:"#e76f51",musical:"#8e4ec6",market:"#5b8c2a",funrun:"#d63384",community:"#b7791f"};
+var COL={concert:"#2a6f97",festival:"#e76f51",musical:"#8e4ec6",market:"#5b8c2a",funrun:"#d63384",community:"#b7791f",arts:"#0f766e"};
 var GRB=[[-33.55,21.95],[-34.2,24.0]];
 function renderMap(){
   var L=filtered(false,false).filter(function(e){return e.lat!=null&&e.lng!=null});
@@ -167,7 +245,7 @@ function renderMap(){
 function stats(){
   var L=scoped();var by={};L.forEach(function(e){by[e.category]=(by[e.category]||0)+1});
   $("stats").innerHTML='<span class="stat"><b>'+L.length+'</b> '+(S.scope==="gr"?"Garden Route":"coastal")+' events</span>'+
-    ["concert","festival","market","funrun","musical","community"].filter(function(c){return by[c]}).map(function(c){return '<span class="stat"><b>'+by[c]+'</b> '+CATPL[c]+'</span>'}).join("");
+    ["concert","festival","market","funrun","musical","arts","community"].filter(function(c){return by[c]}).map(function(c){return '<span class="stat"><b>'+by[c]+'</b> '+CATPL[c]+'</span>'}).join("");
 }
 function render(){
   ["list","cal","map"].forEach(function(v){$("view-"+v).hidden=S.view!==v});
@@ -186,11 +264,11 @@ function syncControls(){
   $("scopeGR").classList.toggle("on",S.scope==="gr");$("scopeAll").classList.toggle("on",S.scope==="all");
   $("scopeGR").setAttribute("aria-pressed",S.scope==="gr");$("scopeAll").setAttribute("aria-pressed",S.scope==="all");
 }
-function writeHash(){var p=[];if(S.view!=="list")p.push("view="+S.view);if(S.scope!=="gr")p.push("scope=all");if(S.off)p.push("off=1");
+function writeHash(){var p=[];if(S.view!=="list")p.push("view="+S.view);if(S.scope!=="gr")p.push("scope=all");if(S.off)p.push("off=1");if(S.event)p.push("event="+encodeURIComponent(S.event));
   ["town","cat","month","q"].forEach(function(k){if(S[k])p.push(k+"="+encodeURIComponent(S[k]))});
   var h=p.length?"#"+p.join("&"):"";if(location.hash!==h)history.replaceState(null,"",h||location.pathname+location.search)}
 function readHash(){location.hash.replace(/^#/,"").split("&").forEach(function(kv){var a=kv.split("=");if(!a[0])return;var v=decodeURIComponent(a[1]||"");
-  if(a[0]==="view"&&/^(list|cal|map)$/.test(v))S.view=v;else if(a[0]==="scope"&&v==="all")S.scope="all";else if(a[0]==="off"&&v==="1")S.off=true;else if(/^(town|cat|month|q)$/.test(a[0]))S[a[0]]=v})}
+  if(a[0]==="view"&&/^(list|cal|map)$/.test(v))S.view=v;else if(a[0]==="scope"&&v==="all")S.scope="all";else if(a[0]==="off"&&v==="1")S.off=true;else if(a[0]==="event")S.event=v;else if(/^(town|cat|month|q)$/.test(a[0]))S[a[0]]=v})}
 function setScope(s){S.scope=s;buildTowns();syncControls();render();if(map)map.fitBounds(s==="all"?[[-33.5,18.3],[-34.4,25.0]]:GRB)}
 function bind(){
   var t;$("q").addEventListener("input",function(){var v=this.value.trim();clearTimeout(t);t=setTimeout(function(){S.q=v;render()},120)});
@@ -205,6 +283,22 @@ function bind(){
   $("calPrev").addEventListener("click",function(){var i=MONTHS.indexOf(S.calMonth);if(i>0){S.calMonth=MONTHS[i-1];renderCal()}});
   $("calNext").addEventListener("click",function(){var i=MONTHS.indexOf(S.calMonth);if(i<MONTHS.length-1){S.calMonth=MONTHS[i+1];renderCal()}});
   $("calGrid").addEventListener("click",function(ev){var d=ev.target.closest(".day[data-d]");if(!d)return;S.calDay=d.dataset.d;renderCal();$("calDay").scrollIntoView({behavior:"smooth",block:"nearest"})});
+  document.addEventListener("click",function(ev){
+    var t=ev.target.closest("[data-share],[data-open],[data-act],[data-act-direct],[data-close]");
+    if(!t){if(!ev.target.closest("#shareMenu"))closeMenu();if(ev.target.id==="evModal")closeEvent();return}
+    if(t.hasAttribute("data-close")){closeEvent();return}
+    if(t.dataset.share){ev.preventDefault();ev.stopPropagation();openMenu(t,t.dataset.share);return}
+    if(t.dataset.open){ev.preventDefault();if(map)map.closePopup();openEvent(t.dataset.open);return}
+    var id=t.dataset.actDirect?$("evBox").dataset.id:$("shareMenu").dataset.id,e=byId(id);if(!e)return;
+    var act=t.dataset.act||t.dataset.actDirect;
+    if(act==="native"){if(!nativeShare(e))copy(deep(e))}
+    else if(act==="copy")copy(deep(e));
+    else if(act==="details"){if(map)map.closePopup();openEvent(id)}
+    if(t.dataset.act)closeMenu();
+  },true);
+  document.addEventListener("keydown",function(ev){if(ev.key==="Escape"){if(!$("shareMenu").hidden)closeMenu();else closeEvent()}});
+  window.addEventListener("resize",function(){var m=$("shareMenu");if(!m.hidden&&window.innerWidth!==(closeMenu._w||0))closeMenu();closeMenu._w=window.innerWidth});closeMenu._w=window.innerWidth;window.addEventListener("scroll",function(){var m=$("shareMenu");if(!m.hidden&&Math.abs(window.scrollY-(m._y||0))>40)closeMenu()},{passive:true});
+  window.addEventListener("hashchange",function(){var m=/(?:^#|&)event=([^&]+)/.exec(location.hash);if(m){var id=decodeURIComponent(m[1]);if(id!==S.event)openEvent(id)}else if(S.event)closeEvent()});
   var bar=$("bar");window.addEventListener("scroll",function(){bar.classList.toggle("stuck",bar.getBoundingClientRect().top<=0)},{passive:true});
 }
 bind();

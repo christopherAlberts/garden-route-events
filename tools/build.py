@@ -223,7 +223,7 @@ kept=[]
 for e in EV:
     dup=None
     for k in kept:
-        if k["start_date"]==e["start_date"] and k["town"]==e["town"] and (k["category"]==e["category"] or not ({k["category"],e["category"]}&{"funrun","market","community"})):
+        if k["start_date"]==e["start_date"] and k["town"]==e["town"] and (k["category"]==e["category"] or not ({k["category"],e["category"]}&{"funrun","market","community","arts"})):
             a,b=norm(k["title"]),norm(e["title"])
             if a and b and len(a&b)/min(len(a),len(b))>=0.6: dup=k;break
     if dup:
