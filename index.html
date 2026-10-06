@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Garden Route Events · concerts, festivals & musicals</title>
+<meta name="description" content="Upcoming concerts, festivals and musicals on the Garden Route (and the wider coast, Cape Town to Jeffreys Bay).">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Ccircle cx=%228%22 cy=%228%22 r=%227%22 fill=%22%230f7a53%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <h1>Garden Route Events</h1>
+    <p class="sub">Concerts, festivals & musicals · <span id="range"></span></p>
+  </div>
+  <div class="scope" role="group" aria-label="Area">
+    <button id="scopeGR" class="on" aria-pressed="true">Garden Route</button>
+    <button id="scopeAll" aria-pressed="false">All coast</button>
+  </div>
+</header>
+
+<section class="filters">
+  <input id="q" type="search" placeholder="Search artist, venue, town…" aria-label="Search">
+  <select id="town" aria-label="Town"></select>
+  <select id="cat" aria-label="Category">
+    <option value="">All categories</option>
+    <option value="concert">Concerts</option>
+    <option value="festival">Festivals</option>
+    <option value="musical">Musicals</option>
+  </select>
+  <select id="month" aria-label="Month"></select>
+  <button id="reset" class="link">Reset</button>
+</section>
+
+<nav class="tabs" role="tablist">
+  <button data-view="list" class="on" role="tab">List</button>
+  <button data-view="cal" role="tab">Calendar</button>
+  <button data-view="map" role="tab">Map</button>
+  <span id="count" class="count"></span>
+</nav>
+
+<main>
+  <section id="view-list" class="view"></section>
+  <section id="view-cal" class="view" hidden>
+    <div class="calnav">
+      <button id="calPrev" aria-label="Previous month">‹</button>
+      <h2 id="calTitle"></h2>
+      <button id="calNext" aria-label="Next month">›</button>
+    </div>
+    <div id="calGrid" class="calgrid"></div>
+    <div id="calDay" class="calday"></div>
+  </section>
+  <section id="view-map" class="view" hidden>
+    <div id="map"></div>
+    <p class="maplegend"><span class="dot big"></span> Garden Route <span class="dot small"></span> Wider coast · Pins marked “approx.” are placed at the town centre.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Every listing links to the page where it was found. Dates and prices change, so check the ticket page before you go.
+  Data checked <span id="built"></span>. Map © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</p>
+</footer>
+
+<script src="data/events.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="js/app.js"></script>
+</body>
+</html>

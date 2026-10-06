@@ -1,0 +1,62 @@
+:root{--bg:#f6f4ef;--card:#fff;--ink:#1d2a24;--mut:#66736c;--line:#e3dfd5;--gr:#0f7a53;--gr2:#e3f3ec;--acc:#d9622b;--concert:#2f6fb5;--festival:#d9622b;--musical:#8a3fb0;}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+a{color:var(--gr)}
+.top{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:16px 18px 10px;background:linear-gradient(135deg,#0f5e42,#127a55);color:#fff}
+.top h1{margin:0;font-size:1.45rem;letter-spacing:.2px}
+.top .sub{margin:2px 0 0;opacity:.85;font-size:.9rem}
+.scope{display:flex;background:rgba(255,255,255,.15);border-radius:999px;padding:3px}
+.scope button{border:0;background:none;color:#fff;padding:7px 14px;border-radius:999px;font-weight:600;cursor:pointer;font-size:.9rem}
+.scope button.on{background:#fff;color:var(--gr)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;padding:12px 18px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:1000}
+.filters input,.filters select{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;min-width:0}
+.filters input{flex:2 1 220px}.filters select{flex:1 1 140px}
+.link{border:0;background:none;color:var(--gr);cursor:pointer;font:inherit;text-decoration:underline}
+.tabs{display:flex;gap:6px;align-items:center;padding:12px 18px 0;max-width:1100px;margin:0 auto}
+.tabs button{border:1px solid var(--line);background:#fff;padding:7px 16px;border-radius:8px;cursor:pointer;font:inherit;font-weight:600}
+.tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.count{margin-left:auto;color:var(--mut);font-size:.88rem}
+main{max-width:1100px;margin:0 auto;padding:12px 18px 30px}
+h3.sec{margin:18px 0 8px;font-size:1rem;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+h3.sec.gr{color:var(--gr)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:6px}
+.card.isgr{border-left:4px solid var(--gr)}
+.card h4{margin:0;font-size:1.05rem;line-height:1.3}
+.meta{color:var(--mut);font-size:.88rem}
+.when{font-weight:700;color:var(--ink);font-size:.92rem}
+.badges{display:flex;gap:6px;flex-wrap:wrap}
+.badge{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:2px 8px;border-radius:999px;color:#fff}
+.badge.concert{background:var(--concert)}.badge.festival{background:var(--festival)}.badge.musical{background:var(--musical)}
+.badge.grb{background:var(--gr2);color:var(--gr)}
+.notes{font-size:.85rem;color:#3e4a44}
+.actions{margin-top:auto;display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:.85rem;padding-top:4px}
+.btn{background:var(--acc);color:#fff;text-decoration:none;padding:6px 12px;border-radius:8px;font-weight:600}
+.empty{padding:30px;text-align:center;color:var(--mut)}
+.calnav{display:flex;align-items:center;justify-content:center;gap:16px;margin:6px 0 10px}
+.calnav h2{margin:0;font-size:1.2rem;min-width:180px;text-align:center}
+.calnav button{border:1px solid var(--line);background:#fff;border-radius:8px;width:38px;height:34px;font-size:1.2rem;cursor:pointer}
+.calnav button:disabled{opacity:.35;cursor:default}
+.calgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.calgrid .dow{font-size:.75rem;color:var(--mut);text-align:center;font-weight:700;padding:4px 0}
+.day{background:#fff;border:1px solid var(--line);border-radius:8px;min-height:92px;padding:4px;cursor:pointer;overflow:hidden;display:flex;flex-direction:column;gap:2px}
+.day.out{background:transparent;border-color:transparent;cursor:default}
+.day.sel{outline:2px solid var(--gr)}
+.day.past{opacity:.5}
+.day .n{font-size:.78rem;font-weight:700;color:var(--mut)}
+.day.has .n{color:var(--ink)}
+.chip{font-size:.7rem;line-height:1.25;padding:1px 5px;border-radius:4px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chip.concert{background:var(--concert)}.chip.festival{background:var(--festival)}.chip.musical{background:var(--musical)}
+.chip.multi{border-radius:0;margin:0 -4px;padding-left:9px}
+.chip.wide{opacity:.6}
+.more{font-size:.7rem;color:var(--mut)}
+.calday{margin-top:14px}
+#map{height:68vh;min-height:420px;border-radius:12px;border:1px solid var(--line)}
+.maplegend{font-size:.85rem;color:var(--mut)}
+.dot{display:inline-block;border-radius:50%;vertical-align:middle;margin-left:8px}
+.dot.big{width:14px;height:14px;background:var(--acc);border:2px solid #fff;box-shadow:0 0 0 1px var(--acc)}
+.dot.small{width:8px;height:8px;background:#8a9a92}
+.pop h5{margin:0 0 2px;font-size:.95rem}.pop p{margin:0 0 6px;font-size:.82rem}.pop .pe{border-top:1px solid #eee;padding-top:6px;margin-top:6px}
+.pop .pe:first-child{border:0;margin:0;padding:0}
+footer{max-width:1100px;margin:0 auto;padding:10px 18px 40px;color:var(--mut);font-size:.82rem}
+@media (max-width:640px){.day{min-height:56px}.chip{font-size:0;height:6px;padding:0}.chip.multi{margin:0 -4px}.top h1{font-size:1.2rem}.grid{grid-template-columns:1fr}}
