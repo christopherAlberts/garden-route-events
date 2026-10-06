@@ -39,7 +39,22 @@ svg{fill:currentColor}
 /* sticky filter bar */
 .bar{position:sticky;top:0;z-index:1000;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
 .bar.stuck{box-shadow:0 6px 20px rgba(0,0,0,.08)}
-.bar-inner{max-width:1180px;margin:0 auto;padding:10px 22px;display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center}
+.bar-inner{max-width:1180px;margin:0 auto;padding:10px 22px;display:flex;flex-direction:column;gap:10px}
+.bar-top{display:flex;align-items:center;gap:10px;width:100%}
+.filt-panel{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;width:100%}
+.filttoggle{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 12px;border-radius:10px;cursor:pointer;font:inherit;font-size:.88rem;font-weight:600;flex:none}
+.filttoggle:hover{border-color:var(--mut)}
+.filttoggle .chev{width:16px;height:16px;fill:currentColor;transition:transform .2s;flex:none}
+.filttoggle .filtlbl{white-space:nowrap}
+body.filters-hidden .filttoggle .chev{transform:rotate(-90deg)}
+body.filters-hidden .filt-panel,
+body.filters-hidden .hero-search,
+body.filters-hidden .resultline{display:none!important}
+body.filters-hidden .bar-inner{padding-top:8px;padding-bottom:8px;gap:0}
+body.filters-hidden .filttoggle .filtlbl::after{content:none}
+.filttoggle.has-active{border-color:var(--forest);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--forest) 35%,transparent)}
+.filttoggle.has-active .filtlbl::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--forest);margin-right:4px;vertical-align:middle}
+@media (prefers-color-scheme:dark){.filttoggle.has-active{border-color:var(--teal)}.filttoggle.has-active .filtlbl::before{background:var(--teal)}}
 .seg{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px}
 .seg button{border:0;background:none;padding:7px 14px;border-radius:999px;font-weight:600;font-size:.88rem;cursor:pointer;color:var(--mut);transition:.2s}
 .seg button.on{background:var(--forest);color:#fff;box-shadow:0 2px 8px rgba(13,59,46,.3)}
@@ -53,7 +68,7 @@ svg{fill:currentColor}
 .selects{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .selects select{font:inherit;font-size:.88rem;padding:7px 30px 7px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237a8a84'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat right 8px center/18px;color:var(--ink);-webkit-appearance:none;appearance:none;max-width:200px}
 .ghost{border:0;background:none;color:var(--mut);text-decoration:underline;cursor:pointer;font-size:.85rem}
-.views{margin-left:auto;display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:3px}
+.views{margin-left:auto;display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:3px;flex:none}
 .views button{border:0;background:none;display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:9px;cursor:pointer;font-weight:600;font-size:.88rem;color:var(--mut)}
 .views button svg{width:16px;height:16px}
 .views button.on{background:var(--surface2);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
@@ -180,12 +195,14 @@ footer{border-top:1px solid var(--line);margin-top:20px}
 .foot-inner strong{color:var(--ink)}
 .muted{opacity:.85}
 
-@media (max-width:860px){.views{margin-left:0}.bar-inner{gap:8px}}
+@media (max-width:860px){.views{margin-left:auto}.bar-inner{gap:8px}.bar-top{gap:8px}}
 @media (max-width:640px){
   .hero-inner{padding:30px 16px 80px}.bar-inner,main{padding-left:14px;padding-right:14px}
   .chips{overflow-x:auto;flex-wrap:nowrap;width:100%;padding-bottom:2px}.chips button{flex:none}
   .selects{width:100%}.selects select{flex:1;max-width:none}
-  .views{width:100%;justify-content:space-between}.views button{flex:1;justify-content:center}
+  .views{flex:1;justify-content:space-between;min-width:0}.views button{flex:1;justify-content:center}
+  body.filters-hidden .views{width:auto;flex:1}
+  .filttoggle{padding:7px 10px}
   .grid{grid-template-columns:1fr}
   .day{min-height:58px;padding:4px}.chip{display:none}.more{display:none}.dots{display:flex}
   .dots i{width:6px;height:6px;border-radius:50%}
