@@ -54,7 +54,9 @@ Each event in `data/events.json` has these fields:
 |---|---|
 | `id` | `YYYY-MM-DD-title-slug`, unique |
 | `title` | event name as listed |
-| `category` | `concert`, `festival`, `market`, `funrun` (fun run / walk), `musical` or `community` (church / community) |
+| `category` | `concert`, `festival`, `market`, `funrun` (fun runs, walks and trail runs with a short/fun option), `musical` or `community` (church / community) |
+| `status` | `scheduled`, `sold out`, `postponed` or `cancelled`. Postponed/cancelled events stay in the data but are hidden in the app unless you click "show" next to the result count; sold-out events get a badge |
+| `status_note` | where the status came from (e.g. the ticket page showing every ticket type sold out) or a partial note such as "some performances sold out" |
 | `recurrence` | for recurring events (mostly markets), e.g. `Every Saturday, 07:30-12:00`; empty otherwise |
 | `occurrences` | for recurring events, the individual dates inside the window (the calendar uses these; the list shows one card) |
 | `image` | relative path to the event's own photo (`images/<id>.webp`, ≤600 px), taken from its source/ticket page; empty = category placeholder is shown |
@@ -82,7 +84,7 @@ To refresh it:
 
 1. Re-harvest the listings. The raw harvest (cached HTML/JSON from those sites) is **not** in this repo; the scripts expected it in `raw/`.
 2. Update the hand-checked entries in `tools/manual.py` (festivals and shows found on tourism and official sites).
-3. Run `python3 tools/build.py`, then `python3 tools/images.py` (downloads each event's og:image / Quicket image and resizes it to `images/<id>.webp`; pages are cached in `raw/imgcache/`), then `python3 tools/build.py` again so the `image` field is filled.
+3. Run `python3 tools/build.py`, then `python3 tools/images.py` (downloads each event's og:image / Quicket image and resizes it to `images/<id>.webp`; pages are cached in `raw/imgcache/`), then `python3 tools/status.py` (checks ticket pages for sold-out / postponed / cancelled; hand-checked cases go in `tools/status_overrides.json`), then `python3 tools/build.py` again so the `image` and `status` fields are filled.
    `build.py` dedupes, geocodes (Nominatim with a cache in `tools/geocache.json`, at most 1 request per second) and rewrites
    `data/events.json`, `data/events.js` and `data/events.csv`.
 

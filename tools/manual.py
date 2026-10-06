@@ -236,3 +236,35 @@ add(title="Moordkuil Race, Friemersheim (15 km & 4 km)",category="funrun",start_
     price_from="R35 (4 km)",ticket_url="",source_url="https://runningcalendar.co.za/events/moordkuil-race",source_name=RC,
     notes="Rural country-road race from Friemersheim church with a short 4 km option (R35). Listing verified by RunningCalendar.",
     lat=-33.952228,lng=22.143106,geo_source="event page")
+
+# ---------------- Fancourt / Kingswood / George trail runs (added 6 Oct 2026) ----------------
+add(title="Wild Mongoo Fashion Show (ladies' charity evening)",category="community",start_date="2026-12-02",time="18:30 for 19:00",town="George",venue="Fancourt",
+    venue_address="Montagu St, Blanco, George",price_from="R350",ticket_url="https://www.quicket.co.za/events/397238-wild-mongoo-fashion-show/",
+    source_url="https://www.quicket.co.za/events/397238-wild-mongoo-fashion-show/",source_name="Quicket",
+    notes="Ladies' night at Fancourt with live entertainment by local singer Shaza, welcome drinks, goodie bags and a fashion show (Wild Mongoo apparel & Sam's Clothing). 100% of funds go to Wild Mongoo (anti-human-trafficking). Group discount for 10+.",
+    lat=-33.9558525,lng=22.4142456,geo_source="event page",_img="https://images.quicket.co.za/0995293_0.png")
+KW="https://www.estate-living.co.za/news/the-big-one-celebrating-our-community-centres-first-birthday/"
+add(title="Kingswood Spring Fun Run/Walk for PDSA George",category="funrun",start_date="2026-10-10",time="08:00",town="George",venue="Kingswood Golf Estate",
+    venue_address="Plattner Boulevard, George",price_from="",ticket_url="",source_url=KW,source_name="Kingswood BUZZard (Estate Living)",
+    notes="First Kingswood Spring Fun Run/Walk, raising funds for PDSA George. Dress in spring colours/florals (best-dressed prize); kids welcome, one dog on a leash per person. Announced in the estate's homeowners' newsletter, so check with Kingswood whether non-residents can join.")
+add(title="Kingswood Carols by Candlelight with Carpe Musicam",category="concert",start_date="2026-12-04",time="",town="George",venue="Kingswood Golf Estate (lawn in front of the Community Centre)",
+    venue_address="Plattner Boulevard, George",price_from="",ticket_url="",source_url=KW,source_name="Kingswood BUZZard (Estate Living)",
+    notes="Picnic-blanket carols evening with Carpe Musicam leading the singing. Announced in the estate's homeowners' newsletter, so check with Kingswood whether non-residents can attend.")
+GT="GoTrail (trail running calendar)"
+add(title="Montagu Pass Run (17 km, 10 km & 5 km trail)",category="funrun",start_date="2026-10-24",time="",town="George",venue="Herold (Montagu Pass)",venue_address="Herold, Montagu Pass, George",
+    price_from="R80",ticket_url="",source_url="https://gotrail.run/en/event/montagu-pass-run",source_name=GT,alt_sources=["https://runningcalendar.co.za/races/city/george"],
+    notes="Trail run on the historic Montagu Pass above George, with a 5 km option alongside the 10 km and 17 km. Entry from R80 (RunningCalendar). Map pin approximate.")
+add(title="Run The Farm, Herold Wines (12-hour 5 km-loop challenge + 5 km fun run/walk)",category="funrun",start_date="2026-11-07",time="",town="George",venue="Herold Wines",venue_address="Herold, Montagu Pass, George",
+    price_from="",ticket_url="",source_url="https://gotrail.run/en/event/run-the-farm-herold",source_name=GT,
+    notes="12-hour trail endurance event on a 5 km mountain loop (individuals and teams of 2 or 4), plus a 5 km fun run/walk. Natural pool, vendor stalls and space for gazebos.")
+add(title="Bergplaas Challenge (10 km & 7 km trail)",category="funrun",start_date="2026-11-28",time="",town="Wilderness",venue="Bergplaas, Wilderness",venue_address="",
+    price_from="",ticket_url="",source_url="https://gotrail.run/en/event/bergplaas-challenge",source_name=GT,
+    notes="Short trail run in the forest/mountain area above Wilderness with 7 km and 10 km options. Map pin approximate (Wilderness).")
+add(title="Trail Girl Wilderness (2-day women's trail running tour)",category="funrun",start_date="2026-11-20",end_date="2026-11-22",time="Registration Fri 17:00",town="Wilderness",
+    venue="Fairy Knowe Hotel",venue_address="Dumbleton Road, Wilderness",price_from="R5,800 pp sharing (incl. 2 nights & meals)",ticket_url="",
+    source_url="https://trailgirl.co.za/tr-3-3-2/",source_name="Trail Girl (official site)",
+    notes="Non-race trail running tour: day 1 15 km, day 2 16 km on SANParks/CapeNature trails, plus a sunset beach walk and Touw River canoeing. Limited to 50 entries; entries via Entry Ninja.")
+add(title="Red Men Trail Run, Herold Wine Farm (18 km, 12 km & 5 km fun run)",category="funrun",start_date="2027-01-03",time="07:00 (5 km fun run 07:15)",town="George",venue="Herold Wines",venue_address="Herold, Montagu Pass, George",
+    price_from="R120 (5 km)",ticket_url="",source_url="https://startingline.co.za/events/red-men-trail-run-2027-sun-3-jan-2027-george-municipality-western-cape-b44c4c0d",source_name="Starting Line",
+    alt_sources=["https://gotrail.run/en/event/red-men-trail-run"],
+    notes="Morning trail run in the Outeniqua Mountains followed by a picnic and wine tasting. 5 km fun run R120 (medal); 12 km and 18 km R450 (incl. custom-label Herold wine). Limited to 200 entries; picnic meals bookable.")

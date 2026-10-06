@@ -9,7 +9,7 @@ IMG=os.path.join(ROOT,"images"); CACHE=os.path.join(ROOT,"raw","imgcache"); os.m
 UA="GardenRouteEventsApp/0.2 (+https://christopheralberts.github.io/garden-route-events/)"
 BUA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"
 SKIP_PAGE=re.compile(r"\.pdf$|georgeherald\.com/Whatson|ontheroute\.co\.za/your-garden-route|carpemusicam\.co\.za/?$|#tickets$",re.I)
-BAD_IMG=re.compile(r"logo|favicon|placeholder|default|blank|sprite|icon|avatar|/wt_social|howler-og|share-image|mosselbay-regions|wp-content/uploads/2024/04/|quicket\.co\.za/Q\d+[._]|total-energies|Zn8EsOb8s9kSq5woDRdMS2mYlNuPkhET2d2QtgCb",re.I)
+BAD_IMG=re.compile(r"logo|favicon|placeholder|default|blank|sprite|icon|avatar|/wt_social|howler-og|share-image|mosselbay-regions|wp-content/uploads/2024/04/|quicket\.co\.za/Q\d+[._]|total-energies|P9042457|Zn8EsOb8s9kSq5woDRdMS2mYlNuPkhET2d2QtgCb",re.I)
 def fetch(u,binary=False,timeout=30):
     fn=os.path.join(CACHE,hashlib.md5(u.encode()).hexdigest())
     if os.path.exists(fn): return open(fn,"rb").read()

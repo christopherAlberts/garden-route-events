@@ -7,8 +7,8 @@ var MONTHS=["2026-10","2026-11","2026-12","2027-01","2027-02"];
 var MN=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 var MNL=["January","February","March","April","May","June","July","August","September","October","November","December"];
 var DOW=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-var CATS={concert:"Concert",festival:"Festival",musical:"Musical",market:"Market",funrun:"Fun run / walk",community:"Church / community"};
-var CATPL={concert:"concerts",festival:"festivals",musical:"musicals",market:"markets",funrun:"fun runs & walks",community:"church & community"};
+var CATS={concert:"Concert",festival:"Festival",musical:"Musical",market:"Market",funrun:"Run / walk / trail",community:"Church / community"};
+var CATPL={concert:"concerts",festival:"festivals",musical:"musicals",market:"markets",funrun:"runs, walks & trails",community:"church & community"};
 var ICON={
   concert:'<svg viewBox="0 0 24 24"><path d="M9 3v10.55A4 4 0 107 21a4 4 0 004-4V7h6V3H9z"/></svg>',
   festival:'<svg viewBox="0 0 24 24"><path d="M12 2l1 0v2.2l5-1.2v4l-5 1.2V8.9L21.5 21H15l-3-5-3 5H2.5L11 8.9V2z"/></svg>',
@@ -18,7 +18,10 @@ var ICON={
   market:'<svg viewBox="0 0 24 24"><path d="M3 9h18l-1.8 11.2A1 1 0 0118.2 21H5.8a1 1 0 01-1-.8L3 9zm5.2-1L12 2.5 15.8 8h-2.4L12 5.9 10.6 8z"/></svg>'};
 var PIN='<svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7zm0 4.5A2.5 2.5 0 1012 11.5 2.5 2.5 0 0012 6.5z"/></svg>';
 var ARROW='<svg viewBox="0 0 24 24"><path d="M13 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.2l-4.6-4.6z"/></svg>';
-var S={scope:"gr",q:"",town:"",cat:"",month:"",view:"list",calMonth:null,calDay:null};
+var S={scope:"gr",q:"",town:"",cat:"",month:"",view:"list",calMonth:null,calDay:null,off:false};
+function isOff(e){return e.status==="postponed"||e.status==="cancelled"}
+var STL={"sold out":"Sold out",postponed:"Postponed",cancelled:"Cancelled"};
+function stBadge(e){return STL[e.status]?'<span class="status '+(isOff(e)?"off":"soldout")+'">'+STL[e.status]+'</span>':""}
 var EV=[],map=null,layer=null;
 var $=function(id){return document.getElementById(id)};
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
@@ -49,7 +52,7 @@ function init(data){
   var mo='<option value="">Any month</option>';MONTHS.forEach(function(m){mo+='<option value="'+m+'">'+monthLabel(m)+'</option>'});$("month").innerHTML=mo;
   readHash();buildTowns();syncControls();render();
 }
-function scoped(){return EV.filter(function(e){return (S.scope==="all"||e.garden_route)&&endOf(e)>=TODAY})}
+function scoped(){return EV.filter(function(e){return (S.scope==="all"||e.garden_route)&&endOf(e)>=TODAY&&(S.off||!isOff(e))})}
 function buildTowns(){
   var have={};scoped().forEach(function(e){have[e.town]=(have[e.town]||0)+1});
   function grp(label,order,isGR){
@@ -60,8 +63,9 @@ function buildTowns(){
   if(S.scope==="all")h+=grp("Rest of the coast",WIDE_ORDER,false);
   $("town").innerHTML=h;if(S.town&&!have[S.town])S.town="";$("town").value=S.town;
 }
-function matches(e,ignoreMonth){
+function matches(e,ignoreMonth,anyStatus){
   if(S.scope==="gr"&&!e.garden_route)return false;
+  if(!anyStatus&&!S.off&&isOff(e))return false;
   if(S.town&&e.town!==S.town)return false;
   if(S.cat&&e.category!==S.cat)return false;
   if(!ignoreMonth&&S.month&&!inMonth(e,S.month))return false;
@@ -78,11 +82,12 @@ function card(e){
   var nd=pd(nextDate(e)),multi=!occ(e)&&e.end_date&&e.end_date!==e.start_date;
   var badge='<div class="datebadge"><span class="d">'+nd.getDate()+'</span><span class="m">'+MN[nd.getMonth()]+'</span>'+(multi?'<span class="to">to '+pd(e.end_date).getDate()+' '+MN[pd(e.end_date).getMonth()]+'</span>':'')+'</div>';
   var L=esc(link(e)),price=priceTxt(e.price_from);
-  return '<article class="card">'+
-    '<a class="thumb" href="'+L+'" target="_blank" rel="noopener" aria-label="'+esc(e.title)+'">'+thumb(e)+badge+'<span class="cat '+e.category+'">'+CATS[e.category]+'</span>'+(e.recurrence?'<span class="recur">↻ '+esc(e.recurrence.split(",")[0])+'</span>':'')+'</a>'+
+  return '<article class="card'+(isOff(e)?" is-off":"")+'">'+
+    '<a class="thumb" href="'+L+'" target="_blank" rel="noopener" aria-label="'+esc(e.title)+'">'+thumb(e)+badge+'<span class="cat '+e.category+'">'+CATS[e.category]+'</span>'+(e.recurrence?'<span class="recur">↻ '+esc(e.recurrence.split(",")[0])+'</span>':'')+stBadge(e)+'</a>'+
     '<div class="body">'+(S.scope==="all"&&e.garden_route?'<span class="grtag">Garden Route</span>':'')+
       '<h3><a href="'+L+'" target="_blank" rel="noopener">'+esc(e.title)+'</a></h3>'+
       '<div class="when">'+when(e)+(e.time?" · "+esc(e.time):"")+'</div>'+
+      (e.status_note?'<div class="stnote'+(isOff(e)?" off":"")+'">'+esc(e.status_note)+'</div>':'')+
       '<div class="where">'+PIN+'<span>'+esc(e.venue||"")+(e.venue?", ":"")+esc(e.town)+'</span></div>'+
       (e.recurrence?'<div class="notes">'+esc(e.recurrence)+'</div>':(e.notes&&!/^(Quicket|Webtickets) category/.test(e.notes)?'<div class="notes">'+esc(e.notes)+'</div>':''))+
       '<div class="foot"><a class="btn" href="'+L+'" target="_blank" rel="noopener">'+(e.ticket_url?"Tickets":"Event page")+ARROW+'</a>'+(price?'<span class="price">'+esc(price)+'</span>':'')+
@@ -122,7 +127,7 @@ function renderCal(){
     var ds=iso(new Date(y,m,d));
     var on=L.filter(function(e){return onDay(e,ds)});
     var chips=on.slice(0,3).map(function(e){var cont=!occ(e)&&e.end_date&&e.start_date<ds;
-      return '<div class="chip '+e.category+(e.garden_route?"":" wide")+'" title="'+esc(e.title)+'">'+(cont?"↳ ":"")+esc(e.title)+'</div>'}).join("");
+      return '<div class="chip '+e.category+(e.garden_route?"":" wide")+(isOff(e)?" off":"")+'" title="'+esc(e.title)+(STL[e.status]?" ("+STL[e.status]+")":"")+'">'+(cont?"↳ ":"")+(STL[e.status]?"<b>"+STL[e.status]+":</b> ":"")+esc(e.title)+'</div>'}).join("");
     var dots='<span class="dots">'+on.slice(0,6).map(function(e){return '<i class="dot '+e.category+'"></i>'}).join("")+'</span>';
     h+='<div class="day'+(on.length?" has":"")+(ds<TODAY?" past":"")+(ds===TODAY?" today":"")+(S.calDay===ds?" sel":"")+'" data-d="'+ds+'"><span class="n">'+d+'</span>'+chips+(on.length>3?'<span class="more">+'+(on.length-3)+' more</span>':'')+dots+'</div>';
   }
@@ -139,7 +144,7 @@ function renderDay(L){
 }
 function popup(g){
   return '<div class="pop">'+g.map(function(e){return '<div class="pe"><a class="pt" href="'+esc(link(e))+'" target="_blank" rel="noopener">'+thumb(e)+'</a><div><h4>'+esc(e.title)+'</h4><p>'+when(e)+(e.time?" · "+esc(e.time):"")+'<br>'+esc(e.venue||"")+(e.venue?", ":"")+esc(e.town)+'</p>'+
-    '<span class="pc '+e.category+'">'+CATS[e.category]+'</span>'+(e.geo_source==="town centroid"?'<span style="font-size:.7rem;color:#888">approx.</span> ':'')+'<br><a class="go" href="'+esc(link(e))+'" target="_blank" rel="noopener">'+(e.ticket_url?"Tickets":"Event page")+' →</a></div></div>'}).join("")+'</div>';
+    '<span class="pc '+e.category+'">'+CATS[e.category]+'</span>'+(STL[e.status]?'<span class="pc st'+(isOff(e)?" off":"")+'">'+STL[e.status]+'</span>':'')+(e.geo_source==="town centroid"?'<span style="font-size:.7rem;color:#888">approx.</span> ':'')+'<br><a class="go" href="'+esc(link(e))+'" target="_blank" rel="noopener">'+(e.ticket_url?"Tickets":"Event page")+' →</a></div></div>'}).join("")+'</div>';
 }
 var COL={concert:"#2a6f97",festival:"#e76f51",musical:"#8e4ec6",market:"#5b8c2a",funrun:"#d63384",community:"#b7791f"};
 var GRB=[[-33.55,21.95],[-34.2,24.0]];
@@ -171,6 +176,8 @@ function render(){
   stats();
   var af=[];if(S.town)af.push(S.town);if(S.month)af.push(monthLabel(S.month));if(S.q)af.push("“"+S.q+"”");
   $("activeFilters").textContent=af.length?"· "+af.join(" · "):"";
+  var hid=EV.filter(function(e){return isOff(e)&&endOf(e)>=TODAY&&matches(e,S.view==="cal",true)}).length;
+  $("offToggle").hidden=!hid;$("offToggle").textContent=S.off?"Hide postponed/cancelled ("+hid+")":hid+" postponed/cancelled hidden · show";
   if(S.view==="list")renderList();else if(S.view==="cal")renderCal();else renderMap();
   writeHash();
 }
@@ -179,11 +186,11 @@ function syncControls(){
   $("scopeGR").classList.toggle("on",S.scope==="gr");$("scopeAll").classList.toggle("on",S.scope==="all");
   $("scopeGR").setAttribute("aria-pressed",S.scope==="gr");$("scopeAll").setAttribute("aria-pressed",S.scope==="all");
 }
-function writeHash(){var p=[];if(S.view!=="list")p.push("view="+S.view);if(S.scope!=="gr")p.push("scope=all");
+function writeHash(){var p=[];if(S.view!=="list")p.push("view="+S.view);if(S.scope!=="gr")p.push("scope=all");if(S.off)p.push("off=1");
   ["town","cat","month","q"].forEach(function(k){if(S[k])p.push(k+"="+encodeURIComponent(S[k]))});
   var h=p.length?"#"+p.join("&"):"";if(location.hash!==h)history.replaceState(null,"",h||location.pathname+location.search)}
 function readHash(){location.hash.replace(/^#/,"").split("&").forEach(function(kv){var a=kv.split("=");if(!a[0])return;var v=decodeURIComponent(a[1]||"");
-  if(a[0]==="view"&&/^(list|cal|map)$/.test(v))S.view=v;else if(a[0]==="scope"&&v==="all")S.scope="all";else if(/^(town|cat|month|q)$/.test(a[0]))S[a[0]]=v})}
+  if(a[0]==="view"&&/^(list|cal|map)$/.test(v))S.view=v;else if(a[0]==="scope"&&v==="all")S.scope="all";else if(a[0]==="off"&&v==="1")S.off=true;else if(/^(town|cat|month|q)$/.test(a[0]))S[a[0]]=v})}
 function setScope(s){S.scope=s;buildTowns();syncControls();render();if(map)map.fitBounds(s==="all"?[[-33.5,18.3],[-34.4,25.0]]:GRB)}
 function bind(){
   var t;$("q").addEventListener("input",function(){var v=this.value.trim();clearTimeout(t);t=setTimeout(function(){S.q=v;render()},120)});
@@ -191,6 +198,7 @@ function bind(){
   $("month").addEventListener("change",function(){S.month=this.value;if(S.month){S.calMonth=S.month;S.calDay=null}render()});
   $("scopeGR").addEventListener("click",function(){setScope("gr")});
   $("scopeAll").addEventListener("click",function(){setScope("all")});
+  $("offToggle").addEventListener("click",function(){S.off=!S.off;buildTowns();syncControls();render()});
   $("reset").addEventListener("click",function(){S.q=S.town=S.cat=S.month="";S.calDay=null;buildTowns();syncControls();render()});
   Array.prototype.forEach.call(document.querySelectorAll("#catChips button"),function(b){b.addEventListener("click",function(){S.cat=b.dataset.cat;render()})});
   Array.prototype.forEach.call(document.querySelectorAll(".views button"),function(b){b.addEventListener("click",function(){S.view=b.dataset.view;render()})});

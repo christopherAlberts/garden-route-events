@@ -254,8 +254,12 @@ for e in EV:
     e["lat"]=round(e["lat"],6); e["lng"]=round(e["lng"],6)
 # ---------- finalise ----------
 EV.sort(key=lambda e:(not TOWNS[e["town"]][2],e["start_date"],e["time"] or "",e["title"]))
-FIELDS=["id","title","category","start_date","end_date","time","recurrence","occurrences","town","region","garden_route","venue","venue_address","lat","lng","geo_source","price_from","ticket_url","source_url","source_name","alt_sources","image","notes","last_checked"]
+FIELDS=["id","title","category","status","status_note","start_date","end_date","time","recurrence","occurrences","town","region","garden_route","venue","venue_address","lat","lng","geo_source","price_from","ticket_url","source_url","source_name","alt_sources","image","notes","last_checked"]
 IMGDIR=os.path.join(_H,"..","images"); CAND={}
+def _lj(n):
+    try: return json.load(open(os.path.join(_H,n)))
+    except Exception: return {}
+ST_AUTO=_lj("status_auto.json"); ST_OVR=_lj("status_overrides.json")
 out=[]
 seen=set()
 for e in EV:
@@ -268,6 +272,11 @@ for e in EV:
         if f in r: continue
         r[f]=e.get(f,"")
     r["title"]=re.sub(r"\s+"," ",r["title"]).strip()
+    r["status"],r["status_note"]="scheduled",""
+    if ST_AUTO.get(i):
+        st,why=ST_AUTO[i][0]; r["status"]=st
+        r["status_note"]={"sold out":"Sold out","postponed":"Postponed","cancelled":"Cancelled"}[st]+" per "+("the ticketing page's ticket availability" if "schema" in why else "the ticketing page")+" (checked "+TODAY+")."
+    if i in ST_OVR: r.update({k:v for k,v in ST_OVR[i].items() if k in("status","status_note")})
     r["image"]=f"images/{i}.webp" if os.path.exists(os.path.join(IMGDIR,i+".webp")) else ""
     r["occurrences"]=[d for d in (e.get("occurrences") or []) if TODAY<=d<=END]
     CAND[i]={"img":e.get("_img",""),"pages":[u for u in [e.get("ticket_url",""),e["source_url"]]+e["alt_sources"] if u]}

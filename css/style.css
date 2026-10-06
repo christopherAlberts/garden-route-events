@@ -190,3 +190,17 @@ footer{border-top:1px solid var(--line);margin-top:20px}
   .calhead h2{font-size:1.3rem;min-width:0}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* event status */
+.thumb .status{position:absolute;left:12px;bottom:12px;z-index:3;font:700 .7rem/1 Inter,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:.42rem .6rem;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.thumb .recur~.status{bottom:46px}
+.status.soldout{background:#111;color:#ffd166;border:1px solid #ffd166}
+.status.off{background:#c0392b;color:#fff}
+.card.is-off .thumb img,.card.is-off .thumb .ph{filter:grayscale(1) opacity(.6)}
+.card.is-off h3 a{text-decoration:line-through;text-decoration-thickness:1px}
+.stnote{font-size:.78rem;line-height:1.35;margin:.15rem 0 .35rem;padding:.35rem .5rem;border-radius:8px;background:color-mix(in srgb,#ffd166 22%,transparent);color:inherit}
+.stnote.off{background:color-mix(in srgb,#c0392b 16%,transparent)}
+.chip.off{opacity:.55;text-decoration:line-through}
+.pe .pc.st{background:#111;color:#ffd166}.pe .pc.st.off{background:#c0392b;color:#fff}
+.offtoggle{margin-left:.6rem;font:inherit;font-size:.8rem;background:none;border:1px dashed currentColor;border-radius:999px;padding:.15rem .6rem;color:var(--mut);cursor:pointer}
+.offtoggle:hover{color:var(--ink,inherit)}
