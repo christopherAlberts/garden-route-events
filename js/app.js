@@ -344,6 +344,21 @@ function writeHash(){var p=[];if(S.view!=="list")p.push("view="+S.view);if(S.sco
 function readHash(){location.hash.replace(/^#/,"").split("&").forEach(function(kv){var a=kv.split("=");if(!a[0])return;var v=decodeURIComponent(a[1]||"");
   if(a[0]==="view"&&/^(list|cal|map)$/.test(v))S.view=v;else if(a[0]==="view"&&v==="rest")S.cat="restaurant";else if(a[0]==="rest")S.event="r:"+v;else if(a[0]==="scope"&&v==="all")S.scope="all";else if(a[0]==="off"&&v==="1")S.off=true;else if(a[0]==="nye"&&v==="1")S.nye=true;else if(a[0]==="xmas"&&v==="1")S.xmas=true;else if(a[0]==="event")S.event=v;else if(/^(town|cat|month|q)$/.test(a[0]))S[a[0]]=v})}
 function setScope(s){S.scope=s;buildTowns();syncControls();render();if(map)map.fitBounds(s==="all"?[[-33.5,18.3],[-34.4,25.0]]:GRB)}
+var INTRO_KEY="gre.hideIntro";
+function setIntroHidden(hide){
+  document.body.classList.toggle("intro-hidden",!!hide);
+  var b=$("introToggle");if(!b)return;
+  b.setAttribute("aria-expanded",hide?"false":"true");
+  b.title=hide?"Show intro":"Hide intro";
+  var lbl=b.querySelector(".introlbl");if(lbl)lbl.textContent=hide?"Intro":"Hide intro";
+  try{localStorage.setItem(INTRO_KEY,hide?"1":"0")}catch(e){}
+}
+function initIntroToggle(){
+  var hide=false;
+  try{hide=localStorage.getItem(INTRO_KEY)==="1"}catch(e){}
+  setIntroHidden(hide);
+  $("introToggle").addEventListener("click",function(){setIntroHidden(!document.body.classList.contains("intro-hidden"))});
+}
 var FILT_KEY="gre.hideFilters";
 function filtersActive(){return !!(S.q||S.town||S.cat||S.month||S.nye||S.xmas||S.scope!=="gr"||S.off)}
 function setFiltersHidden(hide){
@@ -392,6 +407,7 @@ function bind(){
   window.addEventListener("hashchange",function(){var rm=/(?:^#|&)rest=([^&]+)/.exec(location.hash);if(rm){openEvent("r:"+decodeURIComponent(rm[1]));return}var m=/(?:^#|&)event=([^&]+)/.exec(location.hash);if(m){var id=decodeURIComponent(m[1]);if(id!==S.event)openEvent(id)}else if(S.event)closeEvent()});
   var bar=$("bar");window.addEventListener("scroll",function(){bar.classList.toggle("stuck",bar.getBoundingClientRect().top<=0)},{passive:true});
   initFiltersToggle();
+  initIntroToggle();
 }
 bind();
 init(window.EVENTS||[]);

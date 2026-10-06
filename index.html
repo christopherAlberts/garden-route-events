@@ -31,13 +31,21 @@
   </div>
   <div class="hero-inner">
     <p class="eyebrow">Mossel Bay · George · Wilderness · Sedgefield · Knysna · Plett · Tsitsikamma</p>
-    <h1>What's on along the <em>Garden Route</em></h1>
-    <p class="lede">Concerts, festivals, markets, fun runs, musicals, theatre &amp; comedy, quiz nights, carols, Christmas &amp; New Year dining, nature walks &amp; talks, community events and restaurant specials: <span id="range">6 Oct 2026 – 28 Feb 2027</span>. Every listing links to its source page.</p>
+    <div class="hero-title-row">
+      <h1>What's on along the <em>Garden Route</em></h1>
+      <button type="button" id="introToggle" class="introtoggle" aria-expanded="true" aria-controls="heroIntro" title="Hide intro">
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg>
+        <span class="introlbl">Hide intro</span>
+      </button>
+    </div>
+    <div class="hero-intro" id="heroIntro">
+      <p class="lede">Concerts, festivals, markets, fun runs, musicals, theatre &amp; comedy, quiz nights, carols, Christmas &amp; New Year dining, nature walks &amp; talks, community events and restaurant specials: <span id="range">6 Oct 2026 – 28 Feb 2027</span>. Every listing links to its source page.</p>
+      <div class="stats" id="stats"></div>
+    </div>
     <div class="hero-search">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 015.9 12.1l4.2 4.2-1.4 1.4-4.2-4.2A7.5 7.5 0 1110.5 3zm0 2a5.5 5.5 0 100 11 5.5 5.5 0 000-11z"/></svg>
       <input id="q" type="search" placeholder="Search artists, venues, markets, towns…" aria-label="Search events" autocomplete="off">
     </div>
-    <div class="stats" id="stats"></div>
   </div>
 </header>
 
