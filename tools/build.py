@@ -223,7 +223,7 @@ kept=[]
 for e in EV:
     dup=None
     for k in kept:
-        if k["start_date"]==e["start_date"] and k["town"]==e["town"] and (k["category"]==e["category"] or not ({k["category"],e["category"]}&{"funrun","market","community","arts","quiz","festive"})) and not (e["category"] in ("quiz","festive") and (k["venue"]!=e["venue"] or k["title"]!=e["title"])):
+        if k["start_date"]==e["start_date"] and k["town"]==e["town"] and (k["category"]==e["category"] or not ({k["category"],e["category"]}&{"funrun","market","community","arts","quiz","festive","nature"})) and not (e["category"] in ("quiz","festive") and (k["venue"]!=e["venue"] or k["title"]!=e["title"])):
             a,b=norm(k["title"]),norm(e["title"])
             if a and b and len(a&b)/min(len(a),len(b))>=0.6: dup=k;break
     if dup:
@@ -254,7 +254,7 @@ for e in EV:
     e["lat"]=round(e["lat"],6); e["lng"]=round(e["lng"],6)
 # ---------- finalise ----------
 EV.sort(key=lambda e:(not TOWNS[e["town"]][2],e["start_date"],e["time"] or "",e["title"]))
-FIELDS=["id","title","category","status","status_note","start_date","end_date","time","recurrence","occurrences","nye","town","region","garden_route","venue","venue_address","lat","lng","geo_source","price_from","ticket_url","source_url","source_name","alt_sources","image","notes","last_checked"]
+FIELDS=["id","title","category","status","status_note","start_date","end_date","time","recurrence","occurrences","nye","xmas","town","region","garden_route","venue","venue_address","lat","lng","geo_source","price_from","ticket_url","source_url","source_name","alt_sources","image","notes","last_checked"]
 IMGDIR=os.path.join(_H,"..","images"); CAND={}
 def _lj(n):
     try: return json.load(open(os.path.join(_H,n)))
@@ -286,6 +286,10 @@ for e in EV:
     else:
         _span=(datetime.date.fromisoformat(_ed)-datetime.date.fromisoformat(_sd)).days
         r["nye"]=_sd=="2026-12-31" or (_sd<="2026-12-31"<=_ed and (_ny or (_span<=6 and r["category"] in("festival","concert"))))
+    # Christmas tag (carols, Christmas concerts/shows, lights switch-ons, Christmas markets, Christmas lunches/dinners); keeps the real category
+    _xm=bool(re.search(r"carol|christmas|kersfees|kersmark|kersliedere|kerskonsert|kerslig|xmas|nativity|heilige nag|lights festival|festive lights|lights switch|father christmas|gift market|gift fair|\bsanta\b",r["title"],re.I))
+    if r["occurrences"]: r["xmas"]=_xm and any("2026-11-01"<=d<="2026-12-26" for d in r["occurrences"])
+    else: r["xmas"]=_xm and _sd<="2026-12-26" and _ed>="2026-11-01"
     out.append({f:r[f] for f in FIELDS})
 os.makedirs(OUT,exist_ok=True)
 json.dump(out,open(f"{OUT}/events.json","w"),indent=1,ensure_ascii=False)

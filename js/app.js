@@ -7,8 +7,8 @@ var MONTHS=["2026-10","2026-11","2026-12","2027-01","2027-02"];
 var MN=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 var MNL=["January","February","March","April","May","June","July","August","September","October","November","December"];
 var DOW=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-var CATS={concert:"Concert",festival:"Festival",musical:"Musical",market:"Market",funrun:"Run / walk / trail",community:"Church / community",arts:"Arts & culture",quiz:"Quiz night",festive:"Festive dining",restaurant:"Restaurant"};
-var CATPL={concert:"concerts",festival:"festivals",musical:"musicals",market:"markets",funrun:"runs, walks & trails",community:"church & community",arts:"arts & culture",quiz:"quiz nights",festive:"festive dining",restaurant:"restaurants & pubs"};
+var CATS={concert:"Concert",festival:"Festival",musical:"Musical",market:"Market",funrun:"Run / walk / trail",community:"Church / community",arts:"Arts & culture",quiz:"Quiz night",festive:"Festive dining",nature:"Nature & outdoors",restaurant:"Restaurant"};
+var CATPL={concert:"concerts",festival:"festivals",musical:"musicals",market:"markets",funrun:"runs, walks & trails",community:"church & community",arts:"arts & culture",quiz:"quiz nights",festive:"festive dining",nature:"nature & outdoors",restaurant:"restaurants & pubs"};
 var ICON={
   restaurant:'<svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>',
   quiz:'<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>',
@@ -19,10 +19,11 @@ var ICON={
   funrun:'<svg viewBox="0 0 24 24"><path d="M13.5 5.5a2 2 0 100-4 2 2 0 000 4zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3A7.3 7.3 0 0019 13v-2a5 5 0 01-4.3-2.4l-1-1.6a2 2 0 00-1.7-1l-.8.1L6 8.3V13h2V9.6z"/></svg>',
   community:'<svg viewBox="0 0 24 24"><path d="M11 2h2v3h3v2h-3v3.2l7 4.1V22h-6v-4a2 2 0 00-4 0v4H4v-7.7l7-4.1V7H8V5h3z"/></svg>',
   arts:'<svg viewBox="0 0 24 24"><path d="M3 3h9v7.5A4.5 4.5 0 017.5 15 4.5 4.5 0 013 10.5zm2.2 4.3h1.6V6.2H5.2zm3.5 0h1.6V6.2H8.7zM5.6 10a2 2 0 003.8 0zM12.5 9H21v7.5a4.5 4.5 0 01-9 0V14a6 6 0 00.5-3.5zm2 3.3h1.6v-1.6h-1.6zm3.4 0h1.6v-1.6h-1.6zm-3.3 4.4a2 2 0 003.8 0z"/></svg>',
+  nature:'<svg viewBox="0 0 24 24"><path d="M12 2l5 7h-2.5l4 5.5H15l3.5 4.5H13v3h-2v-3H5.5L9 14.5H5.5l4-5.5H7z"/></svg>',
   market:'<svg viewBox="0 0 24 24"><path d="M3 9h18l-1.8 11.2A1 1 0 0118.2 21H5.8a1 1 0 01-1-.8L3 9zm5.2-1L12 2.5 15.8 8h-2.4L12 5.9 10.6 8z"/></svg>'};
 var PIN='<svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7zm0 4.5A2.5 2.5 0 1012 11.5 2.5 2.5 0 0012 6.5z"/></svg>';
 var ARROW='<svg viewBox="0 0 24 24"><path d="M13 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.2l-4.6-4.6z"/></svg>';
-var S={scope:"gr",q:"",town:"",cat:"",month:"",view:"list",calMonth:null,calDay:null,off:false,event:"",nye:false};
+var S={scope:"gr",q:"",town:"",cat:"",month:"",view:"list",calMonth:null,calDay:null,off:false,event:"",nye:false,xmas:false};
 /* restaurants are entries of category "restaurant": list cards, calendar days with recurring specials, map pins */
 var LAST_DAY="2027-02-28",EVR={};
 var RS=(window.RESTAURANTS||[]).map(function(r){var o={};for(var k in r)o[k]=r[k];
@@ -174,6 +175,7 @@ function matches(e,ignoreMonth,anyStatus){
   if(S.town&&e.town!==S.town)return false;
   if(S.cat&&e.category!==S.cat)return false;
   if(S.nye&&!e.nye)return false;
+  if(S.xmas&&!e.xmas)return false;
   if(!ignoreMonth&&S.month&&!inMonth(e,S.month))return false;
   if(S.q){var hay=(e.title+" "+e.venue+" "+e.town+" "+e.venue_address+" "+e.notes+" "+e.region+" "+e.category+" "+(e.recurrence||"")+" "+(e._hay||"")).toLowerCase();
     if(!S.q.toLowerCase().split(/\s+/).every(function(w){return hay.indexOf(w)>=0}))return false}
@@ -295,7 +297,7 @@ function restDetail(r){
 function restSection(R,label){
   R=R.slice().sort(function(a,b){var O=GR_ORDER.concat(WIDE_ORDER),ia=O.indexOf(a.town),ib=O.indexOf(b.town);return ((ia<0?99:ia)-(ib<0?99:ib))||a.name.localeCompare(b.name)});
   return '<div class="sec"><h2>'+label+'</h2><span class="pill">'+R.length+'</span></div><p class="rintro">Specials, live music and recurring nights from each venue\u2019s own site and local listings (checked '+esc(R[0].last_checked)+'). Things change, so call ahead.</p><div class="grid rgrid">'+R.map(rcard).join("")+'</div>'}
-var COL={concert:"#2a6f97",festival:"#e76f51",musical:"#8e4ec6",market:"#5b8c2a",funrun:"#d63384",community:"#b7791f",arts:"#0f766e",quiz:"#4f46e5",festive:"#b4233c",restaurant:"#c2410c"};
+var COL={concert:"#2a6f97",festival:"#e76f51",musical:"#8e4ec6",market:"#5b8c2a",funrun:"#d63384",community:"#b7791f",arts:"#0f766e",quiz:"#4f46e5",festive:"#b4233c",nature:"#15803d",restaurant:"#c2410c"};
 var GRB=[[-33.55,21.95],[-34.2,24.0]];
 function renderMap(){
   var L=filtered(false,false).filter(function(e){return e.lat!=null&&e.lng!=null});
@@ -316,14 +318,14 @@ function renderMap(){
 function stats(){
   var L=scoped();var by={};L.forEach(function(e){by[e.category]=(by[e.category]||0)+1});var nev=L.length-(by.restaurant||0);
   $("stats").innerHTML='<span class="stat"><b>'+nev+'</b> '+(S.scope==="gr"?"Garden Route":"coastal")+' events</span>'+
-    ["concert","festival","market","funrun","musical","arts","quiz","festive","community","restaurant"].filter(function(c){return by[c]}).map(function(c){return '<span class="stat"><b>'+by[c]+'</b> '+CATPL[c]+'</span>'}).join("");
+    ["concert","festival","market","funrun","musical","arts","quiz","festive","nature","community","restaurant"].filter(function(c){return by[c]}).map(function(c){return '<span class="stat"><b>'+by[c]+'</b> '+CATPL[c]+'</span>'}).join("");
 }
 function render(){
   ["list","cal","map"].forEach(function(v){$("view-"+v).hidden=S.view!==v});
   Array.prototype.forEach.call(document.querySelectorAll(".views button"),function(b){b.classList.toggle("on",b.dataset.view===S.view)});
-  Array.prototype.forEach.call(document.querySelectorAll("#catChips button"),function(b){b.classList.toggle("on",b.dataset.nye?!!S.nye:b.dataset.cat===S.cat)});
+  Array.prototype.forEach.call(document.querySelectorAll("#catChips button"),function(b){b.classList.toggle("on",b.dataset.nye?!!S.nye:b.dataset.xmas?!!S.xmas:b.dataset.cat===S.cat)});
   stats();
-  var af=[];if(S.nye)af.push("New Year's Eve");if(S.town)af.push(S.town);if(S.month)af.push(monthLabel(S.month));if(S.q)af.push("“"+S.q+"”");
+  var af=[];if(S.xmas)af.push("Christmas");if(S.nye)af.push("New Year's Eve");if(S.town)af.push(S.town);if(S.month)af.push(monthLabel(S.month));if(S.q)af.push("“"+S.q+"”");
   $("activeFilters").textContent=af.length?"· "+af.join(" · "):"";
   var hid=EV.filter(function(e){return isOff(e)&&endOf(e)>=TODAY&&matches(e,S.view==="cal",true)}).length;
   $("offToggle").hidden=!hid;$("offToggle").textContent=S.off?"Hide postponed/cancelled ("+hid+")":hid+" postponed/cancelled hidden · show";
@@ -335,11 +337,11 @@ function syncControls(){
   $("scopeGR").classList.toggle("on",S.scope==="gr");$("scopeAll").classList.toggle("on",S.scope==="all");
   $("scopeGR").setAttribute("aria-pressed",S.scope==="gr");$("scopeAll").setAttribute("aria-pressed",S.scope==="all");
 }
-function writeHash(){var p=[];if(S.view!=="list")p.push("view="+S.view);if(S.scope!=="gr")p.push("scope=all");if(S.off)p.push("off=1");if(S.nye)p.push("nye=1");if(S.event)p.push("event="+encodeURIComponent(S.event));
+function writeHash(){var p=[];if(S.view!=="list")p.push("view="+S.view);if(S.scope!=="gr")p.push("scope=all");if(S.off)p.push("off=1");if(S.nye)p.push("nye=1");if(S.xmas)p.push("xmas=1");if(S.event)p.push("event="+encodeURIComponent(S.event));
   ["town","cat","month","q"].forEach(function(k){if(S[k])p.push(k+"="+encodeURIComponent(S[k]))});
   var h=p.length?"#"+p.join("&"):"";if(location.hash!==h)history.replaceState(null,"",h||location.pathname+location.search)}
 function readHash(){location.hash.replace(/^#/,"").split("&").forEach(function(kv){var a=kv.split("=");if(!a[0])return;var v=decodeURIComponent(a[1]||"");
-  if(a[0]==="view"&&/^(list|cal|map)$/.test(v))S.view=v;else if(a[0]==="view"&&v==="rest")S.cat="restaurant";else if(a[0]==="rest")S.event="r:"+v;else if(a[0]==="scope"&&v==="all")S.scope="all";else if(a[0]==="off"&&v==="1")S.off=true;else if(a[0]==="nye"&&v==="1")S.nye=true;else if(a[0]==="event")S.event=v;else if(/^(town|cat|month|q)$/.test(a[0]))S[a[0]]=v})}
+  if(a[0]==="view"&&/^(list|cal|map)$/.test(v))S.view=v;else if(a[0]==="view"&&v==="rest")S.cat="restaurant";else if(a[0]==="rest")S.event="r:"+v;else if(a[0]==="scope"&&v==="all")S.scope="all";else if(a[0]==="off"&&v==="1")S.off=true;else if(a[0]==="nye"&&v==="1")S.nye=true;else if(a[0]==="xmas"&&v==="1")S.xmas=true;else if(a[0]==="event")S.event=v;else if(/^(town|cat|month|q)$/.test(a[0]))S[a[0]]=v})}
 function setScope(s){S.scope=s;buildTowns();syncControls();render();if(map)map.fitBounds(s==="all"?[[-33.5,18.3],[-34.4,25.0]]:GRB)}
 function bind(){
   var t;$("q").addEventListener("input",function(){var v=this.value.trim();clearTimeout(t);t=setTimeout(function(){S.q=v;render()},120)});
@@ -348,8 +350,8 @@ function bind(){
   $("scopeGR").addEventListener("click",function(){setScope("gr")});
   $("scopeAll").addEventListener("click",function(){setScope("all")});
   $("offToggle").addEventListener("click",function(){S.off=!S.off;buildTowns();syncControls();render()});
-  $("reset").addEventListener("click",function(){S.q=S.town=S.cat=S.month="";S.nye=false;S.calDay=null;buildTowns();syncControls();render()});
-  Array.prototype.forEach.call(document.querySelectorAll("#catChips button"),function(b){b.addEventListener("click",function(){if(b.dataset.nye)S.nye=!S.nye;else S.cat=b.dataset.cat;render()})});
+  $("reset").addEventListener("click",function(){S.q=S.town=S.cat=S.month="";S.nye=false;S.xmas=false;S.calDay=null;buildTowns();syncControls();render()});
+  Array.prototype.forEach.call(document.querySelectorAll("#catChips button"),function(b){b.addEventListener("click",function(){if(b.dataset.nye)S.nye=!S.nye;else if(b.dataset.xmas)S.xmas=!S.xmas;else S.cat=b.dataset.cat;render()})});
   Array.prototype.forEach.call(document.querySelectorAll(".views button"),function(b){b.addEventListener("click",function(){S.view=b.dataset.view;render();toTop();requestAnimationFrame(toTop)})});
   $("calPrev").addEventListener("click",function(){var i=MONTHS.indexOf(S.calMonth);if(i>0){S.calMonth=MONTHS[i-1];renderCal()}});
   $("calNext").addEventListener("click",function(){var i=MONTHS.indexOf(S.calMonth);if(i<MONTHS.length-1){S.calMonth=MONTHS[i+1];renderCal()}});

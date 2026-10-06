@@ -1,7 +1,26 @@
 {
- "2026-10-08-wilderness-arts-festival": {"status": "postponed", "status_note": "Postponed until further notice: the festival's official site (wildernessartfestival.co.za) and its banner image read 'Wilderness Art Festival 2026 Postponed'."},
- "2026-12-08-live-at-kirstenbosch-garden": {"status": "sold out", "status_note": "Webtickets shows both nights (8 and 9 Dec) as Sold Out."},
- "2026-12-15-fatboy-slim-cape-town-2026": {"status": "sold out", "status_note": "Howler shows SOLD OUT (resale tickets only); an extra show was added on 16 Dec."},
- "2026-10-06-richard-o-brien-s-the-rocky-horror-show-return-sea": {"status": "scheduled", "status_note": "Some performances sold out (Tue 6, Tue 13 and Sun 18 Oct per Webtickets); other dates available."},
- "2026-10-07-danger-in-the-dark": {"status": "scheduled", "status_note": "The Fri 9 Oct 18:00 performance is sold out; other dates available."}
+ "2026-10-08-wilderness-arts-festival": {
+  "status": "postponed",
+  "status_note": "Postponed until further notice: the festival's official site (wildernessartfestival.co.za) and its banner image read 'Wilderness Art Festival 2026 Postponed'."
+ },
+ "2026-12-08-live-at-kirstenbosch-garden": {
+  "status": "sold out",
+  "status_note": "Webtickets shows both nights (8 and 9 Dec) as Sold Out."
+ },
+ "2026-12-15-fatboy-slim-cape-town-2026": {
+  "status": "sold out",
+  "status_note": "Howler shows SOLD OUT (resale tickets only); an extra show was added on 16 Dec."
+ },
+ "2026-10-06-richard-o-brien-s-the-rocky-horror-show-return-sea": {
+  "status": "scheduled",
+  "status_note": "Some performances sold out (Tue 6, Tue 13 and Sun 18 Oct per Webtickets); other dates available."
+ },
+ "2026-10-07-danger-in-the-dark": {
+  "status": "scheduled",
+  "status_note": "The Fri 9 Oct 18:00 performance is sold out; other dates available."
+ },
+ "2026-10-17-birdlife-plett-birding-walk-october": {
+  "status": "scheduled",
+  "status_note": ""
+ }
 }

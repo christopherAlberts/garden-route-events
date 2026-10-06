@@ -310,3 +310,13 @@ body.v-rest #catChips,body.v-rest #month,body.v-rest #offToggle{display:none!imp
 .soon .foot .btn{padding:.4rem .7rem;font-size:.8rem}
 .soon .foot .btn,.soon .foot .sharebtn{flex:none;white-space:nowrap}
 .soon .foot .price{min-width:0;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:.78rem}
+
+/* nature & outdoors + Christmas chip */
+:root{--nature:#15803d}
+@media (prefers-color-scheme:dark){:root{--nature:#4ade80}}
+.dot.nature,.cat.nature{background:var(--nature)}
+.ph.nature{background:radial-gradient(circle at 30% 20%,#bbf7d0 0,transparent 45%),linear-gradient(135deg,#14532d,#15803d 55%,#86efac)}
+.chip.nature{background:color-mix(in srgb,var(--nature) 14%,transparent);border-color:var(--nature)}
+.pe .pc.nature{background:#15803d}
+#catChips .xmaschip{border-style:dashed;border-color:#b4233c}
+#catChips .xmaschip.on{background:#14532d;color:#fff;border-style:solid;border-color:#14532d}

@@ -481,3 +481,67 @@ add(title="New Year's Fireworks 80's Lumo Party Cruise",category="concert",start
     ticket_url="https://www.quicket.co.za/events/383158-new-years-fireworks-80s-lumo-party-cruise/",source_url="https://www.quicket.co.za/events/383158-new-years-fireworks-80s-lumo-party-cruise/",source_name="Quicket",
     notes="Three-hour 80s neon party cruise along the Cape Town coastline: boarding 22:00, departure 22:15, back 01:15; shared charcuterie boards and a bottle of bubbly per couple, fireworks at midnight. Listing says R1,899 per person; Quicket shows tickets from R1,500. Info: 066 428 9676.",
     lat=-33.9061852,lng=18.4209652,geo_source="event page",_img="https://images.quicket.co.za/0942732_0.jpeg")
+
+# ---- Nature & outdoors / community groups (added 2026-10-06) ----
+_BLP="BirdLife Plettenberg Bay (official site)"
+add(title="BirdLife Plett talk & dinner: Chanel Visser – Seabirds in Need: Rescue, Research and Recovery",category="nature",start_date="2026-10-12",
+    time="17:45 arrival, 18:00 talk, 19:30 dinner",town="Plettenberg Bay",venue="Plettenberg Bay Country Club",venue_address="Piesang Valley Road, Plettenberg Bay",
+    price_from="R50",ticket_url="https://birdlife-plett.co.za/event/dinner-presentation-talk-chanel-visser-seabirds-in-need/",
+    source_url="https://birdlife-plett.co.za/event/dinner-presentation-talk-chanel-visser-seabirds-in-need/",source_name=_BLP,
+    notes="CapeNature marine ranger Chanel Visser, coordinator of the Plett Marine Stranding Network, on seabird strandings along the Garden Route: which species strand and why, how to tell a resting bird from one in distress, and how to respond safely. Talk and dinner R200 members / R220 non-members (dinner bookings close Thu 8 Oct); talk only R50 members / R60 non-members. Bookings via Quicket only (link on the club's event page); enquiries Jenny Wilson 083 388 5006. Cash bar.",
+    lat=-34.0651111,lng=23.3505023,geo_source="nominatim",_img="https://birdlife-plett.co.za/wp-content/uploads/2026/02/ChannelSeabirdTalkPoster-845x321.jpeg")
+add(title="BirdLife Plett birding walk (October)",category="nature",start_date="2026-10-17",time="07:30-11:00",town="Plettenberg Bay",
+    venue="Venue to be confirmed",venue_address="Plettenberg Bay area",price_from="",ticket_url="",
+    source_url="https://birdlife-plett.co.za/event/birding-walk-october-venue-to-be-confirmed/",source_name=_BLP,
+    notes="Monthly morning birding walk by BirdLife Plettenberg Bay. The venue is still to be confirmed on the club's event page; contact info@birdlife-plett.co.za or 082 878 6662 to join. The club notes that Garden Route weather can force last-minute changes.",
+    lat=-34.052778,lng=23.369444,geo_source="town centroid (venue to be confirmed)",_img="https://birdlife-plett.co.za/wp-content/uploads/2025/03/IMG_1835-845x321.jpg")
+add(title="BirdLife Plett Feather Chase & year-end braai",category="nature",start_date="2026-11-14",time="07:00-14:00",town="Plettenberg Bay",
+    venue="Venue to be confirmed",venue_address="Plettenberg Bay area",price_from="",ticket_url="",
+    source_url="https://birdlife-plett.co.za/event/feather-chase-and-year-end-braai-2026/",source_name=_BLP,
+    notes="The club's annual Feather Chase (a morning of birding to tick as many species as possible) followed by the year-end braai. Venue still to be confirmed on the club's event page; contact info@birdlife-plett.co.za or 082 878 6662.",
+    lat=-34.052778,lng=23.369444,geo_source="town centroid (venue to be confirmed)",_img="https://birdlife-plett.co.za/wp-content/uploads/2025/12/PHOTO-2025-11-21-14-59-05-845x321.jpg")
+add(title="Great Southern Bioblitz 2026 – Garden Route (iNaturalist citizen science)",category="nature",start_date="2026-11-27",end_date="2026-11-30",
+    time="All day; Wild Rescue iNaturalist workshops Sat 28 & Sun 29 Nov",town="Stilbaai",venue="Anywhere in the Garden Route; workshops at Wild Rescue nature reserve",
+    venue_address="Wild Rescue nature reserve, Stilbaai (Hessequa)",price_from="Free",ticket_url="https://www.inaturalist.org/projects/great-southern-bioblitz-2026-garden-route",
+    source_url="https://www.knysnaplettherald.com/News/Article/Local-News/wild-rescue-nature-reserve-champions-the-great-southern-bioblitz-2026-for-garden-route-district-202609211200",
+    source_name="Knysna-Plett Herald",alt_sources=["https://wildrescue.co.za/wild-rescue-nature-reserve-champions-the-great-southern-bioblitz-2026-for-garden-route-district/","https://www.inaturalist.org/projects/great-southern-bioblitz-2026-garden-route","https://www.knysna.n2rs.com/knysna-diary-november.html"],
+    notes="Four-day Southern Hemisphere biodiversity survey: photograph any wild plant, animal or fungus and upload it to the free iNaturalist app, linked to the 'Great Southern Bioblitz 2026 - Garden Route' project. Free, no expertise needed; 14 days afterwards to finish uploads and IDs. Wild Rescue (Garden Route organiser) runs practical iNaturalist workshops and trail walks at its reserve on 28 and 29 November; times and bookings to be announced on its social media.",
+    lat=-34.368333,lng=21.411111,geo_source="town centroid (reserve near Stilbaai)",_img="https://wildrescue.co.za/wp_2023/wp-content/uploads/2026/09/GSBB-2026-Garden-Route-1024x429.png")
+add(title="Garden Route Indigenous Plant Fair",category="market",start_date="2026-10-30",end_date="2026-11-01",time="",town="George",
+    venue="Garden Route Botanical Garden",venue_address="49 Caledon Street, George",price_from="",ticket_url="",
+    source_url="https://www.knysna.n2rs.com/knysna-diary-october.html",source_name="Knysna Diary (n2rs.com), October 2026",
+    alt_sources=["https://botanicalgarden.org.za/","https://www.facebook.com/GRBotanical/"],
+    notes="Annual plant fair (the garden says it is usually on the first weekend of November): 5,000+ indigenous plants of 400+ species for sale, gardening talks and indigenous-focused presentations, creative art workshops, food and craft stalls and a kids zone. Times not yet published; Garden Route Botanical Garden 044 874 1558.",
+    lat=-33.9442967,lng=22.4627937,geo_source="nominatim",_img="https://botanicalgarden.org.za/wp-content/uploads/2022/03/GBGC-Front-Page.jpg")
+add(title="Art & Flowers exhibition for Hospice Knysna Sedgefield",category="community",start_date="2026-10-27",end_date="2026-10-28",
+    time="Tue 13:00-17:00; Wed 09:30-15:00",town="Knysna",venue="Amble Ridge",venue_address="Sunninghill Drive, Hunters Home, Knysna",price_from="",ticket_url="",
+    source_url="https://www.hospiceknysna.org.za/news-and-events/up-and-coming-events/",source_name="Hospice Knysna Sedgefield (official site)",
+    notes="Hospice fundraiser: floral art interpretations of local paintings, with selected paintings on sale. Hospice 044 384 0593.",
+    lat=-34.0518308,lng=23.0785323,geo_source="nominatim (suburb)",_img="https://www.hospiceknysna.org.za/wp-content/uploads/2021/11/feature_events.jpg")
+_SS="https://www.iloveboobies.co.za/pages/2026-secret-swim"
+for _t,_ll in (("Sedgefield",(-34.015606,22.802768)),("Plettenberg Bay",(-34.052778,23.369444))):
+    add(title=f"ILoveBoobies Secret Swim 2026 – {_t}",category="community",start_date="2026-10-10",time="Gather 07:30, briefing 08:00",town=_t,
+        venue="Secret beach location (pin sent at 21:00 the night before)",venue_address=_t,price_from="R200",
+        ticket_url="https://www.iloveboobies.co.za/products/secret-swim-2026-choose-your-location",source_url=_SS,source_name="ILoveBoobies ZA NPC (official site)",
+        alt_sources=["https://www.knysna.n2rs.com/knysna-diary-october.html"],
+        notes="Women-only, phone-free 90-minute sea dip (not a race) honouring breast-cancer fighters, survivors and those lost; female lifesavers at every venue. R200 donation funds free breast screenings in underserved communities. Register online; the exact spot is emailed and messaged at 21:00 on 9 October. Bring a plate or snacks to share afterwards.",
+        lat=_ll[0],lng=_ll[1],geo_source="town centroid (exact spot kept secret)",_img="https://www.iloveboobies.co.za/cdn/shop/files/Blue_pink_horizontal_911750e1-2f9a-4f40-91db-b5748e83bd6b_1200x1200.jpg?v=1777311214")
+add(title="George Festival 2026 (sport, culture & music)",category="festival",start_date="2026-12-12",end_date="2026-12-16",time="",town="George",
+    venue="Various venues across George",venue_address="George",price_from="",ticket_url="",
+    source_url="https://www.george.gov.za/planning-development/local-economic-development/tourism/george-festival-2025-culture-sport-art/",source_name="George Municipality",
+    alt_sources=["https://www.george.gov.za/george-festival-2026-set-to-be-bigger-and-better/","https://www.georgeherald.com/News/Article/Local-News/george-festival-2026-expands-with-more-sport-beach-activities-and-entertainment-202608260841"],
+    notes="Second George Festival, 12-16 December 2026: 10s rugby, soccer, athletics, vlakkie cricket, beach volleyball, table tennis, netball, disability sport, a 10 km road race, and gospel and jazz music festivals. Programme, venues and times still to be announced. In 2025 the municipality's Annual Lights Festival (Christmas lights switch-on at Unity Park, York Street) opened the festival; the 2026 lights date is not yet published.",
+    lat=-33.963,lng=22.4617,geo_source="town centroid (multiple venues)",_img="https://cms.groupeditors.com/img/2026/Aug/7ef5396d-7ede-4bad-9787-f398172de717.JPG")
+
+# ---- Christmas 2026 (carols / Christmas concerts) ----
+add(title="Die Heilige Nag – Petronel Baard & Mathys Roets Christmas concert",category="concert",start_date="2026-12-22",time="19:00-21:00",town="Hartenbos",
+    venue="NG Gemeente Hartenbos",venue_address="4 Majuba Avenue, Hartenbos",price_from="R200",
+    ticket_url="https://www.quicket.co.za/events/392041-die-heilige-nag/",source_url="https://www.quicket.co.za/events/392041-die-heilige-nag/",source_name="Quicket",
+    notes="One-night Christmas show: Petronel Baard and her orchestra with singer Mathys Roets, Christmas favourites on violin, percussion, guitars, cello and piano, plus Christmas stories. Tickets from R200 via Quicket or the church office 044 695 0440; WhatsApp Petronel 082 737 8416.",
+    lat=-34.1227323,lng=22.1178284,geo_source="nominatim (street)",_img="https://images.quicket.co.za/0989377_0.jpeg")
+add(title="Christmas Eve Carols by Candlelight & buffet at St Francis Links",category="festive",start_date="2026-12-24",time="18:00-21:00",town="St Francis Bay",
+    venue="St Francis Links Clubhouse",venue_address="1 Jack Nicklaus Drive, St Francis Links, St Francis Bay",price_from="R295",
+    ticket_url="https://www.quicket.co.za/events/392121-christmas-eve-buffet/",source_url="https://www.quicket.co.za/events/392121-christmas-eve-buffet/",source_name="Quicket",
+    alt_sources=["https://9ty9.co.za/events/christmas-eve-buffet/","https://www.findmy.co.za/entertainment/events_details/christmas-eve-buffet/62204"],
+    notes="Carols by Candlelight from 18:00, then a Christmas Eve buffet with live entertainment by Nádine from 19:00. Kids can decorate gingerbread houses and reindeer cookies; parents can drop off gifts for Santa to hand out. From R295.",
+    lat=-34.1620331,lng=24.8150387,geo_source="event page",_img="https://images.quicket.co.za/0970950_0.jpeg")
