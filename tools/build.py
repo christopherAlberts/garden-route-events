@@ -34,19 +34,24 @@ def cat_for(title,about,base):
     return "concert"
 def ev(**k):
     k.setdefault("end_date",""); k.setdefault("alt_sources",[]); k.setdefault("notes",""); k.setdefault("venue_address","")
-    k.setdefault("time",""); k.setdefault("price_from",""); k.setdefault("ticket_url",""); k.setdefault("lat",None); k.setdefault("lng",None); k.setdefault("geo_source","")
+    k.setdefault("time",""); k.setdefault("price_from",""); k.setdefault("ticket_url",""); k.setdefault("lat",None); k.setdefault("lng",None); k.setdefault("geo_source",""); k.setdefault("recurrence",""); k.setdefault("occurrences",[]); k.setdefault("_img","")
     EV.append(k)
 # ---------- Quicket (geo search JSON, same data as quicket.co.za search) ----------
-Q=json.load(open(f"{RAW}/quicket/algolia_coast.json"))
+Q=json.load(open(f"{RAW}/quicket/algolia_coast_v2.json"))
 GRQ={ # id: category  (hand-reviewed Garden Route Quicket listings)
 "393493":"festival","391548":"concert","395253":"musical","401035":"concert","392372":"concert","392375":"concert","392382":"concert","392377":"concert",
 "397115":"concert","399259":"concert","399044":"festival","397024":"concert","383601":"concert","396377":"concert","397935":"festival","401094":"concert",
 "393772":"concert","390041":"concert","400669":"concert","389748":"concert","396754":"concert","392031":"concert","399055":"concert","388199":"concert",
 "400050":"concert","400973":"concert","398527":"concert","398838":"concert","399108":"concert","399396":"concert","399888":"concert","398219":"concert",
 "398190":"concert","349754":"concert","387081":"festival","398452":"concert","399906":"concert","399904":"concert","399672":"concert","398221":"concert",
-"390180":"concert","401267":"concert","389550":"concert","396731":"festival","392725":"festival"}
+"390180":"concert","401267":"concert","389550":"concert","396731":"festival","392725":"festival","375254":"market"}
 QNOTES={"396731":"Book/stories festival (Grootbrak Boekeblaf).","392725":"Birding festival (not music).","395253":"Forest Edge Schools musical production.","387081":"Afrikaans music festival on the farm.","397935":"Boutique jazz festival: day & night jazz club shows.","399044":"Oktoberfest beer festival with music.","393493":"Colour festival with music."}
 Q_SKIP={"397388"}
+FUNQ={ # hand-reviewed community fun runs / charity walks on Quicket (id: note)
+"361367":"4.5 km community walk for breast cancer awareness.","400477":"Charity forest cycle & walk for I Love Boobies.","400264":"Charity walk for CANSA.",
+"395180":"Charity run on World Homeless Day.","394744":"Charity walk.","399994":"Spring fun run at a wine farm.","398041":"Hospice charity fun run.",
+"398261":"5 km birthday charity walk on the Sea Point Promenade.","396776":"Sunset fundraiser walk.","390242":"School fun run.","383490":"Community walk.",
+"401426":"Colour fun walk.","384905":"Costumed Halloween zombie walk through the city.","391873":"Charity fun run."}
 QTOWN={"Simola Golf and Country Estate":"Knysna","Still Bay":"Stilbaai","Stormsrivier":"Storms River","Keurboomstrand":"Plettenberg Bay","Brenton-on-Sea":"Knysna","Groot-Brakrivier":"Groot Brak","Riversdale":"Riversdale","Saint Francis Bay":"St Francis Bay","St Francis Bay":"St Francis Bay","Sandbaai":"Hermanus","Onrus":"Hermanus"}
 def qtime(ts): return datetime.datetime.fromtimestamp(ts,TZ)
 for oid,h in Q.items():
@@ -61,7 +66,12 @@ for oid,h in Q.items():
     lat,lng=geo.get("lat"),geo.get("lng")
     title=html.unescape(h["ProductName"]).strip()
     url="https://www.quicket.co.za"+h["ProductUrl"]
-    if h["_box"]=="garden_route":
+    if oid in FUNQ:
+        cat="funrun"; town=QTOWN.get(city,city)
+        if town not in TOWNS: town=town_from_geo(lat,lng) if lat else None
+        if not town or sd<TODAY: continue
+        notes=FUNQ[oid]
+    elif h["_box"]=="garden_route":
         if oid not in GRQ: continue
         cat=GRQ[oid]; town=QTOWN.get(city,city)
         if town not in TOWNS: town=town_from_geo(lat,lng) if lat else None
@@ -80,7 +90,7 @@ for oid,h in Q.items():
         cat=cat_for(title,"", "music")
         notes="Quicket category: "+", ".join(c for c in cats if c)
     ev(title=title,category=cat,start_date=sd,end_date=ed if ed!=sd else "",time=s.strftime("%H:%M"),town=town,venue=h.get("VenueName","").strip(),
-       venue_address=h.get("AddressFormatted",""),ticket_url=url+"#tickets",source_url=url,source_name="Quicket",notes=notes,lat=lat,lng=lng,geo_source="event page" if lat else "",_prio=1)
+       venue_address=h.get("AddressFormatted",""),ticket_url=url+"#tickets",source_url=url,source_name="Quicket",notes=notes,lat=lat,lng=lng,geo_source="event page" if lat else "",_img=("https:"+h["ImageUrl"]) if h.get("ImageUrl","").startswith("//") else h.get("ImageUrl",""),_prio=1)
 # dedupe duplicate Quicket listing of CSNY Plett (398526 == 392377) handled by dedupe below
 # ---------- Webtickets ----------
 W=json.load(open(f"{RAW}/wt/all_ev.json"))
@@ -124,7 +134,7 @@ for k,e in W.items():
     else: continue
     if re.search(r"dance|ballet",title+" "+about[:200],re.I) and cat!="festival" and not re.search(r"concert|music",title,re.I): continue
     ev(title=title,category=cat,start_date=sd,end_date=ed if ed!=sd else "",time=(tm[0] if tm else ""),town=town,venue=e["venue_full"].split(",")[0],venue_address=e["venue_full"],
-       price_from=e["price"],ticket_url=e["url"],source_url=e["url"],source_name="Webtickets",notes=WT_NOTE.get(k,"Webtickets category: "+", ".join(cats)),lat=g[0],lng=g[1],geo_source="event page",alt_sources=WT_ALT.get(k,[]),_prio=1)
+       price_from=e["price"],ticket_url=e["url"],source_url=e["url"],source_name="Webtickets",notes=WT_NOTE.get(k,"Webtickets category: "+", ".join(cats)),lat=g[0],lng=g[1],geo_source="event page",alt_sources=WT_ALT.get(k,[]),_img=(re.search(r'property="og:image" content="([^"]+)"',s) or [None,""])[1],_prio=1)
 # ---------- Howler (wider coast; GR Howler items are in manual.py) ----------
 HW=json.load(open(f"{RAW}/howler/search.json"))
 HSEL={ # url: (category, town, venue_address)
@@ -183,10 +193,21 @@ for e in A:
     sd=e["start_date"][:10]; ed=e["end_date"][:10]
     t=e["start_date"][11:16]; t="" if t in("00:00","08:00") else t
     ev(title=html.unescape(e["title"]),category=ASEL[slug],start_date=sd,end_date=ed if ed!=sd else "",time=t,town="Cape Town",venue="Artscape Theatre Centre",venue_address="D.F. Malan Street, Foreshore, Cape Town",
-       ticket_url=e["url"],source_url=e["url"],source_name="Artscape (venue calendar)",notes="",_prio=2)
+       ticket_url=e["url"],source_url=e["url"],source_name="Artscape (venue calendar)",notes="",_img=((e.get("image") or {}).get("url","") if isinstance(e.get("image"),dict) else ""),_prio=2)
 # ---------- Manual ----------
+TRIBE_IMG={}
+for _f in ("visitmosselbay.co.za","www.artscape.co.za"):
+    try:
+        for _e in json.load(open(f"{RAW}/tribe/{_f}.json")):
+            _im=(_e.get("image") or {}).get("url","") if isinstance(_e.get("image"),dict) else ""
+            if _im: TRIBE_IMG[re.sub(r"/\d{4}-\d\d-\d\d/(\d+/)?$","/",_e["url"])]=_im
+    except Exception: pass
+def tribe_img(u): return TRIBE_IMG.get(re.sub(r"/\d{4}-\d\d-\d\d/(\d+/)?$","/",u or ""),"")
 for m in manual.M:
     m=dict(m); m["_prio"]=1 if m["source_name"] in("Quicket","Webtickets","Howler","iTickets") else 2
+    if not m.get("_img"):
+        for _u in [m.get("source_url","")]+list(m.get("alt_sources",[])):
+            if tribe_img(_u): m["_img"]=tribe_img(_u); break
     ev(**m)
 # Cape Town manual extras
 ev(title="Cinderella & FrikaDella (pantomime)",category="musical",start_date="2026-12-05",end_date="2026-12-19",town="Cape Town",venue="Baxter Theatre Centre",venue_address="Main Road, Rondebosch, Cape Town",ticket_url="https://baxter.uct.ac.za/events/cinderella-frikadella",source_url="https://baxter.uct.ac.za/events/cinderella-frikadella",source_name="Baxter Theatre Centre",notes="",_prio=2)
@@ -202,7 +223,7 @@ kept=[]
 for e in EV:
     dup=None
     for k in kept:
-        if k["start_date"]==e["start_date"] and k["town"]==e["town"]:
+        if k["start_date"]==e["start_date"] and k["town"]==e["town"] and (k["category"]==e["category"] or not ({k["category"],e["category"]}&{"funrun","market","community"})):
             a,b=norm(k["title"]),norm(e["title"])
             if a and b and len(a&b)/min(len(a),len(b))>=0.6: dup=k;break
     if dup:
@@ -233,7 +254,8 @@ for e in EV:
     e["lat"]=round(e["lat"],6); e["lng"]=round(e["lng"],6)
 # ---------- finalise ----------
 EV.sort(key=lambda e:(not TOWNS[e["town"]][2],e["start_date"],e["time"] or "",e["title"]))
-FIELDS=["id","title","category","start_date","end_date","time","town","region","garden_route","venue","venue_address","lat","lng","geo_source","price_from","ticket_url","source_url","source_name","alt_sources","notes","last_checked"]
+FIELDS=["id","title","category","start_date","end_date","time","recurrence","occurrences","town","region","garden_route","venue","venue_address","lat","lng","geo_source","price_from","ticket_url","source_url","source_name","alt_sources","image","notes","last_checked"]
+IMGDIR=os.path.join(_H,"..","images"); CAND={}
 out=[]
 seen=set()
 for e in EV:
@@ -246,6 +268,9 @@ for e in EV:
         if f in r: continue
         r[f]=e.get(f,"")
     r["title"]=re.sub(r"\s+"," ",r["title"]).strip()
+    r["image"]=f"images/{i}.webp" if os.path.exists(os.path.join(IMGDIR,i+".webp")) else ""
+    r["occurrences"]=[d for d in (e.get("occurrences") or []) if TODAY<=d<=END]
+    CAND[i]={"img":e.get("_img",""),"pages":[u for u in [e.get("ticket_url",""),e["source_url"]]+e["alt_sources"] if u]}
     out.append({f:r[f] for f in FIELDS})
 os.makedirs(OUT,exist_ok=True)
 json.dump(out,open(f"{OUT}/events.json","w"),indent=1,ensure_ascii=False)
@@ -254,7 +279,8 @@ with open(f"{OUT}/events.js","w") as f:
     json.dump(out,f,ensure_ascii=False); f.write(";\nwindow.EVENTS_BUILT = %s;\n"%json.dumps(CHECKED))
 with open(f"{OUT}/events.csv","w",newline="") as f:
     w=csv.DictWriter(f,fieldnames=FIELDS); w.writeheader()
-    for r in out: w.writerow({**r,"alt_sources":" | ".join(r["alt_sources"])})
+    for r in out: w.writerow({**r,"alt_sources":" | ".join(r["alt_sources"]),"occurrences":" | ".join(r["occurrences"])})
+json.dump(CAND,open(os.path.join(_H,"img_candidates.json"),"w"),indent=0)
 from collections import Counter
 print("total",len(out))
 print("GR",sum(r["garden_route"] for r in out))

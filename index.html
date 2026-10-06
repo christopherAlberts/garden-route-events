@@ -2,65 +2,88 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Garden Route Events · concerts, festivals & musicals</title>
-<meta name="description" content="Upcoming concerts, festivals and musicals on the Garden Route (and the wider coast, Cape Town to Jeffreys Bay).">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Garden Route Events · concerts, festivals, markets, fun runs & more</title>
+<meta name="description" content="Discover upcoming concerts, festivals, markets and musicals on the Garden Route (and the wider coast from Cape Town to Jeffreys Bay).">
+<meta name="theme-color" content="#0d3b2e">
+<meta property="og:title" content="Garden Route Events">
+<meta property="og:description" content="Concerts, festivals, markets & musicals from Mossel Bay to Tsitsikamma.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d3b2e'/%3E%3Cpath d='M4 22c4-3 8-3 12 0s8 3 12 0v6H4z' fill='%233fb6a8'/%3E%3Cpath d='M9 18l4-9 4 9zM15 18l4-7 4 7z' fill='%23e9c46a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Ccircle cx=%228%22 cy=%228%22 r=%227%22 fill=%22%230f7a53%22/%3E%3C/svg%3E">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="top">
-  <div class="brand">
-    <h1>Garden Route Events</h1>
-    <p class="sub">Concerts, festivals & musicals · <span id="range"></span></p>
+<header class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <svg class="hills" viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M0 210 C120 150 240 120 360 150 C480 180 560 120 700 110 C840 100 920 170 1060 160 C1200 150 1300 100 1440 120 L1440 320 L0 320Z" fill="rgba(255,255,255,.06)"/><path d="M0 240 C160 200 260 190 420 215 C560 236 660 180 820 185 C980 190 1080 240 1240 225 C1340 216 1400 200 1440 205 L1440 320 L0 320Z" fill="rgba(0,0,0,.12)"/></svg>
+    <svg class="waves" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0 60 C180 100 360 20 540 50 C720 80 900 110 1080 70 C1260 30 1350 50 1440 60 L1440 120 L0 120Z" fill="var(--bg)"/></svg>
   </div>
-  <div class="scope" role="group" aria-label="Area">
-    <button id="scopeGR" class="on" aria-pressed="true">Garden Route</button>
-    <button id="scopeAll" aria-pressed="false">All coast</button>
+  <div class="hero-inner">
+    <p class="eyebrow">Mossel Bay · George · Wilderness · Sedgefield · Knysna · Plett · Tsitsikamma</p>
+    <h1>What's on along the <em>Garden Route</em></h1>
+    <p class="lede">Concerts, festivals, markets, fun runs, musicals &amp; community events: <span id="range">6 Oct 2026 – 28 Feb 2027</span>. Every listing links to its source page.</p>
+    <div class="hero-search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 015.9 12.1l4.2 4.2-1.4 1.4-4.2-4.2A7.5 7.5 0 1110.5 3zm0 2a5.5 5.5 0 100 11 5.5 5.5 0 000-11z"/></svg>
+      <input id="q" type="search" placeholder="Search artists, venues, markets, towns…" aria-label="Search events" autocomplete="off">
+    </div>
+    <div class="stats" id="stats"></div>
   </div>
 </header>
 
-<section class="filters">
-  <input id="q" type="search" placeholder="Search artist, venue, town…" aria-label="Search">
-  <select id="town" aria-label="Town"></select>
-  <select id="cat" aria-label="Category">
-    <option value="">All categories</option>
-    <option value="concert">Concerts</option>
-    <option value="festival">Festivals</option>
-    <option value="musical">Musicals</option>
-  </select>
-  <select id="month" aria-label="Month"></select>
-  <button id="reset" class="link">Reset</button>
-</section>
-
-<nav class="tabs" role="tablist">
-  <button data-view="list" class="on" role="tab">List</button>
-  <button data-view="cal" role="tab">Calendar</button>
-  <button data-view="map" role="tab">Map</button>
-  <span id="count" class="count"></span>
-</nav>
+<div class="bar" id="bar">
+  <div class="bar-inner">
+    <div class="seg" role="group" aria-label="Area">
+      <button id="scopeGR" class="on" aria-pressed="true">Garden Route</button>
+      <button id="scopeAll" aria-pressed="false">All coast</button>
+    </div>
+    <div class="chips" id="catChips" role="group" aria-label="Category">
+      <button data-cat="" class="on">All</button>
+      <button data-cat="concert"><i class="dot concert"></i>Concerts</button>
+      <button data-cat="festival"><i class="dot festival"></i>Festivals</button>
+      <button data-cat="market"><i class="dot market"></i>Markets</button>
+      <button data-cat="funrun"><i class="dot funrun"></i>Fun runs &amp; walks</button>
+      <button data-cat="musical"><i class="dot musical"></i>Musicals</button>
+      <button data-cat="community"><i class="dot community"></i>Church &amp; community</button>
+    </div>
+    <div class="selects">
+      <select id="town" aria-label="Town"></select>
+      <select id="month" aria-label="Month"></select>
+      <button id="reset" class="ghost" title="Clear filters">Reset</button>
+    </div>
+    <nav class="views" role="tablist" aria-label="View">
+      <button data-view="list" class="on" role="tab"><svg viewBox="0 0 24 24"><path d="M4 5h7v6H4zm9 0h7v6h-7zM4 13h7v6H4zm9 0h7v6h-7z"/></svg>List</button>
+      <button data-view="cal" role="tab"><svg viewBox="0 0 24 24"><path d="M7 2v2H5a2 2 0 00-2 2v13a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2h-2V2h-2v2H9V2zm-2 7h14v10H5z"/></svg>Calendar</button>
+      <button data-view="map" role="tab"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7zm0 4.5A2.5 2.5 0 1012 11.5 2.5 2.5 0 0012 6.5z"/></svg>Map</button>
+    </nav>
+  </div>
+</div>
 
 <main>
+  <div class="resultline"><span id="count"></span><span id="activeFilters"></span></div>
   <section id="view-list" class="view"></section>
   <section id="view-cal" class="view" hidden>
-    <div class="calnav">
-      <button id="calPrev" aria-label="Previous month">‹</button>
+    <div class="calhead">
+      <button id="calPrev" class="round" aria-label="Previous month">‹</button>
       <h2 id="calTitle"></h2>
-      <button id="calNext" aria-label="Next month">›</button>
+      <button id="calNext" class="round" aria-label="Next month">›</button>
     </div>
     <div id="calGrid" class="calgrid"></div>
     <div id="calDay" class="calday"></div>
   </section>
   <section id="view-map" class="view" hidden>
     <div id="map"></div>
-    <p class="maplegend"><span class="dot big"></span> Garden Route <span class="dot small"></span> Wider coast · Pins marked “approx.” are placed at the town centre.</p>
+    <p class="maplegend"><span class="lg big"></span>Garden Route <span class="lg small"></span>Wider coast <span class="sep">·</span> Colour = category <span class="sep">·</span> “approx.” pins sit at the town centre</p>
   </section>
 </main>
 
 <footer>
-  <p>Every listing links to the page where it was found. Dates and prices change, so check the ticket page before you go.
-  Data checked <span id="built"></span>. Map © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</p>
+  <div class="foot-inner">
+    <p><strong>Garden Route Events</strong> is an independent listing. Details come from ticketing sites, tourism calendars, venues and official event pages; each card links to its source. Dates and prices change, so check before you go.</p>
+    <p class="muted">Data checked <span id="built"></span> · Photos © their event organisers/source sites · Map © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</p>
+  </div>
 </footer>
 
 <script src="data/events.js"></script>

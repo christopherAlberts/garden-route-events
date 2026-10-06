@@ -1,6 +1,6 @@
 # Garden Route Events
 
-A small static web app listing **real, upcoming concerts, festivals and musicals** on the
+A small static web app listing **real, upcoming concerts, festivals, markets, fun runs & walks, musicals and church/community events** on the
 **Garden Route** (Mossel Bay, Hartenbos and Groot Brak through George, Oudtshoorn, Wilderness, Sedgefield,
 Knysna and Plettenberg Bay to Nature's Valley and Tsitsikamma). It can also show the **rest of the coast**,
 from Cape Town to Jeffreys Bay. The data covers **6 Oct 2026 – 28 Feb 2027** and was last checked on 6 Oct 2026.
@@ -43,6 +43,7 @@ data/events.json    the dataset (array of events)
 data/events.js      the same data as `window.EVENTS = [...]`, so file:// works
 data/events.csv     the same data for spreadsheets (alt_sources joined with " | ")
 tools/              build scripts used to assemble the dataset (see "Refreshing")
+images/             event photos (WebP, ≤600 px), one per event where the source page had an image
 ```
 
 ## Data structure
@@ -53,7 +54,10 @@ Each event in `data/events.json` has these fields:
 |---|---|
 | `id` | `YYYY-MM-DD-title-slug`, unique |
 | `title` | event name as listed |
-| `category` | `concert`, `festival` or `musical` |
+| `category` | `concert`, `festival`, `market`, `funrun` (fun run / walk), `musical` or `community` (church / community) |
+| `recurrence` | for recurring events (mostly markets), e.g. `Every Saturday, 07:30-12:00`; empty otherwise |
+| `occurrences` | for recurring events, the individual dates inside the window (the calendar uses these; the list shows one card) |
+| `image` | relative path to the event's own photo (`images/<id>.webp`, ≤600 px), taken from its source/ticket page; empty = category placeholder is shown |
 | `start_date`, `end_date` | ISO dates; `end_date` is empty for single-day events |
 | `time` | start time or time range as listed (SAST), may be empty |
 | `town`, `region` | e.g. `Knysna` / `Garden Route`, `Hartenbos` / `Mossel Bay`, `Hermanus` / `Overberg` |
@@ -71,14 +75,15 @@ Each event in `data/events.json` has these fields:
 ## Refreshing the data
 
 The dataset was compiled from ticketing platforms and tourism or venue calendars. These include Quicket, Webtickets, Howler,
-iTickets, the Visit Mossel Bay calendar, Visit Knysna, Plett Tourism, On The Route's Garden Route event guide, Artscape, the Baxter
-and official festival sites.
+iTickets, Entry Ninja, RunningCalendar, the Visit Mossel Bay calendar, Visit Knysna, Plett Tourism, ShowMe Plett, toodoo.co.za, On The Route's Garden Route event guide,
+the George Herald what's-on diary, Mossel Bay's December night-market notice, Artscape, the Baxter, and official venue, market, church (Hope Family George) and festival sites.
 
 To refresh it:
 
 1. Re-harvest the listings. The raw harvest (cached HTML/JSON from those sites) is **not** in this repo; the scripts expected it in `raw/`.
 2. Update the hand-checked entries in `tools/manual.py` (festivals and shows found on tourism and official sites).
-3. Run `python3 tools/build.py`. It dedupes, geocodes (Nominatim with a cache in `tools/geocache.json`, at most 1 request per second) and rewrites
+3. Run `python3 tools/build.py`, then `python3 tools/images.py` (downloads each event's og:image / Quicket image and resizes it to `images/<id>.webp`; pages are cached in `raw/imgcache/`), then `python3 tools/build.py` again so the `image` field is filled.
+   `build.py` dedupes, geocodes (Nominatim with a cache in `tools/geocache.json`, at most 1 request per second) and rewrites
    `data/events.json`, `data/events.js` and `data/events.csv`.
 
 For a small change you can also edit `data/events.json` by hand. Then regenerate `data/events.js` with:
