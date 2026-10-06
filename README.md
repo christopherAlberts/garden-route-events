@@ -5,7 +5,7 @@ A small static web app listing **real, upcoming concerts, festivals and musicals
 Knysna and Plettenberg Bay to Nature's Valley and Tsitsikamma). It can also show the **rest of the coast**,
 from Cape Town to Jeffreys Bay. The data covers **6 Oct 2026 – 28 Feb 2027** and was last checked on 6 Oct 2026.
 
-**Live site:** _(added after publishing)_
+**Live site:** [christopheralberts.github.io/garden-route-events](https://christopheralberts.github.io/garden-route-events/)
 
 - **List view:** event cards. Garden Route events come first.
 - **Calendar view:** a month grid. Multi-day events run across their days; click a day to see its events.
