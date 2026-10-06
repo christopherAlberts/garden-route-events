@@ -248,3 +248,65 @@ body.modal-open{overflow:hidden}
 @media (max-width:560px){.modal{padding:0;align-items:flex-end}.mbox{border-radius:20px 20px 0 0;max-height:92vh}.mbody h2{font-size:1.3rem}}
 .toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);background:#10231c;color:#fff;padding:10px 16px;border-radius:12px;font-weight:600;font-size:.9rem;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:2500;max-width:90vw}
 .toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* restaurants tab */
+body.v-rest #catChips,body.v-rest #month,body.v-rest #offToggle{display:none!important}
+.rintro{color:var(--mut);font-size:.9rem;margin:6px 0 4px;max-width:760px}
+.rcard .thumb{aspect-ratio:16/9}
+.rcard .cat.rest,.cat.rest{background:var(--forest2)}
+.ph.rest{background:radial-gradient(circle at 70% 25%,#fde68a 0,transparent 45%),linear-gradient(135deg,#7c2d12,#c2410c 55%,#fb923c)}
+.ph.rest svg{width:56px;height:56px;fill:rgba(255,255,255,.85)}
+.rcard .where a{color:inherit;text-decoration:none}.rcard .where a:hover{text-decoration:underline}
+.rblurb{margin:6px 0 4px;font-size:.88rem;color:var(--mut)}
+.rh{margin:12px 0 4px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--forest2)}
+@media (prefers-color-scheme:dark){.rh{color:var(--teal)}}
+.rlist{margin:0;padding:0;list-style:none;font-size:.88rem}
+.rlist li{padding:4px 0;border-bottom:1px dashed var(--line)}.rlist li:last-child{border-bottom:0}
+.rlist b{display:inline-block;min-width:72px;margin-right:4px}
+.rnone{margin:0;font-size:.85rem;color:var(--mut);font-style:italic}
+.rlink{background:none;border:0;padding:0;text-align:left;cursor:pointer;color:var(--ocean);font:inherit}
+.rlink:hover{text-decoration:underline}@media (prefers-color-scheme:dark){.rlink{color:var(--teal)}}
+.rlink b{color:var(--ink)}
+.rrec{font-size:.75rem;color:var(--mut)}
+.rnote{margin:10px 0 0;font-size:.78rem;color:var(--mut);font-style:italic}
+.rsrc{margin:8px 0 0;font-size:.72rem;color:var(--mut)}.rsrc a{color:var(--mut)}
+.rcard.hi{outline:3px solid var(--teal);outline-offset:2px}
+
+/* quiz nights + festive dining */
+:root{--quiz:#4f46e5;--festive:#b4233c}
+@media (prefers-color-scheme:dark){:root{--quiz:#818cf8;--festive:#f87171}}
+.dot.quiz,.cat.quiz{background:var(--quiz)}.dot.festive,.cat.festive{background:var(--festive)}
+.ph.quiz{background:radial-gradient(circle at 70% 25%,#c7d2fe 0,transparent 45%),linear-gradient(135deg,#1e1b4b,#4f46e5 55%,#a5b4fc)}
+.ph.festive{background:radial-gradient(circle at 25% 20%,#fecaca 0,transparent 45%),linear-gradient(135deg,#14532d,#b4233c 55%,#f59e0b)}
+.chip.quiz{background:color-mix(in srgb,var(--quiz) 14%,transparent);border-color:var(--quiz)}
+.chip.festive{background:color-mix(in srgb,var(--festive) 14%,transparent);border-color:var(--festive)}
+.pe .pc.quiz{background:#4f46e5}.pe .pc.festive{background:#b4233c}
+#catChips .nyechip{border-style:dashed;border-color:#d4a017}
+#catChips .nyechip.on{background:#1f2a5a;color:#fff;border-style:solid;border-color:#1f2a5a}
+.nyebadge{display:inline-block;font-size:.72rem;font-weight:600;padding:.1rem .45rem;border-radius:999px;background:#1f2a5a;color:#fff;margin-left:.3rem}
+
+/* restaurants as a category */
+:root{--restaurant:#c2410c}
+@media (prefers-color-scheme:dark){:root{--restaurant:#fb923c}}
+.dot.restaurant,.cat.restaurant{background:var(--restaurant)}
+.ph.restaurant{background:radial-gradient(circle at 70% 25%,#fed7aa 0,transparent 45%),linear-gradient(135deg,#7c2d12,#c2410c 55%,#fdba74)}
+.chip.restaurant{background:color-mix(in srgb,var(--restaurant) 14%,transparent);border-color:var(--restaurant)}
+.pe .pc.restaurant{background:#c2410c}
+.atrest{display:flex;align-items:center;gap:4px;font-size:.85rem;color:var(--mut)}
+.atrest svg{width:15px;height:15px;fill:currentColor;flex:none}
+.atrest .rlink{font-weight:600;color:var(--restaurant);padding:0}
+.rcard .thumb{cursor:pointer}
+/* Happening soon: same image size as the grid; text clamped, equal heights, buttons aligned */
+.soon{align-items:stretch}
+.soon .card{height:100%}
+.soon .body{min-height:0}
+.soon .body h3{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.6em}
+.soon .when,.soon .where span,.soon .atrest span,.soon .atrest .rlink{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.soon .where,.soon .atrest{min-width:0}
+.soon .where span{min-width:0;flex:1}
+.soon .notes,.soon .stnote,.soon .grtag,.soon .rblurb,.soon .rh,.soon .rlist,.soon .rnone{display:none}
+.soon .foot{margin-top:auto;flex-wrap:nowrap}
+.soon .foot .src{display:none}
+.soon .foot .btn{padding:.4rem .7rem;font-size:.8rem}
+.soon .foot .btn,.soon .foot .sharebtn{flex:none;white-space:nowrap}
+.soon .foot .price{min-width:0;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:.78rem}

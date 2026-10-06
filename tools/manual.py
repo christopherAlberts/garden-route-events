@@ -331,3 +331,153 @@ add(title="Stilbaai NSRI 10 km & 6 km Fun Run (New Year's Eve)",category="funrun
     source_url="https://runningcalendar.co.za/events/stilbaai-10km/2026",source_name=RC,alt_sources=["https://racepass.com/za/races/stillbaai-10km"],
     notes="Annual New Year's Eve run in aid of NSRI Stilbaai: 10 km race and 6 km fun run/walk, start and finish at the NSRI building. The route runs along the Goukou River, the sea and dunes. The 2025 edition drew about 1,200 runners. RunningCalendar lists only basic details so far; entry fees are still to be confirmed.",
     lat=-34.3642194,lng=21.4335508,geo_source="event page")
+
+# ---- restaurant listings (approved by Christopher, 6 Oct 2026) ----
+import datetime as _dt
+def _weekly(wds,start="2026-10-06",end="2027-02-28"):
+    d=_dt.date.fromisoformat(start);e=_dt.date.fromisoformat(end);out=[]
+    while d<=e:
+        if d.weekday() in wds: out.append(d.isoformat())
+        d+=_dt.timedelta(days=1)
+    return out
+add(title="Vinyl Krispies: Bassline Society rooftop vinyl session at Pili Pili",category="concert",start_date="2026-11-28",time="12:00-21:00",town="Sedgefield",
+    venue="Pili Pili Sedgefield (rooftop)",venue_address="2 Claude Urban Drive, Myoli Beach, Sedgefield",price_from="R100",ticket_url="",
+    source_url="https://www.toodoo.co.za/vinyl-krispies-sedgefield/",source_name="toodoo.co.za",
+    notes="Afternoon of house music and vinyl culture on the Pili Pili rooftop: classic records (vinyl only), cold drinks and ocean views. Entry R100.",lat=-34.0348895,lng=22.8068601,geo_source="nominatim")
+_tw=_weekly({2,4})
+add(title="Live entertainment at Tapas & Oysters (Wednesday & Friday evenings)",category="concert",start_date=_tw[0],end_date=_tw[-1],occurrences=_tw,
+    recurrence="Every Wednesday and Friday evening",time="Evenings",town="Knysna",venue="Tapas & Oysters, Thesen Island",venue_address="TH 29, Thesen Island, Knysna",
+    price_from="",ticket_url="",source_url="https://tapasknysna.co.za/contact/",source_name="Tapas & Oysters (official site)",
+    notes="The restaurant advertises live entertainment on Wednesday and Friday evenings. No artists or start times are listed; dates here are the weekly pattern within the window, so check with the restaurant (044 382 7196) before going.",
+    lat=-34.048978,lng=23.048194,geo_source="event page")
+_hn=_weekly({1});_hq=_weekly({3})
+add(title="Noot vir Noot music quiz night at Hennie's George (Tuesdays)",category="quiz",start_date=_hn[0],end_date=_hn[-1],occurrences=_hn,
+    recurrence="Every Tuesday, 19:00",time="19:00",town="George",venue="Hennie's George",venue_address="42 York Street, George",
+    price_from="",ticket_url="",source_url="https://www.therealhennies.co.za/branches/hennies-george",source_name="Hennie's George (official branch page)",
+    notes="Afrikaans music quiz night in the style of the TV show; prizes to be won, free entry (first come, first served). Hennie's October 2026 What's On poster says 'Every Tuesday 19:00'; dates after October follow that weekly pattern and are not yet confirmed. Enquiries: 062 579 8350.",alt_sources=["https://www.therealhennies.co.za/img/posters/whatson-oct-2026/george.jpg"],_img="https://www.therealhennies.co.za/img/posters/whatson-oct-2026/george.jpg",
+    lat=-33.9658718,lng=22.4512367,geo_source="nominatim")
+add(title="Quiz Night at Hennie's George (Thursdays)",category="quiz",start_date=_hq[0],end_date=_hq[-1],occurrences=_hq,
+    recurrence="Every Thursday, 19:00",time="19:00",town="George",venue="Hennie's George",venue_address="42 York Street, George",
+    price_from="",ticket_url="",source_url="https://www.therealhennies.co.za/branches/hennies-george",source_name="Hennie's George (official branch page)",
+    notes="Pub quiz night; prizes to be won, free entry (first come, first served). Hennie's October 2026 What's On poster says 'Every Thursday 19:00'; dates after October follow that weekly pattern and are not yet confirmed. Enquiries: 062 579 8350.",alt_sources=["https://www.therealhennies.co.za/img/posters/whatson-oct-2026/george.jpg"],_img="https://www.therealhennies.co.za/img/posters/whatson-oct-2026/george.jpg",
+    lat=-33.9658718,lng=22.4512367,geo_source="nominatim")
+
+for _t,_d,_tm in [("John Masser live at Hennie's George","2026-10-17","18:00"),("Landman live at Hennie's George","2026-10-30","19:00")]:
+    add(title=_t,category="concert",start_date=_d,time=_tm,town="George",venue="Hennie's George",venue_address="42 York Street, George",
+        price_from="Free",ticket_url="",source_url="https://www.therealhennies.co.za/img/posters/whatson-oct-2026/george.jpg",source_name="Hennie's George (October 2026 What's On poster)",
+        alt_sources=["https://www.therealhennies.co.za/branches/hennies-george"],
+        notes="Live music at Hennie's George. Free entry, first come, first served (per the branch's October 2026 What's On poster).",
+        lat=-33.9658718,lng=22.4512367,geo_source="nominatim",_img="https://www.therealhennies.co.za/img/posters/whatson-oct-2026/george.jpg")
+_hk=_weekly({2})
+add(title="Donkiekar Boere Orkes live at Hoeka Toeka Pub & Diner (Wednesdays)",category="concert",start_date=_hk[0],end_date=_hk[-1],occurrences=_hk,
+    recurrence="Every Wednesday, 18:00-21:00",time="18:00-21:00",town="Hoekwil",venue="Hoeka Toeka Pub & Diner",venue_address="48 Church Road, Hoekwil",
+    price_from="",ticket_url="",source_url="https://www.foodyas.com/ZA/Hoekwil/837657939628374/Hoeka-Toeka-Pub-%26-Diner",source_name="Hoeka Toeka Pub & Diner (Facebook posts, via Foodyas)",
+    notes="Boere-orkes night with the Donkiekar Boere Orkes, fire and comfort food. The pub's Facebook posts (Aug-Sep 2026) say 'every Wednesday from 6 to 9'; later dates follow that pattern and aren't individually confirmed. Bookings essential: 079 917 2222.")
+
+# ---- Quiz nights (added 2026-10-06) ----
+def _nth(wd,nths,start="2026-10-06",end="2027-02-28"):
+    """dates in window that are the n-th (1..5) or last (-1) given weekday of their month"""
+    out=[]
+    for d in _weekly({wd},start,end):
+        x=_dt.date.fromisoformat(d); n=(x.day-1)//7+1; last=(x+_dt.timedelta(days=7)).month!=x.month
+        if n in nths or (-1 in nths and last): out.append(d)
+    return out
+_HP="https://www.therealhennies.co.za/img/posters/whatson-oct-2026/%s.jpg"
+_HB="https://www.therealhennies.co.za/branches/hennies-%s"
+for _slug,_town,_name,_addr,_wd,_wdn,_ph,_price,_ll in [
+    ("hartenbos","Hartenbos","Hennie's Hartenbos","156 Paardekraal Avenue, Hartenbos, Mossel Bay",2,"Wednesday","044 868 0677","Free",None),
+    ("oudtshoorn","Oudtshoorn","Hennie's Oudtshoorn","114 Baron van Rheede Street, Oudtshoorn",3,"Thursday","078 884 7268","Free",None),
+    ("durbanville","Cape Town","Hennie's Durbanville","7B Pampoenkraal Lane, Durbanville, Cape Town",1,"Tuesday","066 374 5732","Free",(-33.8327892,18.6479816,"nominatim (street)")),
+    ("brackenfell","Cape Town","Hennie's Brackenfell","Shop 57, Brackenfell Shopping Centre, Old Paarl Road, Brackenfell, Cape Town",1,"Tuesday","068 924 7654","R30",(-33.8674704,18.7062255,"nominatim (street, approximate)")),
+    ]:
+    _d=_weekly({_wd})
+    _free="free entry, first come, first served" if _price=="Free" else "tickets R30"
+    add(title="Quiz Night at %s (%ss)"%(_name,_wdn),category="quiz",start_date=_d[0],end_date=_d[-1],occurrences=_d,
+        recurrence="Every %s, 19:00"%_wdn,time="19:00",town=_town,venue=_name,venue_address=_addr,price_from=_price,ticket_url="",
+        source_url=_HB%_slug,source_name="%s (official branch page)"%_name,alt_sources=[_HP%_slug],_img=_HP%_slug,
+        notes="Pub quiz night with prizes to be won; %s. The branch's October 2026 What's On poster says 'Every %s 19:00' and the branch page lists the next quiz; dates after October follow that weekly pattern and are not yet confirmed. Enquiries: %s."%(_free,_wdn,_ph),
+        **({"lat":_ll[0],"lng":_ll[1],"geo_source":_ll[2]} if _ll else {}))
+_GRT="https://www.knysna.n2rs.com/knysna-diary-october.html"
+_GRN=("Garden Route Trivia League team quiz run by Craft Quiz Nights: suitable for all ages, teams of 4 to 6 ideal (no minimum or maximum), prizes sponsored by the venue and Craft Quiz Nights. "
+      "Listed in the Knysna Diary for October 2026 as '%s'; later dates follow that pattern and aren't individually confirmed. No start time published; contact 082 335 9406.")
+for _t,_town,_ven,_addr,_dates,_rec,_ll in [
+    ("Garden Route Trivia League quiz at Goose Valley Golf Club (Tuesdays)","Plettenberg Bay","Goose Valley Golf Club","Goose Valley Golf Club, Plettenberg Bay",_weekly({1}),"Tuesdays",None),
+    ("Garden Route Trivia League quiz at Red Bridge Brewing Co. (1st Wednesday)","Knysna","Red Bridge Brewing Co.","Noble Street, Knysna Industria, Knysna",_nth(2,{1}),"1st Wednesday",(-34.04692,23.0772008,"nominatim")),
+    ("Garden Route Trivia League quiz at Knysna Distillery (2nd-5th Wednesdays)","Knysna","Knysna Distillery","5 Uil Street, Knysna Industria, Knysna",_nth(2,{2,3,4,5}),"2nd, 3rd, 4th (+5th) Wednesdays",(-34.0448812,23.0727766,"nominatim")),
+    ("Garden Route Trivia League quiz at Rocket, George (Thursdays)","George","Rocket","Arbour Road, Heatherlands, George",_weekly({3}),"Thursdays",(-33.946309,22.456057,"nominatim")),
+    ]:
+    add(title=_t,category="quiz",start_date=_dates[0],end_date=_dates[-1],occurrences=_dates,recurrence=_rec,time="",town=_town,venue=_ven,venue_address=_addr,
+        price_from="",ticket_url="",source_url=_GRT,source_name="Knysna Diary (n2rs.com), October 2026",notes=_GRN%_rec,
+        **({"lat":_ll[0],"lng":_ll[1],"geo_source":_ll[2]} if _ll else {}))
+_bq=_nth(3,{-1})
+add(title="Quiz Night at The Backyard Beer Garden (last Thursday of the month)",category="quiz",start_date=_bq[0],end_date=_bq[-1],occurrences=_bq,
+    recurrence="Last Thursday of every month, 19:00-21:00",time="19:00-21:00",town="Jeffreys Bay",venue="The Backyard Beer Garden",venue_address="12 Oosterland Street, Jeffreys Bay",
+    price_from="",ticket_url="",source_url="https://9ty9.co.za/events/quiz-night-a-the-backyard-2026-09-24/",source_name="9ty9.co.za (Jeffreys Bay what's on)",
+    alt_sources=["https://9ty9.co.za/events/quiz-night-a-the-backyard-2026-08-27/"],
+    notes="Monthly quiz night hosted by Brian C. Pyle, every last Thursday. Listings exist for 27 Aug and 24 Sep 2026; the dates here follow that monthly pattern and aren't individually confirmed.",
+    lat=-34.051257,lng=24.921325,geo_source="nominatim (street)")
+
+# ---- Festive dining: Christmas 2026 (added 2026-10-06). Only 2026-dated offers with a price, menu or booking page. ----
+add(title="Christmas Day Lunch at Moody Lagoon, Benguela Cove",category="festive",start_date="2026-12-25",time="12:00",town="Hermanus",venue="Moody Lagoon restaurant, Benguela Cove Lagoon Wine Estate",
+    venue_address="Benguela Cove Lagoon Wine Estate, Walker Bay, Hermanus",price_from="",ticket_url="https://benguelacove.co.za/products/christmas-lunch-2026",
+    source_url="https://benguelacove.co.za/products/christmas-lunch-2026",source_name="Benguela Cove (official site)",
+    notes="Multi-course Christmas lunch from 12:00: camembert milk-bun wreath to share; choice of honey-glazed gammon, stuffed chicken or smoked roast beef with sides; Amarula malva pudding or summer trifle. Kids' menu available. Christmas brunch 09:30-11:30 also offered. Price per person not published on the page; a 50% deposit secures the booking. Menu: on the booking page (downloadable). Bookings: 087 357 0637, info@benguelacove.co.za.",
+    lat=-34.3459946,lng=19.1346456,geo_source="nominatim")
+_LB="https://www.lagoonbeachhotel.co.za/dining/events/"
+add(title="Christmas Day Lunch buffet at Lagoon Beach Hotel",category="festive",start_date="2026-12-25",time="12:00",town="Cape Town",venue="Lagoon Beach Hotel & Spa",
+    venue_address="1 Lagoon Gate Drive, Milnerton, Cape Town",price_from="R850 pp",ticket_url=_LB+"christmas-day-lunch-a-spectacular-festive-feast",
+    source_url=_LB+"christmas-day-lunch-a-spectacular-festive-feast",source_name="Lagoon Beach Hotel (official site)",
+    notes="Christmas buffet with sushi station, turkey, sirloin, pork belly, linefish and dessert buffet; live entertainment, welcome drink, crackers and a festive gift. R850 per person; children under 12 half price, under 5 free. Full pre-payment required. Menu: on the event page. Bookings: events@lagoonbeachhotel.co.za, 021 528 2000.",
+    lat=-33.8922946,lng=18.4826759,geo_source="nominatim")
+add(title="Frugal & Festive Christmas Day buffet at Lagoon Beach Hotel",category="festive",start_date="2026-12-25",time="",town="Cape Town",venue="Lagoon Beach Hotel & Spa",
+    venue_address="1 Lagoon Gate Drive, Milnerton, Cape Town",price_from="R500 pp",ticket_url=_LB+"frugal-festive-an-affordable-christmas-day-lunch-buffet",
+    source_url=_LB+"frugal-festive-an-affordable-christmas-day-lunch-buffet",source_name="Lagoon Beach Hotel (official site)",
+    notes="Lighter, budget Christmas Day lunch buffet: roast turkey, gammon, linefish, Christmas pudding, mince pies, sherry trifle. R500 per person including a welcome drink. Menu: on the event page. Bookings: events@lagoonbeachhotel.co.za, 021 528 2000.",
+    lat=-33.8922946,lng=18.4826759,geo_source="nominatim")
+_CG="https://www.capegrace.com/experiences/festive-season/"
+for _t,_d,_tm,_p,_n in [
+    ("Christmas Eve Dinner at Heirloom, Cape Grace","2026-12-24","18:30-20:00 (seatings)","R2,500 pp","Welcome drink and live pianist, festive starters table, choice of three mains and family-style desserts. R2,500 per person. Seatings from 18:30, final seating 20:00. Smart casual."),
+    ("Christmas Day Lunch at Heirloom, Cape Grace","2026-12-25","12:00-15:00","R3,000 pp","Festive lunch with a classical live trio, overlooking the V&A Waterfront marina. R3,000 per person excluding beverages; under-12s may choose the festive or junior à la carte menu. Smart casual."),
+    ("Christmas Day Dinner at Heirloom, Cape Grace","2026-12-25","18:30-21:30","R2,500 pp","Festive dinner with live pianist. R2,500 per person excluding beverages. Smart casual."),
+    ]:
+    add(title=_t,category="festive",start_date=_d,time=_tm,town="Cape Town",venue="Heirloom Restaurant, Cape Grace",venue_address="West Quay Road, V&A Waterfront, Cape Town",
+        price_from=_p,ticket_url=_CG,source_url=_CG,source_name="Cape Grace (official site)",notes=_n+" Bookings: capegrace.reservations@fairmont.com.",
+        lat=-33.9087013,lng=18.4204936,geo_source="nominatim")
+add(title="Christmas Day Lunch at Quentin at Oakhurst, Hout Bay",category="festive",start_date="2026-12-25",time="Lunch",town="Cape Town",venue="Quentin at Oakhurst",
+    venue_address="Oakhurst Farm, Main Road, Hout Bay",price_from="",ticket_url="https://oakhurstbarn.com/menu/christmas-day-lunch/",
+    source_url="https://oakhurstbarn.com/menu/christmas-day-lunch/",source_name="Quentin at Oakhurst (official site)",
+    notes="Published 'Christmas Menu 2026': Brut with gravadlax blinis, vichyssoise with Kalahari truffle, Cape seafood salad, goose liver terrine, buchu sorbet, roast duck with apricot and pecan stuffing, Christmas pudding and mince pies. Price not published. The restaurant is open for lunch only on 25 December. Bookings: 021 790 4888, bookings@oakhurstbarn.com.",
+    lat=-34.0205556,lng=18.3747623,geo_source="nominatim (suburb)")
+
+# ---- New Year's Eve 2026 (added 2026-10-06); real categories kept, the app tags them via the 'nye' flag ----
+add(title="Great Gatsby New Year's Eve party at Benguela Cove",category="concert",start_date="2026-12-31",end_date="2027-01-01",time="19:30-01:00",town="Hermanus",
+    venue="Benguela Cove Lagoon Wine Estate",venue_address="Benguela Cove Lagoon Wine Estate, Walker Bay, Hermanus",price_from="R850 pp",
+    ticket_url="https://benguelacove.co.za/products/new-years-eve-2026",source_url="https://benguelacove.co.za/products/new-years-eve-2026",source_name="Benguela Cove (official site)",
+    notes="Roaring Twenties NYE party by the Bot River Lagoon: live DJ, 360-degree video booth, midnight countdown; Gatsby / black-tie dress. Standard ticket R850 pp early bird (until 15 Nov), R950 after; with picnic basket R1,350 / R1,450; under-12 R450. Capped at 180 guests. Dinner at Moody Lagoon restaurant can be booked separately.",
+    lat=-34.3459946,lng=19.1346456,geo_source="nominatim")
+add(title="New Year's Eve White Marina Soirée at Cape Grace",category="festive",start_date="2026-12-31",end_date="2027-01-01",time="18:30-01:00",town="Cape Town",
+    venue="Heirloom Restaurant, Cape Grace",venue_address="West Quay Road, V&A Waterfront, Cape Town",price_from="R6,500 pp",
+    ticket_url="https://www.capegrace.com/experiences/festive-season/",source_url="https://www.capegrace.com/experiences/festive-season/",source_name="Cape Grace (official site)",
+    notes="Canapés and Blanc de Blanc in the Library Lounge, dinner in Heirloom, dessert on the Pool Deck, live music. R6,500 per person, R3,500 under 12. Yacht-chic dress encouraged. Bookings: capegrace.reservations@fairmont.com.",
+    lat=-33.9087013,lng=18.4204936,geo_source="nominatim")
+add(title="New Year's Eve at Bascule Bar, Cape Grace",category="concert",start_date="2026-12-31",end_date="2027-01-01",time="12:00-02:00",town="Cape Town",
+    venue="Bascule Bar, Cape Grace",venue_address="West Quay Road, V&A Waterfront, Cape Town",price_from="",
+    ticket_url="",source_url="https://www.capegrace.com/experiences/festive-season/",source_name="Cape Grace (official site)",
+    notes="Waterfront NYE at Bascule with a live jazz band, DJ, cocktails and the bar menu. Tables first come, first served (no reservations); no children. No entry price published.",
+    lat=-33.9087013,lng=18.4204936,geo_source="nominatim")
+add(title="New Year's Eve dinner at The Commodore Hotel (V&A Waterfront)",category="festive",start_date="2026-12-31",end_date="2027-01-01",time="19:30-02:00",town="Cape Town",
+    venue="The Commodore Hotel",venue_address="Portswood Road, V&A Waterfront, Cape Town",price_from="R1,395 pp",
+    ticket_url="https://www.legacyhotels.co.za/commodore-hotel/new-year-2026",source_url="https://www.legacyhotels.co.za/commodore-hotel/new-year-2026",source_name="The Commodore Hotel (Legacy Hotels)",
+    notes="International buffet with live cooking stations and live entertainment; midnight toast on the terrace with views of the Waterfront fireworks. R1,395 per adult. Bookings essential: commodore@legacyhotels.com, 021 415 1000.",
+    lat=-33.9050499,lng=18.4183932,geo_source="nominatim (street)")
+add(title="MonteVista Community New Year's Eve Dinner Dance",category="community",start_date="2026-12-31",end_date="2027-01-01",time="19:00-01:00",town="Cape Town",
+    venue="Edgemead Hall",venue_address="100 Edgemead Drive, Edgemead, Cape Town",price_from="R450 pp",
+    ticket_url="https://www.quicket.co.za/events/390561-montevista-community-new-years-eve-dinner-dance/",source_url="https://www.quicket.co.za/events/390561-montevista-community-new-years-eve-dinner-dance/",source_name="Quicket",
+    alt_sources=["https://www.findmy.co.za/entertainment/events_details/montevista-community-new-years-eve-dinner-dance/63411"],
+    notes="Community dinner dance with live band 'Just Like That', lamb on the spit and braaied chicken; bring your own drinks. R450 pp early bird (to 30 Nov), R495 after; bookings close 18 Dec. Proceeds go to neighbourhood security cameras.",
+    lat=-33.8802452,lng=18.5424385,geo_source="event page",_img="https://images.quicket.co.za/0977885_0.jpeg")
+add(title="New Year's Fireworks 80's Lumo Party Cruise",category="concert",start_date="2026-12-31",end_date="2027-01-01",time="22:00-01:15",town="Cape Town",
+    venue="Cape Town Cruises, V&A Waterfront",venue_address="Shop 8, Quay 5, V&A Waterfront, Cape Town",price_from="R1500",
+    ticket_url="https://www.quicket.co.za/events/383158-new-years-fireworks-80s-lumo-party-cruise/",source_url="https://www.quicket.co.za/events/383158-new-years-fireworks-80s-lumo-party-cruise/",source_name="Quicket",
+    notes="Three-hour 80s neon party cruise along the Cape Town coastline: boarding 22:00, departure 22:15, back 01:15; shared charcuterie boards and a bottle of bubbly per couple, fireworks at midnight. Listing says R1,899 per person; Quicket shows tickets from R1,500. Info: 066 428 9676.",
+    lat=-33.9061852,lng=18.4209652,geo_source="event page",_img="https://images.quicket.co.za/0942732_0.jpeg")

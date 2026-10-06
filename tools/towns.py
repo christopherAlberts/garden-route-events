@@ -2,6 +2,7 @@
 TOWNS={
  "George":("George, Western Cape","Garden Route",True),
  "Wilderness":("Wilderness, George, Western Cape","Garden Route",True),
+ "Hoekwil":("Hoekwil, Western Cape","Garden Route",True),
  "Sedgefield":("Sedgefield, Western Cape","Garden Route",True),
  "Knysna":("Knysna, Western Cape","Garden Route",True),
  "Plettenberg Bay":("Plettenberg Bay, Western Cape","Garden Route",True),
