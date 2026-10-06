@@ -1,8 +1,8 @@
 {
- "2026-10-17-birdlife-plett-birding-walk-october": [
+ "2027-01-30-two-lagoons-30-km-10-km": [
   [
-   "postponed",
-   "title/notes"
+   "sold out",
+   "all ticket types SoldOut (schema) @ https://runningcalendar.co.za/events/two-lagoons/2026"
   ]
  ],
  "2026-10-09-steve-hofmeyr-heroes-live": [
@@ -24,21 +24,35 @@
  "2026-10-30-h-ours": [
   [
    "sold out",
-   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/386575-hours/"
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/386575-hours/#tickets"
   ],
   [
    "sold out",
-   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/386575-hours/#tickets"
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/386575-hours/"
   ]
  ],
  "2026-10-31-boon-presents-good-feeling": [
   [
    "sold out",
-   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/387605-boon-presents-good-feeling/#tickets"
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/387605-boon-presents-good-feeling/"
   ],
   [
    "sold out",
-   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/387605-boon-presents-good-feeling/"
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/387605-boon-presents-good-feeling/#tickets"
+  ]
+ ],
+ "2026-11-07-sportsmans-warehouse-winelands-marathon-42-2-21-1-": [
+  [
+   "sold out",
+   "title/notes"
+  ],
+  [
+   "sold out",
+   "all ticket types SoldOut (schema) @ https://runningcalendar.co.za/events/winelands-marathon/2026"
+  ],
+  [
+   "sold out",
+   "page text: 'This event is sold out' @ https://runningcalendar.co.za/events/winelands-marathon/2026"
   ]
  ]
 }
