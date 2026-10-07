@@ -24,6 +24,7 @@ TOWNS={
  "Stilbaai":("Stilbaai, Western Cape","Hessequa (Stilbaai)",False),
  "Riversdale":("Riversdale, Western Cape","Hessequa (Stilbaai)",False),
  "Hermanus":("Hermanus, Western Cape","Overberg",False),
+ "Swellendam":("Swellendam, Western Cape","Overberg",False),
  "Kleinmond":("Kleinmond, Western Cape","Overberg",False),
  "Pringle Bay":("Pringle Bay, Western Cape","Overberg",False),
  "Stanford":("Stanford, Western Cape","Overberg",False),

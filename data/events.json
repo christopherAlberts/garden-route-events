@@ -21108,6 +21108,38 @@
   "last_checked": "2026-10-07"
  },
  {
+  "id": "2027-02-11-up-the-creek-music-festival-2027",
+  "title": "Up The Creek Music Festival 2027",
+  "category": "festival",
+  "status": "scheduled",
+  "status_note": "",
+  "start_date": "2027-02-11",
+  "end_date": "2027-02-14",
+  "time": "",
+  "recurrence": "",
+  "occurrences": [],
+  "nye": false,
+  "xmas": false,
+  "town": "Swellendam",
+  "region": "Overberg",
+  "garden_route": false,
+  "venue": "Up the Creek venue camp (Breede River)",
+  "venue_address": "Breede River, near Swellendam",
+  "lat": -34.1785,
+  "lng": 20.49,
+  "geo_source": "event page",
+  "price_from": "R1,705",
+  "ticket_url": "https://utc.howler.co.za/events/up-the-creek-music-festival-2027-d4d7",
+  "source_url": "https://utc.howler.co.za/events/up-the-creek-music-festival-2027-d4d7",
+  "source_name": "Howler",
+  "alt_sources": [
+   "https://www.upthecreek.co.za"
+  ],
+  "image": "",
+  "notes": "Riverside camping music festival: 4 stages, 50+ bands. 18+. From R1,705 (Patron and Early tiers sold out).",
+  "last_checked": "2026-10-07"
+ },
+ {
   "id": "2027-02-12-the-resurrection-files",
   "title": "The Resurrection Files",
   "category": "concert",
