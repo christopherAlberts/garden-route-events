@@ -7,5 +7,5 @@ self.addEventListener('fetch',function(e){
   var r=e.request;if(r.method!=='GET')return;
   e.respondWith(caches.open(C).then(function(c){return c.match(r,{ignoreSearch:r.mode==='navigate'}).then(function(hit){
     var net=fetch(r).then(function(res){if(res&&(res.ok||res.type==='opaque'))c.put(r,res.clone());return res}).catch(function(){return hit});
-    return hit||net}))});
+    return hit||net})}));
 });
