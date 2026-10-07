@@ -625,5 +625,21 @@
 "26 Beach East Boulevard, Die Voor Bay, Mossel Bay": null,
 "The Beach Bar, Mossel Bay, Western Cape": null,
 "Crotz Road, Asla, Mossel Bay": null,
-"Tau Lifestyle Cafe, Mossel Bay, Western Cape": null
+"Tau Lifestyle Cafe, Mossel Bay, Western Cape": null,
+"George (route posted on GTR WhatsApp group before 12:00 on the day)": null,
+"Garden Route Trail Running, George, Western Cape": null,
+"Camphersdrift Road, George": null,
+"Camphersdrift Road, George, Western Cape": null,
+"Bruns Street, Mossel Bay": null,
+"Mossel Bay Sports Ground, Mossel Bay, Western Cape": null,
+"Century City, Cape Town": [
+-33.8890503,
+18.5119603,
+"Century City, Milnerton, City of Cape Town, Western Cape, South Africa"
+],
+"Fish Hoek Beach, Cape Town": [
+-34.1369724,
+18.4342254,
+"Fish Hoek Beach, Fish Hoek, Cape Town Ward 64, Fish Hoek, City of Cape Town, Western Cape, South Africa"
+]
 }

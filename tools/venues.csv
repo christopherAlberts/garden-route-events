@@ -2,12 +2,14 @@ name,town,region,garden_route,type,events_listed,urls,notes
 Meiringspoort,De Rust,Garden Route,True,event venue,1,https://www.entryninja.com/events/83907-32nd-meiringspoort-2026,
 66 Olympic St,George,Garden Route,True,event venue,1,https://www.quicket.co.za/events/397024-song-of-hope-concert/,
 Bossa George,George,Garden Route,True,venue (no listing),0,https://bossagoodtimes.com/branches/george/,Heard as 'Borsa'. No events/specials found 7 Oct 2026.
+Camphersdrift Road (in the dip),George,Garden Route,True,event venue,1,https://gtrtrails.run/gtr-runs/thursday-gtr-time-trial/,
 Clay Cafe George,George,Garden Route,True,restaurant card,0,https://visitgeorge.co.za/clay-cafe-kids-combo/ | https://www.claycafegeorge.co.za/,No Clay Cafe in Hartenbos could be found (searches only return the Cape Town branches). No events found in the window; the 3rd-anniversary party with live music was in Sept 2026.
 Cula Restaurant & Bar,George,Garden Route,True,event venue; restaurant card,1,https://cula.co.za/reservations/ | https://visitgeorge.co.za/directory/cula-restaurant-and-bar/ | https://www.cula.co.za/,Name check: “Cula” is correct. Specials read from the posters on cula.co.za (7 Oct 2026); posters are undated.
 Deja Vu Equestrian,George,Garden Route,True,event venue,1,https://www.toodoo.co.za/rave-run-4km-gobi-hybrid-games-george/,
 Eden Meander Shopping Centre,George,Garden Route,True,event venue,1,https://www.toodoo.co.za/eden-meander-fun-run-walk-2026/,
 Fancourt,George,Garden Route,True,event venue,2,https://runningcalendar.co.za/races/city/george | https://www.quicket.co.za/events/397238-wild-mongoo-fashion-show/,
 Garden Route Botanical Garden,George,Garden Route,True,event venue,3,https://www.entryninja.com/events/84531-firefly-night-run | https://www.knysna.n2rs.com/knysna-diary-october.html | https://www.ontheroute.co.za/your-garden-route-event-guide-1-october/,
+Garden Route Trail Running (route varies),George,Garden Route,True,event venue,1,https://gtrtrails.run/gtr-runs/monday-social-runs/,
 George Arts Theatre,George,Garden Route,True,event venue,4,https://www.quicket.co.za/events/375531-hey-hey-divorc-21-23-october/ | https://www.webtickets.co.za/v2/event.aspx?itemid=1599973808 | https://www.webtickets.co.za/v2/event.aspx?itemid=1601879662 | https://www.webtickets.co.za/v2/event.aspx?itemid=1602663500,
 GEORGE CIVIC CENTRE,George,Garden Route,True,event venue,3,https://www.quicket.co.za/events/398527-spoegwolf-live-in-george/ | https://www.quicket.co.za/events/398838-the-billy-joel-experience-live-in-george/ | https://www.webtickets.co.za/v2/event.aspx?itemid=1602698835,
 George Show Ground,George,Garden Route,True,event venue,1,https://www.georgeherald.com/Whatson,
@@ -124,6 +126,7 @@ Marsh Street,Mossel Bay,Mossel Bay,True,event venue,1,https://www.oev.co.za/wp-c
 Milkwood Primary School grounds,Mossel Bay,Mossel Bay,True,event venue,1,https://visitmosselbay.co.za/event/steps-of-courage-walk/,
 Misty Valley Farm,Mossel Bay,Mossel Bay,True,event venue,5,https://visitmosselbay.co.za/event/misty-valley-octoberfest/2026-10-10/ | https://visitmosselbay.co.za/event/misty-valley-octoberfest/2026-10-17/ | https://visitmosselbay.co.za/event/misty-valley-octoberfest/2026-10-24/ | https://visitmosselbay.co.za/event/misty-valley-octoberfest/2026-10-31/,
 Mossel Bay Golf Club,Mossel Bay,Mossel Bay,True,event venue,1,https://www.georgeherald.com/Whatson,
+Mossel Bay Sports Ground (Bruns Street entrance),Mossel Bay,Mossel Bay,True,event venue,1,https://www.strava.com/clubs/GTRtrails,
 Mossel Bay Town Hall,Mossel Bay,Mossel Bay,True,event venue,7,https://itickets.co.za/events/486199 | https://itickets.co.za/events/486200 | https://itickets.co.za/events/486213 | https://itickets.co.za/events/486215,
 Pinnacle Point,Mossel Bay,Mossel Bay,True,event venue,3,https://www.quicket.co.za/events/392372-crosby-stills-nash-young-a-tribute-live-in-mossel-bay/ | https://www.quicket.co.za/events/396377-rocco-de-villiers-live-in-mosselbaai/ | https://www.quicket.co.za/events/398221-tribute-to-elton-john-live-in-mossel-bay/,
 ReedValley,Mossel Bay,Mossel Bay,True,event venue,19,https://visitmosselbay.co.za/event/amy-winehouse-tribute-at-reedvalley/ | https://visitmosselbay.co.za/event/ballyhoo-live/ | https://visitmosselbay.co.za/event/chera-lee-live/ | https://visitmosselbay.co.za/event/christia-visser-live/,
@@ -268,6 +271,7 @@ Open Source,Cape Town,Cape Town,False,event venue,1,https://www.quicket.co.za/ev
 Oude Molen Eco Village,Cape Town,Cape Town,False,event venue,1,https://www.quicket.co.za/events/396307-phatt-cookout-vol6/,
 Overflow Church,Cape Town,Cape Town,False,event venue,1,https://www.quicket.co.za/events/393652-what-i-found-concert/,
 Paardevlei,Cape Town,Cape Town,False,event venue,1,https://www.quicket.co.za/events/394744-lets-walk-for-their-growth/,
+Padel365 Century City & Padel365 Richmond Park,Cape Town,Cape Town,False,event venue,2,https://ctnews.co.za/south-africas-first-padel-nationals-coming-to-cape-town-with-r125000-prize-pool/,
 Paradise Rooftop,Cape Town,Cape Town,False,event venue,2,https://www.quicket.co.za/events/393755-chasing-sunsets/ | https://www.quicket.co.za/events/395491-winehouse-25-october-2026-paradise-rooftop-cape-town/,
 Phoenix Champagne Lounge,Cape Town,Cape Town,False,event venue,1,https://www.quicket.co.za/events/392527-haze-031-invasion-ft-wedemboyz/,
 Pinelands Bowling Club,Cape Town,Cape Town,False,event venue,1,https://www.quicket.co.za/events/394751-rockin-n-rollin-in-pinelands-part-ii/,
@@ -283,6 +287,7 @@ Rondebosch Common,Cape Town,Cape Town,False,event venue,1,https://www.quicket.co
 Rooftop on Bree,Cape Town,Cape Town,False,event venue,1,https://www.quicket.co.za/events/400541-sip-n-chill-rooftop-on-bree-cape-town/,
 ROXY WOODSTOCK,Cape Town,Cape Town,False,event venue,2,https://www.quicket.co.za/events/392699-her-highness-the-elevated-womens-social/ | https://www.webtickets.co.za/v2/event.aspx?itemid=1603142908,
 Royal Road Sports Ground,Cape Town,Cape Town,False,event venue,1,https://www.quicket.co.za/events/369384-the-soulful-reunion-festive-festival/,
+Scarborough/Witsand → Fish Hoek Beach,Cape Town,Cape Town,False,event venue,1,https://capepointchallenge.com/,
 Scottsville Methodist Church,Cape Town,Cape Town,False,event venue,1,https://www.quicket.co.za/events/382639-then-now-a-gospel-journey/,
 Sea Point Promenade,Cape Town,Cape Town,False,event venue,1,https://www.quicket.co.za/events/398261-tiny-owls-8th-birthday-5km-walk/,
 Sgt.Pepper,Cape Town,Cape Town,False,event venue,1,https://www.quicket.co.za/events/399989-afro-district/,
