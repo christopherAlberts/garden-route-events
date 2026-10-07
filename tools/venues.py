@@ -1,0 +1,45 @@
+"""Build tools/venues.csv: one row per venue from data/events.json + data/restaurants.json."""
+import json,re,csv,os,collections
+R0=os.path.join(os.path.dirname(os.path.abspath(__file__)),"..")
+E=json.load(open(f"{R0}/data/events.json"));RS=json.load(open(f"{R0}/data/restaurants.json"))
+GR_REG={"Garden Route","Mossel Bay","Hessequa (Stilbaai)"}
+ALIAS={"moedergemeente church":"ng moeder","mossel bay town hall":"mossel bay stadsaal","beach house bar":"wilderness beach house","beacon island resort":"beacon isle resort","southern sun beacon island":"beacon isle resort",
+ "simola hotel country club spa":"simola","simola golf and country estate":"simola","simola country hotel spa":"simola",
+ "knysna gin distillery cocktail bar":"knysna gin","34 waenhout live venue":"34 waenhout","34 waenhout live venue knysna":"34 waenhout",
+ "blend country restaurant pub":"blend","slops plett":"slops","hope church hope family":"hope church",
+ "fairy knowe hotel venues across the village":"fairy knowe hotel","fairy knowe hotel wilderness":"fairy knowe hotel",
+ "beach house bar kitchen wilderness beach house backpackers":"wilderness beach house","beach house bar kitchen":"wilderness beach house",
+ "cula restaurant bar":"cula","tapas oysters thesen island":"tapas oysters","the pottery george":"pottery","red bridge brewing co":"red bridge brewing",
+ "fancourt hotel":"fancourt","fancourt":"fancourt"}
+def key(n):
+    n=re.sub(r"\(.*?\)","",n.lower()); n=n.split(",")[0]
+    n=re.sub(r"[’'`]s\b","s",n); n=re.sub(r"[^a-z0-9 ]"," ",n); n=re.sub(r"\b(the|at)\b"," ",n); n=re.sub(r"\s+"," ",n).strip()
+    n=ALIAS.get(n,n)
+    for pre in PREFIX:
+        if n.startswith(pre): return pre
+    return n
+PREFIX=["fancourt","simola","knysna gin","kingswood","fairy knowe hotel","beach house bar","wilderness beach house","atkv","rijk","ng moeder","mossel bay stadsaal","mossel bay town hall","garden route botanical","herold","loerie park","34 waenhout","hennies george"]
+SKIP=re.compile(r"^(george|plettenberg bay|hartenbos|great brak river|venue to be confirmed|various venues.*|secret beach.*|anywhere in.*|tba|tbc|online|)$")
+rows={}
+def put(name,town,region,gr,typ,urls,note=""):
+    k=(key(name),town)
+    if SKIP.match(k[0]) or SKIP.match(name.lower()): return
+    r=rows.setdefault(k,dict(name=name,town=town,region=region,garden_route=gr,types=set(),urls=set(),events=0,notes=set()))
+    if len(name)<len(r["name"]): r["name"]=name
+    r["types"].add(typ); r["urls"].update(u for u in urls if u); 
+    if note: r["notes"].add(note)
+    if typ=="event venue": r["events"]+=1
+for e in E:
+    put(e["venue"],e["town"],e["region"],bool(e.get("garden_route")) or e["region"] in GR_REG,"event venue",[e.get("source_url")])
+for r in RS:
+    put(r["name"],r["town"],r.get("region",""),bool(r.get("garden_route")) or r.get("region") in GR_REG or r["town"] in("George","Knysna","Wilderness","Plettenberg Bay","Mossel Bay","Sedgefield"),"restaurant card",[r.get("website")]+[s["url"] for s in r.get("sources",[])],r.get("notes",""))
+# Venues discussed but with no listing yet
+for n,t,u,note in [("Bossa George","George","https://bossagoodtimes.com/branches/george/","Heard as 'Borsa'. No events/specials found 7 Oct 2026."),
+ ("Polpetta George","George","https://visitgeorge.co.za/directory/polpetta-george/","Heard as 'Palpetta'. No events/specials found 7 Oct 2026."),
+ ("Stowaway Hideout (Stanley Island)","Plettenberg Bay","https://www.foodyas.com/ZA/Plettenberg-Bay/109413645275891/Stowaway-Hideout","Specials seen are from 2025.")]:
+    put(n,t,"Garden Route",True,"venue (no listing)",[u],note)
+out=sorted(rows.values(),key=lambda r:(not r["garden_route"],r["region"],r["town"],r["name"].lower()))
+with open(f"{R0}/tools/venues.csv","w",newline="") as f:
+    w=csv.writer(f);w.writerow(["name","town","region","garden_route","type","events_listed","urls","notes"])
+    for r in out: w.writerow([r["name"],r["town"],r["region"],r["garden_route"],"; ".join(sorted(r["types"])),r["events"]," | ".join(sorted(r["urls"])[:4])," ".join(r["notes"])])
+print(len(out),sum(r["garden_route"] for r in out))
