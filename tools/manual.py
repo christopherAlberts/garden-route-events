@@ -592,3 +592,10 @@ add(title="MATTHEW MOLE live in Knysna",category="concert",start_date="2026-12-2
 
 # ---------------- George (added 7 Oct 2026) ----------------
 add(title="Cula presents David vs Goliath – Ultimate Wine Battle (Cederberg vs De Grendel)",category="restaurant",start_date="2026-10-14",time="",town="George",venue="Cula Restaurant & Bar",venue_address="Shop 22, Outeniqua Village, Saint George's Rd, George",price_from="R695",ticket_url="https://cula.co.za/reservations/",source_url="https://www.cula.co.za/",source_name="Cula (official site, specials poster)",alt_sources=[],notes="Wine pairing evening with David Nieuwoudt (Cederberg) and Charles Hopkins (De Grendel). R695 pp. Book: 044 630 0701 / reservations@cula.co.za. Start time not published.")
+
+# ---------------- Wilderness: Beach House (added 7 Oct 2026) ----------------
+BH=dict(town="Wilderness",venue="Beach House Bar & Kitchen (Wilderness Beach House Backpackers)",venue_address="Sands Road, Leentjiesklip, Wilderness",price_from="Free entry",ticket_url="",source_name="Wilderness Beach House (official site)")
+occ=_dates("2026-10-11","2027-02-28",{SUN})
+add(title="Sunday Sessions – live music at Beach House Wilderness",category="concert",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Sunday, 15:00-18:00",time="15:00-18:00",source_url="https://wildernessbeachhouse.com/live-music/",alt_sources=["https://www.toodoo.co.za/sunday-sessions-live-music/"],notes="Local and touring acts on the ocean-view deck, wood-fired pizza. Walk-in only (no table bookings). Weekly series; individual acts for upcoming dates not yet announced.",**BH)
+occ=_dates("2026-10-08","2027-02-25",{3})
+add(title="Open Mic Night at Beach House Wilderness (Thursdays)",category="concert",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Thursday, 18:00-22:00",time="18:00-22:00",source_url="https://wildernessbeachhouse.com/bar-kitchen/",alt_sources=["https://wildernessbeachhouse.com/"],notes="Run with One Two Sound Solutions; sign up at the bar from 18:00, house PA and amps available.",**BH)

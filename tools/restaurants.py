@@ -118,6 +118,19 @@ REST=[
    music=[],
    notes="Name check: “Cula” is correct. Specials read from the posters on cula.co.za (7 Oct 2026); posters are undated.",
    sources=[S("Cula (official site)","https://www.cula.co.za/"),S("Cula reservations","https://cula.co.za/reservations/"),S("Visit George","https://visitgeorge.co.za/directory/cula-restaurant-and-bar/")],match=["Cula"]),
+ dict(id="beach-house-wilderness",name="Beach House Bar & Kitchen",town="Wilderness",address="Wilderness Beach House Backpackers, Sands Road, Leentjiesklip, Wilderness",phone="071 495 1814 (WhatsApp)",
+   website="https://wildernessbeachhouse.com/",img="",
+   blurb="Backpackers bar on the hillside above Leentjiesklip beach: wood-fired pizza from 11:00, craft beer, ocean-view deck. Walk-in only.",
+   specials=[["Friday","Pool and darts night from 18:00"]],
+   music=["Every Sunday 15:00–18:00: Sunday Sessions live music (free)","Every Thursday 18:00–22:00: Open Mic with One Two Sound Solutions (free)"],
+   notes="Name check: “The Beach House” in Wilderness = Wilderness Beach House Backpackers. Not to be confused with Fairy Knowe.",
+   sources=[S("Wilderness Beach House: Bar & Kitchen","https://wildernessbeachhouse.com/bar-kitchen/"),S("Wilderness Beach House: Live music","https://wildernessbeachhouse.com/live-music/")],match=["Beach House Wilderness"]),
+ dict(id="fairy-knowe-backpackers",name="Fairy Knowe Backpackers",town="Wilderness",address="1 Dumbleton Road, Wilderness",phone="",
+   website="https://www.fairyknowebackpackers.co.za/",img="",
+   blurb="Bohemian backpackers with bar and restaurant; one of the oldest music venues on the Garden Route. Separate from the Fairy Knowe Hotel.",
+   specials=[],music=["Live music gigs, open mic nights and a family market (no dates published)"],
+   notes="No dated events found for Oct 2026–Feb 2027; its May 2026 fundraiser festival has passed.",
+   sources=[S("Fairy Knowe Backpackers: Entertainment","https://www.fairyknowebackpackers.co.za/entertainment")],match=[]),
 ]
 GR={"George","Knysna","Sedgefield","Hoekwil","Wilderness","Hartenbos","Oudtshoorn","Mossel Bay","Plettenberg Bay"}
 def fetch(url,out):
