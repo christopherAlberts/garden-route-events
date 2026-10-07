@@ -355,11 +355,11 @@ function setIntroHidden(hide){
 }
 function initIntroToggle(){
   var hide=false;
-  try{hide=localStorage.getItem(INTRO_KEY)==="1"}catch(e){}
+  try{hide=localStorage.getItem("gre.introSeen")==="1";localStorage.setItem("gre.introSeen","1")}catch(e){}
   setIntroHidden(hide);
   $("introToggle").addEventListener("click",function(){setIntroHidden(!document.body.classList.contains("intro-hidden"))});
 }
-var FILT_KEY="gre.hideFilters";
+var FILT_KEY="gre.hideFilters2";
 function filtersActive(){return !!(S.q||S.town||S.cat||S.month||S.nye||S.xmas||S.scope!=="gr"||S.off)}
 function setFiltersHidden(hide){
   document.body.classList.toggle("filters-hidden",!!hide);
@@ -371,8 +371,8 @@ function setFiltersHidden(hide){
   try{localStorage.setItem(FILT_KEY,hide?"1":"0")}catch(e){}
 }
 function initFiltersToggle(){
-  var hide=false;
-  try{hide=localStorage.getItem(FILT_KEY)==="1"}catch(e){}
+  var hide=true;
+  try{hide=localStorage.getItem(FILT_KEY)!=="0"}catch(e){}
   setFiltersHidden(hide);
   $("filtToggle").addEventListener("click",function(){setFiltersHidden(!document.body.classList.contains("filters-hidden"))});
 }
