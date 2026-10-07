@@ -400,13 +400,13 @@ for _slug,_town,_name,_addr,_wd,_wdn,_ph,_price,_ll in [
 _GRT="https://www.knysna.n2rs.com/knysna-diary-october.html"
 _GRN=("Garden Route Trivia League team quiz run by Craft Quiz Nights: suitable for all ages, teams of 4 to 6 ideal (no minimum or maximum), prizes sponsored by the venue and Craft Quiz Nights. "
       "Listed in the Knysna Diary for October 2026 as '%s'; later dates follow that pattern and aren't individually confirmed. No start time published; contact 082 335 9406.")
-for _t,_town,_ven,_addr,_dates,_rec,_ll in [
+for _t,_town,_ven,_addr,_dl,_rec,_ll in [
     ("Garden Route Trivia League quiz at Goose Valley Golf Club (Tuesdays)","Plettenberg Bay","Goose Valley Golf Club","Goose Valley Golf Club, Plettenberg Bay",_weekly({1}),"Tuesdays",None),
     ("Garden Route Trivia League quiz at Red Bridge Brewing Co. (1st Wednesday)","Knysna","Red Bridge Brewing Co.","Noble Street, Knysna Industria, Knysna",_nth(2,{1}),"1st Wednesday",(-34.04692,23.0772008,"nominatim")),
     ("Garden Route Trivia League quiz at Knysna Distillery (2nd-5th Wednesdays)","Knysna","Knysna Distillery","5 Uil Street, Knysna Industria, Knysna",_nth(2,{2,3,4,5}),"2nd, 3rd, 4th (+5th) Wednesdays",(-34.0448812,23.0727766,"nominatim")),
     ("Garden Route Trivia League quiz at Rocket, George (Thursdays)","George","Rocket","Arbour Road, Heatherlands, George",_weekly({3}),"Thursdays",(-33.946309,22.456057,"nominatim")),
     ]:
-    add(title=_t,category="quiz",start_date=_dates[0],end_date=_dates[-1],occurrences=_dates,recurrence=_rec,time="",town=_town,venue=_ven,venue_address=_addr,
+    add(title=_t,category="quiz",start_date=_dl[0],end_date=_dl[-1],occurrences=_dl,recurrence=_rec,time="",town=_town,venue=_ven,venue_address=_addr,
         price_from="",ticket_url="",source_url=_GRT,source_name="Knysna Diary (n2rs.com), October 2026",notes=_GRN%_rec,
         **({"lat":_ll[0],"lng":_ll[1],"geo_source":_ll[2]} if _ll else {}))
 _bq=_nth(3,{-1})
