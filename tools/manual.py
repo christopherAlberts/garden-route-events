@@ -4,6 +4,8 @@ OTR="https://www.ontheroute.co.za/your-garden-route-event-guide-1-october/"
 MB="https://visitmosselbay.co.za/event/"
 M=[]
 def add(**k): M.append(k)
+import datetime as _dtm
+HORIZON=(_dtm.date.today()+_dtm.timedelta(days=183)).isoformat()  # rolling end for weekly/recurring series
 
 # ---------------- Garden Route / Mossel Bay / Oudtshoorn ----------------
 add(title="Wilderness Arts Festival",category="festival",start_date="2026-10-08",end_date="2026-10-11",time="09:00-17:00",town="Wilderness",venue="Fairy Knowe Hotel & venues across the village",venue_address="1 Dumbleton Road, Wilderness",price_from="",ticket_url="",source_url=OTR,source_name="On The Route (Garden Route event guide)",alt_sources=["https://www.wildernessartfestival.co.za/"],notes="Visual art, music, performance and literature; open to the public.")
@@ -58,14 +60,14 @@ def _dates(start,end,weekdays,skip=()):
 SAT,WED,SUN=5,2,6
 OEV="https://www.oev.co.za/wp-content/uploads/Night-Markets-Application-for-Stall-Space-December-2026-15.09.26.pdf"
 
-occ=_dates("2026-10-10","2027-02-27",[SAT])
+occ=_dates("2026-10-10",HORIZON,[SAT])
 add(title="Wild Oats Community Farmers' Market",category="market",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Saturday, 07:30-12:00 (summer hours)",
     time="07:30-12:00",town="Sedgefield",venue="Wild Oats Community Farmers' Market",venue_address="Western outskirts of Sedgefield, cnr N2 & Jan van Riebeeck St (at Swartvlei)",
     price_from="Free entry",ticket_url="",source_url="https://www.wildoatsmarket.co.za/",source_name="Wild Oats Market (official site)",
     alt_sources=["https://www.georgeherald.com/Whatson","https://www.toodoo.co.za/wild-oats-community-farmers-market/"],
     notes="Producer-only farmers' market since 1999: fresh produce, meats, cheeses, breads, breakfast. Open rain or shine; Facebook page confirms high-season hours.",
     lat=-34.009806,lng=22.778306,geo_source="event page")
-occ=_dates("2026-10-10","2027-02-27",[SAT])
+occ=_dates("2026-10-10",HORIZON,[SAT])
 add(title="Sedgefield Mosaic Market",category="market",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Saturday from 08:00",
     time="08:00",town="Sedgefield",venue="Mosaic Village & Outdoor Market",venue_address="1.5 km west of Sedgefield at the Engen petrol station, N2",
     price_from="Free entry",ticket_url="",source_url="https://www.toodoo.co.za/the-sedgefield-mosaic-market/",source_name="toodoo.co.za",
@@ -77,13 +79,13 @@ add(title="Harkerville Saturday Market",category="market",start_date=occ[0],end_
     price_from="Free entry",ticket_url="",source_url="https://showme.co.za/plett/event/harkerville-saturday-market/",source_name="ShowMe Plettenberg Bay",
     alt_sources=["https://www.harkervillemarket.co.za/","https://www.visitknysna.co.za/experiences/food-drink/discover-the-markets-of-the-greater-knysna-area/"],
     notes="Weekly country market: artisan breads, farm produce, cheeses, crafts, breakfast. ShowMe lists Saturdays to 31 Dec 2026.")
-occ=_dates("2026-10-07","2027-02-24",[WED])
+occ=_dates("2026-10-07",HORIZON,[WED])
 add(title="The Wednesday Market at Old Nick Village",category="market",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Wednesday, 09:00-14:00",
     time="09:00-14:00",town="Plettenberg Bay",venue="Old Nick Village",venue_address="N2, 3 km east of Plettenberg Bay",
     price_from="Free entry",ticket_url="",source_url="https://oldnickvillage.co.za/merchants/the-old-nick-midweek-market/",source_name="Old Nick Village (official site)",
     alt_sources=["https://showme.co.za/plett/event/mid-week-market-at-old-nick-village/"],
     notes="Farmers, bakers and artisans: organic produce, meat and dairy, breads, crafts.")
-occ=_dates("2026-10-10","2027-02-27",[SAT])
+occ=_dates("2026-10-10",HORIZON,[SAT])
 add(title="Outeniqua Family Market",category="market",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Saturday, 08:00-14:00",
     time="08:00-14:00",town="George",venue="Outeniqua Family Market",venue_address="Outeniqua Farm, N2 opposite Garden Route Mall, George",
     price_from="Free entry",ticket_url="",source_url="https://www.outeniquafamilymarket.co.za/",source_name="Outeniqua Family Market (official site)",
@@ -334,7 +336,8 @@ add(title="Stilbaai NSRI 10 km & 6 km Fun Run (New Year's Eve)",category="funrun
 
 # ---- restaurant listings (approved by Christopher, 6 Oct 2026) ----
 import datetime as _dt
-def _weekly(wds,start="2026-10-06",end="2027-02-28"):
+def _weekly(wds,start="2026-10-06",end=None):
+    end=end or HORIZON
     d=_dt.date.fromisoformat(start);e=_dt.date.fromisoformat(end);out=[]
     while d<=e:
         if d.weekday() in wds: out.append(d.isoformat())
@@ -375,7 +378,8 @@ add(title="Donkiekar Boere Orkes live at Hoeka Toeka Pub & Diner (Wednesdays)",c
     notes="Boere-orkes night with the Donkiekar Boere Orkes, fire and comfort food. The pub's Facebook posts (Aug-Sep 2026) say 'every Wednesday from 6 to 9'; later dates follow that pattern and aren't individually confirmed. Bookings essential: 079 917 2222.")
 
 # ---- Quiz nights (added 2026-10-06) ----
-def _nth(wd,nths,start="2026-10-06",end="2027-02-28"):
+def _nth(wd,nths,start="2026-10-06",end=None):
+    end=end or HORIZON
     """dates in window that are the n-th (1..5) or last (-1) given weekday of their month"""
     out=[]
     for d in _weekly({wd},start,end):
@@ -583,7 +587,7 @@ add(title="Barrington's Oktoberfest 2026",category="festival",start_date="2026-1
 add(title="Barrington's Wine Festival 2026",category="festival",start_date="2026-12-16",time="",price_from="",ticket_url="",source_url="https://www.barringtonsplett.co.za/barringtons-wine-festival-25/",alt_sources=[],notes="Save-the-date announced by Barrington's (9th edition). 2025 had 20 SA estates, 100+ wines and live jazz; tickets not yet listed.",**BAR)
 add(title="New Year's Eve at Barrington's (DJ Mike)",category="restaurant",start_date="2026-12-31",time="",price_from="",ticket_url="https://calendar.dineplan.com/HFBQCc9v/guests?guests=1&date=2026-12-31",source_url="https://www.barringtonsplett.co.za/events-news/",alt_sources=[],notes="NYE party with DJ Mike and bubbly; book via Dineplan.",**BAR)
 add(title="Paradisco – On The Island",category="festival",start_date="2026-12-27",time="12:00-21:00",town="Plettenberg Bay",venue="Stanley Island",venue_address="Stanley Island, Keurbooms River, Plettenberg Bay",price_from="",ticket_url="",source_url="https://allevents.in/plettenberg-bay/paradisco-on-the-island-27-december-2026/80002348646276",source_name="AllEvents (organiser: Anything Goes)",alt_sources=[],notes="Disco party on Stanley Island by Anything Goes. Tickets & tables 'coming soon'. Listing shows both 12:00 and 14:00 start.")
-occ=["2026-11-06","2026-12-04","2027-01-01","2027-02-05"]
+occ=[d for d in _dates("2026-11-01",HORIZON,[4]) if int(d[8:])<=7]
 add(title="First Fridays at Slops (monthly)",category="restaurant",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="First Friday of every month",time="",town="Plettenberg Bay",venue="Slops Plett",venue_address="Shop 5, Melville's Centre, 9 Main Street, Plettenberg Bay",price_from="Free entry",ticket_url="",source_url="https://plettrestaurants.com/2026/03/05/slops-plett-3/",source_name="Plett Restaurants",alt_sources=["https://www.foodyas.com/ZA/Plettenberg-Bay/262885126912508/SLOPS--Plett"],notes="10% off food & drinks bill and merch, DJ all night, free kiddies margarita pizza for under-12s. Announced as every month from March 2026; later dates follow that pattern and aren't individually confirmed.")
 
 # ---------------- Knysna December (added 7 Oct 2026) ----------------
@@ -595,9 +599,9 @@ add(title="Cula presents David vs Goliath – Ultimate Wine Battle (Cederberg vs
 
 # ---------------- Wilderness: Beach House (added 7 Oct 2026) ----------------
 BH=dict(town="Wilderness",venue="Beach House Bar & Kitchen (Wilderness Beach House Backpackers)",venue_address="Sands Road, Leentjiesklip, Wilderness",price_from="Free entry",ticket_url="",source_name="Wilderness Beach House (official site)")
-occ=_dates("2026-10-11","2027-02-28",{SUN})
+occ=_dates("2026-10-11",HORIZON,{SUN})
 add(title="Sunday Sessions – live music at Beach House Wilderness",category="concert",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Sunday, 15:00-18:00",time="15:00-18:00",source_url="https://wildernessbeachhouse.com/live-music/",alt_sources=["https://www.toodoo.co.za/sunday-sessions-live-music/"],notes="Local and touring acts on the ocean-view deck, wood-fired pizza. Walk-in only (no table bookings). Weekly series; individual acts for upcoming dates not yet announced.",**BH)
-occ=_dates("2026-10-08","2027-02-25",{3})
+occ=_dates("2026-10-08",HORIZON,{3})
 add(title="Open Mic Night at Beach House Wilderness (Thursdays)",category="concert",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Thursday, 18:00-22:00",time="18:00-22:00",source_url="https://wildernessbeachhouse.com/bar-kitchen/",alt_sources=["https://wildernessbeachhouse.com/"],notes="Run with One Two Sound Solutions; sign up at the bar from 18:00, house PA and amps available.",**BH)
 
 # ---------------- Venue sweep 7 Oct 2026: new Quicket listings (Garden Route) ----------------
@@ -612,14 +616,28 @@ add(title="Andrew Young Picnic Concert",category="concert",start_date="2027-01-1
 
 # ---------------- GTR (Garden Route Trail Running) weekly runs + padel/paddling (added 7 Oct 2026) ----------------
 GTR="https://gtrtrails.run/gtr-runs/"
-occ=_dates("2026-10-12","2027-02-22",[0])
+occ=_dates("2026-10-12",HORIZON,[0])
 add(title="GTR Monday Social Trail Run (~8 km)",category="funrun",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Monday, 17:40",time="17:40",town="George",venue="Garden Route Trail Running (route varies)",venue_address="George (route posted on GTR WhatsApp group before 12:00 on the day)",price_from="",ticket_url="",source_url=GTR+"monday-social-runs/",source_name="GTR (official site)",alt_sources=["https://www.strava.com/clubs/GTRtrails"],notes="Social group trail run, ~8 km circular, 1-2 h; nobody left behind. Route & start announced on the GTR WhatsApp group. Dogs on leash. No cost published.")
-occ=_dates("2026-10-08","2027-02-25",[3])
+occ=_dates("2026-10-08",HORIZON,[3])
 add(title="GTR Thursday Time Trial (5 km / 3 km trail)",category="funrun",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Thursday, runners 17:30 / walkers 17:15",time="17:30 (walkers 17:15)",town="George",venue="Camphersdrift Road (in the dip)",venue_address="Camphersdrift Road, George",price_from="",ticket_url="",source_url=GTR+"thursday-gtr-time-trial/",source_name="GTR (official site)",alt_sources=["https://www.strava.com/clubs/GTRtrails"],notes="Weekly time trial, rain or shine. Join the GTR Strava club; first-timers get a number via 081 366 4394. Site also lists a 5 km Garden Route Dam route. Dogs on leash; kids under 12 accompanied. No cost published.")
-occ=_dates("2026-10-13","2027-02-23",[1])
+occ=_dates("2026-10-13",HORIZON,[1])
 add(title="GTR Tuesday Time Trial Mossel Bay (5 km / 3 km)",category="funrun",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Tuesday, runners 17:30 / walkers 17:15",time="17:30 (walkers 17:15)",town="Mossel Bay",venue="Mossel Bay Sports Ground (Bruns Street entrance)",venue_address="Bruns Street, Mossel Bay",price_from="",ticket_url="",source_url="https://www.strava.com/clubs/GTRtrails",source_name="GTR club page on Strava (official)",alt_sources=[],notes="Listed on GTR's official Strava club page; not on the GTR website itself.")
 # Padel
 for d1,d2,div in [("2026-10-09","2026-10-11","age-group divisions"),("2026-10-16","2026-10-18","Open Division")]:
     add(title=f"Growthpoint SA National Padel Championships 2026 – {div}",category="community",start_date=d1,end_date=d2,time="",town="Cape Town",venue="Padel365 Century City & Padel365 Richmond Park",venue_address="Century City, Cape Town",price_from="",ticket_url="",source_url="https://ctnews.co.za/south-africas-first-padel-nationals-coming-to-cape-town-with-r125000-prize-pool/",source_name="CT News",alt_sources=["https://everydaymzansi.co.za/padel-nationals-south-africa-2026/"],notes="Padel (racket sport): South Africa's first official national padel championships, R125,000 prize pool, organised by Padel365 with SAPA. Spectator/entry details not published.")
 # Paddling
 add(title="Cape Point Challenge 2026 – 52 km surfski race",category="funrun",start_date="2026-12-19",end_date="2026-12-20",time="",town="Cape Town",venue="Scarborough/Witsand → Fish Hoek Beach",venue_address="Fish Hoek Beach, Cape Town",price_from="",ticket_url="https://capepointchallenge.com/",source_url="https://capepointchallenge.com/",source_name="Cape Point Challenge (official site)",alt_sources=[],notes="Paddling (surfski) race around Cape Point; race weekend 19/20 Dec (date set by conditions).")
+
+# ---------------- MUT – Mountain Ultra Trail by UTMB (added 7 Oct 2026) ----------------
+add(title="MUT – Mountain Ultra Trail by UTMB (163 / 98 / 58 / 44 / 25 / 11 km)",category="funrun",start_date="2027-05-28",end_date="2027-05-30",time="Miler Fri 12:00; MUT 100 Sat 05:00",town="George",venue="Outeniqua Park Stadium",venue_address="Outeniqua Park Stadium, George",price_from="",ticket_url="https://mut.utmb.world/registration",source_url="https://mut.utmb.world/races/mut100",source_name="MUT by UTMB (official site)",alt_sources=["https://mut.utmb.world/registration"],notes="Start/finish at Outeniqua Park Stadium. Miler (163 km) Fri 28 May 12:00; MUT 100 (98 km) Sat 29 May 05:00; MUT 60 and Marathon on Saturday; Challenge & Lite on Sun 30 May, starting at the Trail Kiosk. Registration open until 15 May 2027 or sold out.")
+
+# ---------------- 2027 beyond February (Quicket sweep 7 Oct 2026) ----------------
+QU="https://www.quicket.co.za/events/"
+MV=dict(town="Cape Town",venue="Maynardville Open-Air Theatre",venue_address="Maynardville Park, Piers Rd, Wynberg, Cape Town",source_name="Quicket",alt_sources=[])
+add(title="Maynardville 2027: Shakespeare's Macbeth",category="musical",start_date="2027-02-05",end_date="2027-03-13",time="20:15",price_from="R213",ticket_url=QU+"381057-maynardville-2027-shakespeares-macbeth/",source_url=QU+"381057-maynardville-2027-shakespeares-macbeth/",notes="Open-air Shakespeare (theatre, not a musical). Price as shown on Quicket.",**MV)
+add(title="Maynardville 2027: Cape Town Opera – Vienna in the Park",category="concert",start_date="2027-03-07",end_date="2027-03-14",time="18:30",price_from="R298",ticket_url=QU+"382437-maynardville-2027-cape-town-opera-vienna-in-the-park/",source_url=QU+"382437-maynardville-2027-cape-town-opera-vienna-in-the-park/",**MV)
+add(title="André & Tiaan – Vat My Saam",category="concert",start_date="2027-03-06",end_date="2027-03-07",time="19:00",town="Cape Town",venue="Ou Skip Holiday Resort",venue_address="1 Ou Skip Street, Melkbosstrand",price_from="R100",ticket_url=QU+"379665-andr-tiaan-vat-my-saam/",source_url=QU+"379665-andr-tiaan-vat-my-saam/",source_name="Quicket",alt_sources=[])
+add(title="Anacy LIVE! at Café Roux",category="concert",start_date="2027-03-18",time="18:00",town="Cape Town",venue="Cafe Roux",venue_address="Chapmans Peak Dr, Noordhoek",price_from="R120",ticket_url=QU+"398685-anacy-live-caf-roux/",source_url=QU+"398685-anacy-live-caf-roux/",source_name="Quicket",alt_sources=[])
+add(title="Cape Town Camerata Easter Concert",category="concert",start_date="2027-04-11",time="16:00",town="Cape Town",venue="Cape Town City Hall",venue_address="Darling Street, Cape Town City Centre",price_from="R120",ticket_url=QU+"393957-cape-town-camerata-easter-concert-at-the-cape-town-city-hall/",source_url=QU+"393957-cape-town-camerata-easter-concert-at-the-cape-town-city-hall/",source_name="Quicket",alt_sources=[])
+add(title="Anna Davel – DIAMONDS: A Shirley Bassey Tribute",category="concert",start_date="2027-04-30",time="19:00",town="Jeffreys Bay",venue="Oase JBay (AGS)",venue_address="Dolly Varden Street, C-Place, Jeffreys Bay",price_from="R150",ticket_url=QU+"399102-anna-davel-diamonds-a-shirley-bassey-tribute/",source_url=QU+"399102-anna-davel-diamonds-a-shirley-bassey-tribute/",source_name="Quicket",alt_sources=[])
+add(title="Totalsports Two Oceans Trail Run (24 / 18 / 12 km)",category="funrun",start_date="2027-04-02",time="24 km 07:00, 18 km 08:00, 12 km 08:30",town="Cape Town",venue="UCT Rugby Fields",venue_address="UCT Upper Campus, Rondebosch, Cape Town",price_from="R550",ticket_url="https://www.twooceansmarathon.org.za/",source_url="https://www.twooceansmarathon.org.za/qualifying-and-seeding-dates-confirmed-for-totalsports-two-oceans-marathon-powered-by-byd/",source_name="Two Oceans Marathon (official site)",alt_sources=["https://marathontours.com/en-gb/events/two-oceans-marathon/"],notes="Part of Two Oceans Event Week (31 Mar-4 Apr 2027). SA entry: 24 km R950, 18 km R750, 12 km R550. Entries open; capacity 1,500. Start times per Marathon Tours.")

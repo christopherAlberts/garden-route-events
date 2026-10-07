@@ -3,7 +3,10 @@
 "use strict";
 var GR_ORDER=["Mossel Bay","Hartenbos","Groot Brak","George","Oudtshoorn","Wilderness","Hoekwil","Sedgefield","Knysna","Plettenberg Bay","The Crags","Nature's Valley","Storms River","Tsitsikamma"];
 var WIDE_ORDER=["Cape Town","Somerset West","Kleinmond","Pringle Bay","Hermanus","Stanford","Gansbaai","Struisbaai","L'Agulhas","Riversdale","Stilbaai","Humansdorp","St Francis Bay","Jeffreys Bay"];
-var MONTHS=["2026-10","2026-11","2026-12","2027-01","2027-02"];
+var MONTHS=(function(){ // current month through the last month that has any event (open-ended)
+  var d=new Date(),y=d.getFullYear(),m=d.getMonth()+1,last=y+"-"+String(m).padStart(2,"0");
+  (window.EVENTS||[]).forEach(function(e){var x=((e.occurrences&&e.occurrences.length?e.occurrences[e.occurrences.length-1]:"")||e.end_date||e.start_date||"").slice(0,7);if(x>last)last=x});
+  var out=[];while(true){var k=y+"-"+String(m).padStart(2,"0");out.push(k);if(k>=last||out.length>36)break;m++;if(m>12){m=1;y++}}return out})();
 var MN=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 var MNL=["January","February","March","April","May","June","July","August","September","October","November","December"];
 var DOW=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
@@ -25,7 +28,7 @@ var PIN='<svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 
 var ARROW='<svg viewBox="0 0 24 24"><path d="M13 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.2l-4.6-4.6z"/></svg>';
 var S={scope:"gr",q:"",town:"",cat:"",month:"",view:"list",calMonth:null,calDay:null,off:false,event:"",nye:false,xmas:false};
 /* restaurants are entries of category "restaurant": list cards, calendar days with recurring specials, map pins */
-var LAST_DAY="2027-02-28",EVR={};
+var LAST_DAY=(function(){var l="";(window.EVENTS||[]).forEach(function(e){var x=e.end_date||e.start_date||"";if(x>l)l=x});return l||"2099-12-31"})(),EVR={};
 var RS=(window.RESTAURANTS||[]).map(function(r){var o={};for(var k in r)o[k]=r[k];
   o._r=1;o.rid=r.id;o.id=o.key="r:"+r.id;o.title=r.name;o.category="restaurant";o.venue=r.name;o.venue_address=r.address;
   var oc=r.occurrences||[];o.occurrences=oc;o.start_date=oc.length?oc[0]:TODAY0();o.end_date=oc.length?oc[oc.length-1]:LAST_DAY;

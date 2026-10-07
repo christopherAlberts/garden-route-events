@@ -17,7 +17,7 @@ REST=[
    website="https://www.tigersmilk.co.za/",img="https://www.tigersmilk.co.za/wp-content/uploads/2024/07/tigers-milk-hero.jpg",
    blurb="Opened December 2025: elevated casual dining, craft beer, live music and DJs.",
    specials=[["Mon–Fri","Happy hour 16:00–18:00: 2-for-1 on house beer, wine and selected cocktails (T&Cs apply)"],["Tuesday","Pizza Tuesday"]],
-   music=["DJ weekends, Soulful Sundays (from 18:00) and a Monday pool competition were listed May–Aug 2026; nothing listed for Oct 2026–Feb 2027 yet"],
+   music=["DJ weekends, Soulful Sundays (from 18:00) and a Monday pool competition were listed May–Aug 2026; nothing newer listed as of Oct 2026"],
    notes="Photo is from the Tiger's Milk group site, not necessarily the George branch.",
    sources=[S("Local-Info: happy hour","https://local-info.co.za/event/happy-hour-specials-tigers-milk-george-2/"),S("George Herald: opening","https://www.georgeherald.com/Video/Video/inside-george-s-new-hotspot-tiger-s-milk-opens-with-huge-energy-local-leaders-202512041204"),S("Local-Info: Soulful Sundays (Aug 2026)","https://local-info.co.za/event/soulful-sundays-with-shinco-at-tigers-milk-in-george/")],match=[]),
  dict(id="hennies-george",name="Hennie's George",town="George",address="42 York Street, George South, George",phone="062 579 8350",
@@ -129,7 +129,7 @@ REST=[
    website="https://www.fairyknowebackpackers.co.za/",img="",
    blurb="Bohemian backpackers with bar and restaurant; one of the oldest music venues on the Garden Route. Separate from the Fairy Knowe Hotel.",
    specials=[],music=["Live music gigs, open mic nights and a family market (no dates published)"],
-   notes="No dated events found for Oct 2026–Feb 2027; its May 2026 fundraiser festival has passed.",
+   notes="No dated upcoming events found (checked Oct 2026); its May 2026 fundraiser festival has passed.",
    sources=[S("Fairy Knowe Backpackers: Entertainment","https://www.fairyknowebackpackers.co.za/entertainment")],match=[]),
 ]
 GR={"George","Knysna","Sedgefield","Hoekwil","Wilderness","Hartenbos","Oudtshoorn","Mossel Bay","Plettenberg Bay"}
@@ -162,7 +162,7 @@ CAL={"pottery-george":[("w",{1},"Taco Tuesday",0),("w",{2},"Burger special",0),(
  "knysna-distillery":[("n",(2,{2,3,4,5}),"Trivia League quiz",1)],"backyard-jbay":[("n",(3,{-1}),"Quiz night 19:00",1)]}
 WD=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
 def _dates(kind,arg):
-    d=max(_dt.date.fromisoformat(CHECKED),_dt.date(2026,10,6));e=_dt.date(2027,2,28);o=[]
+    d=max(_dt.date.fromisoformat(CHECKED),_dt.date.today());e=_dt.date.today()+_dt.timedelta(days=183);o=[]
     while d<=e:
         if kind=="w" and d.weekday() in arg: o.append(d.isoformat())
         if kind=="n" and d.weekday()==arg[0]:

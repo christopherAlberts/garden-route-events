@@ -4,7 +4,8 @@ from towns import TOWNS
 from geo import geocode
 import manual
 import os; _H=os.path.dirname(os.path.abspath(__file__)); RAW=os.path.join(_H,"..","raw"); OUT=os.path.join(_H,"..","data")
-TODAY="2026-10-06"; END="2027-02-28"; CHECKED="2026-10-06"
+_T=datetime.date.today()
+TODAY=os.environ.get("EVENTS_TODAY",_T.isoformat()); END=(datetime.date.fromisoformat(TODAY)+datetime.timedelta(days=730)).isoformat(); CHECKED=TODAY
 TZ=datetime.timezone(datetime.timedelta(hours=2))
 EV=[]
 def hav(a,b):
@@ -163,7 +164,7 @@ def hdate(s):
     m=re.findall(r"(\d{1,2}) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)(?: (20\d\d))?",s)
     out=[]
     for d,mo,y in m:
-        y=int(y) if y else (2026 if MONS[mo]>=10 else 2027)
+        _ty,_tm=int(TODAY[:4]),int(TODAY[5:7]); y=int(y) if y else (_ty if MONS[mo]>=_tm else _ty+1)
         out.append("%04d-%02d-%02d"%(y,MONS[mo],int(d)))
     return out
 for u,(cat,town,addr) in HSEL.items():
@@ -284,16 +285,17 @@ for e in EV:
     r["image"]=f"images/{i}.webp" if os.path.exists(os.path.join(IMGDIR,i+".webp")) else ""
     r["occurrences"]=[d for d in (e.get("occurrences") or []) if TODAY<=d<=END]
     CAND[i]={"img":e.get("_img",""),"pages":[u for u in [e.get("ticket_url",""),e["source_url"]]+e["alt_sources"] if u]}
-    # New Year's Eve tag (31 Dec 2026 into 1 Jan 2027); keeps the event's real category
+    # New Year's Eve tag (31 Dec of any year); keeps the event's real category
     _sd,_ed=r["start_date"],r["end_date"] or r["start_date"]; _ny=bool(re.search(r"new year|\bnye\b|oujaar|countdown",r["title"],re.I))
-    if r["occurrences"]: r["nye"]="2026-12-31" in r["occurrences"] and _ny
+    _nyes=[f"{y}-12-31" for y in range(int(_sd[:4]),int(_ed[:4])+1)]
+    if r["occurrences"]: r["nye"]=any(d[5:]=="12-31" for d in r["occurrences"]) and _ny
     else:
         _span=(datetime.date.fromisoformat(_ed)-datetime.date.fromisoformat(_sd)).days
-        r["nye"]=_sd=="2026-12-31" or (_sd<="2026-12-31"<=_ed and (_ny or (_span<=6 and r["category"] in("festival","concert"))))
+        r["nye"]=_sd[5:]=="12-31" or any(_sd<=n<=_ed for n in _nyes) and (_ny or (_span<=6 and r["category"] in("festival","concert")))
     # Christmas tag (carols, Christmas concerts/shows, lights switch-ons, Christmas markets, Christmas lunches/dinners); keeps the real category
     _xm=bool(re.search(r"carol|christmas|kersfees|kersmark|kersliedere|kerskonsert|kerslig|xmas|nativity|heilige nag|lights festival|festive lights|lights switch|father christmas|gift market|gift fair|\bsanta\b",r["title"],re.I))
-    if r["occurrences"]: r["xmas"]=_xm and any("2026-11-01"<=d<="2026-12-26" for d in r["occurrences"])
-    else: r["xmas"]=_xm and _sd<="2026-12-26" and _ed>="2026-11-01"
+    if r["occurrences"]: r["xmas"]=_xm and any("11-01"<=d[5:]<="12-26" for d in r["occurrences"])
+    else: r["xmas"]=_xm and any(_sd<=f"{y}-12-26" and _ed>=f"{y}-11-01" for y in range(int(_sd[:4]),int(_ed[:4])+1))
     out.append({f:r[f] for f in FIELDS})
 os.makedirs(OUT,exist_ok=True)
 json.dump(out,open(f"{OUT}/events.json","w"),indent=1,ensure_ascii=False)
