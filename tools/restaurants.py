@@ -86,8 +86,8 @@ REST=[
    specials=[],music=["Thursdays: Garden Route Trivia League quiz (no start time published; 082 335 9406)"],
    notes="Address from OpenStreetMap. No website, menu or specials found.",
    sources=[S("Knysna Diary, October 2026","https://www.knysna.n2rs.com/knysna-diary-october.html")],match=["Rocket, George"]),
- dict(id="red-bridge-knysna",name="Red Bridge Brewing Co.",town="Knysna",address="Noble Street, Knysna Industria, Knysna",phone="",website="",img="",
-   blurb="Craft brewery in Knysna Industria.",
+ dict(id="red-bridge-knysna",name="Red Bridge Brewing Co.",town="Knysna",address="5 Noble Street, Knysna Industria, Knysna",phone="083 997 2697",website="https://www.redbridgebrewing.co.za/",img="",
+   blurb="Craft micro-brewery and taproom in Knysna Industria (not George). Taproom: Mon–Wed 08:00–16:00, Thu 11:00–21:00, Fri 08:00–21:00, closed weekends.",
    specials=[],music=["1st Wednesday of the month: Garden Route Trivia League quiz (no start time published; 082 335 9406)"],
    notes="Address from OpenStreetMap. No specials found.",
    sources=[S("Knysna Diary, October 2026","https://www.knysna.n2rs.com/knysna-diary-october.html")],match=["Red Bridge Brewing"]),
@@ -111,6 +111,13 @@ REST=[
    specials=[],music=["Last Thursday of the month 19:00–21:00: Quiz Night hosted by Brian C. Pyle"],
    notes="9ty9.co.za also lists live music at the venue; no dates in the window were checked for this card.",
    sources=[S("9ty9.co.za: Quiz Night at the Backyard (24 Sep 2026)","https://9ty9.co.za/events/quiz-night-a-the-backyard-2026-09-24/")],match=["Backyard Beer Garden"]),
+ dict(id="cula-george",name="Cula Restaurant & Bar",town="George",address="Shop 22, Outeniqua Village (Outeniqua Lifestyle Centre), Knysna Rd & Saint George's Rd, George",phone="044 630 0701",
+   website="https://www.cula.co.za/",img="",
+   blurb="Pan-Asian restaurant (Wild Route group): Korean fried chicken, sushi, ramen and a robata coal grill. Book via Dineplan or reservations@cula.co.za.",
+   specials=[["Monday","#SweetTooth Mondays: book on Dineplan with #SweetTooth in the comments for a free dessert after your main"],["Tuesday","Pensioner's Asian Day: over-60s get 20% off breakfast, lunch and dinner"],["Wednesday","Date Night: 3-course dinner + bottle of wine, R595 per couple"],["Thursday","50% off sushi from 16:00 (excl. specialities & platters, eat-in)"],["Friday","Friday Steak Night from 17:00: 200g sirloin dishes R149"],["Mon–Fri","Express Lunch 12:00–15:00: R105, served in 15 min or it's free"],["Sat & Sun","Kids eat free (1 child 12 and under per adult main, eat-in)"]],
+   music=[],
+   notes="Name check: “Cula” is correct. Specials read from the posters on cula.co.za (7 Oct 2026); posters are undated.",
+   sources=[S("Cula (official site)","https://www.cula.co.za/"),S("Cula reservations","https://cula.co.za/reservations/"),S("Visit George","https://visitgeorge.co.za/directory/cula-restaurant-and-bar/")],match=["Cula"]),
 ]
 GR={"George","Knysna","Sedgefield","Hoekwil","Wilderness","Hartenbos","Oudtshoorn","Mossel Bay","Plettenberg Bay"}
 def fetch(url,out):
