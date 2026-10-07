@@ -3,7 +3,7 @@
   "short_name": "GR Events",
   "description": "Concerts, festivals, markets, fun runs and more along the Garden Route.",
   "start_url": "./",
-  "display": "browser",
+  "display": "standalone",
   "background_color": "#0d3b2e",
   "theme_color": "#0d3b2e",
   "icons": [
