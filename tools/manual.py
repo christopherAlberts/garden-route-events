@@ -812,7 +812,7 @@ for slug,t,d,tm,ven,tix in [
   ("geagte-kampeerders-2","Geagte Kampeerders (Wynand van Vollenstee & Thiart Li)","2026-12-22","15:00","Mossel Bay Town Hall","https://itickets.co.za/events/486204"),
   ("tillie-matilda","Tillie / Mathilda (Amanda Strydom & Je-Ani Swiegelaar)","2026-12-22","20:00","Mossel Bay Town Hall","https://itickets.co.za/events/486202"),
   ("sielskos-dames-oggend","SielsKos Dames Oggend (Hannes van Wyk)","2026-12-24","10:00","Mossel Bay Town Hall","https://itickets.co.za/events/486212")]:
-    add(title=f"Punt in die Wind: {t}",category="arts",start_date=d,time=tm,town="Mossel Bay",venue=ven,venue_address=("101 Marsh Street, Mossel Bay" if "Stadsaal" in ven else ("Wassung Street, Mossel Bay" if "Town Hall" in ven else "")),
+    add(title=t,category="arts",start_date=d,time=tm,town="Mossel Bay",venue=ven,venue_address=("101 Marsh Street, Mossel Bay" if "Stadsaal" in ven else ("Wassung Street, Mossel Bay" if "Town Hall" in ven else "")),
         price_from="",ticket_url=tix,source_url=MB+slug+"/",source_name=_S_MB,alt_sources=([tix] if tix else [])+([OTR8] if "Tillie" in t else []),notes="Show at the Punt in die Wind Kunste-Week (19-26 Dec).")
 # 2027
 add(title="Attakwas Extreme (MTB)",category="sport",start_date="2027-01-16",time="",town="Oudtshoorn",venue="Oudtshoorn to the coast (route)",price_from="",ticket_url="",source_url=OTR8,source_name=_S_OTR,

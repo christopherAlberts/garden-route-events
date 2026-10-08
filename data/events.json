@@ -8014,8 +8014,8 @@
   "last_checked": "2026-10-08"
  },
  {
-  "id": "2026-12-19-punt-in-die-wind-meerkat-petra",
-  "title": "Punt in die Wind: Meerkat Petra",
+  "id": "2026-12-19-meerkat-petra",
+  "title": "Meerkat Petra",
   "category": "arts",
   "status": "scheduled",
   "status_note": "",
@@ -8199,6 +8199,36 @@
   "last_checked": "2026-10-08"
  },
  {
+  "id": "2026-12-21-ouma-die-ou-koeie-margit-meyer-rodenbeck",
+  "title": "Ouma & die Ou Koeie (Margit Meyer-Rödenbeck)",
+  "category": "arts",
+  "status": "scheduled",
+  "status_note": "",
+  "start_date": "2026-12-21",
+  "end_date": "",
+  "time": "",
+  "recurrence": "",
+  "occurrences": [],
+  "nye": false,
+  "xmas": false,
+  "town": "Mossel Bay",
+  "region": "Mossel Bay",
+  "garden_route": true,
+  "venue": "Punt in die Wind venue (see listing)",
+  "venue_address": "",
+  "lat": -34.183202,
+  "lng": 22.153625,
+  "geo_source": "town centroid",
+  "price_from": "",
+  "ticket_url": "",
+  "source_url": "https://visitmosselbay.co.za/event/ouma-die-ou-koeie-met-margit-meyer-rodenbeck/",
+  "source_name": "Visit Mossel Bay (tourism calendar)",
+  "alt_sources": [],
+  "image": "",
+  "notes": "Show at the Punt in die Wind Kunste-Week (19-26 Dec).",
+  "last_checked": "2026-10-08"
+ },
+ {
   "id": "2026-12-21-marion-holm-punt-in-die-wind",
   "title": "Marion Holm – Punt in die Wind",
   "category": "concert",
@@ -8229,8 +8259,8 @@
   "last_checked": "2026-10-08"
  },
  {
-  "id": "2026-12-21-punt-in-die-wind-ouma-die-ou-koeie-margit-meyer-ro",
-  "title": "Punt in die Wind: Ouma & die Ou Koeie (Margit Meyer-Rödenbeck)",
+  "id": "2026-12-21-mel-die-storieverteller",
+  "title": "Mel die Storieverteller",
   "category": "arts",
   "status": "scheduled",
   "status_note": "",
@@ -8244,18 +8274,16 @@
   "town": "Mossel Bay",
   "region": "Mossel Bay",
   "garden_route": true,
-  "venue": "Punt in die Wind venue (see listing)",
+  "venue": "Mossel Bay Stadsaal (Town Hall)",
   "venue_address": "101 Marsh Street, Mossel Bay",
   "lat": -34.181765,
   "lng": 22.139347,
   "geo_source": "nominatim",
   "price_from": "",
   "ticket_url": "",
-  "source_url": "https://visitmosselbay.co.za/event/ouma-die-ou-koeie-met-margit-meyer-rodenbeck/",
+  "source_url": "https://visitmosselbay.co.za/event/mel-die-storieverteller-2/",
   "source_name": "Visit Mossel Bay (tourism calendar)",
-  "alt_sources": [
-   "https://visitmosselbay.co.za/event/mel-die-storieverteller-2/"
-  ],
+  "alt_sources": [],
   "image": "",
   "notes": "Show at the Punt in die Wind Kunste-Week (19-26 Dec).",
   "last_checked": "2026-10-08"
@@ -8321,8 +8349,8 @@
   "last_checked": "2026-10-08"
  },
  {
-  "id": "2026-12-22-punt-in-die-wind-liewe-heksie-margit-meyer-rodenbe",
-  "title": "Punt in die Wind: Liewe Heksie (Margit Meyer-Rödenbeck)",
+  "id": "2026-12-22-liewe-heksie-margit-meyer-rodenbeck",
+  "title": "Liewe Heksie (Margit Meyer-Rödenbeck)",
   "category": "arts",
   "status": "scheduled",
   "status_note": "",
@@ -8351,8 +8379,8 @@
   "last_checked": "2026-10-08"
  },
  {
-  "id": "2026-12-22-punt-in-die-wind-geagte-kampeerders-wynand-van-vol",
-  "title": "Punt in die Wind: Geagte Kampeerders (Wynand van Vollenstee & Thiart Li)",
+  "id": "2026-12-22-geagte-kampeerders-wynand-van-vollenstee-thiart-li",
+  "title": "Geagte Kampeerders (Wynand van Vollenstee & Thiart Li)",
   "category": "arts",
   "status": "scheduled",
   "status_note": "",
@@ -8443,8 +8471,8 @@
   "last_checked": "2026-10-08"
  },
  {
-  "id": "2026-12-22-punt-in-die-wind-tillie-mathilda-amanda-strydom-je",
-  "title": "Punt in die Wind: Tillie / Mathilda (Amanda Strydom & Je-Ani Swiegelaar)",
+  "id": "2026-12-22-tillie-mathilda-amanda-strydom-je-ani-swiegelaar",
+  "title": "Tillie / Mathilda (Amanda Strydom & Je-Ani Swiegelaar)",
   "category": "arts",
   "status": "scheduled",
   "status_note": "",
@@ -8628,8 +8656,8 @@
   "last_checked": "2026-10-08"
  },
  {
-  "id": "2026-12-24-punt-in-die-wind-sielskos-dames-oggend-hannes-van-",
-  "title": "Punt in die Wind: SielsKos Dames Oggend (Hannes van Wyk)",
+  "id": "2026-12-24-sielskos-dames-oggend-hannes-van-wyk",
+  "title": "SielsKos Dames Oggend (Hannes van Wyk)",
   "category": "arts",
   "status": "scheduled",
   "status_note": "",
