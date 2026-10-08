@@ -149,7 +149,7 @@ add(title="Carpe Musicam! Magnificent Movie Music (George)",category="concert",s
     venue="Laerskool George-Suid",venue_address="",price_from="R180",ticket_url="https://carpemusicam.co.za/",
     source_url="https://www.georgeherald.com/Whatson",source_name="George Herald (What's On)",
     notes="Concert orchestra & choir play film music. Adults R180, scholars R60.")
-import json as _json, os as _os
+import json as _json, os as _os, re
 HER=_json.load(open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)),"herald_data.json")))
 _eo=HER["occ"]["Etensuurkonsert in Moederkerk"]
 add(title="Etensuurkonserte: weekly lunch-hour concerts in the Moederkerk",category="concert",start_date=_eo[0],end_date=_eo[-1],occurrences=_eo,
@@ -734,10 +734,10 @@ add(title="Studietrust Gholfdag (golf day)",category="sport",start_date="2026-10
     source_url=MB+"studietrust-gholfdag/",source_name=_S_MB,notes="Fundraising golf day for Studietrust.")
 for slug,t,d,tm in [("song-sung-blue","Song Sung Blue","2026-10-16","19:00"),("hamnet-at-the-blue-shed","Hamnet","2026-10-23","19:15"),
                     ("beetlejuice","Beetlejuice","2026-10-30","19:15"),("bakgat","Bakgat","2026-11-13","19:30")]:
-    add(title=f"Blue Shed spring movies: {t}",category="arts",start_date=d,time=tm,town="Mossel Bay",venue="The Blue Shed (Open Plan Pictures)",venue_address="33 Bland Street, Mossel Bay",
+    add(title=f"Blue Shed spring movies: {t}",category="film",start_date=d,time=tm,town="Mossel Bay",venue="The Blue Shed (Open Plan Pictures)",venue_address="33 Bland Street, Mossel Bay",
         price_from="R100",ticket_url="https://openplanpictures.co.za/",source_url=MB+slug+"/",source_name=_S_MB,alt_sources=["https://openplanpictures.co.za/"]+([OTR8] if slug=="song-sung-blue" else []),
-        notes="Film screening in Open Plan Pictures' spring season at the Blue Shed.")
-add(title="Blue Shed spring movies: The Secret Life of Pets (bring your pet)",category="arts",start_date="2026-11-06",time="19:15",town="Mossel Bay",venue="The Blue Shed (Open Plan Pictures)",
+        notes="Indoor film screening in Open Plan Pictures' spring season at the Blue Shed Coffee Roastery.")
+add(title="Blue Shed spring movies: The Secret Life of Pets (bring your pet)",category="film",start_date="2026-11-06",time="19:15",town="Mossel Bay",venue="The Blue Shed (Open Plan Pictures)",
     venue_address="33 Bland Street, Mossel Bay",price_from="R100",ticket_url="https://www.quicket.co.za/events/394628/",source_url="https://www.quicket.co.za/events/394628/",source_name="Quicket",
     alt_sources=[MB+"secret-life-of-pets/"],notes="Pet-friendly screening. Date and time per Quicket; Visit Mossel Bay lists Tue 3 Nov 19:30, so check before you go.")
 add(title="Prince George Monumental (100-miler trail run)",category="funrun",start_date="2026-10-17",time="",town="Oudtshoorn",venue="Highgate Ostrich Show Farm",price_from="",
@@ -886,3 +886,53 @@ add(title="Simola Hillclimb 2027 (17th edition)",category="sport",start_date="20
 add(title="Christmas Pilates on the Simola helipad",category="community",start_date="2026-12-20",time="07:00-09:00",town="Knysna",venue="Simola Hotel, Country Club & Spa",
     venue_address="1 Old Cape Road, Simola, Knysna",price_from="",ticket_url="https://www.quicket.co.za/events/399557-christmas-pilates/",source_url="https://www.quicket.co.za/events/399557-christmas-pilates/",
     source_name="Quicket",notes="All-levels full-body Pilates flow led by Pure Posture Pilates on the hotel helipad overlooking the Knysna Heads.")
+
+# ---------------- Film & outdoor cinema (added 8 Oct 2026) ----------------
+add(title="Halloween @ Old Nick – open-air movie: Encanto",category="film",start_date="2026-10-31",time="Doors 16:00 (until 20:30)",town="Plettenberg Bay",venue="Old Nick Village",
+    venue_address="N2, 3 km east of Plettenberg Bay",price_from="R100",ticket_url="https://www.quicket.co.za/events/394767-halloween-old-nick/",source_url="https://www.quicket.co.za/events/394767-halloween-old-nick/",
+    source_name="Quicket",alt_sources=["https://openplanpictures.co.za/"],notes="Open Plan Pictures' 6th annual Halloween outdoor movie (Encanto, PG, 1h49). Dress up, trick-or-treat around the village, best-dressed competition for all ages, pop-up food market and a Nice Neighbour cash bar. R100 per person (R120 at the door).")
+add(title="Out of Mined – documentary screening, Sedgefield",category="film",start_date="2026-10-11",time="19:00 (arrive from 18:30)",town="Sedgefield",venue="In Toto Retreat",
+    venue_address="55 Jan van Riebeeck Street, The Island, Sedgefield",price_from="",ticket_url="https://www.quicket.co.za/events/401246-out-of-mined-sedgefield-screening/",
+    source_url="https://www.quicket.co.za/events/401246-out-of-mined-sedgefield-screening/",source_name="Quicket",alt_sources=["https://intotoretreat.co.za/"],
+    notes="Indoor screening of the award-winning 2026 West Coast mining documentary, followed by a short discussion. Hosted by In Our Nature, In Toto Retreat and Protect the West Coast NPC; 50% of ticket sales go to Protect the West Coast.")
+# The Galileo Open Air Cinema 2026/27 season (15 Oct 2026 - 15 May 2027): every screening from thegalileo.co.za/movies (movie pages parsed into tools/galileo_2026_27.json).
+import json as _json, os as _os, re
+_GV={ # Galileo venue -> (venue name, town, address)
+ "Kirstenbosch Garden":("Kirstenbosch National Botanical Garden","Cape Town","Rhodes Drive, Newlands, Cape Town"),
+ "Battery Park, V&A Waterfront":("Battery Park, V&A Waterfront","Cape Town","Battery Park, V&A Waterfront, Cape Town"),
+ "Central Park, Century City":("Central Park, Century City","Cape Town","Century City, Cape Town"),
+ "Claremont Cricket Club":("Claremont Cricket Club","Cape Town","Claremont, Cape Town"),
+ "German School (DSK)":("German International School Cape Town (DSK)","Cape Town","Tamboerskloof, Cape Town"),
+ "Norval Foundation":("Norval Foundation","Cape Town","4 Steenberg Road, Tokai, Cape Town"),
+ "Meerendal Wine Estate":("Meerendal Wine Estate","Cape Town","Meerendal, Durbanville, Cape Town"),
+ "Zevenwacht Wine Estate":("Zevenwacht Wine Estate","Cape Town","Zevenwacht, Kuils River, Cape Town"),
+ "Glenelly Estate":("Glenelly Estate","Stellenbosch","Glenelly Estate, Stellenbosch"),
+ "Morgenhof Wine Estate":("Morgenhof Wine Estate","Stellenbosch","Morgenhof, Stellenbosch"),
+ "Asara Wine Estate":("Asara Wine Estate","Stellenbosch","Asara, Stellenbosch"),
+ "Blaauwklippen Wine Estate":("Blaauwklippen Wine Estate","Stellenbosch","Blaauwklippen, Stellenbosch"),
+ "Jordan Wine Estate":("Jordan Wine Estate","Stellenbosch","Jordan Wine Estate, Stellenbosch"),
+ "Nederburg Wine Farm":("Nederburg Wine Farm","Paarl","Nederburg, Paarl"),
+ "Rhebokskloof Wine Estate":("Rhebokskloof Wine Estate","Paarl","Rhebokskloof, Paarl"),
+ "Leopards Leap":("Leopard's Leap Family Vineyards","Franschhoek","Leopard's Leap, Franschhoek"),
+ "Allée Bleue Wine Estate":("Allée Bleue Wine Estate","Franschhoek","Allée Bleue, Groot Drakenstein"),
+ "Plaisir Wine Estate":("Plaisir Wine Estate","Franschhoek","Plaisir, Simondium"),
+}
+_GAL_TIX="https://www.webtickets.co.za/v2/event.aspx?itemid=1600185548"
+for _m in _json.load(open(_os.path.join(_os.path.dirname(__file__),"galileo_2026_27.json"),encoding="utf-8")):
+    _vn,_tw,_ad=_GV[_m["venue"]]
+    _t=re.sub(r"\s+[–-]\s+(Kirstenbosch Garden|Kirstenbosch|Meerendal Wine Estate)$","",_m["title"]).replace(" at Meerendal","").replace(" at Kirstenbosch","")
+    _ty=(_m["type"] or "PICNIC").upper()
+    _tl=_t.lower()
+    if _ty=="ROYALE": _pr="R350"
+    elif "valentine" in _tl: _pr="R350"
+    elif "christmas" in _tl: _pr="R225"
+    elif _ty=="SPECIAL" or "easter" in _tl: _pr="R175"
+    else: _pr="R155"
+    _st=(_m["start"] or "").replace("h",":"); _dr=(_m["doors"] or "").replace("h",":")
+    _age=_m["age"] if _m["age"] and not re.match(r"^\d\dh\d\d$",_m["age"]) else ""
+    add(title=f"Galileo Open Air Cinema: {_t}",category="film",start_date=_m["iso"],time=(f"Doors {_dr}, movie {_st}" if _dr else f"Movie {_st}"),
+        town=_tw,venue=_vn,venue_address=_ad,price_from=_pr,ticket_url=_GAL_TIX,source_url=f"https://thegalileo.co.za/movie/{_m['slug']}/",source_name="The Galileo Open Air Cinema (official site)",
+        alt_sources=["https://thegalileo.co.za/movies/"],
+        notes=("Galileo Royale (VIP). " if _ty=="ROYALE" else ("Galileo special show. " if _ty=="SPECIAL" else "Galileo picnic screening. "))+
+              (f"Rated {_age}. " if _age else "")+(f"Runtime {_m['run']}. " if _m["run"] and _m["run"]!="TBC" else "")+
+              "Open-air movie under the stars: bring a picnic (alcohol allowed) or buy from the food vendors and bar on site. Standard ticket R155 (R170 with backrest, R180 with backrest and blanket); specials and Royale cost more. Children under 4 free. Book on Webtickets (search the show date).")

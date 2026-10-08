@@ -359,3 +359,11 @@ body.v-rest #catChips,body.v-rest #month,body.v-rest #offToggle{display:none!imp
 .ph.sport{background:radial-gradient(circle at 70% 20%,#a5f3fc 0,transparent 45%),linear-gradient(135deg,#164e63,#0e7490 55%,#67e8f9)}
 .chip.sport{background:color-mix(in srgb,var(--sport) 14%,transparent);border-color:var(--sport)}
 .pe .pc.sport{background:#0e7490}
+
+/* film & outdoor cinema */
+:root{--film:#374151}
+@media (prefers-color-scheme:dark){:root{--film:#cbd5e1}}
+.dot.film,.cat.film{background:var(--film)}
+.ph.film{background:radial-gradient(circle at 75% 18%,#fde68a 0,transparent 30%),linear-gradient(135deg,#0f172a,#334155 60%,#64748b)}
+.chip.film{background:color-mix(in srgb,var(--film) 14%,transparent);border-color:var(--film)}
+.pe .pc.film{background:#374151}

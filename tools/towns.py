@@ -21,6 +21,8 @@ TOWNS={
  "Witsand":("Witsand, Western Cape","Hessequa (Stilbaai)",False),
  "Heidelberg":("Heidelberg, Western Cape","Hessequa (Stilbaai)",False),
  "Stellenbosch":("Stellenbosch, Western Cape","Cape Winelands",False),
+ "Paarl":("Paarl, Western Cape","Cape Winelands",False),
+ "Franschhoek":("Franschhoek, Western Cape","Cape Winelands",False),
  "Gqeberha":("Gqeberha, Eastern Cape","Nelson Mandela Bay",False),
  "Stilbaai":("Stilbaai, Western Cape","Hessequa (Stilbaai)",False),
  "Riversdale":("Riversdale, Western Cape","Hessequa (Stilbaai)",False),
