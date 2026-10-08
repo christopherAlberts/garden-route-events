@@ -1,4 +1,16 @@
 {
+"2026-09-16-mossel-bay-sport-and-recreation-festival": {
+"img": "",
+"pages": [
+"https://www.ontheroute.co.za/events-calendar/"
+]
+},
+"2026-09-23-mossel-bay-arts-festival-arts-month": {
+"img": "",
+"pages": [
+"https://www.ontheroute.co.za/events-calendar/"
+]
+},
 "2026-10-06-garden-route-trivia-league-quiz-at-goose-valley-go": {
 "img": "",
 "pages": [
@@ -10,6 +22,13 @@
 "pages": [
 "https://www.therealhennies.co.za/branches/hennies-george",
 "https://www.therealhennies.co.za/img/posters/whatson-oct-2026/george.jpg"
+]
+},
+"2026-10-06-blithe-spirit-noel-coward-comedy": {
+"img": "",
+"pages": [
+"https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/",
+"https://www.ontheroute.co.za/your-garden-route-event-guide-1-october/"
 ]
 },
 "2026-10-07-garden-route-trivia-league-quiz-at-red-bridge-brew": {
@@ -121,6 +140,14 @@
 "https://www.transplo.com/ZA/Hartenbos/775998325815871/Diaz-Express"
 ]
 },
+"2026-10-09-atlantic-rail-trip-sc-rail-steam-train-sylvia-hart": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2026/03/atlantic-rail-train-rides-1.webp",
+"pages": [
+"https://scrail.co.za/list-view/",
+"https://visitmosselbay.co.za/event/atlantic-rail-trip-11/2026-10-09/1/",
+"https://scrail.co.za/list-view/"
+]
+},
 "2026-10-09-carpe-musicam-magnificent-movie-music-george": {
 "img": "",
 "pages": [
@@ -144,10 +171,52 @@
 "https://www.toodoo.co.za/wild-oats-community-farmers-market/"
 ]
 },
+"2026-10-10-bon-game-reserve-parkrun": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2025/08/bon-game-park-run-cover-image.webp",
+"pages": [
+"https://www.parkrun.co.za/bongamereserve/",
+"https://visitmosselbay.co.za/event/bon-game-reserve-park-run/2026-10-10/"
+]
+},
+"2026-10-10-curro-mossel-bay-school-parkrun": {
+"img": "",
+"pages": [
+"https://www.parkrun.co.za/curromosselbayschool/",
+"https://www.gardenrouteguide.co.za/garden-route-events/"
+]
+},
+"2026-10-10-george-parkrun": {
+"img": "",
+"pages": [
+"https://www.parkrun.co.za/george/",
+"https://www.gardenrouteguide.co.za/garden-route-events/"
+]
+},
+"2026-10-10-harkerville-parkrun": {
+"img": "",
+"pages": [
+"https://www.parkrun.co.za/harkerville/",
+"https://www.gardenrouteguide.co.za/garden-route-events/"
+]
+},
+"2026-10-10-hart-bosch-village-parkrun": {
+"img": "",
+"pages": [
+"https://www.parkrun.co.za/hartenboschvillage/",
+"https://www.gardenrouteguide.co.za/garden-route-events/"
+]
+},
 "2026-10-10-kingswood-spring-fun-run-walk-for-pdsa-george": {
 "img": "",
 "pages": [
 "https://www.estate-living.co.za/news/the-big-one-celebrating-our-community-centres-first-birthday/"
+]
+},
+"2026-10-10-knysna-parkrun": {
+"img": "",
+"pages": [
+"https://www.parkrun.co.za/knysna/",
+"https://www.gardenrouteguide.co.za/garden-route-events/"
 ]
 },
 "2026-10-10-sedgefield-mosaic-market": {
@@ -186,6 +255,14 @@
 "https://visitgeorge.co.za/directory/outeniqua-power-van/"
 ]
 },
+"2026-10-10-scarab-village-craft-market": {
+"img": "",
+"pages": [
+"https://www.gardenroute.com/scarab-village-craft-market-from-all-year-every-saturday-till_event_op_view_id_453",
+"https://scarabvillage.co.za/craft-market/",
+"https://www.gardenrouteguide.co.za/garden-route-events/"
+]
+},
 "2026-10-10-misty-valley-octoberfest": {
 "img": "https://visitmosselbay.co.za/wp-content/uploads/2026/09/misty-valley-october-fest-2026-1.webp",
 "pages": [
@@ -205,6 +282,13 @@
 "https://www.georgeherald.com/Whatson"
 ]
 },
+"2026-10-10-southern-cape-coin-show": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2026/10/southern-cape-coin-show-10-oct-26-bahia-bleu.jpg",
+"pages": [
+"https://visitmosselbay.co.za/event/southern-cape-coin-show/",
+"https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/"
+]
+},
 "2026-10-10-knysna-rnb-soul-and-afro-pop-2026": {
 "img": "",
 "pages": [
@@ -218,10 +302,23 @@
 "https://www.quicket.co.za/events/393493-tsitsikamma-manor-colour-festival/"
 ]
 },
+"2026-10-10-country-sokkie-evening-at-la-bosca": {
+"img": "",
+"pages": [
+"https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/",
+"https://www.ontheroute.co.za/your-garden-route-event-guide-1-october/"
+]
+},
 "2026-10-10-jo-black-live-at-reedvalley": {
 "img": "https://visitmosselbay.co.za/wp-content/uploads/2026/08/e1ec2f24c564844e3a5176f2b437abadc9fc4f0dc172ef26586bb556a40638fe-rimg-w1080-h1350-dc2a1f17-gmir.webp",
 "pages": [
 "https://visitmosselbay.co.za/event/jo-black-live-at-reedvalley/"
+]
+},
+"2026-10-10-mrc-rugby-expo": {
+"img": "",
+"pages": [
+"https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/"
 ]
 },
 "2026-10-10-hemelruim-desert-disco-open-air-concert-spoegwolf-": {
@@ -253,6 +350,22 @@
 "https://visitmosselbay.co.za/event/moss-march-2026/"
 ]
 },
+"2026-10-10-garden-route-armwrestling-tournament": {
+"img": "",
+"pages": [
+"https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/",
+"https://www.ontheroute.co.za/your-garden-route-event-guide-1-october/"
+]
+},
+"2026-10-11-wilderness-chess-club-freestyle-chess960-tournamen": {
+"img": "",
+"pages": [
+"https://www.toodoo.co.za/wilderness-chess960/",
+"https://www.toodoo.co.za/wilderness-chess960/",
+"https://www.gardenroute.com/wilderness-chess-club-freestyle-chess960-tournament-from-11th-oct-2026-till_event_op_view_id_3932",
+"https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/"
+]
+},
 "2026-10-11-show-ground-sunday-market": {
 "img": "https://cms.groupeditors.com/img/community_cbf2365c-93f6-4290-a03b-5f31dec0ff17.png?crop=0,247,1088,1335&w=700&h=700&scale=both",
 "pages": [
@@ -277,6 +390,13 @@
 "img": "https://visitmosselbay.co.za/wp-content/uploads/2025/09/karaoke-sundays-at-sky-lounge-with-dj-melly-d.jpg",
 "pages": [
 "https://visitmosselbay.co.za/event/karaoke-night-sky-lounge-2/2026-10-11/"
+]
+},
+"2026-10-11-milkwood-village-sunday-market": {
+"img": "",
+"pages": [
+"https://milkwoodvillage.co.za/",
+"https://www.gardenrouteguide.co.za/garden-route-events/"
 ]
 },
 "2026-10-12-gtr-monday-social-trail-run-8-km": {
@@ -325,6 +445,14 @@
 "https://visitmosselbay.co.za/event/arts-craft-mini-market/2026-10-14/"
 ]
 },
+"2026-10-14-mosaic-food-fare-wednesday-evenings": {
+"img": "",
+"pages": [
+"https://www.gardenroute.com/mosaic-food-fare-from-all-year-every-wednesday-till_event_op_view_id_2739",
+"http://mosaicmarket.co.za/welcome/",
+"https://www.gardenrouteguide.co.za/garden-route-events/"
+]
+},
 "2026-10-14-becoming-king-arthur": {
 "img": "https://images.quicket.co.za/0982308_0.png",
 "pages": [
@@ -336,6 +464,21 @@
 "img": "https://cms.groupeditors.com/img/2026/Oct/7b8b90e5-3a9e-4b1b-b7a2-ab43328d7004.jpg?crop=128,0,528,400&w=700&h=700&scale=both",
 "pages": [
 "https://www.georgeherald.com/Whatson"
+]
+},
+"2026-10-16-studietrust-gholfdag-golf-day": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2026/08/gholfdag-mosselbay-hh-gholfdag-16-oktober-26-mossel-baai-gholf-klub.jpg",
+"pages": [
+"https://visitmosselbay.co.za/event/studietrust-gholfdag/"
+]
+},
+"2026-10-16-blue-shed-spring-movies-song-sung-blue": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2026/09/song-sung-blue-the-blue-shed-16-oct-26-19-h-15.jpeg",
+"pages": [
+"https://openplanpictures.co.za/",
+"https://visitmosselbay.co.za/event/song-sung-blue/",
+"https://openplanpictures.co.za/",
+"https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/"
 ]
 },
 "2026-10-16-posboom-philatelic-society-60th-anniversary-inter-": {
@@ -350,6 +493,14 @@
 "https://www.entryninja.com/events/83786-fancourt-marathon",
 "https://www.entryninja.com/events/83786-fancourt-marathon",
 "https://dash.streblainnovations.com/races/"
+]
+},
+"2026-10-17-prince-george-monumental-100-miler-trail-run": {
+"img": "",
+"pages": [
+"https://www.princegeorge.co.za/",
+"https://www.princegeorge.co.za/",
+"https://www.gardenrouteguide.co.za/garden-route-events/"
 ]
 },
 "2026-10-17-klein-karoo-dust-4-glory-challenge-family-obstacle": {
@@ -382,6 +533,13 @@
 "img": "",
 "pages": [
 "https://www.plett-tourism.co.za/events/plett-games/"
+]
+},
+"2026-10-17-topper-nationals-sailing": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2026/08/skipper-foundation-topper-nationals.webp",
+"pages": [
+"https://visitmosselbay.co.za/event/the-topper-nationals-in-mosselbay/2026-10-17/",
+"https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/"
 ]
 },
 "2026-10-17-john-masser-live-at-hennie-s-george": {
@@ -435,6 +593,12 @@
 "https://fancourt.co.za/events1/schalk-bezuidenhout/"
 ]
 },
+"2026-10-20-schalk-bezuidenhout-hey-hey-divorce-at-simola-stan": {
+"img": "",
+"pages": [
+"https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/"
+]
+},
 "2026-10-21-schalk-bezuidenhout-hey-hey-divorce-stand-up-comed": {
 "img": "https://images.quicket.co.za/0921787_0.jpeg",
 "pages": [
@@ -448,6 +612,20 @@
 "pages": [
 "https://www.quicket.co.za/events/392725-bitou-birding-festival-2026-slow-down-look-up-reconnect/#tickets",
 "https://www.quicket.co.za/events/392725-bitou-birding-festival-2026-slow-down-look-up-reconnect/"
+]
+},
+"2026-10-23-blue-shed-spring-movies-hamnet": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2026/09/hamnet-3-october-26-the-blue-shed-at-19h15.jpeg",
+"pages": [
+"https://openplanpictures.co.za/",
+"https://visitmosselbay.co.za/event/hamnet-at-the-blue-shed/",
+"https://openplanpictures.co.za/"
+]
+},
+"2026-10-23-food-wine-pairing-evening-at-chefs-emporium": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2026/10/828510277_1585200423620968_2255351101634818240_n.webp",
+"pages": [
+"https://visitmosselbay.co.za/event/food-wine-pairing-evening/"
 ]
 },
 "2026-10-24-montagu-pass-run-17-km-10-km-5-km-trail": {
@@ -470,11 +648,24 @@
 "https://www.ontheroute.co.za/your-garden-route-event-guide-1-october/"
 ]
 },
+"2026-10-24-art-workshop-with-maria": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2026/02/638146692_1450611799765482_9092450813220692560_n.webp",
+"pages": [
+"https://visitmosselbay.co.za/event/art-workshop-with-maria-2026/2026-10-24/"
+]
+},
 "2026-10-24-come-fly-with-us-the-collectiv": {
 "img": "https://images.quicket.co.za/0993672_0.jpeg",
 "pages": [
 "https://www.quicket.co.za/events/399259-come-fly-with-us-the-collectiv/#tickets",
 "https://www.quicket.co.za/events/399259-come-fly-with-us-the-collectiv/"
+]
+},
+"2026-10-24-sacbw-gala-awards-2026": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2026/06/sacbw-invite-002-1.webp",
+"pages": [
+"https://visitmosselbay.co.za/event/sacbw-gala-awards-2026/",
+"https://www.facebook.com/sacbwWC"
 ]
 },
 "2026-10-24-eerste-vir-alles-frank-opperman-margit-meyer-roden": {
@@ -491,11 +682,25 @@
 "https://www.georgeherald.com/Whatson"
 ]
 },
+"2026-10-24-the-complete-works-of-william-shakespeare-abridged": {
+"img": "",
+"pages": [
+"https://www.quicket.co.za/events/390568-the-complete-works-of-william-shakespeare-abridged/",
+"https://www.quicket.co.za/events/390568-the-complete-works-of-william-shakespeare-abridged/",
+"https://www.gardenroute.com/complete-works-of-william-shakespeare-abridged-from-24th-oct-2026-till-25th-oct-2026_event_op_view_id_3917"
+]
+},
 "2026-10-25-forest-cycle-and-walk-for-iloveboobies": {
 "img": "https://images.quicket.co.za/0997585_0.jpeg",
 "pages": [
 "https://www.quicket.co.za/events/400477-forest-cycle-and-walk-for-iloveboobies/#tickets",
 "https://www.quicket.co.za/events/400477-forest-cycle-and-walk-for-iloveboobies/"
+]
+},
+"2026-10-27-night-of-1000-owls-raptor-rescue-art-exhibition-fu": {
+"img": "",
+"pages": [
+"https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/"
 ]
 },
 "2026-10-27-art-flowers-exhibition-for-hospice-knysna-sedgefie": {
@@ -518,6 +723,12 @@
 "https://www.quicket.co.za/events/392372-crosby-stills-nash-young-a-tribute-live-in-mossel-bay/"
 ]
 },
+"2026-10-29-rhodes-dryland-traverse-multi-day-trail-run": {
+"img": "",
+"pages": [
+"https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/"
+]
+},
 "2026-10-29-crosby-stills-nash-young-a-tribute-live-in-wildern": {
 "img": "https://images.quicket.co.za/0971621_0.png",
 "pages": [
@@ -531,6 +742,12 @@
 "https://www.knysna.n2rs.com/knysna-diary-october.html",
 "https://botanicalgarden.org.za/",
 "https://www.facebook.com/GRBotanical/"
+]
+},
+"2026-10-30-sa-national-criterium-championships-road-cycling": {
+"img": "",
+"pages": [
+"https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/"
 ]
 },
 "2026-10-30-sarie-nation-music-festival": {
@@ -566,6 +783,14 @@
 "pages": [
 "https://www.quicket.co.za/events/397115-the-70s-vs-80s-tribute-show/#tickets",
 "https://www.quicket.co.za/events/397115-the-70s-vs-80s-tribute-show/"
+]
+},
+"2026-10-30-blue-shed-spring-movies-beetlejuice": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2026/09/beetlejuice-30-october-26-the-blue-shed-at-19h15.jpeg",
+"pages": [
+"https://openplanpictures.co.za/",
+"https://visitmosselbay.co.za/event/beetlejuice/",
+"https://openplanpictures.co.za/"
 ]
 },
 "2026-10-30-crosby-stills-nash-young-a-tribute-live-in-knysna": {
@@ -605,6 +830,12 @@
 "https://www.barringtonsplett.co.za/oktoberfest-25/"
 ]
 },
+"2026-10-31-bassline-society-trick-or-treat-halloween-party": {
+"img": "",
+"pages": [
+"https://www.gardenroute.com/bassline-society---trick-or-treat-from-31st-oct-2026-till_event_op_view_id_3922"
+]
+},
 "2026-10-31-rave-run-4-km-with-a-live-dj-gobi-hybrid-games": {
 "img": "",
 "pages": [
@@ -625,12 +856,24 @@
 "https://www.ontheroute.co.za/your-garden-route-event-guide-1-october/"
 ]
 },
+"2026-10-31-woord-in-waarheid-damestee-ladies-tea": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2026/07/fd504a0398962ec7315f651ac90b85cca7541aef4e83357d9b3bb6c401e082db-rimg-w1200-h801-dcf4d8d4-gmir.webp",
+"pages": [
+"https://visitmosselbay.co.za/event/woord-in-waarheid-damestee/"
+]
+},
 "2026-10-31-oudtshoorn-motor-club-wc-regional-club-oval-dirt-s": {
 "img": "",
 "pages": [
 "https://www.motorsport.co.za/event/wc-regional-oudtshoorn-motor-club-oval-dirt-championships-3/",
 "https://www.motorsport.co.za/wp-content/uploads/2026/10/2026-MSA-Annual-Events-Calendar-01.10.2026.pdf",
 "https://www.motorsport.co.za/organizer/do4sa-oudts/"
+]
+},
+"2026-10-31-asanda-bam-live-at-the-white-house-theatre-jazz": {
+"img": "",
+"pages": [
+"https://www.gardenroute.com/asanda-bam-at-white-house-theatre-from-31st-oct-2026-till_event_op_view_id_3924"
 ]
 },
 "2026-10-31-crosby-stills-nash-young-a-tribute-live-in-pletten": {
@@ -675,6 +918,22 @@
 "https://www.ontheroute.co.za/your-garden-route-event-guide-1-october/"
 ]
 },
+"2026-11-06-blue-shed-spring-movies-the-secret-life-of-pets-br": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2026/09/secret-life-of-pets-bring-your-pet-blue-shed-6-nov-26-19-h-30.jpeg",
+"pages": [
+"https://www.quicket.co.za/events/394628/",
+"https://www.quicket.co.za/events/394628/",
+"https://visitmosselbay.co.za/event/secret-life-of-pets/"
+]
+},
+"2026-11-06-dirk-van-der-westhuizen-at-reedvalley": {
+"img": "",
+"pages": [
+"https://www.reedvalley.com/ots/order.php?vendor=1&show=902",
+"https://www.reedvalley.com/ots/order.php?vendor=1&show=902",
+"https://www.gardenroute.com/dirk-van-der-westhuizen-by-reedvalley-from-6th-nov-2026-till_event_op_view_id_3952"
+]
+},
 "2026-11-06-rocco-de-villiers-live-in-mosselbaai": {
 "img": "https://images.quicket.co.za/0987677_0.jpeg",
 "pages": [
@@ -687,6 +946,24 @@
 "pages": [
 "https://runningcalendar.co.za/races/city/george",
 "https://dash.streblainnovations.com/races/"
+]
+},
+"2026-11-07-holistic-wellness-expo-plettenberg-bay": {
+"img": "",
+"pages": [
+"https://plett.wellnessexpo-sa.co.za/",
+"https://www.gardenroute.com/holistic-expo-plettenberg-bay-from-7th-nov-2026-till-8th-nov-2026_event_op_view_id_3898",
+"https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/"
+]
+},
+"2026-11-07-knysna-extreme-triathlon": {
+"img": "",
+"pages": [
+"https://entrytickets.net/knysnaextreme",
+"https://entrytickets.net/knysnaextreme",
+"https://www.gardenroute.com/knysna-extreme-triathlon-from-7th-nov-2026-till_event_op_view_id_3827",
+"https://www.gardenrouteguide.co.za/garden-route-events/",
+"https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/"
 ]
 },
 "2026-11-07-run-the-farm-herold-wines-12-hour-5-km-loop-challe": {
@@ -729,6 +1006,14 @@
 "https://www.quicket.co.za/events/393772-man-in-black-a-tribute-to-johnny-cash/"
 ]
 },
+"2026-11-07-a-night-of-comedy-with-alan-committie": {
+"img": "",
+"pages": [
+"https://www.quicket.co.za/events/377526-a-night-of-comedy-with-alan-committie-knysna/",
+"https://www.quicket.co.za/events/377526-a-night-of-comedy-with-alan-committie-knysna/",
+"https://www.gardenroute.com/night-of-comedy-with-alan-committie-from-7th-nov-2026-till_event_op_view_id_3919"
+]
+},
 "2026-11-07-jakkie-louw-live-at-reedvalley": {
 "img": "https://visitmosselbay.co.za/wp-content/uploads/2026/09/jackie-louw-reed-valley-1.webp",
 "pages": [
@@ -763,6 +1048,14 @@
 "https://www.quicket.co.za/events/400669-dr-philip-southeys-symphony-and-science/"
 ]
 },
+"2026-11-13-blue-shed-spring-movies-bakgat": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2026/09/bakgat-13-nov-26-the-blues-hed-at-19h30.jpeg",
+"pages": [
+"https://openplanpictures.co.za/",
+"https://visitmosselbay.co.za/event/bakgat/",
+"https://openplanpictures.co.za/"
+]
+},
 "2026-11-13-dozi-live-at-reedvalley": {
 "img": "https://visitmosselbay.co.za/wp-content/uploads/2026/09/dozi-reedvalley-1.webp",
 "pages": [
@@ -789,6 +1082,12 @@
 "https://www.visitknysna.co.za/whats-on/events/waterfront-half-marathon/"
 ]
 },
+"2026-11-20-rest-and-restore-women-s-retreat": {
+"img": "",
+"pages": [
+"https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/"
+]
+},
 "2026-11-20-spoilt-knysna-gift-fair-2026": {
 "img": "https://images.quicket.co.za/0986906_0.jpeg",
 "pages": [
@@ -808,6 +1107,12 @@
 "img": "",
 "pages": [
 "https://trailgirl.co.za/tr-3-3-2/"
+]
+},
+"2026-11-21-dance-through-the-decades-elle-dance-academy": {
+"img": "",
+"pages": [
+"https://www.gardenroute.com/dance-through-decades-from-21st-nov-2026-till-22nd-nov-2026_event_op_view_id_3930"
 ]
 },
 "2026-11-21-pastor-v-mboniswa-hymns-melodies-garden-route-tour": {
@@ -831,11 +1136,27 @@
 "https://www.quicket.co.za/events/392031-woodstock-beyond-1965-1975-live-in-knysna/"
 ]
 },
+"2026-11-22-isuzu-ironman-70-3-mossel-bay": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2024/04/ironman-mosselbay.webp",
+"pages": [
+"https://www.ironman.com/races/im703-mossel-bay",
+"https://visitmosselbay.co.za/event/ironman-70-3-mossel-bay/",
+"https://www.ironman.com/races/im703-mossel-bay",
+"https://www.gardenrouteguide.co.za/garden-route-events/",
+"https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/"
+]
+},
 "2026-11-24-gordi-brown-his-bigtime-harmonica": {
 "img": "https://images.quicket.co.za/0993324_0.jpeg",
 "pages": [
 "https://www.quicket.co.za/events/399055-gordi-brown-his-bigtime-harmonica/#tickets",
 "https://www.quicket.co.za/events/399055-gordi-brown-his-bigtime-harmonica/"
+]
+},
+"2026-11-26-mossjazz-golf-day": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2026/09/mossjazz-golf-day.webp",
+"pages": [
+"https://visitmosselbay.co.za/event/mossjazz-golf-day/"
 ]
 },
 "2026-11-26-mosjazz-2026": {
@@ -873,6 +1194,14 @@
 "img": "https://visitmosselbay.co.za/wp-content/uploads/2026/08/reedvalley-amy-winehouse-scaled.webp",
 "pages": [
 "https://visitmosselbay.co.za/event/amy-winehouse-tribute-at-reedvalley/"
+]
+},
+"2026-11-27-universal-frequencies-2026-psytrance-festival": {
+"img": "",
+"pages": [
+"https://www.quicket.co.za/events/342747-universal-frequencies-2026/",
+"https://www.quicket.co.za/events/342747-universal-frequencies-2026/",
+"https://www.gardenroute.com/universal-frequencies-2026-from-27th-nov-2026-till-29th-nov-2026_event_op_view_id_3918"
 ]
 },
 "2026-11-28-bergplaas-challenge-10-km-7-km-trail": {
@@ -972,6 +1301,12 @@
 "https://hopefamily.org/event/"
 ]
 },
+"2026-12-11-ochre-origins-opening-exhibition-at-ochre-contempo": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2026/07/744877178_1739281010405810_685445839832414432_n-1.webp",
+"pages": [
+"https://visitmosselbay.co.za/event/ochre-origins-opening-exhibition-at-ochre-contemporary/"
+]
+},
 "2026-12-11-real-nice-presents-day-dreaming": {
 "img": "",
 "pages": [
@@ -1036,6 +1371,13 @@
 "https://allevents.in/knysna/kevin-fraser-live-in-knysna-2026/200030644166524"
 ]
 },
+"2026-12-14-eden-street-mile-series-george-street-mile": {
+"img": "",
+"pages": [
+"https://www.facebook.com/events/1676645959942885/",
+"https://www.gardenroute.com/atkv-street-mile-from-18th-dec-2026-till_event_op_view_id_3861"
+]
+},
 "2026-12-14-louis-massyn-rocket-run-10-km-5-km": {
 "img": "",
 "pages": [
@@ -1068,6 +1410,13 @@
 "https://www.barringtonsplett.co.za/barringtons-wine-festival-25/"
 ]
 },
+"2026-12-16-eden-street-mile-series-klein-karoo-street-mile": {
+"img": "",
+"pages": [
+"https://www.facebook.com/events/1676645959942885/",
+"https://www.gardenroute.com/atkv-street-mile-from-18th-dec-2026-till_event_op_view_id_3861"
+]
+},
 "2026-12-16-mossel-bay-street-market-december-night-market": {
 "img": "",
 "pages": [
@@ -1085,6 +1434,13 @@
 "img": "https://visitmosselbay.co.za/wp-content/uploads/2026/09/ballyhoo-reedvalley-1.webp",
 "pages": [
 "https://visitmosselbay.co.za/event/ballyhoo-live/"
+]
+},
+"2026-12-18-eden-street-mile-series-atkv-street-mile": {
+"img": "",
+"pages": [
+"https://www.facebook.com/events/1676645959942885/",
+"https://www.gardenroute.com/atkv-street-mile-from-18th-dec-2026-till_event_op_view_id_3861"
 ]
 },
 "2026-12-18-fancourt-10-km": {
@@ -1120,6 +1476,14 @@
 "https://www.motorsport.co.za/venue/george-showgrounds-george/"
 ]
 },
+"2026-12-18-vortex-open-source-2026-trance-festival": {
+"img": "",
+"pages": [
+"https://www.quicket.co.za/events/386068-vortex-open-source-2026",
+"https://www.quicket.co.za/events/386068-vortex-open-source-2026",
+"https://www.gardenroute.com/vortex-open-source-2026-from-18th-dec-2026-till-20th-dec-2026_event_op_view_id_3923"
+]
+},
 "2026-12-19-punt-in-die-wind-kunste-week-arts-festival": {
 "img": "",
 "pages": [
@@ -1152,6 +1516,14 @@
 "img": "https://visitmosselbay.co.za/wp-content/uploads/2026/09/mathys-roets-reedvalley.webp",
 "pages": [
 "https://visitmosselbay.co.za/event/mathys-roets-live-at-reedvalley/"
+]
+},
+"2026-12-19-punt-in-die-wind-meerkat-petra": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2026/07/meerkat-petra-stadsaal-punt-in-die-wind.webp",
+"pages": [
+"https://itickets.co.za/events/486591",
+"https://visitmosselbay.co.za/event/meerkat-petra-at-punt-in-die-wind-festival/",
+"https://itickets.co.za/events/486591"
 ]
 },
 "2026-12-19-spoegwolf-live-in-george": {
@@ -1197,6 +1569,13 @@
 "https://itickets.co.za/events/486200"
 ]
 },
+"2026-12-21-punt-in-die-wind-ouma-die-ou-koeie-margit-meyer-ro": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2026/07/ouma-en-die-ou-koeie-punt-in-die-wind-2.webp",
+"pages": [
+"https://visitmosselbay.co.za/event/ouma-die-ou-koeie-met-margit-meyer-rodenbeck/",
+"https://visitmosselbay.co.za/event/mel-die-storieverteller-2/"
+]
+},
 "2026-12-21-roan-ash-live-at-reedvalley": {
 "img": "https://visitmosselbay.co.za/wp-content/uploads/2026/09/roan-ash-reedvalley.webp",
 "pages": [
@@ -1208,6 +1587,20 @@
 "pages": [
 "https://www.quicket.co.za/events/398838-the-billy-joel-experience-live-in-george/#tickets",
 "https://www.quicket.co.za/events/398838-the-billy-joel-experience-live-in-george/"
+]
+},
+"2026-12-22-punt-in-die-wind-liewe-heksie-margit-meyer-rodenbe": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2026/07/liewe-heksie-punt-in-die-wind-2.webp",
+"pages": [
+"https://visitmosselbay.co.za/event/liewe-heksie-with-margit-meyer-rodenbeck/"
+]
+},
+"2026-12-22-punt-in-die-wind-geagte-kampeerders-wynand-van-vol": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2026/08/geagte-kampeerders-22-des-26-stadsaal-punt-in-die-wind.jpg",
+"pages": [
+"https://itickets.co.za/events/486204",
+"https://visitmosselbay.co.za/event/geagte-kampeerders-2/",
+"https://itickets.co.za/events/486204"
 ]
 },
 "2026-12-22-matthew-mole-live-in-knysna": {
@@ -1222,6 +1615,15 @@
 "pages": [
 "https://www.quicket.co.za/events/392041-die-heilige-nag/",
 "https://www.quicket.co.za/events/392041-die-heilige-nag/"
+]
+},
+"2026-12-22-punt-in-die-wind-tillie-mathilda-amanda-strydom-je": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2026/08/tillie-matilda-22-december-26-townhall.jpg",
+"pages": [
+"https://itickets.co.za/events/486202",
+"https://visitmosselbay.co.za/event/tillie-matilda/",
+"https://itickets.co.za/events/486202",
+"https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/"
 ]
 },
 "2026-12-22-tribute-to-elvis-presley-james-marais-monique-cass": {
@@ -1255,6 +1657,14 @@
 "pages": [
 "https://www.quicket.co.za/events/399396-the-billy-joel-experience-live-in-knysna/#tickets",
 "https://www.quicket.co.za/events/399396-the-billy-joel-experience-live-in-knysna/"
+]
+},
+"2026-12-24-punt-in-die-wind-sielskos-dames-oggend-hannes-van-": {
+"img": "https://visitmosselbay.co.za/wp-content/uploads/2026/08/sielskos-24-desember-26-punt-in-die-wind-stadsaal.jpg",
+"pages": [
+"https://itickets.co.za/events/486212",
+"https://visitmosselbay.co.za/event/sielskos-dames-oggend/",
+"https://itickets.co.za/events/486212"
 ]
 },
 "2026-12-24-magda-erhard-louw-punt-in-die-wind": {
@@ -1517,6 +1927,12 @@
 "https://www.quicket.co.za/events/390180-rhythm-blues-kingswood-golf-club/"
 ]
 },
+"2027-01-16-attakwas-extreme-mtb": {
+"img": "",
+"pages": [
+"https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/"
+]
+},
 "2027-01-16-andrew-young-live-in-knysna": {
 "img": "https://images.quicket.co.za/0999407_0.jpeg",
 "pages": [
@@ -1574,6 +1990,14 @@
 "https://dash.streblainnovations.com/races/"
 ]
 },
+"2027-02-17-pe-plett-mtb-stage-race": {
+"img": "",
+"pages": [
+"https://www.peplett.co.za/",
+"https://www.peplett.co.za/",
+"https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/"
+]
+},
 "2027-02-20-outeniqua-chair-challenge-42-2-21-1-10-5-km": {
 "img": "",
 "pages": [
@@ -1597,12 +2021,36 @@
 "https://www.kknk.co.za/kknk-programaansoeke/"
 ]
 },
+"2027-04-22-rattle-and-rust-rally-2027": {
+"img": "",
+"pages": [
+"https://rattleandrustrally.co.za/",
+"https://visitmosselbay.co.za/event/rattle-and-rust-rally-2027/",
+"https://rattleandrustrally.co.za/"
+]
+},
 "2027-05-28-mut-mountain-ultra-trail-by-utmb-163-98-58-44-25-1": {
 "img": "",
 "pages": [
 "https://mut.utmb.world/registration",
 "https://mut.utmb.world/races/mut100",
 "https://mut.utmb.world/registration"
+]
+},
+"2027-07-02-knysna-oyster-festival-2027": {
+"img": "",
+"pages": [
+"https://www.knysnaoysterfestival.co.za/",
+"https://www.knysnaoysterfestival.co.za/",
+"https://www.gardenrouteguide.co.za/garden-route-events/"
+]
+},
+"2027-07-30-storms-river-traverse-2027-3-day-mtb": {
+"img": "",
+"pages": [
+"https://www.stormsrivertraverse.co.za/",
+"https://www.stormsrivertraverse.co.za/",
+"https://www.gardenrouteguide.co.za/garden-route-events/"
 ]
 },
 "2027-08-26-george-agricultural-show-2027-george-landbouskou": {
@@ -1804,6 +2252,13 @@
 "https://dash.streblainnovations.com/races/"
 ]
 },
+"2026-10-10-stilbaai-brugmark-saturday-market": {
+"img": "",
+"pages": [
+"https://www.gardenrouteguide.co.za/garden-route-events/",
+"https://www.facebook.com/stilbaaibrugmark"
+]
+},
 "2026-10-10-world-homeless-day-run": {
 "img": "https://images.quicket.co.za/0980062_0.jpeg",
 "pages": [
@@ -1837,6 +2292,13 @@
 "pages": [
 "https://www.quicket.co.za/events/336426-wildekrans-wine-estate-people-pets-pinotage-festival-saturday-10-october/#tickets",
 "https://www.quicket.co.za/events/336426-wildekrans-wine-estate-people-pets-pinotage-festival-saturday-10-october/"
+]
+},
+"2026-10-10-hermanus-country-market": {
+"img": "",
+"pages": [
+"https://www.gardenroute.com/hermanus-country-market-from-all-year-every-saturday-till_event_op_view_id_2087",
+"https://hermanuscountrymarket.co.za/"
 ]
 },
 "2026-10-10-le-cap-impro-festival": {

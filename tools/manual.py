@@ -705,3 +705,156 @@ add(title="Chapter One – Day One live music experience",category="concert",sta
     town="Mossel Bay",venue="Bravo Lounge, Garden Route Casino",venue_address="1 Pinnacle Point Road, Mossel Bay",price_from="",ticket_url="",
     source_url=MB+"chapter-one/",source_name="Visit Mossel Bay (tourism calendar)",
     notes="Day One's first live-music show in Mossel Bay: independent South African artists with live performances, artist stories and audience interaction, plus an online stream. Organiser Day One: 061 292 3810. Venue: 044 606 7777.")
+
+# ---------------- Listing sites sweep (8 Oct 2026): gardenroute.com/event, gardenrouteguide.co.za, visitmosselbay.co.za/events, ontheroute.co.za ----------------
+GRC="https://www.gardenroute.com/"
+GRG="https://www.gardenrouteguide.co.za/garden-route-events/"
+OTR8="https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/"
+_S_GRC="GardenRoute.com (events listing)"; _S_MB="Visit Mossel Bay (tourism calendar)"; _S_OTR="On The Route (Garden Route event guide)"; _S_GRG="Garden Route Guide (events page)"
+# --- one-off events ---
+add(title="Atlantic Rail Trip – SC Rail steam train 'Sylvia' (Hartenbos → Santos)",category="nature",start_date="2026-10-09",time="09:00 and 12:00 departures",
+    town="Hartenbos",venue="Hartenbos old train station (Hennie's)",venue_address="Port Natal Avenue, Hartenbos",price_from="R195",ticket_url="https://scrail.co.za/list-view/",
+    source_url=MB+"atlantic-rail-trip-11/2026-10-09/1/",source_name=_S_MB,alt_sources=["https://scrail.co.za/list-view/"],notes="Coastal steam-train trip along the bay. Two departures. Book via SC Rail.")
+add(title="Blithe Spirit (Noël Coward comedy)",category="arts",start_date="2026-10-06",end_date="2026-10-10",time="19:30",town="Plettenberg Bay",venue="St Peter's Church",
+    venue_address="Church Street, Plettenberg Bay",price_from="R350",ticket_url="",source_url=OTR8,source_name=_S_OTR,alt_sources=[OTR],notes="Nightly 6-10 Oct. Tickets at Barney's Kiosk or Quicket.")
+add(title="Southern Cape Coin Show",category="community",start_date="2026-10-10",time="10:00-16:00",town="Mossel Bay",venue="Bahia Bleu",venue_address="Diaz Beach, Mossel Bay",
+    price_from="",ticket_url="",source_url=MB+"southern-cape-coin-show/",source_name=_S_MB,alt_sources=[OTR8],notes="Mossel Bay's first coin show: dealer tables, displays and free valuations.")
+add(title="Country Sokkie Evening at La Bosca",category="concert",start_date="2026-10-10",time="19:00-23:00",town="Sedgefield",venue="La Bosca, Luna Verde Farm",
+    venue_address="Barrington Road, Sedgefield",price_from="R80",ticket_url="",source_url=OTR8,source_name=_S_OTR,alt_sources=[OTR],notes="Country sokkie dance night on the farm. R80 adults, R40 children 6-12.")
+add(title="Garden Route Armwrestling Tournament",category="sport",start_date="2026-10-10",time="Weigh-ins from 08:30, tournament 10:00",town="Klein Brak",
+    venue="Mooiuitsig Restaurant, Brinkley's River Village",venue_address="1 Old George Road, Klein Brak River",price_from="R100",ticket_url="",source_url=OTR8,source_name=_S_OTR,
+    alt_sources=[OTR],notes="Entry R100/R150 per competitor; spectators R100.")
+add(title="MRC Rugby Expo",category="sport",start_date="2026-10-10",end_date="2026-10-11",time="From 09:00",town="George",venue="Pacaltsdorp Sportgronde",
+    venue_address="66 Olympic Street, Pacaltsdorp, George",price_from="R50",ticket_url="",source_url=OTR8,source_name=_S_OTR,notes="Two-day rugby expo. R50 adults.")
+add(title="Wilderness Chess Club Freestyle Chess960 Tournament",category="sport",start_date="2026-10-11",time="",town="Wilderness",venue="Fairy Knowe Hotel",
+    venue_address="1 Dumbleton Road, Wilderness",price_from="R200",ticket_url="https://www.toodoo.co.za/wilderness-chess960/",source_url="https://www.toodoo.co.za/wilderness-chess960/",
+    source_name="toodoo.co.za",alt_sources=[GRC+"wilderness-chess-club-freestyle-chess960-tournament-from-11th-oct-2026-till_event_op_view_id_3932",OTR8],
+    notes="Five-round unrated Chess960 tournament, 25 min + 5 s. Registration closes 23:59 Thu 8 Oct (or when full).")
+add(title="Studietrust Gholfdag (golf day)",category="sport",start_date="2026-10-16",time="11:00-14:00",town="Mossel Bay",venue="Mossel Bay Golf Club",price_from="",ticket_url="",
+    source_url=MB+"studietrust-gholfdag/",source_name=_S_MB,notes="Fundraising golf day for Studietrust.")
+for slug,t,d,tm in [("song-sung-blue","Song Sung Blue","2026-10-16","19:00"),("hamnet-at-the-blue-shed","Hamnet","2026-10-23","19:15"),
+                    ("beetlejuice","Beetlejuice","2026-10-30","19:15"),("bakgat","Bakgat","2026-11-13","19:30")]:
+    add(title=f"Blue Shed spring movies: {t}",category="arts",start_date=d,time=tm,town="Mossel Bay",venue="The Blue Shed (Open Plan Pictures)",venue_address="33 Bland Street, Mossel Bay",
+        price_from="R100",ticket_url="https://openplanpictures.co.za/",source_url=MB+slug+"/",source_name=_S_MB,alt_sources=["https://openplanpictures.co.za/"]+([OTR8] if slug=="song-sung-blue" else []),
+        notes="Film screening in Open Plan Pictures' spring season at the Blue Shed.")
+add(title="Blue Shed spring movies: The Secret Life of Pets (bring your pet)",category="arts",start_date="2026-11-06",time="19:15",town="Mossel Bay",venue="The Blue Shed (Open Plan Pictures)",
+    venue_address="33 Bland Street, Mossel Bay",price_from="R100",ticket_url="https://www.quicket.co.za/events/394628/",source_url="https://www.quicket.co.za/events/394628/",source_name="Quicket",
+    alt_sources=[MB+"secret-life-of-pets/"],notes="Pet-friendly screening. Date and time per Quicket; Visit Mossel Bay lists Tue 3 Nov 19:30, so check before you go.")
+add(title="Prince George Monumental (100-miler trail run)",category="funrun",start_date="2026-10-17",time="",town="Oudtshoorn",venue="Highgate Ostrich Show Farm",price_from="",
+    ticket_url="https://www.princegeorge.co.za/",source_url="https://www.princegeorge.co.za/",source_name="Prince George (official site)",alt_sources=[GRG],notes="Ultra trail race (100 miles) in the Klein Karoo.")
+add(title="Topper Nationals (sailing)",category="sport",start_date="2026-10-17",end_date="2026-10-18",time="10:00-17:00",town="Mossel Bay",venue="Santos Beach",venue_address="Santos Road, Mossel Bay",
+    price_from="",ticket_url="",source_url=MB+"the-topper-nationals-in-mosselbay/2026-10-17/",source_name=_S_MB,alt_sources=[OTR8],notes="National championship for Topper dinghies, hosted with the Mossel Bay Sailing Club / Skipper Foundation. Spectators welcome on the beachfront.")
+add(title="Schalk Bezuidenhout: Hey Hey Divorcé at Simola (stand-up comedy)",category="arts",start_date="2026-10-20",time="20:00 (doors 19:00)",town="Knysna",venue="Simola Hotel, Country Club & Spa",
+    venue_address="Simola, Knysna",price_from="R300",ticket_url="",source_url=OTR8,source_name=_S_OTR,notes="Knysna date of the tour; separate from the 19 Oct Fancourt and 21-23 Oct George shows.")
+_fw=["2026-10-23","2026-11-27"]
+add(title="Food & Wine Pairing Evening at Chefs Emporium",category="community",start_date=_fw[0],end_date=_fw[-1],occurrences=_fw,recurrence="23 Oct 18:00-20:00; 27 Nov 20:00",
+    time="23 Oct 18:00-20:00; 27 Nov 20:00",town="Mossel Bay",venue="Chefs Emporium (Bahia Bleu)",venue_address="1 Beach Road, E Blvd, Diaz Beach, Mossel Bay",price_from="R350",ticket_url="",
+    source_url=MB+"food-wine-pairing-evening/",source_name=_S_MB,notes="Paired dinner with Jordan Chameleon wines. Bookings via WhatsApp 063 298 4448.")
+add(title="Art Workshop with Maria",category="arts",start_date="2026-10-24",time="09:00-14:00",town="Mossel Bay",venue="House of Maria",venue_address="29 Marsh Street, Mossel Bay",price_from="R3600",
+    ticket_url="",source_url=MB+"art-workshop-with-maria-2026/2026-10-24/",source_name=_S_MB,notes="Day-long art workshop.")
+add(title="SACBW Gala Awards 2026",category="community",start_date="2026-10-24",time="18:30-22:00",town="Mossel Bay",venue="Diaz Hotel and Resort",venue_address="1 Beach East Blvd, Die Voor Bay, Mossel Bay",
+    price_from="",ticket_url="",source_url=MB+"sacbw-gala-awards-2026/",source_name=_S_MB,alt_sources=["https://www.facebook.com/sacbwWC"],notes="SA Council for Business Women gala awards evening. The listing doesn't say whether tickets are public.")
+add(title="The Complete Works of William Shakespeare (Abridged)",category="arts",start_date="2026-10-24",end_date="2026-10-25",time="From 15:00",town="Knysna",venue="St George's Anglican Church",
+    venue_address="10 Main Road, Knysna",price_from="",ticket_url="https://www.quicket.co.za/events/390568-the-complete-works-of-william-shakespeare-abridged/",
+    source_url="https://www.quicket.co.za/events/390568-the-complete-works-of-william-shakespeare-abridged/",source_name="Quicket",
+    alt_sources=[GRC+"complete-works-of-william-shakespeare-abridged-from-24th-oct-2026-till-25th-oct-2026_event_op_view_id_3917"],notes="Comedy romp through all of Shakespeare's plays.")
+add(title="Night of 1000 Owls – Raptor Rescue art exhibition & fundraiser",category="arts",start_date="2026-10-27",end_date="2026-10-30",time="",town="Plettenberg Bay",venue="The Heath, Harkerville",
+    price_from="",ticket_url="",source_url=OTR8,source_name=_S_OTR,notes="Owl-inspired art exhibition and fundraiser for Raptor Rescue, part of the birding festival.")
+add(title="Rhodes Dryland Traverse (multi-day trail run)",category="funrun",start_date="2026-10-29",end_date="2026-11-01",time="",town="Oudtshoorn",venue="Cango Caves into the Swartberg",
+    price_from="",ticket_url="",source_url=OTR8,source_name=_S_OTR,notes="Multi-day trail run from the Cango Caves into the Swartberg.")
+add(title="SA National Criterium Championships (road cycling)",category="sport",start_date="2026-10-30",end_date="2026-11-01",time="",town="George",venue="Cornerstone Lifestyle Centre",
+    price_from="",ticket_url="",source_url=OTR8,source_name=_S_OTR,notes="National road-cycling criterium championships.")
+add(title="Woord in Waarheid Damestee (ladies' tea)",category="community",start_date="2026-10-31",time="10:00-12:00",town="Mossel Bay",venue="Mossel Bay Town Hall",venue_address="Wassung Street, Mossel Bay",
+    price_from="R200",ticket_url="",source_url=MB+"woord-in-waarheid-damestee/",source_name=_S_MB,notes="R200 per person; table of 10 R1,800.")
+add(title="Asanda Bam live at The White House Theatre (jazz)",category="concert",start_date="2026-10-31",time="18:00",town="Plettenberg Bay",venue="The White House Theatre",price_from="R250",ticket_url="",
+    source_url=GRC+"asanda-bam-at-white-house-theatre-from-31st-oct-2026-till_event_op_view_id_3924",source_name=_S_GRC,notes="Tickets via Quicket or The Old House Shop.")
+add(title="Bassline Society – Trick or Treat Halloween party",category="concert",start_date="2026-10-31",time="",town="Wilderness",venue="Beach House Bar & Kitchen (Wilderness Beach House Backpackers)",price_from="R100",ticket_url="",
+    source_url=GRC+"bassline-society---trick-or-treat-from-31st-oct-2026-till_event_op_view_id_3922",source_name=_S_GRC,notes="Halloween vinyl house-music party with best-dressed prizes. R100 entry. Line-up and time still to be announced.")
+add(title="Dirk van der Westhuizen at ReedValley",category="concert",start_date="2026-11-06",time="20:00",town="Mossel Bay",venue="ReedValley",price_from="",
+    ticket_url="https://www.reedvalley.com/ots/order.php?vendor=1&show=902",source_url="https://www.reedvalley.com/ots/order.php?vendor=1&show=902",source_name="ReedValley (tickets)",
+    alt_sources=[GRC+"dirk-van-der-westhuizen-by-reedvalley-from-6th-nov-2026-till_event_op_view_id_3952"],notes="Afrikaans party music, his first show at ReedValley. Wine and food on site.")
+add(title="A Night of Comedy with Alan Committie",category="arts",start_date="2026-11-07",time="20:00",town="Knysna",venue="Simola Hotel, Country Club & Spa",venue_address="Simola, Knysna",price_from="",
+    ticket_url="https://www.quicket.co.za/events/377526-a-night-of-comedy-with-alan-committie-knysna/",source_url="https://www.quicket.co.za/events/377526-a-night-of-comedy-with-alan-committie-knysna/",
+    source_name="Quicket",alt_sources=[GRC+"night-of-comedy-with-alan-committie-from-7th-nov-2026-till_event_op_view_id_3919"],notes="All-new stand-up show.")
+add(title="Holistic (Wellness) Expo Plettenberg Bay",category="community",start_date="2026-11-07",end_date="2026-11-08",time="",town="Plettenberg Bay",venue="Plettenberg Bay (venue per organiser)",
+    price_from="Free entry",ticket_url="",source_url="https://plett.wellnessexpo-sa.co.za/",source_name="Wellness Expo SA",alt_sources=[GRC+"holistic-expo-plettenberg-bay-from-7th-nov-2026-till-8th-nov-2026_event_op_view_id_3898",OTR8],
+    notes="Wellness practitioners, healers and makers. First expo outside Mossel Bay. Free for the public.")
+add(title="Knysna Extreme Triathlon",category="sport",start_date="2026-11-07",time="",town="Knysna",venue="Knysna estuary and surrounds",price_from="R5750",ticket_url="https://entrytickets.net/knysnaextreme",
+    source_url="https://entrytickets.net/knysnaextreme",source_name="Entrytickets",alt_sources=[GRC+"knysna-extreme-triathlon-from-7th-nov-2026-till_event_op_view_id_3827",GRG,OTR8],
+    notes="5 km swim, 174 km cycle, 50 km run. Individual entry R5,750; entries close 14 Oct.")
+add(title="Rest and Restore – women's retreat",category="community",start_date="2026-11-20",end_date="2026-11-22",time="",town="The Crags",venue="Good Earth Farm",price_from="",ticket_url="",
+    source_url=OTR8,source_name=_S_OTR,notes="Three-day women's retreat on a sustainability farm.")
+add(title="Dance Through the Decades (Elle Dance Academy)",category="arts",start_date="2026-11-21",end_date="2026-11-22",time="",town="Sedgefield",venue="Elle Dance Academy show (Sedgefield)",price_from="",ticket_url="",
+    source_url=GRC+"dance-through-decades-from-21st-nov-2026-till-22nd-nov-2026_event_op_view_id_3930",source_name=_S_GRC,notes="Dance show covering 1960-2010. Times and prices still to be announced. Enquiries: Rezelle 072 381 8720.")
+add(title="ISUZU IRONMAN 70.3 Mossel Bay",category="sport",start_date="2026-11-22",time="06:00",town="Mossel Bay",venue="Santos Beach",venue_address="Santos Road, Mossel Bay",price_from="",
+    ticket_url="https://www.ironman.com/races/im703-mossel-bay",source_url=MB+"ironman-70-3-mossel-bay/",source_name=_S_MB,alt_sources=["https://www.ironman.com/races/im703-mossel-bay",GRG,OTR8],
+    notes="Half-distance triathlon: sea swim, coastal cycle and run through town. Spectating is free.")
+add(title="MossJazz Golf Day",category="sport",start_date="2026-11-26",time="08:00",town="Mossel Bay",venue="Pinnacle Point Golf Estate",venue_address="1 Pinnacle Road, Pinnacle Point Estate, Mossel Bay",
+    price_from="",ticket_url="",source_url=MB+"mossjazz-golf-day/",source_name=_S_MB,notes="Golf day linked to MosJazz week.")
+add(title="Universal Frequencies 2026 (psytrance festival)",category="festival",start_date="2026-11-27",end_date="2026-11-29",time="Fri 12:00 – Sun 18:00",town="Ladismith",venue="Karoo 62 Escape",
+    venue_address="Route 62, Ladismith",price_from="",ticket_url="https://www.quicket.co.za/events/342747-universal-frequencies-2026/",source_url="https://www.quicket.co.za/events/342747-universal-frequencies-2026/",
+    source_name="Quicket",alt_sources=[GRC+"universal-frequencies-2026-from-27th-nov-2026-till-29th-nov-2026_event_op_view_id_3918"],notes="Psytrance camping festival in aid of Global Reboot. Klein Karoo.")
+add(title="Ochre Origins – opening exhibition at Ochre Contemporary (Diane Victor)",category="arts",start_date="2026-12-11",end_date="2026-12-16",time="",town="Mossel Bay",venue="WayOut Studios",
+    venue_address="Unit 6&7, Trimenco Park, 11 Parson Lane, Mossel Bay",price_from="",ticket_url="",source_url=MB+"ochre-origins-opening-exhibition-at-ochre-contemporary/",source_name=_S_MB,notes="Opening exhibition of the new Ochre Contemporary gallery.")
+for d,town,nm in [("2026-12-14","George","George Street Mile"),("2026-12-16","Oudtshoorn","Klein Karoo Street Mile"),("2026-12-18","Hartenbos","ATKV Street Mile")]:
+    add(title=f"Eden Street Mile Series: {nm}",category="funrun",start_date=d,time="",town=town,venue=f"Street course, {town}",price_from="",ticket_url="",
+        source_url="https://www.facebook.com/events/1676645959942885/",source_name="Eden Street Mile Series (Facebook)",alt_sources=[GRC+"atkv-street-mile-from-18th-dec-2026-till_event_op_view_id_3861"],
+        notes="1-mile road race; part of a three-race series (George 14 Dec, Oudtshoorn 16 Dec, Hartenbos 18 Dec). Elite, university, school and social runners. Prize purse over R60,000.")
+add(title="Vortex Open Source 2026 (trance festival)",category="festival",start_date="2026-12-18",end_date="2026-12-20",time="Fri 10:00 – Sun 16:00",town="Ladismith",venue="Karoo 62 Escape",
+    venue_address="Route 62, Ladismith",price_from="",ticket_url="https://www.quicket.co.za/events/386068-vortex-open-source-2026",source_url="https://www.quicket.co.za/events/386068-vortex-open-source-2026",
+    source_name="Quicket",alt_sources=[GRC+"vortex-open-source-2026-from-18th-dec-2026-till-20th-dec-2026_event_op_view_id_3923"],notes="Summer-solstice Open Source gathering (since 1995), Vortex's 30th year. Klein Karoo.")
+# Punt in die Wind (Mossel Bay) individual shows from the Visit Mossel Bay calendar
+for slug,t,d,tm,ven,tix in [
+  ("meerkat-petra-at-punt-in-die-wind-festival","Meerkat Petra","2026-12-19","20:00","Mossel Bay Stadsaal (Town Hall)","https://itickets.co.za/events/486591"),
+  ("ouma-die-ou-koeie-met-margit-meyer-rodenbeck","Ouma & die Ou Koeie (Margit Meyer-Rödenbeck)","2026-12-21","","Punt in die Wind venue (see listing)",""),
+  ("mel-die-storieverteller-2","Mel die Storieverteller","2026-12-21","20:00","Mossel Bay Stadsaal (Town Hall)",""),
+  ("liewe-heksie-with-margit-meyer-rodenbeck","Liewe Heksie (Margit Meyer-Rödenbeck)","2026-12-22","10:00","Mossel Bay Stadsaal (Town Hall)",""),
+  ("geagte-kampeerders-2","Geagte Kampeerders (Wynand van Vollenstee & Thiart Li)","2026-12-22","15:00","Mossel Bay Town Hall","https://itickets.co.za/events/486204"),
+  ("tillie-matilda","Tillie / Mathilda (Amanda Strydom & Je-Ani Swiegelaar)","2026-12-22","20:00","Mossel Bay Town Hall","https://itickets.co.za/events/486202"),
+  ("sielskos-dames-oggend","SielsKos Dames Oggend (Hannes van Wyk)","2026-12-24","10:00","Mossel Bay Town Hall","https://itickets.co.za/events/486212")]:
+    add(title=f"Punt in die Wind: {t}",category="arts",start_date=d,time=tm,town="Mossel Bay",venue=ven,venue_address=("101 Marsh Street, Mossel Bay" if "Stadsaal" in ven else ("Wassung Street, Mossel Bay" if "Town Hall" in ven else "")),
+        price_from="",ticket_url=tix,source_url=MB+slug+"/",source_name=_S_MB,alt_sources=([tix] if tix else [])+([OTR8] if "Tillie" in t else []),notes="Show at the Punt in die Wind Kunste-Week (19-26 Dec).")
+# 2027
+add(title="Attakwas Extreme (MTB)",category="sport",start_date="2027-01-16",time="",town="Oudtshoorn",venue="Oudtshoorn to the coast (route)",price_from="",ticket_url="",source_url=OTR8,source_name=_S_OTR,
+    notes="One-day extreme mountain-bike race from the Klein Karoo to the coast.")
+add(title="PE Plett MTB stage race",category="sport",start_date="2027-02-17",end_date="2027-02-21",time="Registration 17 Feb; stage 1 starts 18 Feb 08:00",town="Nature's Valley",venue="St Francis Links → Nature's Valley Rest Camp",
+    price_from="",ticket_url="https://www.peplett.co.za/",source_url="https://www.peplett.co.za/",source_name="PE Plett (official site)",alt_sources=[OTR8],notes="Four-stage mountain-bike race from St Francis Bay to Nature's Valley (finish).")
+add(title="Rattle and Rust Rally 2027",category="sport",start_date="2027-04-22",end_date="2027-04-25",time="08:00-17:00",town="Mossel Bay",venue="Bartelsfontein Farm",venue_address="Route R327, Bartelsfontein, Mossel Bay",
+    price_from="",ticket_url="https://rattleandrustrally.co.za/",source_url=MB+"rattle-and-rust-rally-2027/",source_name=_S_MB,alt_sources=["https://rattleandrustrally.co.za/"],notes="Vintage and classic vehicle rally weekend.")
+add(title="Knysna Oyster Festival 2027",category="festival",start_date="2027-07-02",end_date="2027-07-11",time="",town="Knysna",venue="Venues across greater Knysna",price_from="",ticket_url="https://www.knysnaoysterfestival.co.za/",
+    source_url="https://www.knysnaoysterfestival.co.za/",source_name="Knysna Oyster Festival (official site)",alt_sources=[GRG],notes="Ten-day festival of food, sport and family events.")
+add(title="Storms River Traverse 2027 (3-day MTB)",category="sport",start_date="2027-07-30",end_date="2027-08-01",time="",town="Storms River",venue="Tsitsikamma Village Inn",price_from="",
+    ticket_url="https://www.stormsrivertraverse.co.za/",source_url="https://www.stormsrivertraverse.co.za/",source_name="Storms River Traverse (official site)",alt_sources=[GRG],notes="Three-day mountain-bike stage race.")
+# Ongoing town-wide programmes (Mossel Bay), listed on ontheroute.co.za
+add(title="Mossel Bay Sport and Recreation Festival",category="sport",start_date="2026-09-16",end_date="2026-10-18",time="Daily 08:00-17:00",town="Mossel Bay",venue="Various venues",price_from="",ticket_url="",
+    source_url="https://www.ontheroute.co.za/events-calendar/",source_name="On The Route (events calendar)",notes="Town-wide programme of more than fifty sports and recreation activities: rugby, cycling, athletics, water sports and more.")
+add(title="Mossel Bay Arts Festival (Arts Month)",category="festival",start_date="2026-09-23",end_date="2026-11-08",time="Times vary by programme",town="Mossel Bay",venue="Various venues",price_from="",ticket_url="",
+    source_url="https://www.ontheroute.co.za/events-calendar/",source_name="On The Route (events calendar)",notes="Six weeks of exhibitions, performances and workshops across town.")
+# --- weekly series ---
+for slug,nm,town,venue,addr in [("hartenboschvillage","Hart & Bosch Village parkrun","Hartenbos","Hart & Bosch Village","R102, Hartenbos"),
+    ("curromosselbayschool","Curro Mossel Bay School parkrun","Mossel Bay","Curro Mossel Bay School","2 Seemeeu Street, Heiderand, Mossel Bay"),
+    ("bongamereserve","Bon Game Reserve parkrun","Mossel Bay","Bon Game Reserve","Near the Gourits River Bridge (N2)"),
+    ("george","George parkrun","George","Garden Route Botanical Garden","49 Caledon Street, George"),
+    ("knysna","Knysna parkrun","Knysna","George Rex Drive","George Rex Drive, Knysna"),
+    ("harkerville","Harkerville parkrun","Plettenberg Bay","Harkerville Market","N2, opposite Airport Road, Plettenberg Bay")]:
+    occ=_dates("2026-10-10",HORIZON,[SAT])
+    add(title=nm,category="funrun",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Saturday, 08:00",time="08:00",town=town,venue=venue,venue_address=addr,
+        price_from="Free (register once)",ticket_url="",source_url=f"https://www.parkrun.co.za/{slug}/",source_name="parkrun",
+        alt_sources=([MB+"bon-game-reserve-park-run/2026-10-10/"] if slug=="bongamereserve" else [GRG]),notes="Free weekly 5 km walk/run. Register with parkrun once and bring your barcode."+(" No dogs." if slug=="harkerville" else ""))
+occ=_dates("2026-10-10",HORIZON,[SAT])
+add(title="Scarab Village Craft Market",category="market",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Saturday, 08:30-12:30",time="08:30-12:30",town="Sedgefield",venue="Scarab Village",
+    price_from="",ticket_url="",source_url=GRC+"scarab-village-craft-market-from-all-year-every-saturday-till_event_op_view_id_453",source_name=_S_GRC,alt_sources=["https://scarabvillage.co.za/craft-market/",GRG],
+    notes="Handmade crafts, demonstrations, kids' play area.")
+add(title="Hermanus Country Market",category="market",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Saturday, 09:00-13:00",time="09:00-13:00",town="Hermanus",venue="Hermanus Country Market",
+    price_from="",ticket_url="",source_url=GRC+"hermanus-country-market-from-all-year-every-saturday-till_event_op_view_id_2087",source_name=_S_GRC,alt_sources=["https://hermanuscountrymarket.co.za/"],
+    notes="Fresh produce, artisan food, crafts and live music. Child- and dog-friendly.")
+add(title="Stilbaai Brugmark (Saturday market)",category="market",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Saturday",time="",town="Stilbaai",venue="Stilbaai Brugmark",
+    price_from="",ticket_url="",source_url=GRG,source_name=_S_GRG,alt_sources=["https://www.facebook.com/stilbaaibrugmark"],notes="Weekly Saturday market. Times aren't listed; check the Facebook page.")
+occ=_dates("2026-10-11",HORIZON,[SUN])
+add(title="Milkwood Village Sunday Market",category="market",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Sunday morning",time="Sunday mornings",town="Wilderness",venue="Milkwood Village",
+    venue_address="Beacon Road, Wilderness",price_from="",ticket_url="",source_url="https://milkwoodvillage.co.za/",source_name="Milkwood Village (official site)",alt_sources=[GRG],
+    notes="Craft market with live music and a kids' zone.")
+occ=[d for d in _dates("2026-10-14",HORIZON,[WED]) if d[5:7] not in ("06","07","08")]
+add(title="Mosaic Food Fare (Wednesday evenings)",category="market",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Wednesday, 16:00-20:00 (September to May)",time="16:00-20:00",
+    town="Sedgefield",venue="Mosaic Village & Outdoor Market",price_from="",ticket_url="",source_url=GRC+"mosaic-food-fare-from-all-year-every-wednesday-till_event_op_view_id_2739",source_name=_S_GRC,
+    alt_sources=["http://mosaicmarket.co.za/welcome/",GRG],notes="International street food, live music and kids' activities. Runs September to May.")

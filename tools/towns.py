@@ -17,6 +17,7 @@ TOWNS={
  "Klein Brak":("Klein Brakrivier, Western Cape","Mossel Bay",True),
  "Oudtshoorn":("Oudtshoorn, Western Cape","Garden Route",True),
  "De Rust":("De Rust, Western Cape","Garden Route",True),
+ "Ladismith":("Ladismith, Western Cape","Garden Route",True),
  "Witsand":("Witsand, Western Cape","Hessequa (Stilbaai)",False),
  "Heidelberg":("Heidelberg, Western Cape","Hessequa (Stilbaai)",False),
  "Stellenbosch":("Stellenbosch, Western Cape","Cape Winelands",False),

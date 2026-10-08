@@ -15,7 +15,7 @@ def hav(a,b):
 CENT={t:geocode(q)[:2] for t,(q,r,g) in TOWNS.items()}
 # Towns used only for hand-checked entries (Running Guy PE / Winelands races). Keep them out of
 # automatic Quicket/Webtickets geocoding so the coast stays Cape Town–Jeffreys Bay.
-MANUAL_ONLY_TOWNS={"Gqeberha","Stellenbosch","Swellendam"}
+MANUAL_ONLY_TOWNS={"Gqeberha","Stellenbosch","Swellendam","Ladismith"}
 AUTO_CENT={t:ll for t,ll in CENT.items() if t not in MANUAL_ONLY_TOWNS}
 EXCL={"Stellenbosch":(-33.934,18.86,12),"Paarl":(-33.73,18.96,14),"Franschhoek":(-33.91,19.12,10),"Grabouw":(-34.15,19.02,10),"Caledon":(-34.23,19.43,10),"Wolseley":(-33.52,19.2,15),"Malmesbury":(-33.46,18.73,15),"Darling":(-33.38,18.38,10),"Ladismith/Karoo62":(-33.49,21.27,25),"Robertson":(-33.8,19.88,25),"Gqeberha":(-33.96,25.62,40)}
 def town_from_geo(lat,lng):

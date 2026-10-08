@@ -53,6 +53,12 @@ for n,t,u,note in [("Bossa George","George","https://bossagoodtimes.com/branches
  ("Koze Kuse Lounge","Mossel Bay","https://www.foodyas.com/ZA/Mossel-Bay/115062648135355/Koze-Kuse-Lounge-Reloaded","Lounge/club at 52 Scholtz St, KwaNonqaba (073 366 6363). DJ nights and 'The Plug Fridays' were announced in May-Jun 2026, but there have been no posts since early June 2026, so nothing was added."),
  ("Patrick's Pub and Restaurant","Mossel Bay","https://visitmosselbay.co.za/listing/patricks-pub-and-restaurant/","Irish-style pub, 19 Marsh St (044 691 0077): pool tables, slots, satellite TV. No events or music nights listed."),
  ("The Beach Bar","Mossel Bay","https://www.quicket.co.za/events/401482-real-nice-presents-mossel-biza/","Diaz Beach / Die Voor Bay, 26 Beach East Blvd. REAL NICE parties on 4, 11 and 12 Dec 2026 are in the app (Quicket). No weekly DJ or live-music nights published. FB: facebook.com/TheBeachBarDiaz"),
+ ("GardenRoute.com events listing","George","https://www.gardenroute.com/event/","Source: regional events listing (6 pages, incl. weekly markets). Re-scan for new dated events."),
+ ("Garden Route Guide events page","George","https://www.gardenrouteguide.co.za/garden-route-events/","Source: single-page guide of annual/weekly events by town; many 'to be confirmed' dates. Re-scan for confirmed dates."),
+ ("Visit Mossel Bay events calendar","Mossel Bay","https://visitmosselbay.co.za/events/","Source: tourism calendar (The Events Calendar; JSON at /wp-json/tribe/events/v1/events). Re-scan all pages."),
+ ("On The Route events calendar & weekly guide","George","https://www.ontheroute.co.za/events-calendar/","Source: Garden Route events calendar plus weekly 'Your Garden Route event guide' posts (see /rss/). Calendar data is an inline JS array."),
+ ("Karoo 62 Escape","Ladismith","https://www.quicket.co.za/events/386068-vortex-open-source-2026","Festival venue on Route 62 near Ladismith (Universal Frequencies, Vortex Open Source)."),
+ ("The Blue Shed (Open Plan Pictures)","Mossel Bay","https://openplanpictures.co.za/","Film screenings at 33 Bland St, listed on the Visit Mossel Bay calendar."),
  ("Stowaway Hideout (Stanley Island)","Plettenberg Bay","https://www.foodyas.com/ZA/Plettenberg-Bay/109413645275891/Stowaway-Hideout","Specials seen are from 2025.")]:
     put(n,t,_TW.get(t,("","Garden Route"))[1],True,"venue (no listing)",[u],note)
 out=sorted(rows.values(),key=lambda r:(not r["garden_route"],r["region"],r["town"],r["name"].lower()))
