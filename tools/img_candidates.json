@@ -163,6 +163,12 @@
 "https://dash.streblainnovations.com/races/"
 ]
 },
+"2026-10-10-oudtshoorn-parkrun-summer-start-07-00": {
+"img": "",
+"pages": [
+"https://www.parkrun.co.za/oudtshoorn/"
+]
+},
 "2026-10-10-wild-oats-community-farmers-market": {
 "img": "",
 "pages": [
@@ -224,6 +230,12 @@
 "pages": [
 "https://www.toodoo.co.za/the-sedgefield-mosaic-market/",
 "https://www.visitknysna.co.za/experiences/food-drink/discover-the-markets-of-the-greater-knysna-area/"
+]
+},
+"2026-10-10-storms-river-parkrun": {
+"img": "",
+"pages": [
+"https://www.parkrun.co.za/stormsriver/"
 ]
 },
 "2026-10-10-harkerville-saturday-market": {
@@ -596,7 +608,9 @@
 "2026-10-20-schalk-bezuidenhout-hey-hey-divorce-at-simola-stan": {
 "img": "",
 "pages": [
-"https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/"
+"https://www.quicket.co.za/events/375253-hey-hey-divorce-schalk-bezuidenhout-knysna/",
+"https://www.ontheroute.co.za/your-garden-route-event-guide-8-october/",
+"https://www.quicket.co.za/events/375253-hey-hey-divorce-schalk-bezuidenhout-knysna/"
 ]
 },
 "2026-10-21-schalk-bezuidenhout-hey-hey-divorce-stand-up-comed": {
@@ -1549,6 +1563,13 @@
 "https://dash.streblainnovations.com/races/"
 ]
 },
+"2026-12-20-christmas-pilates-on-the-simola-helipad": {
+"img": "",
+"pages": [
+"https://www.quicket.co.za/events/399557-christmas-pilates/",
+"https://www.quicket.co.za/events/399557-christmas-pilates/"
+]
+},
 "2026-12-20-refentse-live-at-reedvalley": {
 "img": "https://visitmosselbay.co.za/wp-content/uploads/2026/09/refentse-reedvalley.webp",
 "pages": [
@@ -2026,12 +2047,28 @@
 "https://www.kknk.co.za/kknk-programaansoeke/"
 ]
 },
+"2027-04-03-oudtshoorn-parkrun-winter-start-08-00": {
+"img": "",
+"pages": [
+"https://www.parkrun.co.za/oudtshoorn/"
+]
+},
 "2027-04-22-rattle-and-rust-rally-2027": {
 "img": "",
 "pages": [
 "https://rattleandrustrally.co.za/",
 "https://visitmosselbay.co.za/event/rattle-and-rust-rally-2027/",
 "https://rattleandrustrally.co.za/"
+]
+},
+"2027-04-29-simola-hillclimb-2027-17th-edition": {
+"img": "",
+"pages": [
+"https://knysnaspeedfestival.howler.co.za/simolahillclimb2027",
+"https://www.speedfestival.co.za/",
+"https://www.speedfestival.co.za/spectators/event-schedule/",
+"https://www.speedfestival.co.za/spectators/ticket-information/",
+"https://www.speedfestival.co.za/info/future-dates/"
 ]
 },
 "2027-05-28-mut-mountain-ultra-trail-by-utmb-163-98-58-44-25-1": {
@@ -2276,6 +2313,30 @@
 "pages": [
 "https://www.quicket.co.za/events/316976-dairy-fest-2026/#tickets",
 "https://www.quicket.co.za/events/316976-dairy-fest-2026/"
+]
+},
+"2026-10-10-hopkins-land-parkrun": {
+"img": "",
+"pages": [
+"https://www.parkrun.co.za/hopkinsland/"
+]
+},
+"2026-10-10-mentors-country-estate-parkrun": {
+"img": "",
+"pages": [
+"https://www.parkrun.co.za/mentorscountryestate/"
+]
+},
+"2026-10-10-st-francis-parkrun": {
+"img": "",
+"pages": [
+"https://www.parkrun.co.za/stfrancis/"
+]
+},
+"2026-10-10-stilbaai-west-beach-parkrun": {
+"img": "",
+"pages": [
+"https://www.parkrun.co.za/stilbaaiwestbeach/"
 ]
 },
 "2026-10-10-zoozooland-educare-concert": {

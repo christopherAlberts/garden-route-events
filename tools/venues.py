@@ -59,6 +59,9 @@ for n,t,u,note in [("Bossa George","George","https://bossagoodtimes.com/branches
  ("On The Route events calendar & weekly guide","George","https://www.ontheroute.co.za/events-calendar/","Source: Garden Route events calendar plus weekly 'Your Garden Route event guide' posts (see /rss/). Calendar data is an inline JS array."),
  ("Karoo 62 Escape","Ladismith","https://www.quicket.co.za/events/386068-vortex-open-source-2026","Festival venue on Route 62 near Ladismith (Universal Frequencies, Vortex Open Source)."),
  ("The Blue Shed (Open Plan Pictures)","Mossel Bay","https://openplanpictures.co.za/","Film screenings at 33 Bland St, listed on the Visit Mossel Bay calendar."),
+ ("Simola Hillclimb (Old Cape Road, Simola)","Knysna","https://www.speedfestival.co.za/","Simola Hillclimb / Knysna Speed Festival, every late April-early May. 2027: 29 Apr-2 May. Future dates: 27-30 Apr 2028, 26-29 Apr 2029, 2-5 May 2030."),
+ ("Simola Hotel, Country Club & Spa","Knysna","https://www.quicket.co.za/events/392031-woodstock-beyond-1965-1975-live-in-knysna/","Hotel hosting regular tribute shows and comedy (mostly on Quicket; search 'Simola'). simola.co.za has no events page."),
+ ("parkrun (Garden Route & Kouga events)","George","https://www.parkrun.co.za/events/","Source: all parkruns from Witsand to Jeffreys Bay are added as weekly series (event list: images.parkrun.com/events.json). Re-check for new events or start-time changes."),
  ("Stowaway Hideout (Stanley Island)","Plettenberg Bay","https://www.foodyas.com/ZA/Plettenberg-Bay/109413645275891/Stowaway-Hideout","Specials seen are from 2025.")]:
     put(n,t,_TW.get(t,("","Garden Route"))[1],True,"venue (no listing)",[u],note)
 out=sorted(rows.values(),key=lambda r:(not r["garden_route"],r["region"],r["town"],r["name"].lower()))

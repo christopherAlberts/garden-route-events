@@ -745,7 +745,7 @@ add(title="Prince George Monumental (100-miler trail run)",category="funrun",sta
 add(title="Topper Nationals (sailing)",category="sport",start_date="2026-10-17",end_date="2026-10-18",time="10:00-17:00",town="Mossel Bay",venue="Santos Beach",venue_address="Santos Road, Mossel Bay",
     price_from="",ticket_url="",source_url=MB+"the-topper-nationals-in-mosselbay/2026-10-17/",source_name=_S_MB,alt_sources=[OTR8],notes="National championship for Topper dinghies, hosted with the Mossel Bay Sailing Club / Skipper Foundation. Spectators welcome on the beachfront.")
 add(title="Schalk Bezuidenhout: Hey Hey Divorcé at Simola (stand-up comedy)",category="arts",start_date="2026-10-20",time="20:00 (doors 19:00)",town="Knysna",venue="Simola Hotel, Country Club & Spa",
-    venue_address="Simola, Knysna",price_from="R300",ticket_url="",source_url=OTR8,source_name=_S_OTR,notes="Knysna date of the tour; separate from the 19 Oct Fancourt and 21-23 Oct George shows.")
+    venue_address="Simola, Knysna",price_from="R300",ticket_url="https://www.quicket.co.za/events/375253-hey-hey-divorce-schalk-bezuidenhout-knysna/",source_url=OTR8,source_name=_S_OTR,alt_sources=["https://www.quicket.co.za/events/375253-hey-hey-divorce-schalk-bezuidenhout-knysna/"],notes="Knysna date of the tour; separate from the 19 Oct Fancourt and 21-23 Oct George shows.")
 _fw=["2026-10-23","2026-11-27"]
 add(title="Food & Wine Pairing Evening at Chefs Emporium",category="community",start_date=_fw[0],end_date=_fw[-1],occurrences=_fw,recurrence="23 Oct 18:00-20:00; 27 Nov 20:00",
     time="23 Oct 18:00-20:00; 27 Nov 20:00",town="Mossel Bay",venue="Chefs Emporium (Bahia Bleu)",venue_address="1 Beach Road, E Blvd, Diaz Beach, Mossel Bay",price_from="R350",ticket_url="",
@@ -831,16 +831,33 @@ add(title="Mossel Bay Sport and Recreation Festival",category="sport",start_date
 add(title="Mossel Bay Arts Festival (Arts Month)",category="festival",start_date="2026-09-23",end_date="2026-11-08",time="Times vary by programme",town="Mossel Bay",venue="Various venues",price_from="",ticket_url="",
     source_url="https://www.ontheroute.co.za/events-calendar/",source_name="On The Route (events calendar)",notes="Six weeks of exhibitions, performances and workshops across town.")
 # --- weekly series ---
-for slug,nm,town,venue,addr in [("hartenboschvillage","Hart & Bosch Village parkrun","Hartenbos","Hart & Bosch Village","R102, Hartenbos"),
-    ("curromosselbayschool","Curro Mossel Bay School parkrun","Mossel Bay","Curro Mossel Bay School","2 Seemeeu Street, Heiderand, Mossel Bay"),
-    ("bongamereserve","Bon Game Reserve parkrun","Mossel Bay","Bon Game Reserve","Near the Gourits River Bridge (N2)"),
-    ("george","George parkrun","George","Garden Route Botanical Garden","49 Caledon Street, George"),
-    ("knysna","Knysna parkrun","Knysna","George Rex Drive","George Rex Drive, Knysna"),
-    ("harkerville","Harkerville parkrun","Plettenberg Bay","Harkerville Market","N2, opposite Airport Road, Plettenberg Bay")]:
+# All parkruns in the Garden Route district + Kouga (Jeffreys Bay / St Francis), from parkrun.co.za event pages; coordinates from parkrun's event map (images.parkrun.com/events.json).
+# parkrun South Africa lists no junior (2 km Sunday) events.
+_PR=[("hartenboschvillage","Hart & Bosch Village parkrun","Hartenbos","Hart & Bosch Village","R102, Hartenbos",-34.1126,22.1062,""),
+    ("curromosselbayschool","Curro Mossel Bay School parkrun","Mossel Bay","Curro Mossel Bay School","2 Seemeeu Street, Heiderand, Mossel Bay",-34.1927,22.1103,""),
+    ("bongamereserve","Bon Game Reserve parkrun","Mossel Bay","Bon Game Reserve","Near the Gourits River Bridge (N2)",-34.182,21.7528,""),
+    ("george","George parkrun","George","Garden Route Botanical Garden","49 Caledon Street, George",-33.9454,22.4648,""),
+    ("knysna","Knysna parkrun","Knysna","George Rex Drive","George Rex Drive, Knysna",-34.0459,23.0693,""),
+    ("harkerville","Harkerville parkrun","Plettenberg Bay","Harkerville Market","N2, opposite Airport Road, Plettenberg Bay",-34.0384,23.2413," No dogs."),
+    ("stilbaaiwestbeach","Stilbaai West Beach parkrun","Stilbaai","Stilbaai West Beach","Waterkant Street, Stilbaai",-34.3838,21.4227,""),
+    ("hopkinsland","Hopkins Land parkrun","Witsand","Hopkins Land","End of Moodie Street, Witsand / Port Beaufort",-34.3921,20.8384," June to October fog is common, and the Malgas pont can cause delays: allow extra driving time."),
+    ("stormsriver","Storms River parkrun","Storms River","MTO Lottering plantation (Block L)","North of the N2, opposite the Storms River Village entrance",-33.966,23.8868,""),
+    ("stfrancis","St Francis parkrun","St Francis Bay","St Francis Links","St Francis Links, St Francis Bay",-34.1623,24.8154,""),
+    ("mentorscountryestate","Mentors Country Estate parkrun","Jeffreys Bay","Mentors Country Estate","Corner of N2 Jeffreys Bay main off-ramp and St Francis Road, Jeffreys Bay",-34.017,24.8929,"")]
+for slug,nm,town,venue,addr,la,lo,extra in _PR:
     occ=_dates("2026-10-10",HORIZON,[SAT])
     add(title=nm,category="funrun",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Saturday, 08:00",time="08:00",town=town,venue=venue,venue_address=addr,
-        price_from="Free (register once)",ticket_url="",source_url=f"https://www.parkrun.co.za/{slug}/",source_name="parkrun",
-        alt_sources=([MB+"bon-game-reserve-park-run/2026-10-10/"] if slug=="bongamereserve" else [GRG]),notes="Free weekly 5 km walk/run. Register with parkrun once and bring your barcode."+(" No dogs." if slug=="harkerville" else ""))
+        lat=la,lng=lo,geo_source="parkrun event map",price_from="Free (register once)",ticket_url="",source_url=f"https://www.parkrun.co.za/{slug}/",source_name="parkrun",
+        alt_sources=([MB+"bon-game-reserve-park-run/2026-10-10/"] if slug=="bongamereserve" else ([GRG] if slug in ("hartenboschvillage","curromosselbayschool","george","knysna","harkerville") else [])),
+        notes="Free weekly 5 km walk/run. Register with parkrun once and bring your barcode."+extra)
+# Oudtshoorn parkrun starts 07:00 October-March and 08:00 April-September (per its parkrun page).
+_o=_dates("2026-10-10",HORIZON,[SAT])
+for occ,tm in [([d for d in _o if d[5:7] in ("10","11","12","01","02","03")],"07:00"),([d for d in _o if d[5:7] in ("04","05","06","07","08","09")],"08:00")]:
+    if not occ: continue
+    add(title="Oudtshoorn parkrun"+(" (summer start 07:00)" if tm=="07:00" else " (winter start 08:00)"),category="funrun",start_date=occ[0],end_date=occ[-1],occurrences=occ,
+        recurrence=f"Every Saturday, {tm} ({'October-March' if tm=='07:00' else 'April-September'})",time=tm,town="Oudtshoorn",venue="Surval Boutique Olive Estate",
+        venue_address="R328, Cango Caves / Buffelsdrift Road, Oudtshoorn",lat=-33.5345,lng=22.2343,geo_source="parkrun event map",price_from="Free (register once)",ticket_url="",
+        source_url="https://www.parkrun.co.za/oudtshoorn/",source_name="parkrun",notes="Free weekly 5 km walk/run; starts 07:00 Oct-Mar and 08:00 Apr-Sep. No dogs. Register with parkrun once and bring your barcode.")
 occ=_dates("2026-10-10",HORIZON,[SAT])
 add(title="Scarab Village Craft Market",category="market",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Saturday, 08:30-12:30",time="08:30-12:30",town="Sedgefield",venue="Scarab Village",
     price_from="",ticket_url="",source_url=GRC+"scarab-village-craft-market-from-all-year-every-saturday-till_event_op_view_id_453",source_name=_S_GRC,alt_sources=["https://scarabvillage.co.za/craft-market/",GRG],
@@ -858,3 +875,14 @@ occ=[d for d in _dates("2026-10-14",HORIZON,[WED]) if d[5:7] not in ("06","07","
 add(title="Mosaic Food Fare (Wednesday evenings)",category="market",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Wednesday, 16:00-20:00 (September to May)",time="16:00-20:00",
     town="Sedgefield",venue="Mosaic Village & Outdoor Market",price_from="",ticket_url="",source_url=GRC+"mosaic-food-fare-from-all-year-every-wednesday-till_event_op_view_id_2739",source_name=_S_GRC,
     alt_sources=["http://mosaicmarket.co.za/welcome/",GRG],notes="International street food, live music and kids' activities. Runs September to May.")
+
+# ---------------- Simola, Knysna (added 8 Oct 2026) ----------------
+add(title="Simola Hillclimb 2027 (17th edition)",category="sport",start_date="2027-04-29",end_date="2027-05-02",
+    time="Thu 29 Apr: car display at FanFest & parade; Fri 30 Apr: Classic Car Friday & King of the Hill display; Sat 1 - Sun 2 May: King of the Hill Shootout (from 09:05; prize-giving Sun 16:00)",
+    town="Knysna",venue="Simola Hillclimb (Old Cape Road, Simola)",venue_address="Old Cape Road, Knysna (start line); FanFest at Hedge Street, Knysna",lat=-34.017299,lng=23.028515,geo_source="official site (start line)",
+    price_from="R190",ticket_url="https://knysnaspeedfestival.howler.co.za/simolahillclimb2027",source_url="https://www.speedfestival.co.za/",source_name="Simola Hillclimb (official site)",
+    alt_sources=["https://www.speedfestival.co.za/spectators/event-schedule/","https://www.speedfestival.co.za/spectators/ticket-information/","https://www.speedfestival.co.za/info/future-dates/"],
+    notes="South Africa's premier hillclimb motorsport weekend. Adult general entry R190/day or R465 for 3 days (Tier 1, to 30 Nov); prices rise to R220 (Dec-Mar), R250 (from Apr) and R290 at the gate. Pensioners R190; children 12 and under free online. Le Mans VIP from R2,950. The schedule is provisional. Future dates: 27-30 Apr 2028.")
+add(title="Christmas Pilates on the Simola helipad",category="community",start_date="2026-12-20",time="07:00-09:00",town="Knysna",venue="Simola Hotel, Country Club & Spa",
+    venue_address="1 Old Cape Road, Simola, Knysna",price_from="",ticket_url="https://www.quicket.co.za/events/399557-christmas-pilates/",source_url="https://www.quicket.co.za/events/399557-christmas-pilates/",
+    source_name="Quicket",notes="All-levels full-body Pilates flow led by Pure Posture Pilates on the hotel helipad overlooking the Knysna Heads.")
