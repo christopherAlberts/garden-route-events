@@ -131,8 +131,21 @@ REST=[
    specials=[],music=["Live music gigs, open mic nights and a family market (no dates published)"],
    notes="No dated upcoming events found (checked Oct 2026); its May 2026 fundraiser festival has passed.",
    sources=[S("Fairy Knowe Backpackers: Entertainment","https://www.fairyknowebackpackers.co.za/entertainment")],match=[]),
+ dict(id="seeplaas-groot-brak",name="Seeplaas Restaurant & Gallery",town="Groot Brak",address="Plot 60 Ottosrust, Groot Brakrivier (between George and Mossel Bay)",phone="044 620 2409 (restaurant bookings by phone only)",
+   website="https://seeplaas.co.za/seeplaas-restaurant/",img="https://seeplaas.co.za/wp-content/uploads/2018/12/restaurant-seeplaas-food.jpg",
+   blurb="Seasonal sea-view restaurant with a wine and gin bar, gift shop, Ken Maloney art gallery and guesthouse. Open Mon–Sun 08:00–17:00 (times vary by season). Breakfast 08:00–11:30, lunch from 11:30.",
+   specials=[],music=[],
+   notes="Location check: Groot Brakrivier, about 23 km from Mossel Bay and 27 km from George. The Powervan Mossel Bay breakfast trip from Hartenbos stops here for breakfast (already listed as an event). No upcoming events or weekly specials published (checked 8 Oct 2026). The site's only event, Sip & Sow on 9 Aug 2026, is past, and the 'Musiekpret @ Seeplaas' listing is from Dec 2022.",
+   sources=[S("Seeplaas Restaurant (official site)","https://seeplaas.co.za/seeplaas-restaurant/"),S("Seeplaas Events (official site)","https://seeplaas.co.za/seeplaas-events/"),S("Seeplaas contact","https://seeplaas.co.za/contact/")],match=["Seeplaas"]),
+ dict(id="de-vette-mossel-grootbrak",name="De Vette Mossel Grootbrak",town="Groot Brak",address="Souwesia Beach, between Klein- and Groot-Brakrivier (off the R102)",phone="079 339 0170 (phone/WhatsApp)",
+   website="https://devettemossel.co.za/grootbrak/",img="https://devettemossel.co.za/wp-content/uploads/2024/11/Grootbrak-Header-Slider-1.jpg",
+   blurb="Beach seafood restaurant with a 7-course, 13-dish rolling buffet cooked on open fires: pot bread, mussels, snoek, seafood and meat potjies. Kids' play area, beach bar. Booking essential.",
+   specials=[["Any open day","Rolling seafood buffet. Sessions 12:00 for 12:30 and 18:30 for 19:00. R395 adult, R310 high school, R180 primary school, R70 pre-school, under-3s free. Extras: lobster R390, whole prawns R250 (400 g), oysters R150 for 5"]],
+   music=[],
+   notes="Name/location check: “Vette Mossel” = De Vette Mossel Grootbrak, the original branch (2004), on the beach near Great Brak River. Open every day in season and in school holidays; other times, check open dates on Dineplan (https://account.dineplan.com/widgetframe/KrNQjPXp) or Facebook. Prices change each year on 1 Dec. 2026 holiday prawn buffets (Easter, Father's Day, Women's Day, Heritage Day; R440 adult) are past. No festive or Dec 2026 special announced yet; year-end functions are being booked.",
+   sources=[S("De Vette Mossel Grootbrak (official site)","https://devettemossel.co.za/grootbrak/"),S("De Vette Mossel bookings & prices","https://devettemossel.co.za/bookings/"),S("Facebook posts via Foodyas (to 6 Oct 2026)","https://www.foodyas.com/ZA/Great-Brak-River/427093387366316/De-Vette-Mossel---Grootbrak"),S("Food-Blog: Heritage Day 2026 prawn buffet","https://www.food-blog.co.za/all-you-can-eat-prawns-and-a-heritage-day-seafood-buffet-at-de-vette-mossel-grootbrak/")],match=["De Vette Mossel"]),
 ]
-GR={"George","Knysna","Sedgefield","Hoekwil","Wilderness","Hartenbos","Oudtshoorn","Mossel Bay","Plettenberg Bay"}
+GR={"George","Knysna","Sedgefield","Hoekwil","Wilderness","Hartenbos","Oudtshoorn","Mossel Bay","Plettenberg Bay","Groot Brak"}
 def fetch(url,out):
     if os.path.exists(out) and os.path.getsize(out)>0: return True
     try:

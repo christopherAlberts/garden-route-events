@@ -45,7 +45,6 @@
   "geo_source": "nominatim",
   "region": "Garden Route",
   "occurrences": [
-   "2026-10-07",
    "2026-10-08",
    "2026-10-09",
    "2026-10-13",
@@ -150,10 +149,10 @@
    "2027-04-02",
    "2027-04-06",
    "2027-04-07",
-   "2027-04-08"
+   "2027-04-08",
+   "2027-04-09"
   ],
   "day_labels": {
-   "2026-10-07": "Burger special",
    "2026-10-08": "Pizza special R120",
    "2026-10-09": "Kids' pottery painting 30% off",
    "2026-10-13": "Taco Tuesday",
@@ -258,7 +257,8 @@
    "2027-04-02": "Kids' pottery painting 30% off",
    "2027-04-06": "Taco Tuesday",
    "2027-04-07": "Burger special",
-   "2027-04-08": "Pizza special R120"
+   "2027-04-08": "Pizza special R120",
+   "2027-04-09": "Kids' pottery painting 30% off"
   },
   "recurrence": "Tue: Taco Tuesday; Wed: Burger special; Thu: Pizza special R120; Fri: Kids' pottery painting 30% off"
  },
@@ -308,7 +308,6 @@
   "geo_source": "nominatim",
   "region": "Garden Route",
   "occurrences": [
-   "2026-10-07",
    "2026-10-08",
    "2026-10-09",
    "2026-10-12",
@@ -439,10 +438,10 @@
    "2027-04-05",
    "2027-04-06",
    "2027-04-07",
-   "2027-04-08"
+   "2027-04-08",
+   "2027-04-09"
   ],
   "day_labels": {
-   "2026-10-07": "Happy hour 16:00-18:00",
    "2026-10-08": "Happy hour 16:00-18:00",
    "2026-10-09": "Happy hour 16:00-18:00",
    "2026-10-12": "Happy hour 16:00-18:00",
@@ -573,7 +572,8 @@
    "2027-04-05": "Happy hour 16:00-18:00",
    "2027-04-06": "Happy hour 16:00-18:00 · Pizza Tuesday",
    "2027-04-07": "Happy hour 16:00-18:00",
-   "2027-04-08": "Happy hour 16:00-18:00"
+   "2027-04-08": "Happy hour 16:00-18:00",
+   "2027-04-09": "Happy hour 16:00-18:00"
   },
   "recurrence": "Mon/Tue/Wed/Thu/Fri: Happy hour 16:00-18:00; Tue: Pizza Tuesday"
  },
@@ -622,7 +622,6 @@
   "geo_source": "nominatim",
   "region": "Garden Route",
   "occurrences": [
-   "2026-10-07",
    "2026-10-08",
    "2026-10-12",
    "2026-10-13",
@@ -730,7 +729,6 @@
    "2027-04-08"
   ],
   "day_labels": {
-   "2026-10-07": "Debriefing specials 13:00-17:00",
    "2026-10-08": "Debriefing specials 13:00-17:00 · Quiz night 19:00",
    "2026-10-12": "Debriefing specials 13:00-17:00",
    "2026-10-13": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00",
@@ -1527,6 +1525,91 @@
   "lng": 22.5786317,
   "geo_source": "town centroid",
   "region": "Garden Route",
+  "occurrences": [],
+  "day_labels": {},
+  "recurrence": ""
+ },
+ {
+  "id": "seeplaas-groot-brak",
+  "name": "Seeplaas Restaurant & Gallery",
+  "town": "Groot Brak",
+  "address": "Plot 60 Ottosrust, Groot Brakrivier (between George and Mossel Bay)",
+  "phone": "044 620 2409 (restaurant bookings by phone only)",
+  "website": "https://seeplaas.co.za/seeplaas-restaurant/",
+  "blurb": "Seasonal sea-view restaurant with a wine and gin bar, gift shop, Ken Maloney art gallery and guesthouse. Open Mon–Sun 08:00–17:00 (times vary by season). Breakfast 08:00–11:30, lunch from 11:30.",
+  "specials": [],
+  "music": [],
+  "notes": "Location check: Groot Brakrivier, about 23 km from Mossel Bay and 27 km from George. The Powervan Mossel Bay breakfast trip from Hartenbos stops here for breakfast (already listed as an event). No upcoming events or weekly specials published (checked 8 Oct 2026). The site's only event, Sip & Sow on 9 Aug 2026, is past, and the 'Musiekpret @ Seeplaas' listing is from Dec 2022.",
+  "sources": [
+   {
+    "name": "Seeplaas Restaurant (official site)",
+    "url": "https://seeplaas.co.za/seeplaas-restaurant/"
+   },
+   {
+    "name": "Seeplaas Events (official site)",
+    "url": "https://seeplaas.co.za/seeplaas-events/"
+   },
+   {
+    "name": "Seeplaas contact",
+    "url": "https://seeplaas.co.za/contact/"
+   }
+  ],
+  "garden_route": true,
+  "last_checked": "2026-10-06",
+  "image": "images/r-seeplaas-groot-brak.webp",
+  "image_source": "https://seeplaas.co.za/wp-content/uploads/2018/12/restaurant-seeplaas-food.jpg",
+  "event_ids": [],
+  "lat": -34.0425,
+  "lng": 22.2313889,
+  "geo_source": "town centroid",
+  "region": "Mossel Bay",
+  "occurrences": [],
+  "day_labels": {},
+  "recurrence": ""
+ },
+ {
+  "id": "de-vette-mossel-grootbrak",
+  "name": "De Vette Mossel Grootbrak",
+  "town": "Groot Brak",
+  "address": "Souwesia Beach, between Klein- and Groot-Brakrivier (off the R102)",
+  "phone": "079 339 0170 (phone/WhatsApp)",
+  "website": "https://devettemossel.co.za/grootbrak/",
+  "blurb": "Beach seafood restaurant with a 7-course, 13-dish rolling buffet cooked on open fires: pot bread, mussels, snoek, seafood and meat potjies. Kids' play area, beach bar. Booking essential.",
+  "specials": [
+   [
+    "Any open day",
+    "Rolling seafood buffet. Sessions 12:00 for 12:30 and 18:30 for 19:00. R395 adult, R310 high school, R180 primary school, R70 pre-school, under-3s free. Extras: lobster R390, whole prawns R250 (400 g), oysters R150 for 5"
+   ]
+  ],
+  "music": [],
+  "notes": "Name/location check: “Vette Mossel” = De Vette Mossel Grootbrak, the original branch (2004), on the beach near Great Brak River. Open every day in season and in school holidays; other times, check open dates on Dineplan (https://account.dineplan.com/widgetframe/KrNQjPXp) or Facebook. Prices change each year on 1 Dec. 2026 holiday prawn buffets (Easter, Father's Day, Women's Day, Heritage Day; R440 adult) are past. No festive or Dec 2026 special announced yet; year-end functions are being booked.",
+  "sources": [
+   {
+    "name": "De Vette Mossel Grootbrak (official site)",
+    "url": "https://devettemossel.co.za/grootbrak/"
+   },
+   {
+    "name": "De Vette Mossel bookings & prices",
+    "url": "https://devettemossel.co.za/bookings/"
+   },
+   {
+    "name": "Facebook posts via Foodyas (to 6 Oct 2026)",
+    "url": "https://www.foodyas.com/ZA/Great-Brak-River/427093387366316/De-Vette-Mossel---Grootbrak"
+   },
+   {
+    "name": "Food-Blog: Heritage Day 2026 prawn buffet",
+    "url": "https://www.food-blog.co.za/all-you-can-eat-prawns-and-a-heritage-day-seafood-buffet-at-de-vette-mossel-grootbrak/"
+   }
+  ],
+  "garden_route": true,
+  "last_checked": "2026-10-06",
+  "image": "images/r-de-vette-mossel-grootbrak.webp",
+  "image_source": "https://devettemossel.co.za/wp-content/uploads/2024/11/Grootbrak-Header-Slider-1.jpg",
+  "event_ids": [],
+  "lat": -34.0425,
+  "lng": 22.2313889,
+  "geo_source": "town centroid",
+  "region": "Mossel Bay",
   "occurrences": [],
   "day_labels": {},
   "recurrence": ""
