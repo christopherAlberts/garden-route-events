@@ -936,3 +936,9 @@ for _m in _json.load(open(_os.path.join(_os.path.dirname(__file__),"galileo_2026
         notes=("Galileo Royale (VIP). " if _ty=="ROYALE" else ("Galileo special show. " if _ty=="SPECIAL" else "Galileo picnic screening. "))+
               (f"Rated {_age}. " if _age else "")+(f"Runtime {_m['run']}. " if _m["run"] and _m["run"]!="TBC" else "")+
               "Open-air movie under the stars: bring a picnic (alcohol allowed) or buy from the food vendors and bar on site. Standard ticket R155 (R170 with backrest, R180 with backrest and blanket); specials and Royale cost more. Children under 4 free. Book on Webtickets (search the show date).")
+
+# ---------------- Die Bush Lapa, Herold's Bay (added 8 Oct 2026) ----------------
+add(title="Big Screen Bok Rugby at Die Bush Lapa",category="sport",start_date="2026-10-08",end_date="2026-11-21",time="Springbok match times",town="George",
+    venue="Die Bush Lapa (Herold's Bay Eco Resort)",venue_address="Herold's Bay Eco Resort, Oubaai Road, Herold's Bay, George",price_from="",lat=-34.050556,lng=22.3975,geo_source="nominatim (Herolds Bay village)",ticket_url="",
+    source_url="https://visitgeorge.co.za/event/big-screen-bok-rugby/",source_name="Visit George",
+    notes="Springbok tests shown live on a big screen at the Bush Lapa (Visit George lists the series from 20 Jun to 21 Nov 2026). The listing gives no match dates, so check with the organiser (Byron Minnie, 079 404 5875) before going. Cash bar and meals at the venue.")
