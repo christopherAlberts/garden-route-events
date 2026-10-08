@@ -681,3 +681,10 @@ add(title="George Agricultural Show 2027 (George Landbouskou)",category="festiva
     town="George",venue="George Showgrounds",venue_address="George Skougronde, R102, Groeneweide Park, George",price_from="",
     ticket_url="https://georgelandbouskou.co.za/",source_url="https://georgelandbouskou.co.za/",source_name="George Landbouskou (official)",
     notes="Annual agricultural show by the Outeniqua Agricultural Society: livestock, equestrian, machinery, crafts, food, music and sport. 2027 dates are from the official site; programme and tickets not yet published. Info: 044 873 4165, info@georgelandbouskou.co.za.")
+
+# ---------------- KKNK 2027 (added 8 Oct 2026) ----------------
+add(title="KKNK 2027 – Klein Karoo Nasionale Kunstefees (31st edition)",category="festival",start_date="2027-03-23",end_date="2027-03-27",time="",
+    town="Oudtshoorn",venue="KKNK festival venues across Oudtshoorn",venue_address="KKNK office: 217 Jan van Riebeeck Road, Oudtshoorn",price_from="",
+    ticket_url="https://www.kknk.co.za/",source_url="https://www.kknk.co.za/en/kknk-programaansoeke/",source_name="KKNK (official site)",
+    alt_sources=["https://www.kknk.co.za/en/","https://www.kknk.co.za/kknk-programaansoeke/"],
+    notes="South Africa's biggest Afrikaans arts festival: theatre, music, visual art, family entertainment and the free Kuierkol. The 31st KKNK runs Tue 23 to Sat 27 Mar 2027, five days (2026 ran eight days). Programme, prices and tickets not yet published (checked 8 Oct 2026). Info: 044 203 8600, info@kunste.org.za.")

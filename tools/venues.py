@@ -43,6 +43,7 @@ for n,t,u,note in [("Bossa George","George","https://bossagoodtimes.com/branches
  ("George Motor Club oval track (George Showgrounds)","George","https://georgemotorclub.racing/race-calendar/","Stock car and dirt karting oval. Cross-check the MSA calendar (organiser DO4SA-GEORGE). 'Passion for Speed' 10 Oct 2026 appears only on a third-party directory, not on the club site or MSA, so it was not added."),
  ("Arnold de Jager Oval Track","Oudtshoorn","https://www.motorsport.co.za/organizer/do4sa-oudts/","Oudtshoorn Motor Club stock car oval. Events are on the MSA calendar (organiser DO4SA-OUDTS)."),
  ("Redrock Raceway","Oudtshoorn","https://www.motorsport.co.za/organizer/do4sa-oudts/","Named only in the MSA PDF calendar (01.10.2026) for the 31 Oct 2026 Oudtshoorn MC meeting. The MSA event page says Arnold de Jager Oval Track. No other listing found."),
+ ("KKNK festival venues across Oudtshoorn","Oudtshoorn","https://www.kknk.co.za/","KKNK (Klein Karoo Nasionale Kunstefees), an annual arts festival at multiple venues. KKNK 2027: 23-27 Mar 2027 (official site). Watch for the programme and ticket launch, and for KKNK projects such as ReWOLusie and Klein Karoo Klassique."),
  ("Stowaway Hideout (Stanley Island)","Plettenberg Bay","https://www.foodyas.com/ZA/Plettenberg-Bay/109413645275891/Stowaway-Hideout","Specials seen are from 2025.")]:
     put(n,t,"Garden Route",True,"venue (no listing)",[u],note)
 out=sorted(rows.values(),key=lambda r:(not r["garden_route"],r["region"],r["town"],r["name"].lower()))
