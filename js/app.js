@@ -10,9 +10,10 @@ var MONTHS=(function(){ // current month through the last month that has any eve
 var MN=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 var MNL=["January","February","March","April","May","June","July","August","September","October","November","December"];
 var DOW=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-var CATS={concert:"Concert",festival:"Festival",musical:"Musical",market:"Market",funrun:"Run / walk / trail",community:"Church / community",arts:"Arts & culture",quiz:"Quiz night",festive:"Festive dining",nature:"Nature & outdoors",restaurant:"Restaurant"};
-var CATPL={concert:"concerts",festival:"festivals",musical:"musicals",market:"markets",funrun:"runs, walks & trails",community:"church & community",arts:"arts & culture",quiz:"quiz nights",festive:"festive dining",nature:"nature & outdoors",restaurant:"restaurants & pubs"};
+var CATS={concert:"Concert",festival:"Festival",musical:"Musical",market:"Market",funrun:"Run / walk / trail",community:"Church / community",arts:"Arts & culture",quiz:"Quiz night",festive:"Festive dining",nature:"Nature & outdoors",sport:"Sport & motorsport",restaurant:"Restaurant"};
+var CATPL={concert:"concerts",festival:"festivals",musical:"musicals",market:"markets",funrun:"runs, walks & trails",community:"church & community",arts:"arts & culture",quiz:"quiz nights",festive:"festive dining",nature:"nature & outdoors",sport:"sport & motorsport",restaurant:"restaurants & pubs"};
 var ICON={
+  sport:'<svg viewBox="0 0 24 24"><path d="M5 2h2v1h13v11H7v8H5zm2 3v2h2.6V5zm2.6 2v2.3h2.6V7zm2.6-2v2h2.6V5zm2.6 2v2.3h2.6V7zM7 9.3v2.4h2.6V9.3zm5.2 0v2.4h2.6V9.3zm-2.6 2.4V14h2.6v-2.3zm5.2 0V14H18v-2.3z"/></svg>',
   restaurant:'<svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>',
   quiz:'<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>',
   festive:'<svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 12 7.4l3.38 4.6L17 10.83 14.92 8H20v6z"/></svg>',
@@ -300,7 +301,7 @@ function restDetail(r){
 function restSection(R,label){
   R=R.slice().sort(function(a,b){var O=GR_ORDER.concat(WIDE_ORDER),ia=O.indexOf(a.town),ib=O.indexOf(b.town);return ((ia<0?99:ia)-(ib<0?99:ib))||a.name.localeCompare(b.name)});
   return '<div class="sec"><h2>'+label+'</h2><span class="pill">'+R.length+'</span></div><p class="rintro">Specials, live music and recurring nights from each venue\u2019s own site and local listings (checked '+esc(R[0].last_checked)+'). Things change, so call ahead.</p><div class="grid rgrid">'+R.map(rcard).join("")+'</div>'}
-var COL={concert:"#2a6f97",festival:"#e76f51",musical:"#8e4ec6",market:"#5b8c2a",funrun:"#d63384",community:"#b7791f",arts:"#0f766e",quiz:"#4f46e5",festive:"#b4233c",nature:"#15803d",restaurant:"#c2410c"};
+var COL={concert:"#2a6f97",festival:"#e76f51",musical:"#8e4ec6",market:"#5b8c2a",funrun:"#d63384",community:"#b7791f",arts:"#0f766e",quiz:"#4f46e5",festive:"#b4233c",nature:"#15803d",sport:"#0e7490",restaurant:"#c2410c"};
 var GRB=[[-33.55,21.95],[-34.2,24.0]];
 function renderMap(){
   var L=filtered(false,false).filter(function(e){return e.lat!=null&&e.lng!=null});
@@ -321,7 +322,7 @@ function renderMap(){
 function stats(){
   var L=scoped();var by={};L.forEach(function(e){by[e.category]=(by[e.category]||0)+1});var nev=L.length-(by.restaurant||0);
   $("stats").innerHTML='<span class="stat"><b>'+nev+'</b> '+(S.scope==="gr"?"Garden Route":"coastal")+' events</span>'+
-    ["concert","festival","market","funrun","musical","arts","quiz","festive","nature","community","restaurant"].filter(function(c){return by[c]}).map(function(c){return '<span class="stat"><b>'+by[c]+'</b> '+CATPL[c]+'</span>'}).join("");
+    ["concert","festival","market","funrun","musical","arts","quiz","festive","nature","sport","community","restaurant"].filter(function(c){return by[c]}).map(function(c){return '<span class="stat"><b>'+by[c]+'</b> '+CATPL[c]+'</span>'}).join("");
 }
 function render(){
   ["list","cal","map"].forEach(function(v){$("view-"+v).hidden=S.view!==v});

@@ -351,3 +351,11 @@ body.v-rest #catChips,body.v-rest #month,body.v-rest #offToggle{display:none!imp
 .pe .pc.nature{background:#15803d}
 #catChips .xmaschip{border-style:dashed;border-color:#b4233c}
 #catChips .xmaschip.on{background:#14532d;color:#fff;border-style:solid;border-color:#14532d}
+
+/* sport & motorsport */
+:root{--sport:#0e7490}
+@media (prefers-color-scheme:dark){:root{--sport:#22d3ee}}
+.dot.sport,.cat.sport{background:var(--sport)}
+.ph.sport{background:radial-gradient(circle at 70% 20%,#a5f3fc 0,transparent 45%),linear-gradient(135deg,#164e63,#0e7490 55%,#67e8f9)}
+.chip.sport{background:color-mix(in srgb,var(--sport) 14%,transparent);border-color:var(--sport)}
+.pe .pc.sport{background:#0e7490}
