@@ -36,6 +36,8 @@ for r in RS:
 # Venues discussed but with no listing yet
 for n,t,u,note in [("Bossa George","George","https://bossagoodtimes.com/branches/george/","Heard as 'Borsa'. No events/specials found 7 Oct 2026."),
  ("Polpetta George","George","https://visitgeorge.co.za/directory/polpetta-george/","Heard as 'Palpetta'. No events/specials found 7 Oct 2026."),
+ ("Outeniqua Transport Museum","George","https://www.georgeherald.com/News/Article/Local-News/transport-museum-opens-temporarily-202607010954","Closed after May 2026 storm damage; only temporarily reopened 27 Jun-12 Jul 2026 for The Market. No reopening date or 2026 events confirmed (Oct 2026). Annual December market venue uncertain."),
+ ("Old Nick Village","Plettenberg Bay","https://oldnickvillage.co.za/","Plettenberg Bay (N2, 3 km east of town), not Wilderness. Weekly Wednesday Market listed; past years had Christmas Eve and Easter markets."),
  ("Stowaway Hideout (Stanley Island)","Plettenberg Bay","https://www.foodyas.com/ZA/Plettenberg-Bay/109413645275891/Stowaway-Hideout","Specials seen are from 2025.")]:
     put(n,t,"Garden Route",True,"venue (no listing)",[u],note)
 out=sorted(rows.values(),key=lambda r:(not r["garden_route"],r["region"],r["town"],r["name"].lower()))

@@ -56,6 +56,22 @@
 "https://www.knysna.n2rs.com/knysna-diary-october.html"
 ]
 },
+"2026-10-08-outeniqua-powervan-mountain-rail-trip-george-mon-f": {
+"img": "",
+"pages": [
+"https://www.powervan.co.za/index.php/george/",
+"https://www.powervan.co.za/index.php/george/",
+"https://visitgeorge.co.za/directory/outeniqua-power-van/"
+]
+},
+"2026-10-08-powervan-mossel-bay-picnic-rail-trip-hartenbos-gle": {
+"img": "",
+"pages": [
+"https://www.powervan.co.za/index.php/mosselbay/",
+"https://www.powervan.co.za/index.php/mosselbay/",
+"https://www.transplo.com/ZA/Hartenbos/775998325815871/Diaz-Express"
+]
+},
 "2026-10-08-wilderness-arts-festival": {
 "img": "",
 "pages": [
@@ -95,6 +111,14 @@
 "pages": [
 "https://www.therealhennies.co.za/branches/hennies-oudtshoorn",
 "https://www.therealhennies.co.za/img/posters/whatson-oct-2026/oudtshoorn.jpg"
+]
+},
+"2026-10-09-powervan-mossel-bay-breakfast-lunch-rail-excursion": {
+"img": "",
+"pages": [
+"https://www.powervan.co.za/index.php/mosselbay/",
+"https://www.powervan.co.za/index.php/mosselbay/",
+"https://www.transplo.com/ZA/Hartenbos/775998325815871/Diaz-Express"
 ]
 },
 "2026-10-09-carpe-musicam-magnificent-movie-music-george": {
@@ -152,6 +176,14 @@
 "pages": [
 "https://www.outeniquafamilymarket.co.za/",
 "https://visitgeorge.co.za/directory/outeniqua-family-market/"
+]
+},
+"2026-10-10-outeniqua-powervan-mountain-rail-trip-george-satur": {
+"img": "",
+"pages": [
+"https://www.powervan.co.za/index.php/george/",
+"https://www.powervan.co.za/index.php/george/",
+"https://visitgeorge.co.za/directory/outeniqua-power-van/"
 ]
 },
 "2026-10-10-misty-valley-octoberfest": {
@@ -1534,25 +1566,10 @@
 ]
 },
 "2026-10-07-danger-in-the-dark": {
-"img": "https://content.webtickets.co.za/artscape/panel_Danger Webtickets_20260903_153731.jpg",
+"img": "",
 "pages": [
-"https://www.webtickets.co.za/v2/event.aspx?itemid=1602280340",
-"https://www.webtickets.co.za/v2/event.aspx?itemid=1602280340",
+"https://www.artscape.co.za/event/danger-in-the-dark/",
 "https://www.artscape.co.za/event/danger-in-the-dark/"
-]
-},
-"2026-10-07-piano-fantasia-disney-jazz": {
-"img": "https://images.quicket.co.za/0997404_0.png",
-"pages": [
-"https://www.quicket.co.za/events/392694-piano-fantasia-disney-jazz/#tickets",
-"https://www.quicket.co.za/events/392694-piano-fantasia-disney-jazz/"
-]
-},
-"2026-10-07-queens-lounge-presents-rus-nerwich-quartet": {
-"img": "https://images.quicket.co.za/0994107_0.png",
-"pages": [
-"https://www.quicket.co.za/events/399524-queens-lounge-presents-rus-nerwich-quartet/#tickets",
-"https://www.quicket.co.za/events/399524-queens-lounge-presents-rus-nerwich-quartet/"
 ]
 },
 "2026-10-08-classical-rendezvous": {
@@ -1560,6 +1577,13 @@
 "pages": [
 "https://www.quicket.co.za/events/385816-classical-rendezvous/#tickets",
 "https://www.quicket.co.za/events/385816-classical-rendezvous/"
+]
+},
+"2026-10-08-danger-in-the-dark": {
+"img": "https://content.webtickets.co.za/artscape/panel_Danger Webtickets_20260903_153731.jpg",
+"pages": [
+"https://www.webtickets.co.za/v2/event.aspx?itemid=1602280340",
+"https://www.webtickets.co.za/v2/event.aspx?itemid=1602280340"
 ]
 },
 "2026-10-08-thirdimpact-ft-nani-3oh5": {
