@@ -1067,25 +1067,35 @@
   "name": "Cornerstone Creek",
   "town": "Hoekwil",
   "address": "Hoekwil, Wilderness",
-  "phone": "",
+  "phone": "084 502 8397",
   "website": "https://www.cornerstonecreek.co.za/",
-  "blurb": "Family restaurant and coffee bar in the countryside just outside Wilderness. Open Sat 09:00–22:00, Sun 09:00–16:00.",
+  "blurb": "Family restaurant and coffee bar in the countryside just outside Wilderness, with a kids' play area. Closed Mon & Tue; open Wed–Fri 11:00–22:00, Sat 09:00–22:00, Sun 09:00–16:00.",
   "specials": [],
   "music": [
-   "Their site lists “live music” among what they offer; no schedule published"
+   "Occasional ticketed live shows (past: Joshua Na Die Reen, Coffee Snobs, Bottomless Coffee Band on Quicket); no regular schedule published"
   ],
-  "notes": "No dated events found.",
+  "notes": "Runs one-off evenings such as Date Night, Sip & Paint and Kids' Pizza & Paint, which are booked on WhatsApp 079 141 6151. Event enquiries: events@cornerstonecreek.co.za.",
   "sources": [
    {
     "name": "Cornerstone Creek (official site)",
     "url": "https://www.cornerstonecreek.co.za/"
+   },
+   {
+    "name": "toodoo: Date Night (9 Oct 2026)",
+    "url": "https://www.toodoo.co.za/date-night-cornerstone-creek-hoekwil/"
+   },
+   {
+    "name": "Cornerstone Creek on Quicket",
+    "url": "https://www.quicket.co.za/organisers/37873-cornerstone-creek-hoekwil"
    }
   ],
   "garden_route": true,
   "last_checked": "2026-10-06",
   "image": "images/r-cornerstone-creek-hoekwil.webp",
   "image_source": "https://static.wixstatic.com/media/661dca_572f212aba0a4edca518d7f38c57df02~mv2.jpeg",
-  "event_ids": [],
+  "event_ids": [
+   "2026-10-09-date-night-at-cornerstone-creek"
+  ],
   "lat": -33.9727796,
   "lng": 22.6178534,
   "geo_source": "town centroid",

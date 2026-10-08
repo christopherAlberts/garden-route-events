@@ -942,3 +942,13 @@ add(title="Big Screen Bok Rugby at Die Bush Lapa",category="sport",start_date="2
     venue="Die Bush Lapa (Herold's Bay Eco Resort)",venue_address="Herold's Bay Eco Resort, Oubaai Road, Herold's Bay, George",price_from="",lat=-34.050556,lng=22.3975,geo_source="nominatim (Herolds Bay village)",ticket_url="",
     source_url="https://visitgeorge.co.za/event/big-screen-bok-rugby/",source_name="Visit George",
     notes="Springbok tests shown live on a big screen at the Bush Lapa (Visit George lists the series from 20 Jun to 21 Nov 2026). The listing gives no match dates, so check with the organiser (Byron Minnie, 079 404 5875) before going. Cash bar and meals at the venue.")
+
+# ---------------- Cornerstone Creek (Hoekwil) & Cornerstone Lifestyle Centre (George), added 8 Oct 2026 ----------------
+add(title="Date Night at Cornerstone Creek",category="restaurant",start_date="2026-10-09",time="18:00",town="Hoekwil",
+    venue="Cornerstone Creek",venue_address="Cornerstone Creek, Hoekwil, Wilderness",price_from="R550 per couple",ticket_url="",
+    source_url="https://www.toodoo.co.za/date-night-cornerstone-creek-hoekwil/",source_name="toodoo",
+    notes="Candlelit dinner with music and dancing. R550 per couple covers a shared starter, a bottle of wine, a main each, a shared dessert and a surprise envelope. Bookings essential on WhatsApp 079 141 6151.")
+add(title="C2C Harvest Ultra (multi-lap trail run, 6.7 km laps)",category="funrun",start_date="2026-10-17",time="15:00-22:00",town="George",
+    venue="Cornerstone Lifestyle Centre",venue_address="The Cornerstone Lifestyle Centre, R404, Blanco, George",price_from="",ticket_url="https://racetoken.co.za/event_view.php?event_id=28",
+    source_url="https://georgetrails.org.za/event/c2c-harvest-ultra/",source_name="George Trails",
+    notes="Last-one-standing format on a 6.7 km loop, with a new lap starting every hour from 15:00. Pick 1 lap (Seed Dash), 3 (Sprout Challenge), 6 (Reap Quest) or 8 (Harvest Grind). Kids' 800 m Future Farmers Sprint at 20:00. Organised by Crank To Crown Cycles. The RaceToken entry page still said 'coming soon' on 8 Oct, so check there for entries and prices.")
