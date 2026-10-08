@@ -688,3 +688,20 @@ add(title="KKNK 2027 – Klein Karoo Nasionale Kunstefees (31st edition)",catego
     ticket_url="https://www.kknk.co.za/",source_url="https://www.kknk.co.za/en/kknk-programaansoeke/",source_name="KKNK (official site)",
     alt_sources=["https://www.kknk.co.za/en/","https://www.kknk.co.za/kknk-programaansoeke/"],
     notes="South Africa's biggest Afrikaans arts festival: theatre, music, visual art, family entertainment and the free Kuierkol. The 31st KKNK runs Tue 23 to Sat 27 Mar 2027, five days (2026 ran eight days). Programme, prices and tickets not yet published (checked 8 Oct 2026). Info: 044 203 8600, info@kunste.org.za.")
+
+# ---------------- Mossel Bay clubs / nightlife (added 8 Oct 2026) ----------------
+# Sky Lounge karaoke: weekly Sunday series on the Visit Mossel Bay calendar (dates listed there 11 Oct 2026 - 28 Feb 2027).
+occ=[d for d in _dates("2026-10-11","2027-02-28",[SUN])]
+add(title="Karaoke Night @ Sky Lounge (DJ Melly D & DJ KCG)",category="concert",start_date=occ[0],end_date=occ[-1],occurrences=occ,
+    recurrence="Every Sunday, 18:00-23:30",time="18:00-23:30",town="Mossel Bay",venue="Sky Lounge",
+    venue_address="29 Essenhout Street, Heiderand, Mossel Bay",price_from="",ticket_url="",
+    source_url=MB+"karaoke-night-sky-lounge-2/2026-10-11/",source_name="Visit Mossel Bay (tourism calendar)",
+    notes="Karaoke with DJs. No under-18s, no boot parties. Weekly dates are listed on Visit Mossel Bay to 28 Feb 2027. The venue street address comes from directory listings (the tourism listing says only 'Mossel Bay'). Info: 079 508 2412.")
+add(title="AMA-1K Comedy Night (Vusi Oulik, Phanjile, Lukhanyo, Dabane; host Moola)",category="arts",start_date="2026-10-30",time="18:00",
+    town="Mossel Bay",venue="Bravo Lounge, Garden Route Casino",venue_address="1 Pinnacle Point Road, Mossel Bay",price_from="R150",
+    ticket_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1602614247",source_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1602614247",
+    source_name="Webtickets",notes="South African stand-up comedy night in the casino's entertainment lounge. Tickets via Webtickets / Pick n Pay.")
+add(title="Chapter One – Day One live music experience",category="concert",start_date="2026-11-08",time="18:00-21:00",
+    town="Mossel Bay",venue="Bravo Lounge, Garden Route Casino",venue_address="1 Pinnacle Point Road, Mossel Bay",price_from="",ticket_url="",
+    source_url=MB+"chapter-one/",source_name="Visit Mossel Bay (tourism calendar)",
+    notes="Day One's first live-music show in Mossel Bay: independent South African artists with live performances, artist stories and audience interaction, plus an online stream. Organiser Day One: 061 292 3810. Venue: 044 606 7777.")

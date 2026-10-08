@@ -1,5 +1,7 @@
 """Build tools/venues.csv: one row per venue from data/events.json + data/restaurants.json."""
-import json,re,csv,os,collections
+import json,re,csv,os,collections,sys
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
+from towns import TOWNS as _TW
 R0=os.path.join(os.path.dirname(os.path.abspath(__file__)),"..")
 E=json.load(open(f"{R0}/data/events.json"));RS=json.load(open(f"{R0}/data/restaurants.json"))
 GR_REG={"Garden Route","Mossel Bay","Hessequa (Stilbaai)"}
@@ -44,8 +46,15 @@ for n,t,u,note in [("Bossa George","George","https://bossagoodtimes.com/branches
  ("Arnold de Jager Oval Track","Oudtshoorn","https://www.motorsport.co.za/organizer/do4sa-oudts/","Oudtshoorn Motor Club stock car oval. Events are on the MSA calendar (organiser DO4SA-OUDTS)."),
  ("Redrock Raceway","Oudtshoorn","https://www.motorsport.co.za/organizer/do4sa-oudts/","Named only in the MSA PDF calendar (01.10.2026) for the 31 Oct 2026 Oudtshoorn MC meeting. The MSA event page says Arnold de Jager Oval Track. No other listing found."),
  ("KKNK festival venues across Oudtshoorn","Oudtshoorn","https://www.kknk.co.za/","KKNK (Klein Karoo Nasionale Kunstefees), an annual arts festival at multiple venues. KKNK 2027: 23-27 Mar 2027 (official site). Watch for the programme and ticket launch, and for KKNK projects such as ReWOLusie and Klein Karoo Klassique."),
+ ("Sky Lounge","Mossel Bay","https://visitmosselbay.co.za/event/karaoke-night-sky-lounge-2/","Bar/lounge, 29 Essenhout St, Heiderand (per directory listings). Weekly Sunday karaoke with DJs on the Visit Mossel Bay calendar. Earlier DJ shows (Ice Flake Show Dec 2024, Birthday Bash Feb 2025) were also listed there. Phone 079 508 2412."),
+ ("Bravo Lounge, Garden Route Casino","Mossel Bay","https://www.gardenroutecasino.co.za/dining/","Casino entertainment lounge, 1 Pinnacle Point Road: jazz, cabaret, comedy, live bands. Events show up on Webtickets/Quicket/Computicket and Visit Mossel Bay; the casino's own What's On page lists no dated shows."),
+ ("Zeppelins Bar","Mossel Bay","https://www.zeppelinsrock.com/","Rock & roll pub with DJs, bands, quiz nights and dress-up parties, 9 Marsh St, open daily 09:00-02:00. Official events page is empty (only 2023/24 events). Latest Facebook posts (via Foodyas) are from Jan 2026, including NYE 25/26. Nothing upcoming as of 8 Oct 2026. FB via https://www.foodyas.com/ZA/Mossel-Bay/893208957368228/Zeppelins"),
+ ("Die Kuiergat","Mossel Bay","https://webticket.co.za/v2/event.aspx?itemid=1578624402","Bar/restaurant with live music, 91 Marsh St (079 172 0973). Runs 'Live Lounge' shows on Webtickets (Dirk van der Westhuizen Jun 2025, Jaakie 5 Dec 2025). Reviews mention Sunday karaoke, bingo and quiz nights, but no official schedule was found. Official site diekuiergat.co.za returned 404 on 8 Oct 2026. Nothing upcoming."),
+ ("Koze Kuse Lounge","Mossel Bay","https://www.foodyas.com/ZA/Mossel-Bay/115062648135355/Koze-Kuse-Lounge-Reloaded","Lounge/club at 52 Scholtz St, KwaNonqaba (073 366 6363). DJ nights and 'The Plug Fridays' were announced in May-Jun 2026, but there have been no posts since early June 2026, so nothing was added."),
+ ("Patrick's Pub and Restaurant","Mossel Bay","https://visitmosselbay.co.za/listing/patricks-pub-and-restaurant/","Irish-style pub, 19 Marsh St (044 691 0077): pool tables, slots, satellite TV. No events or music nights listed."),
+ ("The Beach Bar","Mossel Bay","https://www.quicket.co.za/events/401482-real-nice-presents-mossel-biza/","Diaz Beach / Die Voor Bay, 26 Beach East Blvd. REAL NICE parties on 4, 11 and 12 Dec 2026 are in the app (Quicket). No weekly DJ or live-music nights published. FB: facebook.com/TheBeachBarDiaz"),
  ("Stowaway Hideout (Stanley Island)","Plettenberg Bay","https://www.foodyas.com/ZA/Plettenberg-Bay/109413645275891/Stowaway-Hideout","Specials seen are from 2025.")]:
-    put(n,t,"Garden Route",True,"venue (no listing)",[u],note)
+    put(n,t,_TW.get(t,("","Garden Route"))[1],True,"venue (no listing)",[u],note)
 out=sorted(rows.values(),key=lambda r:(not r["garden_route"],r["region"],r["town"],r["name"].lower()))
 with open(f"{R0}/tools/venues.csv","w",newline="") as f:
     w=csv.writer(f);w.writerow(["name","town","region","garden_route","type","events_listed","urls","notes"])
