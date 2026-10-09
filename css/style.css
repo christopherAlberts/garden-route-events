@@ -411,3 +411,7 @@ body.view-cinema #offToggle{display:none}
 .btn.trailerbtn svg{width:14px;height:14px;fill:currentColor;margin:0 2px 0 0}
 .soon .mcard .foot .btn{flex:none}
 @media (max-width:640px){.mcard .foot{gap:6px}.mcard .foot .btn{padding:.42rem .4rem;gap:4px}.mcard .foot .btn:not(.trailerbtn) svg{display:none}}
+.btn.trailerbtn{background:#f5c518;color:#1a1a1a!important}
+.btn.trailerbtn:hover{background:#e0b210}
+.btn.trailerbtn:active{background:#c99f0c}
+@media (prefers-color-scheme:dark){.btn.trailerbtn{background:#f5c518;color:#1a1a1a!important}.btn.trailerbtn:hover{background:#e0b210}}
