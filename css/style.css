@@ -391,9 +391,13 @@ body.view-cinema #offToggle{display:none}
   .mcard .body{padding:10px 11px 12px}
   .mcard .foot .src{display:none}
   .mcard .foot .btn{font-size:.78rem;padding:.4rem .6rem}
-  .views button{padding:7px 6px;gap:4px;font-size:.82rem}
-  .views button svg{width:14px;height:14px}
   .cinhead{padding:12px 14px}
 }
-@media (max-width:430px){.views button svg{display:none}.views button{padding:7px 5px;font-size:.8rem}}
+/* view tabs: 4 identical, evenly sized tabs on phones (icon above label) */
+.views button svg{fill:currentColor;flex:none}
+@media (max-width:640px){
+  .views{flex:1 1 auto;min-width:0;display:flex}
+  .views button{flex:1 1 0;min-width:0;flex-direction:column;justify-content:center;gap:2px;padding:5px 2px;font-size:.72rem;line-height:1.1;white-space:nowrap}
+  .views button svg{width:17px;height:17px}
+}
 @media (max-width:350px){.filtlbl{display:none}}

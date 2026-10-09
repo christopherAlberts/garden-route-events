@@ -327,7 +327,17 @@ function soonMovies(lim){ /* new releases opening at SK George inside the happen
   return (CIN.now_showing||[]).concat(CIN.coming_soon||[]).filter(function(f){return f.release_date&&f.release_date>=TODAY&&f.release_date<=lim})
     .map(function(f){return {_m:f,_d:f.release_date}})}
 function isOutdoor(e){return e.category==="film"&&!/^indoor/i.test(e.notes||"")&&/open[- ]?air|outdoor|drive[- ]?in|under the stars|moonlight|starlight|galileo|picnic cinema|movies? (in|on) the (park|beach|lawn)/i.test(e.title+" "+(e.notes||"")+" "+(e.source_name||"")+" "+(e.venue||""))}
+function loadCinema(){ /* fallback when data/cinema.js didn't load (old cache, blocked script): fetch the JSON once */
+  if(CIN||loadCinema._busy)return;loadCinema._busy=true;
+  fetch("data/cinema.json",{cache:"no-cache"}).then(function(r){return r.ok?r.json():null}).then(function(d){
+    if(d&&(d.now_showing||d.coming_soon)){CIN=window.CINEMA=d;if(S.view==="cinema"||S.view==="list")render()}else loadCinema._failed=true
+  }).catch(function(){loadCinema._failed=true;if(S.view==="cinema")renderCinema()}).then(function(){loadCinema._busy=false})}
 function renderCinema(){
+  try{renderCinema2()}catch(err){
+    $("view-cinema").innerHTML='<div class="empty"><b>Couldn\u2019t show the cinema listings</b>Try reloading the page. <a href="https://www.sterkinekor.com/cinemas/garden-route" target="_blank" rel="noopener">Ster-Kinekor Garden Route Mall programme →</a></div>';
+    if(window.console)console.error(err)}}
+function renderCinema2(){
+  if(!CIN)loadCinema();
   var h='',now=CIN?(CIN.now_showing||[]):[],cs=CIN?(CIN.coming_soon||[]).filter(function(f){return !f.release_date||f.release_date>=TODAY}):[];
   var od=EV.filter(function(e){return !e._r&&isOutdoor(e)&&endOf(e)>=TODAY&&(S.off||!isOff(e))});
   var odGR=od.filter(function(e){return e.garden_route}),odW=od.filter(function(e){return !e.garden_route});
@@ -336,7 +346,7 @@ function renderCinema(){
   if(CIN&&CIN.cinema){var c=CIN.cinema;
     h+='<div class="cinhead"><div class="cinlogo">'+REEL+'</div><div><h2>'+esc(c.name)+'</h2><p>'+esc(c.address)+(c.phone?' · <a href="tel:'+esc(c.phone.replace(/[^+\d]/g,""))+'">'+esc(c.phone)+'</a>':'')+'</p>'+
       '<p class="cinupd">Programme from <a href="'+esc(c.url)+'" target="_blank" rel="noopener">sterkinekor.com</a> · last updated '+esc(CIN.fetched_at||"")+'. Showtimes change daily, so check times and book on Ster-Kinekor.</p></div></div>'}
-  else h+='<div class="empty"><b>Cinema listings unavailable</b>The Ster-Kinekor programme hasn\u2019t loaded. Outdoor screenings are below.</div>';
+  else h+='<div class="empty cinempty"><b>'+(loadCinema._failed?'Cinema listings unavailable':'Loading Ster-Kinekor listings\u2026')+'</b>'+(loadCinema._failed?'Couldn\u2019t load the Ster-Kinekor programme. ':'')+'<a href="https://www.sterkinekor.com/cinemas/garden-route" target="_blank" rel="noopener">See it on sterkinekor.com →</a> Outdoor screenings are below.</div>';
   if(CIN){
     h+='<div class="sec"><h2>Now showing</h2><span class="pill">'+now.length+' · Ster-Kinekor George</span></div>'+(now.length?'<div class="grid mgrid">'+now.map(function(f){return mcard(f)}).join("")+'</div>':'<p class="rintro">No films listed right now.</p>');
     var g=cs.length?'<div class="grid mgrid">'+cs.map(function(f){return mcard(f)}).join("")+'</div>':'';
