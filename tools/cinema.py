@@ -140,6 +140,9 @@ def main():
             "fetched_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"), "fetched_date": today, "cinema": CINEMA,
             "now_showing": sorted([f for f in films if f["section"] == "now"], key=lambda f: f["title"].lower()),
             "coming_soon": sorted([f for f in films if f["section"] == "soon"], key=lambda f: (f["release_date"] or "9999", f["title"].lower()))}
+    try:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import ratings; ratings.merge(data)
+    except Exception as e: print("  ratings merge failed", e, file=sys.stderr)
     json.dump(data, open(os.path.join(OUT, "cinema.json"), "w"), indent=1, ensure_ascii=False)
     with open(os.path.join(OUT, "cinema.js"), "w") as fh:
         fh.write("window.CINEMA=" + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";\n")

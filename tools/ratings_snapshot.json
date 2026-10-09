@@ -1,0 +1,93 @@
+{
+ "_about": "IMDb rating and Rotten Tomatoes Tomatometer per film, keyed by IMDb ID. Merged into data/cinema.json by tools/ratings.py. Only real scores: hand-checked on imdb.com / rottentomatoes.com, or fetched from OMDb when OMDB_API_KEY is set. Films with no entry show no badge. Liefde Is Rooi (no IMDb/RT listing) is intentionally absent.",
+ "films": {
+  "tt4154796": {
+   "title": "Avengers: Endgame (Encore)",
+   "sk_movie_id": 701,
+   "imdb": "8.4",
+   "rt": "94%",
+   "source": "imdb.com + rottentomatoes.com (manual check)",
+   "date": "2026-10-09 15:05"
+  },
+  "tt1756855": {
+   "title": "Coyote vs ACME",
+   "sk_movie_id": 671,
+   "imdb": "7.4",
+   "rt": "96%",
+   "source": "imdb.com + rottentomatoes.com (manual check)",
+   "date": "2026-10-09 15:05"
+  },
+  "tt31450459": {
+   "title": "Digger",
+   "sk_movie_id": 708,
+   "imdb": "7.4",
+   "rt": "52%",
+   "source": "imdb.com + rottentomatoes.com (manual check)",
+   "date": "2026-10-09 15:05"
+  },
+  "tt36583977": {
+   "title": "Forgotten Island",
+   "sk_movie_id": 702,
+   "imdb": "7.8",
+   "rt": "95%",
+   "source": "imdb.com + rottentomatoes.com (manual check)",
+   "date": "2026-10-09 15:05"
+  },
+  "tt7526136": {
+   "title": "Heart of the Beast",
+   "sk_movie_id": 703,
+   "imdb": "7.2",
+   "rt": "84%",
+   "source": "imdb.com + rottentomatoes.com (manual check)",
+   "date": "2026-10-09 15:05"
+  },
+  "tt36948232": {
+   "title": "Just Play Dead",
+   "sk_movie_id": 745,
+   "imdb": "4.2",
+   "rt": "9%",
+   "source": "imdb.com + rottentomatoes.com (manual check)",
+   "date": "2026-10-09 15:05"
+  },
+  "tt35538033": {
+   "title": "Resident Evil (2026)",
+   "sk_movie_id": 700,
+   "imdb": "7.6",
+   "rt": "96%",
+   "source": "imdb.com + rottentomatoes.com (manual check)",
+   "date": "2026-10-09 15:05"
+  },
+  "tt36841161": {
+   "title": "Shaun the Sheep: The Beast of Mossy Bottom",
+   "sk_movie_id": 704,
+   "imdb": "7.2",
+   "rt": "99%",
+   "source": "imdb.com + rottentomatoes.com (manual check)",
+   "date": "2026-10-09 15:05"
+  },
+  "tt22084616": {
+   "title": "Spider-Man: Brand New Day",
+   "sk_movie_id": 634,
+   "imdb": "8.0",
+   "rt": "90%",
+   "source": "imdb.com + rottentomatoes.com (manual check)",
+   "date": "2026-10-09 15:05"
+  },
+  "tt33095251": {
+   "title": "Tony",
+   "sk_movie_id": 746,
+   "imdb": "7.3",
+   "rt": "93%",
+   "source": "imdb.com + rottentomatoes.com (manual check)",
+   "date": "2026-10-09 15:05"
+  },
+  "tt32261958": {
+   "title": "Verity",
+   "sk_movie_id": 742,
+   "imdb": "6.0",
+   "rt": "33%",
+   "source": "imdb.com + rottentomatoes.com (manual check)",
+   "date": "2026-10-09 15:05"
+  }
+ }
+}

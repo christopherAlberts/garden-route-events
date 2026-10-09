@@ -319,3 +319,5 @@ print(Counter(r["source_name"] for r in out))
 if os.environ.get("CINEMA_SKIP")!="1":
     import subprocess
     subprocess.run([sys.executable,os.path.join(_H,"cinema.py")],timeout=600)
+    # IMDb / Rotten Tomatoes scores: snapshot, refreshed from OMDb when OMDB_API_KEY is set
+    subprocess.run([sys.executable,os.path.join(_H,"ratings.py")],timeout=600)

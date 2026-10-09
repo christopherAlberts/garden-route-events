@@ -316,7 +316,7 @@ function mcard(f,soonTag){
   return '<article class="card mcard">'+
     '<div class="mtw"><a class="thumb" href="'+L+'" target="_blank" rel="noopener" aria-label="'+esc(f.title)+'">'+(f.poster?'<img src="'+esc(f.poster)+'" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">':'<div class="ph film">'+ICON.film+'</div>')+badge+
       (soonTag?'<span class="cat film">New at the cinema</span>':'')+'</a>'+
-      (soonTag?'':'<button type="button" class="minfo" data-film="'+f.id+'" aria-label="Film info: '+esc(f.title)+'"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg></button><span class="mbadges" aria-hidden="true"></span>')+'</div>'+
+      (soonTag?'':'<button type="button" class="minfo" data-film="'+f.id+'" aria-label="Film info: '+esc(f.title)+'"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg></button><span class="mbadges"'+(rbadges(f)?' aria-label="'+esc(ratingsLabel(f))+'"':' aria-hidden="true"')+'>'+rbadges(f)+'</span>')+'</div>'+
     '<div class="body">'+
       '<h3><a href="'+L+'" target="_blank" rel="noopener">'+esc(f.title)+'</a></h3>'+
       '<div class="when">'+(f.section==="soon"||soonTag?"Opens "+esc(relTxt(f)):(f.release_date&&f.release_date>TODAY?"Opens "+esc(relTxt(f)):"Showing now"))+'</div>'+
@@ -329,6 +329,14 @@ function soonMovies(lim){ /* new releases opening at SK George inside the happen
   return (CIN.now_showing||[]).concat(CIN.coming_soon||[]).filter(function(f){return f.release_date&&f.release_date>=TODAY&&f.release_date<=lim})
     .map(function(f){return {_m:f,_d:f.release_date}})}
 function isOutdoor(e){return e.category==="film"&&!/^indoor/i.test(e.notes||"")&&/open[- ]?air|outdoor|drive[- ]?in|under the stars|moonlight|starlight|galileo|picnic cinema|movies? (in|on) the (park|beach|lawn)/i.test(e.title+" "+(e.notes||"")+" "+(e.source_name||"")+" "+(e.venue||""))}
+/* ---------- IMDb / Rotten Tomatoes badges (data: f.ratings from tools/ratings.py) ---------- */
+var TOMATO='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13.5" r="8.5" fill="#fa320a"/><path d="M12 5.2c-.6-1.6-2-2.5-3.6-2.4 1 .5 1.7 1.3 2 2.3-1.3-.6-2.8-.5-4 .3 1.4.1 2.6.8 3.3 1.8L12 6l2.3 1.2c.7-1 1.9-1.7 3.3-1.8-1.2-.8-2.7-.9-4-.3.3-1 1-1.8 2-2.3-1.6-.1-3 .8-3.6 2.4z" fill="#00912d"/></svg>';
+var SPLAT='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l1.8 4.6 4.6-2.4-1.6 4.9 5 .9-4.2 2.9 3.9 3.3-5.1.2.8 5-4.2-3-3 4.1-.9-5-4.9 1.2 2.6-4.4L2.3 12l4.9-1.3-2.4-4.5 4.8 1.6z" fill="#0ac855"/></svg>';
+function rget(f,src){var r=(f.ratings||[]).filter(function(x){return x.source===src&&x.value})[0];return r?r.value:""}
+function rtIcon(v){return parseInt(v,10)>=60?TOMATO:SPLAT}
+function rbadges(f){var im=rget(f,"IMDb"),rt=rget(f,"Rotten Tomatoes");
+  return (im?'<span class="bimdb"><b>IMDb</b>'+esc(im)+'</span>':'')+(rt?'<span class="brt">'+rtIcon(rt)+esc(rt)+'</span>':'')}
+function ratingsLabel(f){var a=[],im=rget(f,"IMDb"),rt=rget(f,"Rotten Tomatoes");if(im)a.push("IMDb "+im);if(rt)a.push("Rotten Tomatoes "+rt);return a.join(", ")}
 /* ---------- film detail overlay (ⓘ on Cinema posters) ---------- */
 function filmById(id){if(!CIN)return null;var A=(CIN.now_showing||[]).concat(CIN.coming_soon||[]);for(var i=0;i<A.length;i++)if(String(A[i].id)===String(id))return A[i];return null}
 function filmHtml(f){
@@ -344,14 +352,15 @@ function filmHtml(f){
       (f.age_rating?'<div class="frate">'+(nu?'<span class="fage">'+esc(f.age)+'</span>'+esc(f.age_rating.split(" - ")[0]):esc(f.age_rating.split(" - ")[0]))+'</div>':'')+
       '<div class="fline">'+[f.runtime,(f.genres||[]).map(function(g){return g.charAt(0).toUpperCase()+g.slice(1)}).join(", ")].filter(Boolean).map(esc).join(" · ")+'</div>'+
       (when?'<div class="fline">'+esc(when)+'</div>':'')+'</div></div>'+
-      (ratings.length?'<div class="fratings">'+ratings.map(function(r){return '<div class="fr"><b>'+esc(r.value)+'</b><span>'+esc(r.source)+'</span></div>'}).join("")+'</div>':'')+
+      (ratings.length?'<div class="fratings">'+ratings.map(function(r){var rt=r.source==="Rotten Tomatoes";return '<div class="fr'+(rt?' frt':' fim')+'"><b>'+(rt?rtIcon(r.value):'')+esc(r.value)+'</b><span>'+esc(r.source)+'</span></div>'}).join("")+'</div>':'')+
       '<div class="fact"><a class="btn" href="'+esc(f.url)+'" target="_blank" rel="noopener">'+(f.bookable?"Tickets":"Film page")+ARROW+'</a>'+(f.trailer?'<a class="btn trailerbtn" href="'+esc(f.trailer)+'" target="_blank" rel="noopener">'+PLAY+'Trailer</a>':'')+'</div>'+
       (f.synopsis?'<h4 class="fh">Synopsis</h4>'+f.synopsis.split(/\n\n+/).map(function(p){return '<p class="fsyn">'+esc(p)+'</p>'}).join(""):'')+
       (f.director?'<h4 class="fh">Director</h4><p class="fp">'+esc(f.director)+'</p>':'')+
       (f.cast&&f.cast.length?'<h4 class="fh">Cast</h4><div class="fcast">'+f.cast.map(function(c){return '<span>'+esc(c)+'</span>'}).join("")+'</div>':'')+
       (rt?'<h4 class="fh">Classification</h4><p class="fp">'+esc(f.age_rating)+'</p>':'')+
       '<h4 class="fh">Showing at</h4><p class="fp">'+esc(cn.name)+', '+esc(cn.town)+'</p>'+
-      '<p class="fsrc">Synopsis, cast, poster &amp; trailer: <a href="'+esc(f.url)+'" target="_blank" rel="noopener">Ster-Kinekor</a> · updated '+esc((CIN&&CIN.fetched_at)||"")+'</p>'+
+      '<p class="fsrc">Synopsis, cast, poster &amp; trailer: <a href="'+esc(f.url)+'" target="_blank" rel="noopener">Ster-Kinekor</a> · updated '+esc((CIN&&CIN.fetched_at)||"")+
+        (ratings.length?' · Ratings: '+(f.imdb_id?'<a href="https://www.imdb.com/title/'+esc(f.imdb_id)+'/" target="_blank" rel="noopener">IMDb</a>':'IMDb')+', Rotten Tomatoes ('+esc((f.ratings_source||"").replace(/^.*?,\s*/,""))+')':'')+'</p>'+
     '</div>'}
 function openFilm(id,noPush){
   var f=filmById(id);if(!f)return;var ov=$("filmOv");
