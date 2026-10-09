@@ -6,80 +6,80 @@
    "sk_movie_id": 701,
    "imdb": "8.4",
    "rt": "94%",
-   "source": "imdb.com + rottentomatoes.com (manual check)",
-   "date": "2026-10-09 15:05"
+   "source": "OMDb (IMDb rating, Rotten Tomatoes)",
+   "date": "2026-10-09 16:42"
   },
   "tt1756855": {
    "title": "Coyote vs ACME",
    "sk_movie_id": 671,
-   "imdb": "7.4",
+   "imdb": "7.6",
    "rt": "96%",
-   "source": "imdb.com + rottentomatoes.com (manual check)",
-   "date": "2026-10-09 15:05"
+   "source": "OMDb (IMDb rating, Rotten Tomatoes)",
+   "date": "2026-10-09 16:42"
   },
   "tt31450459": {
    "title": "Digger",
    "sk_movie_id": 708,
    "imdb": "7.4",
    "rt": "52%",
-   "source": "imdb.com + rottentomatoes.com (manual check)",
-   "date": "2026-10-09 15:05"
+   "source": "OMDb (IMDb rating, Rotten Tomatoes)",
+   "date": "2026-10-09 16:42"
   },
   "tt36583977": {
    "title": "Forgotten Island",
    "sk_movie_id": 702,
-   "imdb": "7.8",
+   "imdb": "7.7",
    "rt": "95%",
-   "source": "imdb.com + rottentomatoes.com (manual check)",
-   "date": "2026-10-09 15:05"
+   "source": "OMDb (IMDb rating, Rotten Tomatoes)",
+   "date": "2026-10-09 16:42"
   },
   "tt7526136": {
    "title": "Heart of the Beast",
    "sk_movie_id": 703,
-   "imdb": "7.2",
-   "rt": "84%",
-   "source": "imdb.com + rottentomatoes.com (manual check)",
-   "date": "2026-10-09 15:05"
+   "imdb": "7.5",
+   "rt": "85%",
+   "source": "OMDb (IMDb rating, Rotten Tomatoes)",
+   "date": "2026-10-09 16:42"
   },
   "tt36948232": {
    "title": "Just Play Dead",
    "sk_movie_id": 745,
-   "imdb": "4.2",
+   "imdb": "7.5",
    "rt": "9%",
-   "source": "imdb.com + rottentomatoes.com (manual check)",
-   "date": "2026-10-09 15:05"
+   "source": "OMDb (IMDb rating, Rotten Tomatoes)",
+   "date": "2026-10-09 16:42"
   },
   "tt35538033": {
-   "title": "Resident Evil (2026)",
+   "title": "Resident Evil",
    "sk_movie_id": 700,
    "imdb": "7.6",
    "rt": "96%",
-   "source": "imdb.com + rottentomatoes.com (manual check)",
-   "date": "2026-10-09 15:05"
+   "source": "OMDb (IMDb rating, Rotten Tomatoes)",
+   "date": "2026-10-09 16:42"
   },
   "tt36841161": {
    "title": "Shaun the Sheep: The Beast of Mossy Bottom",
    "sk_movie_id": 704,
    "imdb": "7.2",
    "rt": "99%",
-   "source": "imdb.com + rottentomatoes.com (manual check)",
-   "date": "2026-10-09 15:05"
+   "source": "OMDb (IMDb rating, Rotten Tomatoes)",
+   "date": "2026-10-09 16:42"
   },
   "tt22084616": {
    "title": "Spider-Man: Brand New Day",
    "sk_movie_id": 634,
    "imdb": "8.0",
    "rt": "90%",
-   "source": "imdb.com + rottentomatoes.com (manual check)",
-   "date": "2026-10-09 15:05"
+   "source": "OMDb (IMDb rating, Rotten Tomatoes)",
+   "date": "2026-10-09 16:42"
   },
   "tt33095251": {
    "title": "Tony",
    "sk_movie_id": 746,
-   "imdb": "7.3",
+   "imdb": "7.6",
    "rt": "93%",
-   "source": "imdb.com + rottentomatoes.com (manual check)",
-   "date": "2026-10-09 15:05"
+   "source": "OMDb (IMDb rating, Rotten Tomatoes)",
+   "date": "2026-10-09 16:42"
   },
   "tt32261958": {
    "title": "Verity",
@@ -88,6 +88,36 @@
    "rt": "33%",
    "source": "imdb.com + rottentomatoes.com (manual check)",
    "date": "2026-10-09 15:05"
+  },
+  "tt32547691": {
+   "title": "Pressure",
+   "sk_movie_id": 786,
+   "source": "OMDb (IMDb rating, Rotten Tomatoes)",
+   "date": "2026-10-09 16:42",
+   "imdb": "7.3",
+   "rt": "89%"
+  },
+  "tt34384661": {
+   "title": "Godzilla Minus Zero",
+   "sk_movie_id": 758,
+   "source": "OMDb (IMDb rating, Rotten Tomatoes)",
+   "date": "2026-10-09 16:42",
+   "rt": "97%"
+  },
+  "tt14129116": {
+   "title": "Talent for a Murder, A",
+   "sk_movie_id": 752,
+   "source": "OMDb (IMDb rating, Rotten Tomatoes)",
+   "date": "2026-10-09 16:42",
+   "rt": "85%"
+  },
+  "tt34385689": {
+   "title": "Paper Tiger",
+   "sk_movie_id": 797,
+   "source": "OMDb (IMDb rating, Rotten Tomatoes)",
+   "date": "2026-10-09 16:42",
+   "imdb": "7.0",
+   "rt": "87%"
   }
  }
 }

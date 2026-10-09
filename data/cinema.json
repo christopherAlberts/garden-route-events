@@ -39,6 +39,7 @@
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ],
+   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
    "ratings": [
     {
      "source": "IMDb",
@@ -48,8 +49,7 @@
      "source": "Rotten Tomatoes",
      "value": "94%"
     }
-   ],
-   "ratings_source": "imdb.com + rottentomatoes.com (manual check), 2026-10-09 15:05"
+   ]
   },
   {
    "id": 671,
@@ -89,17 +89,17 @@
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ],
+   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
    "ratings": [
     {
      "source": "IMDb",
-     "value": "7.4"
+     "value": "7.6"
     },
     {
      "source": "Rotten Tomatoes",
      "value": "96%"
     }
-   ],
-   "ratings_source": "imdb.com + rottentomatoes.com (manual check), 2026-10-09 15:05"
+   ]
   },
   {
    "id": 708,
@@ -139,6 +139,7 @@
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ],
+   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
    "ratings": [
     {
      "source": "IMDb",
@@ -148,8 +149,7 @@
      "source": "Rotten Tomatoes",
      "value": "52%"
     }
-   ],
-   "ratings_source": "imdb.com + rottentomatoes.com (manual check), 2026-10-09 15:05"
+   ]
   },
   {
    "id": 702,
@@ -185,17 +185,17 @@
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ],
+   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
    "ratings": [
     {
      "source": "IMDb",
-     "value": "7.8"
+     "value": "7.7"
     },
     {
      "source": "Rotten Tomatoes",
      "value": "95%"
     }
-   ],
-   "ratings_source": "imdb.com + rottentomatoes.com (manual check), 2026-10-09 15:05"
+   ]
   },
   {
    "id": 703,
@@ -228,17 +228,17 @@
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ],
+   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
    "ratings": [
     {
      "source": "IMDb",
-     "value": "7.2"
+     "value": "7.5"
     },
     {
      "source": "Rotten Tomatoes",
-     "value": "84%"
+     "value": "85%"
     }
-   ],
-   "ratings_source": "imdb.com + rottentomatoes.com (manual check), 2026-10-09 15:05"
+   ]
   },
   {
    "id": 745,
@@ -271,17 +271,17 @@
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ],
+   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
    "ratings": [
     {
      "source": "IMDb",
-     "value": "4.2"
+     "value": "7.5"
     },
     {
      "source": "Rotten Tomatoes",
      "value": "9%"
     }
-   ],
-   "ratings_source": "imdb.com + rottentomatoes.com (manual check), 2026-10-09 15:05"
+   ]
   },
   {
    "id": 709,
@@ -356,6 +356,7 @@
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ],
+   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
    "ratings": [
     {
      "source": "IMDb",
@@ -365,8 +366,7 @@
      "source": "Rotten Tomatoes",
      "value": "96%"
     }
-   ],
-   "ratings_source": "imdb.com + rottentomatoes.com (manual check), 2026-10-09 15:05"
+   ]
   },
   {
    "id": 704,
@@ -399,6 +399,7 @@
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ],
+   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
    "ratings": [
     {
      "source": "IMDb",
@@ -408,8 +409,7 @@
      "source": "Rotten Tomatoes",
      "value": "99%"
     }
-   ],
-   "ratings_source": "imdb.com + rottentomatoes.com (manual check), 2026-10-09 15:05"
+   ]
   },
   {
    "id": 634,
@@ -449,6 +449,7 @@
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ],
+   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
    "ratings": [
     {
      "source": "IMDb",
@@ -458,8 +459,7 @@
      "source": "Rotten Tomatoes",
      "value": "90%"
     }
-   ],
-   "ratings_source": "imdb.com + rottentomatoes.com (manual check), 2026-10-09 15:05"
+   ]
   },
   {
    "id": 746,
@@ -499,17 +499,17 @@
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ],
+   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
    "ratings": [
     {
      "source": "IMDb",
-     "value": "7.3"
+     "value": "7.6"
     },
     {
      "source": "Rotten Tomatoes",
      "value": "93%"
     }
-   ],
-   "ratings_source": "imdb.com + rottentomatoes.com (manual check), 2026-10-09 15:05"
+   ]
   },
   {
    "id": 742,
@@ -548,6 +548,7 @@
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ],
+   "ratings_source": "imdb.com + rottentomatoes.com (manual check), 2026-10-09 15:05",
    "ratings": [
     {
      "source": "IMDb",
@@ -557,8 +558,7 @@
      "source": "Rotten Tomatoes",
      "value": "33%"
     }
-   ],
-   "ratings_source": "imdb.com + rottentomatoes.com (manual check), 2026-10-09 15:05"
+   ]
   }
  ],
  "coming_soon": [
@@ -822,7 +822,18 @@
    "tmdb_id": "1318413",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
-   ]
+   ],
+   "ratings": [
+    {
+     "source": "IMDb",
+     "value": "7.3"
+    },
+    {
+     "source": "Rotten Tomatoes",
+     "value": "89%"
+    }
+   ],
+   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42"
   },
   {
    "id": 649,
@@ -891,7 +902,14 @@
    "tmdb_id": "1381071",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
-   ]
+   ],
+   "ratings": [
+    {
+     "source": "Rotten Tomatoes",
+     "value": "97%"
+    }
+   ],
+   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42"
   },
   {
    "id": 752,
@@ -929,7 +947,14 @@
    "tmdb_id": "1084409",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
-   ]
+   ],
+   "ratings": [
+    {
+     "source": "Rotten Tomatoes",
+     "value": "85%"
+    }
+   ],
+   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42"
   },
   {
    "id": 787,
@@ -1113,7 +1138,18 @@
    "tmdb_id": "1381273",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
-   ]
+   ],
+   "ratings": [
+    {
+     "source": "IMDb",
+     "value": "7.0"
+    },
+    {
+     "source": "Rotten Tomatoes",
+     "value": "87%"
+    }
+   ],
+   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42"
   },
   {
    "id": 783,
