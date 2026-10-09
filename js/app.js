@@ -28,7 +28,7 @@ var ICON={
   market:'<svg viewBox="0 0 24 24"><path d="M3 9h18l-1.8 11.2A1 1 0 0118.2 21H5.8a1 1 0 01-1-.8L3 9zm5.2-1L12 2.5 15.8 8h-2.4L12 5.9 10.6 8z"/></svg>'};
 var PIN='<svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7zm0 4.5A2.5 2.5 0 1012 11.5 2.5 2.5 0 0012 6.5z"/></svg>';
 var ARROW='<svg viewBox="0 0 24 24"><path d="M13 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.2l-4.6-4.6z"/></svg>';
-var S={scope:"gr",q:"",town:"",cat:"",month:"",view:"list",calMonth:null,calDay:null,off:false,event:"",nye:false,xmas:false};
+var S={gal:false,scope:"gr",q:"",town:"",cat:"",month:"",view:"list",calMonth:null,calDay:null,off:false,event:"",nye:false,xmas:false};
 /* restaurants are entries of category "restaurant": list cards, calendar days with recurring specials, map pins */
 var LAST_DAY=(function(){var l="";(window.EVENTS||[]).forEach(function(e){var x=e.end_date||e.start_date||"";if(x>l)l=x});return l||"2099-12-31"})(),EVR={};
 var RS=(window.RESTAURANTS||[]).map(function(r){var o={};for(var k in r)o[k]=r[k];
@@ -222,7 +222,9 @@ function renderList(){
   if(!S.q&&!S.month&&!S.town&&L.length){
     var lim=iso(new Date(Date.now()+9*864e5));
     var soon=L.filter(function(e){var n=nextDate(e);return n>=TODAY&&n<=lim}).sort(function(a,b){return (b.garden_route-a.garden_route)||nextDate(a).localeCompare(nextDate(b))}).slice(0,14);
-    if(soon.length>2)h+='<div class="sec"><h2>Happening soon</h2><span class="pill">next 10 days</span></div><div class="soon">'+soon.map(card).join("")+'</div>';
+    var mv=soonMovies(lim),mix=soon.map(function(e){return {e:e,d:nextDate(e),gr:e.garden_route?1:0}}).concat(mv.map(function(x){return {m:x._m,d:x._d,gr:1}}))
+      .sort(function(a,b){return (b.gr-a.gr)||a.d.localeCompare(b.d)});
+    if(mix.length>2)h+='<div class="sec"><h2>Happening soon</h2><span class="pill">next 10 days</span></div><div class="soon">'+mix.map(function(x){return x.m?mcard(x.m,true):card(x.e)}).join("")+'</div>';
   }
   var rgr=R.filter(function(e){return e.garden_route}),rwide=R.filter(function(e){return !e.garden_route});
   if(gr.length)h+='<div class="sec"><h2>Garden Route</h2><span class="pill">'+gr.length+'</span></div>'+grouped(gr);
@@ -302,6 +304,50 @@ function restDetail(r){
 function restSection(R,label){
   R=R.slice().sort(function(a,b){var O=GR_ORDER.concat(WIDE_ORDER),ia=O.indexOf(a.town),ib=O.indexOf(b.town);return ((ia<0?99:ia)-(ib<0?99:ib))||a.name.localeCompare(b.name)});
   return '<div class="sec"><h2>'+label+'</h2><span class="pill">'+R.length+'</span></div><p class="rintro">Specials, live music and recurring nights from each venue\u2019s own site and local listings (checked '+esc(R[0].last_checked)+'). Things change, so call ahead.</p><div class="grid rgrid">'+R.map(rcard).join("")+'</div>'}
+/* ---------- Cinema tab: Ster-Kinekor Garden Route Mall (George) from data/cinema.js + outdoor screenings from the events data ---------- */
+var CIN=window.CINEMA||null;
+var REEL='<svg viewBox="0 0 24 24"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V4z"/></svg>';
+function relTxt(f){return f.release_date?fmt(pd(f.release_date),true):(f.date_label||"")}
+function mmeta(f){return [f.age_rating,f.runtime,(f.genres||[]).join(", ")].filter(Boolean).map(esc).join(" · ")}
+function mcard(f,soonTag){
+  var d=f.release_date?pd(f.release_date):null,L=esc(f.url),cn=CIN&&CIN.cinema?CIN.cinema:{name:"Ster-Kinekor Garden Route Mall",town:"George"};
+  var badge=d&&(soonTag||f.section==="soon")?'<div class="datebadge"><span class="d">'+d.getDate()+'</span><span class="m">'+MN[d.getMonth()]+'</span></div>':'';
+  return '<article class="card mcard">'+
+    '<a class="thumb" href="'+L+'" target="_blank" rel="noopener" aria-label="'+esc(f.title)+'">'+(f.poster?'<img src="'+esc(f.poster)+'" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">':'<div class="ph film">'+ICON.film+'</div>')+badge+
+      (soonTag?'<span class="cat film">New at the cinema</span>':'')+'</a>'+
+    '<div class="body">'+
+      '<h3><a href="'+L+'" target="_blank" rel="noopener">'+esc(f.title)+'</a></h3>'+
+      '<div class="when">'+(f.section==="soon"||soonTag?"Opens "+esc(relTxt(f)):(f.release_date&&f.release_date>TODAY?"Opens "+esc(relTxt(f)):"Showing now"))+'</div>'+
+      (mmeta(f)?'<div class="mmeta">'+mmeta(f)+'</div>':'')+
+      (soonTag?'<div class="where">'+PIN+'<span>'+esc((f.cinemas&&f.cinemas[0])||cn.name)+', '+esc(cn.town)+'</span></div>':'')+
+      '<div class="foot"><a class="btn" href="'+L+'" target="_blank" rel="noopener">'+(f.bookable?"Tickets":"Film page")+ARROW+'</a>'+(soonTag?'<a class="src" href="'+L+'" target="_blank" rel="noopener" title="Source: Ster-Kinekor">via Ster-Kinekor</a>':'')+'</div>'+
+    '</div></article>'}
+function soonMovies(lim){ /* new releases opening at SK George inside the happening-soon window (List view only) */
+  if(!CIN||(S.cat&&S.cat!=="film")||S.nye||S.xmas)return [];
+  return (CIN.now_showing||[]).concat(CIN.coming_soon||[]).filter(function(f){return f.release_date&&f.release_date>=TODAY&&f.release_date<=lim})
+    .map(function(f){return {_m:f,_d:f.release_date}})}
+function isOutdoor(e){return e.category==="film"&&!/^indoor/i.test(e.notes||"")&&/open[- ]?air|outdoor|drive[- ]?in|under the stars|moonlight|starlight|galileo|picnic cinema|movies? (in|on) the (park|beach|lawn)/i.test(e.title+" "+(e.notes||"")+" "+(e.source_name||"")+" "+(e.venue||""))}
+function renderCinema(){
+  var h='',now=CIN?(CIN.now_showing||[]):[],cs=CIN?(CIN.coming_soon||[]).filter(function(f){return !f.release_date||f.release_date>=TODAY}):[];
+  var od=EV.filter(function(e){return !e._r&&isOutdoor(e)&&endOf(e)>=TODAY&&(S.off||!isOff(e))});
+  var odGR=od.filter(function(e){return e.garden_route}),odW=od.filter(function(e){return !e.garden_route});
+  var showW=S.scope==="all"||S.gal,odL=(showW?odGR.concat(odW):odGR).sort(function(a,b){return (b.garden_route-a.garden_route)||nextDate(a).localeCompare(nextDate(b))||a.title.localeCompare(b.title)});
+  $("count").textContent=now.length+" now showing · "+cs.length+" coming soon · "+odL.length+" outdoor screening"+(odL.length===1?"":"s");
+  if(CIN&&CIN.cinema){var c=CIN.cinema;
+    h+='<div class="cinhead"><div class="cinlogo">'+REEL+'</div><div><h2>'+esc(c.name)+'</h2><p>'+esc(c.address)+(c.phone?' · <a href="tel:'+esc(c.phone.replace(/[^+\d]/g,""))+'">'+esc(c.phone)+'</a>':'')+'</p>'+
+      '<p class="cinupd">Programme from <a href="'+esc(c.url)+'" target="_blank" rel="noopener">sterkinekor.com</a> · last updated '+esc(CIN.fetched_at||"")+'. Showtimes change daily, so check times and book on Ster-Kinekor.</p></div></div>'}
+  else h+='<div class="empty"><b>Cinema listings unavailable</b>The Ster-Kinekor programme hasn\u2019t loaded. Outdoor screenings are below.</div>';
+  if(CIN){
+    h+='<div class="sec"><h2>Now showing</h2><span class="pill">'+now.length+' · Ster-Kinekor George</span></div>'+(now.length?'<div class="grid mgrid">'+now.map(function(f){return mcard(f)}).join("")+'</div>':'<p class="rintro">No films listed right now.</p>');
+    var g=cs.length?'<div class="grid mgrid">'+cs.map(function(f){return mcard(f)}).join("")+'</div>':'';
+    h+='<div class="sec"><h2>Coming soon</h2><span class="pill">'+cs.length+' · with opening dates</span></div><p class="rintro">Opening dates at Ster-Kinekor Garden Route Mall, as listed on sterkinekor.com. Opera, ballet and concert screenings are usually one-off dates.</p>'+(g||'<p class="rintro">Nothing announced yet.</p>');
+  }
+  h+='<div class="sec"><h2>Outdoor cinema</h2><span class="pill">'+odL.length+(showW?' · Garden Route + rest of coast':' · Garden Route')+'</span></div>'+
+    '<p class="rintro">Open-air and outdoor screenings from the events list.'+(S.scope!=="all"&&odW.length?' <button type="button" class="ghost galtoggle" id="galToggle" aria-pressed="'+(S.gal?"true":"false")+'">'+(S.gal?"Hide":"Show")+' Cape Town (Galileo) · '+odW.length+'</button>':'')+
+    ' <button type="button" class="rlink" id="filmChip">All film nights (incl. indoor) →</button></p>'+
+    (odL.length?grouped(odL):'<p class="rintro">No outdoor screenings listed for the Garden Route right now.</p>');
+  $("view-cinema").innerHTML=h;
+}
 var COL={concert:"#2a6f97",festival:"#e76f51",musical:"#8e4ec6",market:"#5b8c2a",funrun:"#d63384",community:"#b7791f",arts:"#0f766e",quiz:"#4f46e5",festive:"#b4233c",nature:"#15803d",sport:"#0e7490",film:"#374151",restaurant:"#c2410c"};
 var GRB=[[-33.55,21.95],[-34.2,24.0]];
 function renderMap(){
@@ -326,7 +372,8 @@ function stats(){
     ["concert","festival","market","funrun","musical","arts","quiz","festive","nature","sport","film","community","restaurant"].filter(function(c){return by[c]}).map(function(c){return '<span class="stat"><b>'+by[c]+'</b> '+CATPL[c]+'</span>'}).join("");
 }
 function render(){
-  ["list","cal","map"].forEach(function(v){$("view-"+v).hidden=S.view!==v});
+  ["list","cal","map","cinema"].forEach(function(v){$("view-"+v).hidden=S.view!==v});
+  document.body.classList.toggle("view-cinema",S.view==="cinema");
   Array.prototype.forEach.call(document.querySelectorAll(".views button"),function(b){b.classList.toggle("on",b.dataset.view===S.view)});
   var ft=$("filtToggle");if(ft)ft.classList.toggle("has-active",document.body.classList.contains("filters-hidden")&&filtersActive());
   Array.prototype.forEach.call(document.querySelectorAll("#catChips button"),function(b){b.classList.toggle("on",b.dataset.nye?!!S.nye:b.dataset.xmas?!!S.xmas:b.dataset.cat===S.cat)});
@@ -335,7 +382,7 @@ function render(){
   $("activeFilters").textContent=af.length?"· "+af.join(" · "):"";
   var hid=EV.filter(function(e){return isOff(e)&&endOf(e)>=TODAY&&matches(e,S.view==="cal",true)}).length;
   $("offToggle").hidden=!hid;$("offToggle").textContent=S.off?"Hide postponed/cancelled ("+hid+")":hid+" postponed/cancelled hidden · show";
-  if(S.view==="list")renderList();else if(S.view==="cal")renderCal();else renderMap();
+  if(S.view==="list")renderList();else if(S.view==="cal")renderCal();else if(S.view==="cinema")renderCinema();else renderMap();
   writeHash();
 }
 function syncControls(){
@@ -343,11 +390,11 @@ function syncControls(){
   $("scopeGR").classList.toggle("on",S.scope==="gr");$("scopeAll").classList.toggle("on",S.scope==="all");
   $("scopeGR").setAttribute("aria-pressed",S.scope==="gr");$("scopeAll").setAttribute("aria-pressed",S.scope==="all");
 }
-function writeHash(){var p=[];if(S.view!=="list")p.push("view="+S.view);if(S.scope!=="gr")p.push("scope=all");if(S.off)p.push("off=1");if(S.nye)p.push("nye=1");if(S.xmas)p.push("xmas=1");if(S.event)p.push("event="+encodeURIComponent(S.event));
+function writeHash(){var p=[];if(S.view!=="list")p.push("view="+S.view);if(S.scope!=="gr")p.push("scope=all");if(S.off)p.push("off=1");if(S.gal)p.push("gal=1");if(S.nye)p.push("nye=1");if(S.xmas)p.push("xmas=1");if(S.event)p.push("event="+encodeURIComponent(S.event));
   ["town","cat","month","q"].forEach(function(k){if(S[k])p.push(k+"="+encodeURIComponent(S[k]))});
   var h=p.length?"#"+p.join("&"):"";if(location.hash!==h)history.replaceState(null,"",h||location.pathname+location.search)}
 function readHash(){location.hash.replace(/^#/,"").split("&").forEach(function(kv){var a=kv.split("=");if(!a[0])return;var v=decodeURIComponent(a[1]||"");
-  if(a[0]==="view"&&/^(list|cal|map)$/.test(v))S.view=v;else if(a[0]==="view"&&v==="rest")S.cat="restaurant";else if(a[0]==="rest")S.event="r:"+v;else if(a[0]==="scope"&&v==="all")S.scope="all";else if(a[0]==="off"&&v==="1")S.off=true;else if(a[0]==="nye"&&v==="1")S.nye=true;else if(a[0]==="xmas"&&v==="1")S.xmas=true;else if(a[0]==="event")S.event=v;else if(/^(town|cat|month|q)$/.test(a[0]))S[a[0]]=v})}
+  if(a[0]==="view"&&/^(list|cal|map|cinema)$/.test(v))S.view=v;else if(a[0]==="gal"&&v==="1")S.gal=true;else if(a[0]==="view"&&v==="rest")S.cat="restaurant";else if(a[0]==="rest")S.event="r:"+v;else if(a[0]==="scope"&&v==="all")S.scope="all";else if(a[0]==="off"&&v==="1")S.off=true;else if(a[0]==="nye"&&v==="1")S.nye=true;else if(a[0]==="xmas"&&v==="1")S.xmas=true;else if(a[0]==="event")S.event=v;else if(/^(town|cat|month|q)$/.test(a[0]))S[a[0]]=v})}
 function setScope(s){S.scope=s;buildTowns();syncControls();render();if(map)map.fitBounds(s==="all"?[[-33.5,18.3],[-34.4,25.0]]:GRB)}
 var INTRO_KEY="gre.hideIntro";
 function setIntroHidden(hide){
@@ -407,6 +454,9 @@ function bind(){
     else if(act==="details"){if(map)map.closePopup();openEvent(id)}
     if(t.dataset.act)closeMenu();
   },true);
+  $("view-cinema").addEventListener("click",function(ev){
+    if(ev.target.closest("#galToggle")){S.gal=!S.gal;render();return}
+    if(ev.target.closest("#filmChip")){S.cat="film";S.view="list";render();toTop();requestAnimationFrame(toTop)}});
   document.addEventListener("keydown",function(ev){if(ev.key==="Escape"){if(!$("shareMenu").hidden)closeMenu();else closeEvent()}});
   window.addEventListener("resize",function(){var m=$("shareMenu");if(!m.hidden&&window.innerWidth!==(closeMenu._w||0))closeMenu();closeMenu._w=window.innerWidth});closeMenu._w=window.innerWidth;window.addEventListener("scroll",function(){var m=$("shareMenu");if(!m.hidden&&Math.abs(window.scrollY-(m._y||0))>40)closeMenu()},{passive:true});
   window.addEventListener("hashchange",function(){var rm=/(?:^#|&)rest=([^&]+)/.exec(location.hash);if(rm){openEvent("r:"+decodeURIComponent(rm[1]));return}var m=/(?:^#|&)event=([^&]+)/.exec(location.hash);if(m){var id=decodeURIComponent(m[1]);if(id!==S.event)openEvent(id)}else if(S.event)closeEvent()});
@@ -419,6 +469,9 @@ init(window.EVENTS||[]);
 if(/^https?:/.test(location.protocol)){
   fetch("data/events.json",{cache:"no-cache"}).then(function(r){return r.ok?r.json():null}).then(function(d){
     if(Array.isArray(d)&&d.length&&JSON.stringify(d)!==JSON.stringify(window.EVENTS||[]))init(d);
+  }).catch(function(){});
+  fetch("data/cinema.json",{cache:"no-cache"}).then(function(r){return r.ok?r.json():null}).then(function(d){
+    if(d&&d.fetched_at&&(!CIN||d.fetched_at!==CIN.fetched_at)){CIN=window.CINEMA=d;if(S.view==="cinema"||S.view==="list")render()}
   }).catch(function(){});
 }
 })();

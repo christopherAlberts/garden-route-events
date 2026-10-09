@@ -314,3 +314,8 @@ print(Counter(r["region"] for r in out))
 print(Counter((r["region"],r["category"]) for r in out if r["garden_route"]))
 print(Counter(r["geo_source"] for r in out))
 print(Counter(r["source_name"] for r in out))
+# Ster-Kinekor Garden Route Mall (George) programme for the Cinema tab -> data/cinema.json/js.
+# Runs on every (weekly Monday) rebuild; on failure the last good data/cinema.json is kept. Skip with CINEMA_SKIP=1.
+if os.environ.get("CINEMA_SKIP")!="1":
+    import subprocess
+    subprocess.run([sys.executable,os.path.join(_H,"cinema.py")],timeout=600)

@@ -367,3 +367,33 @@ body.v-rest #catChips,body.v-rest #month,body.v-rest #offToggle{display:none!imp
 .ph.film{background:radial-gradient(circle at 75% 18%,#fde68a 0,transparent 30%),linear-gradient(135deg,#0f172a,#334155 60%,#64748b)}
 .chip.film{background:color-mix(in srgb,var(--film) 14%,transparent);border-color:var(--film)}
 .pe .pc.film{background:#374151}
+/* ---------- Cinema tab ---------- */
+.cinhead{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow);padding:16px 18px;margin:8px 0 4px}
+.cinhead h2{font-family:var(--display);font-size:1.35rem;margin:0 0 4px}
+.cinhead p{margin:0 0 4px;color:var(--mut);font-size:.9rem}
+.cinhead .cinupd{font-size:.8rem}
+.cinlogo{flex:none;width:46px;height:46px;border-radius:12px;background:var(--film);display:flex;align-items:center;justify-content:center}
+.cinlogo svg{width:26px;height:26px;fill:#fff}
+@media (prefers-color-scheme:dark){.cinlogo svg{fill:#0b1410}}
+.mgrid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
+.mcard .thumb{aspect-ratio:2/3}
+.soon .mcard .thumb{aspect-ratio:16/10}
+.soon .mcard .thumb img{object-position:center 22%}
+.mcard .body h3{font-size:1rem}
+.mmeta{font-size:.78rem;color:var(--mut);line-height:1.35}
+.soon .mmeta{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mcard .cat.film{max-width:calc(100% - 84px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.galtoggle{font-size:.8rem;padding:4px 10px;border-radius:999px;margin-left:4px;border:1px solid var(--line);background:var(--surface);text-decoration:none;color:var(--ink)}
+.galtoggle[aria-pressed="true"]{background:var(--film);color:#fff;border-color:var(--film)}
+body.view-cinema #offToggle{display:none}
+@media (max-width:640px){
+  .mgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .mcard .body{padding:10px 11px 12px}
+  .mcard .foot .src{display:none}
+  .mcard .foot .btn{font-size:.78rem;padding:.4rem .6rem}
+  .views button{padding:7px 6px;gap:4px;font-size:.82rem}
+  .views button svg{width:14px;height:14px}
+  .cinhead{padding:12px 14px}
+}
+@media (max-width:430px){.views button svg{display:none}.views button{padding:7px 5px;font-size:.8rem}}
+@media (max-width:350px){.filtlbl{display:none}}

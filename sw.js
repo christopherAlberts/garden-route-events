@@ -1,6 +1,6 @@
 // Cache the app shell so installed-PWA launches paint from cache (short splash), refresh in background.
-var C='gre-v3';
-var SHELL=['./','index.html','css/style.css','js/app.js','data/events.js','data/restaurants.js','site.webmanifest'];
+var C='gre-v4';
+var SHELL=['./','index.html','css/style.css','js/app.js','data/events.js','data/restaurants.js','data/cinema.js','site.webmanifest'];
 self.addEventListener('install',function(e){e.waitUntil(caches.open(C).then(function(c){return c.addAll(SHELL)}).then(function(){return self.skipWaiting()}))});
 self.addEventListener('activate',function(e){e.waitUntil(caches.keys().then(function(k){return Promise.all(k.filter(function(n){return n!==C}).map(function(n){return caches.delete(n)}))}).then(function(){return self.clients.claim()}))});
 self.addEventListener('fetch',function(e){
