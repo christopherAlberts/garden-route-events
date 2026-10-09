@@ -1,7 +1,7 @@
 {
  "source": "https://www.sterkinekor.com",
  "source_note": "Ster-Kinekor website (sterkinekor.com), Garden Route Mall programme",
- "fetched_at": "2026-10-09 15:03",
+ "fetched_at": "2026-10-09 15:13",
  "fetched_date": "2026-10-09",
  "cinema": {
   "name": "Ster-Kinekor Garden Route Mall",
@@ -28,6 +28,14 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/PWuRsUipf3I",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/avengers-endgame-encore-701/backdrop/681dd469-6d18-40b0-ab21-0f32b97c2c17.jpeg?optimizer=image&width=1200",
+   "synopsis": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos' actions and restore order to the universe once and for all, no matter what consequences may be in store.",
+   "director": "",
+   "cast": [],
+   "language": "English",
+   "country": "",
+   "imdb_id": "",
+   "tmdb_id": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -48,6 +56,25 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/wj79_VvbqPg",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/coyote-vs-acme-671/backdrop/a1a646b2-6191-47b3-b04e-b0a9ec30f3cb.jpeg?optimizer=image&width=1200",
+   "synopsis": "After Acme products fail him one too many times in his dogged pursuit of the Roadrunner, Wile E. Coyote decides to hire a billboard lawyer to sue the Acme Corporation.",
+   "director": "",
+   "cast": [
+    "Fred Tatasciore",
+    "John Cena",
+    "P. J. Byrne",
+    "Eric Bauza",
+    "Bob Bergen",
+    "Kenneth Choi",
+    "Martha Kelly",
+    "Will Forte",
+    "Candi Milo",
+    "Luis Guzmán"
+   ],
+   "language": "English",
+   "country": "United States",
+   "imdb_id": "tt1756855",
+   "tmdb_id": "1204680",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -68,6 +95,25 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/ZGYMYUzVPvA",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/digger-708/backdrop/70f673c0-278f-4ed4-ba3b-e5f34211451c.jpeg?optimizer=image&width=1200",
+   "synopsis": "The most powerful man in the world embarks on a frantic mission to prove he is humanity's saviour before the disaster he’s unleashed destroys everything.",
+   "director": "",
+   "cast": [
+    "Burn Gorman",
+    "Jesse Plemons",
+    "Tom Cruise",
+    "Riz Ahmed",
+    "Corey Johnson",
+    "John Goodman",
+    "Michael Stuhlbarg",
+    "James Dryden",
+    "Sophie Wilde",
+    "Aoife Hinds"
+   ],
+   "language": "English",
+   "country": "United States",
+   "imdb_id": "tt31450459",
+   "tmdb_id": "1248832",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -88,6 +134,21 @@
    ],
    "bookable": true,
    "trailer": "https://www.youtube.com/watch?v=sd_GNoYxgEA",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/forgotten-island-702/backdrop/17f66340-9b2b-470f-9303-e232f4d004b9.jpeg?optimizer=image&width=1200",
+   "synopsis": "Jo and Raissa find themselves stranded on the fantastic world of the forgotten island of Nakali. They find that their only way home might come at the expense of a lifetime of memories and emotions.",
+   "director": "",
+   "cast": [
+    "Jenny Slate",
+    "Manny Jacinto",
+    "Dave Franco",
+    "Lea Salonga",
+    "H.E.R.",
+    "Liza Soberano"
+   ],
+   "language": "English",
+   "country": "United States",
+   "imdb_id": "tt36583977",
+   "tmdb_id": "1465063",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -108,6 +169,18 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/ooQ30VtmPAM",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/heart-of-the-beast-703/backdrop/5527d3a0-aac5-4f4f-b2ff-0d4b0f53f09b.jpg?optimizer=image&width=1200",
+   "synopsis": "After a harrowing plane crash, Special Forces officer James Belmont and his combat dog, Odin, find themselves stranded deep in the Alaskan wilderness. Together, they are forced into a brutal fight for survival against the elements.",
+   "director": "",
+   "cast": [
+    "J.K. Simmons",
+    "Brad Pitt",
+    "Anna Lambe"
+   ],
+   "language": "English",
+   "country": "United States",
+   "imdb_id": "tt7526136",
+   "tmdb_id": "1263337",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -128,6 +201,18 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/yGjQw-hXkuI",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/just-play-dead-745/backdrop/5b7f3278-44aa-415a-893d-cef8ee80c525.jpg?optimizer=image&width=1200",
+   "synopsis": "When wealthy criminal mastermind Jack Wolfe is cornered by the Feds, he plans to fake his own death and claim the $30 million life insurance payout with his “grieving” wife Nora, while framing her surfer lover Chad for his murder. But Nora is cooking up a scheme of her own: kill Jack for real, frame Chad and keep the fortune for herself. As lies unravel, Nora and Jack scramble to outsmart one another, leaving one burning question: who will come out on top in this twisted game of life and death?",
+   "director": "Martin Campbell",
+   "cast": [
+    "Eva Green",
+    "Samuel L. Jackson",
+    "María Pedraza"
+   ],
+   "language": "English",
+   "country": "",
+   "imdb_id": "tt36948232",
+   "tmdb_id": "1480574",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -148,6 +233,25 @@
    ],
    "bookable": true,
    "trailer": "",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/heart-and-hustle-an-anthology-of-short-films-liefde-is-rooi-709/backdrop/d03cf7ed-be1b-4e01-a74b-2f20f096bb75.jpeg?optimizer=image&width=1200",
+   "synopsis": "Liefde is Rooi: After the sudden deaths of her parents, Prudence, the youngest of three siblings, becomes convinced that something is terribly wrong. When her grieving brother James begins behaving strangely and insists that “grief doen slegte dinge aan die memory,” Prudence sets out to uncover the truth—before the secrets buried in their family destroy them all.\n\nMy Best Friend: Matthew and Ben's friendship blooms after a chance encounter. This unravels after undisclosed feelings are revealed, putting their relationship to the test.",
+   "director": "",
+   "cast": [
+    "Abduragman Adams",
+    "Enrico Hartzenberg",
+    "Meggan Johnstone",
+    "Joshua Vraagom",
+    "Sanchia Davids",
+    "Lee-Ann van Rooi",
+    "Diego Adams",
+    "Terriano Duimpies",
+    "Ameer Noordien",
+    "Fiki Orzim"
+   ],
+   "language": "English",
+   "country": "",
+   "imdb_id": "",
+   "tmdb_id": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -168,6 +272,21 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/uYmnlsoICdg",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/resident-evil-700/backdrop/df1a5f45-29c5-4adf-8994-ccb5761d43f4.jpeg?optimizer=image&width=1200",
+   "synopsis": "Follows a hapless courier tasked with delivering a package to a remote hospital. He soon finds himself caught in the middle of an outbreak and must fight through hordes of mutated creatures to survive.",
+   "director": "",
+   "cast": [
+    "Zach Cherry",
+    "Paul Walter Hauser",
+    "Austin Abrams",
+    "Kali Reis",
+    "Johnno Wilson",
+    "Griffin Newman"
+   ],
+   "language": "English",
+   "country": "France, Germany, United States",
+   "imdb_id": "tt35538033",
+   "tmdb_id": "1423191",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -188,6 +307,18 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/xi1IbfNh8k8",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/shaun-the-sheep-the-beast-of-mossy-bottom-704/backdrop/1e89660c-f666-4e1e-8157-9a6fce54ffad.jpeg?optimizer=image&width=1200",
+   "synopsis": "The residents of Mossy Bottom Farm looking forward to Halloween – until the clumsy Farmer trashes the flock’s beloved pumpkin patch! When Shaun turns mad scientist to fix the problem, things rapidly spiral out of control. With the Farmer missing and a wild beast roaming the woods of Mossingham, all the ingredients are in place for a monstrously fun family adventure.",
+   "director": "",
+   "cast": [
+    "Justin Fletcher",
+    "Kate Harbour",
+    "John Sparkes"
+   ],
+   "language": "English",
+   "country": "France, United Kingdom",
+   "imdb_id": "tt36841161",
+   "tmdb_id": "1477104",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -200,7 +331,7 @@
    "poster": "https://images.filmgrail.com/mediaserver/movies/spider-man-brand-new-day-634/poster/bc43628e-1bb6-4af3-ab8c-3a442cb94159.jpeg?optimizer=image&width=342",
    "release_date": "2026-07-31",
    "date_label": "",
-   "age_rating": "No Under 13's",
+   "age_rating": "No Under 13's - L V",
    "age": 13,
    "runtime": "2h 21m",
    "genres": [
@@ -208,6 +339,25 @@
    ],
    "bookable": true,
    "trailer": "https://www.youtube.com/watch?v=LEjRTHDo0wQ",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/spider-man-brand-new-day-634/backdrop/a7647a50-a082-4672-a137-90274045cd90.jpeg?optimizer=image&width=1200",
+   "synopsis": "It's a BRAND NEW DAY for Peter Parker. Fighting crime full-time as Spider-Man in a world that doesn’t remember him -- and the pressure of seeing his old friends move on without him -- sparks a change in Peter he may not have the power to control. But that transformation might also be the only thing that can stop a shocking new threat to the city and those he loves - a powerful villain no one can even see.",
+   "director": "",
+   "cast": [
+    "Rosario Dawson",
+    "Keith David",
+    "Mark Ruffalo",
+    "Tom Holland",
+    "Zendaya",
+    "Jacob Batalon",
+    "Michael Mando",
+    "Jon Bernthal",
+    "Tramell Tillman",
+    "Marvin Jones III"
+   ],
+   "language": "English",
+   "country": "United States",
+   "imdb_id": "tt22084616",
+   "tmdb_id": "969681",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -228,6 +378,25 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/bVm3wx8LVzY",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/tony-746/backdrop/27821c02-09b9-47ec-b9b7-ffca3174fd4f.jpeg?optimizer=image&width=1200",
+   "synopsis": "A 19-year-old Anthony Bourdain travels to Provincetown and stumbles into the chaotic world of a restaurant kitchen, setting off a summer that will shape the course of his life.",
+   "director": "",
+   "cast": [
+    "Antonio Banderas",
+    "Dagmara Domińczyk",
+    "Derek K. Moore",
+    "Leo Woodall",
+    "Emilia Jones",
+    "Stavros Halkias",
+    "Dominic Sessa",
+    "Rich Sommer",
+    "Monica Raymund",
+    "Caroline Portu"
+   ],
+   "language": "English",
+   "country": "Canada, United States",
+   "imdb_id": "tt33095251",
+   "tmdb_id": "1329016",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -248,6 +417,24 @@
    ],
    "bookable": true,
    "trailer": "https://www.youtube.com/watch?v=Z_KAGVnFmmw",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/verity-742/backdrop/41f19676-3ffc-4570-ba89-2c76663a5b89.jpeg?optimizer=image&width=1200",
+   "synopsis": "Struggling writer Lowen Ashleigh is on the brink of financial ruin when she accepts the job offer of a lifetime: she's been hired to complete the remaining books in a successful series that bestselling thriller author Verity Crawford is unable to finish after a mysterious accident. Upon arrival at the lavish Crawford estate, Ashleigh slowly learns that things are not exactly as they seem.",
+   "director": "",
+   "cast": [
+    "Anne Hathaway",
+    "Dakota Johnson",
+    "Josh Hartnett",
+    "Michael Abbott Jr.",
+    "Ismael Cruz Cordova",
+    "Brady Wagner",
+    "Irina Dvorovenko",
+    "K.K. Moggie",
+    "Alex Cooper"
+   ],
+   "language": "English",
+   "country": "United States",
+   "imdb_id": "tt32261958",
+   "tmdb_id": "1283515",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -270,6 +457,14 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/BEGgmm3v0tM",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/cosi-fan-tutte-mozart-metropolitan-opera-640/backdrop/58220379-35a7-406f-8e43-00631461c94b.jpeg?optimizer=image&width=1200",
+   "synopsis": "The Met: Live in HD season kicks off with Mozart’s satirical comedy of fickle young love, one of the composer’s most sublime creations. Phelim McDermott’s “colorful, inventive” (The New York Times) staging, inspired by Coney Island in the 1950s, sets the uproarious story at a boardwalk amusement park, where the two pairs of lovers at the heart of the tale find themselves on one emotional—and literal—thrill ride after another. Soprano Federica Lombardi and mezzo-soprano Samantha Hankey sing Fiordiligi and Dorabella, opposite tenor Duke Kim and baritone Andrey Zhilikhovsky as Ferrando and Guglielmo. Bass-baritone Gerald Finley reprises his portrayal of the cynical Don Alfonso, with soprano Ana María Martínez as the witty maid Despina.",
+   "director": "",
+   "cast": [],
+   "language": "English",
+   "country": "",
+   "imdb_id": "",
+   "tmdb_id": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -290,6 +485,23 @@
    ],
    "bookable": false,
    "trailer": "https://youtu.be/np_wMPOT-So",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/sense-and-sensibility-747/backdrop/efaf339a-b190-4692-8b7d-cc60121663ff.jpg?optimizer=image&width=1200",
+   "synopsis": "Sisters Elinor and Marianne Dashwood must leave their Sussex estate and move in with a distant relative, facing romance and money troubles.",
+   "director": "",
+   "cast": [
+    "George MacKay",
+    "Caitríona Balfe",
+    "Bodhi Rae Breathnach",
+    "Daisy Edgar-Jones",
+    "Esmé Creed-Miles",
+    "Frank Dillane",
+    "Herbert Nordrum",
+    "Fiona Shaw"
+   ],
+   "language": "English",
+   "country": "United Kingdom, United States",
+   "imdb_id": "tt37439146",
+   "tmdb_id": "1503762",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -312,6 +524,25 @@
    ],
    "bookable": false,
    "trailer": "https://youtu.be/DLsC13Hd88g",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/street-fighter-748/backdrop/66b12444-5822-4a31-810a-22b690f3dee6.jpg?optimizer=image&width=1200",
+   "synopsis": "In 1993, estranged Street Fighters Ryu and Ken Masters are thrown back into combat when the mysterious Chun-Li recruits them for the next World Warrior Tournament: a brutal clash of fists, fate, and fury. But behind this battle royale lies a deadly conspiracy that forces them to face off against each other and the demons of their past. And if they don't, it's GAME OVER!",
+   "director": "",
+   "cast": [
+    "David Dastmalchian",
+    "Jason Momoa",
+    "Eric André",
+    "Leati Anoa'i",
+    "50 Cent",
+    "Callina Liang",
+    "Noah Centineo",
+    "Danny Philippou",
+    "Michael Philippou",
+    "Cody Rhodes"
+   ],
+   "language": "English",
+   "country": "Japan, United States",
+   "imdb_id": "tt27419420",
+   "tmdb_id": "1153576",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -333,6 +564,22 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/HPKdMrt1qA0",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/clayface-750/backdrop/221ad58d-9c06-44e4-a718-76ec8cfb0aa4.jpeg?optimizer=image&width=1200",
+   "synopsis": "A Hollywood horror tale centering on a B-movie actor who injects himself with a substance to keep himself relevant, only to find out that he can reshape his face and form, becoming a walking piece of clay.",
+   "director": "",
+   "cast": [
+    "Max Minghella",
+    "David Dencik",
+    "Eddie Marsan",
+    "Naomi Ackie",
+    "Jessica Grundle",
+    "Wil Coban",
+    "Tom Rhys Harries"
+   ],
+   "language": "English",
+   "country": "United States",
+   "imdb_id": "tt34890576",
+   "tmdb_id": "1400940",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -356,6 +603,25 @@
    ],
    "bookable": false,
    "trailer": "https://www.youtube.com/watch?v=04V07p8EYVo",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/wildwood-753/backdrop/4a0a7dbc-373b-4021-ad8a-cc7ca2d72be4.jpg?optimizer=image&width=1200",
+   "synopsis": "Prue and her classmate Curtis are drawn into a forbidden magical forest filled with enchanted creatures, loyal allies, and formidable adversaries as they embark on a desperate quest to save Prue’s kidnapped baby brother, Mac, from the crows led by a mysterious woman named Alexandra.",
+   "director": "Travis Knight",
+   "cast": [
+    "Mahershala Ali",
+    "Jake Johnson",
+    "Maya Erskine",
+    "Angela Bassett",
+    "Len Cariou",
+    "Jemaine Clement",
+    "Charlie Day",
+    "Richard E. Grant",
+    "Marc Evan Jackson",
+    "Awkwafina"
+   ],
+   "language": "English",
+   "country": "United States",
+   "imdb_id": "tt2056785",
+   "tmdb_id": "791523",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -376,6 +642,21 @@
    ],
    "bookable": false,
    "trailer": "https://youtu.be/P4SLxVGQmyA",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/al-wat-ek-weet-754/backdrop/77185773-5375-4b6f-8ea6-0bea6a07b760.jpeg?optimizer=image&width=1200",
+   "synopsis": "When a car accident claims his mother's life and his father withdraws from life in a clinic, seventeen-year-old Gabriel Lombard is uprooted from his green, leafy suburb on Table Mountain and sent to live with his aunt Lotta and grandmother Lenie in a cramped house in Woodstock. Determined not to collapse like his father, he buries his grief behind a cool facade, wild lies and an overactive imagination.",
+   "director": "",
+   "cast": [
+    "Zenobia Kloppers",
+    "Gretchen Ramsden",
+    "Jonan Mouton",
+    "June van Merch",
+    "Antoinette Myburgh",
+    "Waldemar Schultz"
+   ],
+   "language": "English",
+   "country": "South Africa",
+   "imdb_id": "",
+   "tmdb_id": "1721249",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -399,6 +680,25 @@
    ],
    "bookable": false,
    "trailer": "https://www.youtube.com/watch?v=6ffR0oyh6YE",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/pressure-786/backdrop/a9985d9a-99d6-4103-8b22-ae7bdfcbe3d2.jpg?optimizer=image&width=1200",
+   "synopsis": "In the tense 72 hours before D-Day, and the fate of the free world hanging in the balance, General Dwight D. Eisenhower and Captain James Stagg face an impossible choice—launch the largest and most dangerous seaborne invasion in history or risk losing the war altogether.",
+   "director": "",
+   "cast": [
+    "Andrew Scott",
+    "Toby Williams",
+    "Kerry Condon",
+    "Chris Messina",
+    "Damian Lewis",
+    "Con O'Neill",
+    "Harrison Osterfield",
+    "Max Croes",
+    "Orlando Seale",
+    "Pedro Leandro"
+   ],
+   "language": "English",
+   "country": "France, United Kingdom",
+   "imdb_id": "tt32547691",
+   "tmdb_id": "1318413",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -419,6 +719,14 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/BEGgmm3v0tM",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/macbeth-verdi-metropolitan-opera-649/backdrop/79a28a7b-17f7-49b8-8987-2bd9cd1394a9.jpeg?optimizer=image&width=1200",
+   "synopsis": "Two of opera’s most extraordinary artists return to The Met: Live in HD for Verdi’s thrilling take on the immortal Shakespearean tale of the scheming couple determined to seize power at any cost. Following past triumphs in many of Verdi’s signature baritone roles, Quinn Kelsey is the Scottish king haunted by the ghosts of his murderous ascent to the throne, opposite Lise Davidsen—the world’s reigning dramatic soprano—as the power-mad Lady Macbeth, whose ruinous ambition damns them both. Met Music Director Yannick Nézet-Séguin takes the podium for a penetrating production by Louisa Proske, a brilliant young director making waves around the world. Rounding out the all-star cast are tenor Freddie De Tommaso as the heroic Macduff and bass-baritone Ryan Speedo Green as Macbeth’s friend-turned-victim Banquo.",
+   "director": "",
+   "cast": [],
+   "language": "English",
+   "country": "",
+   "imdb_id": "",
+   "tmdb_id": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -441,6 +749,25 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/g7sgTJIWW5U",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/godzilla-minus-zero-758/backdrop/27565947-6729-415a-8095-7c61cadde0b5.jpeg?optimizer=image&width=1200",
+   "synopsis": "War reduced Japan to zero, and Godzilla plunged it into minus. Two years have passed since then, and the country has faced agonizing struggles to achieve recovery and finally reclaim its daily life. Just as humanity managed to cling to a hard-won peace, a new threat strikes, crushing hope in an instant.",
+   "director": "Takashi Yamazaki",
+   "cast": [
+    "Munetaka Aoki",
+    "Ryunosuke Kamiki",
+    "Minami Hamabe",
+    "Yuki Yamada",
+    "Hidetaka Yoshioka",
+    "Miou Tanaka",
+    "Sae Nagatani",
+    "Kuranosuke Sasaki",
+    "Sakura Ando",
+    "Min Tanaka"
+   ],
+   "language": "English",
+   "country": "Japan",
+   "imdb_id": "tt34384661",
+   "tmdb_id": "1381071",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -462,6 +789,23 @@
    ],
    "bookable": false,
    "trailer": "https://youtu.be/h5oCPsJGSnY",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/talent-for-a-murder-a-752/backdrop/27d25499-03ce-4ae2-95f5-a9499c8b0703.jpg?optimizer=image&width=1200",
+   "synopsis": "A young man travels from New York to Switzerland to try to persuade acclaimed thriller writer Patricia Highsmith to write one final installment of her Tom Ripley series, with his efforts gradually turning more sinister.",
+   "director": "Anton Corbijn",
+   "cast": [
+    "Alden Ehrenreich",
+    "Helen Mirren",
+    "Olivia Cooke",
+    "Juliet Stevenson",
+    "Nikolai Selikovsky",
+    "Maddalena Vallecchi Williams",
+    "Luca Ferrini",
+    "Norbert Ortner"
+   ],
+   "language": "English",
+   "country": "Australia, Ireland, Italy, Switzerland, United Kingdom, United States",
+   "imdb_id": "tt14129116",
+   "tmdb_id": "1084409",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -482,6 +826,25 @@
    ],
    "bookable": false,
    "trailer": "",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/ghost-soldier-787/backdrop/300e9632-d0dc-441c-95d5-ea8cb977fc4e.jpg?optimizer=image&width=1200",
+   "synopsis": "Reclusive government asset Henry Fitzgerald is living off the grid in Wyoming, designing new systems for a weapons research agency. When a multi trillion dollar investment management firm begins employing corrupt police and foreign mercenaries to force farmers off their ranches, the Green Beret veteran decides to employ his weapon prototypes to assist his neighbors.",
+   "director": "",
+   "cast": [
+    "Steven Cree",
+    "Beau Knapp",
+    "Shea Whigham",
+    "Olivia Thirlby",
+    "Jim Caviezel",
+    "Ricky Whittle",
+    "Garret Dillahunt",
+    "Alexej Manvelov",
+    "Olivia Chenery",
+    "Gunner Wright"
+   ],
+   "language": "",
+   "country": "Romania, United States",
+   "imdb_id": "tt38686316",
+   "tmdb_id": "1562642",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -502,6 +865,14 @@
    ],
    "bookable": false,
    "trailer": "https://youtu.be/tsGVioxq10c",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/do-you-remember-781/backdrop/dbcabf29-5a9d-4baf-955d-83f0bb3812cf.png?optimizer=image&width=1200",
+   "synopsis": "When tragedy erases the past, can love rewrite the future? A sweeping story of music, faith, healing, and redemption. Sometimes the song that leads you home was written long before you ever knew the words.",
+   "director": "",
+   "cast": [],
+   "language": "English",
+   "country": "",
+   "imdb_id": "",
+   "tmdb_id": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -523,6 +894,25 @@
    ],
    "bookable": false,
    "trailer": "https://www.youtube.com/watch?v=mPv5-BL06fI",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/focker-in-law-796/backdrop/b7d62bd2-35bd-4321-83ee-12b94c1a8b51.jpg?optimizer=image&width=1200",
+   "synopsis": "Henry, son of Greg and Pam Focker, faces family chaos when he decides to marry a strong-willed woman who appears to be his complete mismatch.",
+   "director": "",
+   "cast": [
+    "Ben Stiller",
+    "Owen Wilson",
+    "Skyler Gisondo",
+    "Robert De Niro",
+    "Ariana Grande",
+    "Liza Koshy",
+    "Eduardo Franco",
+    "Blythe Danner",
+    "Teri Polo",
+    "Beanie Feldstein"
+   ],
+   "language": "English",
+   "country": "United States",
+   "imdb_id": "tt34966140",
+   "tmdb_id": "1400336",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -546,6 +936,19 @@
    ],
    "bookable": false,
    "trailer": "",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/hexed-791/backdrop/2a21a0aa-0554-41e4-a075-f62d1bf5e5aa.jpeg?optimizer=image&width=1200",
+   "synopsis": "An impulsive and unconventional teenage girl named Billie discovers secret magical abilities which, once unleashed, hurtle her into a spectacle-filled journey out of suburbia and into a vast witch realm called Hexe. Forced to team up with her cautious mother, Alice, they uncover family mysteries that could change the world of witches forever.",
+   "director": "",
+   "cast": [
+    "Rashida Jones",
+    "Stephen Fry",
+    "Hailee Steinfeld",
+    "Tracey Ullman"
+   ],
+   "language": "",
+   "country": "United States",
+   "imdb_id": "tt38077943",
+   "tmdb_id": "1538497",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -568,6 +971,25 @@
    ],
    "bookable": false,
    "trailer": "",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/paper-tiger-797/backdrop/a40339d7-84ff-4281-b241-acabe3a5058d.jpeg?optimizer=image&width=1200",
+   "synopsis": "Two brothers chase the American dream, but soon find themselves in the brutal world of violence and corruption of the Russian mafia.",
+   "director": "",
+   "cast": [
+    "Scarlett Johansson",
+    "Adam Driver",
+    "Miles Teller",
+    "Dimiter D. Marinov",
+    "Gavin Goudey",
+    "Roman Engel",
+    "Cindy Katz",
+    "Yavor Vesselinov",
+    "Victor Ptak",
+    "Raphael Corkhill"
+   ],
+   "language": "",
+   "country": "Brazil, Italy, United States",
+   "imdb_id": "tt34385689",
+   "tmdb_id": "1381273",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -588,6 +1010,14 @@
    ],
    "bookable": true,
    "trailer": "",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/andre-rieus-2026-christmas-concert-let-it-snow-783/backdrop/a96f2b78-11f9-4842-8aab-98973c64ac57.jpeg?optimizer=image&width=1200",
+   "synopsis": "This holiday season, celebrate the most wonderful time of the year on the big screen with André Rieu's 2026 Christmas Concert – Let It Snow. This heartwarming festive spectacular, filled with beloved Christmas classics, enchanting waltzes, and magical surprises, will leave you smiling long after the final encore.\n\nJoined by his world-famous Johann Strauss Orchestra, exceptional sopranos, and a powerful 120-voice male choir, André brings the spirit of Christmas to life in an unforgettable musical event. Overflowing with music, laughter, and holiday cheer, this concert is perfect for the whole family.\n\nWhether you're surrounded by snow or simply dreaming of it, experience the magic of Christmas on the big screen with those you love. Wrap up your year with Let It Snow – only in cinemas!",
+   "director": "",
+   "cast": [],
+   "language": "English",
+   "country": "",
+   "imdb_id": "",
+   "tmdb_id": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -608,6 +1038,14 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/BEGgmm3v0tM",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/samson-et-dalila-saint-saens-metropolitan-opera-641/backdrop/4537c1df-ef3b-49c5-86db-b2f9bc43a4b6.jpeg?optimizer=image&width=1200",
+   "synopsis": "Sacred, scandalous, and irresistibly alluring, Saint-Saëns’s spectacular take on the biblical hero of legendary strength and the seductive Philistine whose beauty overpowers him returns in the Met’s larger-than-life production. Featuring a massive orchestra and chorus and some of opera’s most spellbinding tunes, this masterpiece of French grand opera is a feast for the eyes and ears. Giacomo Sagripanti conducts an electrifying cast led by the formidable star pairing of mezzo-soprano Aigul Akhmetshina and tenor Clay Hilley, transmitted live to cinemas worldwide.",
+   "director": "",
+   "cast": [],
+   "language": "English",
+   "country": "",
+   "imdb_id": "",
+   "tmdb_id": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -630,6 +1068,25 @@
    ],
    "bookable": true,
    "trailer": "https://www.youtube.com/watch?v=M2HRdntayTA",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/avengers-doomsday-712/backdrop/14a562f3-82d5-497b-8e27-be35752f0eaa.jpg?optimizer=image&width=1200",
+   "synopsis": "Beloved heroes from three distinct universes are set on a deadly collision course and face an existential threat unlike anything they've ever encountered.",
+   "director": "",
+   "cast": [
+    "Kelsey Grammer",
+    "David Harbour",
+    "Tom Hiddleston",
+    "Ian McKellen",
+    "Vanessa Kirby",
+    "Sebastian Stan",
+    "Channing Tatum",
+    "Patrick Stewart",
+    "Paul Rudd",
+    "Anthony Mackie"
+   ],
+   "language": "English",
+   "country": "United States",
+   "imdb_id": "tt21357150",
+   "tmdb_id": "1003596",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -652,6 +1109,25 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/5rQZ5fWNNEY",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/dune-part-three-713/backdrop/e80e1270-dd17-4ba2-a723-8a832d13288c.jpeg?optimizer=image&width=1200",
+   "synopsis": "As Emperor, Paul Atreides grapples with the consequences of his rise to power as political conspiracies and a galaxy-spanning holy war threaten the future he alone can foresee.",
+   "director": "",
+   "cast": [
+    "Josh Brolin",
+    "Léa Seydoux",
+    "Timothée Chalamet",
+    "Rebecca Ferguson",
+    "Javier Bardem",
+    "Jason Momoa",
+    "Anya Taylor-Joy",
+    "Charlotte Rampling",
+    "Robert Pattinson",
+    "Zendaya"
+   ],
+   "language": "English",
+   "country": "United States",
+   "imdb_id": "tt31378509",
+   "tmdb_id": "1170608",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -672,6 +1148,14 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/7cBEtpbOf7U",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/romeo-et-juliet-paris-ballet-714/backdrop/9e293ffb-d510-4f8a-a487-578de220dd27.jpeg?optimizer=image&width=1200",
+   "synopsis": "In Verona, Romeo Montague and Juliet Capulet meet and fall deeply in love, but their two families are bound by ancient hatred. Driven by a passion as powerful as it is impossible, the two lovers face a tragic fate that unites them forever.",
+   "director": "",
+   "cast": [],
+   "language": "English",
+   "country": "",
+   "imdb_id": "",
+   "tmdb_id": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -692,6 +1176,14 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/BEGgmm3v0tM",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/la-fanciulla-del-west-puccini-metropolitan-opera-643/backdrop/00ab0960-030f-49ac-a8fa-e14a2f37403d.jpeg?optimizer=image&width=1200",
+   "synopsis": "Puccini’s exhilarating drama of the Wild West returns in a new staging by celebrated British director Richard Jones, marking the company’s first new production of La Fanciulla del West in more than 30 years. Soprano Sondra Radvanovsky adds to her already remarkable Met repertoire, making her role debut as Minnie, the tough tavern owner with a heart of gold who finds love when she least expects it. Tenor SeokJong Baek is the dashing bandit who rambles into the remote California mining town to steal her heart, opposite baritone Christopher Maltman as the lawman determined to deliver rough justice—and win Minnie for himself. Maestro Keri-Lynn Wilson takes the podium to conduct one of opera’s most action-packed adventures, live from the Met stage to cinemas worldwide.",
+   "director": "",
+   "cast": [],
+   "language": "English",
+   "country": "",
+   "imdb_id": "",
+   "tmdb_id": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -712,6 +1204,14 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/7cBEtpbOf7U",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/swan-lake-paris-ballet-715/backdrop/dc2483a1-b46c-4c3e-8233-2e05d13d02e1.jpeg?optimizer=image&width=1200",
+   "synopsis": "Prince Siegfried is urged by his parents to choose a bride, but by the shores of a lake he meets a mysterious swan maiden, Odette, enchanted by the sorcerer Rothbart. Only a sincere vow can save her. Captivated, he swears eternal love, until he meets Odile, the black swan...",
+   "director": "",
+   "cast": [],
+   "language": "English",
+   "country": "",
+   "imdb_id": "",
+   "tmdb_id": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -732,6 +1232,14 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/BEGgmm3v0tM",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/silent-night-metropolitan-opera-642/backdrop/60324bb7-092e-418b-bf3b-8371378175ce.jpeg?optimizer=image&width=1200",
+   "synopsis": "Music by Kevin Puts / Libretto by Mark Campbell\n\nFollowing his smash-hit company debut with The Hours, composer Kevin Puts returns to the Met with his Pulitzer Prize–winning first opera, inspired by the true events of the 1914 Christmas truce, when soldiers spontaneously set aside the horrors of the First World War and crossed the trenches to mingle, exchange gifts, and sing carols with the enemy. A poignant depiction of shared humanity in the most inhumane circumstances, Puts’s grand, cinematic opera—with a libretto by Mark Campbell based on the film Joyeux Noël—has been widely acclaimed since its 2011 premiere, hailed as “an overwhelming emotive experience” by The Guardian. Silent Night receives an evocative staging by James Robinson that takes the audience directly to the battlefields of the Western Front. The star-studded cast, featuring soprano Elza van den Heever and tenors Ben Bliss and Rolando Villazón, among many others, is conducted by debuting maestro Dalia Stasevska live from the Met to cinemas worldwide.",
+   "director": "",
+   "cast": [],
+   "language": "English",
+   "country": "",
+   "imdb_id": "",
+   "tmdb_id": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -752,6 +1260,14 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/BEGgmm3v0tM",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/manon-massenet-metropolitan-opera-644/backdrop/86dd78ac-fbc0-438b-8acf-58be2defbf4d.jpeg?optimizer=image&width=1200",
+   "synopsis": "Following her radiant performance in Gounod’s Roméo et Juliette—which garnered raves for “high notes that spun like liquid gold … Sierra touched the operatic firmament” (The New York Times)—superstar soprano Nadine Sierra takes on another alluring French heroine, the irresistible title character of Massenet’s passionate drama, live from the Met stage to cinemas worldwide. Leading tenor Matthew Polenzani is her idealistic lover, the Chevalier des Grieux, with rising-star baritone Andrzej Filończyk as her stalwart cousin, Lescaut, in a breathtaking Belle Époque staging by director Laurent Pelly.",
+   "director": "",
+   "cast": [],
+   "language": "English",
+   "country": "",
+   "imdb_id": "",
+   "tmdb_id": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -772,6 +1288,14 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/7cBEtpbOf7U",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/la-bayadere-paris-ballet-716/backdrop/3e6b3853-13fd-42fe-94c0-31545b3baf69.jpeg?optimizer=image&width=1200",
+   "synopsis": "In a dreamlike India where a magnificent elephant parades before the rajah's lavish palace and a golden idol follows a fan dance, the ballet tells the story of the ill-fated love between the warrior Solor and Nikiya, a sacred temple dancer.",
+   "director": "",
+   "cast": [],
+   "language": "English",
+   "country": "",
+   "imdb_id": "",
+   "tmdb_id": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -792,6 +1316,14 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/BEGgmm3v0tM",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/otello-verdi-metropolitan-opera-645/backdrop/e427bdc0-0615-4468-938b-c8906dccf3bf.jpeg?optimizer=image&width=1200",
+   "synopsis": "One of today’s leading dramatic tenors, Brian Jagde takes on the tour-de-force title role of what many consider the ultimate Italian opera, live to cinemas worldwide. Verdi’s monumental Shakespearean tragedy also features soprano Ailyn Pérez in her company role debut as the long-suffering Desdemona, alongside baritone Artur Ruciński as the sinister Iago. Michele Mariotti leads the full forces of the Met Orchestra and Chorus in the exhilarating score.",
+   "director": "",
+   "cast": [],
+   "language": "English",
+   "country": "",
+   "imdb_id": "",
+   "tmdb_id": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -812,6 +1344,14 @@
    ],
    "bookable": true,
    "trailer": "",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/notre-dame-de-paris-paris-ballet-717/backdrop/a129bcb1-228c-4bed-9b47-6c1eda3c43b2.jpeg?optimizer=image&width=1200",
+   "synopsis": "From Victor Hugo's rich novel, Roland Petit builds a vivid, theatrical and intense fresco. Between Esmeralda in love with Captain Phoebus, Frollo tormented by desire and the hunchback Quasimodo, a tragic story unfolds before a fickle crowd that swings between joy and cruelty.",
+   "director": "",
+   "cast": [],
+   "language": "English",
+   "country": "",
+   "imdb_id": "",
+   "tmdb_id": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -832,6 +1372,14 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/BEGgmm3v0tM",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/tosca-puccini-metropolitan-opera-647/backdrop/d4aa8cec-7e1f-4c27-b419-3786f6db9ee3.jpeg?optimizer=image&width=1200",
+   "synopsis": "In this special encore presentation, soprano Lise Davidsen sings the title role of Puccini’s ultimate diva, opposite tenor Freddie De Tommaso as Cavaradossi and baritone Quinn Kelsey as Scarpia in the acclaimed 2024 Met performance of David McVicar’s thrilling production. Yannick Nézet-Séguin conducts.",
+   "director": "",
+   "cast": [],
+   "language": "English",
+   "country": "",
+   "imdb_id": "",
+   "tmdb_id": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -852,6 +1400,14 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/BEGgmm3v0tM",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/parsifal-wagner-metropolitan-opera-646/backdrop/0d1f9ecd-cd7a-427b-bb37-bf08968841d3.jpeg?optimizer=image&width=1200",
+   "synopsis": "A profound philosophical meditation on compassion and reconciliation, this transcendent rendering of a medieval knight’s heroic quest for the Holy Grail returns to the big screen in François Girard’s celebrated production, a “thoughtful and intrepid staging, full of striking imagery” (The New York Times). Music Director Yannick Nézet-Séguin conducts a cast of Wagnerian superstars, including tenor Piotr Beczała in the title role, mezzo-soprano Elīna Garanča as the enigmatic Kundry, baritone Peter Mattei as the ailing Amfortas, bass-baritone Ryan Speedo Green as the sorcerer Klingsor, and bass Jongmin Park as the wise Gurnemanz.",
+   "director": "",
+   "cast": [],
+   "language": "English",
+   "country": "",
+   "imdb_id": "",
+   "tmdb_id": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]

@@ -314,8 +314,9 @@ function mcard(f,soonTag){
   var d=f.release_date?pd(f.release_date):null,L=esc(f.url),cn=CIN&&CIN.cinema?CIN.cinema:{name:"Ster-Kinekor Garden Route Mall",town:"George"};
   var badge=d&&(soonTag||f.section==="soon")?'<div class="datebadge"><span class="d">'+d.getDate()+'</span><span class="m">'+MN[d.getMonth()]+'</span></div>':'';
   return '<article class="card mcard">'+
-    '<a class="thumb" href="'+L+'" target="_blank" rel="noopener" aria-label="'+esc(f.title)+'">'+(f.poster?'<img src="'+esc(f.poster)+'" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">':'<div class="ph film">'+ICON.film+'</div>')+badge+
+    '<div class="mtw"><a class="thumb" href="'+L+'" target="_blank" rel="noopener" aria-label="'+esc(f.title)+'">'+(f.poster?'<img src="'+esc(f.poster)+'" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">':'<div class="ph film">'+ICON.film+'</div>')+badge+
       (soonTag?'<span class="cat film">New at the cinema</span>':'')+'</a>'+
+      (soonTag?'':'<button type="button" class="minfo" data-film="'+f.id+'" aria-label="Film info: '+esc(f.title)+'"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg></button><span class="mbadges" aria-hidden="true"></span>')+'</div>'+
     '<div class="body">'+
       '<h3><a href="'+L+'" target="_blank" rel="noopener">'+esc(f.title)+'</a></h3>'+
       '<div class="when">'+(f.section==="soon"||soonTag?"Opens "+esc(relTxt(f)):(f.release_date&&f.release_date>TODAY?"Opens "+esc(relTxt(f)):"Showing now"))+'</div>'+
@@ -328,6 +329,49 @@ function soonMovies(lim){ /* new releases opening at SK George inside the happen
   return (CIN.now_showing||[]).concat(CIN.coming_soon||[]).filter(function(f){return f.release_date&&f.release_date>=TODAY&&f.release_date<=lim})
     .map(function(f){return {_m:f,_d:f.release_date}})}
 function isOutdoor(e){return e.category==="film"&&!/^indoor/i.test(e.notes||"")&&/open[- ]?air|outdoor|drive[- ]?in|under the stars|moonlight|starlight|galileo|picnic cinema|movies? (in|on) the (park|beach|lawn)/i.test(e.title+" "+(e.notes||"")+" "+(e.source_name||"")+" "+(e.venue||""))}
+/* ---------- film detail overlay (ⓘ on Cinema posters) ---------- */
+function filmById(id){if(!CIN)return null;var A=(CIN.now_showing||[]).concat(CIN.coming_soon||[]);for(var i=0;i<A.length;i++)if(String(A[i].id)===String(id))return A[i];return null}
+function filmHtml(f){
+  var cn=CIN&&CIN.cinema?CIN.cinema:{name:"Ster-Kinekor Garden Route Mall",town:"George"};
+  var nu=/^No Under/i.test(f.age_rating||"")&&f.age,rt=(f.age_rating||"").replace(/^No Under \d+'s\s*-?\s*/i,"");
+  var d=f.release_date?pd(f.release_date):null,opened=d&&f.release_date<=TODAY;
+  var when=d?(opened?"Opened "+fmt(d,true)+(f.section==="now"?" · Showing now":""):"Opens "+fmt(d,true)):(f.section==="now"?"Showing now":"");
+  var ratings=(f.ratings||[]).filter(function(r){return r&&r.value});
+  return '<div class="fhero">'+(f.backdrop?'<img class="fbd" src="'+esc(f.backdrop)+'" alt="" referrerpolicy="no-referrer">':'<div class="fbd ph film">'+ICON.film+'</div>')+
+      '<button type="button" class="fclose" data-fclose aria-label="Close">×</button></div>'+
+    '<div class="fbody"><div class="ftop">'+(f.poster?'<img class="fposter" src="'+esc(f.poster)+'" alt="" referrerpolicy="no-referrer">':'')+
+      '<div class="fmeta"><h2 id="filmTitle">'+esc(f.title)+'</h2>'+
+      (f.age_rating?'<div class="frate">'+(nu?'<span class="fage">'+esc(f.age)+'</span>'+esc(f.age_rating.split(" - ")[0]):esc(f.age_rating.split(" - ")[0]))+'</div>':'')+
+      '<div class="fline">'+[f.runtime,(f.genres||[]).map(function(g){return g.charAt(0).toUpperCase()+g.slice(1)}).join(", ")].filter(Boolean).map(esc).join(" · ")+'</div>'+
+      (when?'<div class="fline">'+esc(when)+'</div>':'')+'</div></div>'+
+      (ratings.length?'<div class="fratings">'+ratings.map(function(r){return '<div class="fr"><b>'+esc(r.value)+'</b><span>'+esc(r.source)+'</span></div>'}).join("")+'</div>':'')+
+      '<div class="fact"><a class="btn" href="'+esc(f.url)+'" target="_blank" rel="noopener">'+(f.bookable?"Tickets":"Film page")+ARROW+'</a>'+(f.trailer?'<a class="btn trailerbtn" href="'+esc(f.trailer)+'" target="_blank" rel="noopener">'+PLAY+'Trailer</a>':'')+'</div>'+
+      (f.synopsis?'<h4 class="fh">Synopsis</h4>'+f.synopsis.split(/\n\n+/).map(function(p){return '<p class="fsyn">'+esc(p)+'</p>'}).join(""):'')+
+      (f.director?'<h4 class="fh">Director</h4><p class="fp">'+esc(f.director)+'</p>':'')+
+      (f.cast&&f.cast.length?'<h4 class="fh">Cast</h4><div class="fcast">'+f.cast.map(function(c){return '<span>'+esc(c)+'</span>'}).join("")+'</div>':'')+
+      (rt?'<h4 class="fh">Classification</h4><p class="fp">'+esc(f.age_rating)+'</p>':'')+
+      '<h4 class="fh">Showing at</h4><p class="fp">'+esc(cn.name)+', '+esc(cn.town)+'</p>'+
+      '<p class="fsrc">Synopsis, cast, poster &amp; trailer: <a href="'+esc(f.url)+'" target="_blank" rel="noopener">Ster-Kinekor</a> · updated '+esc((CIN&&CIN.fetched_at)||"")+'</p>'+
+    '</div>'}
+function openFilm(id,noPush){
+  var f=filmById(id);if(!f)return;var ov=$("filmOv");
+  ov.innerHTML='<div class="fsheet" role="dialog" aria-modal="true" aria-labelledby="filmTitle">'+filmHtml(f)+'</div>';
+  ov.hidden=false;ov.scrollTop=0;document.body.classList.add("modal-open");openFilm._open=String(id);
+  if(!noPush){try{history.pushState({film:String(id)},"",location.href);openFilm._pushed=true}catch(x){openFilm._pushed=false}}
+  setTimeout(function(){var c=ov.querySelector(".fclose");if(c)c.focus({preventScroll:true})},30)}
+function hideFilm(){var ov=$("filmOv");if(ov.hidden)return;ov.hidden=true;ov.innerHTML="";openFilm._open="";if($("evModal").hidden)document.body.classList.remove("modal-open")}
+function closeFilm(){if($("filmOv").hidden)return;if(openFilm._pushed&&history.state&&history.state.film){openFilm._pushed=false;history.back()}else hideFilm()}
+window.openFilm=openFilm;window.closeFilm=closeFilm;
+function bindFilm(){
+  var ov=$("filmOv");
+  ov.addEventListener("click",function(ev){if(ev.target.closest("[data-fclose]")||ev.target===ov)closeFilm()});
+  window.addEventListener("popstate",function(){if(!$("filmOv").hidden)hideFilm()});
+  document.addEventListener("keydown",function(ev){if(ev.key==="Escape"&&!$("filmOv").hidden){ev.stopImmediatePropagation();closeFilm()}},true);
+  var y0=null,dy=0,sh=null;
+  ov.addEventListener("touchstart",function(ev){sh=ov.querySelector(".fsheet");if(ov.scrollTop<=0&&ev.touches.length===1){y0=ev.touches[0].clientY;dy=0}else y0=null},{passive:true});
+  ov.addEventListener("touchmove",function(ev){if(y0==null||!sh)return;dy=ev.touches[0].clientY-y0;if(dy>0){sh.style.transition="none";sh.style.transform="translateY("+dy+"px)";sh.style.opacity=String(Math.max(.4,1-dy/600))}},{passive:true});
+  ov.addEventListener("touchend",function(){if(y0==null||!sh)return;sh.style.transition="";if(dy>110){sh.style.transform="translateY(100%)";setTimeout(closeFilm,180)}else{sh.style.transform="";sh.style.opacity=""}y0=null});
+}
 function loadCinema(){ /* fallback when data/cinema.js didn't load (old cache, blocked script): fetch the JSON once */
   if(CIN||loadCinema._busy)return;loadCinema._busy=true;
   fetch("data/cinema.json",{cache:"no-cache"}).then(function(r){return r.ok?r.json():null}).then(function(d){
@@ -467,6 +511,7 @@ function bind(){
     if(t.dataset.act)closeMenu();
   },true);
   $("view-cinema").addEventListener("click",function(ev){
+    var fi=ev.target.closest("[data-film]");if(fi){ev.preventDefault();openFilm(fi.dataset.film);return}
     if(ev.target.closest("#galToggle")){S.gal=!S.gal;render();return}
     var sm=ev.target.closest(".cinhead summary");if(sm)setTimeout(function(){renderCinema._open=sm.parentNode.open},0);
     if(ev.target.closest("#filmChip")){S.cat="film";S.view="list";render();toTop();requestAnimationFrame(toTop)}});
@@ -476,6 +521,7 @@ function bind(){
   var bar=$("bar");window.addEventListener("scroll",function(){bar.classList.toggle("stuck",bar.getBoundingClientRect().top<=0)},{passive:true});
   initFiltersToggle();
   initIntroToggle();
+  bindFilm();
 }
 bind();
 init(window.EVENTS||[]);

@@ -73,6 +73,30 @@ def trailer_page(mid):
     if not m: return ""
     return m.group(1) if m.group(1).startswith("http") else "https://www.youtube.com/watch?v=" + m.group(1)
 
+def details(mid):
+    """Ster-Kinekor's trailer modal (/trailer-page?movieId=) embeds the full film record (movieDetails):
+    overview, backdrop, director, cast, country, language, imdbId/tmdbId, trailer."""
+    import urllib.parse
+    t = req(f"{BASE}/trailer-page?movieId={mid}")
+    for m in re.finditer(r'decodeURIComponent\("([^"]+)"\)', t):
+        try: d = json.loads(urllib.parse.unquote(m.group(1)))
+        except Exception: continue
+        md = d.get("movieDetails") if isinstance(d, dict) else None
+        if isinstance(md, dict) and str(md.get("movieId")) == str(mid): return md
+    return {}
+
+def clean_text(h):
+    h = re.sub(r"<br\s*/?>|</p>", "\n", h or "", flags=re.I)
+    h = html.unescape(re.sub(r"<[^>]+>", " ", h)).replace("\xa0", " ")
+    paras = [re.sub(r"[ \t]+", " ", x).strip() for x in h.split("\n")]
+    return "\n\n".join(x for x in paras if x)
+
+def one_director(d):
+    """Ster-Kinekor's director field often mixes in other crew (e.g. 'Chris Castaldi, ..., Anthony Russo, Joe Russo').
+    Only keep it when it is a single name; otherwise omit rather than show the wrong person."""
+    names = [x.strip() for x in re.split(r",|;|/| & ", d or "") if x.strip()]
+    return names[0] if len(names) == 1 else ""
+
 def clean_trailer(u):
     u = (u or "").strip()
     if not re.match(r"https?://(www\.)?(youtube\.com|youtu\.be|m\.youtube\.com|vimeo\.com)/", u): return ""
@@ -95,16 +119,22 @@ def main():
             except Exception as e: p = {}; print("  film page failed", f["url"], e, file=sys.stderr)
             rel = ((m.get("releases") or {}).get(str(LOC_ID)) or {}).get("releaseDate") or m.get("releaseDate") or ""
             rel = rel[:10] or p.get("release", "")
-            tr = clean_trailer(m.get("trailer"))
-            if not tr:
-                try: tr = clean_trailer(trailer_page(f["id"])); time.sleep(0.3)
-                except Exception: tr = ""
-            genres = m.get("genres") or [s.strip() for s in p.get("genres", "").split(",") if s.strip()]
+            try: md = details(f["id"]); time.sleep(0.3)
+            except Exception as e: md = {}; print("  details failed", f["id"], e, file=sys.stderr)
+            tr = clean_trailer(m.get("trailer")) or clean_trailer(md.get("trailer"))
+            cast = [c.get("name", "").strip() for c in (m.get("cast") or md.get("cast") or []) if isinstance(c, dict) and c.get("name")]
+            bd = md.get("backdrop") or m.get("backdrop") or ""
+            if bd and "filmgrail.com" in bd: bd = bd.split("?")[0] + "?optimizer=image&width=1200"
+            genres = m.get("genres") or md.get("genres") or [s.strip() for s in p.get("genres", "").split(",") if s.strip()]
             films.append({"id": f["id"], "title": f["title"] or m.get("title", ""), "section": kind, "url": f["url"],
                           "poster": f["poster"] or m.get("poster", ""), "release_date": rel, "date_label": f["date_label"],
                           "age_rating": p.get("rating") or m.get("ratingName", ""), "age": m.get("ageRating") if (m.get("ageRating") or -1) > 0 else None,
                           "runtime": dur(m.get("runtime")) or p.get("duration", ""), "genres": genres,
-                          "bookable": bool(m) or f["buy"], "trailer": tr, "cinemas": [CINEMA["name"]]})
+                          "bookable": bool(m) or f["buy"], "trailer": tr,
+                          "backdrop": bd, "synopsis": clean_text(m.get("overview") or md.get("overview")),
+                          "director": one_director(m.get("director") or md.get("director")), "cast": cast[:10],
+                          "language": md.get("language") or m.get("language") or "", "country": md.get("country") or m.get("country") or "",
+                          "imdb_id": md.get("imdbId") or m.get("imdbId") or "", "tmdb_id": str(md.get("tmdbId") or m.get("tmdbId") or ""), "cinemas": [CINEMA["name"]]})
     films = [f for f in films if f["title"]]
     data = {"source": BASE, "source_note": "Ster-Kinekor website (sterkinekor.com), Garden Route Mall programme",
             "fetched_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"), "fetched_date": today, "cinema": CINEMA,
