@@ -64,6 +64,20 @@ def page(url):
     return {"rating": g(r"\bRating (.+?) Release date"), "release": "-".join(reversed(rd.split("/"))) if rd else "",
             "duration": g(r"Duration (\d+h(?: \d+m)?|\d+m)"), "genres": g(r"Genres ([a-z ,\-]+?) (?:please|Director|Actors|OVERVIEW|Showtimes|Select)")}
 
+def trailer_page(mid):
+    """Ster-Kinekor's own trailer modal (/trailer-page?movieId=) embeds the film's trailer URL."""
+    t = req(f"{BASE}/trailer-page?movieId={mid}")
+    import urllib.parse
+    u = urllib.parse.unquote(t)
+    m = re.search(r'"trailer"\s*:\s*"(https?://[^"]+)"', u) or re.search(r'youtube\.com/embed/([A-Za-z0-9_-]{11})', u)
+    if not m: return ""
+    return m.group(1) if m.group(1).startswith("http") else "https://www.youtube.com/watch?v=" + m.group(1)
+
+def clean_trailer(u):
+    u = (u or "").strip()
+    if not re.match(r"https?://(www\.)?(youtube\.com|youtu\.be|m\.youtube\.com|vimeo\.com)/", u): return ""
+    return re.sub(r"[?&]si=[^&]*$", "", u)
+
 def dur(mins):
     if not mins or mins <= 0: return ""
     return f"{mins//60}h {mins%60:02d}m" if mins >= 60 else f"{mins}m"
@@ -81,12 +95,16 @@ def main():
             except Exception as e: p = {}; print("  film page failed", f["url"], e, file=sys.stderr)
             rel = ((m.get("releases") or {}).get(str(LOC_ID)) or {}).get("releaseDate") or m.get("releaseDate") or ""
             rel = rel[:10] or p.get("release", "")
+            tr = clean_trailer(m.get("trailer"))
+            if not tr:
+                try: tr = clean_trailer(trailer_page(f["id"])); time.sleep(0.3)
+                except Exception: tr = ""
             genres = m.get("genres") or [s.strip() for s in p.get("genres", "").split(",") if s.strip()]
             films.append({"id": f["id"], "title": f["title"] or m.get("title", ""), "section": kind, "url": f["url"],
                           "poster": f["poster"] or m.get("poster", ""), "release_date": rel, "date_label": f["date_label"],
                           "age_rating": p.get("rating") or m.get("ratingName", ""), "age": m.get("ageRating") if (m.get("ageRating") or -1) > 0 else None,
                           "runtime": dur(m.get("runtime")) or p.get("duration", ""), "genres": genres,
-                          "bookable": bool(m) or f["buy"], "cinemas": [CINEMA["name"]]})
+                          "bookable": bool(m) or f["buy"], "trailer": tr, "cinemas": [CINEMA["name"]]})
     films = [f for f in films if f["title"]]
     data = {"source": BASE, "source_note": "Ster-Kinekor website (sterkinekor.com), Garden Route Mall programme",
             "fetched_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"), "fetched_date": today, "cinema": CINEMA,

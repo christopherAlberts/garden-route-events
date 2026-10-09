@@ -1,7 +1,7 @@
 {
  "source": "https://www.sterkinekor.com",
  "source_note": "Ster-Kinekor website (sterkinekor.com), Garden Route Mall programme",
- "fetched_at": "2026-10-09 14:53",
+ "fetched_at": "2026-10-09 15:03",
  "fetched_date": "2026-10-09",
  "cinema": {
   "name": "Ster-Kinekor Garden Route Mall",
@@ -27,6 +27,7 @@
     "superhero"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/PWuRsUipf3I",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -46,6 +47,7 @@
     "comedy"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/wj79_VvbqPg",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -65,6 +67,7 @@
     "adventure"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/ZGYMYUzVPvA",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -84,6 +87,7 @@
     "animation"
    ],
    "bookable": true,
+   "trailer": "https://www.youtube.com/watch?v=sd_GNoYxgEA",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -103,6 +107,7 @@
     "adventure"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/ooQ30VtmPAM",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -122,6 +127,7 @@
     "thriller"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/yGjQw-hXkuI",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -141,6 +147,7 @@
     "drama"
    ],
    "bookable": true,
+   "trailer": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -160,6 +167,7 @@
     "horror"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/uYmnlsoICdg",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -179,6 +187,7 @@
     "family"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/xi1IbfNh8k8",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -198,6 +207,7 @@
     "superhero"
    ],
    "bookable": true,
+   "trailer": "https://www.youtube.com/watch?v=LEjRTHDo0wQ",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -217,6 +227,7 @@
     "drama"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/bVm3wx8LVzY",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -236,6 +247,7 @@
     "thriller"
    ],
    "bookable": true,
+   "trailer": "https://www.youtube.com/watch?v=Z_KAGVnFmmw",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -257,6 +269,7 @@
     "opera"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/BEGgmm3v0tM",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -276,6 +289,7 @@
     "romance"
    ],
    "bookable": false,
+   "trailer": "https://youtu.be/np_wMPOT-So",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -297,6 +311,7 @@
     "fantasy"
    ],
    "bookable": false,
+   "trailer": "https://youtu.be/DLsC13Hd88g",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -317,6 +332,7 @@
     "sci fi"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/HPKdMrt1qA0",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -339,6 +355,7 @@
     "fantasy"
    ],
    "bookable": false,
+   "trailer": "https://www.youtube.com/watch?v=04V07p8EYVo",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -358,6 +375,7 @@
     "drama"
    ],
    "bookable": false,
+   "trailer": "https://youtu.be/P4SLxVGQmyA",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -380,6 +398,7 @@
     "drama"
    ],
    "bookable": false,
+   "trailer": "https://www.youtube.com/watch?v=6ffR0oyh6YE",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -399,6 +418,7 @@
     "opera"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/BEGgmm3v0tM",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -420,6 +440,7 @@
     "action"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/g7sgTJIWW5U",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -440,6 +461,7 @@
     "crime"
    ],
    "bookable": false,
+   "trailer": "https://youtu.be/h5oCPsJGSnY",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -459,6 +481,7 @@
     "action"
    ],
    "bookable": false,
+   "trailer": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -478,6 +501,7 @@
     "drama"
    ],
    "bookable": false,
+   "trailer": "https://youtu.be/tsGVioxq10c",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -498,6 +522,7 @@
     "romance"
    ],
    "bookable": false,
+   "trailer": "https://www.youtube.com/watch?v=mPv5-BL06fI",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -520,6 +545,7 @@
     "fantasy"
    ],
    "bookable": false,
+   "trailer": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -541,6 +567,7 @@
     "thriller"
    ],
    "bookable": false,
+   "trailer": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -560,6 +587,7 @@
     "concert"
    ],
    "bookable": true,
+   "trailer": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -579,6 +607,7 @@
     "opera"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/BEGgmm3v0tM",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -600,6 +629,7 @@
     "adventure"
    ],
    "bookable": true,
+   "trailer": "https://www.youtube.com/watch?v=M2HRdntayTA",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -621,6 +651,7 @@
     "sci fi"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/5rQZ5fWNNEY",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -640,6 +671,7 @@
     "ballet"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/7cBEtpbOf7U",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -659,6 +691,7 @@
     "opera"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/BEGgmm3v0tM",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -678,6 +711,7 @@
     "ballet"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/7cBEtpbOf7U",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -697,6 +731,7 @@
     "opera"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/BEGgmm3v0tM",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -716,6 +751,7 @@
     "opera"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/BEGgmm3v0tM",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -735,6 +771,7 @@
     "ballet"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/7cBEtpbOf7U",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -754,6 +791,7 @@
     "opera"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/BEGgmm3v0tM",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -773,6 +811,7 @@
     "ballet"
    ],
    "bookable": true,
+   "trailer": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -792,6 +831,7 @@
     "opera"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/BEGgmm3v0tM",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -811,6 +851,7 @@
     "opera"
    ],
    "bookable": true,
+   "trailer": "https://youtu.be/BEGgmm3v0tM",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]

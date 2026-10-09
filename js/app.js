@@ -306,6 +306,7 @@ function restSection(R,label){
   return '<div class="sec"><h2>'+label+'</h2><span class="pill">'+R.length+'</span></div><p class="rintro">Specials, live music and recurring nights from each venue\u2019s own site and local listings (checked '+esc(R[0].last_checked)+'). Things change, so call ahead.</p><div class="grid rgrid">'+R.map(rcard).join("")+'</div>'}
 /* ---------- Cinema tab: Ster-Kinekor Garden Route Mall (George) from data/cinema.js + outdoor screenings from the events data ---------- */
 var CIN=window.CINEMA||null;
+var PLAY='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
 var REEL='<svg viewBox="0 0 24 24"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V4z"/></svg>';
 function relTxt(f){return f.release_date?fmt(pd(f.release_date),true):(f.date_label||"")}
 function mmeta(f){return [f.age_rating,f.runtime,(f.genres||[]).join(", ")].filter(Boolean).map(esc).join(" · ")}
@@ -320,7 +321,7 @@ function mcard(f,soonTag){
       '<div class="when">'+(f.section==="soon"||soonTag?"Opens "+esc(relTxt(f)):(f.release_date&&f.release_date>TODAY?"Opens "+esc(relTxt(f)):"Showing now"))+'</div>'+
       (mmeta(f)?'<div class="mmeta">'+mmeta(f)+'</div>':'')+
       (soonTag?'<div class="where">'+PIN+'<span>'+esc((f.cinemas&&f.cinemas[0])||cn.name)+', '+esc(cn.town)+'</span></div>':'')+
-      '<div class="foot"><a class="btn" href="'+L+'" target="_blank" rel="noopener">'+(f.bookable?"Tickets":"Film page")+ARROW+'</a>'+(soonTag?'<a class="src" href="'+L+'" target="_blank" rel="noopener" title="Source: Ster-Kinekor">via Ster-Kinekor</a>':'')+'</div>'+
+      '<div class="foot"><a class="btn" href="'+L+'" target="_blank" rel="noopener">'+(f.bookable?"Tickets":"Film page")+ARROW+'</a>'+(f.trailer?'<a class="btn trailerbtn" href="'+esc(f.trailer)+'" target="_blank" rel="noopener" aria-label="Trailer: '+esc(f.title)+'">'+PLAY+'Trailer</a>':'')+(soonTag?'<a class="src" href="'+L+'" target="_blank" rel="noopener" title="Source: Ster-Kinekor">via Ster-Kinekor</a>':'')+'</div>'+
     '</div></article>'}
 function soonMovies(lim){ /* new releases opening at SK George inside the happening-soon window (List view only) */
   if(!CIN||(S.cat&&S.cat!=="film")||S.nye||S.xmas)return [];
@@ -344,8 +345,9 @@ function renderCinema2(){
   var showW=S.scope==="all"||S.gal,odL=(showW?odGR.concat(odW):odGR).sort(function(a,b){return (b.garden_route-a.garden_route)||nextDate(a).localeCompare(nextDate(b))||a.title.localeCompare(b.title)});
   $("count").textContent=now.length+" now showing · "+cs.length+" coming soon · "+odL.length+" outdoor screening"+(odL.length===1?"":"s");
   if(CIN&&CIN.cinema){var c=CIN.cinema;
-    h+='<div class="cinhead"><div class="cinlogo">'+REEL+'</div><div><h2>'+esc(c.name)+'</h2><p>'+esc(c.address)+(c.phone?' · <a href="tel:'+esc(c.phone.replace(/[^+\d]/g,""))+'">'+esc(c.phone)+'</a>':'')+'</p>'+
-      '<p class="cinupd">Programme from <a href="'+esc(c.url)+'" target="_blank" rel="noopener">sterkinekor.com</a> · last updated '+esc(CIN.fetched_at||"")+'. Showtimes change daily, so check times and book on Ster-Kinekor.</p></div></div>'}
+    h+='<details class="cinhead"'+(renderCinema._open?' open':'')+'><summary><span class="cinlogo">'+REEL+'</span><span class="cinname">'+esc(c.name)+'<span class="cintown">, '+esc(c.town||"George")+'</span></span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></summary>'+
+      '<div class="cinmore"><p>'+esc(c.address)+(c.phone?' · <a href="tel:'+esc(c.phone.replace(/[^+\d]/g,""))+'">'+esc(c.phone)+'</a>':'')+'</p>'+
+      '<p class="cinupd">Programme from <a href="'+esc(c.url)+'" target="_blank" rel="noopener">sterkinekor.com</a> · last updated '+esc(CIN.fetched_at||"")+'. Showtimes change daily, so check times and book on Ster-Kinekor.</p></div></details>'}
   else h+='<div class="empty cinempty"><b>'+(loadCinema._failed?'Cinema listings unavailable':'Loading Ster-Kinekor listings\u2026')+'</b>'+(loadCinema._failed?'Couldn\u2019t load the Ster-Kinekor programme. ':'')+'<a href="https://www.sterkinekor.com/cinemas/garden-route" target="_blank" rel="noopener">See it on sterkinekor.com →</a> Outdoor screenings are below.</div>';
   if(CIN){
     h+='<div class="sec"><h2>Now showing</h2><span class="pill">'+now.length+' · Ster-Kinekor George</span></div>'+(now.length?'<div class="grid mgrid">'+now.map(function(f){return mcard(f)}).join("")+'</div>':'<p class="rintro">No films listed right now.</p>');
@@ -466,6 +468,7 @@ function bind(){
   },true);
   $("view-cinema").addEventListener("click",function(ev){
     if(ev.target.closest("#galToggle")){S.gal=!S.gal;render();return}
+    var sm=ev.target.closest(".cinhead summary");if(sm)setTimeout(function(){renderCinema._open=sm.parentNode.open},0);
     if(ev.target.closest("#filmChip")){S.cat="film";S.view="list";render();toTop();requestAnimationFrame(toTop)}});
   document.addEventListener("keydown",function(ev){if(ev.key==="Escape"){if(!$("shareMenu").hidden)closeMenu();else closeEvent()}});
   window.addEventListener("resize",function(){var m=$("shareMenu");if(!m.hidden&&window.innerWidth!==(closeMenu._w||0))closeMenu();closeMenu._w=window.innerWidth});closeMenu._w=window.innerWidth;window.addEventListener("scroll",function(){var m=$("shareMenu");if(!m.hidden&&Math.abs(window.scrollY-(m._y||0))>40)closeMenu()},{passive:true});
