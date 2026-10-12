@@ -1,44 +1,56 @@
 {
+ "2026-10-20-schalk-bezuidenhout-hey-hey-divorce-at-simola-stan": [
+  [
+   "sold out",
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/375253-hey-hey-divorce-schalk-bezuidenhout-knysna/"
+  ]
+ ],
+ "2026-12-19-meerkat-petra": [
+  [
+   "cancelled",
+   "page text: 'This event has been cancelled' @ https://itickets.co.za/events/486591"
+  ]
+ ],
  "2027-01-30-two-lagoons-30-km-10-km": [
   [
    "sold out",
    "all ticket types SoldOut (schema) @ https://runningcalendar.co.za/events/two-lagoons/2026"
   ]
  ],
- "2026-10-09-steve-hofmeyr-heroes-live": [
+ "2027-05-28-mut-mountain-ultra-trail-by-utmb-163-98-58-44-25-1": [
   [
    "sold out",
-   "page text: 'This event is sold-out' @ https://itickets.co.za/events/486126"
+   "title/notes"
   ]
  ],
  "2026-10-24-st-francis-bubbles-festival-2026": [
   [
    "sold out",
-   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/376623-st-francis-bubbles-festival-2026/"
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/376623-st-francis-bubbles-festival-2026/#tickets"
   ],
   [
    "sold out",
-   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/376623-st-francis-bubbles-festival-2026/#tickets"
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/376623-st-francis-bubbles-festival-2026/"
   ]
  ],
  "2026-10-30-h-ours": [
   [
    "sold out",
-   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/386575-hours/#tickets"
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/386575-hours/"
   ],
   [
    "sold out",
-   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/386575-hours/"
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/386575-hours/#tickets"
   ]
  ],
  "2026-10-31-boon-presents-good-feeling": [
   [
    "sold out",
-   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/387605-boon-presents-good-feeling/"
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/387605-boon-presents-good-feeling/#tickets"
   ],
   [
    "sold out",
-   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/387605-boon-presents-good-feeling/#tickets"
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/387605-boon-presents-good-feeling/"
   ]
  ],
  "2026-11-07-sportsmans-warehouse-winelands-marathon-42-2-21-1-": [
@@ -53,6 +65,12 @@
   [
    "sold out",
    "page text: 'This event is sold out' @ https://runningcalendar.co.za/events/winelands-marathon/2026"
+  ]
+ ],
+ "2027-02-11-up-the-creek-music-festival-2027": [
+  [
+   "sold out",
+   "title/notes"
   ]
  ]
 }

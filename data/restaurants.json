@@ -45,8 +45,6 @@
   "geo_source": "nominatim",
   "region": "Garden Route",
   "occurrences": [
-   "2026-10-08",
-   "2026-10-09",
    "2026-10-13",
    "2026-10-14",
    "2026-10-15",
@@ -150,11 +148,10 @@
    "2027-04-06",
    "2027-04-07",
    "2027-04-08",
-   "2027-04-09"
+   "2027-04-09",
+   "2027-04-13"
   ],
   "day_labels": {
-   "2026-10-08": "Pizza special R120",
-   "2026-10-09": "Kids' pottery painting 30% off",
    "2026-10-13": "Taco Tuesday",
    "2026-10-14": "Burger special",
    "2026-10-15": "Pizza special R120",
@@ -258,7 +255,8 @@
    "2027-04-06": "Taco Tuesday",
    "2027-04-07": "Burger special",
    "2027-04-08": "Pizza special R120",
-   "2027-04-09": "Kids' pottery painting 30% off"
+   "2027-04-09": "Kids' pottery painting 30% off",
+   "2027-04-13": "Taco Tuesday"
   },
   "recurrence": "Tue: Taco Tuesday; Wed: Burger special; Thu: Pizza special R120; Fri: Kids' pottery painting 30% off"
  },
@@ -308,8 +306,6 @@
   "geo_source": "nominatim",
   "region": "Garden Route",
   "occurrences": [
-   "2026-10-08",
-   "2026-10-09",
    "2026-10-12",
    "2026-10-13",
    "2026-10-14",
@@ -439,11 +435,11 @@
    "2027-04-06",
    "2027-04-07",
    "2027-04-08",
-   "2027-04-09"
+   "2027-04-09",
+   "2027-04-12",
+   "2027-04-13"
   ],
   "day_labels": {
-   "2026-10-08": "Happy hour 16:00-18:00",
-   "2026-10-09": "Happy hour 16:00-18:00",
    "2026-10-12": "Happy hour 16:00-18:00",
    "2026-10-13": "Happy hour 16:00-18:00 · Pizza Tuesday",
    "2026-10-14": "Happy hour 16:00-18:00",
@@ -573,7 +569,9 @@
    "2027-04-06": "Happy hour 16:00-18:00 · Pizza Tuesday",
    "2027-04-07": "Happy hour 16:00-18:00",
    "2027-04-08": "Happy hour 16:00-18:00",
-   "2027-04-09": "Happy hour 16:00-18:00"
+   "2027-04-09": "Happy hour 16:00-18:00",
+   "2027-04-12": "Happy hour 16:00-18:00",
+   "2027-04-13": "Happy hour 16:00-18:00 · Pizza Tuesday"
   },
   "recurrence": "Mon/Tue/Wed/Thu/Fri: Happy hour 16:00-18:00; Tue: Pizza Tuesday"
  },
@@ -622,7 +620,6 @@
   "geo_source": "nominatim",
   "region": "Garden Route",
   "occurrences": [
-   "2026-10-08",
    "2026-10-12",
    "2026-10-13",
    "2026-10-14",
@@ -726,10 +723,11 @@
    "2027-04-05",
    "2027-04-06",
    "2027-04-07",
-   "2027-04-08"
+   "2027-04-08",
+   "2027-04-12",
+   "2027-04-13"
   ],
   "day_labels": {
-   "2026-10-08": "Debriefing specials 13:00-17:00 · Quiz night 19:00",
    "2026-10-12": "Debriefing specials 13:00-17:00",
    "2026-10-13": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00",
    "2026-10-14": "Debriefing specials 13:00-17:00",
@@ -833,7 +831,9 @@
    "2027-04-05": "Debriefing specials 13:00-17:00",
    "2027-04-06": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00",
    "2027-04-07": "Debriefing specials 13:00-17:00",
-   "2027-04-08": "Debriefing specials 13:00-17:00 · Quiz night 19:00"
+   "2027-04-08": "Debriefing specials 13:00-17:00 · Quiz night 19:00",
+   "2027-04-12": "Debriefing specials 13:00-17:00",
+   "2027-04-13": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00"
   },
   "recurrence": "Mon/Tue/Wed/Thu: Debriefing specials 13:00-17:00; Tue: Noot vir Noot 19:00; Thu: Quiz night 19:00"
  },
@@ -1093,9 +1093,7 @@
   "last_checked": "2026-10-06",
   "image": "images/r-cornerstone-creek-hoekwil.webp",
   "image_source": "https://static.wixstatic.com/media/661dca_572f212aba0a4edca518d7f38c57df02~mv2.jpeg",
-  "event_ids": [
-   "2026-10-09-date-night-at-cornerstone-creek"
-  ],
+  "event_ids": [],
   "lat": -33.9727796,
   "lng": 22.6178534,
   "geo_source": "town centroid",

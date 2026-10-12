@@ -115,20 +115,21 @@ add(title="Garden Route Festive Gift Market (Hartenbos)",category="market",start
     town="Hartenbos",venue="Garden Route Gift Market",venue_address="Cnr Onderbos & Witteboom Streets, Hartenbos",
     price_from="",ticket_url="",source_url=MB+"garden-route-festive-market/",source_name="Visit Mossel Bay (tourism calendar)",
     notes="Holiday gift market for local products and brands during the December season.")
-add(title="Mossel Bay Street Market (December night market)",category="market",start_date="2026-12-16",time="",town="Mossel Bay",
-    venue="Marsh Street",venue_address="Marsh Street, Mossel Bay",price_from="",ticket_url="",source_url=OEV,source_name="Mossel Bay festive markets (stall application, oev.co.za)",
-    notes="One of the municipal December night markets. Trading times not published on the source.")
-add(title="Hartenbos Night Market 1",category="market",start_date="2026-12-18",time="",town="Hartenbos",
-    venue="Joubert Park",venue_address="Joubert Park & Kaap de Goede Hoop Street, Hartenbos",price_from="",ticket_url="",source_url=OEV,source_name="Mossel Bay festive markets (stall application, oev.co.za)",
-    alt_sources=["https://www.oev.co.za/wp-content/uploads/AANDMARKTE-Besprekingsaansoek-DESEMBER-2026.pdf"],
-    notes="Hartenbos Aandmark: all of Joubert Park plus street stalls. Trading times not published on the source.")
+add(title="Mossel Bay Street Market (December night market)",category="market",start_date="2026-12-16",time="16:00-22:00",town="Mossel Bay",
+    venue="Marsh Street",venue_address="Marsh Street, Mossel Bay",price_from="",ticket_url="",source_url=MB+"marsh-street-night-market-2026/",source_name="Visit Mossel Bay (tourism calendar)",
+    alt_sources=[OEV],
+    notes="Annual Marsh Street night market; festive atmosphere with stalls. Visit Mossel Bay lists 16:00-22:00.")
+add(title="Hartenbos Night Market 1",category="market",start_date="2026-12-18",time="16:00-22:00",town="Hartenbos",
+    venue="Onderbos Street / Joubert Park",venue_address="Onderbos Street & Joubert Park, Hartenbos",price_from="",ticket_url="",source_url=MB+"hartenbos-night-market-2026/",source_name="Visit Mossel Bay (tourism calendar)",
+    alt_sources=[OEV,"https://www.oev.co.za/wp-content/uploads/AANDMARKTE-Besprekingsaansoek-DESEMBER-2026.pdf"],
+    notes="Hartenbos Aandmark night market. Visit Mossel Bay lists Onderbos Street, 16:00-22:00.")
 add(title="The Goods Shed December Market",category="market",start_date="2026-12-19",time="",town="Mossel Bay",
     venue="The Goods Shed",venue_address="",price_from="",ticket_url="",source_url=OEV,source_name="Mossel Bay festive markets (stall application, oev.co.za)",
     notes="Listed with the December night markets. Trading times not published on the source.")
-add(title="Hartenbos Night Market 2",category="market",start_date="2026-12-23",time="",town="Hartenbos",
-    venue="Joubert Park",venue_address="Joubert Park & Kaap de Goede Hoop Street, Hartenbos",price_from="",ticket_url="",source_url=OEV,source_name="Mossel Bay festive markets (stall application, oev.co.za)",
-    alt_sources=["https://www.oev.co.za/wp-content/uploads/AANDMARKTE-Besprekingsaansoek-DESEMBER-2026.pdf"],
-    notes="Hartenbos Aandmark: all of Joubert Park plus street stalls. Trading times not published on the source.")
+add(title="Hartenbos Night Market 2",category="market",start_date="2026-12-23",time="16:00-22:00",town="Hartenbos",
+    venue="Onderbos Street / Joubert Park",venue_address="Onderbos Street & Joubert Park, Hartenbos",price_from="",ticket_url="",source_url=MB+"hartenbos-night-market-2/",source_name="Visit Mossel Bay (tourism calendar)",
+    alt_sources=[OEV,"https://www.oev.co.za/wp-content/uploads/AANDMARKTE-Besprekingsaansoek-DESEMBER-2026.pdf"],
+    notes="Second Hartenbos Aandmark night market. Visit Mossel Bay lists 16:00-22:00.")
 occ=_dates("2026-12-12","2027-01-02",[0,1,2,3,4,5],skip=("2026-12-25",))
 add(title="Let's Love Local Gift Market at Redberry Farm",category="market",start_date="2026-12-12",end_date="2027-01-02",occurrences=occ,
     recurrence="Mon-Sat 09:00-16:00, 12 Dec 2026 - 2 Jan 2027 (closed Sundays & Christmas Day)",time="09:00-16:00",
@@ -538,7 +539,7 @@ add(title="George Festival 2026 (sport, culture & music)",category="festival",st
     lat=-33.963,lng=22.4617,geo_source="town centroid (multiple venues)",_img="https://cms.groupeditors.com/img/2026/Aug/7ef5396d-7ede-4bad-9787-f398172de717.JPG")
 
 # ---- Christmas 2026 (carols / Christmas concerts) ----
-add(title="Die Heilige Nag – Petronel Baard & Mathys Roets Christmas concert",category="concert",start_date="2026-12-22",time="19:00-21:00",town="Hartenbos",
+add(title="Die Heilige Nag – Petronel Baard & Mathys Roets Christmas concert",category="concert",start_date="2026-12-21",time="19:00-21:00",town="Hartenbos",
     venue="NG Gemeente Hartenbos",venue_address="4 Majuba Avenue, Hartenbos",price_from="R200",
     ticket_url="https://www.quicket.co.za/events/392041-die-heilige-nag/",source_url="https://www.quicket.co.za/events/392041-die-heilige-nag/",source_name="Quicket",
     notes="One-night Christmas show: Petronel Baard and her orchestra with singer Mathys Roets, Christmas favourites on violin, percussion, guitars, cello and piano, plus Christmas stories. Tickets from R200 via Quicket or the church office 044 695 0440; WhatsApp Petronel 082 737 8416.",
@@ -952,3 +953,100 @@ add(title="C2C Harvest Ultra (multi-lap trail run, 6.7 km laps)",category="funru
     venue="Cornerstone Lifestyle Centre",venue_address="The Cornerstone Lifestyle Centre, R404, Blanco, George",price_from="",ticket_url="https://racetoken.co.za/event_view.php?event_id=28",
     source_url="https://georgetrails.org.za/event/c2c-harvest-ultra/",source_name="George Trails",
     notes="Last-one-standing format on a 6.7 km loop, with a new lap starting every hour from 15:00. Pick 1 lap (Seed Dash), 3 (Sprout Challenge), 6 (Reap Quest) or 8 (Harvest Grind). Kids' 800 m Future Farmers Sprint at 20:00. Organised by Crank To Crown Cycles. The RaceToken entry page still said 'coming soon' on 8 Oct, so check there for entries and prices.")
+
+# ---------------- Weekly refresh 12 Oct 2026 (Quicket / Howler / Visit Mossel Bay / toodoo) ----------------
+add(title="An Evening With the Winemaker (Philip Jonker / Weltevrede)",category="restaurant",start_date="2026-10-15",time="18:00-22:00",town="Mossel Bay",
+    venue="Market Café",venue_address="8 Market Street, Mossel Bay",price_from="R750",ticket_url="",
+    source_url=MB+"an-evening-with-the-winemaker/",source_name="Visit Mossel Bay (tourism calendar)",
+    notes="Philip Jonker (Weltevrede cellar master) hosts fine wine and a four-course dinner at Market Café. Limited to 20 seats; payment on reservation. Call 076 326 0963.")
+add(title="Xtreme AutoFest 2026 (stance car festival)",category="sport",start_date="2026-10-24",time="10:00-22:00",town="Mossel Bay",
+    venue="De Bakke",venue_address="De Bakke, Mossel Bay",price_from="R140",
+    ticket_url="https://www.quicket.co.za/events/375143-xtreme-autofest-2026/",source_url="https://www.quicket.co.za/events/375143-xtreme-autofest-2026/",source_name="Quicket",
+    notes="Annual stance festival by Xtreme Racing Crew: East vs West showcase of modified cars. From R140.",
+    lat=-34.1748047,lng=22.1328487,geo_source="event page",_img="https://images.quicket.co.za/0920497_0.jpeg")
+add(title="Move 4 a Cause – I Love Boobies charity wellness day",category="community",start_date="2026-10-24",time="08:00-13:00",town="George",
+    venue="27 York Street",venue_address="27 York Street, Dormehls Drift, George",price_from="R50",
+    ticket_url="https://www.quicket.co.za/events/396939-move-4-a-cause-fundraiser-for-i-love-boobies-charity-charity/",source_url="https://www.quicket.co.za/events/396939-move-4-a-cause-fundraiser-for-i-love-boobies-charity-charity/",source_name="Quicket",
+    notes="Family fitness and wellness fundraiser for I Love Boobies Charity. Ticket types from about R50 (kids) to R280 on Quicket.",
+    lat=-33.9677,lng=22.44818,geo_source="event page",_img="https://images.quicket.co.za/0995763_0.jpeg")
+add(title="Zync: Halloween Edition (House & Amapiano)",category="concert",start_date="2026-10-30",time="19:00-23:00",town="George",
+    venue="George Civic Centre",venue_address="71 York Street, George",price_from="R60",
+    ticket_url="https://www.quicket.co.za/events/399385-zync/",source_url="https://www.quicket.co.za/events/399385-zync/",source_name="Quicket",
+    notes="Halloween house and amapiano night at the Civic Centre. Quicket prices from about R60.",
+    lat=-33.9610329,lng=22.4541473,geo_source="event page",_img="https://images.quicket.co.za/0993628_0.png")
+add(title="Gerty Vertel (stand-up comedy)",category="arts",start_date="2026-10-31",time="19:00-22:00",town="Mossel Bay",
+    venue="Bahia Bleu, Diaz Hotel",venue_address="1 Beach East Boulevard, Die Voor Bay, Mossel Bay",price_from="",
+    ticket_url="https://www.quicket.co.za/events/389223-gerty-vertel-toer/",source_url="https://www.quicket.co.za/events/389223-gerty-vertel-toer/",source_name="Quicket",
+    alt_sources=[MB+"gerty-vertel/"],
+    notes="One-night Afrikaans stand-up comedy at Bahia Bleu. Food and drinks at the restaurant; table bookings via Malinda 072 878 6265.",
+    lat=-34.15923,lng=22.1093616,geo_source="event page",_img="https://images.quicket.co.za/0971660_0.png")
+add(title="Beach Volleyball Classic S2 (Plett)",category="sport",start_date="2026-11-01",time="08:30-16:30",town="Plettenberg Bay",
+    venue="Central Beach",venue_address="Central Beach, Plettenberg Bay",price_from="",
+    ticket_url="https://www.quicket.co.za/events/401838-beach-volleyball-classic-s2/",source_url="https://www.quicket.co.za/events/401838-beach-volleyball-classic-s2/",source_name="Quicket",
+    notes="Plett Volleyball Club (Flaming Gogos) beach volleyball classic on Central Beach.",
+    lat=-34.0594368,lng=23.3782825,geo_source="event page")
+add(title="The Little Mermaid – Tracy-Ann's School of Ballet (10th anniversary)",category="arts",start_date="2026-11-05",time="18:30-20:30",town="Plettenberg Bay",
+    venue="NG Church Hall, Marine Way",venue_address="Marine Way, Plettenberg Bay",price_from="R60",
+    ticket_url="https://www.quicket.co.za/events/399196-the-little-mermaid/",source_url="https://www.quicket.co.za/events/399196-the-little-mermaid/",source_name="Quicket",
+    notes="Tracy-Ann's School of Ballet 10th-anniversary production. Tickets from about R60 (scholars) / R100 (adults) on Quicket.",
+    lat=-34.0516052,lng=23.3617344,geo_source="event page",_img="https://images.quicket.co.za/0993003_0.jpeg")
+add(title="A Night of Comedy with Alan Committie – Plett",category="arts",start_date="2026-11-06",time="19:00-20:40",town="Plettenberg Bay",
+    venue="The White House Theatre",venue_address="6 Crescent Street, Plettenberg Bay",price_from="R250",
+    ticket_url="https://www.quicket.co.za/events/390260-a-night-of-comedy-with-alan-committie-plett/",source_url="https://www.quicket.co.za/events/390260-a-night-of-comedy-with-alan-committie-plett/",source_name="Quicket",
+    notes="Alan Committie's new stand-up show for one night in Plett (separate from the Knysna date). From R250.",
+    lat=-34.0545731,lng=23.3712749,geo_source="event page",_img="https://images.quicket.co.za/0965001_0.png")
+add(title="INSPIRED – UDS dance showcase",category="arts",start_date="2026-11-06",time="18:00-20:00",town="Knysna",
+    venue="Knysna Primary",venue_address="7 Long Street, Knysna",price_from="R120",
+    ticket_url="https://www.quicket.co.za/events/383515-inspired/",source_url="https://www.quicket.co.za/events/383515-inspired/",source_name="Quicket",
+    notes="Dance showcase by UDS dancers. From R120.",
+    lat=-34.038475,lng=23.04872,geo_source="event page")
+add(title="Grootbrakstories (evening stories & music)",category="arts",start_date="2026-11-07",time="18:00-20:00",town="Groot Brak",
+    venue="NG Kerk Groot-Brakrivier (kerksaal)",venue_address="Langstraat, Bergsig, Groot Brak",price_from="",
+    ticket_url="https://www.quicket.co.za/events/334605-grootbrakstories/",source_url="https://www.quicket.co.za/events/334605-grootbrakstories/",source_name="Quicket",
+    alt_sources=[MB+"grootbrak-boekeblaf-groot-brak-stories/"],
+    notes="Evening of contrast stories and original music with Daniël Lötter, Sidney Gilroy and poet Lluyle Arendse, following the daytime Grootbrak Boekeblaf.",
+    lat=-34.04631,lng=22.2167,geo_source="event page",_img="https://images.quicket.co.za/0984711_0.png")
+add(title="Mermaid Ball 2026",category="community",start_date="2026-11-13",time="18:00",town="Plettenberg Bay",
+    venue="The Lookout",venue_address="Hill Street, Lookout Beach, Plettenberg Bay",price_from="R500",
+    ticket_url="https://www.quicket.co.za/events/396024-mermaid-ball-2026/",source_url="https://www.quicket.co.za/events/396024-mermaid-ball-2026/",source_name="Quicket",
+    notes="Ocean-themed charity ball at The Lookout. From about R500 on Quicket.",
+    lat=-34.05186,lng=23.377409,geo_source="event page",_img="https://images.quicket.co.za/0982287_0.jpeg")
+add(title="OUTENIQUA 2026 – Coffee & Cars SA at Hartenbos seafront",category="sport",start_date="2026-11-14",time="10:00-16:00",town="Hartenbos",
+    venue="Hartenbos Seafront (ATKV Hartenbos)",venue_address="Hartenbos Seafront / ATKV Hartenbos, Majuba Avenue, Hartenbos",price_from="R100",
+    ticket_url="https://app.theluckygarage.co.za/event?id=9",source_url="https://www.toodoo.co.za/outeniqua-2026-hartenbos/",source_name="toodoo",
+    alt_sources=[MB+"outeniqua-2026/"],
+    notes="Coffee & Cars SA automotive day: cars, motorcycles, food vendors, music and family entertainment by the sea. Hosted by ATKV-Hartenbos. Adult tickets R100 on toodoo / The Lucky Garage.")
+add(title="The Reef After Dark – Reef Playschool annual fundraiser",category="community",start_date="2026-11-14",time="18:30-23:00",town="Plettenberg Bay",
+    venue="Club Haus Plett",venue_address="Goose Valley Golf Estate, Plettenberg Bay",price_from="R450",
+    ticket_url="https://www.quicket.co.za/events/396051-the-reef-after-dark-reef-annual-fundraiser-2026/",source_url="https://www.quicket.co.za/events/396051-the-reef-after-dark-reef-annual-fundraiser-2026/",source_name="Quicket",
+    notes="The Reef Playschool's annual fundraiser evening (Making Waves Together). From R450.",
+    lat=-34.02621,lng=23.3811817,geo_source="event page",_img="https://images.quicket.co.za/0995471_0.jpeg")
+add(title="Bubbles, Burlesque & Brunch",category="arts",start_date="2026-11-14",time="11:00-14:00",town="George",
+    venue="Meade Café",venue_address="91 Meade Street, George",price_from="",
+    ticket_url="https://www.quicket.co.za/events/400721-bubbles-burlesque-brunch/",source_url="https://www.quicket.co.za/events/400721-bubbles-burlesque-brunch/",source_name="Quicket",
+    notes="BB Productions ZA brunch and burlesque show at Meade Café.",
+    lat=-33.9625168,lng=22.4576931,geo_source="event page",_img="https://images.quicket.co.za/0998014_0.png")
+add(title="George Sixes 2026 (multi-sport weekend)",category="sport",start_date="2026-11-27",end_date="2026-11-29",time="From 10:00",town="George",
+    venue="Venues across George",venue_address="George",price_from="R300",
+    ticket_url="https://sixes.howler.co.za/georgesixes26",source_url="https://sixes.howler.co.za/georgesixes26",source_name="Howler",
+    notes="Garden Route leg of the Sixes Festival: cricket, golf, padel and hockey across George. Team entries from about R300; entries close 26 Nov 2026.")
+add(title="Surfers Ball 2026",category="community",start_date="2026-12-04",time="17:30-23:30",town="Plettenberg Bay",
+    venue="Central Beach",venue_address="Central Beach, Plettenberg Bay",price_from="R200",
+    ticket_url="https://www.quicket.co.za/events/402227-surfers-ball-2026/",source_url="https://www.quicket.co.za/events/402227-surfers-ball-2026/",source_name="Quicket",
+    notes="Charity Surfers Ball on Central Beach: entertainment, food and music. From about R200.",
+    lat=-34.0594368,lng=23.3782825,geo_source="event page",_img="https://images.quicket.co.za/1002484_0.png")
+add(title="Summer Splash Party",category="concert",start_date="2026-12-19",time="14:00-23:00",town="George",
+    venue="Heidedal Primary School",venue_address="Borcherds, George",price_from="R100",
+    ticket_url="https://www.quicket.co.za/events/402295-summer-splash-party/",source_url="https://www.quicket.co.za/events/402295-summer-splash-party/",source_name="Quicket",
+    notes="EDS Entertainment DJ and content-creator day party (Chubby Zizza, MR Moody and Western Cape DJs). From about R100.",
+    lat=-33.9899178,lng=22.4699154,geo_source="event page",_img="https://images.quicket.co.za/1002796_0.png")
+add(title="NEON DREAMS & BYRNE live in Knysna (Dreaming Out Loud)",category="concert",start_date="2026-12-21",time="19:00-21:30",town="Knysna",
+    venue="Blend Country Restaurant & Pub",venue_address="George Rex Drive, Knysna",price_from="R160",
+    ticket_url="https://www.quicket.co.za/events/402210-neon-dreams-byrne-live-in-knysna/",source_url="https://www.quicket.co.za/events/402210-neon-dreams-byrne-live-in-knysna/",source_name="Quicket",
+    notes="Dreaming Out Loud festival night with Neon Dreams and Byrne. Quicket from about R160.",
+    lat=-34.0629959,lng=23.0711117,geo_source="event page",_img="https://images.quicket.co.za/1002421_0.jpeg")
+add(title="SummerDAZE",category="festival",start_date="2026-12-27",time="10:00",town="George",
+    venue="Pacaltsdorp Sportgronde",venue_address="66 Olympic Street, Pacaltsdorp, George",price_from="R150",
+    ticket_url="https://www.quicket.co.za/events/395651-summerdaze/",source_url="https://www.quicket.co.za/events/395651-summerdaze/",source_name="Quicket",
+    notes="DT Entertainment & Social Entertainment day of live hits and entertainment at Pacaltsdorp Sportgronde. From about R150.",
+    lat=-34.0125275,lng=22.44715,geo_source="event page",_img="https://images.quicket.co.za/0999066_0.jpeg")
