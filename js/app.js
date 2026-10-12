@@ -397,7 +397,7 @@ function renderCinema2(){
   var odGR=od.filter(function(e){return e.garden_route}),odW=od.filter(function(e){return !e.garden_route});
   var showW=S.scope==="all"||S.gal,odL=(showW?odGR.concat(odW):odGR).sort(function(a,b){return (b.garden_route-a.garden_route)||nextDate(a).localeCompare(nextDate(b))||a.title.localeCompare(b.title)});
   var sub=renderCinema.sub||(function(){try{return localStorage.getItem("gre-cinsub")}catch(e){return null}})()||"sk";if(sub!=="sk"&&sub!=="od")sub="sk";renderCinema.sub=sub;
-  h+='<div class="seg cinseg" role="tablist" aria-label="Cinema listings"><button type="button" role="tab" data-cinsub="sk" aria-selected="'+(sub==="sk")+'" class="'+(sub==="sk"?"on":"")+'">Ster-Kinekor</button><button type="button" role="tab" data-cinsub="od" aria-selected="'+(sub==="od")+'" class="'+(sub==="od"?"on":"")+'">Outdoor<span class="cinsubn"> '+odL.length+'</span></button></div>';
+  h+='<div class="seg cinseg" role="tablist" aria-label="Cinema listings"><button type="button" role="tab" data-cinsub="sk" aria-selected="'+(sub==="sk")+'" class="'+(sub==="sk"?"on":"")+'">Ster-Kinekor</button><button type="button" role="tab" data-cinsub="od" aria-selected="'+(sub==="od")+'" class="'+(sub==="od"?"on":"")+'">Outdoor</button></div>';
   $("count").textContent=now.length+" now showing · "+cs.length+" coming soon · "+odL.length+" outdoor screening"+(odL.length===1?"":"s");
   if(sub==="sk"){
   if(CIN&&CIN.cinema){var c=CIN.cinema;
