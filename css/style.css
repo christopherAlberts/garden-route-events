@@ -469,3 +469,4 @@ body.view-cinema #offToggle{display:none}
 .cinseg{display:flex;width:100%;margin:4px 0 14px;box-sizing:border-box}
 .cinseg button{flex:1 1 0;min-width:0;padding:10px 8px;font-size:.95rem;text-align:center}
 .cinseg .cinsubn{opacity:.7;font-weight:500}
+.intag{position:absolute;left:10px;bottom:10px;background:#f5c518;color:#1a1a1a;font-size:.72rem;font-weight:700;padding:3px 8px;border-radius:999px;z-index:2}

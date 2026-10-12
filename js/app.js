@@ -197,7 +197,7 @@ function card(e){
   var badge='<div class="datebadge"><span class="d">'+nd.getDate()+'</span><span class="m">'+MN[nd.getMonth()]+'</span>'+(multi?'<span class="to">to '+pd(e.end_date).getDate()+' '+MN[pd(e.end_date).getMonth()]+'</span>':'')+'</div>';
   var L=esc(link(e)),price=priceTxt(e.price_from);
   return '<article class="card'+(isOff(e)?" is-off":"")+'">'+
-    '<a class="thumb" href="'+L+'" target="_blank" rel="noopener" aria-label="'+esc(e.title)+'">'+thumb(e)+badge+'<span class="cat '+e.category+'">'+CATS[e.category]+'</span>'+(e.recurrence?'<span class="recur">↻ '+esc(e.recurrence.split(",")[0])+'</span>':'')+stBadge(e)+'</a>'+
+    '<a class="thumb" href="'+L+'" target="_blank" rel="noopener" aria-label="'+esc(e.title)+'">'+thumb(e)+badge+'<span class="cat '+e.category+'">'+CATS[e.category]+'</span>'+(e.recurrence?'<span class="recur">↻ '+esc(e.recurrence.split(",")[0])+'</span>':'')+stBadge(e)+(window._cinOd&&isIndoorSc(e)?'<span class="intag">Indoor</span>':'')+'</a>'+
     '<div class="body">'+(S.scope==="all"&&e.garden_route?'<span class="grtag">Garden Route</span>':'')+
       '<h3><a href="'+L+'" target="_blank" rel="noopener">'+esc(e.title)+'</a></h3>'+
       '<div class="when">'+when(e)+(e.time?" · "+esc(e.time):"")+'</div>'+
@@ -328,7 +328,9 @@ function soonMovies(lim){ /* new releases opening at SK George inside the happen
   if(!CIN||(S.cat&&S.cat!=="film")||S.nye||S.xmas)return [];
   return (CIN.now_showing||[]).concat(CIN.coming_soon||[]).filter(function(f){return f.release_date&&f.release_date>=TODAY&&f.release_date<=lim})
     .map(function(f){return {_m:f,_d:f.release_date}})}
-function isOutdoor(e){return e.category==="film"&&!/^indoor/i.test(e.notes||"")&&/open[- ]?air|outdoor|drive[- ]?in|under the stars|moonlight|starlight|galileo|picnic cinema|movies? (in|on) the (park|beach|lawn)/i.test(e.title+" "+(e.notes||"")+" "+(e.source_name||"")+" "+(e.venue||""))}
+function isOpenPlan(e){return /open ?plan pictures/i.test(e.title+" "+(e.venue||"")+" "+(e.notes||"")+" "+(e.source_name||"")+" "+(e.organiser||"")+" "+(e.url||""))}
+function isIndoorSc(e){return /^indoor/i.test(e.notes||"")||/blue shed/i.test(e.venue||"")}
+function isOutdoor(e){if(isOpenPlan(e))return true;return e.category==="film"&&!/^indoor/i.test(e.notes||"")&&/open[- ]?air|outdoor|drive[- ]?in|under the stars|moonlight|starlight|galileo|picnic cinema|movies? (in|on) the (park|beach|lawn)/i.test(e.title+" "+(e.notes||"")+" "+(e.source_name||"")+" "+(e.venue||""))}
 /* ---------- IMDb / Rotten Tomatoes badges (data: f.ratings from tools/ratings.py) ---------- */
 var TOMATO='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13.5" r="8.5" fill="#fa320a"/><path d="M12 5.2c-.6-1.6-2-2.5-3.6-2.4 1 .5 1.7 1.3 2 2.3-1.3-.6-2.8-.5-4 .3 1.4.1 2.6.8 3.3 1.8L12 6l2.3 1.2c.7-1 1.9-1.7 3.3-1.8-1.2-.8-2.7-.9-4-.3.3-1 1-1.8 2-2.3-1.6-.1-3 .8-3.6 2.4z" fill="#00912d"/></svg>';
 var SPLAT='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l1.8 4.6 4.6-2.4-1.6 4.9 5 .9-4.2 2.9 3.9 3.3-5.1.2.8 5-4.2-3-3 4.1-.9-5-4.9 1.2 2.6-4.4L2.3 12l4.9-1.3-2.4-4.5 4.8 1.6z" fill="#0ac855"/></svg>';
@@ -412,9 +414,9 @@ function renderCinema2(){
   }
   }else{
   h+='<div class="sec"><h2>Outdoor cinema</h2><span class="pill">'+odL.length+(showW?' · Garden Route + rest of coast':' · Garden Route')+'</span></div>'+
-    '<p class="rintro">Open-air and outdoor screenings from the events list.'+(S.scope!=="all"&&odW.length?' <button type="button" class="ghost galtoggle" id="galToggle" aria-pressed="'+(S.gal?"true":"false")+'">'+(S.gal?"Hide":"Show")+' Cape Town (Galileo) · '+odW.length+'</button>':'')+
+    '<p class="rintro">Open-air and drive-in screenings, plus every Open Plan Pictures night (indoor ones are tagged).'+(S.scope!=="all"&&odW.length?' <button type="button" class="ghost galtoggle" id="galToggle" aria-pressed="'+(S.gal?"true":"false")+'">'+(S.gal?"Hide":"Show")+' Cape Town (Galileo) · '+odW.length+'</button>':'')+
     ' <button type="button" class="rlink" id="filmChip">All film nights (incl. indoor) →</button></p>'+
-    (odL.length?grouped(odL):'<p class="rintro">No outdoor screenings listed for the Garden Route right now.</p>');
+    (odL.length?(window._cinOd=1,(function(x){window._cinOd=0;return x})(grouped(odL))):'<p class="rintro">No outdoor screenings listed for the Garden Route right now.</p>');
   }
   $("view-cinema").innerHTML=h;
 }
