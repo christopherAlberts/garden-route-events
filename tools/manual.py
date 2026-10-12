@@ -1050,3 +1050,94 @@ add(title="SummerDAZE",category="festival",start_date="2026-12-27",time="10:00",
     ticket_url="https://www.quicket.co.za/events/395651-summerdaze/",source_url="https://www.quicket.co.za/events/395651-summerdaze/",source_name="Quicket",
     notes="DT Entertainment & Social Entertainment day of live hits and entertainment at Pacaltsdorp Sportgronde. From about R150.",
     lat=-34.0125275,lng=22.44715,geo_source="event page",_img="https://images.quicket.co.za/0999066_0.jpeg")
+
+# ---------------- Venue watchlist check 12 Oct 2026 (venue sites, Quicket, Webtickets, iTickets, tourism pages, George Herald) ----------------
+add(title="Electro Warm-Up Party (psytrance & techno, 11 DJs)",category="concert",start_date="2026-10-17",time="From 18:00",town="Wilderness",
+    venue="Wildfarm Backpackers",venue_address="Whites Road, Wilderness Heights, Hoekwil",price_from="R100",
+    ticket_url="https://www.quicket.co.za/events/401190-electro-warm-up-party/",source_url="https://www.quicket.co.za/events/401190-electro-warm-up-party/",source_name="Quicket",
+    notes="Warm-up party for the Electro Music Festival: psytrance, techno and electronic sets from 11 DJs. R100 online, R150 at the door.",
+    lat=-33.9882851,lng=22.5991135,geo_source="event page",_img="https://images.quicket.co.za/0999560_0.jpeg")
+add(title="Electro Music Festival 2026",category="festival",start_date="2026-11-06",end_date="2026-11-08",time="Fri 13:00 – Sun 18:00",town="Ladismith",
+    venue="Karoo 62 Escape",venue_address="R62, Ladismith",price_from="R400",
+    ticket_url="https://www.quicket.co.za/events/367031-electro-music-festival-2026/",source_url="https://www.quicket.co.za/events/367031-electro-music-festival-2026/",source_name="Quicket",
+    notes="Off-grid electronic music festival on Route 62: dancefloors by the pool, fire performances and drumming. Cheapest tickets still on sale from R400 (the R350 tiers are sold out).",
+    lat=-33.5247841,lng=21.3540459,geo_source="event page",_img="https://images.quicket.co.za/0910491_0.jpeg")
+add(title="Glaskas: 20 years – live at Drie Ankers, Stilbaai",category="concert",start_date="2026-12-29",time="Doors 18:30, show 20:00",town="Stilbaai",
+    venue="Drie Ankers",venue_address="67 Bessie Street, Still Bay West",price_from="R200",
+    ticket_url="https://www.quicket.co.za/events/401624-glaskas-drie-ankers-stilbaai/",source_url="https://www.quicket.co.za/events/401624-glaskas-drie-ankers-stilbaai/",source_name="Quicket",
+    notes="Glaskas' 20th-anniversary December coast tour: MK-era songs and new material. Tickets R200.",
+    lat=-34.3840179,lng=21.4043579,geo_source="event page",_img="https://images.quicket.co.za/1001234_0.png")
+add(title="High Tea for Seven Passes Initiative (afterschool programme fundraiser)",category="community",start_date="2026-10-31",time="11:00-13:00",town="Wilderness",
+    venue="Dumbleton Crescent",venue_address="Dumbleton Crescent, Wilderness",price_from="R350",
+    ticket_url="https://www.quicket.co.za/events/324766-high-tea/",source_url="https://www.quicket.co.za/events/324766-high-tea/",source_name="Quicket",
+    notes="Charity high tea raising R100,000 for the Seven Passes Initiative's afterschool programme. Tickets R350.",
+    lat=-33.9968567,lng=22.6023388,geo_source="event page")
+add(title="Daylight Robbery! Flowers' defences against nectar robbers (talk by Dr Anina Coetzee)",category="nature",start_date="2026-10-14",time="16:00-17:00",town="George",
+    venue="Nelson Mandela University George Campus",venue_address="Madiba Road, Glenwood, George",price_from="R80",
+    ticket_url="https://www.quicket.co.za/events/399941-daylight-robbery-flowers-defenses-against-nectar-robbers/",source_url="https://www.quicket.co.za/events/399941-daylight-robbery-flowers-defenses-against-nectar-robbers/",source_name="Quicket",
+    notes="Public talk on pollination and nectar robbers by NMU's pollination specialist (Department of Conservation Management). R80.",
+    lat=-33.96075,lng=22.5347443,geo_source="event page",_img="https://images.quicket.co.za/0997234_0.jpeg")
+add(title="Jak de Priester & Cindy Swanepoel – Punt in die Wind",category="concert",start_date="2026-12-26",time="11:00",town="Mossel Bay",
+    venue="Mossel Bay Stadsaal (Town Hall)",venue_address="101 Marsh Street, Mossel Bay",price_from="R250",
+    ticket_url="https://itickets.co.za/events/486214",source_url="https://itickets.co.za/events/486214",source_name="iTickets",
+    notes="Part of Punt in die Wind Kunste-Week. The iTickets page says 11:00; the festival programme on the same page says 13:00, so check the time.")
+add(title="Wouter Basson Story Evening (SASFA Footprint)",category="arts",start_date="2026-10-23",time="Doors 18:00, start 18:30",town="Mossel Bay",
+    venue="Diaz Hotel and Resort",venue_address="1 Beach East Boulevard, Die Voor Bay, Mossel Bay",price_from="R320",
+    ticket_url="https://itickets.co.za/events/487146",source_url="https://itickets.co.za/events/487146",source_name="iTickets",
+    notes="Story evening organised by SASFA Footprint; optional donations go to the care of Special Forces veterans. Reserved seats R320.")
+add(title="Deep Intentions – Halloween",category="concert",start_date="2026-10-31",time="From 20:00",town="Knysna",
+    venue="34 Waenhout – Live Venue",venue_address="",price_from="",
+    ticket_url="",source_url="https://34waenhout.co.za/upcoming-events/",source_name="34 Waenhout (official site)",
+    notes="Halloween edition of the Deep Intentions show series. The venue says 'Tickets open soon'.")
+add(title="ICONS Cup South Africa 2026 (celebrity golf match play)",category="sport",start_date="2026-12-11",end_date="2026-12-13",time="",town="George",
+    venue="The Links at Fancourt",venue_address="The Links, Fancourt, George",price_from="R599",
+    ticket_url="https://tickets.icons-series.com/event/icons-cup-south-africa-2026-early-bird-sdoe0g",source_url="https://tickets.icons-series.com/event/icons-cup-south-africa-2026-early-bird-sdoe0g",source_name="Icons Series (Ticketpro)",
+    notes="South Africa (captain Ernie Els) vs the World (captain José María Olazábal): 10-hole match play over three days with sporting icons such as AB de Villiers, Jacques Kallis, Brian Lara and John Terry. Early-bird general admission R599 Fri, R799 Sat/Sun, R1,999 for the 3-day pass; up to 3 children under 16 free per paying adult.")
+add(title="Demi Lee Moore @ Bush Lapa",category="concert",start_date="2026-11-14",time="Doors 18:00, programme 19:00, main act 21:00",town="George",
+    venue="Die Bush Lapa (Herold's Bay Eco Resort)",venue_address="Herold's Bay Eco Resort, Oubaai Road, Herold's Bay, George",price_from="R250",
+    ticket_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1602768044",source_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1602768044",source_name="Webtickets",
+    notes="Family-friendly concert venue: meals and cash bar, benches at numbered tables, no own food or drinks. From R250.")
+add(title="Seeff Tour de Plett 2026 (MTB: 55 / 40 / 25 km)",category="sport",start_date="2026-10-17",time="",town="The Crags",
+    venue="Tafika Farm",venue_address="Tafika Farm, The Crags, Plettenberg Bay",price_from="",
+    ticket_url="https://www.tourdeplett.com/",source_url="https://www.plett-tourism.co.za/events/seeff-tour-de-plett-2026/",source_name="Plett Tourism",
+    alt_sources=["https://www.tourdeplett.com/"],
+    notes="Mountain-bike race on new plantation routes (MTO) at Tafika Farm, with food and refreshments for families. Organised by Muddy Foot Adventures (082 925 7885).")
+occ=["2026-10-17","2026-11-21","2026-12-12"]
+add(title="ProDive Reef Clean-Up (divers clear fishing gear from the reef)",category="nature",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Monthly: 17 Oct, 21 Nov, 12 Dec 2026, 09:00-11:00",
+    time="09:00-11:00",town="Plettenberg Bay",venue="ProDive Shop, Beacon Isle Resort",venue_address="Beacon Island Crescent, Plettenberg Bay",price_from="Free",
+    ticket_url="",source_url="https://www.plett-tourism.co.za/events/prodive-reef-clean-ups/",source_name="Plett Tourism",
+    notes="Qualified divers help clear abandoned fishing gear from the house reefs in front of the dive centre. Non-divers can book ProDive's 1-day scuba course. Contact info@prodiveplett.co.za, 044 533 1158.")
+add(title="SAM Fashion Show (SAM Charity Shop fundraiser)",category="community",start_date="2026-10-31",time="15:00",town="Knysna",
+    venue="Belvedere Estates",venue_address="Belvedere Estates, Knysna",price_from="",
+    ticket_url="",source_url="https://www.visitknysna.co.za/whats-on/events/sam-fashion-show-2/",source_name="Visit Knysna",
+    notes="Charity fashion show with 'legendary outfits' by SAM Charity Shop; more details to follow on its page. Contact 079 526 5064, samcharity72@gmail.com.")
+# Cape Town
+add(title="Christmas Day Lunch at The Commodore Hotel (V&A Waterfront)",category="festive",start_date="2026-12-25",time="12:30-15:00",town="Cape Town",
+    venue="The Commodore Hotel",venue_address="Portswood Road, V&A Waterfront, Cape Town",price_from="R895",
+    ticket_url="https://www.legacyhotels.co.za/commodore-hotel/christmas-lunch",source_url="https://www.legacyhotels.co.za/commodore-hotel/christmas-lunch",source_name="The Commodore Hotel (Legacy Hotels)",
+    notes="Three-course Christmas buffet lunch with live entertainment, kids' activities and a visit from Santa. R895 per adult, R350 per child under 12. Bookings essential.")
+for _d,_t,_ven,_addr,_town,_pr in [("2026-11-27","19:30","St George's Cathedral","Wale Street, Cape Town City Centre","Cape Town","R150"),
+    ("2026-12-05","15:00","Hugo Lambrechts Music Centre","Parow, Cape Town","Cape Town","R170"),
+    ("2026-12-06","16:00","Endler Hall","Stellenbosch University Konservatorium, Stellenbosch","Stellenbosch","R170")]:
+    add(title="Tygerberg Children's Choir Christmas Concert",category="concert",start_date=_d,time=_t,town=_town,venue=_ven,venue_address=_addr,price_from=_pr,
+        ticket_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1603715355",source_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1603715355",source_name="Webtickets",
+        notes="Christmas concert series: choral classics and Christmas favourites (27 Nov St George's Cathedral, 5 Dec Hugo Lambrechts, 6 Dec Endler Hall).")
+for _iid,_t,_d,_tm,_pr,_cat,_n in [("486983","Posduif","2026-10-30","20:30","R60","concert",""),
+    ("486730","Robbie Wessels + Bokke vs Italië on the big screens","2026-11-07","20:30","R260","concert","Doors 12:00."),
+    ("486740","Schwabie & Henru","2026-11-20","20:30","R100","concert",""),
+    ("487351","Dewald Dippenaar & Justin Vega + Bokke vs Ierland on the big screens","2026-11-21","21:00","R80","concert","Doors 16:00, rugby 18:40, Dewald Dippenaar 21:00, club night with Justin Vega 22:00."),
+    ("487609","Nádine","2026-12-03","20:30","R180","concert",""),
+    ("487601","Early B","2026-12-10","20:30","R180","concert",""),
+    ("487172","Jingle Ballz: Jou Vakansie-oorlewingsgids (Timothy Kieswetter comedy, Saturday)","2026-12-12","20:30","R260","arts","Once-off Afrikaans holiday comedy special."),
+    ("487173","Jingle Ballz: Jou Vakansie-oorlewingsgids (Timothy Kieswetter comedy, Sunday)","2026-12-13","14:00","R260","arts","Once-off Afrikaans holiday comedy special.")]:
+    add(title=_t+" – Heroes Live",category=_cat,start_date=_d,time=_tm,town="Cape Town",venue="Heroes Live",venue_address="Unit 1A, Cape Gate Corner, Nitida Avenue, Brackenfell",price_from=_pr,
+        ticket_url="https://itickets.co.za/events/"+_iid,source_url="https://itickets.co.za/events/"+_iid,source_name="iTickets",notes=_n)
+add(title="Jingle Ballz: Jou Vakansie-oorlewingsgids (Timothy Kieswetter comedy)",category="arts",start_date="2026-12-14",time="19:00",town="Cape Town",
+    venue="Geronimo's Pub & Grill",venue_address="60 Fagan Street, Strand",price_from="R250",
+    ticket_url="https://itickets.co.za/events/487099",source_url="https://itickets.co.za/events/487099",source_name="iTickets",
+    notes="Afrikaans holiday comedy special. Doors 18:00.")
+for _iid,_t,_d in [("485048","Kip Moore – Cape Town (Friday)","2026-10-23"),("485049","Kip Moore – Cape Town (Saturday)","2026-10-24")]:
+    add(title=_t,category="concert",start_date=_d,time="16:00 (doors 15:00)",town="Cape Town",venue="Grand Arena, GrandWest",venue_address="1 Jakes Gerwel Drive, Acacia Park, Cape Town",price_from="R650",
+        ticket_url="https://itickets.co.za/events/"+_iid,source_url="https://itickets.co.za/events/"+_iid,source_name="iTickets",notes="US country singer. Tickets R650-R1,450.")
+add(title="The Michael Jackson HIStory Show",category="concert",start_date="2027-01-16",time="20:00",town="Cape Town",venue="Grand Arena, GrandWest",venue_address="1 Jakes Gerwel Drive, Acacia Park, Cape Town",price_from="R425",
+    ticket_url="https://itickets.co.za/events/487145",source_url="https://itickets.co.za/events/487145",source_name="iTickets",notes="Michael Jackson tribute show. R425-R550.")

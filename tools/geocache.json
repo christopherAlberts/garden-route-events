@@ -966,5 +966,46 @@
 "Onderbos Street & Joubert Park, Hartenbos": null,
 "Onderbos Street / Joubert Park, Hartenbos, Western Cape": null,
 "Hartenbos Seafront / ATKV Hartenbos, Majuba Avenue, Hartenbos": null,
-"Hartenbos Seafront, Hartenbos, Western Cape": null
+"Hartenbos Seafront, Hartenbos, Western Cape": null,
+"1 Beach East Boulevard, Die Voor Bay, Mossel Bay": null,
+"Wale Street, Cape Town City Centre": [
+-33.9239732,
+18.4186442,
+"Wale Street, Cape Town Ward 115, Cape Town, City of Cape Town, Western Cape, 8001, South Africa"
+],
+"Parow, Cape Town": [
+-33.9269172,
+18.4844862,
+"Parow Road, Cape Town Ward 53, Cape Town, City of Cape Town, Western Cape, 7430, South Africa"
+],
+"Stellenbosch University Konservatorium, Stellenbosch": null,
+"Endler Hall, Stellenbosch, Western Cape": null,
+"Unit 1A, Cape Gate Corner, Nitida Avenue, Brackenfell": null,
+"60 Fagan Street, Strand, Cape Town, Western Cape": [
+-34.1019824,
+18.8182335,
+"Fagan Street, Die Vlakte, Cape Town Ward 83, Strand, City of Cape Town, Western Cape, 7139, South Africa"
+],
+"Geronimo's Pub, Cape Town, Western Cape": null,
+"1 Jakes Gerwel Drive, Acacia Park, Cape Town": [
+-33.890074,
+18.5326655,
+"Jakes Gerwel Drive, Acacia Park, Goodwood, Milnerton, City of Cape Town, Western Cape, 7406, South Africa"
+],
+"The Links, Fancourt, George": null,
+"The Links at Fancourt, George, Western Cape": [
+-33.9676527,
+22.4205192,
+"The Links at Fancourt, Flip de Swart Boulevard, Heatherpark, George Ward 26, George Local Municipality, Garden Route District Municipality, Western Cape, 6530, South Africa"
+],
+"Tafika Farm, The Crags, Plettenberg Bay": null,
+"Tafika Farm, The Crags, Bitou, Western Cape": null,
+"ProDive Shop, Beacon Isle Resort, Plettenberg Bay, Western Cape": null,
+"Belvedere Estates, Knysna": null,
+"Belvedere Estates, Knysna, Western Cape": null,
+"Portswood Road, V&A Waterfront, Cape Town": [
+-33.9050499,
+18.4183932,
+"Portswood Road, Foreshore, Cape Town Ward 115, Cape Town, City of Cape Town, Western Cape, 8001, South Africa"
+]
 }

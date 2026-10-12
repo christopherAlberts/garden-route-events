@@ -74,8 +74,53 @@ for n,t,u,note in [("Bossa George","George","https://bossagoodtimes.com/branches
  ("Hart & Bosch Village (drive-in)","Hartenbos","https://hartenboschvillage.co.za/events/category/drive-in/list/","Drive-in movies at Hart & Bosch Village, R102, Hartenbos (082 066 9683, info@hartenboschvillage.co.za). Weather-dependent: rain or strong wind cancels it, so check the site after 16:00 on the day. Usually R50; arrive 17:30-19:30, film at about 19:45. Last listed screening: Jurassic World Dominion, 22 Mar 2024. Nothing scheduled as of 9 Oct 2026 (site drive-in page says 'There is no Event'; events API has nothing upcoming). Also check https://hartenboschvillage.co.za/drive-in/ and Facebook (facebook.com/105494237577933). If dates appear, add them as film events with 'drive-in' in the title."),
  ("Stowaway Hideout (Stanley Island)","Plettenberg Bay","https://www.foodyas.com/ZA/Plettenberg-Bay/109413645275891/Stowaway-Hideout","Specials seen are from 2025.")]:
     put(n,t,_TW.get(t,("","Garden Route"))[1],True,"venue (no listing)",[u],note)
+# Weekly venue-watchlist check notes: (venue name as in the CSV, town, note). Appended to the venue's notes.
+CHECKS=[
+ ("Fancourt","George","12 Oct 2026: only guest hikes/cycles on its events feed; ICONS Cup (11-13 Dec, The Links) added from Ticketpro."),
+ ("Hennie's George","George","12 Oct 2026: November What's On poster not published yet."),
+ ("Hope Church (Hope Family)","George","12 Oct 2026: no new events beyond those listed."),
+ ("Herold Wines","George","12 Oct 2026: no new events."),
+ ("Kingswood Golf club","George","12 Oct 2026: no new events."),
+ ("Redberry Farm","George","12 Oct 2026: no new events."),
+ ("Die Bush Lapa (Herold's Bay Eco Resort)","George","12 Oct 2026: Demi Lee Moore 14 Nov added (Webtickets). Juanita du Plessis 6 Nov and Ryno Velvet 17 Dec appear only on Bandsintown, so not added."),
+ ("34 Waenhout – Live Venue","Knysna","12 Oct 2026: Deep Intentions Halloween (31 Oct) added; tickets not open yet."),
+ ("Knysna Hollow Country Estate","Knysna","12 Oct 2026: no new events."),
+ ("Simola Golf and Country Estate","Knysna","12 Oct 2026: NYE 'Bubbles, Balls & Glamour' mentioned on Facebook only (no date/price details), not added."),
+ ("Barrington's","Plettenberg Bay","12 Oct 2026: no new events."),
+ ("Beacon Isle Resort","Plettenberg Bay","12 Oct 2026: no new hotel offers; ProDive reef clean-ups (17 Oct, 21 Nov, 12 Dec) added."),
+ ("Old Nick Village","Plettenberg Bay","12 Oct 2026: no new events."),
+ ("Fairy Knowe Hotel","Wilderness","12 Oct 2026: no new events."),
+ ("Seeplaas Restaurant & Gallery","Groot Brak","12 Oct 2026: no new events."),
+ ("Hart & Bosch Village","Hartenbos","12 Oct 2026: no new events."),
+ ("Bravo Lounge, Garden Route Casino","Mossel Bay","12 Oct 2026: only long-running promotions; no new shows."),
+ ("Diaz Hotel and Resort","Mossel Bay","12 Oct 2026: festive menus not published; Wouter Basson story evening (23 Oct) added from iTickets."),
+ ("Pinnacle Point","Mossel Bay","12 Oct 2026: no new events."),
+ ("Zeppelins Bar","Mossel Bay","12 Oct 2026: only past events on its pages."),
+ ("Karoo 62 Escape","Ladismith","12 Oct 2026: Electro Music Festival (6-8 Nov) added."),
+ ("Heroes Live","Cape Town","12 Oct 2026: 8 more iTickets shows added (Posduif, Robbie Wessels, Schwabie & Henru, Dewald Dippenaar & Justin Vega, Nadine, Early B, Jingle Ballz x2)."),
+ ("The Commodore Hotel","Cape Town","12 Oct 2026: Christmas Day lunch added."),
+]
+for n,t,note in CHECKS:
+    r=rows.get((key(n),t))
+    if r: r["notes"].add(note)
+    else: print("CHECK not matched:",n,t)
+# Keep venues from the existing CSV whose events have passed (otherwise they drop off the watchlist), and carry over their notes.
+_csv=f"{R0}/tools/venues.csv"
+if os.path.exists(_csv):
+    for o in csv.DictReader(open(_csv)):
+        k=(key(o["name"]),o["town"]); r=rows.get(k)
+        if r is None:
+            rows[k]=dict(name=o["name"],town=o["town"],region=o["region"],garden_route=o["garden_route"]=="True",
+                types=set(x for x in o["type"].split("; ") if x),urls=set(u for u in o["urls"].split(" | ") if u),events=0,notes={o["notes"]} if o["notes"] else set())
+        elif o["notes"]:
+            cur=" ".join(r["notes"])
+            if o["notes"] not in cur:
+                old=o["notes"]
+                for n0 in list(r["notes"]):
+                    if n0 in old: r["notes"].discard(n0)
+                r["notes"]={old}|r["notes"]
 out=sorted(rows.values(),key=lambda r:(not r["garden_route"],r["region"],r["town"],r["name"].lower()))
 with open(f"{R0}/tools/venues.csv","w",newline="") as f:
     w=csv.writer(f);w.writerow(["name","town","region","garden_route","type","events_listed","urls","notes"])
-    for r in out: w.writerow([r["name"],r["town"],r["region"],r["garden_route"],"; ".join(sorted(r["types"])),r["events"]," | ".join(sorted(r["urls"])[:4])," ".join(r["notes"])])
+    for r in out: w.writerow([r["name"],r["town"],r["region"],r["garden_route"],"; ".join(sorted(r["types"])),r["events"]," | ".join(sorted(r["urls"])[:4])," ".join(sorted(r["notes"],key=lambda x:(x.startswith("12 Oct 2026"),x)))])
 print(len(out),sum(r["garden_route"] for r in out))
