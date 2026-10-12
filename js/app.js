@@ -396,21 +396,26 @@ function renderCinema2(){
   var od=EV.filter(function(e){return !e._r&&isOutdoor(e)&&endOf(e)>=TODAY&&(S.off||!isOff(e))});
   var odGR=od.filter(function(e){return e.garden_route}),odW=od.filter(function(e){return !e.garden_route});
   var showW=S.scope==="all"||S.gal,odL=(showW?odGR.concat(odW):odGR).sort(function(a,b){return (b.garden_route-a.garden_route)||nextDate(a).localeCompare(nextDate(b))||a.title.localeCompare(b.title)});
+  var sub=renderCinema.sub||(function(){try{return localStorage.getItem("gre-cinsub")}catch(e){return null}})()||"sk";if(sub!=="sk"&&sub!=="od")sub="sk";renderCinema.sub=sub;
+  h+='<div class="seg cinseg" role="tablist" aria-label="Cinema listings"><button type="button" role="tab" data-cinsub="sk" aria-selected="'+(sub==="sk")+'" class="'+(sub==="sk"?"on":"")+'">Ster-Kinekor</button><button type="button" role="tab" data-cinsub="od" aria-selected="'+(sub==="od")+'" class="'+(sub==="od"?"on":"")+'">Outdoor<span class="cinsubn"> '+odL.length+'</span></button></div>';
   $("count").textContent=now.length+" now showing · "+cs.length+" coming soon · "+odL.length+" outdoor screening"+(odL.length===1?"":"s");
+  if(sub==="sk"){
   if(CIN&&CIN.cinema){var c=CIN.cinema;
     h+='<details class="cinhead"'+(renderCinema._open?' open':'')+'><summary><span class="cinlogo">'+REEL+'</span><span class="cinname">'+esc(c.name)+'<span class="cintown">, '+esc(c.town||"George")+'</span></span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></summary>'+
       '<div class="cinmore"><p>'+esc(c.address)+(c.phone?' · <a href="tel:'+esc(c.phone.replace(/[^+\d]/g,""))+'">'+esc(c.phone)+'</a>':'')+'</p>'+
       '<p class="cinupd">Programme from <a href="'+esc(c.url)+'" target="_blank" rel="noopener">sterkinekor.com</a> · last updated '+esc(CIN.fetched_at||"")+'. Showtimes change daily, so check times and book on Ster-Kinekor.</p></div></details>'}
-  else h+='<div class="empty cinempty"><b>'+(loadCinema._failed?'Cinema listings unavailable':'Loading Ster-Kinekor listings\u2026')+'</b>'+(loadCinema._failed?'Couldn\u2019t load the Ster-Kinekor programme. ':'')+'<a href="https://www.sterkinekor.com/cinemas/garden-route" target="_blank" rel="noopener">See it on sterkinekor.com →</a> Outdoor screenings are below.</div>';
+  else h+='<div class="empty cinempty"><b>'+(loadCinema._failed?'Cinema listings unavailable':'Loading Ster-Kinekor listings\u2026')+'</b>'+(loadCinema._failed?'Couldn\u2019t load the Ster-Kinekor programme. ':'')+'<a href="https://www.sterkinekor.com/cinemas/garden-route" target="_blank" rel="noopener">See it on sterkinekor.com →</a> Outdoor screenings are under the Outdoor tab.</div>';
   if(CIN){
     h+='<div class="sec"><h2>Now showing</h2><span class="pill">'+now.length+' · Ster-Kinekor George</span></div>'+(now.length?'<div class="grid mgrid">'+now.map(function(f){return mcard(f)}).join("")+'</div>':'<p class="rintro">No films listed right now.</p>');
     var g=cs.length?'<div class="grid mgrid">'+cs.map(function(f){return mcard(f)}).join("")+'</div>':'';
     h+='<div class="sec"><h2>Coming soon</h2><span class="pill">'+cs.length+' · with opening dates</span></div><p class="rintro">Opening dates at Ster-Kinekor Garden Route Mall, as listed on sterkinekor.com. Opera, ballet and concert screenings are usually one-off dates.</p>'+(g||'<p class="rintro">Nothing announced yet.</p>');
   }
+  }else{
   h+='<div class="sec"><h2>Outdoor cinema</h2><span class="pill">'+odL.length+(showW?' · Garden Route + rest of coast':' · Garden Route')+'</span></div>'+
     '<p class="rintro">Open-air and outdoor screenings from the events list.'+(S.scope!=="all"&&odW.length?' <button type="button" class="ghost galtoggle" id="galToggle" aria-pressed="'+(S.gal?"true":"false")+'">'+(S.gal?"Hide":"Show")+' Cape Town (Galileo) · '+odW.length+'</button>':'')+
     ' <button type="button" class="rlink" id="filmChip">All film nights (incl. indoor) →</button></p>'+
     (odL.length?grouped(odL):'<p class="rintro">No outdoor screenings listed for the Garden Route right now.</p>');
+  }
   $("view-cinema").innerHTML=h;
 }
 var COL={concert:"#2a6f97",festival:"#e76f51",musical:"#8e4ec6",market:"#5b8c2a",funrun:"#d63384",community:"#b7791f",arts:"#0f766e",quiz:"#4f46e5",festive:"#b4233c",nature:"#15803d",sport:"#0e7490",film:"#374151",restaurant:"#c2410c"};
@@ -521,6 +526,7 @@ function bind(){
   },true);
   $("view-cinema").addEventListener("click",function(ev){
     var fi=ev.target.closest("[data-film]");if(fi){ev.preventDefault();openFilm(fi.dataset.film);return}
+    var cs=ev.target.closest("[data-cinsub]");if(cs){renderCinema.sub=cs.dataset.cinsub;try{localStorage.setItem("gre-cinsub",cs.dataset.cinsub)}catch(e){}renderCinema();return}
     if(ev.target.closest("#galToggle")){S.gal=!S.gal;render();return}
     var sm=ev.target.closest(".cinhead summary");if(sm)setTimeout(function(){renderCinema._open=sm.parentNode.open},0);
     if(ev.target.closest("#filmChip")){S.cat="film";S.view="list";render();toTop();requestAnimationFrame(toTop)}});
