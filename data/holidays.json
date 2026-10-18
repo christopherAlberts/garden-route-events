@@ -1,0 +1,179 @@
+{
+ "source": "https://www.gov.za/about-sa/public-holidays",
+ "checked": "2026-10-18",
+ "covers": "2026-2027",
+ "holidays": [
+  {
+   "date": "2026-01-01",
+   "name": "New Year's Day",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2026-03-21",
+   "name": "Human Rights Day",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2026-04-03",
+   "name": "Good Friday",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2026-04-06",
+   "name": "Family Day",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2026-04-27",
+   "name": "Freedom Day",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2026-05-01",
+   "name": "Workers' Day",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2026-06-16",
+   "name": "Youth Day",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2026-08-09",
+   "name": "National Women's Day",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2026-08-10",
+   "name": "National Women's Day (observed)",
+   "type": "observed",
+   "source": "https://www.gov.za/about-sa/public-holidays",
+   "note": "Public Holidays Act 36 of 1994, s2(1): a holiday on a Sunday moves to the Monday"
+  },
+  {
+   "date": "2026-09-24",
+   "name": "Heritage Day",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2026-11-04",
+   "name": "Local Government Elections (Election Day)",
+   "type": "special",
+   "source": "https://www.gov.za/news/media-statements/president-cyril-ramaphosa-declares-election-day",
+   "note": "Declared under s2A of the Public Holidays Act (Proclamation Notice 346 of 2026, GG 55352)"
+  },
+  {
+   "date": "2026-12-16",
+   "name": "Day of Reconciliation",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2026-12-25",
+   "name": "Christmas Day",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2026-12-26",
+   "name": "Day of Goodwill",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2027-01-01",
+   "name": "New Year's Day",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2027-03-21",
+   "name": "Human Rights Day",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2027-03-22",
+   "name": "Human Rights Day (observed)",
+   "type": "observed",
+   "source": "https://www.gov.za/about-sa/public-holidays",
+   "note": "Public Holidays Act 36 of 1994, s2(1): a holiday on a Sunday moves to the Monday"
+  },
+  {
+   "date": "2027-03-26",
+   "name": "Good Friday",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2027-03-29",
+   "name": "Family Day",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2027-04-27",
+   "name": "Freedom Day",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2027-05-01",
+   "name": "Workers' Day",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2027-06-16",
+   "name": "Youth Day",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2027-08-09",
+   "name": "National Women's Day",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2027-09-24",
+   "name": "Heritage Day",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2027-12-16",
+   "name": "Day of Reconciliation",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2027-12-25",
+   "name": "Christmas Day",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2027-12-26",
+   "name": "Day of Goodwill",
+   "type": "public",
+   "source": "https://www.gov.za/about-sa/public-holidays"
+  },
+  {
+   "date": "2027-12-27",
+   "name": "Day of Goodwill (observed)",
+   "type": "observed",
+   "source": "https://www.gov.za/about-sa/public-holidays",
+   "note": "Public Holidays Act 36 of 1994, s2(1): a holiday on a Sunday moves to the Monday"
+  }
+ ]
+}

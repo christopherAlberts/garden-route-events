@@ -470,3 +470,16 @@ body.view-cinema #offToggle{display:none}
 .cinseg button{flex:1 1 0;min-width:0;padding:10px 8px;font-size:.95rem;text-align:center}
 .cinseg .cinsubn{opacity:.7;font-weight:500}
 .intag{position:absolute;left:10px;bottom:10px;background:#f5c518;color:#1a1a1a;font-size:.72rem;font-weight:700;padding:3px 8px;border-radius:999px;z-index:2}
+
+/* public holidays (not events, not a category) */
+:root{--hol:#b8860b;--holbg:#fdf3d4}
+@media (prefers-color-scheme:dark){:root{--hol:#f2c94c;--holbg:#2f2812}}
+.day.hol{background:var(--holbg);border-color:color-mix(in srgb,var(--hol) 55%,transparent)}
+.day.hol .n{color:var(--hol)}
+.holl{display:block;font-size:.66rem;font-weight:700;line-height:1.15;color:var(--hol);text-transform:uppercase;letter-spacing:.03em;overflow:hidden;text-overflow:ellipsis}
+.holshort{display:none}
+@media (max-width:600px){.holl{font-size:.56rem;letter-spacing:-.01em;text-transform:none;text-overflow:clip}.hollong{display:none}.holshort{display:inline}}
+.holbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;background:var(--holbg);border:1px solid color-mix(in srgb,var(--hol) 45%,transparent);border-left:4px solid var(--hol);border-radius:10px;padding:7px 12px;margin:-2px 0 12px;font-size:.85rem;color:var(--ink)}
+.holk{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--hol)}
+.holi b{font-weight:700}
+.holsrc{margin-left:auto;font-size:.75rem;color:var(--mut)}

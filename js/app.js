@@ -208,9 +208,13 @@ function card(e){
       shareBtn(e)+'<a class="src" href="'+esc(e.source_url)+'" target="_blank" rel="noopener" title="Source: '+esc(e.source_name)+'">via '+esc(e.source_name.replace(/\s*\(.*\)$/,""))+'</a></div>'+
     '</div></article>';
 }
+var HOL={};(window.HOLIDAYS||[]).forEach(function(h){(HOL[h.date]=HOL[h.date]||[]).push(h)});
+function holName(ds){return (HOL[ds]||[]).map(function(h){return h.name}).join(" · ")}
+function holMonth(m){var k=Object.keys(HOL).filter(function(d){return d.slice(0,7)===m&&d>=TODAY}).sort();
+  return k.length?'<div class="holbar"><span class="holk">Public holiday'+(k.length>1?'s':'')+'</span>'+k.map(function(d){var x=pd(d);return '<span class="holi"><b>'+DOW[x.getDay()]+' '+x.getDate()+' '+MN[x.getMonth()]+'</b> '+esc(holName(d))+'</span>'}).join("")+'</div>':''}
 function grouped(list){
   var h="",cur="";
-  list.forEach(function(e){var m=nextDate(e).slice(0,7);if(m!==cur){if(cur)h+='</div>';cur=m;h+='<div class="month">'+monthLabel(m)+'</div><div class="grid">'}h+=card(e)});
+  list.forEach(function(e){var m=nextDate(e).slice(0,7);if(m!==cur){if(cur)h+='</div>';cur=m;h+='<div class="month">'+monthLabel(m)+'</div>'+holMonth(m)+'<div class="grid">'}h+=card(e)});
   return h+(cur?'</div>':'');
 }
 function renderList(){
@@ -248,7 +252,8 @@ function renderCal(){
     var chips=on.slice(0,3).map(function(e){var cont=!occ(e)&&e.end_date&&e.start_date<ds;
       return '<div class="chip '+e.category+(e.garden_route?"":" wide")+(isOff(e)?" off":"")+'" title="'+esc(e.title)+(STL[e.status]?" ("+STL[e.status]+")":"")+'">'+(cont?"↳ ":"")+(STL[e.status]?"<b>"+STL[e.status]+":</b> ":"")+esc(e.title)+(e._r&&e.day_labels&&e.day_labels[ds]?": "+esc(e.day_labels[ds]):"")+'</div>'}).join("");
     var dots='<span class="dots">'+on.slice(0,6).map(function(e){return '<i class="dot '+e.category+'"></i>'}).join("")+'</span>';
-    h+='<div class="day'+(on.length?" has":"")+(ds<TODAY?" past":"")+(ds===TODAY?" today":"")+(S.calDay===ds?" sel":"")+'" data-d="'+ds+'"><span class="n">'+d+'</span>'+chips+(on.length>3?'<span class="more">+'+(on.length-3)+' more</span>':'')+dots+'</div>';
+    var hn=holName(ds);
+    h+='<div class="day'+(hn?" hol":"")+(on.length?" has":"")+(ds<TODAY?" past":"")+(ds===TODAY?" today":"")+(S.calDay===ds?" sel":"")+'" data-d="'+ds+'"'+(hn?' title="Public holiday: '+esc(hn)+'"':'')+'><span class="n">'+d+'</span>'+(hn?'<span class="holl"><span class="hollong">'+esc(hn)+'</span><span class="holshort">Holiday</span></span>':'')+chips+(on.length>3?'<span class="more">+'+(on.length-3)+' more</span>':'')+dots+'</div>';
   }
   $("calGrid").innerHTML=h;
   var inm=L.filter(function(e){return inMonth(e,S.calMonth)&&(!e._r||occ(e))});
@@ -259,7 +264,8 @@ function renderDay(L){
   if(!S.calDay||S.calDay.slice(0,7)!==S.calMonth){$("calDay").innerHTML='<p class="resultline">Tap a day to see what\u2019s on.</p>';return}
   L=L||filtered(true,true);
   var on=L.filter(function(e){return onDay(e,S.calDay)});
-  $("calDay").innerHTML='<h3>'+fmt(pd(S.calDay),true)+' · '+countTxt(on.filter(function(e){return !e._r}).length,on.filter(function(e){return e._r}).length)+'</h3>'+(on.length?'<div class="grid">'+on.map(card).join("")+'</div>':'<p class="resultline">Nothing listed for this day.</p>');
+  var hn=holName(S.calDay);
+  $("calDay").innerHTML=(hn?'<div class="holbar"><span class="holk">Public holiday</span><span class="holi">'+esc(hn)+'</span><a class="holsrc" href="'+esc(HOL[S.calDay][0].source)+'" target="_blank" rel="noopener">gov.za</a></div>':'')+'<h3>'+fmt(pd(S.calDay),true)+' · '+countTxt(on.filter(function(e){return !e._r}).length,on.filter(function(e){return e._r}).length)+'</h3>'+(on.length?'<div class="grid">'+on.map(card).join("")+'</div>':'<p class="resultline">Nothing listed for this day.</p>');
 }
 function popup(g){
   return '<div class="pop">'+g.map(function(e){return '<div class="pe"><a class="pt" href="'+esc(link(e))+'" target="_blank" rel="noopener">'+thumb(e)+'</a><div><h4>'+esc(e.title)+'</h4><p>'+when(e)+(e.time?" · "+esc(e.time):"")+'<br>'+esc(e.venue||"")+(e.venue?", ":"")+esc(e.town)+'</p>'+

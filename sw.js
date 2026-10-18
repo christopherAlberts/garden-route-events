@@ -1,7 +1,7 @@
 // Service worker. Network-first for pages, JS, CSS and data (so a new deploy is picked up on the next load,
 // even from an installed PWA); cache is only the offline fallback. Images/fonts: cache-first with background refresh.
-var C='gre-v9';
-var SHELL=['./','index.html','css/style.css','js/app.js','data/events.js','data/restaurants.js','data/cinema.js','data/cinema.json','site.webmanifest'];
+var C='gre-v10';
+var SHELL=['./','index.html','css/style.css','js/app.js','data/events.js','data/restaurants.js','data/cinema.js','data/holidays.js','data/cinema.json','site.webmanifest'];
 self.addEventListener('install',function(e){
   // cache:'reload' bypasses the browser HTTP cache so the new shell is fetched fresh from the server
   e.waitUntil(caches.open(C).then(function(c){return Promise.all(SHELL.map(function(u){return fetch(new Request(u,{cache:'reload'})).then(function(r){if(r.ok)return c.put(u,r)}).catch(function(){})}))}).then(function(){return self.skipWaiting()}));
