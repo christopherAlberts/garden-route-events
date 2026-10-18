@@ -157,7 +157,7 @@ function closeEvent(){var m=$("evModal");if(m.hidden)return;m.hidden=true;docume
   if(openEvent._last&&openEvent._last.focus)try{openEvent._last.focus({preventScroll:true})}catch(x){}}
 
 function init(data){
-  EV=(data||[]).slice().concat(RS);EVR={};RS.forEach(function(r){(r.event_ids||[]).forEach(function(id){EVR[id]=r})});
+  EV=(data||[]).slice().concat(RS);calcFreq();EVR={};RS.forEach(function(r){(r.event_ids||[]).forEach(function(id){EVR[id]=r})});
   $("built").textContent=window.EVENTS_BUILT||(EV[0]&&EV[0].last_checked)||"";
   var mo='<option value="">Any month</option>';MONTHS.forEach(function(m){mo+='<option value="'+m+'">'+monthLabel(m)+'</option>'});$("month").innerHTML=mo;
   readHash();buildTowns();syncControls();render();
@@ -212,7 +212,23 @@ var HOL={};(window.HOLIDAYS||[]).forEach(function(h){(HOL[h.date]=HOL[h.date]||[
 function holName(ds){return (HOL[ds]||[]).map(function(h){return h.name}).join(" · ")}
 function holMonth(m){var k=Object.keys(HOL).filter(function(d){return d.slice(0,7)===m&&d>=TODAY}).sort();
   return k.length?'<div class="holbar"><span class="holk">Public holiday'+(k.length>1?'s':'')+'</span>'+k.map(function(d){var x=pd(d);return '<span class="holi"><b>'+DOW[x.getDay()]+' '+x.getDate()+' '+MN[x.getMonth()]+'</b> '+esc(holName(d))+'</span>'}).join("")+'</div>':''}
-function grouped(list){
+/* ---------- List ordering by how often an event repeats (display only) ----------
+   freq = upcoming-or-past dates in the dataset for this event: its occurrences[] for series, else how many
+   entries share the same normalised title+venue (or title prefix before ":"/" – " + venue, e.g. Galileo nights).
+   Bucketed so similar events still read chronologically: 0 one-off/rare (1-3 dates), 1 monthly-ish (4-12), 2 weekly/frequent (13+ or "every <day>"). */
+var FQ={};
+function fkey(t){return (t||"").toLowerCase().replace(/\([^)]*\)/g," ").replace(/\b(19|20)\d\d\b|\b\d{1,2}(st|nd|rd|th)?\b|\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\b/g," ").replace(/[^a-z\u00c0-\u024f]+/g," ").trim()}
+function calcFreq(){var c={},p={};FQ={};
+  EV.forEach(function(e){if(e._r)return;var v=fkey(e.venue),k=fkey(e.title)+"|"+v,m=(e.title||"").split(/:| [\u2013\u2014-] /)[0],pk=fkey(m).length>=6&&m.length<(e.title||"").length?fkey(m)+"|"+v:null;
+    var n=occ(e)?occ(e).length:1;e._fk=k;e._pk=pk;c[k]=(c[k]||0)+n;if(pk)p[pk]=(p[pk]||0)+n});
+  EV.forEach(function(e){if(e._r)return;var f=Math.max(c[e._fk]||1,e._pk?(p[e._pk]||1):1);
+    if(/\b(every|weekly|daily|each)\b|\b(mon|tues|wednes|thurs|fri|satur|sun)days\b/i.test(e.recurrence||""))f=Math.max(f,13);
+    FQ[e.id]=f;e._fb=f<=3?0:f<=12?1:2});window.GRE_FREQ=FQ}
+function fb(e){return e._fb||0}
+function byFreq(a,b){return fb(a)-fb(b)||nextDate(a).localeCompare(nextDate(b))||(a.time||"").localeCompare(b.time||"")||a.title.localeCompare(b.title)}
+function grouped(list,keep){
+  if(!keep){var by={},ms=[];list.forEach(function(e){var m=nextDate(e).slice(0,7);if(!by[m]){by[m]=[];ms.push(m)}by[m].push(e)});
+  ms.sort();list=[];ms.forEach(function(m){list=list.concat(by[m].sort(byFreq))})}
   var h="",cur="";
   list.forEach(function(e){var m=nextDate(e).slice(0,7);if(m!==cur){if(cur)h+='</div>';cur=m;h+='<div class="month">'+monthLabel(m)+'</div>'+holMonth(m)+'<div class="grid">'}h+=card(e)});
   return h+(cur?'</div>':'');
@@ -225,9 +241,9 @@ function renderList(){
   var h="";
   if(!S.q&&!S.month&&!S.town&&L.length){
     var lim=iso(new Date(Date.now()+9*864e5));
-    var soon=L.filter(function(e){var n=nextDate(e);return n>=TODAY&&n<=lim}).sort(function(a,b){return (b.garden_route-a.garden_route)||nextDate(a).localeCompare(nextDate(b))}).slice(0,14);
+    var soon=L.filter(function(e){var n=nextDate(e);return n>=TODAY&&n<=lim}).sort(function(a,b){return (b.garden_route-a.garden_route)||fb(a)-fb(b)||nextDate(a).localeCompare(nextDate(b))}).slice(0,14);
     var mv=soonMovies(lim),mix=soon.map(function(e){return {e:e,d:nextDate(e),gr:e.garden_route?1:0}}).concat(mv.map(function(x){return {m:x._m,d:x._d,gr:1}}))
-      .sort(function(a,b){return (b.gr-a.gr)||a.d.localeCompare(b.d)});
+      .sort(function(a,b){return (b.gr-a.gr)||((a.e?fb(a.e):0)-(b.e?fb(b.e):0))||a.d.localeCompare(b.d)});
     if(mix.length>2)h+='<div class="sec"><h2>Happening soon</h2><span class="pill">next 10 days</span></div><div class="soon">'+mix.map(function(x){return x.m?mcard(x.m,true):card(x.e)}).join("")+'</div>';
   }
   var rgr=R.filter(function(e){return e.garden_route}),rwide=R.filter(function(e){return !e.garden_route});
@@ -422,7 +438,7 @@ function renderCinema2(){
   h+='<div class="sec"><h2>Outdoor cinema</h2><span class="pill">'+odL.length+(showW?' · Garden Route + rest of coast':' · Garden Route')+'</span></div>'+
     '<p class="rintro">Open-air and drive-in screenings, plus every Open Plan Pictures night (indoor ones are tagged).'+(S.scope!=="all"&&odW.length?' <button type="button" class="ghost galtoggle" id="galToggle" aria-pressed="'+(S.gal?"true":"false")+'">'+(S.gal?"Hide":"Show")+' Cape Town (Galileo) · '+odW.length+'</button>':'')+
     ' <button type="button" class="rlink" id="filmChip">All film nights (incl. indoor) →</button></p>'+
-    (odL.length?(window._cinOd=1,(function(x){window._cinOd=0;return x})(grouped(odL))):'<p class="rintro">No outdoor screenings listed for the Garden Route right now.</p>');
+    (odL.length?(window._cinOd=1,(function(x){window._cinOd=0;return x})(grouped(odL,1))):'<p class="rintro">No outdoor screenings listed for the Garden Route right now.</p>');
   }
   $("view-cinema").innerHTML=h;
 }
