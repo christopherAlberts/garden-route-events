@@ -154,6 +154,9 @@ HSEL={ # url: (category, town, venue_address)
 "https://musicpeople.howler.co.za/mp18dec26":("concert","Cape Town",""),
 "https://www.howler.co.za/mitchellsplainfestival":("festival","Cape Town","Westridge Gardens, Mitchells Plain"),
 "https://www.howler.co.za/organicgroovescpt":("festival","Cape Town",""),
+"https://www.howler.co.za/GLSCapeTown26":("concert","Cape Town","Constantia Sports Fields, Constantia"),
+"https://www.howler.co.za/GLSCBD26":("concert","Cape Town","German International School, Cape Town"),
+"https://pianopeople.howler.co.za/ppcpt2026":("concert","Cape Town",""),
 }
 for u,h in HW.items():
     if "Jbay" in u or "jbay" in u.lower():

@@ -1,4 +1,14 @@
 {
+ "2026-10-10-tsitsikamma-manor-colour-festival": [
+  [
+   "cancelled",
+   "schema eventStatus @ https://www.quicket.co.za/events/393493-tsitsikamma-manor-colour-festival/#tickets"
+  ],
+  [
+   "cancelled",
+   "schema eventStatus @ https://www.quicket.co.za/events/393493-tsitsikamma-manor-colour-festival/"
+  ]
+ ],
  "2026-10-20-schalk-bezuidenhout-hey-hey-divorce-at-simola-stan": [
   [
    "sold out",
@@ -35,6 +45,16 @@
    "title/notes"
   ]
  ],
+ "2026-10-24-cape-cobra-trail-marathon-42-33-21-10-km": [
+  [
+   "sold out",
+   "all ticket types SoldOut (schema) @ https://www.capecobratrail.com/"
+  ],
+  [
+   "sold out",
+   "all ticket types SoldOut (schema) @ https://www.capecobratrail.com/"
+  ]
+ ],
  "2026-10-24-st-francis-bubbles-festival-2026": [
   [
    "sold out",
@@ -45,14 +65,24 @@
    "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/376623-st-francis-bubbles-festival-2026/"
   ]
  ],
- "2026-10-30-h-ours": [
+ "2026-10-25-arno-carstens-solo-acoustic": [
   [
    "sold out",
-   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/386575-hours/"
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/400615-arno-carstens-solo-acoustic/#tickets"
   ],
   [
    "sold out",
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/400615-arno-carstens-solo-acoustic/"
+  ]
+ ],
+ "2026-10-30-h-ours": [
+  [
+   "sold out",
    "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/386575-hours/#tickets"
+  ],
+  [
+   "sold out",
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/386575-hours/"
   ]
  ],
  "2026-10-31-boon-presents-good-feeling": [
@@ -77,6 +107,16 @@
   [
    "sold out",
    "page text: 'This event is sold out' @ https://runningcalendar.co.za/events/winelands-marathon/2026"
+  ]
+ ],
+ "2026-11-13-riaan-benade-live-by-kapstadt-brauhaus-durbanville": [
+  [
+   "sold out",
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/401820-riaan-benade-live-by-kapstadt-brauhaus-durbanville/#tickets"
+  ],
+  [
+   "sold out",
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/401820-riaan-benade-live-by-kapstadt-brauhaus-durbanville/"
   ]
  ],
  "2027-02-11-up-the-creek-music-festival-2027": [

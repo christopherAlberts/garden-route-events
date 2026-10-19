@@ -1,8 +1,8 @@
 {
  "source": "https://www.sterkinekor.com",
  "source_note": "Ster-Kinekor website (sterkinekor.com), Garden Route Mall programme",
- "fetched_at": "2026-10-09 15:13",
- "fetched_date": "2026-10-09",
+ "fetched_at": "2026-10-19 08:17",
+ "fetched_date": "2026-10-19",
  "cinema": {
   "name": "Ster-Kinekor Garden Route Mall",
   "town": "George",
@@ -13,142 +13,40 @@
  },
  "now_showing": [
   {
-   "id": 701,
-   "title": "Avengers: Endgame (Encore)",
+   "id": 750,
+   "title": "Clayface",
    "section": "now",
-   "url": "https://www.sterkinekor.com/f/avengers-endgame-encore/701",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/avengers-endgame-encore-701/poster/c14e6c4c-bc8b-449d-ac7f-651b844ad5f8.jpeg?optimizer=image&width=342",
-   "release_date": "2026-09-25",
+   "url": "https://www.sterkinekor.com/f/clayface/750",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/clayface-750/poster/a7da1f43-a3d7-49b8-9a25-2ad633e6ee9d.jpeg?optimizer=image&width=342",
+   "release_date": "2026-10-23",
    "date_label": "",
-   "age_rating": "No Under 13's - L V",
-   "age": 13,
-   "runtime": "3h 03m",
-   "genres": [
-    "superhero"
-   ],
-   "bookable": true,
-   "trailer": "https://youtu.be/PWuRsUipf3I",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/avengers-endgame-encore-701/backdrop/681dd469-6d18-40b0-ab21-0f32b97c2c17.jpeg?optimizer=image&width=1200",
-   "synopsis": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos' actions and restore order to the universe once and for all, no matter what consequences may be in store.",
-   "director": "",
-   "cast": [],
-   "language": "English",
-   "country": "",
-   "imdb_id": "tt4154796",
-   "tmdb_id": "",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ],
-   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
-   "ratings": [
-    {
-     "source": "IMDb",
-     "value": "8.4"
-    },
-    {
-     "source": "Rotten Tomatoes",
-     "value": "94%"
-    }
-   ]
-  },
-  {
-   "id": 671,
-   "title": "Coyote vs ACME",
-   "section": "now",
-   "url": "https://www.sterkinekor.com/f/coyote-vs-acme/671",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/coyote-vs-acme-671/poster/14720104-5ff3-4f05-926c-64674b41001c.jpeg?optimizer=image&width=342",
-   "release_date": "2026-09-18",
-   "date_label": "",
-   "age_rating": "Parental guidance - V",
-   "age": 8,
-   "runtime": "1h 41m",
-   "genres": [
-    "comedy"
-   ],
-   "bookable": true,
-   "trailer": "https://youtu.be/wj79_VvbqPg",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/coyote-vs-acme-671/backdrop/a1a646b2-6191-47b3-b04e-b0a9ec30f3cb.jpeg?optimizer=image&width=1200",
-   "synopsis": "After Acme products fail him one too many times in his dogged pursuit of the Roadrunner, Wile E. Coyote decides to hire a billboard lawyer to sue the Acme Corporation.",
-   "director": "",
-   "cast": [
-    "Fred Tatasciore",
-    "John Cena",
-    "P. J. Byrne",
-    "Eric Bauza",
-    "Bob Bergen",
-    "Kenneth Choi",
-    "Martha Kelly",
-    "Will Forte",
-    "Candi Milo",
-    "Luis Guzmán"
-   ],
-   "language": "English",
-   "country": "United States",
-   "imdb_id": "tt1756855",
-   "tmdb_id": "1204680",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ],
-   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
-   "ratings": [
-    {
-     "source": "IMDb",
-     "value": "7.6"
-    },
-    {
-     "source": "Rotten Tomatoes",
-     "value": "96%"
-    }
-   ]
-  },
-  {
-   "id": 708,
-   "title": "Digger",
-   "section": "now",
-   "url": "https://www.sterkinekor.com/f/digger/708",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/digger-708/poster/ada3fe92-7642-400c-be77-49849aaddc3a.jpeg?optimizer=image&width=342",
-   "release_date": "2026-10-02",
-   "date_label": "",
-   "age_rating": "No Under 16's - L P V",
+   "age_rating": "No Under 16's - L V PPS",
    "age": 16,
-   "runtime": "2h 08m",
+   "runtime": "1h 48m",
    "genres": [
-    "adventure"
+    "horror",
+    "sci fi"
    ],
    "bookable": true,
-   "trailer": "https://youtu.be/ZGYMYUzVPvA",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/digger-708/backdrop/70f673c0-278f-4ed4-ba3b-e5f34211451c.jpeg?optimizer=image&width=1200",
-   "synopsis": "The most powerful man in the world embarks on a frantic mission to prove he is humanity's saviour before the disaster he’s unleashed destroys everything.",
+   "trailer": "https://youtu.be/HPKdMrt1qA0",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/clayface-750/backdrop/221ad58d-9c06-44e4-a718-76ec8cfb0aa4.jpeg?optimizer=image&width=1200",
+   "synopsis": "A Hollywood horror tale centering on a B-movie actor who injects himself with a substance to keep himself relevant, only to find out that he can reshape his face and form, becoming a walking piece of clay.",
    "director": "",
    "cast": [
-    "Burn Gorman",
-    "Jesse Plemons",
-    "Tom Cruise",
-    "Riz Ahmed",
-    "Corey Johnson",
-    "John Goodman",
-    "Michael Stuhlbarg",
-    "James Dryden",
-    "Sophie Wilde",
-    "Aoife Hinds"
+    "Max Minghella",
+    "David Dencik",
+    "Eddie Marsan",
+    "Naomi Ackie",
+    "Jessica Grundle",
+    "Wil Coban",
+    "Tom Rhys Harries"
    ],
    "language": "English",
    "country": "United States",
-   "imdb_id": "tt31450459",
-   "tmdb_id": "1248832",
+   "imdb_id": "tt34890576",
+   "tmdb_id": "1400940",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
-   ],
-   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
-   "ratings": [
-    {
-     "source": "IMDb",
-     "value": "7.4"
-    },
-    {
-     "source": "Rotten Tomatoes",
-     "value": "52%"
-    }
    ]
   },
   {
@@ -241,88 +139,6 @@
    ]
   },
   {
-   "id": 745,
-   "title": "Just Play Dead",
-   "section": "now",
-   "url": "https://www.sterkinekor.com/f/just-play-dead/745",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/just-play-dead-745/poster/44882810-9112-4028-ac27-94d0ccdeb0fa.jpg?optimizer=image&width=342",
-   "release_date": "2026-10-09",
-   "date_label": "",
-   "age_rating": "No Under 16's - (CT) DLS (SV)V",
-   "age": 16,
-   "runtime": "1h 36m",
-   "genres": [
-    "thriller"
-   ],
-   "bookable": true,
-   "trailer": "https://youtu.be/yGjQw-hXkuI",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/just-play-dead-745/backdrop/5b7f3278-44aa-415a-893d-cef8ee80c525.jpg?optimizer=image&width=1200",
-   "synopsis": "When wealthy criminal mastermind Jack Wolfe is cornered by the Feds, he plans to fake his own death and claim the $30 million life insurance payout with his “grieving” wife Nora, while framing her surfer lover Chad for his murder. But Nora is cooking up a scheme of her own: kill Jack for real, frame Chad and keep the fortune for herself. As lies unravel, Nora and Jack scramble to outsmart one another, leaving one burning question: who will come out on top in this twisted game of life and death?",
-   "director": "Martin Campbell",
-   "cast": [
-    "Eva Green",
-    "Samuel L. Jackson",
-    "María Pedraza"
-   ],
-   "language": "English",
-   "country": "",
-   "imdb_id": "tt36948232",
-   "tmdb_id": "1480574",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ],
-   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
-   "ratings": [
-    {
-     "source": "IMDb",
-     "value": "7.5"
-    },
-    {
-     "source": "Rotten Tomatoes",
-     "value": "9%"
-    }
-   ]
-  },
-  {
-   "id": 709,
-   "title": "Liefde Is Rooi: An Anthology of Short Films",
-   "section": "now",
-   "url": "https://www.sterkinekor.com/f/liefde-is-rooi-an-anthology-of-short-films/709",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/heart-and-hustle-an-anthology-of-short-films-liefde-is-rooi-709/poster/0dc94a34-b89c-40dc-b870-20352e01c88c.png?optimizer=image&width=342",
-   "release_date": "2026-09-24",
-   "date_label": "",
-   "age_rating": "No Under 13's",
-   "age": 13,
-   "runtime": "55m",
-   "genres": [
-    "drama"
-   ],
-   "bookable": true,
-   "trailer": "",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/heart-and-hustle-an-anthology-of-short-films-liefde-is-rooi-709/backdrop/d03cf7ed-be1b-4e01-a74b-2f20f096bb75.jpeg?optimizer=image&width=1200",
-   "synopsis": "Liefde is Rooi: After the sudden deaths of her parents, Prudence, the youngest of three siblings, becomes convinced that something is terribly wrong. When her grieving brother James begins behaving strangely and insists that “grief doen slegte dinge aan die memory,” Prudence sets out to uncover the truth—before the secrets buried in their family destroy them all.\n\nMy Best Friend: Matthew and Ben's friendship blooms after a chance encounter. This unravels after undisclosed feelings are revealed, putting their relationship to the test.",
-   "director": "",
-   "cast": [
-    "Abduragman Adams",
-    "Enrico Hartzenberg",
-    "Meggan Johnstone",
-    "Joshua Vraagom",
-    "Sanchia Davids",
-    "Lee-Ann van Rooi",
-    "Diego Adams",
-    "Terriano Duimpies",
-    "Ameer Noordien",
-    "Fiki Orzim"
-   ],
-   "language": "English",
-   "country": "",
-   "imdb_id": "",
-   "tmdb_id": "",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ]
-  },
-  {
    "id": 700,
    "title": "Resident Evil",
    "section": "now",
@@ -369,46 +185,40 @@
    ]
   },
   {
-   "id": 704,
-   "title": "Shaun the Sheep: The Beast of Mossy Bottom",
+   "id": 747,
+   "title": "Sense and Sensibility",
    "section": "now",
-   "url": "https://www.sterkinekor.com/f/shaun-the-sheep-the-beast-of-mossy-bottom/704",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/shaun-the-sheep-the-beast-of-mossy-bottom-704/poster/698f1bbf-75f5-4a99-8ab0-67d3d4e087d1.jpeg?optimizer=image&width=342",
-   "release_date": "2026-09-25",
+   "url": "https://www.sterkinekor.com/f/sense-and-sensibility/747",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/sense-and-sensibility-747/poster/68267749-bbbc-4df7-b6ff-79ba8a634fd4.jpg?optimizer=image&width=342",
+   "release_date": "2026-10-16",
    "date_label": "",
-   "age_rating": "Parental guidance",
-   "age": 8,
-   "runtime": "1h 21m",
+   "age_rating": "No Under 13's - V",
+   "age": 13,
+   "runtime": "2h 13m",
    "genres": [
-    "family"
+    "romance"
    ],
    "bookable": true,
-   "trailer": "https://youtu.be/xi1IbfNh8k8",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/shaun-the-sheep-the-beast-of-mossy-bottom-704/backdrop/1e89660c-f666-4e1e-8157-9a6fce54ffad.jpeg?optimizer=image&width=1200",
-   "synopsis": "The residents of Mossy Bottom Farm looking forward to Halloween – until the clumsy Farmer trashes the flock’s beloved pumpkin patch! When Shaun turns mad scientist to fix the problem, things rapidly spiral out of control. With the Farmer missing and a wild beast roaming the woods of Mossingham, all the ingredients are in place for a monstrously fun family adventure.",
+   "trailer": "https://youtu.be/np_wMPOT-So",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/sense-and-sensibility-747/backdrop/efaf339a-b190-4692-8b7d-cc60121663ff.jpg?optimizer=image&width=1200",
+   "synopsis": "Sisters Elinor and Marianne Dashwood must leave their Sussex estate and move in with a distant relative, facing romance and money troubles.",
    "director": "",
    "cast": [
-    "Justin Fletcher",
-    "Kate Harbour",
-    "John Sparkes"
+    "George MacKay",
+    "Caitríona Balfe",
+    "Bodhi Rae Breathnach",
+    "Daisy Edgar-Jones",
+    "Esmé Creed-Miles",
+    "Frank Dillane",
+    "Herbert Nordrum",
+    "Fiona Shaw"
    ],
    "language": "English",
-   "country": "France, United Kingdom",
-   "imdb_id": "tt36841161",
-   "tmdb_id": "1477104",
+   "country": "United Kingdom, United States",
+   "imdb_id": "tt37439146",
+   "tmdb_id": "1503762",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
-   ],
-   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
-   "ratings": [
-    {
-     "source": "IMDb",
-     "value": "7.2"
-    },
-    {
-     "source": "Rotten Tomatoes",
-     "value": "99%"
-    }
    ]
   },
   {
@@ -419,7 +229,7 @@
    "poster": "https://images.filmgrail.com/mediaserver/movies/spider-man-brand-new-day-634/poster/bc43628e-1bb6-4af3-ab8c-3a442cb94159.jpeg?optimizer=image&width=342",
    "release_date": "2026-07-31",
    "date_label": "",
-   "age_rating": "No Under 13's - L V",
+   "age_rating": "No Under 13's",
    "age": 13,
    "runtime": "2h 21m",
    "genres": [
@@ -459,6 +269,45 @@
      "source": "Rotten Tomatoes",
      "value": "90%"
     }
+   ]
+  },
+  {
+   "id": 748,
+   "title": "Street Fighter",
+   "section": "now",
+   "url": "https://www.sterkinekor.com/f/street-fighter/748",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/street-fighter-748/poster/32a43319-ff0d-4810-afbe-cd34c40a5e1f.jpeg?optimizer=image&width=342",
+   "release_date": "2026-10-16",
+   "date_label": "",
+   "age_rating": "No Under 13's - L V",
+   "age": 13,
+   "runtime": "2h 00m",
+   "genres": [
+    "action"
+   ],
+   "bookable": true,
+   "trailer": "https://youtu.be/DLsC13Hd88g",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/street-fighter-748/backdrop/2b002d2f-e9c7-4bb2-afde-f485c08e15b0.jpeg?optimizer=image&width=1200",
+   "synopsis": "In 1993, estranged Street Fighters Ryu and Ken Masters are thrown back into combat when the mysterious Chun-Li recruits them for the next World Warrior Tournament: a brutal clash of fists, fate, and fury. But behind this battle royale lies a deadly conspiracy that forces them to face off against each other and the demons of their past. And if they don't, it's GAME OVER!",
+   "director": "",
+   "cast": [
+    "David Dastmalchian",
+    "Jason Momoa",
+    "Eric André",
+    "Leati Anoa'i",
+    "50 Cent",
+    "Callina Liang",
+    "Noah Centineo",
+    "Danny Philippou",
+    "Michael Philippou",
+    "Cody Rhodes"
+   ],
+   "language": "English",
+   "country": "Japan, United States",
+   "imdb_id": "tt27419420",
+   "tmdb_id": "1153576",
+   "cinemas": [
+    "Ster-Kinekor Garden Route Mall"
    ]
   },
   {
@@ -559,115 +408,48 @@
      "value": "33%"
     }
    ]
+  },
+  {
+   "id": 753,
+   "title": "Wildwood",
+   "section": "now",
+   "url": "https://www.sterkinekor.com/f/wildwood/753",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/wildwood-753/poster/cc60ed39-7e8a-4d65-a254-7f7a8e19cd76.jpg?optimizer=image&width=342",
+   "release_date": "2026-10-23",
+   "date_label": "",
+   "age_rating": "Parental guidance for 10 - 12",
+   "age": 12,
+   "runtime": "2h 10m",
+   "genres": [
+    "animation"
+   ],
+   "bookable": true,
+   "trailer": "https://www.youtube.com/watch?v=04V07p8EYVo",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/wildwood-753/backdrop/4a0a7dbc-373b-4021-ad8a-cc7ca2d72be4.jpg?optimizer=image&width=1200",
+   "synopsis": "Prue and her classmate Curtis are drawn into a forbidden magical forest filled with enchanted creatures, loyal allies, and formidable adversaries as they embark on a desperate quest to save Prue’s kidnapped baby brother, Mac, from the crows led by a mysterious woman named Alexandra.",
+   "director": "Travis Knight",
+   "cast": [
+    "Mahershala Ali",
+    "Jake Johnson",
+    "Maya Erskine",
+    "Angela Bassett",
+    "Len Cariou",
+    "Jemaine Clement",
+    "Charlie Day",
+    "Richard E. Grant",
+    "Marc Evan Jackson",
+    "Awkwafina"
+   ],
+   "language": "English",
+   "country": "United States",
+   "imdb_id": "tt2056785",
+   "tmdb_id": "791523",
+   "cinemas": [
+    "Ster-Kinekor Garden Route Mall"
+   ]
   }
  ],
  "coming_soon": [
-  {
-   "id": 640,
-   "title": "Così Fan Tutte (Mozart) - Metropolitan Opera",
-   "section": "soon",
-   "url": "https://www.sterkinekor.com/f/cosi-fan-tutte-mozart-metropolitan-opera/640",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/cosi-fan-tutte-mozart-metropolitan-opera-640/poster/df7524b2-bd67-4bc1-80b3-58352401eb1b.jpeg?optimizer=image&width=342",
-   "release_date": "2026-10-11",
-   "date_label": "11 Oct",
-   "age_rating": "Parental guidance for 10 - 12",
-   "age": 12,
-   "runtime": "3h 57m",
-   "genres": [
-    "opera"
-   ],
-   "bookable": true,
-   "trailer": "https://youtu.be/BEGgmm3v0tM",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/cosi-fan-tutte-mozart-metropolitan-opera-640/backdrop/58220379-35a7-406f-8e43-00631461c94b.jpeg?optimizer=image&width=1200",
-   "synopsis": "The Met: Live in HD season kicks off with Mozart’s satirical comedy of fickle young love, one of the composer’s most sublime creations. Phelim McDermott’s “colorful, inventive” (The New York Times) staging, inspired by Coney Island in the 1950s, sets the uproarious story at a boardwalk amusement park, where the two pairs of lovers at the heart of the tale find themselves on one emotional—and literal—thrill ride after another. Soprano Federica Lombardi and mezzo-soprano Samantha Hankey sing Fiordiligi and Dorabella, opposite tenor Duke Kim and baritone Andrey Zhilikhovsky as Ferrando and Guglielmo. Bass-baritone Gerald Finley reprises his portrayal of the cynical Don Alfonso, with soprano Ana María Martínez as the witty maid Despina.",
-   "director": "",
-   "cast": [],
-   "language": "English",
-   "country": "",
-   "imdb_id": "",
-   "tmdb_id": "",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ]
-  },
-  {
-   "id": 747,
-   "title": "Sense and Sensibility",
-   "section": "soon",
-   "url": "https://www.sterkinekor.com/f/sense-and-sensibility/747",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/sense-and-sensibility-747/poster/68267749-bbbc-4df7-b6ff-79ba8a634fd4.jpg?optimizer=image&width=342",
-   "release_date": "2026-10-16",
-   "date_label": "16 Oct",
-   "age_rating": "No Under 13's",
-   "age": null,
-   "runtime": "2h 13m",
-   "genres": [
-    "romance"
-   ],
-   "bookable": false,
-   "trailer": "https://youtu.be/np_wMPOT-So",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/sense-and-sensibility-747/backdrop/efaf339a-b190-4692-8b7d-cc60121663ff.jpg?optimizer=image&width=1200",
-   "synopsis": "Sisters Elinor and Marianne Dashwood must leave their Sussex estate and move in with a distant relative, facing romance and money troubles.",
-   "director": "",
-   "cast": [
-    "George MacKay",
-    "Caitríona Balfe",
-    "Bodhi Rae Breathnach",
-    "Daisy Edgar-Jones",
-    "Esmé Creed-Miles",
-    "Frank Dillane",
-    "Herbert Nordrum",
-    "Fiona Shaw"
-   ],
-   "language": "English",
-   "country": "United Kingdom, United States",
-   "imdb_id": "tt37439146",
-   "tmdb_id": "1503762",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ]
-  },
-  {
-   "id": 748,
-   "title": "Street Fighter",
-   "section": "soon",
-   "url": "https://www.sterkinekor.com/f/street-fighter/748",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/street-fighter-748/poster/61b07fcc-2347-49ca-93cb-14c53b1652d5.jpg?optimizer=image&width=342",
-   "release_date": "2026-10-16",
-   "date_label": "16 Oct",
-   "age_rating": "No Under 13's",
-   "age": null,
-   "runtime": "2h",
-   "genres": [
-    "action",
-    "comedy",
-    "fantasy"
-   ],
-   "bookable": false,
-   "trailer": "https://youtu.be/DLsC13Hd88g",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/street-fighter-748/backdrop/66b12444-5822-4a31-810a-22b690f3dee6.jpg?optimizer=image&width=1200",
-   "synopsis": "In 1993, estranged Street Fighters Ryu and Ken Masters are thrown back into combat when the mysterious Chun-Li recruits them for the next World Warrior Tournament: a brutal clash of fists, fate, and fury. But behind this battle royale lies a deadly conspiracy that forces them to face off against each other and the demons of their past. And if they don't, it's GAME OVER!",
-   "director": "",
-   "cast": [
-    "David Dastmalchian",
-    "Jason Momoa",
-    "Eric André",
-    "Leati Anoa'i",
-    "50 Cent",
-    "Callina Liang",
-    "Noah Centineo",
-    "Danny Philippou",
-    "Michael Philippou",
-    "Cody Rhodes"
-   ],
-   "language": "English",
-   "country": "Japan, United States",
-   "imdb_id": "tt27419420",
-   "tmdb_id": "1153576",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ]
-  },
   {
    "id": 750,
    "title": "Clayface",
@@ -676,8 +458,8 @@
    "poster": "https://images.filmgrail.com/mediaserver/movies/clayface-750/poster/a7da1f43-a3d7-49b8-9a25-2ad633e6ee9d.jpeg?optimizer=image&width=342",
    "release_date": "2026-10-23",
    "date_label": "23 Oct",
-   "age_rating": "TBA",
-   "age": null,
+   "age_rating": "No Under 16's - L V PPS",
+   "age": 16,
    "runtime": "1h 48m",
    "genres": [
     "horror",
@@ -713,16 +495,13 @@
    "poster": "https://images.filmgrail.com/mediaserver/movies/wildwood-753/poster/cc60ed39-7e8a-4d65-a254-7f7a8e19cd76.jpg?optimizer=image&width=342",
    "release_date": "2026-10-23",
    "date_label": "23 Oct",
-   "age_rating": "TBA",
-   "age": null,
-   "runtime": "1h 30m",
+   "age_rating": "Parental guidance for 10 - 12",
+   "age": 12,
+   "runtime": "2h 10m",
    "genres": [
-    "adventure",
-    "animation",
-    "family",
-    "fantasy"
+    "animation"
    ],
-   "bookable": false,
+   "bookable": true,
    "trailer": "https://www.youtube.com/watch?v=04V07p8EYVo",
    "backdrop": "https://images.filmgrail.com/mediaserver/movies/wildwood-753/backdrop/4a0a7dbc-373b-4021-ad8a-cc7ca2d72be4.jpg?optimizer=image&width=1200",
    "synopsis": "Prue and her classmate Curtis are drawn into a forbidden magical forest filled with enchanted creatures, loyal allies, and formidable adversaries as they embark on a desperate quest to save Prue’s kidnapped baby brother, Mac, from the crows led by a mysterious woman named Alexandra.",
@@ -757,7 +536,7 @@
    "date_label": "30 Oct",
    "age_rating": "No Under 13's",
    "age": null,
-   "runtime": "0h 10m",
+   "runtime": "1h 42m",
    "genres": [
     "drama"
    ],
@@ -790,7 +569,7 @@
    "poster": "https://images.filmgrail.com/mediaserver/movies/pressure-786/poster/c627fcb7-bd17-4e21-89dc-4e06aa30b6fc.jpg?optimizer=image&width=342",
    "release_date": "2026-10-30",
    "date_label": "30 Oct",
-   "age_rating": "TBA",
+   "age_rating": "No Under 13's",
    "age": null,
    "runtime": "1h 40m",
    "genres": [
@@ -823,6 +602,7 @@
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ],
+   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
    "ratings": [
     {
      "source": "IMDb",
@@ -832,8 +612,7 @@
      "source": "Rotten Tomatoes",
      "value": "89%"
     }
-   ],
-   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42"
+   ]
   },
   {
    "id": 649,
@@ -903,13 +682,51 @@
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ],
+   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
    "ratings": [
     {
      "source": "Rotten Tomatoes",
      "value": "97%"
     }
+   ]
+  },
+  {
+   "id": 793,
+   "title": "Prima Facie",
+   "section": "soon",
+   "url": "https://www.sterkinekor.com/f/prima-facie/793",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/prima-facie-793/poster/fab89395-5560-4767-b541-027652ee0880.jpg?optimizer=image&width=342",
+   "release_date": "2026-11-13",
+   "date_label": "13 Nov",
+   "age_rating": "TBA",
+   "age": null,
+   "runtime": "1h 48m",
+   "genres": [
+    "drama"
    ],
-   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42"
+   "bookable": false,
+   "trailer": "https://www.youtube.com/watch?v=88Rdt5vGbXk",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/prima-facie-793/backdrop/89398983-a3b8-4881-be80-3602fe20a469.jpg?optimizer=image&width=1200",
+   "synopsis": "Tessa is a brilliant British defence barrister dominating London’s ruthless courtrooms. Fierce, witty, and self-made, she defends men accused of sexual assault — until she is assaulted herself by a colleague from a powerful legal dynasty. Suddenly, the system she trusted turns against her. As she faces the same tactics she once used in court, Tessa’s faith in justice unravels. Once in control, now exposed and disbelieved, she must fight to reclaim her voice and sense of self.",
+   "director": "",
+   "cast": [
+    "Cynthia Erivo",
+    "Simon Russell Beale",
+    "Elizabeth Dulau",
+    "Daniel Ings",
+    "Noma Dumezweni",
+    "Toheeb Jimoh",
+    "Harry Treadaway",
+    "Sarah Junillon",
+    "Elliot Levey"
+   ],
+   "language": "English",
+   "country": "Australia, United Kingdom",
+   "imdb_id": "tt27759858",
+   "tmdb_id": "1127282",
+   "cinemas": [
+    "Ster-Kinekor Garden Route Mall"
+   ]
   },
   {
    "id": 752,
@@ -948,49 +765,51 @@
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ],
+   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
    "ratings": [
     {
      "source": "Rotten Tomatoes",
      "value": "85%"
     }
-   ],
-   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42"
+   ]
   },
   {
-   "id": 787,
-   "title": "Ghost Soldier",
+   "id": 801,
+   "title": "Wicker",
    "section": "soon",
-   "url": "https://www.sterkinekor.com/f/ghost-soldier/787",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/ghost-soldier-787/poster/ecc53e16-41d1-4b90-b39a-9fd16155c1d9.jpg?optimizer=image&width=342",
+   "url": "https://www.sterkinekor.com/f/wicker/801",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/wicker-801/poster/7fe06fb2-845d-4006-a1e4-8809445d35ad.jpg?optimizer=image&width=342",
    "release_date": "2026-11-20",
    "date_label": "20 Nov",
    "age_rating": "",
    "age": null,
    "runtime": "",
    "genres": [
-    "action"
+    "romance",
+    "fantasy",
+    "comedy"
    ],
    "bookable": false,
    "trailer": "",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/ghost-soldier-787/backdrop/300e9632-d0dc-441c-95d5-ea8cb977fc4e.jpg?optimizer=image&width=1200",
-   "synopsis": "Reclusive government asset Henry Fitzgerald is living off the grid in Wyoming, designing new systems for a weapons research agency. When a multi trillion dollar investment management firm begins employing corrupt police and foreign mercenaries to force farmers off their ranches, the Green Beret veteran decides to employ his weapon prototypes to assist his neighbors.",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/wicker-801/backdrop/37efc98d-b00e-4421-ae40-1c57afed107d.jpg?optimizer=image&width=1200",
+   "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
    "director": "",
    "cast": [
-    "Steven Cree",
-    "Beau Knapp",
-    "Shea Whigham",
-    "Olivia Thirlby",
-    "Jim Caviezel",
-    "Ricky Whittle",
-    "Garret Dillahunt",
-    "Alexej Manvelov",
-    "Olivia Chenery",
-    "Gunner Wright"
+    "Elizabeth Debicki",
+    "Peter Dinklage",
+    "Richard E. Grant",
+    "Alexander Skarsgård",
+    "Nabhaan Rizwan",
+    "Olivia Colman",
+    "Ella Bruccoleri",
+    "Scott Alexander Young",
+    "Marli Siu",
+    "Kiell Smith-Bynoe"
    ],
    "language": "",
-   "country": "Romania, United States",
-   "imdb_id": "tt38686316",
-   "tmdb_id": "1562642",
+   "country": "United Kingdom, United States",
+   "imdb_id": "tt29611136",
+   "tmdb_id": "1195803",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -1028,7 +847,7 @@
    "title": "Focker-In-Law",
    "section": "soon",
    "url": "https://www.sterkinekor.com/f/focker-in-law/796",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/focker-in-law-796/poster/09810944-8511-463b-a0fa-dd25451dfdd8.jpg?optimizer=image&width=342",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/focker-in-law-796/poster/c47f346d-f2c4-40cb-8378-71e81944375d.jpeg?optimizer=image&width=342",
    "release_date": "2026-11-27",
    "date_label": "27 Nov",
    "age_rating": "No Under 13's",
@@ -1081,7 +900,7 @@
     "fantasy"
    ],
    "bookable": false,
-   "trailer": "",
+   "trailer": "https://youtu.be/GF7Atpu2pHY",
    "backdrop": "https://images.filmgrail.com/mediaserver/movies/hexed-791/backdrop/2a21a0aa-0554-41e4-a075-f62d1bf5e5aa.jpeg?optimizer=image&width=1200",
    "synopsis": "An impulsive and unconventional teenage girl named Billie discovers secret magical abilities which, once unleashed, hurtle her into a spectacle-filled journey out of suburbia and into a vast witch realm called Hexe. Forced to team up with her cautious mother, Alice, they uncover family mysteries that could change the world of witches forever.",
    "director": "",
@@ -1100,56 +919,46 @@
    ]
   },
   {
-   "id": 797,
-   "title": "Paper Tiger",
+   "id": 802,
+   "title": "Cat in the Hat,The",
    "section": "soon",
-   "url": "https://www.sterkinekor.com/f/paper-tiger/797",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/paper-tiger-797/poster/46c73f3d-db6f-4d68-b3a7-1bada1236f49.jpeg?optimizer=image&width=342",
-   "release_date": "2026-11-27",
-   "date_label": "27 Nov",
-   "age_rating": "",
+   "url": "https://www.sterkinekor.com/f/cat-in-the-hat-the/802",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/cat-in-the-hat-the-802/poster/d2ffdc9d-a1b7-417b-8196-e95cd959f8aa.jpg?optimizer=image&width=342",
+   "release_date": "2026-12-04",
+   "date_label": "04 Dec",
+   "age_rating": "TBA",
    "age": null,
-   "runtime": "",
+   "runtime": "1h 47m",
    "genres": [
-    "crime",
-    "drama",
-    "thriller"
+    "family",
+    "comedy",
+    "animation",
+    "fantasy"
    ],
    "bookable": false,
-   "trailer": "",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/paper-tiger-797/backdrop/a40339d7-84ff-4281-b241-acabe3a5058d.jpeg?optimizer=image&width=1200",
-   "synopsis": "Two brothers chase the American dream, but soon find themselves in the brutal world of violence and corruption of the Russian mafia.",
+   "trailer": "https://youtu.be/j3o7Xe1lVyI",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/cat-in-the-hat-the-802/backdrop/dfd82b9c-9e85-450c-a518-325f68d41a36.jpg?optimizer=image&width=1200",
+   "synopsis": "Doing what he does best, the Cat spreads joy to kids in his hilarious, signature, and singularly irreverent way, transporting them and audiences on a fantastical journey through a world they've never seen before. Our hero takes on his toughest assignment yet for the I.I.I.I. (Institute for the Institution of Imagination and Inspiration, LLC) to cheer up Gabby and Sebastian, a pair of siblings struggling to move to a new town. Known for taking things too far, this could be this agent of chaos' last chance to prove himself...or lose his magical hat!",
    "director": "",
    "cast": [
-    "Scarlett Johansson",
-    "Adam Driver",
-    "Miles Teller",
-    "Dimiter D. Marinov",
-    "Gavin Goudey",
-    "Roman Engel",
-    "Cindy Katz",
-    "Yavor Vesselinov",
-    "Victor Ptak",
-    "Raphael Corkhill"
+    "America Ferrera",
+    "Giancarlo Esposito",
+    "Bill Hader",
+    "Paula Pell",
+    "Tituss Burgess",
+    "Matt Berry",
+    "Bowen Yang",
+    "Quinta Brunson",
+    "Xochitl Gomez",
+    "Tiago Martinez"
    ],
-   "language": "",
-   "country": "Brazil, Italy, United States",
-   "imdb_id": "tt34385689",
-   "tmdb_id": "1381273",
+   "language": "English",
+   "country": "United Kingdom, United States",
+   "imdb_id": "tt2321555",
+   "tmdb_id": "1117898",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
-   ],
-   "ratings": [
-    {
-     "source": "IMDb",
-     "value": "7.0"
-    },
-    {
-     "source": "Rotten Tomatoes",
-     "value": "87%"
-    }
-   ],
-   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42"
+   ]
   },
   {
    "id": 783,
@@ -1285,6 +1094,88 @@
    "country": "United States",
    "imdb_id": "tt31378509",
    "tmdb_id": "1170608",
+   "cinemas": [
+    "Ster-Kinekor Garden Route Mall"
+   ]
+  },
+  {
+   "id": 803,
+   "title": "Angry Birds Movie 3, The",
+   "section": "soon",
+   "url": "https://www.sterkinekor.com/f/angry-birds-movie-3-the/803",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/angry-birds-movie-3-the-803/poster/7c2fd994-7c79-4dc7-a11a-b8deeeb33ca3.jpg?optimizer=image&width=342",
+   "release_date": "2026-12-25",
+   "date_label": "25 Dec",
+   "age_rating": "Parental guidance",
+   "age": null,
+   "runtime": "1h 38m",
+   "genres": [
+    "animation",
+    "comedy",
+    "family"
+   ],
+   "bookable": false,
+   "trailer": "https://youtu.be/O4hfTxCUloc",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/angry-birds-movie-3-the-803/backdrop/472bdd2c-e0c3-4d2a-959e-b2513567b57b.jpg?optimizer=image&width=1200",
+   "synopsis": "Red faces his greatest challenge yet… surviving fatherhood.",
+   "director": "",
+   "cast": [
+    "Nikki Glaser",
+    "Josh Gad",
+    "Lily James",
+    "Danny McBride",
+    "Jason Sudeikis",
+    "Sam Richardson",
+    "Rachel Bloom",
+    "James Austin Johnson",
+    "Keke Palmer",
+    "Emma Myers"
+   ],
+   "language": "English",
+   "country": "Finland, Hong Kong, India, Japan, United Kingdom, United States",
+   "imdb_id": "tt32557122",
+   "tmdb_id": "1300926",
+   "cinemas": [
+    "Ster-Kinekor Garden Route Mall"
+   ]
+  },
+  {
+   "id": 804,
+   "title": "Jumanji: Open World",
+   "section": "soon",
+   "url": "https://www.sterkinekor.com/f/jumanji-open-world/804",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/jumanji-open-world-804/poster/59e44775-1d51-4e11-bdb3-2999e1248313.jpg?optimizer=image&width=342",
+   "release_date": "2026-12-25",
+   "date_label": "25 Dec",
+   "age_rating": "",
+   "age": null,
+   "runtime": "",
+   "genres": [
+    "fantasy",
+    "adventure",
+    "comedy"
+   ],
+   "bookable": false,
+   "trailer": "https://youtu.be/m3hJKJx2vSM",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/jumanji-open-world-804/backdrop/229276b8-4b47-441e-ae76-d4c2d9c7deac.jpg?optimizer=image&width=1200",
+   "synopsis": "Our heroes have escaped the ever-changing jungles of Jumanji before, but this time the game comes to us - as Jumanji breaks free of its console, unleashing its chaos into our world.",
+   "director": "",
+   "cast": [
+    "Karen Gillan",
+    "Dwayne Johnson",
+    "Burn Gorman",
+    "Bobby Cannavale",
+    "Jack Black",
+    "Alex Wolff",
+    "Kevin Hart",
+    "Danny DeVito",
+    "Awkwafina",
+    "Lamorne Morris"
+   ],
+   "language": "",
+   "country": "United States",
+   "imdb_id": "tt26735127",
+   "tmdb_id": "1260649",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]

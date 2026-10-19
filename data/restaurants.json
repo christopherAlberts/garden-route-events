@@ -45,10 +45,6 @@
   "geo_source": "nominatim",
   "region": "Garden Route",
   "occurrences": [
-   "2026-10-13",
-   "2026-10-14",
-   "2026-10-15",
-   "2026-10-16",
    "2026-10-20",
    "2026-10-21",
    "2026-10-22",
@@ -149,13 +145,13 @@
    "2027-04-07",
    "2027-04-08",
    "2027-04-09",
-   "2027-04-13"
+   "2027-04-13",
+   "2027-04-14",
+   "2027-04-15",
+   "2027-04-16",
+   "2027-04-20"
   ],
   "day_labels": {
-   "2026-10-13": "Taco Tuesday",
-   "2026-10-14": "Burger special",
-   "2026-10-15": "Pizza special R120",
-   "2026-10-16": "Kids' pottery painting 30% off",
    "2026-10-20": "Taco Tuesday",
    "2026-10-21": "Burger special",
    "2026-10-22": "Pizza special R120",
@@ -256,7 +252,11 @@
    "2027-04-07": "Burger special",
    "2027-04-08": "Pizza special R120",
    "2027-04-09": "Kids' pottery painting 30% off",
-   "2027-04-13": "Taco Tuesday"
+   "2027-04-13": "Taco Tuesday",
+   "2027-04-14": "Burger special",
+   "2027-04-15": "Pizza special R120",
+   "2027-04-16": "Kids' pottery painting 30% off",
+   "2027-04-20": "Taco Tuesday"
   },
   "recurrence": "Tue: Taco Tuesday; Wed: Burger special; Thu: Pizza special R120; Fri: Kids' pottery painting 30% off"
  },
@@ -306,11 +306,6 @@
   "geo_source": "nominatim",
   "region": "Garden Route",
   "occurrences": [
-   "2026-10-12",
-   "2026-10-13",
-   "2026-10-14",
-   "2026-10-15",
-   "2026-10-16",
    "2026-10-19",
    "2026-10-20",
    "2026-10-21",
@@ -437,14 +432,14 @@
    "2027-04-08",
    "2027-04-09",
    "2027-04-12",
-   "2027-04-13"
+   "2027-04-13",
+   "2027-04-14",
+   "2027-04-15",
+   "2027-04-16",
+   "2027-04-19",
+   "2027-04-20"
   ],
   "day_labels": {
-   "2026-10-12": "Happy hour 16:00-18:00",
-   "2026-10-13": "Happy hour 16:00-18:00 · Pizza Tuesday",
-   "2026-10-14": "Happy hour 16:00-18:00",
-   "2026-10-15": "Happy hour 16:00-18:00",
-   "2026-10-16": "Happy hour 16:00-18:00",
    "2026-10-19": "Happy hour 16:00-18:00",
    "2026-10-20": "Happy hour 16:00-18:00 · Pizza Tuesday",
    "2026-10-21": "Happy hour 16:00-18:00",
@@ -571,7 +566,12 @@
    "2027-04-08": "Happy hour 16:00-18:00",
    "2027-04-09": "Happy hour 16:00-18:00",
    "2027-04-12": "Happy hour 16:00-18:00",
-   "2027-04-13": "Happy hour 16:00-18:00 · Pizza Tuesday"
+   "2027-04-13": "Happy hour 16:00-18:00 · Pizza Tuesday",
+   "2027-04-14": "Happy hour 16:00-18:00",
+   "2027-04-15": "Happy hour 16:00-18:00",
+   "2027-04-16": "Happy hour 16:00-18:00",
+   "2027-04-19": "Happy hour 16:00-18:00",
+   "2027-04-20": "Happy hour 16:00-18:00 · Pizza Tuesday"
   },
   "recurrence": "Mon/Tue/Wed/Thu/Fri: Happy hour 16:00-18:00; Tue: Pizza Tuesday"
  },
@@ -612,7 +612,6 @@
   "event_ids": [
    "2026-10-06-noot-vir-noot-music-quiz-night-at-hennie-s-george-",
    "2026-10-08-quiz-night-at-hennie-s-george-thursdays",
-   "2026-10-17-john-masser-live-at-hennie-s-george",
    "2026-10-30-landman-live-at-hennie-s-george"
   ],
   "lat": -33.9658718,
@@ -620,10 +619,6 @@
   "geo_source": "nominatim",
   "region": "Garden Route",
   "occurrences": [
-   "2026-10-12",
-   "2026-10-13",
-   "2026-10-14",
-   "2026-10-15",
    "2026-10-19",
    "2026-10-20",
    "2026-10-21",
@@ -725,13 +720,13 @@
    "2027-04-07",
    "2027-04-08",
    "2027-04-12",
-   "2027-04-13"
+   "2027-04-13",
+   "2027-04-14",
+   "2027-04-15",
+   "2027-04-19",
+   "2027-04-20"
   ],
   "day_labels": {
-   "2026-10-12": "Debriefing specials 13:00-17:00",
-   "2026-10-13": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00",
-   "2026-10-14": "Debriefing specials 13:00-17:00",
-   "2026-10-15": "Debriefing specials 13:00-17:00 · Quiz night 19:00",
    "2026-10-19": "Debriefing specials 13:00-17:00",
    "2026-10-20": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00",
    "2026-10-21": "Debriefing specials 13:00-17:00",
@@ -833,7 +828,11 @@
    "2027-04-07": "Debriefing specials 13:00-17:00",
    "2027-04-08": "Debriefing specials 13:00-17:00 · Quiz night 19:00",
    "2027-04-12": "Debriefing specials 13:00-17:00",
-   "2027-04-13": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00"
+   "2027-04-13": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00",
+   "2027-04-14": "Debriefing specials 13:00-17:00",
+   "2027-04-15": "Debriefing specials 13:00-17:00 · Quiz night 19:00",
+   "2027-04-19": "Debriefing specials 13:00-17:00",
+   "2027-04-20": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00"
   },
   "recurrence": "Mon/Tue/Wed/Thu: Debriefing specials 13:00-17:00; Tue: Noot vir Noot 19:00; Thu: Quiz night 19:00"
  },
@@ -1449,9 +1448,7 @@
   "last_checked": "2026-10-06",
   "image": "",
   "image_source": "",
-  "event_ids": [
-   "2026-10-14-cula-presents-david-vs-goliath-ultimate-wine-battl"
-  ],
+  "event_ids": [],
   "lat": -33.9597212,
   "lng": 22.4587148,
   "geo_source": "town centroid",

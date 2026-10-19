@@ -29,6 +29,7 @@ def og(page_url):
             if not BAD_IMG.search(u): return u
     return ""
 def save(i,url):
+    url=url.replace(" ","%20")  # some Webtickets panel images have spaces in their file names
     b=fetch(url,True,40)
     if len(b)<3000: return False
     try:

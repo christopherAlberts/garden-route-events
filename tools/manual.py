@@ -513,7 +513,7 @@ add(title="Great Southern Bioblitz 2026 – Garden Route (iNaturalist citizen sc
     notes="Four-day Southern Hemisphere biodiversity survey: photograph any wild plant, animal or fungus and upload it to the free iNaturalist app, linked to the 'Great Southern Bioblitz 2026 - Garden Route' project. Free, no expertise needed; 14 days afterwards to finish uploads and IDs. Wild Rescue (Garden Route organiser) runs practical iNaturalist workshops and trail walks at its reserve on 28 and 29 November; times and bookings to be announced on its social media.",
     lat=-34.368333,lng=21.411111,geo_source="town centroid (reserve near Stilbaai)",_img="https://wildrescue.co.za/wp_2023/wp-content/uploads/2026/09/GSBB-2026-Garden-Route-1024x429.png")
 add(title="Garden Route Indigenous Plant Fair",category="market",start_date="2026-10-30",end_date="2026-11-01",time="",town="George",
-    venue="Garden Route Botanical Garden",venue_address="49 Caledon Street, George",price_from="",ticket_url="",
+    venue="Garden Route Botanical Garden",venue_address="",price_from="",ticket_url="",
     source_url="https://www.knysna.n2rs.com/knysna-diary-october.html",source_name="Knysna Diary (n2rs.com), October 2026",
     alt_sources=["https://botanicalgarden.org.za/","https://www.facebook.com/GRBotanical/"],
     notes="Annual plant fair (the garden says it is usually on the first weekend of November): 5,000+ indigenous plants of 400+ species for sale, gardening talks and indigenous-focused presentations, creative art workshops, food and craft stalls and a kids zone. Times not yet published; Garden Route Botanical Garden 044 874 1558.",
@@ -763,8 +763,12 @@ add(title="Night of 1000 Owls – Raptor Rescue art exhibition & fundraiser",cat
     price_from="",ticket_url="",source_url=OTR8,source_name=_S_OTR,notes="Owl-inspired art exhibition and fundraiser for Raptor Rescue, part of the birding festival.")
 add(title="Rhodes Dryland Traverse (multi-day trail run)",category="funrun",start_date="2026-10-29",end_date="2026-11-01",time="",town="Oudtshoorn",venue="Cango Caves into the Swartberg",
     price_from="",ticket_url="",source_url=OTR8,source_name=_S_OTR,notes="Multi-day trail run from the Cango Caves into the Swartberg.")
-add(title="SA National Criterium Championships (road cycling)",category="sport",start_date="2026-10-30",end_date="2026-11-01",time="",town="George",venue="Cornerstone Lifestyle Centre",
-    price_from="",ticket_url="",source_url=OTR8,source_name=_S_OTR,notes="National road-cycling criterium championships.")
+add(title="SA National Criterium Championships (road cycling)",category="sport",start_date="2026-10-31",end_date="2026-11-01",time="",town="Mossel Bay",
+    venue="George Road circuit, De Bakke–Santos (race village at Santos Beach)",venue_address="George Road, Santos Beach, Mossel Bay",
+    price_from="",ticket_url="https://www.easyreg.co.za/events/south-african-national-criterium-championships-2026",
+    source_url="https://www.edencycling.co.za/sa-nationals-criterium-2026-mosselbay/",source_name="Eden Cycling Association",
+    alt_sources=[MB+"sa-national-criterium-championships/",OTR8],
+    notes="Relocated from George (Cornerstone) to Mossel Bay: ±3.5 km closed circuit on George Road with a race village at Santos Beach. Sat 31 Oct Veterans, Masters and the C2C Youth Criterium; Sun 1 Nov Junior, U23 and Elite. Community outride Fri 30 Oct from Diaz Hotel (registration also at Diaz Hotel). Online entries close 27 Oct.")
 add(title="Woord in Waarheid Damestee (ladies' tea)",category="community",start_date="2026-10-31",time="10:00-12:00",town="Mossel Bay",venue="Mossel Bay Town Hall",venue_address="Wassung Street, Mossel Bay",
     price_from="R200",ticket_url="",source_url=MB+"woord-in-waarheid-damestee/",source_name=_S_MB,notes="R200 per person; table of 10 R1,800.")
 add(title="Asanda Bam live at The White House Theatre (jazz)",category="concert",start_date="2026-10-31",time="18:00",town="Plettenberg Bay",venue="The White House Theatre",price_from="R250",ticket_url="",
@@ -1141,3 +1145,179 @@ for _iid,_t,_d in [("485048","Kip Moore – Cape Town (Friday)","2026-10-23"),("
         ticket_url="https://itickets.co.za/events/"+_iid,source_url="https://itickets.co.za/events/"+_iid,source_name="iTickets",notes="US country singer. Tickets R650-R1,450.")
 add(title="The Michael Jackson HIStory Show",category="concert",start_date="2027-01-16",time="20:00",town="Cape Town",venue="Grand Arena, GrandWest",venue_address="1 Jakes Gerwel Drive, Acacia Park, Cape Town",price_from="R425",
     ticket_url="https://itickets.co.za/events/487145",source_url="https://itickets.co.za/events/487145",source_name="iTickets",notes="Michael Jackson tribute show. R425-R550.")
+
+# ---------------- Weekly refresh 19 Oct 2026 (Quicket / Howler / Webtickets / Visit Mossel Bay / George Municipality calendar / On The Route / Visit Knysna) ----------------
+QU19="https://www.quicket.co.za"
+GMC="https://www.george.gov.za/wp-content/uploads/2026/09/George-Wilderness-Uniondale-Events-Calender-30-09-2026.pdf"
+_S_GMC="George Municipality events calendar (30 Sep 2026)"
+OTR15="https://www.ontheroute.co.za/your-garden-route-event-guide-15-october/"
+def _q19(qid,path,img,lat,lng,**k):
+    u=QU19+path
+    k.setdefault("ticket_url",u); k.setdefault("source_url",u); k.setdefault("source_name","Quicket")
+    add(lat=lat,lng=lng,geo_source="event page",_img="https://images.quicket.co.za/"+img,**k)
+_q19(401594,"/events/401594-block-party-tasting/","1002644_0.png",-33.99506,22.5729332,
+    title="Block Party Tasting – sundowner wine tasting at Wilderness Train Station",category="restaurant",start_date="2026-10-30",time="17:00-20:00",town="Wilderness",
+    venue="Wilderness Train Station",venue_address="56 Sands Road, Wilderness",price_from="R85",
+    notes="Sundowner wine tasting moving between GRAFT co-working, NAN deli and Peron at the old station, with Brand Republic wines. R85 online, R120 at the door.")
+_q19(403617,"/events/403617-left-sleeve-surval-boutique-olive-estate/","1006600_0.png",-33.53481,22.2351875,
+    title="Left Sleeve @ Surval Boutique Olive Estate (poetry & storytelling)",category="arts",start_date="2026-10-31",time="18:30-21:00",town="Oudtshoorn",
+    venue="Surval Boutique Olive Estate",venue_address="R328 & Cango Caves Road, Oudtshoorn",price_from="R185",
+    notes="An evening of poetry and storytelling at the olive estate. R185.")
+_q19(402518,"/events/402518-sunset-jam/","1003231_0.png",-33.95049,23.4788761,
+    title="Sunset Jam (The Jam) – DJ Lucy in the Wild",category="concert",start_date="2026-11-06",time="17:30-21:30",town="The Crags",
+    venue="Private home, Askop Ridge Road",venue_address="Askop Ridge Road, The Crags, Plettenberg Bay",price_from="R220",
+    notes="Sunset DJ set by Lucy in the Wild at a private home on Askop Ridge, with a Foodology bowl option. R220-R420.")
+_q19(402868,"/events/402868-ancient-history-captured-in-the-caves-and-coastline-of-the-robberg-coastal-corr/","1004330_0.jpeg",-34.0450974,23.3613243,
+    title="Ancient history in the caves and coastline of the Robberg Coastal Corridor (talk)",category="nature",start_date="2026-11-19",time="17:00",town="Plettenberg Bay",
+    venue="Formosa Garden Village",venue_address="Ferdinand Street, Plettenberg Bay",price_from="R300",
+    notes="Van Plettenberg Historical Society talk by Morkel Pienaar and Kei Heyns on the archaeology of the Robberg Coastal Corridor Protected Environment. R300.")
+for _qid,_img,_d in [(402618,"1003473_0.png","2026-11-19"),(402621,"1003490_0.png","2026-11-20")]:
+    _q19(_qid,f"/events/{_qid}-magda-louw-en-die-kar-se-sleutel/",_img,-34.1782074,22.13667,
+        title="Magda Louw en die kar se sleutel (Desirè Gardner, Afrikaans comedy)",category="arts",start_date=_d,time="19:00",town="Mossel Bay",
+        venue="The Stage Coach at Santos Express",venue_address="1 Munro Street, Mossel Bay",price_from="R180",
+        notes="Afrikaans one-woman comedy by Desirè Gardner. Two nights, 19 and 20 November. R180.")
+_q19(402460,"/events/402460-old-friends-with-guitars-percussion/","1003205_0.png",-34.0357323,23.2982254,
+    title="Old Friends – Des Lindberg, Steve Newman & Eugene van Pletzen",category="concert",start_date="2026-11-22",time="12:00-13:30",town="Plettenberg Bay",
+    venue="Bosky Dell Farm & Rose Garden",venue_address="N2, Plettenberg Bay",price_from="R200",
+    notes="Guitars and percussion with three veteran SA musicians in the rose garden. R200.")
+_q19(402997,"/events/402997-amira/","1004688_0.jpeg",-34.1241264,22.1130047,
+    title="Amira Willighagen live in Hartenbos",category="concert",start_date="2026-12-04",time="19:00",town="Hartenbos",
+    venue="NG Kerk Hartenbos",venue_address="4 Majuba Avenue, Hartenbos",price_from="R170",
+    notes="Soprano Amira Willighagen in concert. R170.")
+_q19(387742,"/events/387742-vine-voyage-knysna/","0994195_0.jpeg",-34.0486755,23.0535316,
+    title="Vine & Voyage Knysna (boat-hop wine tasting, Thesen Island)",category="festival",start_date="2026-12-05",time="11:00-17:00",town="Knysna",
+    venue="Thesen Island",venue_address="Thesen Island, Knysna",price_from="R800",
+    notes="Travel by boat between private Thesen Island homes hosting wine-tasting stations. R800; no under-18s.")
+_q19(402987,"/events/402987-ramkietjie/","1004644_0.jpeg",-34.1241264,22.1130047,
+    title="Ramkietjie – Jannie du Toit (55 years, FAK songs)",category="concert",start_date="2026-12-17",time="19:00",town="Hartenbos",
+    venue="NG Kerk Hartenbos",venue_address="4 Majuba Avenue, Hartenbos",price_from="R170",
+    notes="Jannie du Toit celebrates 55 years on stage with FAK songs, with Johan Heystek (piano) and Rina Kruger (cello). R170.")
+_q19(402991,"/events/402991-secret-sunrise-jolly-holiday-shake-up/","1004692_0.jpeg",-34.00522,23.03852,
+    title="Secret Sunrise – Jolly Holiday Shake Up (silent headphone dance)",category="community",start_date="2026-12-19",time="06:30-07:30",town="Knysna",
+    venue="Simola Hotel, Country Club & Spa",venue_address="1 Old Cape Road, Knysna",price_from="R100",
+    notes="Hour-long guided headphone movement and dance session at sunrise, for all ages. R100-R180.")
+_q19(402507,"/events/402507-groot-brak-festival/","1003217_0.jpeg",-34.03893,22.2042713,
+    title="Groot Brak Festival (Brothers on Deck)",category="festival",start_date="2026-12-19",time="10:00-21:00",town="Groot Brak",
+    venue="Groot-Brakrivier Secondary School",venue_address="Wolwedans, Great Brak River",price_from="R120",
+    notes="Day festival with live music by Brothers on Deck and more. R120. (The Quicket description mentions 2027, but the listing date is 19 Dec 2026.)")
+for _qid,_slug,_img,_d,_t,_town,_ven,_addr,_lat,_lng,_pr,_n in [
+    (402648,"roan-ash-live-in-george","1003578_0.jpeg","2026-12-20","20:00","George","George Civic Centre","71 York Street, George",-33.9610329,22.4541473,"R200",""),
+    (402624,"roan-ash-live-at-pinnacle-point","1003504_0.jpeg","2026-12-23","20:00","Mossel Bay","Pinnacle Point","1 Pinnacle Point Drive, Mossel Bay",-34.20326,22.0863876,"R290","Unplugged show."),
+    (402609,"roan-ash-live-in-plettenberg-bay","1003455_0.jpeg","2026-12-26","20:00","Plettenberg Bay","Piesang Valley Community Hall","7 Green Point Avenue, Plettenberg Bay",-34.0628929,23.3660183,"R220","R220-R300.")]:
+    _q19(_qid,f"/events/{_qid}-{_slug}/",_img,_lat,_lng,title=f"Roan Ash live in {_town}" if _town!="Mossel Bay" else "Roan Ash live at Pinnacle Point (unplugged)",
+        category="concert",start_date=_d,time=_t,town=_town,venue=_ven,venue_address=_addr,price_from=_pr,notes=("Singer-songwriter Roan Ash on his December Garden Route run. "+_n).strip())
+BLEND=dict(town="Knysna",venue="Blend Country Restaurant & Pub",venue_address="George Rex Drive, Knysna")
+_q19(402602,"/events/402602-jesse-clegg-live-in-knysna/","1003436_0.jpeg",-34.0629959,23.0711117,
+    title="Jesse Clegg live in Knysna",category="concert",start_date="2026-12-26",time="Gates 17:30, show 19:30",price_from="R300",notes="Phase-1 tickets R300.",**BLEND)
+_q19(402846,"/events/402846-ross-learmonth-live-in-knysna/","1004232_0.jpeg",-34.0629959,23.0711117,
+    title="Ross Learmonth live in Knysna",category="concert",start_date="2026-12-27",time="Gates 13:30, show 15:00",price_from="R280",notes="Phase-1 tickets R280.",**BLEND)
+_q19(403834,"/events/403834-crimson-house-live-in-knysna/","1007196_0.jpeg",-34.0629959,23.0711117,
+    title="Crimson House live in Knysna",category="concert",start_date="2026-12-28",time="Gates 18:00, show 19:30",price_from="R200",notes="Phase-1 tickets R200.",**BLEND)
+_q19(402743,"/events/402743-tribute-to-neil-diamond-live-in-knysna/","1003858_0.jpeg",-34.00522,23.03852,
+    title="Tribute to Neil Diamond live in Knysna (Johan Liebenberg – Solitary Man)",category="concert",start_date="2027-01-06",time="20:00",town="Knysna",
+    venue="Simola Hotel, Country Club & Spa",venue_address="1 Old Cape Road, Knysna",price_from="R200",notes="Neil Diamond tribute by Johan Liebenberg. R200-R270.")
+# Stilbaai (wider coast)
+STABLES=dict(town="Stilbaai",venue="The Stables Eatery & Bar",venue_address="220 Main Road, Still Bay East")
+_q19(402821,"/events/402821-stilbaai-jongensfontein/","1004818_0.jpeg",-34.3975372,21.3258781,
+    title="Joshua na die Reën – Stilbaai / Jongensfontein",category="concert",start_date="2026-12-22",time="Gates 18:00, show 19:00",town="Stilbaai",
+    venue="Jongensdal",venue_address="Groot-Jongensfontein",price_from="R50",notes="R50-R250.")
+_q19(403440,"/events/403440-jan-blohm-stables-eatery-bar-stilbaai/","1006134_0.jpeg",-34.3514366,21.415163,
+    title="Jan Blohm @ Stables Eatery & Bar, Stilbaai",category="concert",start_date="2026-12-26",time="18:00",price_from="R295",notes="R295.",**STABLES)
+_q19(403420,"/events/403420-juan-boucher-stables-eatery-bar-stilbaai/","1006106_0.jpeg",-34.3514366,21.415163,
+    title="Juan Boucher @ Stables Eatery & Bar, Stilbaai",category="concert",start_date="2026-12-27",time="18:00",price_from="R295",notes="R295.",**STABLES)
+_q19(403580,"/events/403580-rooksein-live-by-drie-ankers-stilbaai/","1006506_0.jpeg",-34.38403,21.40435,
+    title="Rooksein live by Drie Ankers, Stilbaai",category="concert",start_date="2026-12-28",time="Doors 18:30, show 20:00",town="Stilbaai",
+    venue="Drie Ankers (3 Ankers)",venue_address="67 Bessie Street, Still Bay West",price_from="R200",notes="R200.")
+# Visit Mossel Bay calendar
+_S_MB19="Visit Mossel Bay (tourism calendar)"
+occ=["2026-10-23","2026-10-24","2026-10-30","2026-10-31"]
+add(title="Mysteries, Mayhem, Crimes and Ghosts of Mossel Bay (evening walking tour)",category="arts",start_date=occ[0],end_date=occ[-1],occurrences=occ,
+    recurrence="Friday & Saturday evenings (listed: 23, 24, 30, 31 Oct), 18:00",time="18:00",town="Mossel Bay",venue="Dias Museum (start)",venue_address="1 Market Street, Mossel Bay",
+    price_from="",ticket_url="",source_url=MB+"mysteries-mayhem-crimes-and-ghosts-of-mossel-bay/",source_name=_S_MB19,alt_sources=[OTR15],
+    notes="Guided evening walking tour through the town's darker side – old crimes, local legends and ghost stories – run by South Cape Promotions. Availability and weather dependent.")
+add(title="Cheese & Wine Day Festival at Hart & Bosch Village",category="festival",start_date="2026-10-31",time="09:00-18:00",town="Hartenbos",
+    venue="Hart & Bosch Village",venue_address="Hart & Bosch Village, R102, Hartenbos",price_from="",ticket_url="",
+    source_url=MB+"cheese-wine-day-festival-hart-bosch-village/",source_name=_S_MB19,
+    notes="Local winemakers, cheese producers and olive farmers, wine pairings and 'Wine on the Couch' conversations with Garden Route winemakers.")
+add(title="Christmas Ornament Making (pottery workshop) at Mosselclay",category="arts",start_date="2026-11-14",time="10:00-12:00",town="Mossel Bay",
+    venue="Mosselclay Pottery Studio",venue_address="52 Upper Cross Street, Mossel Bay",price_from="",ticket_url="",
+    source_url=MB+"christmas-ornament-making/",source_name=_S_MB19,
+    notes="Make and paint your own Christmas pottery decorations, some finished with 18ct gold lustre; ready for collection from 1 December.")
+add(title="Koos Kombuis live at ReedValley",category="concert",start_date="2026-11-28",time="20:00",price_from="R200",source_url=MB+"koos-kombuis-live-at-reedvalley/",
+    notes="Afrikaans singer-songwriter Koos Kombuis. R200; book via reedvalley.com/shows.",**RV)
+add(title="CCR & Smokie tribute – Gareth James & Band live at ReedValley",category="concert",start_date="2026-12-30",time="20:00",price_from="R280",source_url=MB+"ccr-smokie-tribute-live-at-reedvalley/",
+    notes="Creedence Clearwater Revival and Smokie tribute. From R280.",**RV)
+occ=[d for d in _dates("2026-12-16","2027-01-03",range(7)) if d not in ("2026-12-25","2027-01-01")]
+add(title="Atlantic Rail steam train trips, Hartenbos – Mossel Bay (December)",category="nature",start_date=occ[0],end_date=occ[-1],occurrences=occ,
+    recurrence="Daily 16-24 Dec, 26-31 Dec, 2-3 Jan; departures 09:00 and 13:00",time="09:00 & 13:00",town="Hartenbos",
+    venue="Hennies Hartenbos (old train station)",venue_address="Port Natal Avenue, Hartenbos",price_from="",ticket_url="https://www.atlantic-rail.co.za/",
+    source_url=MB+"atlantic-rail-trips-this-december-2026/",source_name=_S_MB19,
+    notes="Steam train with vintage coaches from Hartenbos to Mossel Bay and back, with about 1.5 hours at Santos Beach in between. Bookings at atlantic-rail.co.za or WhatsApp 082 268 6136.")
+# Howler – Mossel Bay
+add(title="Mega Club'26 – Mosselbaai (main season)",category="concert",start_date="2026-12-26",end_date="2027-01-01",time="20:00-02:00",town="Mossel Bay",
+    venue="Langeberg Mall (underground parking lot)",venue_address="Langeberg Mall, Mossel Bay",price_from="R150",
+    ticket_url="https://www.howler.co.za/megaclubsa26",source_url="https://www.howler.co.za/megaclubsa26",source_name="Howler",
+    notes="18+ holiday club nights: 26 Dec Timo ODV & Biggy; 28 Dec Jack Parow; 29 Dec Early B & Cinimin; 30 Dec Loufi & Vimo; 31 Dec New Year's Eve with Van Pletzen, Locnville, Chunda Munki and Advent (closed 27 Dec). Nights from R150, week ticket R550.")
+# Webtickets – Garden Route items without venue/geo in the harvest (or not in the harvest)
+add(title="Juanita du Plessis @ Bush Lapa",category="concert",start_date="2026-11-06",time="18:00",town="George",
+    venue="Die Bush Lapa (Herold's Bay Eco Resort)",venue_address="Herold's Bay Eco Resort, Oubaai Road, Herold's Bay, George",price_from="R250",
+    ticket_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1602767937",source_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1602767937",source_name="Webtickets",
+    alt_sources=[GMC],lat=-34.04120225,lng=22.39785457,geo_source="event page",_img="https://content.webtickets.co.za/heroldsbay/panel_Juanita%201_20260909_141232.jpg",
+    notes="Family-friendly concert venue: meals and cash bar, no own food or drinks. R250.")
+for _iid,_town,_d in [("1605088750","Mossel Bay","2026-12-19"),("1605089285","George","2026-12-20")]:
+    _u="https://www.webtickets.co.za/v2/event.aspx?itemid="+_iid
+    add(title=f"Dreaming Out Loud Festival 2026 ft Neon Dreams & Byrne – {_town}",category="concert",start_date=_d,time="Doors 16:00, show 18:00-21:00",town=_town,
+        venue="",venue_address="",price_from="R190",ticket_url=_u,source_url=_u,source_name="Webtickets",
+        notes="Canadian band Neon Dreams with Byrne on their South African summer coastal tour. R190-R300 excl. service fee. The venue is not yet published on Webtickets.")
+# George Municipality events calendar (30 Sep 2026)
+add(title="Bonnets Up Bring 'n Braai (Southern Cape Old Car Club)",category="community",start_date="2026-10-25",time="11:00",town="George",
+    venue="Die BENZ",venue_address="",price_from="Free",ticket_url="",source_url=GMC,source_name=_S_GMC,notes="Classic-car bring-and-braai. Free. Contact 076 764 0897 (scocc.co.za).")
+add(title="Algoa FM Big Walk for Cancer – George",category="funrun",start_date="2026-10-31",time="",town="George",
+    venue="George Golf Club",venue_address="",price_from="R80",ticket_url="",source_url=GMC,source_name=_S_GMC,
+    notes="Charity walk for cancer. R80-R450 per person. Info: algoafm.co.za, 086 097 0970.")
+add(title="Hoekwil Open Gardens 2026",category="nature",start_date="2026-10-31",end_date="2026-11-01",time="09:00-16:00",town="Hoekwil",
+    venue="Hoekwil Primary School (start)",venue_address="Hoekwil, Wilderness",price_from="R80",ticket_url="",source_url=GMC,source_name=_S_GMC,
+    notes="Open-gardens weekend in Hoekwil. R80 per person. Contact 073 174 4186.")
+add(title="SCAVA Visual Expressions Competition & Exhibition",category="arts",start_date="2026-11-13",end_date="2027-01-21",time="",town="George",
+    venue="George Museum",venue_address="",price_from="",ticket_url="",source_url=GMC,source_name=_S_GMC,
+    notes="Southern Cape visual art competition and exhibition. Contact 083 627 6757 (scava.co.za).")
+occ=_dates("2026-12-04","2027-01-29",[4])
+add(title="Milkwood Village Friday Night Market",category="market",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Fridays, 1 Dec 2026 – 31 Jan 2027",
+    time="",town="Wilderness",venue="Milkwood Village",venue_address="Milkwood Village, Wilderness",price_from="Free",ticket_url="",source_url=GMC,source_name=_S_GMC,
+    notes="Holiday-season Friday night market. Free. Contact 064 582 1249.")
+add(title="George Christmas Lights switch-on (George Lights Festival, Unity Park)",category="festival",start_date="2026-12-12",time="",town="George",
+    venue="Unity Park",venue_address="York Street, George",price_from="Free",ticket_url="",source_url=GMC,source_name=_S_GMC,
+    notes="George's festive lights switch-on, during the George Festival (12-16 Dec). Free. Contact 044 802 2000. Times to be announced.")
+add(title="JakkalBerry Xtreme (gravel/MTB race, Redberry Farm to Jakkalsvlei)",category="sport",start_date="2026-12-12",time="",town="George",
+    venue="Redberry Farm (start) to Jakkalsvlei Cellar, Herbertsdale",venue_address="Redberry Farm, George",price_from="",ticket_url="",source_url=GMC,source_name=_S_GMC,
+    notes="Point-to-point gravel/MTB race by Chain Gang Events (071 678 7147).")
+add(title="Carols by Candlelight at the Garden Route Botanical Garden",category="community",start_date="2026-12-18",time="",town="George",
+    venue="Garden Route Botanical Garden",venue_address="",price_from="",ticket_url="",source_url=GMC,source_name=_S_GMC,
+    notes="Carols evening at the botanical garden. Details still TBC on the municipal calendar; contact 044 874 1558 (botanicalgarden.org.za).")
+add(title="Carne's Full Moon Beach Run (Sedgefield to Wilderness)",category="funrun",start_date="2026-12-23",time="",town="Wilderness",
+    venue="Sedgefield Beach to Wilderness Beach",venue_address="",price_from="",ticket_url="",source_url=GMC,source_name=_S_GMC,
+    notes="Full-moon beach run from Sedgefield to Wilderness by Chain Gang Events (071 678 7147).")
+add(title="SA Road & ITT National Championships (road cycling)",category="sport",start_date="2027-02-03",end_date="2027-02-05",time="",town="George",
+    venue="Cornerstone Lifestyle Centre",venue_address="",price_from="",ticket_url="",source_url=GMC,source_name=_S_GMC,
+    notes="National road race and individual time-trial championships, by Crank To Crown Cycles & Events (082 929 2449).")
+add(title="Multisure Rugby Summit & Festival 2027",category="sport",start_date="2027-02-05",end_date="2027-02-06",time="",town="George",
+    venue="Outeniqua Park Rugby Stadium",venue_address="",price_from="",ticket_url="",source_url=GMC,source_name=_S_GMC,notes="Rugby summit and festival. Contact 083 627 6757.")
+add(title="George Old Car Show 2027",category="community",start_date="2027-02-13",time="09:00-17:00",town="George",
+    venue="Eden Technical High School",venue_address="",price_from="",ticket_url="",source_url=GMC,source_name=_S_GMC,
+    notes="Southern Cape Old Car Club's annual classic-car show. Contact 076 764 0897 (scocc.co.za).")
+add(title="Witfontein Enduro 2027",category="sport",start_date="2027-02-21",time="",town="George",
+    venue="Outeniqua Nature Reserve & Garden Route Botanical Garden",venue_address="",price_from="",ticket_url="",source_url=GMC,source_name=_S_GMC,
+    notes="Mountain-bike enduro on the Witfontein trails. Contact 072 147 3808 (wcenduro.co.za).")
+# On The Route 15 Oct guide
+add(title="Eden Triathlon League, Round One",category="sport",start_date="2026-10-25",time="07:00",town="Groot Brak",
+    venue="Great Brak River",venue_address="",price_from="",ticket_url="",source_url=OTR15,source_name="On The Route (Garden Route event guide)",
+    notes="Regional triathlon league season opener on the river: standard (1.5 km swim, 40 km bike, 10 km run), sprint and super-sprint distances.")
+for _d,_t,_ven in [("2026-11-06","19:00","St Peter's Anglican Church"),("2026-11-07","11:00","Asado Restaurant")]:
+    add(title="Frank Opperman: Reünie (Afrikaans one-man comedy)",category="arts",start_date=_d,time=_t,town="Plettenberg Bay",venue=_ven,venue_address="",price_from="R280",
+        ticket_url="",source_url=OTR15,source_name="On The Route (Garden Route event guide)",
+        notes="Dana Snyman's award-winning one-man comedy, with Frank Opperman playing a whole matric class at their reunion. Shows 6 Nov 19:00 (St Peter's) and 7 Nov 11:00 (Asado, childcare available). R280; tickets from Monique on 074 309 5795.")
+# Alt sources / corrections on earlier entries
+for _m in M:
+    if _m.get("title","").startswith("Die Heilige Nag"): _m.setdefault("alt_sources",[]).append(QU19+"/events/403008-die-heilige-nag/")
+    if _m.get("title","").startswith("Groove Ritual & Friends"): _m.setdefault("alt_sources",[]).append(MB+"groove-ritual-and-friends/")
+    if _m.get("title")=="Hartenbos GrootFees: Alternatief is Groot" and not _m.get("ticket_url"): _m["ticket_url"]="https://itickets.co.za/events/486561"
