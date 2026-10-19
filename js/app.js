@@ -221,11 +221,13 @@ function fkey(t){return (t||"").toLowerCase().replace(/\([^)]*\)/g," ").replace(
 function calcFreq(){var c={},p={};FQ={};
   EV.forEach(function(e){if(e._r)return;var v=fkey(e.venue),k=fkey(e.title)+"|"+v,m=(e.title||"").split(/:| [\u2013\u2014-] /)[0],pk=fkey(m).length>=6&&m.length<(e.title||"").length?fkey(m)+"|"+v:null;
     var n=occ(e)?occ(e).length:1;e._fk=k;e._pk=pk;c[k]=(c[k]||0)+n;if(pk)p[pk]=(p[pk]||0)+n});
-  EV.forEach(function(e){if(e._r)return;var f=Math.max(c[e._fk]||1,e._pk?(p[e._pk]||1):1);
+  EV.forEach(function(e){if(e._r){e._fb=2;return}var f=Math.max(c[e._fk]||1,e._pk?(p[e._pk]||1):1);
     if(/\b(every|weekly|daily|each)\b|\b(mon|tues|wednes|thurs|fri|satur|sun)days\b/i.test(e.recurrence||""))f=Math.max(f,13);
     FQ[e.id]=f;e._fb=f<=3?0:f<=12?1:2});window.GRE_FREQ=FQ}
-function fb(e){return e._fb||0}
-function byFreq(a,b){return fb(a)-fb(b)||nextDate(a).localeCompare(nextDate(b))||(a.time||"").localeCompare(b.time||"")||a.title.localeCompare(b.title)}
+function ftier(e){return e._fb||0}
+function tkey(e){var t=(e.time||"").match(/\d{1,2}[:h]\d{2}/);return t?("0"+t[0].replace("h",":")).slice(-5):"99"}
+function byFreqDay(a,b){return ftier(a)-ftier(b)||(a._r?1:0)-(b._r?1:0)||tkey(a).localeCompare(tkey(b))||(a.title||a.name||"").localeCompare(b.title||b.name||"")}
+function byFreq(a,b){return ftier(a)-ftier(b)||nextDate(a).localeCompare(nextDate(b))||(a.time||"").localeCompare(b.time||"")||a.title.localeCompare(b.title)}
 function grouped(list,keep){
   if(!keep){var by={},ms=[];list.forEach(function(e){var m=nextDate(e).slice(0,7);if(!by[m]){by[m]=[];ms.push(m)}by[m].push(e)});
   ms.sort();list=[];ms.forEach(function(m){list=list.concat(by[m].sort(byFreq))})}
@@ -241,9 +243,9 @@ function renderList(){
   var h="";
   if(!S.q&&!S.month&&!S.town&&L.length){
     var lim=iso(new Date(Date.now()+9*864e5));
-    var soon=L.filter(function(e){var n=nextDate(e);return n>=TODAY&&n<=lim}).sort(function(a,b){return (b.garden_route-a.garden_route)||fb(a)-fb(b)||nextDate(a).localeCompare(nextDate(b))}).slice(0,14);
+    var soon=L.filter(function(e){var n=nextDate(e);return n>=TODAY&&n<=lim}).sort(function(a,b){return (b.garden_route-a.garden_route)||ftier(a)-ftier(b)||nextDate(a).localeCompare(nextDate(b))}).slice(0,14);
     var mv=soonMovies(lim),mix=soon.map(function(e){return {e:e,d:nextDate(e),gr:e.garden_route?1:0}}).concat(mv.map(function(x){return {m:x._m,d:x._d,gr:1}}))
-      .sort(function(a,b){return (b.gr-a.gr)||((a.e?fb(a.e):0)-(b.e?fb(b.e):0))||a.d.localeCompare(b.d)});
+      .sort(function(a,b){return (b.gr-a.gr)||((a.e?ftier(a.e):0)-(b.e?ftier(b.e):0))||a.d.localeCompare(b.d)});
     if(mix.length>2)h+='<div class="sec"><h2>Happening soon</h2><span class="pill">next 10 days</span></div><div class="soon">'+mix.map(function(x){return x.m?mcard(x.m,true):card(x.e)}).join("")+'</div>';
   }
   var rgr=R.filter(function(e){return e.garden_route}),rwide=R.filter(function(e){return !e.garden_route});
@@ -264,7 +266,7 @@ function renderCal(){
   for(var k=0;k<start;k++)h+='<div class="day out"></div>';
   for(var d=1;d<=days;d++){
     var ds=iso(new Date(y,m,d));
-    var on=L.filter(function(e){return onDay(e,ds)});
+    var on=L.filter(function(e){return onDay(e,ds)}).sort(byFreqDay);
     var chips=on.slice(0,3).map(function(e){var cont=!occ(e)&&e.end_date&&e.start_date<ds;
       return '<div class="chip '+e.category+(e.garden_route?"":" wide")+(isOff(e)?" off":"")+'" title="'+esc(e.title)+(STL[e.status]?" ("+STL[e.status]+")":"")+'">'+(cont?"↳ ":"")+(STL[e.status]?"<b>"+STL[e.status]+":</b> ":"")+esc(e.title)+(e._r&&e.day_labels&&e.day_labels[ds]?": "+esc(e.day_labels[ds]):"")+'</div>'}).join("");
     var dots='<span class="dots">'+on.slice(0,6).map(function(e){return '<i class="dot '+e.category+'"></i>'}).join("")+'</span>';
@@ -279,7 +281,7 @@ function renderCal(){
 function renderDay(L){
   if(!S.calDay||S.calDay.slice(0,7)!==S.calMonth){$("calDay").innerHTML='<p class="resultline">Tap a day to see what\u2019s on.</p>';return}
   L=L||filtered(true,true);
-  var on=L.filter(function(e){return onDay(e,S.calDay)});
+  var on=L.filter(function(e){return onDay(e,S.calDay)}).sort(byFreqDay);
   var hn=holName(S.calDay);
   $("calDay").innerHTML=(hn?'<div class="holbar"><span class="holk">Public holiday</span><span class="holi">'+esc(hn)+'</span><a class="holsrc" href="'+esc(HOL[S.calDay][0].source)+'" target="_blank" rel="noopener">gov.za</a></div>':'')+'<h3>'+fmt(pd(S.calDay),true)+' · '+countTxt(on.filter(function(e){return !e._r}).length,on.filter(function(e){return e._r}).length)+'</h3>'+(on.length?'<div class="grid">'+on.map(card).join("")+'</div>':'<p class="resultline">Nothing listed for this day.</p>');
 }
