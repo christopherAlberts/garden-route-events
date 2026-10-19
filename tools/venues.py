@@ -99,6 +99,32 @@ CHECKS=[
  ("Karoo 62 Escape","Ladismith","12 Oct 2026: Electro Music Festival (6-8 Nov) added."),
  ("Heroes Live","Cape Town","12 Oct 2026: 8 more iTickets shows added (Posduif, Robbie Wessels, Schwabie & Henru, Dewald Dippenaar & Justin Vega, Nadine, Early B, Jingle Ballz x2)."),
  ("The Commodore Hotel","Cape Town","12 Oct 2026: Christmas Day lunch added."),
+# 19 Oct 2026 check
+ ("Fancourt","George","19 Oct 2026: offers page has only the 'Festive at Fancourt' stay package (1-31 Dec, from R6,600 per room per night, festive programme for all ages); no new events."),
+ ("Hennie's George","George","19 Oct 2026: November What's On poster still not published (whatson-nov-2026 poster 404); branch page lists only past October events."),
+ ("Hennie's Hartenbos","Hartenbos","19 Oct 2026: November What's On poster not published yet."),
+ ("Hennie's Oudtshoorn","Oudtshoorn","19 Oct 2026: November What's On poster not published yet."),
+ ("Hope Church (Hope Family)","George","19 Oct 2026: no new events (Christmas show, NYE, summer camp and Night Run already listed)."),
+ ("Redberry Farm","George","19 Oct 2026: What's On page says 'No event found' (only an accommodation special)."),
+ ("Die Bush Lapa (Herold's Bay Eco Resort)","George","19 Oct 2026: Juanita du Plessis (6 Nov) is now on Webtickets and listed. Ryno Velvet (17 Dec 19:30) is still only on Bandsintown/Apple Music (the Webtickets 'RYNO VELVET @ Bush Lapa' listing is the past 29 May 2026 show), so not added. No December 2026 Musiekfees programme yet; heroldsbayresort.co.za/events/ returns 404."),
+ ("George Arts Theatre","George","19 Oct 2026: Candy Crush (Ballare School of Ballet, 13-14 Nov) and Alfred Adriaan's Positive Strokes (28 Nov) added from Webtickets."),
+ ("Market Community Theatre","George","19 Oct 2026: 70s vs 80s Tribute (30 Oct) and the jazz evening (21 Nov) already listed; nothing new."),
+ ("George Showgrounds","George","19 Oct 2026: Guns N' Roses Day Jol (21 Nov, Guns N Roses MCC) added from Visit George."),
+ ("34 Waenhout – Live Venue","Knysna","19 Oct 2026: Halloween (31 Oct) tickets still 'open soon'; no new events."),
+ ("Knysna Hollow Country Estate","Knysna","19 Oct 2026: no events on its site."),
+ ("Simola Golf and Country Estate","Knysna","19 Oct 2026: NYE 'Bubbles, Balls & Glamour' still has no official date, price or booking details; all Quicket shows already listed."),
+ ("Barrington's","Plettenberg Bay","19 Oct 2026: events page shows only Oktoberfest and NYE (both listed)."),
+ ("Beacon Isle Resort","Plettenberg Bay","19 Oct 2026: no new hotel offers or events."),
+ ("Open Plan Pictures (Garden Route outdoor & indoor cinema)","Plettenberg Bay","19 Oct 2026: summer beach line-up not announced yet (site and Quicket show only the Blue Shed spring films and Halloween @ Old Nick)."),
+ ("Wild Spirit Lodge & Backpackers","Nature's Valley","19 Oct 2026: festival line-up not published yet (due Nov)."),
+ ("Hart & Bosch Village","Hartenbos","19 Oct 2026: events calendar says there are no upcoming events; no drive-in dates."),
+ ("Bravo Lounge, Garden Route Casino","Mossel Bay","19 Oct 2026: no new shows beyond AMA-1K Comedy Night (30 Oct, listed)."),
+ ("Diaz Hotel and Resort","Mossel Bay","19 Oct 2026: festive menus not published on diazbeach.co.za; a Yuppiestay booking page says Bahia Bleu and Jewel of India are closed for Christmas lunch and dinner (Christmas breakfast buffet to 10:30), so no Christmas lunch to list."),
+ ("Mossel Bay Town Hall","Mossel Bay","19 Oct 2026: iTickets links added for Ouma & die Ou Koeie, Mel die Storieverteller and Liewe Heksie (Punt in die Wind). Willem Botha (23 Dec) is a make-up masterclass, so not added."),
+ ("Zeppelins Bar","Mossel Bay","19 Oct 2026: site still shows only past events (Halloween on Marsh was 2024)."),
+ ("Die Kuiergat","Mossel Bay","19 Oct 2026: its Facebook posts (via Foodyas) show karaoke every Wednesday and bingo every Thursday at 19:00 since late September, plus Friday DJ nights (DJ Wes) and an occasional Sunday karaoke. Wednesday karaoke and Thursday bingo added as weekly series to 31 Dec; re-check."),
+ ("Heroes Live","Cape Town","19 Oct 2026: Francois Boyce – 5 Vroue en Ek (25 Oct) added from iTickets; all other iTickets shows already listed."),
+ ("The Commodore Hotel","Cape Town","19 Oct 2026: Christmas Day lunch and NYE dinner already listed; nothing new."),
 ]
 for n,t,note in CHECKS:
     r=rows.get((key(n),t))
@@ -119,8 +145,16 @@ if os.path.exists(_csv):
                 for n0 in list(r["notes"]):
                     if n0 in old: r["notes"].discard(n0)
                 r["notes"]={old}|r["notes"]
+import datetime as _dt
+def _note_key(x):
+    """Dated check notes ('19 Oct 2026: ...') go last, oldest first, so the latest check note is last."""
+    m=re.match(r"(\d{1,2} [A-Z][a-z]{2} \d{4}):",x)
+    if not m: return (0,"",x)
+    try: d=_dt.datetime.strptime(m.group(1),"%d %b %Y").date().isoformat()
+    except ValueError: return (0,"",x)
+    return (1,d,x)
 out=sorted(rows.values(),key=lambda r:(not r["garden_route"],r["region"],r["town"],r["name"].lower()))
 with open(f"{R0}/tools/venues.csv","w",newline="") as f:
     w=csv.writer(f);w.writerow(["name","town","region","garden_route","type","events_listed","urls","notes"])
-    for r in out: w.writerow([r["name"],r["town"],r["region"],r["garden_route"],"; ".join(sorted(r["types"])),r["events"]," | ".join(sorted(r["urls"])[:4])," ".join(sorted(r["notes"],key=lambda x:(x.startswith("12 Oct 2026"),x)))])
+    for r in out: w.writerow([r["name"],r["town"],r["region"],r["garden_route"],"; ".join(sorted(r["types"])),r["events"]," | ".join(sorted(r["urls"])[:4])," ".join(sorted(r["notes"],key=_note_key))])
 print(len(out),sum(r["garden_route"] for r in out))

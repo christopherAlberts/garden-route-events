@@ -1321,3 +1321,64 @@ for _m in M:
     if _m.get("title","").startswith("Die Heilige Nag"): _m.setdefault("alt_sources",[]).append(QU19+"/events/403008-die-heilige-nag/")
     if _m.get("title","").startswith("Groove Ritual & Friends"): _m.setdefault("alt_sources",[]).append(MB+"groove-ritual-and-friends/")
     if _m.get("title")=="Hartenbos GrootFees: Alternatief is Groot" and not _m.get("ticket_url"): _m["ticket_url"]="https://itickets.co.za/events/486561"
+
+# ---------------- Venue watchlist check 19 Oct 2026 (venue sites, Webtickets, iTickets, Visit George, Visit Knysna, George Herald, Facebook via Foodyas) ----------------
+_VG="https://visitgeorge.co.za/events/"
+add(title="Candy Crush – Ballare School of Ballet",category="arts",start_date="2026-11-13",end_date="2026-11-14",time="Fri 13 Nov 19:00; Sat 14 Nov 15:00 & 19:00",town="George",
+    venue="The George Arts Theatre",venue_address="The George Arts Theatre, 125 York Street, George Central",lat=-33.956066,lng=22.457985,geo_source="venue (as other George Arts Theatre listings)",price_from="R100",
+    ticket_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1604135939",source_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1604135939",source_name="Webtickets",
+    alt_sources=[_VG],_img="https://content.webtickets.co.za/tgsa/panel_Candy%20Crush100000_20260929_143016.jpg",
+    notes="Ballet school production by Ballare School of Ballet: three shows (Fri 19:00, Sat 15:00 and 19:00). Tickets R100-R150.")
+add(title="Positive Strokes – Alfred Adriaan (Afrikaans comedy)",category="arts",start_date="2026-11-28",time="15:00 and 18:30",town="George",
+    venue="The George Arts Theatre",venue_address="The George Arts Theatre, 125 York Street, George Central",lat=-33.956066,lng=22.457985,geo_source="venue (as other George Arts Theatre listings)",price_from="R200",
+    ticket_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1605333014",source_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1605333014",source_name="Webtickets",
+    _img="https://content.webtickets.co.za/alfredadriaan/panel_Positive%20Strokes%20Blank%20-%20JPG_20250618_112342.jpg",
+    notes="Alfred Adriaan's new Afrikaans stand-up show about fatherhood, parenting and family (Misfit Media). Two shows, 15:00 and 18:30. 65 min, no under-13s, no refunds. R200.")
+add(title="Dreaming Out Loud Festival 2026 ft Neon Dreams & Byrne – Cape St Francis",category="concert",start_date="2026-12-22",time="Doors 16:00, show 18:00-21:00",town="St Francis Bay",
+    venue="",venue_address="",price_from="R190",
+    ticket_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1605089443",source_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1605089443",source_name="Webtickets",
+    _img="https://content.webtickets.co.za/cr8ifsweatshop/panel_WEBTICKET%201_20261009_083630.jpg",
+    notes="Canadian band Neon Dreams with Byrne on their South African summer coastal tour, in Cape St Francis. All ages (under-10s free with an adult); no outside food or drinks. R190-R300 excl. service fee. The venue is not yet published on Webtickets.")
+add(title="Francois Boyce – 5 Vroue en Ek – Heroes Live",category="concert",start_date="2026-10-25",time="14:00 (doors 12:00)",town="Cape Town",
+    venue="Heroes Live",venue_address="Unit 1A, Cape Gate Corner, Nitida Avenue, Brackenfell",price_from="R100",
+    ticket_url="https://itickets.co.za/events/486810",source_url="https://itickets.co.za/events/486810",source_name="iTickets",
+    alt_sources=["https://www.heroeslive.net/buy-tickets"],_img="https://itickets.co.za/parts/eimages/486810.jpg",
+    notes="Afrikaans Sunday show. Tables R100-R140 per person.")
+add(title="Uncle George Party – Christmas evenings with Santa at Step Aside Farm",category="community",start_date="2026-12-04",end_date="2026-12-20",
+    recurrence="Ten selected evenings between 4 and 20 Dec 2026, 17:00-21:00 (see the organiser's site for the nights)",
+    time="17:00-21:00 (gates close for entry 18:30)",town="George",venue="Step Aside Farm",venue_address="Step Aside Farm, Blanco, George",price_from="R40",
+    ticket_url="https://unclegeorgeparty.weebly.com/",source_url="https://visitgeorge.co.za/event/uncle-george-party-3/",source_name="Visit George",
+    alt_sources=["https://www.toodoo.co.za/uncle-george-party-at-step-aside-farm/","https://unclegeorgeparty.weebly.com/"],
+    _img="https://visitgeorge.co.za/wp-content/uploads/2026/10/489952025_10072616119417755_4012687904111905939_n.jpg",
+    notes="Annual family Christmas evenings: Santa and the Fairy at the Magical Castle, a magician, marching band, Noddy and friends, carols, food and craft stalls; every guest gets an ice cream. Bring a wrapped, labelled gift (no bigger than a shoebox) for each child aged 0-10 for Santa to hand over. R40 per adult or child, R20 on opening night (4 Dec), babies under 1 free (toodoo). Bookings essential, by 31 October 2026. Supports the George Homeless Shelter and animal-welfare and food-relief groups. Contact 071 433 6961.")
+add(title="Guns N' Roses Day Jol (Guns N Roses MCC Garden Route)",category="community",start_date="2026-11-21",time="12:00",town="George",
+    venue="George Showgrounds",venue_address="George Skougronde, R102, Groeneweide Park, George",price_from="",
+    ticket_url="",source_url="https://visitgeorge.co.za/event/guns-n-roses-day-jol/",source_name="Visit George",alt_sources=[_VG],
+    _img="https://visitgeorge.co.za/wp-content/uploads/2026/10/845714751_29106098995743832_2470779725513318046_n.jpg",
+    notes="Motorcycle club day: rock culture, motorcycling and music, with games, food stalls, a bar and competitions. Everyone welcome. Start time from the Visit George events list.")
+add(title="Summer Solstice 26 @ Well-Being Sanctuary (10th anniversary gathering)",category="festival",start_date="2026-12-14",end_date="2026-12-23",time="From 14:00",town="Sedgefield",
+    venue="Well-Being Sanctuary",venue_address="Well-Being Sanctuary, Hoogekraal Farm, Sedgefield",price_from="R299",
+    ticket_url="",source_url="https://www.visitknysna.co.za/whats-on/events/summer-solstice-26-well-being-sanctuary/",source_name="Visit Knysna",
+    alt_sources=["https://wellbeingsanctuary.co.za","https://mariettecarstens.com"],_img="https://www.visitknysna.co.za/wp-content/uploads/2025/12/SummerSolstice.jpg",
+    notes="Family-friendly 10-day solstice camp: musicians, DJs and drummers, dance, rituals, yoga, breathwork, sound journeys and sweat lodges, plus a daily talent market and tree planting. No alcohol or drugs. Tickets R299-R4,299 (tribe loyalty tickets R899); glamping and yurts extra. Contact 066 256 8468, mcarstens121@gmail.com.")
+_KG="https://www.foodyas.com/ZA/Mossel-Bay/149409200190899/Die-Kuiergat"
+occ=_dates("2026-10-21","2026-12-30",[2])
+add(title="Karaoke Wednesdays at Die Kuiergat",category="concert",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Wednesdays from 19:00 (posted weekly on the venue's Facebook page)",
+    time="19:00",town="Mossel Bay",venue="Die Kuiergat",venue_address="91 Marsh Street, Mossel Bay",price_from="",
+    ticket_url="",source_url=_KG,source_name="Die Kuiergat (Facebook, via Foodyas)",
+    notes="Weekly karaoke night with drink specials; kitchen closes at 20:00. Posted for 30 Sep, 7 Oct and 14 Oct 2026; later dates assume the weekly pattern continues, so check the venue's Facebook page. The venue also posts Sunday karaoke (11 Oct) and Friday DJ nights (DJ Wes). Phone +27 76 736 5778.")
+occ=_dates("2026-10-22","2026-12-31",[3])
+add(title="Bingo Night at Die Kuiergat (Thursdays)",category="community",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Thursdays from 19:00 (posted weekly on the venue's Facebook page)",
+    time="19:00",town="Mossel Bay",venue="Die Kuiergat",venue_address="91 Marsh Street, Mossel Bay",price_from="",
+    ticket_url="",source_url=_KG,source_name="Die Kuiergat (Facebook, via Foodyas)",
+    notes="Weekly pub bingo with drink specials; kitchen closes at 20:00. Posted for 1, 8 and 15 Oct 2026; later dates assume the weekly pattern continues, so check the venue's Facebook page. Phone +27 76 736 5778.")
+# iTickets links/times for Punt in die Wind shows already listed from Visit Mossel Bay
+_PIW={"Ouma & die Ou Koeie (Margit Meyer-Rödenbeck)":("486201","15:00"),"Mel die Storieverteller":("486205","20:00"),"Liewe Heksie (Margit Meyer-Rödenbeck)":("486203","10:00")}
+for _m in M:
+    _p=_PIW.get(_m.get("title"))
+    if _p and _m.get("start_date","").startswith("2026-12"):
+        _u="https://itickets.co.za/events/"+_p[0]
+        if not _m.get("ticket_url"): _m["ticket_url"]=_u
+        if _u not in _m.setdefault("alt_sources",[]): _m["alt_sources"].append(_u)
+        if not _m.get("time"): _m["time"]=_p[1]
+        if _m.get("venue","").startswith("Punt in die Wind venue"): _m["venue"]="Mossel Bay Stadsaal (Town Hall)"; _m["venue_address"]="101 Marsh Street, Mossel Bay"
