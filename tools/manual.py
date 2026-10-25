@@ -1382,3 +1382,24 @@ for _m in M:
         if _u not in _m.setdefault("alt_sources",[]): _m["alt_sources"].append(_u)
         if not _m.get("time"): _m["time"]=_p[1]
         if _m.get("venue","").startswith("Punt in die Wind venue"): _m["venue"]="Mossel Bay Stadsaal (Town Hall)"; _m["venue_address"]="101 Marsh Street, Mossel Bay"
+
+# ---- Hot Huts mobile wood-fired beach saunas (added 25 Oct 2026) ----
+# Weekly schedule read from the "site-content" data on https://hothuts.co.za/locations (Cape Town / St Francis pages).
+# Garden Route spots (Santos Beach, Bollards Bay, Thornely Park) are listed there with NO schedule, so no events are added for them.
+_HH_SRC="https://hothuts.co.za/locations"
+_HH_BOOK="https://book.hothuts.co.za/"
+_HH_DN={0:"Mon",1:"Tue",2:"Wed",3:"Thu",4:"Fri",5:"Sat",6:"Sun"}
+for _t,_town,_ven,_addr,_lat,_lng,_sched,_page,_desc in [
+    ("Camps Bay Tidal Pool","Cape Town","Camps Bay Tidal Pool","Parking lot opposite Camps Bay police station, Camps Bay",-33.9560797,18.3763327,{2:"06:20-11:00 & 16:00-19:00",3:"06:20-11:00 & 16:00-19:00",5:"07:00-12:00"},"https://hothuts.co.za/locations/cape-town","Located in the parking lot opposite the Camps Bay police station."),
+    ("Saunders Rocks Tidal Pool","Cape Town","Saunders Rocks Tidal Pool","Queens Beach parking lot, Sea Point",-33.9229055,18.3771971,{0:"16:00-19:00",4:"07:00-11:00 & 16:00-19:00",6:"07:00-11:00 & 16:00-19:00"},"https://hothuts.co.za/locations/cape-town","Find the hut in the Queens Beach parking lot at Saunders Rocks."),
+    ("Dalebrook Tidal Pool","Cape Town","Dalebrook Tidal Pool","Between Chardonnay Deli and Kalk Bay community centre, Kalk Bay",-34.1239203,18.4522392,{0:"06:00-10:00",2:"16:00-19:00",4:"06:00-11:00 & 16:00-19:00",6:"07:00-11:00 & 16:00-19:00"},"https://hothuts.co.za/locations/cape-town","Tucked in between Chardonnay Deli and the Kalk Bay community centre."),
+    ("Long Beach, Simon's Town","Cape Town","Long Beach, Simon's Town","Long Beach, Simon's Town",-34.1877363,18.4256608,{5:"07:00-11:00 & 16:00-19:00",6:"07:00-12:00 & 16:00-19:00"},"https://hothuts.co.za/locations/cape-town","Walk out of the sauna straight into the ocean."),
+    ("St James Tidal Pool","Cape Town","St James Tidal Pool","Parking lot of St James train station, St James",-34.1193466,18.4580157,{2:"06:00-10:00"},"https://hothuts.co.za/locations/cape-town","Find the hut in the parking lot of St James train station."),
+    ("Granny's Pool (Bruce's Beauties)","St Francis Bay","Granny's Pool (Bruce's Beauties)","Granny's Pool, Bruce's Beauties, Cape St Francis",-34.1703632,24.8333472,{0:"07:00-11:00",2:"07:00-11:00",3:"07:00-11:00",4:"07:00-11:00",5:"07:00-11:00",6:"07:00-12:00"},"https://hothuts.co.za/sauna-st-francis-jbay/","Sauna at the iconic Bruce's Beauties surf spot."),
+]:
+    _o=_dates("2026-10-26","2027-02-28",list(_sched))
+    _rec="Weekly: "+"; ".join("%s %s"%(_HH_DN[k],v) for k,v in sorted(_sched.items()))
+    add(title="Hot Huts wood-fired beach sauna – %s"%_t,category="nature",start_date=_o[0],end_date=_o[-1],occurrences=_o,recurrence=_rec,time=_rec.replace("Weekly: ",""),
+        town=_town,venue="Hot Huts @ "+_ven,venue_address=_addr,lat=_lat,lng=_lng,geo_source="Hot Huts site (spot pin)",price_from="",ticket_url=_HH_BOOK,
+        source_url=_HH_SRC,source_name="Hot Huts (official site)",alt_sources=[_page],
+        notes="Hot Huts mobile wood-fired sauna with cold ocean plunges; drop-in shared sessions, book a slot online. %s Weekly times as published on the Hot Huts site on 25 Oct 2026; sessions can change (weather, events), so check the booking portal before going."%_desc)

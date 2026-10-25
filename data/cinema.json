@@ -1,8 +1,8 @@
 {
  "source": "https://www.sterkinekor.com",
  "source_note": "Ster-Kinekor website (sterkinekor.com), Garden Route Mall programme",
- "fetched_at": "2026-10-19 08:17",
- "fetched_date": "2026-10-19",
+ "fetched_at": "2026-10-25 23:58",
+ "fetched_date": "2026-10-25",
  "cinema": {
   "name": "Ster-Kinekor Garden Route Mall",
   "town": "George",
@@ -311,56 +311,6 @@
    ]
   },
   {
-   "id": 746,
-   "title": "Tony",
-   "section": "now",
-   "url": "https://www.sterkinekor.com/f/tony/746",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/tony-746/poster/17c210c5-d3d5-4b9e-8f9b-cb3f4e278322.jpeg?optimizer=image&width=342",
-   "release_date": "2026-10-09",
-   "date_label": "",
-   "age_rating": "No Under 16's - D L S V",
-   "age": 16,
-   "runtime": "1h 45m",
-   "genres": [
-    "drama"
-   ],
-   "bookable": true,
-   "trailer": "https://youtu.be/bVm3wx8LVzY",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/tony-746/backdrop/27821c02-09b9-47ec-b9b7-ffca3174fd4f.jpeg?optimizer=image&width=1200",
-   "synopsis": "A 19-year-old Anthony Bourdain travels to Provincetown and stumbles into the chaotic world of a restaurant kitchen, setting off a summer that will shape the course of his life.",
-   "director": "",
-   "cast": [
-    "Antonio Banderas",
-    "Dagmara Domińczyk",
-    "Derek K. Moore",
-    "Leo Woodall",
-    "Emilia Jones",
-    "Stavros Halkias",
-    "Dominic Sessa",
-    "Rich Sommer",
-    "Monica Raymund",
-    "Caroline Portu"
-   ],
-   "language": "English",
-   "country": "Canada, United States",
-   "imdb_id": "tt33095251",
-   "tmdb_id": "1329016",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ],
-   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
-   "ratings": [
-    {
-     "source": "IMDb",
-     "value": "7.6"
-    },
-    {
-     "source": "Rotten Tomatoes",
-     "value": "93%"
-    }
-   ]
-  },
-  {
    "id": 742,
    "title": "Verity",
    "section": "now",
@@ -451,82 +401,6 @@
  ],
  "coming_soon": [
   {
-   "id": 750,
-   "title": "Clayface",
-   "section": "soon",
-   "url": "https://www.sterkinekor.com/f/clayface/750",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/clayface-750/poster/a7da1f43-a3d7-49b8-9a25-2ad633e6ee9d.jpeg?optimizer=image&width=342",
-   "release_date": "2026-10-23",
-   "date_label": "23 Oct",
-   "age_rating": "No Under 16's - L V PPS",
-   "age": 16,
-   "runtime": "1h 48m",
-   "genres": [
-    "horror",
-    "sci fi"
-   ],
-   "bookable": true,
-   "trailer": "https://youtu.be/HPKdMrt1qA0",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/clayface-750/backdrop/221ad58d-9c06-44e4-a718-76ec8cfb0aa4.jpeg?optimizer=image&width=1200",
-   "synopsis": "A Hollywood horror tale centering on a B-movie actor who injects himself with a substance to keep himself relevant, only to find out that he can reshape his face and form, becoming a walking piece of clay.",
-   "director": "",
-   "cast": [
-    "Max Minghella",
-    "David Dencik",
-    "Eddie Marsan",
-    "Naomi Ackie",
-    "Jessica Grundle",
-    "Wil Coban",
-    "Tom Rhys Harries"
-   ],
-   "language": "English",
-   "country": "United States",
-   "imdb_id": "tt34890576",
-   "tmdb_id": "1400940",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ]
-  },
-  {
-   "id": 753,
-   "title": "Wildwood",
-   "section": "soon",
-   "url": "https://www.sterkinekor.com/f/wildwood/753",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/wildwood-753/poster/cc60ed39-7e8a-4d65-a254-7f7a8e19cd76.jpg?optimizer=image&width=342",
-   "release_date": "2026-10-23",
-   "date_label": "23 Oct",
-   "age_rating": "Parental guidance for 10 - 12",
-   "age": 12,
-   "runtime": "2h 10m",
-   "genres": [
-    "animation"
-   ],
-   "bookable": true,
-   "trailer": "https://www.youtube.com/watch?v=04V07p8EYVo",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/wildwood-753/backdrop/4a0a7dbc-373b-4021-ad8a-cc7ca2d72be4.jpg?optimizer=image&width=1200",
-   "synopsis": "Prue and her classmate Curtis are drawn into a forbidden magical forest filled with enchanted creatures, loyal allies, and formidable adversaries as they embark on a desperate quest to save Prue’s kidnapped baby brother, Mac, from the crows led by a mysterious woman named Alexandra.",
-   "director": "Travis Knight",
-   "cast": [
-    "Mahershala Ali",
-    "Jake Johnson",
-    "Maya Erskine",
-    "Angela Bassett",
-    "Len Cariou",
-    "Jemaine Clement",
-    "Charlie Day",
-    "Richard E. Grant",
-    "Marc Evan Jackson",
-    "Awkwafina"
-   ],
-   "language": "English",
-   "country": "United States",
-   "imdb_id": "tt2056785",
-   "tmdb_id": "791523",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ]
-  },
-  {
    "id": 754,
    "title": "Al Wat Ek Weet",
    "section": "soon",
@@ -566,21 +440,18 @@
    "title": "Pressure",
    "section": "soon",
    "url": "https://www.sterkinekor.com/f/pressure/786",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/pressure-786/poster/c627fcb7-bd17-4e21-89dc-4e06aa30b6fc.jpg?optimizer=image&width=342",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/pressure-786/poster/dc2f4b9e-a6f1-41f2-9e78-83ea87ca6682.jpeg?optimizer=image&width=342",
    "release_date": "2026-10-30",
    "date_label": "30 Oct",
    "age_rating": "No Under 13's",
    "age": null,
    "runtime": "1h 40m",
    "genres": [
-    "thriller",
-    "history",
-    "war",
     "drama"
    ],
    "bookable": false,
    "trailer": "https://www.youtube.com/watch?v=6ffR0oyh6YE",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/pressure-786/backdrop/a9985d9a-99d6-4103-8b22-ae7bdfcbe3d2.jpg?optimizer=image&width=1200",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/pressure-786/backdrop/6ecaa1b8-6414-48da-9ba1-4b27964ebfdd.jpeg?optimizer=image&width=1200",
    "synopsis": "In the tense 72 hours before D-Day, and the fate of the free world hanging in the balance, General Dwight D. Eisenhower and Captain James Stagg face an impossible choice—launch the largest and most dangerous seaborne invasion in history or risk losing the war altogether.",
    "director": "",
    "cast": [
@@ -698,7 +569,7 @@
    "poster": "https://images.filmgrail.com/mediaserver/movies/prima-facie-793/poster/fab89395-5560-4767-b541-027652ee0880.jpg?optimizer=image&width=342",
    "release_date": "2026-11-13",
    "date_label": "13 Nov",
-   "age_rating": "TBA",
+   "age_rating": "No Under 16's",
    "age": null,
    "runtime": "1h 48m",
    "genres": [
@@ -774,24 +645,63 @@
    ]
   },
   {
+   "id": 711,
+   "title": "Hunger Games, The: Sunrise on the Reaping",
+   "section": "soon",
+   "url": "https://www.sterkinekor.com/f/hunger-games-the-sunrise-on-the-reaping/711",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/hunger-games-the-sunrise-on-the-reaping-711/poster/2a6a2eac-24e0-44b6-b655-3f8340fe395c.jpeg?optimizer=image&width=342",
+   "release_date": "2026-11-20",
+   "date_label": "20 Nov",
+   "age_rating": "TBA",
+   "age": null,
+   "runtime": "2h 38m",
+   "genres": [
+    "sci fi",
+    "action",
+    "adventure"
+   ],
+   "bookable": false,
+   "trailer": "https://youtu.be/nDGMN1EooAo",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/hunger-games-the-sunrise-on-the-reaping-711/backdrop/14d09c2b-eff0-4597-8f16-235ec559485a.jpeg?optimizer=image&width=1200",
+   "synopsis": "Return to the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+   "director": "Francis Lawrence",
+   "cast": [
+    "Glenn Close",
+    "Elle Fanning",
+    "Jennifer Lawrence",
+    "Josh Hutcherson",
+    "Ralph Fiennes",
+    "Lili Taylor",
+    "Jesse Plemons",
+    "Mckenna Grace",
+    "Kelvin Harrison",
+    "Maya Hawke"
+   ],
+   "language": "English",
+   "country": "United States",
+   "imdb_id": "tt32558705",
+   "tmdb_id": "1300968",
+   "cinemas": [
+    "Ster-Kinekor Garden Route Mall"
+   ]
+  },
+  {
    "id": 801,
    "title": "Wicker",
    "section": "soon",
    "url": "https://www.sterkinekor.com/f/wicker/801",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/wicker-801/poster/7fe06fb2-845d-4006-a1e4-8809445d35ad.jpg?optimizer=image&width=342",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/wicker-801/poster/09914c35-c286-4d71-abf8-ff9cc3f50618.jpeg?optimizer=image&width=342",
    "release_date": "2026-11-20",
    "date_label": "20 Nov",
-   "age_rating": "",
+   "age_rating": "No Under 16's",
    "age": null,
-   "runtime": "",
+   "runtime": "1h 45m",
    "genres": [
-    "romance",
-    "fantasy",
-    "comedy"
+    "romance"
    ],
    "bookable": false,
-   "trailer": "",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/wicker-801/backdrop/37efc98d-b00e-4421-ae40-1c57afed107d.jpg?optimizer=image&width=1200",
+   "trailer": "https://youtu.be/jf4XQXLKD8c",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/wicker-801/backdrop/52bf6d5c-d2e2-48e5-be48-310d2918de23.jpeg?optimizer=image&width=1200",
    "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
    "director": "",
    "cast": [
@@ -806,7 +716,7 @@
     "Marli Siu",
     "Kiell Smith-Bynoe"
    ],
-   "language": "",
+   "language": "English",
    "country": "United Kingdom, United States",
    "imdb_id": "tt29611136",
    "tmdb_id": "1195803",
@@ -923,17 +833,14 @@
    "title": "Cat in the Hat,The",
    "section": "soon",
    "url": "https://www.sterkinekor.com/f/cat-in-the-hat-the/802",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/cat-in-the-hat-the-802/poster/d2ffdc9d-a1b7-417b-8196-e95cd959f8aa.jpg?optimizer=image&width=342",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/cat-in-the-hat-the-802/poster/b947c1d3-2921-4f5a-8fe4-66c8c18ad776.jpeg?optimizer=image&width=342",
    "release_date": "2026-12-04",
    "date_label": "04 Dec",
-   "age_rating": "TBA",
+   "age_rating": "Parental guidance",
    "age": null,
    "runtime": "1h 47m",
    "genres": [
-    "family",
-    "comedy",
-    "animation",
-    "fantasy"
+    "animation"
    ],
    "bookable": false,
    "trailer": "https://youtu.be/j3o7Xe1lVyI",
@@ -1144,7 +1051,7 @@
    "title": "Jumanji: Open World",
    "section": "soon",
    "url": "https://www.sterkinekor.com/f/jumanji-open-world/804",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/jumanji-open-world-804/poster/59e44775-1d51-4e11-bdb3-2999e1248313.jpg?optimizer=image&width=342",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/jumanji-open-world-804/poster/d06b9dd6-9947-4f18-8acc-2299c4e995e2.jpeg?optimizer=image&width=342",
    "release_date": "2026-12-25",
    "date_label": "25 Dec",
    "age_rating": "",
