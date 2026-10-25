@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Garden Route Events · concerts, festivals, markets, fun runs & more</title>
+<meta name="description" content="Discover upcoming concerts, festivals, markets, fun runs, theatre and community events on the Garden Route (and the wider coast from Cape Town to Jeffreys Bay).">
+<meta name="theme-color" content="#0d3b2e">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Garden Route Events">
+<meta property="og:title" content="Garden Route Events · what's on along the Garden Route">
+<meta property="og:description" content="Concerts, festivals, markets, fun runs & trail runs, musicals, theatre and community events from Mossel Bay to Tsitsikamma, updated weekly. List, calendar and map.">
+<meta property="og:url" content="https://christopheralberts.github.io/garden-route-events/">
+<meta property="og:image" content="https://christopheralberts.github.io/garden-route-events/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Garden Route Events: what's on from Mossel Bay to Tsitsikamma">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png?v=3">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png?v=3">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png?v=3">
+<link rel="manifest" href="site.webmanifest?v=3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""></noscript>
+<link rel="stylesheet" href="css/style.css?v=20261019a">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <svg class="hills" viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="M0 210 C120 150 240 120 360 150 C480 180 560 120 700 110 C840 100 920 170 1060 160 C1200 150 1300 100 1440 120 L1440 320 L0 320Z" fill="rgba(255,255,255,.06)"/><path d="M0 240 C160 200 260 190 420 215 C560 236 660 180 820 185 C980 190 1080 240 1240 225 C1340 216 1400 200 1440 205 L1440 320 L0 320Z" fill="rgba(0,0,0,.12)"/></svg>
+    <svg class="waves" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0 60 C180 100 360 20 540 50 C720 80 900 110 1080 70 C1260 30 1350 50 1440 60 L1440 120 L0 120Z" fill="var(--bg)"/></svg>
+  </div>
+  <div class="hero-inner">
+    <p class="eyebrow">Mossel Bay · George · Wilderness · Sedgefield · Knysna · Plett · Tsitsikamma</p>
+    <div class="hero-title-row">
+      <h1>What's on along the <em>Garden Route</em></h1>
+      <button type="button" id="introToggle" class="introtoggle" aria-expanded="true" aria-controls="heroIntro" title="Hide intro">
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg>
+        <span class="introlbl">Hide intro</span>
+      </button>
+    </div>
+    <div class="hero-intro" id="heroIntro">
+      <p class="lede">Concerts, festivals, markets, fun runs, musicals, theatre &amp; comedy, quiz nights, carols, Christmas &amp; New Year dining, nature walks &amp; talks, sport &amp; motorsport, outdoor cinema &amp; film nights, community events and restaurant specials: <span id="range">all upcoming dates</span>. Every listing links to its source page.</p>
+      <div class="stats" id="stats"></div>
+    </div>
+    <div class="hero-search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 015.9 12.1l4.2 4.2-1.4 1.4-4.2-4.2A7.5 7.5 0 1110.5 3zm0 2a5.5 5.5 0 100 11 5.5 5.5 0 000-11z"/></svg>
+      <input id="q" type="search" placeholder="Search artists, venues, markets, towns…" aria-label="Search events" autocomplete="off">
+    </div>
+  </div>
+</header>
+
+<div class="bar" id="bar">
+  <div class="bar-inner">
+    <div class="bar-top">
+      <button type="button" id="filtToggle" class="filttoggle" aria-expanded="true" aria-controls="filtPanel" title="Hide filters">
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg>
+        <span class="filtlbl">Hide filters</span>
+      </button>
+      <nav class="views" role="tablist" aria-label="View">
+        <button data-view="list" class="on" role="tab"><svg viewBox="0 0 24 24"><path d="M4 5h7v6H4zm9 0h7v6h-7zM4 13h7v6H4zm9 0h7v6h-7z"/></svg>List</button>
+        <button data-view="cal" role="tab"><svg viewBox="0 0 24 24"><path d="M7 2v2H5a2 2 0 00-2 2v13a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2h-2V2h-2v2H9V2zm-2 7h14v10H5z"/></svg>Calendar</button>
+        <button data-view="map" role="tab"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7zm0 4.5A2.5 2.5 0 1012 11.5 2.5 2.5 0 0012 6.5z"/></svg>Map</button>
+        <button data-view="cinema" role="tab"><svg viewBox="0 0 24 24"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V4z"/></svg>Cinema</button>
+      </nav>
+    </div>
+    <div class="filt-panel" id="filtPanel">
+    <div class="seg" role="group" aria-label="Area">
+      <button id="scopeGR" class="on" aria-pressed="true">Garden Route</button>
+      <button id="scopeAll" aria-pressed="false">All coast</button>
+    </div>
+    <div class="chips" id="catChips" role="group" aria-label="Category">
+      <button data-cat="" class="on">All</button>
+      <button data-cat="concert"><i class="dot concert"></i>Concerts</button>
+      <button data-cat="festival"><i class="dot festival"></i>Festivals</button>
+      <button data-cat="market"><i class="dot market"></i>Markets</button>
+      <button data-cat="funrun"><i class="dot funrun"></i>Runs, walks &amp; trails</button>
+      <button data-cat="musical"><i class="dot musical"></i>Musicals</button>
+      <button data-cat="arts"><i class="dot arts"></i>Arts &amp; culture</button>
+      <button data-cat="quiz"><i class="dot quiz"></i>Quiz nights</button>
+      <button data-cat="festive"><i class="dot festive"></i>Christmas &amp; festive dining</button>
+      <button data-cat="nature"><i class="dot nature"></i>Nature &amp; outdoors</button>
+      <button data-cat="sport"><i class="dot sport"></i>Sport &amp; motorsport</button>
+      <button data-cat="film"><i class="dot film"></i>Film &amp; outdoor cinema</button>
+      <button data-cat="community"><i class="dot community"></i>Church &amp; community</button>
+      <button data-cat="restaurant"><i class="dot restaurant"></i>Restaurants</button>
+      <button data-xmas="1" class="xmaschip" aria-pressed="false" title="Carols, Christmas concerts and shows, lights switch-ons, Christmas markets and Christmas lunches/dinners, any category">🎄 Christmas</button>
+      <button data-nye="1" class="nyechip" aria-pressed="false" title="Events on New Year's Eve (31 Dec into 1 Jan), any category">🎆 New Year's Eve</button>
+    </div>
+    <div class="selects">
+      <select id="town" aria-label="Town"></select>
+      <select id="month" aria-label="Month"></select>
+      <button id="reset" class="ghost" title="Clear filters">Reset</button>
+    </div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="resultline"><span id="count"></span><span id="activeFilters"></span><button id="offToggle" class="offtoggle" type="button" hidden></button></div>
+  <section id="view-list" class="view"></section>
+  <section id="view-cal" class="view" hidden>
+    <div class="calhead">
+      <button id="calPrev" class="round" aria-label="Previous month">‹</button>
+      <h2 id="calTitle"></h2>
+      <button id="calNext" class="round" aria-label="Next month">›</button>
+    </div>
+    <div id="calGrid" class="calgrid"></div>
+    <div id="calDay" class="calday"></div>
+  </section>
+  <section id="view-cinema" class="view" hidden></section>
+  <section id="view-map" class="view" hidden>
+    <div id="map"></div>
+    <p class="maplegend"><span class="lg big"></span>Garden Route <span class="lg small"></span>Wider coast <span class="sep">·</span> Colour = category <span class="sep">·</span> “approx.” pins sit at the town centre</p>
+  </section>
+</main>
+
+<div id="shareMenu" class="sharemenu" role="menu" hidden></div>
+<div id="evModal" class="modal" hidden><div id="evBox" class="mbox" role="dialog" aria-modal="true" aria-labelledby="evTitle"></div></div>
+<div id="filmOv" class="filmov" hidden></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<footer>
+  <div class="foot-inner">
+    <p><strong>Garden Route Events</strong> is an independent listing. Details come from ticketing sites, tourism calendars, venues and official event pages; each card links to its source. Dates and prices change, so check before you go.</p>
+    <p class="muted">Data checked <span id="built"></span> · Photos © their event organisers/source sites · Map © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</p>
+  </div>
+</footer>
+
+<script src="data/events.js?v=20261019a"></script>
+<script src="data/restaurants.js?v=20261019a"></script>
+<script src="data/cinema.js?v=20261019a"></script>
+<script src="data/holidays.js?v=20261019a"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="js/app.js?v=20261019a"></script>
+<script>if("serviceWorker"in navigator)addEventListener("load",function(){navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).then(function(r){r.update()}).catch(function(){})});</script>
+</body>
+</html>
