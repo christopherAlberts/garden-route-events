@@ -6,7 +6,7 @@ a{color:var(--ocean);font-weight:600}
 .hero{position:relative;color:#fff;overflow:hidden;background:radial-gradient(1200px 400px at 85% -10%,rgba(233,196,106,.35),transparent 60%),radial-gradient(900px 500px at 0% 0%,rgba(63,182,168,.35),transparent 60%),linear-gradient(160deg,#0b2f25 0%,#0d3b2e 35%,#145a54 70%,#1d6f7a 100%)}
 .hero svg{position:absolute;left:0;width:100%;pointer-events:none}.hero .hills{bottom:40px;height:65%}.hero .waves{bottom:-1px;height:70px}
 .hero-inner{position:relative;max-width:520px;margin:0 auto;padding:34px 22px 120px;text-align:center}
-.logo{width:56px;height:56px;border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.logo{width:32px;height:32px;border-radius:9px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
 .eyebrow{margin:14px 0 8px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:600}
 .hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2rem,8vw,2.8rem);line-height:1.05;margin:0}.hero h1 em{font-style:italic;color:var(--sun);font-weight:700}
 .hero .lede{margin:10px auto 0;max-width:420px;color:rgba(255,255,255,.85)}
@@ -36,3 +36,6 @@ input{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:12
 .pw .pw-btn:focus-visible{outline:2px solid var(--teal);outline-offset:2px;border-radius:4px}
 .pw .pw-btn svg{display:block;width:18px;height:18px}
 .pw .pw-btn .off{display:none}.pw .pw-btn[aria-pressed="true"] .on{display:none}.pw .pw-btn[aria-pressed="true"] .off{display:block}
+/* keep inline icons small everywhere */
+main svg,.card svg,.topnav svg{width:18px;height:18px;flex-shrink:0}
+.st svg{width:20px;height:20px}
