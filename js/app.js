@@ -154,7 +154,7 @@ function openEvent(id,push){
   writeHash();setTimeout(function(){var c=m.querySelector(".mclose");if(c)c.focus({preventScroll:true})},30);
 }
 function closeEvent(){var m=$("evModal");if(m.hidden)return;m.hidden=true;document.body.classList.remove("modal-open");S.event="";writeHash();
-  if(openEvent._last&&openEvent._last.focus)try{openEvent._last.focus({preventScroll:true})}catch(x){}}
+  if(openEvent._last&&openEvent._last.focus&&!/^(INPUT|TEXTAREA|SELECT)$/.test(openEvent._last.tagName))try{openEvent._last.focus({preventScroll:true})}catch(x){}}
 
 function init(data){
   EV=(data||[]).slice().concat(RS);calcFreq();EVR={};RS.forEach(function(r){(r.event_ids||[]).forEach(function(id){EVR[id]=r})});
@@ -482,7 +482,7 @@ function render(){
   writeHash();
 }
 function syncControls(){
-  $("q").value=S.q;$("month").value=S.month;$("town").value=S.town;
+  if($("q").value!==S.q)$("q").value=S.q;$("month").value=S.month;$("town").value=S.town;
   $("scopeGR").classList.toggle("on",S.scope==="gr");$("scopeAll").classList.toggle("on",S.scope==="all");
   $("scopeGR").setAttribute("aria-pressed",S.scope==="gr");$("scopeAll").setAttribute("aria-pressed",S.scope==="all");
 }
@@ -537,6 +537,10 @@ function bind(){
   $("calPrev").addEventListener("click",function(){var i=MONTHS.indexOf(S.calMonth);if(i>0){S.calMonth=MONTHS[i-1];renderCal()}});
   $("calNext").addEventListener("click",function(){var i=MONTHS.indexOf(S.calMonth);if(i<MONTHS.length-1){S.calMonth=MONTHS[i+1];renderCal()}});
   $("calGrid").addEventListener("click",function(ev){var d=ev.target.closest(".day[data-d]");if(!d)return;S.calDay=d.dataset.d;renderCal();$("calDay").scrollIntoView({behavior:"smooth",block:"nearest"})});
+  /* never leave a text field focused after tapping something else (stops the phone keyboard re-opening on tab/calendar taps) */
+  function isText(el){return el&&(el.tagName==="INPUT"&&!/^(button|submit|checkbox|radio|range|color|file|reset)$/i.test(el.type)||el.tagName==="TEXTAREA"||el.isContentEditable)}
+  document.addEventListener("pointerdown",function(ev){var a=document.activeElement;if(isText(a)&&!isText(ev.target)&&!(ev.target.closest&&ev.target.closest("label")))a.blur()},true);
+  $("q").addEventListener("keydown",function(ev){if(ev.key==="Enter")this.blur()});
   document.addEventListener("click",function(ev){
     var t=ev.target.closest("[data-share],[data-open],[data-act],[data-act-direct],[data-close]");
     if(!t){if(!ev.target.closest("#shareMenu"))closeMenu();if(ev.target.id==="evModal")closeEvent();return}
