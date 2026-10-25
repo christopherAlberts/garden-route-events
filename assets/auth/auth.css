@@ -27,15 +27,14 @@ input{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:12
 /* admin */
 .wide{max-width:980px}.stats{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 14px}.stats div{flex:1;min-width:100px;background:rgba(63,182,168,.1);border-radius:12px;padding:10px;text-align:center;font-size:.82rem;color:var(--mut)}.stats b{display:block;font-size:1.5rem;color:var(--ocean)}
 .tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:.88rem}th,td{padding:8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}th{background:var(--forest);color:#fff}.tag{background:var(--sun);color:var(--forest);border-radius:6px;padding:1px 6px;font-size:.72rem}
-/* show/hide password: small eye icon inside the field */
+/* show/hide password: tiny eye icon inside the field */
 .pw{position:relative;display:block}
-.pw input{padding-right:44px}
+.pw input{padding-right:36px}
 .pw input::-ms-reveal,.pw input::-ms-clear{display:none}
-.pw .pw-btn,.card .pw .pw-btn,.pw .pw-btn:hover,.pw .pw-btn:active{all:unset;position:absolute;top:50%;right:12px;transform:translateY(-50%);width:18px;height:18px;padding:4px;margin:-4px;line-height:0;color:#8a948f;cursor:pointer;background:none;border:0;box-shadow:none;-webkit-tap-highlight-color:transparent}
-.pw .pw-btn:hover{color:var(--ink)}
-.pw .pw-btn:focus-visible{outline:2px solid var(--teal);outline-offset:2px;border-radius:4px}
-.pw .pw-btn svg{display:block;width:18px;height:18px}
-.pw .pw-btn .off{display:none}.pw .pw-btn[aria-pressed="true"] .on{display:none}.pw .pw-btn[aria-pressed="true"] .off{display:block}
+.pw .pw-eye{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:18px;height:18px;line-height:0;color:#8a948f;cursor:pointer;background:none;border:0;padding:0;margin:0;-webkit-tap-highlight-color:transparent}
+.pw .pw-eye:hover{color:var(--ink)}.pw .pw-eye:focus-visible{outline:2px solid var(--teal);outline-offset:2px;border-radius:3px}
+.pw .pw-eye svg{display:block;width:18px;height:18px}
+.pw .pw-eye .off{display:none}.pw .pw-eye[aria-pressed="true"] .on{display:none}.pw .pw-eye[aria-pressed="true"] .off{display:block}
 /* keep inline icons small everywhere */
 main svg,.card svg,.topnav svg{width:18px;height:18px;flex-shrink:0}
 .st svg{width:20px;height:20px}
