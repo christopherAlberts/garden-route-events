@@ -1,0 +1,29 @@
+/* Shared look for login / signup / "we've moved" pages — matches css/style.css */
+:root{--forest:#0d3b2e;--ocean:#1d6f7a;--teal:#3fb6a8;--sun:#e9c46a;--coral:#e76f51;--bg:#f7f3ec;--surface:#fff;--ink:#15231d;--mut:#5f6f68;--line:#e6dfd2;
+--shadow:0 1px 2px rgba(16,40,30,.06),0 8px 24px rgba(16,40,30,.08);--font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--display:"Fraunces",Georgia,serif}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 var(--font);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;min-height:100vh}
+a{color:var(--ocean);font-weight:600}
+.hero{position:relative;color:#fff;overflow:hidden;background:radial-gradient(1200px 400px at 85% -10%,rgba(233,196,106,.35),transparent 60%),radial-gradient(900px 500px at 0% 0%,rgba(63,182,168,.35),transparent 60%),linear-gradient(160deg,#0b2f25 0%,#0d3b2e 35%,#145a54 70%,#1d6f7a 100%)}
+.hero svg{position:absolute;left:0;width:100%;pointer-events:none}.hero .hills{bottom:40px;height:65%}.hero .waves{bottom:-1px;height:70px}
+.hero-inner{position:relative;max-width:520px;margin:0 auto;padding:34px 22px 120px;text-align:center}
+.logo{width:56px;height:56px;border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.eyebrow{margin:14px 0 8px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:600}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2rem,8vw,2.8rem);line-height:1.05;margin:0}.hero h1 em{font-style:italic;color:var(--sun);font-weight:700}
+.hero .lede{margin:10px auto 0;max-width:420px;color:rgba(255,255,255,.85)}
+main{position:relative;max-width:440px;margin:-92px auto 32px;padding:0 16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:22px 20px 20px}
+.photos{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:-4px 0 16px}.photos img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;display:block}
+.card h2{font-family:var(--display);font-size:1.45rem;margin:0 0 4px;color:var(--forest)}.sub{margin:0 0 14px;color:var(--mut)}
+.free{display:inline-block;background:rgba(233,196,106,.25);color:#7a5a00;font-weight:700;font-size:.75rem;padding:3px 9px;border-radius:999px;margin-bottom:8px;letter-spacing:.04em;text-transform:uppercase}
+label{display:block;font-size:.82rem;font-weight:600;margin:12px 0 5px;color:var(--ink)}
+input{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:12px;font:inherit;background:#fbf8f3}input:focus{outline:2px solid var(--teal);border-color:transparent;background:#fff}
+.btn,button{display:block;width:100%;margin-top:18px;padding:13px;border:0;border-radius:12px;background:var(--sun);color:var(--forest);font:700 1rem var(--font);cursor:pointer;text-align:center;text-decoration:none;box-shadow:0 4px 14px rgba(233,196,106,.45)}
+.btn:hover,button:hover{filter:brightness(1.05)}
+.err{background:#fdecea;color:#a1260f;padding:10px 12px;border-radius:10px;margin:0 0 6px;font-size:.9rem}
+.alt{text-align:center;margin:14px 0 0;font-size:.9rem;color:var(--mut)}
+.perks{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:6px;font-size:.88rem;color:var(--mut)}.perks li:before{content:"🌊 "}
+.foot{text-align:center;color:var(--mut);font-size:.8rem;margin-top:14px}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1714;--surface:#16211d;--ink:#e9efe9;--mut:#9db0a7;--line:#26362f}.card h2{color:#e9efe9}input{background:#1b2823;color:#e9efe9}input:focus{background:#16211d}a{color:var(--teal)}.free{color:var(--sun)}}
+/* admin */
+.wide{max-width:980px}.stats{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 14px}.stats div{flex:1;min-width:100px;background:rgba(63,182,168,.1);border-radius:12px;padding:10px;text-align:center;font-size:.82rem;color:var(--mut)}.stats b{display:block;font-size:1.5rem;color:var(--ocean)}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:.88rem}th,td{padding:8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}th{background:var(--forest);color:#fff}.tag{background:var(--sun);color:var(--forest);border-radius:6px;padding:1px 6px;font-size:.72rem}
