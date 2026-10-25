@@ -1,4 +1,4 @@
-/* Shared look for login / signup / "we've moved" pages — matches css/style.css */
+/* Shared look for the login and sign-up pages — matches css/style.css */
 :root{--forest:#0d3b2e;--ocean:#1d6f7a;--teal:#3fb6a8;--sun:#e9c46a;--coral:#e76f51;--bg:#f7f3ec;--surface:#fff;--ink:#15231d;--mut:#5f6f68;--line:#e6dfd2;
 --shadow:0 1px 2px rgba(16,40,30,.06),0 8px 24px rgba(16,40,30,.08);--font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--display:"Fraunces",Georgia,serif}
 *{box-sizing:border-box}body{margin:0;font:15px/1.5 var(--font);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;min-height:100vh}
