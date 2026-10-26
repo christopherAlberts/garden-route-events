@@ -100,7 +100,7 @@ for oid,h in Q.items():
 # ---------- Webtickets ----------
 W=json.load(open(f"{RAW}/wt/all_ev.json"))
 MON={m:i for i,m in enumerate("JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC".split(),1)}
-WT_SKIP={"1598588884","1601652195"}
+WT_SKIP={"1598588884","1601652195","1605819550"}
 WT_END={"1602663500":"2026-12-19","1601853362":"2026-11-14"}
 WT_ALT={"1601853362":["https://www.broadwayworld.com/south-africa/article/INTO-THE-WOODS-Will-Open-at-Theatre-on-Bay-in-October-20260924"]}
 WT_NOTE={"1602663500":"Pantomime. Shows 5, 9-11 and 16-19 Dec (per Webtickets calendar)."}  # flamenco dance show
@@ -143,6 +143,7 @@ for k,e in W.items():
 # ---------- Howler (wider coast; GR Howler items are in manual.py) ----------
 HW=json.load(open(f"{RAW}/howler/search.json"))
 HSEL={ # url: (category, town, venue_address)
+    "https://www.howler.co.za/MIJNYECPT":("festival","Cape Town","115 Hatfield St, Gardens, Cape Town"),
 "https://www.howler.co.za/GLSHermanus":("concert","Hermanus",""),
 "https://oppipanne.howler.co.za/herman":("concert","Hermanus",""),
 "https://fatboyslim.howler.co.za/fatboycpt26":("concert","Cape Town",""),
@@ -181,7 +182,7 @@ for u,(cat,town,addr) in HSEL.items():
     ven=h["venue"]; m=re.search(r"(-?\d+\.\d+),\s*(-?\d+\.\d+)",ven)
     ev(title=h["title"],category=cat,start_date=sd,end_date=ed,town=town,venue=ven,venue_address=addr,price_from=pr,ticket_url=u,source_url=u,source_name="Howler",notes="",_prio=1)
 # ---------- iTickets: Heroes Live (Cape Town) concerts ----------
-IT_OK="486126 486127 486144 486145 486248 486285 486310 486320 486330 486396 486482 486623 486774 486779 486798 486809 486895 486897 486898 486899 487082 487170 487171 487357 487501".split()
+IT_OK="486126 486127 486144 486145 486248 486285 486310 486320 486330 486396 486482 486623 486774 486779 486798 486809 486895 486897 486898 486899 487082 487170 487171 487357 487501 487698".split()
 for line in open(f"{RAW}/itix/all.txt"):
     p=[x.strip() for x in line.split("|")]
     iid=p[0].rsplit("/",1)[1]

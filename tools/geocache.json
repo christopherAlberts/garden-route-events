@@ -1101,5 +1101,36 @@
 -34.1820701,
 22.1327573,
 "Marsh Street, Da Nova, Mossel Bay Ward 6, Mossel Bay Local Municipality, Garden Route District Municipality, Western Cape, 6500, South Africa"
-]
+],
+"115 Hatfield St, Gardens, Cape Town": [
+-33.9314494,
+18.4157718,
+"Hatfield Street, Cape Town Ward 115, Cape Town, City of Cape Town, Western Cape, 8001, South Africa"
+],
+"Knysna": [
+-34.035734,
+23.048485,
+"Knysna, Garden Route District Municipality, Western Cape, 6570, South Africa"
+],
+"Freedom Church Knysna, Knysna, Western Cape": null,
+"Long Street, Knysna": [
+-34.0414703,
+23.0484691,
+"Long Street, Lower Central Town, Knysna Ward 10, Knysna Local Municipality, Garden Route District Municipality, Western Cape, 6571, South Africa"
+],
+"19 Queen Street, Knysna": [
+-34.0339216,
+23.0512181,
+"Queen Street, Upper Central Town, Knysna Ward 10, Knysna Local Municipality, Garden Route District Municipality, Western Cape, 6570, South Africa"
+],
+"Mossel Bay": [
+-34.1832022,
+22.1536248,
+"Mossel Bay, Garden Route District Municipality, Western Cape, 6500, South Africa"
+],
+"Milkwood Primary School sports grounds, Mossel Bay, Western Cape": null,
+"13 Amy Searle Street, Great Brak River, Great Brak River, Western Cape": null,
+"Great Brak River Museum, Great Brak River, Western Cape": null,
+"Down to Earth, Plettenberg Bay, Western Cape": null,
+"Raptor Rescue, Plettenberg Bay, Western Cape": null
 }

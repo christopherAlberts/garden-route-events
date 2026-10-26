@@ -1403,3 +1403,116 @@ for _t,_town,_ven,_addr,_lat,_lng,_sched,_page,_desc in [
         town=_town,venue="Hot Huts @ "+_ven,venue_address=_addr,lat=_lat,lng=_lng,geo_source="Hot Huts site (spot pin)",price_from="",ticket_url=_HH_BOOK,
         source_url=_HH_SRC,source_name="Hot Huts (official site)",alt_sources=[_page],
         notes="Hot Huts mobile wood-fired sauna with cold ocean plunges; drop-in shared sessions, book a slot online. %s Weekly times as published on the Hot Huts site on 25 Oct 2026; sessions can change (weather, events), so check the booking portal before going."%_desc)
+
+# ---------------- Weekly refresh 26 Oct 2026 ----------------
+def _q26(qid,path,img,lat,lng,**k):
+    u="https://www.quicket.co.za"+path
+    k.setdefault("ticket_url",u); k.setdefault("source_url",u); k.setdefault("source_name","Quicket")
+    add(lat=lat,lng=lng,geo_source="event page",_img="https://images.quicket.co.za/"+img,**k)
+_BL26=dict(town="Knysna",venue="Blend Country Restaurant & Pub",venue_address="George Rex Drive, Knysna")
+_q26(404029,"/events/404029-90s-retro-summer/","1008313_0.jpeg",-33.962986,22.4777737,
+    title="90's Retro Summer (The 9pm Club)",category="concert",start_date="2026-11-04",time="18:00-21:00",town="George",
+    venue="brϋ restobar",venue_address="3rd Street, George East, George",price_from="R150",notes="90s-themed evening hosted by The 9pm Club. R150.")
+_q26(404033,"/events/404033-shades-sips/","1008326_0.jpeg",-34.016304,22.8062973,
+    title="Shades & Sips (The 9pm Club)",category="concert",start_date="2026-11-11",time="18:00-21:00",town="Sedgefield",
+    venue="VDM Bistro",venue_address="52 Main Service Road, Sedgefield",price_from="R150",notes="Evening social hosted by The 9pm Club. R150.")
+_q26(400532,"/events/400532-george-open-gardens-2026/","1007974_0.jpeg",-33.9714279,22.4968739,
+    title="George Open Gardens 2026",category="community",start_date="2026-11-07",time="09:00-16:00",town="George",
+    venue="13 Glenwood Avenue",venue_address="13 Glenwood Avenue, Glenwood AH, George",price_from="R70",notes="Open gardens day in aid of BADISA. R70, kids free.")
+_q26(388354,"/events/388354-la-bosca-sokkie-country-dance-2/","1006999_0.jpeg",-33.9641228,22.8738976,
+    title="La Bosca Sokkie & Country Dance #2",category="concert",start_date="2026-11-14",time="19:00-23:00",town="Sedgefield",
+    venue="La Bosca, Luna Verde Farm",venue_address="Barrington Road, Sedgefield",price_from="R80",notes="Sokkie and country dance evening. R80.")
+_q26(404003,"/events/404003-radiate/","1007710_0.png",-34.03488,23.0470715,
+    title="Radiate",category="concert",start_date="2026-11-21",time="16:30-23:00",town="Knysna",
+    venue="The Node Knysna",venue_address="28 Main Road, Knysna",price_from="R170",notes="R170.")
+for _d in ["2026-11-26","2026-11-27"]:
+    _q26(402398,"/events/402398-the-language-of-dance/","1003019_0.png",-34.038475,23.04872,
+        title="The Language of Dance – Sidwell Roman School of Ballet",category="arts",start_date=_d,time="18:30",town="Knysna",
+        venue="Knysna Primary School",venue_address="7 Long Street, Knysna",price_from="R120",notes="Ballet school year-end show (26 & 27 Nov). R120.")
+_q26(404910,"/events/404910-down-by-the-riverside/","1010367_0.jpeg",-34.0033455,23.3979874,
+    title="Down by the Riverside – The CollectiV",category="concert",start_date="2026-11-29",time="13:30-16:00",town="Plettenberg Bay",
+    venue="Riverside Restaurant",venue_address="Keurbooms River bridge, N2, Plettenberg Bay",price_from="R160",notes="Afternoon live music by The CollectiV. R160.")
+_q26(403885,"/events/403885-connect-2026/","1009502_0.jpeg",-34.148056,22.1016254,
+    title="WiW Connect 2026 with Ruve Erasmus",category="community",start_date="2026-11-29",time="18:00",town="Mossel Bay",
+    venue="Woord in Waarheid Kerk",venue_address="18 Parson Lane, Langeberg Park, Mossel Bay",price_from="R50",notes="Church worship evening with Ruve Erasmus. R50.")
+_q26(403238,"/events/403238-brfc-old-school-sunday/","1005482_0.jpeg",-33.6015968,22.230793,
+    title="BRFC Old School Sunday",category="concert",start_date="2026-12-13",time="12:00-21:00",town="Oudtshoorn",
+    venue="Bridgeton Sports Ground",venue_address="Zebra Road, Bridgeton, Oudtshoorn",price_from="R20",notes="Old-school music Sunday at the rugby club grounds. R20.")
+_q26(404482,"/events/404482-jingle-ballz-with-timothy-kieswetter/","1009128_0.jpeg",-34.15909,22.1093884,
+    title="Jingle Ballz with Timothy Kieswetter (Christmas comedy)",category="arts",start_date="2026-12-15",time="18:00",town="Mossel Bay",
+    venue="Diaz Hotel & Resort – Pero Diaz Hall",venue_address="1 Beach East Boulevard, Mossel Bay",price_from="R250",notes="Afrikaans Christmas comedy show. R250 pp or R2000 for a table of 10.")
+_q26(404664,"/events/404664-secret-sunset-silent-disco-wilderness-common/","1009641_0.jpeg",-33.99268,22.5786152,
+    title="Secret Sunset – silent disco on Wilderness Common",category="concert",start_date="2026-12-16",time="18:30-20:00",town="Wilderness",
+    venue="Wilderness Common",venue_address="Wilderness",price_from="Free–R180",notes="Sunset silent disco.")
+_q26(405188,"/events/405188-arno-carstens-trio-live-in-knysna/","1010992_0.jpeg",-34.0629959,23.0711117,
+    title="Arno Carstens Trio live in Knysna",category="concert",start_date="2026-12-18",time="15:00 (gates 13:30)",price_from="R180",notes="Kids R150.",**_BL26)
+_q26(404281,"/events/404281-hoekwil-cornerstone-creek/","1008566_0.jpeg",-33.9748955,22.619873,
+    title="Joshua na die Reën – Cornerstone Creek, Hoekwil",category="concert",start_date="2026-12-19",time="Gates 17:00, show 19:00",town="Hoekwil",
+    venue="Cornerstone Creek Restaurant",venue_address="Hoekwil Road, Hoekwil",price_from="R150",notes="R150–R250.")
+_q26(402608,"/events/402608-will-linley-live-in-knysna/","1010514_0.jpeg",-34.0629959,23.0711117,
+    title="Will Linley live in Knysna",category="concert",start_date="2026-12-20",time="15:00",price_from="R220",notes="Kids R180.",**_BL26)
+_q26(404573,"/events/404573-dazzle-last-dance/","1009417_0.jpeg",-34.0594368,23.3782825,
+    title="Dazzle Last Dance – Secret Sunrise silent disco, Plett",category="concert",start_date="2026-12-29",time="06:30-07:30",town="Plettenberg Bay",
+    venue="Central Beach (beach TBC)",venue_address="Central Beach, Plettenberg Bay",price_from="Free–R180",notes="Sunrise silent-disco dance session; exact beach to be confirmed by organiser.")
+_q26(404770,"/events/404770-natures-valley-secret-sunset-silent-disco-u15-only/","1009905_0.jpeg",-33.9805145,23.566555,
+    title="Nature's Valley Secret Sunset – kids' silent disco (under 15)",category="concert",start_date="2026-12-29",time="18:30-19:30",town="Nature's Valley",
+    venue="Nature's Valley Lagoon",venue_address="Nature's Valley",price_from="Free–R120",notes="Silent disco for under-15s only.")
+_q26(404896,"/events/404896-wonderboom-and-boo-live-in-knysna/","1010302_0.jpeg",-34.0629959,23.0711117,
+    title="Wonderboom and BOO! live in Knysna",category="concert",start_date="2026-12-30",time="19:00 (gates 17:00)",price_from="R230",notes="Kids R150.",**_BL26)
+_q26(404948,"/events/404948-watershed-live-in-knysna/","1010482_0.jpeg",-34.0629959,23.0711117,
+    title="Watershed live in Knysna",category="concert",start_date="2027-01-02",time="19:30 (gates 17:30)",price_from="R280",notes="Kids R160.",**_BL26)
+_q26(382705,"/events/382705-gls-2026-knysna/","0941486_0.png",None,None,
+    title="Global Leadership Summit 2026 (videocast) – Freedom Church Knysna",category="community",start_date="2026-11-07",time="08:30-16:30",town="Knysna",
+    venue="Freedom Church Knysna",venue_address="Knysna",price_from="R200",alt_sources=["https://www.visitknysna.co.za/whats-on/events/global-leadership-summit-2026/"],
+    notes="Full day of leadership talks via videocast; refreshments and lunch included. R200–R550.")
+add(title="The Inspired Dance Show – Uné's Dance Studio Knysna",category="arts",start_date="2026-11-06",end_date="2026-11-07",time="Fri 18:00, Sat 15:00",town="Knysna",
+    venue="Knysna Primary School Hall",venue_address="Long Street, Knysna",price_from="R120",ticket_url="https://www.quicket.co.za/events/383515-inspired/",
+    source_url="https://www.visitknysna.co.za/whats-on/events/inspired-dance-show/",source_name="Visit Knysna",alt_sources=["https://www.quicket.co.za/events/383515-inspired/"],
+    _img="https://www.visitknysna.co.za/wp-content/uploads/2026/10/Inspired-Dance-Show-102026.jpg",
+    notes="Contemporary, jazz, hip hop, acro and tap showcase. R120–R150.")
+add(title="Ink It Up: fine liner, ink & zine workshop",category="arts",start_date="2026-10-31",time="09:00-12:00",town="Knysna",
+    venue="The Deckle Edge",venue_address="19 Queen Street, Knysna",price_from="",ticket_url="",
+    source_url="https://www.visitknysna.co.za/whats-on/events/ink-it-up-fine-liner-ink-zine-workshop/",source_name="Visit Knysna",alt_sources=[],
+    _img="https://www.visitknysna.co.za/wp-content/uploads/2026/10/Ink-It-Up.jpg",
+    notes="Inktober-inspired pen-and-ink workshop making your own zine; materials supplied, 16+, booking essential (Bev, 066 213 2469).")
+# Punt in die Wind (iTickets)
+add(title="Willem Botha (Punt in die Wind Kunste-Week)",category="concert",start_date="2026-12-23",time="11:00",town="Mossel Bay",venue="Mossel Bay Stadsaal (Town Hall)",venue_address="Mossel Bay Town Hall, Mossel Bay",
+    price_from="",ticket_url="https://itickets.co.za/events/486210",source_url="https://itickets.co.za/events/486210",source_name="iTickets",alt_sources=[],notes="Part of Punt in die Wind Kunste-Week.")
+for _m in M:
+    if _m.get("title")=="George Old Car Show 2027":
+        _u="https://itickets.co.za/events/487583"
+        if not _m.get("ticket_url"): _m["ticket_url"]=_u
+        if _u not in _m.setdefault("alt_sources",[]): _m["alt_sources"].append(_u)
+# Visit Mossel Bay – newly published (wp/v2 after 19 Oct)
+_S26="Visit Mossel Bay (tourism calendar)"
+_GBM=dict(town="Groot Brak",venue="Great Brak River Museum",venue_address="13 Amy Searle Street, Great Brak River")
+add(title="ICONIC Walk 2026 (International Day of Persons with Disabilities)",category="funrun",start_date="2026-12-03",time="18:00 (registration 17:00)",town="Mossel Bay",
+    venue="Milkwood Primary School sports grounds",venue_address="Mossel Bay",price_from="R50",ticket_url="https://forms.gle/KNzq3DWF5Vc9Yz3U7",
+    source_url=MB+"iconic-walk-2026/",source_name=_S26,alt_sources=[],notes="Community awareness walk. R50; register via the online form.")
+add(title="Jazz & Ballade in the Summer",category="concert",start_date="2026-12-30",time="18:00-20:30",town="Mossel Bay",
+    venue="Mossel Bay Town Hall",venue_address="Wassung Street, Mossel Bay",price_from="",ticket_url="",
+    source_url=MB+"jazz-ballade-in-the-summer/",source_name=_S26,alt_sources=[],
+    _img="https://visitmosselbay.co.za/wp-content/uploads/2026/10/whatsapp-image-2026-10-20-at-15.27.26.webp",notes="Jazz and ballads evening organised by JC Domingo.")
+add(title="National Marine Month talks at the Dias Museum",category="arts",start_date="2026-10-29",time="18:00-19:00",town="Mossel Bay",
+    venue="Dias Museum",venue_address="1 Market Street, Mossel Bay",price_from="",ticket_url="",
+    source_url=MB+"national-marine-month-at-dias-museum/",source_name=_S26,alt_sources=[],
+    _img="https://visitmosselbay.co.za/wp-content/uploads/2026/10/national-marine-month.webp",
+    notes="Talks by George Hutton (marine fossils) and William Coetzer (shells). RSVP before 28 Oct.")
+add(title="Heritage Walk – Great Brak historical churches & Searle family cemetery",category="nature",start_date="2026-12-17",time="09:30-12:00 (registration 09:45, intro 10:00)",
+    source_url=MB+"heritage-walks-great-brak-river-museum/",source_name=_S26,alt_sources=[],price_from="",ticket_url="",
+    _img="https://visitmosselbay.co.za/wp-content/uploads/2026/10/groot-brak-museum-events-vir-desember-1.webp",
+    notes="About 3 km guided heritage walk hosted by David Franklin, starting at the museum.",**_GBM)
+add(title="Hydro Station Walk – Great Brak River Museum",category="nature",start_date="2026-12-30",time="10:00-12:00",
+    source_url=MB+"hydro-station-walks-great-brak-river-museum/",source_name=_S26,alt_sources=[],price_from="",ticket_url="",
+    _img="https://visitmosselbay.co.za/wp-content/uploads/2026/10/groot-brak-museum-events-vir-desember-3.webp",
+    notes="Starts at the museum, then self-drive to Willow Street for the walk.",**_GBM)
+add(title="Organ & Piano Recital – Great Brak River Museum",category="concert",start_date="2027-01-06",time="18:00-20:30",
+    source_url=MB+"organ-piano-recital/",source_name=_S26,alt_sources=[],price_from="",ticket_url="",
+    _img="https://visitmosselbay.co.za/wp-content/uploads/2026/10/groot-brak-museum-events-vir-desember-2.webp",
+    notes="Only 35 seats; booking essential.",**_GBM)
+# Bitou Birding Festival sessions (On The Route guide, 22 Oct)
+OTR22="https://ontheroute.co.za/your-garden-route-event-guide-22-october/"
+add(title="Bitou Birding Festival: bird quiz night",category="quiz",start_date="2026-10-28",time="17:30",town="Plettenberg Bay",venue="Down to Earth",venue_address="",price_from="R280",ticket_url="",
+    source_url=OTR22,source_name="On The Route (Garden Route event guide)",alt_sources=[],notes="Part of the Bitou Birding Festival.")
+add(title="Bitou Birding Festival: A Parliament of Owls",category="nature",start_date="2026-10-30",time="16:30",town="Plettenberg Bay",venue="Raptor Rescue",venue_address="",price_from="R650",ticket_url="",
+    source_url=OTR22,source_name="On The Route (Garden Route event guide)",alt_sources=[],notes="Part of the Bitou Birding Festival.")
