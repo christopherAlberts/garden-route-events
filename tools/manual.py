@@ -448,10 +448,10 @@ for _t,_d,_tm,_p,_n in [
     add(title=_t,category="festive",start_date=_d,time=_tm,town="Cape Town",venue="Heirloom Restaurant, Cape Grace",venue_address="West Quay Road, V&A Waterfront, Cape Town",
         price_from=_p,ticket_url=_CG,source_url=_CG,source_name="Cape Grace (official site)",notes=_n+" Bookings: capegrace.reservations@fairmont.com.",
         lat=-33.9087013,lng=18.4204936,geo_source="nominatim")
-add(title="Christmas Day Lunch at Quentin at Oakhurst, Hout Bay",category="festive",start_date="2026-12-25",time="Lunch",town="Cape Town",venue="Quentin at Oakhurst",
-    venue_address="Oakhurst Farm, Main Road, Hout Bay",price_from="",ticket_url="https://oakhurstbarn.com/menu/christmas-day-lunch/",
+add(title="Christmas Day Lunch at Quentin at Oakhurst, Hout Bay",category="festive",start_date="2026-12-25",time="12:30",town="Cape Town",venue="Quentin at Oakhurst",
+    venue_address="Oakhurst Farm, Main Road, Hout Bay",price_from="R2,239 pp",ticket_url="https://oakhurstbarn.com/menu/christmas-day-lunch/",
     source_url="https://oakhurstbarn.com/menu/christmas-day-lunch/",source_name="Quentin at Oakhurst (official site)",
-    notes="Published 'Christmas Menu 2026': Brut with gravadlax blinis, vichyssoise with Kalahari truffle, Cape seafood salad, goose liver terrine, buchu sorbet, roast duck with apricot and pecan stuffing, Christmas pudding and mince pies. Price not published. The restaurant is open for lunch only on 25 December. Bookings: 021 790 4888, bookings@oakhurstbarn.com.",
+    notes="Published 'Christmas Menu 2026': Brut with gravadlax blinis, vichyssoise with Kalahari truffle, Cape seafood salad, goose liver terrine, buchu sorbet, roast duck with apricot and pecan stuffing, Christmas pudding and mince pies. R2,239 per person, under-12s R395 (price published by 26 Oct 2026). Seating 12:30. The restaurant is open for lunch only on 25 December. Bookings: 021 790 4888, bookings@oakhurstbarn.com.",
     lat=-34.0205556,lng=18.3747623,geo_source="nominatim (suburb)")
 
 # ---- New Year's Eve 2026 (added 2026-10-06); real categories kept, the app tags them via the 'nye' flag ----
@@ -1516,3 +1516,72 @@ add(title="Bitou Birding Festival: bird quiz night",category="quiz",start_date="
     source_url=OTR22,source_name="On The Route (Garden Route event guide)",alt_sources=[],notes="Part of the Bitou Birding Festival.")
 add(title="Bitou Birding Festival: A Parliament of Owls",category="nature",start_date="2026-10-30",time="16:30",town="Plettenberg Bay",venue="Raptor Rescue",venue_address="",price_from="R650",ticket_url="",
     source_url=OTR22,source_name="On The Route (Garden Route event guide)",alt_sources=[],notes="Part of the Bitou Birding Festival.")
+
+# ---------------- Venue watchlist check 26 Oct 2026 (Webtickets crawl, iTickets, venue own sites, Visit Mossel Bay) ----------------
+_WT="https://www.webtickets.co.za/v2/event.aspx?itemid="
+_GAT=dict(venue="The George Arts Theatre",venue_address="The George Arts Theatre, 125 York Street, George Central",lat=-33.956066,lng=22.457985,geo_source="venue (as other George Arts Theatre listings)")
+_MCT=dict(venue="Market Community Theatre",venue_address="Market Street, George Central",lat=-33.961403,lng=22.456678,geo_source="venue (as other Market Community Theatre listings)")
+add(title="Garden Route Helen O'Grady Drama Academy – Year End Production 2026",category="arts",start_date="2026-11-21",time="From 14:00 (three timeslots, one per class group)",town="George",
+    price_from="R80",ticket_url=_WT+"1605648745",source_url=_WT+"1605648745",source_name="Webtickets",alt_sources=[],
+    _img="https://content.webtickets.co.za/grhog2026/panel_Webtickets%20image_20261018_170617.png",
+    notes="Year-end show by Helen O'Grady drama students from George, Mossel Bay and Oudtshoorn: the primary, youth and adult classes each perform a play prepared during Term 4. Three timeslots, so pick the one for the class you're coming to see. R80-R140.",**_GAT)
+add(title="Three in One – Journey to Self (faith drama)",category="arts",start_date="2026-11-13",time="18:30",town="George",
+    price_from="R120",ticket_url=_WT+"1605230684",source_url=_WT+"1605230684",source_name="Webtickets",alt_sources=[],
+    _img="https://content.webtickets.co.za/calindoprod/panel_Webtickets%20poster_20261011_131733.jpg",
+    notes="Third and final part of the 'Journey' stage series: a family torn apart by pride, guilt and broken relationships, with biblical stories brought to life. Adult themes. R120.",**_MCT)
+add(title="GROND – Bradwell Dance Collective (contemporary dance)",category="arts",start_date="2026-11-28",time="15:00 and 18:00",town="George",
+    price_from="R120",ticket_url=_WT+"1605080971",source_url=_WT+"1605080971",source_name="Webtickets",
+    alt_sources=["https://sites.google.com/view/bradwelldancecollective/home"],
+    _img="https://content.webtickets.co.za/bradwell/panel_GROND%20POSTER%20web_20261008_222949.jpg",
+    notes="New contemporary dance work by George's Bradwell Dance Collective (artistic director Bradley Zeelie) about roots, belonging, memory, loss and the places that shape us: 'the ground remembers'. Two shows, 15:00 and 18:00. R120.",**_MCT)
+add(title="Oppi Pot – Johnnie Campher one-man comedy show",category="arts",start_date="2026-12-20",time="18:00",town="Mossel Bay",
+    venue="Bravo Lounge, Garden Route Casino",venue_address="1 Pinnacle Point Road, Mossel Bay",price_from="R120",
+    ticket_url=_WT+"1606073776",source_url=_WT+"1606073776",source_name="Webtickets",alt_sources=[],
+    _img="https://content.webtickets.co.za/johnniecampher/panel_1W_20260124_141735.jpg",
+    notes="Veteran comedian Johnnie Campher (KKNK, Woordfees, Grahamstown, Smirnoff comedy festival) plays a range of characters in his one-man show 'Oppi Pot'. R120.")
+add(title="Sunday Society – All White Edition",category="concert",start_date="2026-12-06",time="From 12:00",town="Mossel Bay",
+    venue="Tau Lifestyle Cafe (TLC)",venue_address="Crotz Road, Asla, Mossel Bay",lat=-34.18126,lng=22.07089,geo_source="Webtickets event page",price_from="R80",
+    ticket_url=_WT+"1604476120",source_url=_WT+"1604476120",source_name="Webtickets",alt_sources=[],
+    _img="https://content.webtickets.co.za/sundaysociety/panel_sunday_society_1110x740(3)_20261014_091453.jpg",
+    notes="Second 'chapter' of the Sunday Society day party: music, good vibes and an all-white dress code. Line-up still to be announced. R80-R100. (Re-added by hand: the Webtickets page no longer carries a Music category, so the automatic harvest dropped it on 26 Oct.)")
+# Cape Town & Winelands (music / Christmas / NYE only)
+_DT=dict(venue="Dias Tavern",venue_address="Dias Tavern, 11 Imam Haron Rd, Claremont, Cape Town, 7700",lat=-33.983817,lng=18.479692,geo_source="venue (as other Dias Tavern listings)")
+add(title="Masterclass 10 @ Dias Tavern – Mark Daniels, Didier Richards & Lesley-Rae Webber",category="concert",start_date="2026-11-08",time="14:00-18:00",town="Cape Town",
+    price_from="R200",ticket_url=_WT+"1605742393",source_url=_WT+"1605742393",source_name="Webtickets",alt_sources=[],
+    _img="https://content.webtickets.co.za/yonmusicafrica/panel_1000565693_20261020_102846.jpg",
+    notes="Sunday afternoon of R&B and jazz with three Cape Town vocalists and the Masterclass Dias Tavern Band (Winston Siljeur, Alan Yon, Greg Higgins, Bjorn Petersen). Dias Tavern is at Villagers RFC, Claremont. R200. Seating reservations: Desiree 073 695 3248.",**_DT)
+add(title="Masterclass New Year's Eve 2026 @ Dias Tavern – Leslie Kleinsmith & Ian Smith",category="concert",start_date="2026-12-31",end_date="2027-01-01",time="From 18:00",town="Cape Town",
+    price_from="R1,200 pp",ticket_url=_WT+"1597057923",source_url=_WT+"1597057923",source_name="Webtickets",alt_sources=[],
+    _img="https://content.webtickets.co.za/yonmusicafrica/panel_1000662129_20260610_035418.jpg",
+    notes="NYE dinner-dance with the Masterclass Band, vocalist Leslie Kleinsmith, trumpeter Ian Smith and guests (Keiiy Halford and others). R1,200 per person includes a welcome drink, 3-course meal, a bottle of wine and bubbly at midnight. Table reservations: Desiree 073 695 3248.",**_DT)
+add(title="Vusi Nova – Here to Stay National Tour (Cape Town)",category="concert",start_date="2026-11-13",end_date="2026-11-14",time="20:00",town="Cape Town",
+    venue="Cape Town City Hall",venue_address="Darling Street, Cape Town City Centre",lat=-33.925199,lng=18.423763,geo_source="venue (as other Cape Town City Hall listings)",price_from="R350",
+    ticket_url=_WT+"1600571502",source_url=_WT+"1600571502",source_name="Webtickets",alt_sources=[],
+    notes="Vusi Nova celebrates 10 years since 'Naninina' with a concert of his best-loved songs. Two nights, 13 and 14 November. R350-R600.")
+add(title="Christmas in the City 2026 – gospel Christmas concert",category="festive",start_date="2026-12-25",time="19:00 (doors 18:00)",town="Cape Town",
+    venue="Cape Town City Hall",venue_address="Darling Street, Cape Town City Centre",lat=-33.925199,lng=18.423763,geo_source="venue (as other Cape Town City Hall listings)",price_from="R150",
+    ticket_url=_WT+"1605817390",source_url=_WT+"1605817390",source_name="Webtickets",alt_sources=[],
+    _img="https://content.webtickets.co.za/conceptsincity/panel_11111111_20261021_140333.jpg",
+    notes="Christmas night celebration of gospel music and special performances, presented by Concepts in the City. R150-R180 online, R200 at the door.")
+add(title="Lucia in Cape Town 2026 – Swedish Christmas candle procession",category="festive",start_date="2026-12-13",time="15:00 (doors 14:30)",town="Cape Town",
+    venue="The Old Biscuit Mill",venue_address="373 Albert Road, Woodstock, Cape Town",lat=-33.927315,lng=18.45745,geo_source="venue (as other Old Biscuit Mill listings)",price_from="R80",
+    ticket_url=_WT+"1605054312",source_url=_WT+"1605054312",source_name="Webtickets",alt_sources=[],
+    _img="https://content.webtickets.co.za/capetownlucia/panel_Lucia%20in%20Cape%20Town%202026%20copy_20261008_152143.png",
+    notes="Sweden's candlelit Lucia procession: singers in white with traditional Lucia songs, plus glögg and festive cheer. Everyone welcome. R80-R150.")
+add(title="Slowdown Sundays with Chad Saaiman",category="concert",start_date="2026-11-08",time="14:00",town="Stellenbosch",
+    venue="Morgenhof Wine Estate",venue_address="Morgenhof, Stellenbosch",lat=-33.893607,lng=18.86061,geo_source="venue (as other Morgenhof listings)",price_from="R750",
+    ticket_url=_WT+"1605208568",source_url=_WT+"1605208568",source_name="Webtickets",alt_sources=[],
+    _img="https://content.webtickets.co.za/thehandler711/panel_Chad_Saaiman_Webtickets_1110x740_20261010_233029.png",
+    notes="Intimate live R&B/soul afternoon with Chad Saaiman plus an emerging artist, with dining (curated by The Handler Music Man). Seats are limited. R750.")
+add(title="An Enchanted Evening with Patrick Dow (with orchestra)",category="concert",start_date="2027-02-18",end_date="2027-02-20",time="19:30",town="Cape Town",
+    venue="Baxter Theatre Centre",venue_address="Baxter Theatre Centre, Main Rd, Rondebosch",lat=-33.956847,lng=18.470494,geo_source="venue (as other Baxter listings)",price_from="R220",
+    ticket_url=_WT+"1604140215",source_url="https://baxter.uct.ac.za/events/enchanted-evening-patrick-dow",source_name="Baxter Theatre Centre",alt_sources=[_WT+"1604140215"],
+    _img="https://content.webtickets.co.za/baxtertheatre/panel_An%20Enchanted%20Evening%20with%20Patrick%20Dow_20261006_173409.png",
+    notes="British baritone Patrick Dow's South African debut in the Baxter Concert Hall: opera to musicals with a live orchestra (conductor Brandon Phillips), soprano Lynelle Kenned and the South African Youth Choir. Three nights, 18-20 Feb. 90-120 min with interval. R220-R440.")
+_QO=dict(town="Cape Town",venue="Quentin at Oakhurst",venue_address="Oakhurst Farm, Main Road, Hout Bay",lat=-34.0205556,lng=18.3747623,geo_source="nominatim (suburb)")
+add(title="Christmas Eve Dinner at Quentin at Oakhurst, Hout Bay",category="festive",start_date="2026-12-24",time="19:00",price_from="R1,850 pp",
+    ticket_url="https://oakhurstbarn.com/menu/christmas-eve-dinner/",source_url="https://oakhurstbarn.com/menu/christmas-eve-dinner/",source_name="Quentin at Oakhurst (official site)",alt_sources=[],
+    notes="Christmas Menu 2026: Brut with gravadlax blinis, vichyssoise with Kalahari truffle, Cape seafood salad, goose liver terrine, buchu sorbet, roast duck with apricot and pecan stuffing, Christmas pudding and mince pies. R1,850 per person, under-12s R395. Bookings: 021 790 4888, bookings@oakhurstbarn.com.",**_QO)
+add(title="New Year's Eve Dinner at Quentin at Oakhurst, Hout Bay",category="festive",start_date="2026-12-31",time="20:00",price_from="R2,950 pp",
+    ticket_url="https://oakhurstbarn.com/menu/new-years-eve-dinner/",source_url="https://oakhurstbarn.com/menu/new-years-eve-dinner/",source_name="Quentin at Oakhurst (official site)",alt_sources=[],
+    notes="NYE Menu 2026 with free-flowing Champagne: MCC and gravadlax amuse-bouche, starters, then whisky-butter flamed lobster tails or smoked ostrich, Calvinia lamb loin or kingklip with seared scallops, and a dark chocolate ganache cake. Vegan menu available. R2,950 per person. Bookings: 021 790 4888, bookings@oakhurstbarn.com.",**_QO)

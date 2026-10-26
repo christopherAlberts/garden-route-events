@@ -125,6 +125,23 @@ CHECKS=[
  ("Die Kuiergat","Mossel Bay","19 Oct 2026: its Facebook posts (via Foodyas) show karaoke every Wednesday and bingo every Thursday at 19:00 since late September, plus Friday DJ nights (DJ Wes) and an occasional Sunday karaoke. Wednesday karaoke and Thursday bingo added as weekly series to 31 Dec; re-check."),
  ("Heroes Live","Cape Town","19 Oct 2026: Francois Boyce – 5 Vroue en Ek (25 Oct) added from iTickets; all other iTickets shows already listed."),
  ("The Commodore Hotel","Cape Town","19 Oct 2026: Christmas Day lunch and NYE dinner already listed; nothing new."),
+# 26 Oct 2026 check
+ ("Hennie's George","George","26 Oct 2026: November What's On poster still not published (whatson-nov-2026 poster 404); branch page lists only past October events."),
+ ("Hennie's Hartenbos","Hartenbos","26 Oct 2026: November What's On poster not published yet."),
+ ("Hennie's Oudtshoorn","Oudtshoorn","26 Oct 2026: November What's On poster not published yet."),
+ ("Hope Church (Hope Family)","George","26 Oct 2026: events page unchanged; Christmas show, NYE, summer camp and Night Run already listed."),
+ ("George Arts Theatre","George","26 Oct 2026: Helen O'Grady Drama Academy year-end production (21 Nov) added from Webtickets."),
+ ("Market Community Theatre","George","26 Oct 2026: Three in One – Journey to Self (13 Nov) and Bradwell Dance Collective's GROND (28 Nov) added from Webtickets."),
+ ("34 Waenhout – Live Venue","Knysna","26 Oct 2026: page lists Halloween (31 Oct), Forest Jazz (7 Nov) and Kevin Fraser (12 Dec), all already listed; the 'New Year's Foam Party' is only an old page title with no 2026 details."),
+ ("Barrington's","Plettenberg Bay","26 Oct 2026: Oktoberfest, wine festival (16 Dec) and NYE all already listed; nothing new."),
+ ("Wild Spirit Lodge & Backpackers","Nature's Valley","26 Oct 2026: festival line-up still not published."),
+ ("Bravo Lounge, Garden Route Casino","Mossel Bay","26 Oct 2026: Johnnie Campher's 'Oppi Pot' (20 Dec) added from Webtickets."),
+ ("Tau Lifestyle Cafe (TLC)","Mossel Bay","26 Oct 2026: Sunday Society All White Edition (6 Dec) added from Webtickets."),
+ ("Mossel Bay Town Hall","Mossel Bay","26 Oct 2026: all Punt in die Wind iTickets shows already listed; nothing new."),
+ ("Beach House Bar & Kitchen","Wilderness","26 Oct 2026: weekly open mic (Thu) and Sunday live music already listed; no new dated gigs."),
+ ("Dias Tavern","Cape Town","26 Oct 2026: Masterclass 10 (8 Nov) and Masterclass New Year's Eve (31 Dec) added from Webtickets."),
+ ("Cape Town City Hall","Cape Town","26 Oct 2026: Vusi Nova (13-14 Nov) and Christmas in the City (25 Dec) added from Webtickets."),
+ ("Quentin at Oakhurst","Cape Town","26 Oct 2026: Christmas Eve dinner (R1,850) and NYE dinner (R2,950) added; Christmas Day lunch price now published (R2,239)."),
 ]
 for n,t,note in CHECKS:
     r=rows.get((key(n),t))
@@ -138,7 +155,9 @@ if os.path.exists(_csv):
         if r is None:
             rows[k]=dict(name=o["name"],town=o["town"],region=o["region"],garden_route=o["garden_route"]=="True",
                 types=set(x for x in o["type"].split("; ") if x),urls=set(u for u in o["urls"].split(" | ") if u),events=0,notes={o["notes"]} if o["notes"] else set())
-        elif o["notes"]:
+        else:
+          if r["name"]!=o["name"]: r["name"]=o["name"]  # keep the established watchlist name
+          if o["notes"]:
             cur=" ".join(r["notes"])
             if o["notes"] not in cur:
                 old=o["notes"]
