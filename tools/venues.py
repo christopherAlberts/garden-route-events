@@ -12,7 +12,7 @@ ALIAS={"moedergemeente church":"ng moeder","mossel bay town hall":"mossel bay st
  "fairy knowe hotel venues across the village":"fairy knowe hotel","fairy knowe hotel wilderness":"fairy knowe hotel",
  "beach house bar kitchen wilderness beach house backpackers":"wilderness beach house","beach house bar kitchen":"wilderness beach house",
  "cula restaurant bar":"cula","tapas oysters thesen island":"tapas oysters","the pottery george":"pottery","red bridge brewing co":"red bridge brewing",
- "fancourt hotel":"fancourt","fancourt":"fancourt"}
+ "fancourt hotel":"fancourt","fancourt":"fancourt","die bush lapa herolds bay":"die bush lapa"}
 def key(n):
     n=re.sub(r"\(.*?\)","",n.lower()); n=n.split(",")[0]
     n=re.sub(r"[’'`]s\b","s",n); n=re.sub(r"[^a-z0-9 ]"," ",n); n=re.sub(r"\b(the|at)\b"," ",n); n=re.sub(r"\s+"," ",n).strip()
@@ -142,6 +142,20 @@ CHECKS=[
  ("Dias Tavern","Cape Town","26 Oct 2026: Masterclass 10 (8 Nov) and Masterclass New Year's Eve (31 Dec) added from Webtickets."),
  ("Cape Town City Hall","Cape Town","26 Oct 2026: Vusi Nova (13-14 Nov) and Christmas in the City (25 Dec) added from Webtickets."),
  ("Quentin at Oakhurst","Cape Town","26 Oct 2026: Christmas Eve dinner (R1,850) and NYE dinner (R2,950) added; Christmas Day lunch price now published (R2,239)."),
+# 2 Nov 2026 check
+ ("Hennie's George","George","2 Nov 2026: November poster published: Noot vir Noot and Quiz Night now both every Tuesday 19:00 (Thursday quiz dropped); Jovan live Sat 28 Nov 18:00 added."),
+ ("Hennie's Mosselbaai","Mossel Bay","2 Nov 2026: new branch (Bay View Shopping Centre, Da Nova); Musical Bingo (Tue 18:00) and Musical Quiz (Thu 18:00) added from the November poster."),
+ ("Hennie's Hartenbos","Hartenbos","2 Nov 2026: November What's On poster still not published (404); branch page lists only the Wed quiz."),
+ ("Hennie's Oudtshoorn","Oudtshoorn","2 Nov 2026: November poster: quiz every Thursday 19:00, unchanged."),
+ ("Hennie's Durbanville","Cape Town","2 Nov 2026: six November live shows (4, 7, 13, 21, 27, 28 Nov) added from the November poster."),
+ ("Hennie's Brackenfell","Cape Town","2 Nov 2026: AJ van der Mescht (7 Nov) and Brandon Miles (21 Nov) added from the November poster."),
+ ("Blend Country Restaurant & Pub","Knysna","2 Nov 2026: Booshle G ft. Jake Isaac (11 Apr 2027) added from Quicket."),
+ ("The Stables Eatery & Bar","Stilbaai","2 Nov 2026: Spoegwolf en Deon Meiring (17-18 Dec) added from iTickets."),
+ ("Die Bush Lapa (Herold's Bay Eco Resort)","George","2 Nov 2026: Ryno Velvet (17 Dec, per Bandsintown) added; no tickets on sale yet."),
+ ("The Plettenberg","Plettenberg Bay","2 Nov 2026: Christmas Eve, Christmas lunch (R1,685) and NYE dinner (R2,125) menus added."),
+ ("34 Waenhout – Live Venue","Knysna","2 Nov 2026: page unchanged (Forest Jazz 7 Nov, Kevin Fraser 12 Dec already listed); no 2026 NYE event yet."),
+ ("Wild Spirit Lodge & Backpackers","Nature's Valley","2 Nov 2026: line-up page still says it will be released in November 2026."),
+ ("Mossel Bay Town Hall","Mossel Bay","2 Nov 2026: iTickets search: all Punt in die Wind shows already listed."),
 ]
 for n,t,note in CHECKS:
     r=rows.get((key(n),t))

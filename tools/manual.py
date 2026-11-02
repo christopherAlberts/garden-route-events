@@ -354,16 +354,16 @@ add(title="Live entertainment at Tapas & Oysters (Wednesday & Friday evenings)",
     price_from="",ticket_url="",source_url="https://tapasknysna.co.za/contact/",source_name="Tapas & Oysters (official site)",
     notes="The restaurant advertises live entertainment on Wednesday and Friday evenings. No artists or start times are listed; dates here are the weekly pattern within the window, so check with the restaurant (044 382 7196) before going.",
     lat=-34.048978,lng=23.048194,geo_source="event page")
-_hn=_weekly({1});_hq=_weekly({3})
+_hn=_weekly({1});_hq=_weekly({3},end="2026-10-29")
 add(title="Noot vir Noot music quiz night at Hennie's George (Tuesdays)",category="quiz",start_date=_hn[0],end_date=_hn[-1],occurrences=_hn,
     recurrence="Every Tuesday, 19:00",time="19:00",town="George",venue="Hennie's George",venue_address="42 York Street, George",
     price_from="",ticket_url="",source_url="https://www.therealhennies.co.za/branches/hennies-george",source_name="Hennie's George (official branch page)",
-    notes="Afrikaans music quiz night in the style of the TV show; prizes to be won, free entry (first come, first served). Hennie's October 2026 What's On poster says 'Every Tuesday 19:00'; dates after October follow that weekly pattern and are not yet confirmed. Enquiries: 062 579 8350.",alt_sources=["https://www.therealhennies.co.za/img/posters/whatson-oct-2026/george.jpg"],_img="https://www.therealhennies.co.za/img/posters/whatson-oct-2026/george.jpg",
+    notes="Afrikaans music quiz night in the style of the TV show; prizes to be won, free entry (first come, first served). Hennie's October and November 2026 What's On posters say 'Every Tuesday 19:00'; dates after November follow that weekly pattern and are not yet confirmed. Enquiries: 062 579 8350.",alt_sources=["https://www.therealhennies.co.za/img/posters/whatson-nov-2026/george.jpg"],_img="https://www.therealhennies.co.za/img/posters/whatson-nov-2026/george.jpg",
     lat=-33.9658718,lng=22.4512367,geo_source="nominatim")
 add(title="Quiz Night at Hennie's George (Thursdays)",category="quiz",start_date=_hq[0],end_date=_hq[-1],occurrences=_hq,
-    recurrence="Every Thursday, 19:00",time="19:00",town="George",venue="Hennie's George",venue_address="42 York Street, George",
+    recurrence="Every Thursday, 19:00 (until October 2026)",time="19:00",town="George",venue="Hennie's George",venue_address="42 York Street, George",
     price_from="",ticket_url="",source_url="https://www.therealhennies.co.za/branches/hennies-george",source_name="Hennie's George (official branch page)",
-    notes="Pub quiz night; prizes to be won, free entry (first come, first served). Hennie's October 2026 What's On poster says 'Every Thursday 19:00'; dates after October follow that weekly pattern and are not yet confirmed. Enquiries: 062 579 8350.",alt_sources=["https://www.therealhennies.co.za/img/posters/whatson-oct-2026/george.jpg"],_img="https://www.therealhennies.co.za/img/posters/whatson-oct-2026/george.jpg",
+    notes="Pub quiz night; prizes to be won, free entry (first come, first served). Hennie's October 2026 What's On poster said 'Every Thursday 19:00'; the November 2026 poster moves quiz night to Tuesdays (see the Tuesday listing). Enquiries: 062 579 8350.",alt_sources=["https://www.therealhennies.co.za/img/posters/whatson-oct-2026/george.jpg"],_img="https://www.therealhennies.co.za/img/posters/whatson-oct-2026/george.jpg",
     lat=-33.9658718,lng=22.4512367,geo_source="nominatim")
 
 for _t,_d,_tm in [("John Masser live at Hennie's George","2026-10-17","18:00"),("Landman live at Hennie's George","2026-10-30","19:00")]:
@@ -387,7 +387,8 @@ def _nth(wd,nths,start="2026-10-06",end=None):
         x=_dt.date.fromisoformat(d); n=(x.day-1)//7+1; last=(x+_dt.timedelta(days=7)).month!=x.month
         if n in nths or (-1 in nths and last): out.append(d)
     return out
-_HP="https://www.therealhennies.co.za/img/posters/whatson-oct-2026/%s.jpg"
+_HP="https://www.therealhennies.co.za/img/posters/whatson-nov-2026/%s.jpg"
+_HPO="https://www.therealhennies.co.za/img/posters/whatson-oct-2026/%s.jpg"
 _HB="https://www.therealhennies.co.za/branches/hennies-%s"
 for _slug,_town,_name,_addr,_wd,_wdn,_ph,_price,_ll in [
     ("hartenbos","Hartenbos","Hennie's Hartenbos","156 Paardekraal Avenue, Hartenbos, Mossel Bay",2,"Wednesday","044 868 0677","Free",None),
@@ -397,10 +398,11 @@ for _slug,_town,_name,_addr,_wd,_wdn,_ph,_price,_ll in [
     ]:
     _d=_weekly({_wd})
     _free="free entry, first come, first served" if _price=="Free" else "tickets R30"
+    _pm,_post=("October",_HPO%_slug) if _slug=="hartenbos" else ("November",_HP%_slug)
     add(title="Quiz Night at %s (%ss)"%(_name,_wdn),category="quiz",start_date=_d[0],end_date=_d[-1],occurrences=_d,
         recurrence="Every %s, 19:00"%_wdn,time="19:00",town=_town,venue=_name,venue_address=_addr,price_from=_price,ticket_url="",
-        source_url=_HB%_slug,source_name="%s (official branch page)"%_name,alt_sources=[_HP%_slug],_img=_HP%_slug,
-        notes="Pub quiz night with prizes to be won; %s. The branch's October 2026 What's On poster says 'Every %s 19:00' and the branch page lists the next quiz; dates after October follow that weekly pattern and are not yet confirmed. Enquiries: %s."%(_free,_wdn,_ph),
+        source_url=_HB%_slug,source_name="%s (official branch page)"%_name,alt_sources=[_post],_img=_post,
+        notes="Pub quiz night with prizes to be won; %s. The branch's %s 2026 What's On poster says 'Every %s 19:00' and the branch page lists the next quiz; dates after %s follow that weekly pattern and are not yet confirmed. Enquiries: %s."%(_free,_pm,_wdn,_pm,_ph),
         **({"lat":_ll[0],"lng":_ll[1],"geo_source":_ll[2]} if _ll else {}))
 _GRT="https://www.knysna.n2rs.com/knysna-diary-october.html"
 _GRN=("Garden Route Trivia League team quiz run by Craft Quiz Nights: suitable for all ages, teams of 4 to 6 ideal (no minimum or maximum), prizes sponsored by the venue and Craft Quiz Nights. "
@@ -1696,3 +1698,52 @@ add(title="New Year's Day Tripping ft Ben Böhmer",category="concert",start_date
     ticket_url="https://musicpeople.howler.co.za/mp1jan27",source_url="https://musicpeople.howler.co.za/mp1jan27",source_name="Howler",
     _img="https://d1as2iufift1z3.cloudfront.net/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBL2FrQXc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--131de31ae6bea919515aa5b0e92e4f0e752ad9ee/DTF27-launch-cover.png",
     notes="Music People's New Year's Day party with German producer Ben Böhmer at Cabo Beach. From R550 on Howler.")
+
+# ---------------- Venue watchlist check 2 Nov 2026 (Hennie's November posters, iTickets search, Quicket, Bandsintown, venue sites) ----------------
+_HN="https://www.therealhennies.co.za/img/posters/whatson-nov-2026/%s.jpg"
+_HG=dict(town="George",venue="Hennie's George",venue_address="42 York Street, George",lat=-33.9658718,lng=22.4512367,geo_source="nominatim")
+_hq2=_weekly({1},start="2026-11-03")
+add(title="Quiz Night at Hennie's George (Tuesdays)",category="quiz",start_date=_hq2[0],end_date=_hq2[-1],occurrences=_hq2,
+    recurrence="Every Tuesday, 19:00",time="19:00",price_from="Free",ticket_url="",
+    source_url=_HN%"george",source_name="Hennie's George (November 2026 What's On poster)",alt_sources=["https://www.therealhennies.co.za/branches/hennies-george"],_img=_HN%"george",
+    notes="Pub quiz night, moved from Thursdays to Tuesdays from November 2026 (the poster lists both Noot vir Noot and Quiz Night as 'Every Tuesday 19:00'). Free entry, first come, first served. Dates after November follow the weekly pattern and are not yet confirmed. Enquiries: 062 579 8350.",**_HG)
+add(title="Jovan live at Hennie's George",category="concert",start_date="2026-11-28",time="18:00",price_from="Free",ticket_url="",
+    source_url=_HN%"george",source_name="Hennie's George (November 2026 What's On poster)",alt_sources=["https://www.therealhennies.co.za/branches/hennies-george"],_img=_HN%"george",
+    notes="Live music at Hennie's George. Free entry, first come, first served (per the branch's November 2026 What's On poster).",**_HG)
+_HM=dict(town="Mossel Bay",venue="Hennie's Mosselbaai",venue_address="Shop 20, Bay View Shopping Centre, Da Gama Street, Da Nova, Mossel Bay",
+         lat=-34.180495494410756,lng=22.132665027924084,geo_source="official branch page")
+for _t,_wd,_wdn,_cat,_desc in [("Musical Bingo at Hennie's Mosselbaai (Tuesdays)",1,"Tuesday","community","Music bingo night"),
+                               ("Musical Quiz at Hennie's Mosselbaai (Thursdays)",3,"Thursday","quiz","Music quiz night")]:
+    _d=_weekly({_wd},start="2026-11-02")
+    add(title=_t,category=_cat,start_date=_d[0],end_date=_d[-1],occurrences=_d,recurrence="Every %s, 18:00"%_wdn,time="18:00",price_from="Free",ticket_url="",
+        source_url=_HN%"mosselbaai",source_name="Hennie's Mosselbaai (November 2026 What's On poster)",alt_sources=["https://www.therealhennies.co.za/branches/hennies-mosselbaai"],_img=_HN%"mosselbaai",
+        notes="%s at the new Hennie's branch in Bay View Shopping Centre, Da Nova. Free entry, first come, first served. The November 2026 What's On poster says 'Every %s 18:00'; dates after November follow that weekly pattern and are not yet confirmed. Enquiries: 084 632 0405, mosselbaaigm@therealhennies.co.za."%(_desc,_wdn),**_HM)
+_HD=dict(town="Cape Town",venue="Hennie's Durbanville",venue_address="7B Pampoenkraal Lane, Durbanville, Cape Town",lat=-33.8327892,lng=18.6479816,geo_source="nominatim (street)")
+_HBr=dict(town="Cape Town",venue="Hennie's Brackenfell",venue_address="Shop 57, Brackenfell Shopping Centre, Old Paarl Road, Brackenfell, Cape Town",lat=-33.8674704,lng=18.7062255,geo_source="nominatim (street, approximate)")
+for _a,_d,_tm,_slug,_V in [("Brandon Miles","2026-11-04","20:30","durbanville",_HD),("Albert Smith","2026-11-07","20:30","durbanville",_HD),
+                           ("Kruger & Tutu","2026-11-13","20:30","durbanville",_HD),("Karel Bester","2026-11-21","20:30","durbanville",_HD),
+                           ("Skye","2026-11-27","20:30","durbanville",_HD),("Danielle","2026-11-28","20:30","durbanville",_HD),
+                           ("AJ van der Mescht","2026-11-07","16:00","brackenfell",_HBr),("Brandon Miles","2026-11-21","20:00","brackenfell",_HBr)]:
+    add(title="%s live at %s"%(_a,_V["venue"]),category="concert",start_date=_d,time=_tm,price_from="Free",ticket_url="",
+        source_url=_HN%_slug,source_name="%s (November 2026 What's On poster)"%_V["venue"],alt_sources=["https://www.therealhennies.co.za/branches/hennies-"+_slug],_img=_HN%_slug,
+        notes="Live music at %s. Free entry, first come, first served (per the branch's November 2026 What's On poster)."%_V["venue"],**_V)
+_q19(405342,"/events/405342-booshle-g-love-is-free-tour-ft-jake-isaac-uk/","1012468_0.jpeg",-34.0629959,23.0711117,
+    title="Booshle G – Love is Free Tour ft. Jake Isaac (UK)",category="concert",start_date="2027-04-11",time="Doors 17:00, show 18:15",price_from="R250",
+    notes="Knysna leg of Booshle G's 2027 international Love is Free tour, with UK singer-songwriter Jake Isaac opening (18:15-18:45) and Booshle G 19:00-20:30. General R250, Priority R350, VIP R550. Presented by Better Live.",**BLEND)
+add(title="Spoegwolf en Deon Meiring live in Stilbaai",category="concert",start_date="2026-12-17",end_date="2026-12-18",occurrences=["2026-12-17","2026-12-18"],
+    time="Doors 14:00",town="Stilbaai",venue="The Stables Eatery & Bar",venue_address="220 Main Road, Still Bay East",price_from="R350",
+    ticket_url="https://itickets.co.za/events/487717",source_url="https://itickets.co.za/events/487717",source_name="iTickets",_img="https://itickets.co.za/parts/eimages/487717.jpg",
+    notes="Spoegwolf and Deon Meiring at The Stables (Feesterrein festival grounds) on two days, Thursday 17 and Friday 18 December, doors 14:00. General admission R350 per day on iTickets.",
+    lat=-34.3514366,lng=21.415163,geo_source="event page")
+add(title="Ryno Velvet live at Die Bush Lapa",category="concert",start_date="2026-12-17",time="19:30",town="George",
+    venue="Die Bush Lapa (Herold's Bay Eco Resort)",venue_address="Herold's Bay Eco Resort, Oubaai Road, Herold's Bay, George",price_from="",ticket_url="",
+    source_url="https://www.bandsintown.com/e/108797844-ryno-velvet-at-die-bush-lapa",source_name="Bandsintown",alt_sources=["https://www.bandsintown.com/a/717734-ryno-velvet"],
+    notes="Ryno Velvet live at Die Bush Lapa, Herold's Bay, listed on the artist's Bandsintown tour dates. Tickets not yet on sale (the venue usually sells through Webtickets); check Die Bush Lapa (044 851 0113) for details.")
+_TP="https://www.theplettenberghotel.com/whats-on/"
+_TPV=dict(town="Plettenberg Bay",venue="The Plettenberg",venue_address="40 Church Street, Plettenberg Bay",ticket_url=_TP,source_url=_TP,source_name="The Plettenberg (official What's On page)")
+for _t,_d,_pr,_pdf,_n in [("Christmas Eve Dinner at The Plettenberg","2026-12-24","R1,685 pp","TP-Christmas-EVE","Christmas Eve set dinner: glass of sparkling wine, amuse-bouche, then starters such as smoked duck terrine with Parma ham."),
+                          ("Christmas Lunch at The Plettenberg","2026-12-25","R1,685 pp","TP-Christmas-Lunch","Christmas Day set lunch: glass of sparkling wine, amuse-bouche, then starters such as smoked duck terrine with Parma ham."),
+                          ("New Year's Eve Dinner at The Plettenberg","2026-12-31","R2,125 pp","TP-NYE","New Year's Eve set dinner: glass of sparkling wine and canapés (prawn cocktail, onion tartlet, beef wonton), then starters such as cured springbok carpaccio.")]:
+    _m="https://www.theplettenberghotel.com/wp-content/uploads/2026/10/%s.pdf"%_pdf
+    add(title=_t,category="festive",start_date=_d,time="",price_from=_pr,alt_sources=[_m,_m.replace(".pdf","-V.pdf")],
+        notes=_n+" %s per person (vegetarian menu available). Menu: %s. Bookings: reservations@collectionmcgrath.com, 044 533 2030."%(_pr.replace(" pp",""),_m),**_TPV)

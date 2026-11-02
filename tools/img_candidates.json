@@ -12,10 +12,10 @@
 ]
 },
 "2026-10-06-noot-vir-noot-music-quiz-night-at-hennie-s-george-": {
-"img": "https://www.therealhennies.co.za/img/posters/whatson-oct-2026/george.jpg",
+"img": "https://www.therealhennies.co.za/img/posters/whatson-nov-2026/george.jpg",
 "pages": [
 "https://www.therealhennies.co.za/branches/hennies-george",
-"https://www.therealhennies.co.za/img/posters/whatson-oct-2026/george.jpg"
+"https://www.therealhennies.co.za/img/posters/whatson-nov-2026/george.jpg"
 ]
 },
 "2026-10-07-garden-route-trivia-league-quiz-at-red-bridge-brew": {
@@ -92,18 +92,11 @@
 "https://wildernessbeachhouse.com/"
 ]
 },
-"2026-10-08-quiz-night-at-hennie-s-george-thursdays": {
-"img": "https://www.therealhennies.co.za/img/posters/whatson-oct-2026/george.jpg",
-"pages": [
-"https://www.therealhennies.co.za/branches/hennies-george",
-"https://www.therealhennies.co.za/img/posters/whatson-oct-2026/george.jpg"
-]
-},
 "2026-10-08-quiz-night-at-hennie-s-oudtshoorn-thursdays": {
-"img": "https://www.therealhennies.co.za/img/posters/whatson-oct-2026/oudtshoorn.jpg",
+"img": "https://www.therealhennies.co.za/img/posters/whatson-nov-2026/oudtshoorn.jpg",
 "pages": [
 "https://www.therealhennies.co.za/branches/hennies-oudtshoorn",
-"https://www.therealhennies.co.za/img/posters/whatson-oct-2026/oudtshoorn.jpg"
+"https://www.therealhennies.co.za/img/posters/whatson-nov-2026/oudtshoorn.jpg"
 ]
 },
 "2026-10-08-big-screen-bok-rugby-at-die-bush-lapa": {
@@ -331,6 +324,20 @@
 "https://visitmosselbay.co.za/event/kiara-market-collective-2/"
 ]
 },
+"2026-11-03-musical-bingo-at-hennie-s-mosselbaai-tuesdays": {
+"img": "https://www.therealhennies.co.za/img/posters/whatson-nov-2026/mosselbaai.jpg",
+"pages": [
+"https://www.therealhennies.co.za/img/posters/whatson-nov-2026/mosselbaai.jpg",
+"https://www.therealhennies.co.za/branches/hennies-mosselbaai"
+]
+},
+"2026-11-03-quiz-night-at-hennie-s-george-tuesdays": {
+"img": "https://www.therealhennies.co.za/img/posters/whatson-nov-2026/george.jpg",
+"pages": [
+"https://www.therealhennies.co.za/img/posters/whatson-nov-2026/george.jpg",
+"https://www.therealhennies.co.za/branches/hennies-george"
+]
+},
 "2026-11-04-plettenberg-bay-grand-prix-showjumping": {
 "img": "",
 "pages": [
@@ -362,6 +369,13 @@
 "pages": [
 "https://www.quicket.co.za/events/383601-henry-ate-live-in-knysna/#tickets",
 "https://www.quicket.co.za/events/383601-henry-ate-live-in-knysna/"
+]
+},
+"2026-11-05-musical-quiz-at-hennie-s-mosselbaai-thursdays": {
+"img": "https://www.therealhennies.co.za/img/posters/whatson-nov-2026/mosselbaai.jpg",
+"pages": [
+"https://www.therealhennies.co.za/img/posters/whatson-nov-2026/mosselbaai.jpg",
+"https://www.therealhennies.co.za/branches/hennies-mosselbaai"
 ]
 },
 "2026-11-05-the-little-mermaid-tracy-ann-s-school-of-ballet-10": {
@@ -996,6 +1010,13 @@
 "https://www.webtickets.co.za/v2/event.aspx?itemid=1605333014"
 ]
 },
+"2026-11-28-jovan-live-at-hennie-s-george": {
+"img": "https://www.therealhennies.co.za/img/posters/whatson-nov-2026/george.jpg",
+"pages": [
+"https://www.therealhennies.co.za/img/posters/whatson-nov-2026/george.jpg",
+"https://www.therealhennies.co.za/branches/hennies-george"
+]
+},
 "2026-11-28-koos-kombuis-live-at-reedvalley": {
 "img": "https://visitmosselbay.co.za/wp-content/uploads/2026/10/koos-kombuis-reedvalley.png",
 "pages": [
@@ -1399,6 +1420,13 @@
 "https://www.quicket.co.za/events/402987-ramkietjie/"
 ]
 },
+"2026-12-17-ryno-velvet-live-at-die-bush-lapa": {
+"img": "",
+"pages": [
+"https://www.bandsintown.com/e/108797844-ryno-velvet-at-die-bush-lapa",
+"https://www.bandsintown.com/a/717734-ryno-velvet"
+]
+},
 "2026-12-17-jeremy-loops-live-in-knysna-better-live": {
 "img": "https://images.quicket.co.za/1011515_0.jpeg",
 "pages": [
@@ -1788,6 +1816,15 @@
 "https://www.quicket.co.za/events/399396-the-billy-joel-experience-live-in-knysna/"
 ]
 },
+"2026-12-24-christmas-eve-dinner-at-the-plettenberg": {
+"img": "",
+"pages": [
+"https://www.theplettenberghotel.com/whats-on/",
+"https://www.theplettenberghotel.com/whats-on/",
+"https://www.theplettenberghotel.com/wp-content/uploads/2026/10/TP-Christmas-EVE.pdf",
+"https://www.theplettenberghotel.com/wp-content/uploads/2026/10/TP-Christmas-EVE-V.pdf"
+]
+},
 "2026-12-24-sielskos-dames-oggend-hannes-van-wyk": {
 "img": "https://visitmosselbay.co.za/wp-content/uploads/2026/08/sielskos-24-desember-26-punt-in-die-wind-stadsaal.jpg",
 "pages": [
@@ -1801,6 +1838,15 @@
 "pages": [
 "https://itickets.co.za/events/486213",
 "https://itickets.co.za/events/486213"
+]
+},
+"2026-12-25-christmas-lunch-at-the-plettenberg": {
+"img": "",
+"pages": [
+"https://www.theplettenberghotel.com/whats-on/",
+"https://www.theplettenberghotel.com/whats-on/",
+"https://www.theplettenberghotel.com/wp-content/uploads/2026/10/TP-Christmas-Lunch.pdf",
+"https://www.theplettenberghotel.com/wp-content/uploads/2026/10/TP-Christmas-Lunch-V.pdf"
 ]
 },
 "2026-12-26-jak-de-priester-cindy-swanepoel-punt-in-die-wind": {
@@ -2024,6 +2070,15 @@
 "img": "",
 "pages": [
 "https://hopefamily.org/event/"
+]
+},
+"2026-12-31-new-year-s-eve-dinner-at-the-plettenberg": {
+"img": "",
+"pages": [
+"https://www.theplettenberghotel.com/whats-on/",
+"https://www.theplettenberghotel.com/whats-on/",
+"https://www.theplettenberghotel.com/wp-content/uploads/2026/10/TP-NYE.pdf",
+"https://www.theplettenberghotel.com/wp-content/uploads/2026/10/TP-NYE-V.pdf"
 ]
 },
 "2026-12-31-new-year-s-eve-at-barrington-s-dj-mike": {
@@ -2324,6 +2379,13 @@
 "https://www.parkrun.co.za/oudtshoorn/"
 ]
 },
+"2027-04-11-booshle-g-love-is-free-tour-ft-jake-isaac-uk": {
+"img": "https://images.quicket.co.za/1012468_0.jpeg",
+"pages": [
+"https://www.quicket.co.za/events/405342-booshle-g-love-is-free-tour-ft-jake-isaac-uk/",
+"https://www.quicket.co.za/events/405342-booshle-g-love-is-free-tour-ft-jake-isaac-uk/"
+]
+},
 "2027-04-22-rattle-and-rust-rally-2027": {
 "img": "",
 "pages": [
@@ -2390,17 +2452,17 @@
 ]
 },
 "2026-10-06-quiz-night-at-hennie-s-brackenfell-tuesdays": {
-"img": "https://www.therealhennies.co.za/img/posters/whatson-oct-2026/brackenfell.jpg",
+"img": "https://www.therealhennies.co.za/img/posters/whatson-nov-2026/brackenfell.jpg",
 "pages": [
 "https://www.therealhennies.co.za/branches/hennies-brackenfell",
-"https://www.therealhennies.co.za/img/posters/whatson-oct-2026/brackenfell.jpg"
+"https://www.therealhennies.co.za/img/posters/whatson-nov-2026/brackenfell.jpg"
 ]
 },
 "2026-10-06-quiz-night-at-hennie-s-durbanville-tuesdays": {
-"img": "https://www.therealhennies.co.za/img/posters/whatson-oct-2026/durbanville.jpg",
+"img": "https://www.therealhennies.co.za/img/posters/whatson-nov-2026/durbanville.jpg",
 "pages": [
 "https://www.therealhennies.co.za/branches/hennies-durbanville",
-"https://www.therealhennies.co.za/img/posters/whatson-oct-2026/durbanville.jpg"
+"https://www.therealhennies.co.za/img/posters/whatson-nov-2026/durbanville.jpg"
 ]
 },
 "2026-10-10-stilbaai-brugmark-saturday-market": {
@@ -2551,6 +2613,13 @@
 "pages": [
 "https://www.quicket.co.za/events/404333-queens-lounge-presents-lad-trio/#tickets",
 "https://www.quicket.co.za/events/404333-queens-lounge-presents-lad-trio/"
+]
+},
+"2026-11-04-brandon-miles-live-at-hennie-s-durbanville": {
+"img": "https://www.therealhennies.co.za/img/posters/whatson-nov-2026/durbanville.jpg",
+"pages": [
+"https://www.therealhennies.co.za/img/posters/whatson-nov-2026/durbanville.jpg",
+"https://www.therealhennies.co.za/branches/hennies-durbanville"
 ]
 },
 "2026-11-04-galileo-open-air-cinema-song-sung-blue": {
@@ -2838,6 +2907,13 @@
 "https://www.quicket.co.za/events/399815-the-backyard-groove/"
 ]
 },
+"2026-11-07-aj-van-der-mescht-live-at-hennie-s-brackenfell": {
+"img": "https://www.therealhennies.co.za/img/posters/whatson-nov-2026/brackenfell.jpg",
+"pages": [
+"https://www.therealhennies.co.za/img/posters/whatson-nov-2026/brackenfell.jpg",
+"https://www.therealhennies.co.za/branches/hennies-brackenfell"
+]
+},
 "2026-11-07-asoc": {
 "img": "https://images.quicket.co.za/Q11.jpg",
 "pages": [
@@ -2921,6 +2997,13 @@
 "pages": [
 "https://www.quicket.co.za/events/402760-vally-boys-2/#tickets",
 "https://www.quicket.co.za/events/402760-vally-boys-2/"
+]
+},
+"2026-11-07-albert-smith-live-at-hennie-s-durbanville": {
+"img": "https://www.therealhennies.co.za/img/posters/whatson-nov-2026/durbanville.jpg",
+"pages": [
+"https://www.therealhennies.co.za/img/posters/whatson-nov-2026/durbanville.jpg",
+"https://www.therealhennies.co.za/branches/hennies-durbanville"
 ]
 },
 "2026-11-07-robbie-wessels-bokke-vs-italie-on-the-big-screens-": {
@@ -3226,6 +3309,13 @@
 "pages": [
 "https://itickets.co.za/events/486285",
 "https://itickets.co.za/events/486285"
+]
+},
+"2026-11-13-kruger-tutu-live-at-hennie-s-durbanville": {
+"img": "https://www.therealhennies.co.za/img/posters/whatson-nov-2026/durbanville.jpg",
+"pages": [
+"https://www.therealhennies.co.za/img/posters/whatson-nov-2026/durbanville.jpg",
+"https://www.therealhennies.co.za/branches/hennies-durbanville"
 ]
 },
 "2026-11-13-galileo-open-air-cinema-kal-ho-naa-ho-dog-friendly": {
@@ -3720,11 +3810,25 @@
 "https://www.howler.co.za/RnBFestCT"
 ]
 },
+"2026-11-21-brandon-miles-live-at-hennie-s-brackenfell": {
+"img": "https://www.therealhennies.co.za/img/posters/whatson-nov-2026/brackenfell.jpg",
+"pages": [
+"https://www.therealhennies.co.za/img/posters/whatson-nov-2026/brackenfell.jpg",
+"https://www.therealhennies.co.za/branches/hennies-brackenfell"
+]
+},
 "2026-11-21-roses-thorns-jimmy-nevis-live": {
 "img": "https://content.webtickets.co.za/baxtertheatre/panel_Horizontal R&t webtickets 2_20261006_165119.png",
 "pages": [
 "https://www.webtickets.co.za/v2/event.aspx?itemid=1604831391",
 "https://www.webtickets.co.za/v2/event.aspx?itemid=1604831391"
+]
+},
+"2026-11-21-karel-bester-live-at-hennie-s-durbanville": {
+"img": "https://www.therealhennies.co.za/img/posters/whatson-nov-2026/durbanville.jpg",
+"pages": [
+"https://www.therealhennies.co.za/img/posters/whatson-nov-2026/durbanville.jpg",
+"https://www.therealhennies.co.za/branches/hennies-durbanville"
 ]
 },
 "2026-11-21-dewald-dippenaar-justin-vega-bokke-vs-ierland-on-t": {
@@ -3952,6 +4056,13 @@
 "pages": [
 "https://itickets.co.za/events/487698",
 "https://itickets.co.za/events/487698"
+]
+},
+"2026-11-27-skye-live-at-hennie-s-durbanville": {
+"img": "https://www.therealhennies.co.za/img/posters/whatson-nov-2026/durbanville.jpg",
+"pages": [
+"https://www.therealhennies.co.za/img/posters/whatson-nov-2026/durbanville.jpg",
+"https://www.therealhennies.co.za/branches/hennies-durbanville"
 ]
 },
 "2026-11-27-as-above-so-below-drum-bass-all-night-skeptical-uk": {
@@ -4272,6 +4383,13 @@
 "pages": [
 "https://www.quicket.co.za/events/404574-vol-zine-launch/#tickets",
 "https://www.quicket.co.za/events/404574-vol-zine-launch/"
+]
+},
+"2026-11-28-danielle-live-at-hennie-s-durbanville": {
+"img": "https://www.therealhennies.co.za/img/posters/whatson-nov-2026/durbanville.jpg",
+"pages": [
+"https://www.therealhennies.co.za/img/posters/whatson-nov-2026/durbanville.jpg",
+"https://www.therealhennies.co.za/branches/hennies-durbanville"
 ]
 },
 "2026-11-28-scallywag-heroes-live": {
@@ -5170,6 +5288,13 @@
 "pages": [
 "https://itickets.co.za/events/486798",
 "https://itickets.co.za/events/486798"
+]
+},
+"2026-12-17-spoegwolf-en-deon-meiring-live-in-stilbaai": {
+"img": "https://itickets.co.za/parts/eimages/487717.jpg",
+"pages": [
+"https://itickets.co.za/events/487717",
+"https://itickets.co.za/events/487717"
 ]
 },
 "2026-12-17-galileo-open-air-cinema-the-vow": {
