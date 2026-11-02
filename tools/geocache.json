@@ -1132,5 +1132,58 @@
 "13 Amy Searle Street, Great Brak River, Great Brak River, Western Cape": null,
 "Great Brak River Museum, Great Brak River, Western Cape": null,
 "Down to Earth, Plettenberg Bay, Western Cape": null,
-"Raptor Rescue, Plettenberg Bay, Western Cape": null
+"Raptor Rescue, Plettenberg Bay, Western Cape": null,
+"Stanley Island, Plettenberg Bay": [
+-34.011203,
+23.4002502,
+"Stanley's Island, Bitou Ward 1, Bitou Local Municipality, Garden Route District Municipality, Western Cape, South Africa"
+],
+"Plettenberg Bay": [
+-34.052778,
+23.369444,
+"Plettenberg Bay, Garden Route District Municipality, Western Cape, 6600, South Africa"
+],
+"12 S Arm Rd, V&A Waterfront, Cape Town": [
+-33.9038149,
+18.4292907,
+"Shimmy Beach Club, 12, South Arm Road, Foreshore, Cape Town Ward 115, Cape Town, City of Cape Town, Western Cape, 8001, South Africa"
+],
+"Cnr Hoopoe & Swallow Streets, Sedgefield": null,
+"NG Kerk / DRC Sedgefield, Sedgefield, Western Cape": null,
+"Ho\u00ebrskool Outeniqua, York Street, George": null,
+"Ho\u00ebrskool Outeniqua, George, Western Cape": [
+-33.9596153,
+22.4702407,
+"Ho\u00ebrskool Outeniqua, Courtenay Street, George Ward 5, George Local Municipality, Garden Route District Municipality, Western Cape, 6529, South Africa"
+],
+"Moth Hall, Loerie Park, George": null,
+"Boulevard Shopping Centre to Moth Hall, Loerie Park, George, Western Cape": null,
+"Piesang Valley Sportsfield, Plettenberg Bay": null,
+"Piesang Valley Sportsfield, Plettenberg Bay, Western Cape": null,
+"Robberg Equestrian Park, Plettenberg Bay": null,
+"Robberg Equestrian Park, Plettenberg Bay, Western Cape": null,
+"Private gardens, Plettenberg Bay, Plettenberg Bay, Western Cape": null,
+"Knysna Golf Club, Knysna": null,
+"Knysna Golf Club, Knysna, Western Cape": null,
+"Groot Brakrivier": [
+-34.0425,
+22.2313889,
+"Groot-Brakrivier, Garden Route District Municipality, Western Cape, 6525, South Africa"
+],
+"Grootbrak, Great Brak River, Western Cape": null,
+"Groenvlei, Sedgefield": [
+-34.0287265,
+22.8594738,
+"Groenvlei, Knysna Ward 1, Knysna Local Municipality, Garden Route District Municipality, Western Cape, South Africa"
+],
+"11 Kloof Street, Mossel Bay": [
+-34.1806181,
+22.1513208,
+"Kloof Street, Mossel Bay Ward 8, Mossel Bay Local Municipality, Garden Route District Municipality, Western Cape, 6500, South Africa"
+],
+"55 Marsh Street, Mossel Bay": [
+-34.1820583,
+22.1332866,
+"Marsh Street, Da Nova, Mossel Bay Ward 6, Mossel Bay Local Municipality, Garden Route District Municipality, Western Cape, 6500, South Africa"
+]
 }

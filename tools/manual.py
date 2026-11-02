@@ -1585,3 +1585,114 @@ add(title="Christmas Eve Dinner at Quentin at Oakhurst, Hout Bay",category="fest
 add(title="New Year's Eve Dinner at Quentin at Oakhurst, Hout Bay",category="festive",start_date="2026-12-31",time="20:00",price_from="R2,950 pp",
     ticket_url="https://oakhurstbarn.com/menu/new-years-eve-dinner/",source_url="https://oakhurstbarn.com/menu/new-years-eve-dinner/",source_name="Quentin at Oakhurst (official site)",alt_sources=[],
     notes="NYE Menu 2026 with free-flowing Champagne: MCC and gravadlax amuse-bouche, starters, then whisky-butter flamed lobster tails or smoked ostrich, Calvinia lamb loin or kingklip with seared scallops, and a dark chocolate ganache cake. Vegan menu available. R2,950 per person. Bookings: 021 790 4888, bookings@oakhurstbarn.com.",**_QO)
+
+# ---------------- Weekly refresh 2 Nov 2026 ----------------
+_QP="/events/"
+_q19("405544",_QP+"405544-sedgefield-sunset-family-festive-fun/","1012052_0.jpeg",-34.0334435,22.8020763,
+    title="Secret Sunset – Sedgefield Family Festive Fun (Secret Sunrise Garden Route)",category="community",start_date="2026-11-14",time="18:15-19:15",town="Sedgefield",
+    venue="PiliPili Beach Restaurant",venue_address="2 Claude Urban Dr, Myoli Beach, Sedgefield",price_from="R80",
+    notes="Secret Sunrise Garden Route's family sunset session on Myoli Beach: an hour of headphone dancing and festive fun for the whole family. Tickets R80-R180 on Quicket.")
+_q19("405979",_QP+"405979-clarinet-danre-strydom-and-piano-catherine-foxcroft-duo-recital/","1013241_0.jpeg",-34.0340843,23.0479469,
+    title="Knysna Music Society: Danré Strydom (clarinet) & Catherine Foxcroft (piano) duo recital",category="concert",start_date="2026-11-16",time="18:30-21:00",town="Knysna",
+    venue="Knysna NG Kerk",venue_address="30 Fitchat St, Knysna",price_from="R50",
+    notes="Knysna Music Society classical recital: clarinet and piano duo. Adults R200, reduced prices from R50 on Quicket.")
+_q19("405550",_QP+"405550-tuiniqua-kersfees-ete/","1012136_0.jpeg",-33.95549,22.4641914,
+    title="Tuiniqua Kersete with Michael Lindt (Christmas dinner)",category="festive",start_date="2026-11-26",time="18:00-23:00",town="George",
+    venue="Tuiniqua Care Centre",venue_address="13 Kerk St, Bodorp, George",price_from="R200",
+    notes="Christmas dinner fundraiser for the Tuiniqua Care Centre with entertainment by singer Michael Lindt. R200 per person on Quicket.")
+_q19("405137",_QP+"405137-ontdek-god-in-jou-boksie/","1010875_0.jpeg",-34.0769119,22.0505,
+    title="Ontdek God in jou Boksie – one-day faith conference (Partner with Jesus)",category="community",start_date="2026-11-28",time="07:00-17:30",town="Mossel Bay",
+    venue="Misty Valley Farm",venue_address="Misty Valley Farm, R328, Brandwacht, Mossel Bay",price_from="R200",
+    notes="Afrikaans one-day Christian conference on a farm outside Mossel Bay, presented by Partner with Jesus. R200 on Quicket.")
+_q19("402607",_QP+"402607-jeremy-loops-live-in-knysna/","1011515_0.jpeg",-34.0629959,23.0711117,
+    title="Jeremy Loops live in Knysna (Better Live)",category="concert",start_date="2026-12-17",time="19:30 (gates 17:30)",town="Knysna",
+    venue="Blend Country Restaurant & Pub",venue_address="George Rex Dr, Knysna",price_from="R350",
+    notes="Jeremy Loops summer show at Blend, Knysna. Phase 1 R350 (until 23 Nov), then R395, R420 at the gate; kids R250.")
+_q19("402669",_QP+"402669-dinkz-christian-rap-concert/","1007644_0.png",-34.0628929,23.3660183,
+    title="Dinkz Christian rap concert",category="concert",start_date="2026-12-18",end_date="2026-12-19",time="18:00",town="Plettenberg Bay",
+    venue="Piesang Valley Community Hall",venue_address="7 Green Point Ave, Plettenberg Bay",price_from="R60",
+    notes="Christian hip-hop concert by Dinkz. Tickets R60-R140 on Quicket.")
+_q19("404720",_QP+"404720-wet-n-wild-the-bassline-society/","1011302_0.jpeg",-34.02977,22.93848,
+    title="Wet n Wild – The Bassline Society (day-to-night party)",category="festival",start_date="2026-12-19",end_date="2026-12-20",time="10:00-02:00",town="Knysna",
+    venue="Blackwaters River Lodge & Mashie Golf Course",venue_address="N2, Goukamma, Knysna",price_from="R250",
+    notes="Summer day-to-night electronic music party by The Bassline Society at Blackwaters on the Goukamma River. From R250 on Quicket.")
+_q19("406081",_QP+"406081-keanan-eksteen-ft-battersby-live-in-knysna/","1013523_0.jpeg",-34.0629959,23.0711117,
+    title="Keanan Eksteen ft Battersby live in Knysna",category="concert",start_date="2026-12-19",time="19:00 (gates 17:00)",town="Knysna",
+    venue="Blend Country Restaurant & Pub",venue_address="George Rex Dr, Knysna",price_from="R200",
+    notes="Keanan Eksteen with Battersby at Blend, Knysna. Phase 1 R200 (until 30 Nov), then R220, R240 at the gate; kids R140.")
+_q19("403802",_QP+"403802-all-night-long-tribute-lionel-richie/","1014245_0.jpeg",-34.1959,22.0907,
+    title="All Night Long – Lionel Richie tribute (Gift Gwe + live band)",category="concert",start_date="2026-12-19",time="20:00-22:00 (doors 19:00)",town="Mossel Bay",
+    venue="Bravo Lounge, Garden Route Casino",venue_address="Garden Route Casino, Pinnacle Point, Mossel Bay",price_from="R150",
+    notes="Lionel Richie tribute show by Gift Gwe and a live band. R150 on Quicket.")
+_q19("405105",_QP+"405105-lgbt-social-networking-georgegarden-route-thursday-19-november-530-pm-tigers-mi/","1012790_0.jpeg",-33.9596176,22.4667912,
+    title="Village Drinks – LGBT social networking evening (George/Garden Route)",category="community",start_date="2026-11-19",time="17:30-20:30",town="George",
+    venue="Tiger's Milk George",venue_address="23 Courtenay St, George",price_from="R75",
+    notes="Relaxed LGBT+ social networking drinks for the Garden Route. R75 online, R90 at the door.")
+# Carpe Musicam 2026 festive concerts (dates/times/venues from carpemusicam.co.za and George Herald 28 Oct 2026)
+_CM="https://www.carpemusicam.co.za/"; _GH="https://www.georgeherald.com/Entertainment/Article/eyes-on-arts-upcoming-entertainment-highlights-in-george-and-surrounds-202610280211"
+_CMI="https://carpemusicam.co.za/wp-content/uploads/2021/03/Carpe-Musicam-Town-Hall-©Keran-Elah-2-400x516.jpg"
+add(title="Carpe Musicam: Sounds of the Season (Dias Museum)",category="concert",start_date="2026-11-29",time="15:30",town="Mossel Bay",
+    venue="Dias Maritime Museum",venue_address="1 Market Street, Mossel Bay",ticket_url=_CM,source_url=_CM,source_name="Carpe Musicam (official site)",alt_sources=[_GH],_img=_CMI,
+    notes="Carpe Musicam orchestra and choir festive concert 'Sounds of the Season'. Tickets via carpemusicam.co.za.")
+add(title="Carpe Musicam: O Holy Night (Sedgefield)",category="concert",start_date="2026-12-06",time="15:30",town="Sedgefield",
+    venue="NG Kerk / DRC Sedgefield",venue_address="Cnr Hoopoe & Swallow Streets, Sedgefield",ticket_url=_CM,source_url=_CM,source_name="Carpe Musicam (official site)",alt_sources=[_GH],_img=_CMI,
+    notes="Carpe Musicam Christmas concert 'O Holy Night'. Tickets via carpemusicam.co.za.")
+add(title="Carpe Musicam: O Holy Night (George)",category="concert",start_date="2026-12-11",time="19:00",town="George",
+    venue="Hoërskool Outeniqua (Outeniqua High School)",venue_address="Hoërskool Outeniqua, York Street, George",ticket_url=_CM,source_url=_CM,source_name="Carpe Musicam (official site)",alt_sources=[_GH],_img=_CMI,
+    notes="Carpe Musicam Christmas concert 'O Holy Night'. Tickets via carpemusicam.co.za.")
+add(title="Carpe Musicam: O Holy Night (Mossel Bay Town Hall)",category="concert",start_date="2026-12-13",time="18:00",town="Mossel Bay",
+    venue="Mossel Bay Town Hall",venue_address="101 Marsh Street, Mossel Bay",ticket_url=_CM,source_url=_CM,source_name="Carpe Musicam (official site)",alt_sources=[_GH],_img=_CMI,
+    notes="Carpe Musicam Christmas concert 'O Holy Night'. Tickets via carpemusicam.co.za.")
+# Knysna Diary (knysna.n2rs.com) new 2026/27 listings
+_KD="https://www.knysna.n2rs.com/knysna-diary.html"
+add(title="Tower2Sea Trail Run (Buffelsnek Fire Tower to Thesen Island)",category="funrun",start_date="2026-12-20",time="Sunrise start",town="Knysna",
+    venue="Buffelsnek Fire Tower to Thesen Harbour Town",venue_address="Thesen Harbour Town, Knysna",source_url=_KD,source_name="Knysna Diary",
+    notes="3rd edition. Downhill trail run from the Buffelsnek Fire Tower above the Knysna forest, on gravel roads, forest singletrack, elephant trails and parts of the Outeniqua Hiking Trail, finishing on Thesen Island.")
+add(title="Toy Run George 2026 (charity motorcycle ride)",category="community",start_date="2026-11-29",time="",town="George",
+    venue="Boulevard Shopping Centre to Moth Hall, Loerie Park",venue_address="Moth Hall, Loerie Park, George",source_url=_KD,source_name="Knysna Diary",
+    notes="45th Toy Run: charity motorcycle ride carrying toys for needy children, from the Boulevard Shopping Centre to the Moth Hall. Everyone welcome on foot, bicycle, motorcycle or car.")
+add(title="Golden Retriever Gathering (Plett)",category="community",start_date="2027-01-03",time="",town="Plettenberg Bay",
+    venue="Piesang Valley Sportsfield",venue_address="Piesang Valley Sportsfield, Plettenberg Bay",source_url=_KD,source_name="Knysna Diary",
+    notes="Golden Retriever get-together with swimming, games, agility, field work, showing and shopping.")
+add(title="Plettenberg Bay Grand Prix (showjumping)",category="sport",start_date="2026-11-04",end_date="2026-11-08",time="",town="Plettenberg Bay",
+    venue="Robberg Equestrian Park",venue_address="Robberg Equestrian Park, Plettenberg Bay",source_url=_KD,source_name="Knysna Diary",
+    notes="Five days of showjumping plus a shopping village of equestrian and lifestyle brands.")
+add(title="Plett Open Gardens 2026",category="nature",start_date="2026-11-14",time="",town="Plettenberg Bay",
+    venue="Private gardens, Plettenberg Bay",venue_address="Plettenberg Bay",source_url=_KD,source_name="Knysna Diary",
+    notes="13th edition: five private gardens with spectacular views, a mix of indigenous and exotic gardens.")
+add(title="Mahjong Charity Tournament (Knysna)",category="community",start_date="2026-11-12",time="",town="Knysna",
+    venue="Knysna Golf Club",venue_address="Knysna Golf Club, Knysna",source_url=_KD,source_name="Knysna Diary",
+    notes="A day of mahjong, friendship and giving for charity.")
+add(title="Rock and Surf Super Pro League – Grootbrak (catch-and-release angling)",category="sport",start_date="2027-01-16",time="",town="Groot Brak",
+    venue="Grootbrak",venue_address="Groot Brakrivier",source_url=_KD,source_name="Knysna Diary",
+    notes="Catch-and-release shore angling league round; anglers can join on the day.")
+add(title="Rock and Surf Super Pro League – Groenvlei (catch-and-release angling)",category="sport",start_date="2027-01-30",time="",town="Sedgefield",
+    venue="Groenvlei",venue_address="Groenvlei, Sedgefield",source_url=_KD,source_name="Knysna Diary",
+    notes="Catch-and-release shore angling league round; anglers can join on the day.")
+# Visit Mossel Bay calendar (seen via the site's event list, 2 Nov 2026)
+add(title="Christmas Wreath Workshop (clay) at Umhlaba Pottery",category="arts",start_date="2026-11-07",time="10:00-13:00",town="Mossel Bay",
+    venue="Umhlaba Pottery",venue_address="11 Kloof Street, Mossel Bay",price_from="R475",
+    ticket_url="https://visitmosselbay.co.za/event/christmas-wreath-workshop/",source_url="https://visitmosselbay.co.za/event/christmas-wreath-workshop/",source_name="Visit Mossel Bay (tourism calendar)",
+    _img="https://visitmosselbay.co.za/wp-content/uploads/2026/10/861996277_1582925323875169_875680136242954295_n.webp",
+    notes="Festive morning making a clay Christmas wreath, with a mimosa or two. From R475. Bookings: studio@umhlabapottery.co.za, 084 868 2114.")
+add(title="FLOURISH – an inspiring event for women",category="community",start_date="2026-11-07",time="08:30-13:00",town="Mossel Bay",
+    venue="Old Mutual, 5th Floor, Plaza Aquada",venue_address="55 Marsh Street, Mossel Bay",price_from="R350",
+    ticket_url="https://visitmosselbay.co.za/event/flourish-an-inspiring-event-for-women/",source_url="https://visitmosselbay.co.za/event/flourish-an-inspiring-event-for-women/",source_name="Visit Mossel Bay (tourism calendar)",
+    _img="https://visitmosselbay.co.za/wp-content/uploads/2026/10/img_7597.webp",
+    notes="Morning of talks and connection for women (Connect, Learn, Grow, Thrive) with Coach Isabella. From R350. Info: 060 147 5994.")
+# Howler / Webtickets new listings
+add(title="Goldfish – Stanley Island, Plett (Corona Sunsets Summer Tour)",category="concert",start_date="2026-12-30",time="12:00-21:00",town="Plettenberg Bay",
+    venue="Island Beach Bar, Stanley Island",venue_address="Stanley Island, Plettenberg Bay",price_from="R1,000",
+    ticket_url="https://ag.howler.co.za/gf30dec26",source_url="https://ag.howler.co.za/gf30dec26",source_name="Howler",alt_sources=["https://ag.howler.co.za/events/goldfish-stanley-island-30-december-2026-4882"],
+    _img="https://d1as2iufift1z3.cloudfront.net/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMG1qQXc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--4cef5e1021b6d5330b6cb864ed2100741027a1fa/30Dec_EventArtwork_1920x1080%20(2).png",
+    notes="Goldfish live on Stanley Island in the Keurbooms lagoon. From R1,000 on Howler. (The event blurb mentions 27 December, but the listing date and title say 30 December.)")
+add(title="DREAMING OUT LOUD FESTIVAL 2026 ft Neon Dreams & Byrne – Plettenberg Bay",category="concert",start_date="2026-12-28",time="18:00",town="Plettenberg Bay",
+    venue="Plettenberg Bay (venue not stated on listing)",venue_address="Plettenberg Bay",price_from="R190",
+    ticket_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1606372346",source_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1606372346",source_name="Webtickets",
+    _img="https://content.webtickets.co.za/cr8ifsweatshop/panel_WEBTICKET 1_20261009_083630.jpg",
+    notes="Canadian band Neon Dreams with SA singer-songwriter Byrne, Plett leg of the Dreaming Out Loud tour. All ages, under-10s free. R190 to R6,500 (VIP stage pod for 6).")
+add(title="New Year's Day Tripping ft Ben Böhmer",category="concert",start_date="2027-01-01",end_date="2027-01-02",time="15:00-02:00",town="Cape Town",
+    venue="Cabo Beach",venue_address="12 S Arm Rd, V&A Waterfront, Cape Town",price_from="R550",
+    ticket_url="https://musicpeople.howler.co.za/mp1jan27",source_url="https://musicpeople.howler.co.za/mp1jan27",source_name="Howler",
+    _img="https://d1as2iufift1z3.cloudfront.net/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBL2FrQXc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--131de31ae6bea919515aa5b0e92e4f0e752ad9ee/DTF27-launch-cover.png",
+    notes="Music People's New Year's Day party with German producer Ben Böhmer at Cabo Beach. From R550 on Howler.")

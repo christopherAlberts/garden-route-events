@@ -1,8 +1,8 @@
 {
  "source": "https://www.sterkinekor.com",
  "source_note": "Ster-Kinekor website (sterkinekor.com), Garden Route Mall programme",
- "fetched_at": "2026-10-26 08:07",
- "fetched_date": "2026-10-26",
+ "fetched_at": "2026-11-02 08:02",
+ "fetched_date": "2026-11-02",
  "cinema": {
   "name": "Ster-Kinekor Garden Route Mall",
   "town": "George",
@@ -12,6 +12,41 @@
   "location_id": 26
  },
  "now_showing": [
+  {
+   "id": 754,
+   "title": "Al Wat Ek Weet",
+   "section": "now",
+   "url": "https://www.sterkinekor.com/f/al-wat-ek-weet/754",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/al-wat-ek-weet-754/poster/73f8a830-b79f-4440-8272-6fa0586a5e5c.jpeg?optimizer=image&width=342",
+   "release_date": "2026-10-30",
+   "date_label": "",
+   "age_rating": "No Under 13's - L V",
+   "age": 13,
+   "runtime": "1h 42m",
+   "genres": [
+    "drama"
+   ],
+   "bookable": true,
+   "trailer": "https://youtu.be/P4SLxVGQmyA",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/al-wat-ek-weet-754/backdrop/77185773-5375-4b6f-8ea6-0bea6a07b760.jpeg?optimizer=image&width=1200",
+   "synopsis": "When a car accident claims his mother's life and his father withdraws from life in a clinic, seventeen-year-old Gabriel Lombard is uprooted from his green, leafy suburb on Table Mountain and sent to live with his aunt Lotta and grandmother Lenie in a cramped house in Woodstock. Determined not to collapse like his father, he buries his grief behind a cool facade, wild lies and an overactive imagination.",
+   "director": "",
+   "cast": [
+    "Zenobia Kloppers",
+    "Gretchen Ramsden",
+    "Jonan Mouton",
+    "June van Merch",
+    "Antoinette Myburgh",
+    "Waldemar Schultz"
+   ],
+   "language": "English",
+   "country": "South Africa",
+   "imdb_id": "",
+   "tmdb_id": "1721249",
+   "cinemas": [
+    "Ster-Kinekor Garden Route Mall"
+   ]
+  },
   {
    "id": 750,
    "title": "Clayface",
@@ -96,6 +131,54 @@
    ]
   },
   {
+   "id": 758,
+   "title": "Godzilla Minus Zero",
+   "section": "now",
+   "url": "https://www.sterkinekor.com/f/godzilla-minus-zero/758",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/godzilla-minus-zero-758/poster/66946f22-bd46-4b73-b702-b7a7b339d7cd.jpeg?optimizer=image&width=342",
+   "release_date": "2026-11-06",
+   "date_label": "",
+   "age_rating": "TBA",
+   "age": null,
+   "runtime": "1h 59m",
+   "genres": [
+    "sci fi",
+    "horror",
+    "action"
+   ],
+   "bookable": true,
+   "trailer": "https://youtu.be/g7sgTJIWW5U",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/godzilla-minus-zero-758/backdrop/27565947-6729-415a-8095-7c61cadde0b5.jpeg?optimizer=image&width=1200",
+   "synopsis": "War reduced Japan to zero, and Godzilla plunged it into minus. Two years have passed since then, and the country has faced agonizing struggles to achieve recovery and finally reclaim its daily life. Just as humanity managed to cling to a hard-won peace, a new threat strikes, crushing hope in an instant.",
+   "director": "Takashi Yamazaki",
+   "cast": [
+    "Munetaka Aoki",
+    "Ryunosuke Kamiki",
+    "Minami Hamabe",
+    "Yuki Yamada",
+    "Hidetaka Yoshioka",
+    "Miou Tanaka",
+    "Sae Nagatani",
+    "Kuranosuke Sasaki",
+    "Sakura Ando",
+    "Min Tanaka"
+   ],
+   "language": "English",
+   "country": "Japan",
+   "imdb_id": "tt34384661",
+   "tmdb_id": "1381071",
+   "cinemas": [
+    "Ster-Kinekor Garden Route Mall"
+   ],
+   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
+   "ratings": [
+    {
+     "source": "Rotten Tomatoes",
+     "value": "97%"
+    }
+   ]
+  },
+  {
    "id": 703,
    "title": "Heart of the Beast",
    "section": "now",
@@ -135,6 +218,84 @@
     {
      "source": "Rotten Tomatoes",
      "value": "85%"
+    }
+   ]
+  },
+  {
+   "id": 649,
+   "title": "Macbeth (Verdi) - Metropolitan Opera",
+   "section": "now",
+   "url": "https://www.sterkinekor.com/f/macbeth-verdi-metropolitan-opera/649",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/macbeth-verdi-metropolitan-opera-649/poster/570c6a0f-6765-4280-8e20-00e0274ec367.jpeg?optimizer=image&width=342",
+   "release_date": "2026-11-01",
+   "date_label": "",
+   "age_rating": "Parental guidance for 10 - 12",
+   "age": 12,
+   "runtime": "3h 29m",
+   "genres": [
+    "opera"
+   ],
+   "bookable": true,
+   "trailer": "https://youtu.be/BEGgmm3v0tM",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/macbeth-verdi-metropolitan-opera-649/backdrop/79a28a7b-17f7-49b8-8987-2bd9cd1394a9.jpeg?optimizer=image&width=1200",
+   "synopsis": "Two of opera’s most extraordinary artists return to The Met: Live in HD for Verdi’s thrilling take on the immortal Shakespearean tale of the scheming couple determined to seize power at any cost. Following past triumphs in many of Verdi’s signature baritone roles, Quinn Kelsey is the Scottish king haunted by the ghosts of his murderous ascent to the throne, opposite Lise Davidsen—the world’s reigning dramatic soprano—as the power-mad Lady Macbeth, whose ruinous ambition damns them both. Met Music Director Yannick Nézet-Séguin takes the podium for a penetrating production by Louisa Proske, a brilliant young director making waves around the world. Rounding out the all-star cast are tenor Freddie De Tommaso as the heroic Macduff and bass-baritone Ryan Speedo Green as Macbeth’s friend-turned-victim Banquo.",
+   "director": "",
+   "cast": [],
+   "language": "English",
+   "country": "",
+   "imdb_id": "",
+   "tmdb_id": "",
+   "cinemas": [
+    "Ster-Kinekor Garden Route Mall"
+   ]
+  },
+  {
+   "id": 786,
+   "title": "Pressure",
+   "section": "now",
+   "url": "https://www.sterkinekor.com/f/pressure/786",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/pressure-786/poster/dc2f4b9e-a6f1-41f2-9e78-83ea87ca6682.jpeg?optimizer=image&width=342",
+   "release_date": "2026-10-30",
+   "date_label": "",
+   "age_rating": "No Under 13's - V",
+   "age": 13,
+   "runtime": "1h 40m",
+   "genres": [
+    "drama"
+   ],
+   "bookable": true,
+   "trailer": "https://www.youtube.com/watch?v=6ffR0oyh6YE",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/pressure-786/backdrop/6ecaa1b8-6414-48da-9ba1-4b27964ebfdd.jpeg?optimizer=image&width=1200",
+   "synopsis": "In the tense 72 hours before D-Day, and the fate of the free world hanging in the balance, General Dwight D. Eisenhower and Captain James Stagg face an impossible choice—launch the largest and most dangerous seaborne invasion in history or risk losing the war altogether.",
+   "director": "",
+   "cast": [
+    "Andrew Scott",
+    "Toby Williams",
+    "Kerry Condon",
+    "Chris Messina",
+    "Damian Lewis",
+    "Con O'Neill",
+    "Harrison Osterfield",
+    "Max Croes",
+    "Orlando Seale",
+    "Pedro Leandro"
+   ],
+   "language": "English",
+   "country": "France, United Kingdom",
+   "imdb_id": "tt32547691",
+   "tmdb_id": "1318413",
+   "cinemas": [
+    "Ster-Kinekor Garden Route Mall"
+   ],
+   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
+   "ratings": [
+    {
+     "source": "IMDb",
+     "value": "7.3"
+    },
+    {
+     "source": "Rotten Tomatoes",
+     "value": "89%"
     }
    ]
   },
@@ -401,119 +562,6 @@
  ],
  "coming_soon": [
   {
-   "id": 754,
-   "title": "Al Wat Ek Weet",
-   "section": "soon",
-   "url": "https://www.sterkinekor.com/f/al-wat-ek-weet/754",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/al-wat-ek-weet-754/poster/73f8a830-b79f-4440-8272-6fa0586a5e5c.jpeg?optimizer=image&width=342",
-   "release_date": "2026-10-30",
-   "date_label": "30 Oct",
-   "age_rating": "No Under 13's",
-   "age": null,
-   "runtime": "1h 42m",
-   "genres": [
-    "drama"
-   ],
-   "bookable": false,
-   "trailer": "https://youtu.be/P4SLxVGQmyA",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/al-wat-ek-weet-754/backdrop/77185773-5375-4b6f-8ea6-0bea6a07b760.jpeg?optimizer=image&width=1200",
-   "synopsis": "When a car accident claims his mother's life and his father withdraws from life in a clinic, seventeen-year-old Gabriel Lombard is uprooted from his green, leafy suburb on Table Mountain and sent to live with his aunt Lotta and grandmother Lenie in a cramped house in Woodstock. Determined not to collapse like his father, he buries his grief behind a cool facade, wild lies and an overactive imagination.",
-   "director": "",
-   "cast": [
-    "Zenobia Kloppers",
-    "Gretchen Ramsden",
-    "Jonan Mouton",
-    "June van Merch",
-    "Antoinette Myburgh",
-    "Waldemar Schultz"
-   ],
-   "language": "English",
-   "country": "South Africa",
-   "imdb_id": "",
-   "tmdb_id": "1721249",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ]
-  },
-  {
-   "id": 786,
-   "title": "Pressure",
-   "section": "soon",
-   "url": "https://www.sterkinekor.com/f/pressure/786",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/pressure-786/poster/dc2f4b9e-a6f1-41f2-9e78-83ea87ca6682.jpeg?optimizer=image&width=342",
-   "release_date": "2026-10-30",
-   "date_label": "30 Oct",
-   "age_rating": "No Under 13's",
-   "age": null,
-   "runtime": "1h 40m",
-   "genres": [
-    "drama"
-   ],
-   "bookable": false,
-   "trailer": "https://www.youtube.com/watch?v=6ffR0oyh6YE",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/pressure-786/backdrop/6ecaa1b8-6414-48da-9ba1-4b27964ebfdd.jpeg?optimizer=image&width=1200",
-   "synopsis": "In the tense 72 hours before D-Day, and the fate of the free world hanging in the balance, General Dwight D. Eisenhower and Captain James Stagg face an impossible choice—launch the largest and most dangerous seaborne invasion in history or risk losing the war altogether.",
-   "director": "",
-   "cast": [
-    "Andrew Scott",
-    "Toby Williams",
-    "Kerry Condon",
-    "Chris Messina",
-    "Damian Lewis",
-    "Con O'Neill",
-    "Harrison Osterfield",
-    "Max Croes",
-    "Orlando Seale",
-    "Pedro Leandro"
-   ],
-   "language": "English",
-   "country": "France, United Kingdom",
-   "imdb_id": "tt32547691",
-   "tmdb_id": "1318413",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ],
-   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
-   "ratings": [
-    {
-     "source": "IMDb",
-     "value": "7.3"
-    },
-    {
-     "source": "Rotten Tomatoes",
-     "value": "89%"
-    }
-   ]
-  },
-  {
-   "id": 649,
-   "title": "Macbeth (Verdi) - Metropolitan Opera",
-   "section": "soon",
-   "url": "https://www.sterkinekor.com/f/macbeth-verdi-metropolitan-opera/649",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/macbeth-verdi-metropolitan-opera-649/poster/570c6a0f-6765-4280-8e20-00e0274ec367.jpeg?optimizer=image&width=342",
-   "release_date": "2026-11-01",
-   "date_label": "01 Nov",
-   "age_rating": "Parental guidance for 10 - 12",
-   "age": 12,
-   "runtime": "3h 29m",
-   "genres": [
-    "opera"
-   ],
-   "bookable": true,
-   "trailer": "https://youtu.be/BEGgmm3v0tM",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/macbeth-verdi-metropolitan-opera-649/backdrop/79a28a7b-17f7-49b8-8987-2bd9cd1394a9.jpeg?optimizer=image&width=1200",
-   "synopsis": "Two of opera’s most extraordinary artists return to The Met: Live in HD for Verdi’s thrilling take on the immortal Shakespearean tale of the scheming couple determined to seize power at any cost. Following past triumphs in many of Verdi’s signature baritone roles, Quinn Kelsey is the Scottish king haunted by the ghosts of his murderous ascent to the throne, opposite Lise Davidsen—the world’s reigning dramatic soprano—as the power-mad Lady Macbeth, whose ruinous ambition damns them both. Met Music Director Yannick Nézet-Séguin takes the podium for a penetrating production by Louisa Proske, a brilliant young director making waves around the world. Rounding out the all-star cast are tenor Freddie De Tommaso as the heroic Macduff and bass-baritone Ryan Speedo Green as Macbeth’s friend-turned-victim Banquo.",
-   "director": "",
-   "cast": [],
-   "language": "English",
-   "country": "",
-   "imdb_id": "",
-   "tmdb_id": "",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ]
-  },
-  {
    "id": 758,
    "title": "Godzilla Minus Zero",
    "section": "soon",
@@ -660,7 +708,7 @@
     "action",
     "adventure"
    ],
-   "bookable": false,
+   "bookable": true,
    "trailer": "https://youtu.be/nDGMN1EooAo",
    "backdrop": "https://images.filmgrail.com/mediaserver/movies/hunger-games-the-sunrise-on-the-reaping-711/backdrop/14d09c2b-eff0-4597-8f16-235ec559485a.jpeg?optimizer=image&width=1200",
    "synopsis": "Return to the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
@@ -693,7 +741,7 @@
    "poster": "https://images.filmgrail.com/mediaserver/movies/wicker-801/poster/09914c35-c286-4d71-abf8-ff9cc3f50618.jpeg?optimizer=image&width=342",
    "release_date": "2026-11-20",
    "date_label": "20 Nov",
-   "age_rating": "No Under 16's",
+   "age_rating": "No Under 16's - L S",
    "age": null,
    "runtime": "1h 45m",
    "genres": [
@@ -720,6 +768,45 @@
    "country": "United Kingdom, United States",
    "imdb_id": "tt29611136",
    "tmdb_id": "1195803",
+   "cinemas": [
+    "Ster-Kinekor Garden Route Mall"
+   ]
+  },
+  {
+   "id": 813,
+   "title": "You Can See Everything",
+   "section": "soon",
+   "url": "https://www.sterkinekor.com/f/you-can-see-everything/813",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/you-can-see-everything-813/poster/869b8338-3967-4297-b0a8-7c0d8e1fef19.jpg?optimizer=image&width=342",
+   "release_date": "2026-11-20",
+   "date_label": "20 Nov",
+   "age_rating": "TBA",
+   "age": null,
+   "runtime": "2h 54m",
+   "genres": [
+    "documentary"
+   ],
+   "bookable": false,
+   "trailer": "",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/you-can-see-everything-813/backdrop/32fef996-7754-4e1c-83fd-3c170fb4ec06.jpg?optimizer=image&width=1200",
+   "synopsis": "Thirty-four days before she's sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
+   "director": "",
+   "cast": [
+    "Amanda Seyfried",
+    "Christopher Abbott",
+    "Nathan Fielder",
+    "Lance Oppenheim",
+    "Elizabeth Holmes",
+    "Billy Evans",
+    "Christian Rasmus Holmes IV",
+    "Noel Anne",
+    "Gary Wilmes",
+    "Phillip Andre Botello"
+   ],
+   "language": "English",
+   "country": "United States",
+   "imdb_id": "tt45368240",
+   "tmdb_id": "1765072",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]

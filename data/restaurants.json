@@ -45,10 +45,6 @@
   "geo_source": "nominatim",
   "region": "Garden Route",
   "occurrences": [
-   "2026-10-27",
-   "2026-10-28",
-   "2026-10-29",
-   "2026-10-30",
    "2026-11-03",
    "2026-11-04",
    "2026-11-05",
@@ -149,13 +145,13 @@
    "2027-04-21",
    "2027-04-22",
    "2027-04-23",
-   "2027-04-27"
+   "2027-04-27",
+   "2027-04-28",
+   "2027-04-29",
+   "2027-04-30",
+   "2027-05-04"
   ],
   "day_labels": {
-   "2026-10-27": "Taco Tuesday",
-   "2026-10-28": "Burger special",
-   "2026-10-29": "Pizza special R120",
-   "2026-10-30": "Kids' pottery painting 30% off",
    "2026-11-03": "Taco Tuesday",
    "2026-11-04": "Burger special",
    "2026-11-05": "Pizza special R120",
@@ -256,7 +252,11 @@
    "2027-04-21": "Burger special",
    "2027-04-22": "Pizza special R120",
    "2027-04-23": "Kids' pottery painting 30% off",
-   "2027-04-27": "Taco Tuesday"
+   "2027-04-27": "Taco Tuesday",
+   "2027-04-28": "Burger special",
+   "2027-04-29": "Pizza special R120",
+   "2027-04-30": "Kids' pottery painting 30% off",
+   "2027-05-04": "Taco Tuesday"
   },
   "recurrence": "Tue: Taco Tuesday; Wed: Burger special; Thu: Pizza special R120; Fri: Kids' pottery painting 30% off"
  },
@@ -306,11 +306,6 @@
   "geo_source": "nominatim",
   "region": "Garden Route",
   "occurrences": [
-   "2026-10-26",
-   "2026-10-27",
-   "2026-10-28",
-   "2026-10-29",
-   "2026-10-30",
    "2026-11-02",
    "2026-11-03",
    "2026-11-04",
@@ -437,14 +432,14 @@
    "2027-04-22",
    "2027-04-23",
    "2027-04-26",
-   "2027-04-27"
+   "2027-04-27",
+   "2027-04-28",
+   "2027-04-29",
+   "2027-04-30",
+   "2027-05-03",
+   "2027-05-04"
   ],
   "day_labels": {
-   "2026-10-26": "Happy hour 16:00-18:00",
-   "2026-10-27": "Happy hour 16:00-18:00 · Pizza Tuesday",
-   "2026-10-28": "Happy hour 16:00-18:00",
-   "2026-10-29": "Happy hour 16:00-18:00",
-   "2026-10-30": "Happy hour 16:00-18:00",
    "2026-11-02": "Happy hour 16:00-18:00",
    "2026-11-03": "Happy hour 16:00-18:00 · Pizza Tuesday",
    "2026-11-04": "Happy hour 16:00-18:00",
@@ -571,7 +566,12 @@
    "2027-04-22": "Happy hour 16:00-18:00",
    "2027-04-23": "Happy hour 16:00-18:00",
    "2027-04-26": "Happy hour 16:00-18:00",
-   "2027-04-27": "Happy hour 16:00-18:00 · Pizza Tuesday"
+   "2027-04-27": "Happy hour 16:00-18:00 · Pizza Tuesday",
+   "2027-04-28": "Happy hour 16:00-18:00",
+   "2027-04-29": "Happy hour 16:00-18:00",
+   "2027-04-30": "Happy hour 16:00-18:00",
+   "2027-05-03": "Happy hour 16:00-18:00",
+   "2027-05-04": "Happy hour 16:00-18:00 · Pizza Tuesday"
   },
   "recurrence": "Mon/Tue/Wed/Thu/Fri: Happy hour 16:00-18:00; Tue: Pizza Tuesday"
  },
@@ -611,18 +611,13 @@
   "image_source": "https://therealhennies.co.za/images/branches/george/hero-banner-june-2026.png",
   "event_ids": [
    "2026-10-06-noot-vir-noot-music-quiz-night-at-hennie-s-george-",
-   "2026-10-08-quiz-night-at-hennie-s-george-thursdays",
-   "2026-10-30-landman-live-at-hennie-s-george"
+   "2026-10-08-quiz-night-at-hennie-s-george-thursdays"
   ],
   "lat": -33.9658718,
   "lng": 22.4512367,
   "geo_source": "nominatim",
   "region": "Garden Route",
   "occurrences": [
-   "2026-10-26",
-   "2026-10-27",
-   "2026-10-28",
-   "2026-10-29",
    "2026-11-02",
    "2026-11-03",
    "2026-11-04",
@@ -724,13 +719,13 @@
    "2027-04-21",
    "2027-04-22",
    "2027-04-26",
-   "2027-04-27"
+   "2027-04-27",
+   "2027-04-28",
+   "2027-04-29",
+   "2027-05-03",
+   "2027-05-04"
   ],
   "day_labels": {
-   "2026-10-26": "Debriefing specials 13:00-17:00",
-   "2026-10-27": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00",
-   "2026-10-28": "Debriefing specials 13:00-17:00",
-   "2026-10-29": "Debriefing specials 13:00-17:00 · Quiz night 19:00",
    "2026-11-02": "Debriefing specials 13:00-17:00",
    "2026-11-03": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00",
    "2026-11-04": "Debriefing specials 13:00-17:00",
@@ -832,7 +827,11 @@
    "2027-04-21": "Debriefing specials 13:00-17:00",
    "2027-04-22": "Debriefing specials 13:00-17:00 · Quiz night 19:00",
    "2027-04-26": "Debriefing specials 13:00-17:00",
-   "2027-04-27": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00"
+   "2027-04-27": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00",
+   "2027-04-28": "Debriefing specials 13:00-17:00",
+   "2027-04-29": "Debriefing specials 13:00-17:00 · Quiz night 19:00",
+   "2027-05-03": "Debriefing specials 13:00-17:00",
+   "2027-05-04": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00"
   },
   "recurrence": "Mon/Tue/Wed/Thu: Debriefing specials 13:00-17:00; Tue: Noot vir Noot 19:00; Thu: Quiz night 19:00"
  },
