@@ -627,7 +627,7 @@ function bind(){
 bind();
 
 /* ---------- Weather (Open-Meteo) — list cards only ---------- */
-var WX={TTL:2*60*60*1000,KEY:"gre.wx.v2",mem:{},pend:{}};
+var WX={TTL:2*60*60*1000,KEY:"gre.wx.v3",mem:{},pend:{}};
 /* WMO weather-code → short label + emoji */
 function wxCond(c){c=+c;if(c===0)return{icon:"☀",label:"Sunny"};if(c===1)return{icon:"🌤",label:"Mostly clear"};if(c===2)return{icon:"⛅",label:"Partly cloudy"};if(c===3)return{icon:"☁",label:"Cloudy"};if(c===45||c===48)return{icon:"🌫",label:"Fog"};if(c>=51&&c<=57)return{icon:"🌦",label:"Drizzle"};if(c>=61&&c<=67||c>=80&&c<=82)return{icon:"🌧",label:"Rain"};if(c>=71&&c<=77||c>=85&&c<=86)return{icon:"❄",label:"Snow"};if(c>=95)return{icon:"⛈",label:"Thunderstorms"};return{icon:"☁",label:"Cloudy"}}
 function wxDir(deg){if(deg==null||isNaN(+deg))return"";var d=["N","NE","E","SE","S","SW","W","NW"];return d[Math.round(((+deg)%360)/45)%8]}
@@ -638,16 +638,19 @@ function wxUvBand(u){if(u==null||isNaN(+u))return null;u=+u;if(u<3)return"Low";i
  *   apparent_temperature (°C): ideal 12–20 → 40 pts; 8–12 or 20–24 → 30; 5–8 or 24–28 → 15; else 0
  *   precipitation_probability (%): <10 → 25; <30 → 18; <50 → 8; else 0
  *   wind_speed_10m (km/h): <15 → 20; <25 → 14; <35 → 6; else 0
- *   uv_index (daytime only): <6 → 15; <8 → 10; <11 → 5; else 2; night → 12 (neutral)
- *   is_day: slight preference for daylight (+0 already via UV); dawn/dusk hours still scored
+ *   uv_index (daytime only): <6 → 15; <8 → 10; <11 → 5; else 2; twilight (!is_day but 5–20) → 10
+ *   hour-of-day: hours 00–04 and 21–23 score 0 (not offered as best windows); 05–08 and 16–19 get +8
  * Daily rating from best 2h window average: ≥80 Great, ≥65 Good, ≥45 Fair, else Poor.
  * Best windows: top 1–2 contiguous 2-hour blocks scoring ≥45, labelled HH:00–HH:00 SAST.
  */
-function wxHourScore(h){if(!h)return 0;var at=h.at!=null?h.at:h.t,s=0;
+function wxHourScore(h){if(!h)return 0;var at=h.at!=null?h.at:h.t,s=0,hh=h.hh|0;
+  /* Prefer dawn/morning and late afternoon for running; deep night is never a "best" window. */
+  if(hh<5||hh>=21)return 0;
   if(at!=null){if(at>=12&&at<=20)s+=40;else if(at>=8&&at<12||at>20&&at<=24)s+=30;else if(at>=5&&at<8||at>24&&at<=28)s+=15}
   var p=h.pop;if(p==null||p<10)s+=25;else if(p<30)s+=18;else if(p<50)s+=8;
   var w=h.wind;if(w==null||w<15)s+=20;else if(w<25)s+=14;else if(w<35)s+=6;
-  if(!h.day)s+=12;else{var u=h.uv;if(u==null||u<6)s+=15;else if(u<8)s+=10;else if(u<11)s+=5;else s+=2}
+  if(!h.day)s+=10;else{var u=h.uv;if(u==null||u<6)s+=15;else if(u<8)s+=10;else if(u<11)s+=5;else s+=2}
+  if(hh>=5&&hh<=8||hh>=16&&hh<=19)s+=8; /* mild preference for classic run hours */
   return s}
 function wxRunDay(hours){if(!hours||!hours.length)return null;
   var wins=[],i,a,b,sc;for(i=0;i<hours.length-1;i++){a=hours[i];b=hours[i+1];if(!a||!b)continue;
