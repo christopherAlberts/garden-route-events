@@ -167,11 +167,29 @@ body.theme-run .wx{background:color-mix(in srgb,var(--run) 14%,var(--surface2));
 .wxfeel{font-size:.9rem;color:var(--mut);font-weight:600;margin-top:2px}
 .wxsec{margin:16px 0 0;padding-top:14px;border-top:1px solid var(--line)}
 .wxsech{margin:0 0 10px;font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
-.wxstrip{display:flex;gap:10px;overflow-x:auto;padding:2px 2px 8px;margin:0;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
-.wxh{flex:0 0 auto;min-width:64px;text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 8px;display:flex;flex-direction:column;gap:4px;box-shadow:var(--shadow)}
-.wxht{font-size:.72rem;font-weight:700;color:var(--mut)}
-.wxhi{font-size:1.35rem;line-height:1}
-.wxhv{font-weight:800;font-size:.95rem}
+.wxhourly{margin:0}
+.wxscroll{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;scrollbar-width:thin;margin:0 -4px;padding:0 4px}
+.wxscroll-inner{display:flex;flex-direction:column;min-width:100%}
+.wxcurve{display:block;width:100%;height:auto;overflow:visible}
+.wxcurve .wxarea{fill:rgba(46,125,90,.16)}
+.wxcurve .wxline{stroke:var(--accent,#2e7d5a);stroke-width:2.25;stroke-linecap:round;stroke-linejoin:round}
+.wxcurve .wxdot{fill:var(--accent,#2e7d5a);stroke:var(--surface,#fff);stroke-width:1.5}
+.wxcurve .wxtlbl{fill:var(--fg,#1a1a1a);font-size:10px;font-weight:700;text-anchor:middle;font-family:inherit}
+.wxcurve .wxrainbar{fill:rgba(31,95,168,.55)}
+.wxcurve .wxrainlbl{fill:#1f5fa8;font-size:9px;font-weight:700;text-anchor:middle;font-family:inherit}
+.wxcurve .wxrunband{fill:rgba(46,160,90,.22)}
+.wxcurve .wxnight{fill:rgba(30,40,60,.10)}
+.wxcurve .wxsrline,.wxcurve .wxssline{stroke:var(--mut,#888);stroke-width:1;stroke-dasharray:3 3;opacity:.85}
+.wxcurve .wxsrdot{fill:#f0a020;stroke:var(--surface,#fff);stroke-width:1}
+.wxcurve .wxssdot{fill:#e07040;stroke:var(--surface,#fff);stroke-width:1}
+.wxcurve .wxsrlbl,.wxcurve .wxsslbl{fill:var(--mut,#666);font-size:9px;font-weight:700;text-anchor:middle;font-family:inherit}
+.wxcurve .wxsrico,.wxcurve .wxssico{font-size:11px;text-anchor:middle;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.wxstrip{display:flex;gap:0;overflow:visible;padding:0;margin:0;width:100%}
+.wxh{flex:1 1 0;min-width:0;scroll-snap-align:center;text-align:center;background:transparent;border:0;border-radius:0;padding:4px 2px 8px;display:flex;flex-direction:column;gap:2px;box-shadow:none}
+.wxh.now .wxht{color:var(--accent,#2e7d5a);font-weight:800}
+.wxht{font-size:.68rem;font-weight:700;color:var(--mut)}
+.wxhi{font-size:1.2rem;line-height:1}
+.wxhv{font-weight:800;font-size:.9rem}
 .wxhp{font-size:.72rem;font-weight:700;color:#1f5fa8}
 .wxnostrip{margin:0;color:var(--mut);font-size:.9rem}
 .wxgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -189,7 +207,19 @@ body.theme-run .wx{background:color-mix(in srgb,var(--run) 14%,var(--surface2));
 .wxavoid{margin:8px 0 0;font-size:14px;font-weight:600;color:#9b2c22}
 .wxcredit{margin:16px 0 0;padding-top:12px;border-top:1px solid var(--line);font-size:.78rem;color:var(--mut);font-weight:600}
 .wxempty{margin:28px 8px;color:var(--mut);font-size:15px}
-@media (prefers-color-scheme:dark){.wxhp{color:#7db4ff}.wxavoid{color:#f87171}}
+@media (prefers-color-scheme:dark){
+.wxhp{color:#7db4ff}.wxavoid{color:#f87171}
+.wxcurve .wxarea{fill:rgba(80,180,130,.18)}
+.wxcurve .wxline{stroke:#5dcf9a}
+.wxcurve .wxdot{fill:#5dcf9a;stroke:var(--surface,#1b2823)}
+.wxcurve .wxtlbl{fill:var(--fg,#e8efe9)}
+.wxcurve .wxrainbar{fill:rgba(125,180,255,.55)}
+.wxcurve .wxrainlbl{fill:#7db4ff}
+.wxcurve .wxrunband{fill:rgba(80,180,130,.28)}
+.wxcurve .wxnight{fill:rgba(0,0,0,.28)}
+.wxcurve .wxsrdot{stroke:var(--surface,#1b2823)}
+.wxcurve .wxssdot{stroke:var(--surface,#1b2823)}
+}
 body.theme-run .wxrunbox{border-color:color-mix(in srgb,var(--run) 30%,var(--line))}
 @media (max-width:560px){.wxmodal{padding:0;align-items:flex-end}.wxmodal .wxbox{border-radius:22px 22px 0 0;max-width:none;width:100%;padding:18px 16px 28px}}
 
