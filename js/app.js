@@ -903,20 +903,21 @@ function wxHourStrip(d,ds,runCat,raceMeta){if(!d||!d.hours||!d.hours.length)retu
   else if(srF!=null&&srF>h[n-1].hh){svg+='<rect class="wxnight" x="0" y="0" width="'+chartW+'" height="'+svgH+'" />'}
   if(ssF!=null&&ssF>=h[0].hh&&ssF<=h[n-1].hh){var ex=xAtFrac(ssF);svg+='<rect class="wxnight" x="'+ex.toFixed(1)+'" y="0" width="'+(chartW-ex).toFixed(1)+'" height="'+svgH+'" />'}
   else if(ssF!=null&&ssF<h[0].hh){svg+='<rect class="wxnight" x="0" y="0" width="'+chartW+'" height="'+svgH+'" />'}
-  /* Best-run green bands (funrun only) */
+  /* Best-run green bands (funrun only) — full graph height, same y-extent as Race start line */
   if(runCat&&d.windows&&d.windows.length){d.windows.forEach(function(w){var a=Math.max(w.from,h[0].hh),b=Math.min(w.to,h[n-1].hh+1);if(b<=a)return;
     var x1=xAtFrac(a),x2=xAtFrac(b),bw=x2-x1;
-    svg+='<rect class="wxrunband" x="'+x1.toFixed(1)+'" y="'+topPad+'" width="'+bw.toFixed(1)+'" height="'+curveH+'" rx="6" />';
-    if(bw>=48)svg+='<text class="wxrunbandlbl" x="'+(x1+bw/2).toFixed(1)+'" y="'+(topPad+12)+'">Best run</text>'})}
-  /* Race start + cutoff/estimate span (funrun only) */
+    svg+='<rect class="wxrunband" x="'+x1.toFixed(1)+'" y="0" width="'+bw.toFixed(1)+'" height="'+svgH+'" />';
+    if(bw>=48)svg+='<text class="wxrunbandlbl" x="'+(x1+bw/2).toFixed(1)+'" y="14">Best run</text>'})}
+  /* Race start + cutoff/estimate span (funrun only) — full height like Race start line */
   var race=runCat?wxRaceWindow(raceMeta&&raceMeta.time,raceMeta&&raceMeta.title,raceMeta&&raceMeta.notes):null;
   if(race&&race.start>=h[0].hh-0.01&&race.start<=h[n-1].hh+0.01){
     var rx=xAtFrac(race.start), rightMax=h[n-1].hh+0.01;
     if(race.end!=null&&race.end>race.start){
       var rx2=xAtFrac(Math.min(race.end,rightMax)), bw=Math.max(2,rx2-rx);
-      svg+='<rect class="wxraceblock'+(race.estimated?" est":"")+'" x="'+rx.toFixed(1)+'" y="'+topPad+'" width="'+bw.toFixed(1)+'" height="'+curveH+'" />';
-      svg+='<line class="wxracecut" x1="'+rx2.toFixed(1)+'" y1="'+topPad+'" x2="'+rx2.toFixed(1)+'" y2="'+(topPad+curveH)+'" />';
-      svg+='<text class="wxracecutlbl" x="'+(rx2-2).toFixed(1)+'" y="'+(topPad+12)+'">'+(race.estimated?"Cutoff ~":"Cutoff ")+race.endLbl+(race.estimated?" (est.)":"")+'</text>';
+      svg+='<rect class="wxraceblock'+(race.estimated?" est":"")+'" x="'+rx.toFixed(1)+'" y="0" width="'+bw.toFixed(1)+'" height="'+svgH+'" />';
+      svg+='<line class="wxracecut" x1="'+rx2.toFixed(1)+'" y1="0" x2="'+rx2.toFixed(1)+'" y2="'+svgH+'" />';
+      /* Cutoff label sits below Best-run label so they do not collide */
+      svg+='<text class="wxracecutlbl" x="'+(rx2-2).toFixed(1)+'" y="28">'+(race.estimated?"Cutoff ~":"Cutoff ")+race.endLbl+(race.estimated?" (est.)":"")+'</text>';
     }
     svg+='<line class="wxraceline" x1="'+rx.toFixed(1)+'" y1="0" x2="'+rx.toFixed(1)+'" y2="'+svgH+'" />';
     svg+='<text class="wxraceico" x="'+rx.toFixed(1)+'" y="'+(svgH-6)+'">🏃</text>';
