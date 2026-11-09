@@ -133,7 +133,7 @@ main{max-width:1180px;margin:0 auto;padding:16px 22px 40px}
 /* ---------- Weather on list cards (not calendar) ---------- */
 .wx{all:unset;box-sizing:border-box;display:inline-flex;flex-wrap:wrap;align-items:center;align-content:center;gap:4px 6px;width:auto;max-width:100%;min-width:0;height:auto;margin:.2em 0 0 .1em;padding:6px 10px;border-radius:14px;font:700 .76rem/1.35 var(--font);letter-spacing:.01em;color:var(--ink);background:color-mix(in srgb,var(--ocean) 12%,var(--surface2));border:1px solid color-mix(in srgb,var(--ocean) 22%,var(--line));cursor:pointer;vertical-align:middle;-webkit-tap-highlight-color:transparent;overflow:hidden;overflow-wrap:anywhere;word-break:break-word;white-space:normal}
 /* List/grid cards: weather bar always full content width; Happening-soon keeps content-sized pill */
-.grid .card .wx{display:flex;width:100%;max-width:100%;box-sizing:border-box}
+.grid .card .wx{display:flex;width:100%;max-width:100%;box-sizing:border-box;margin-left:0;margin-right:0}
 .soon .wx{display:inline-flex;width:auto;max-width:100%}
 .wx[hidden]{display:none!important}
 .wx:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
