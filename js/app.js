@@ -1,8 +1,8 @@
 /* Garden Route Events: static app, no build step. Data comes from window.EVENTS (data/events.js). */
 (function(){
 "use strict";
-var GR_ORDER=["Mossel Bay","Hartenbos","Groot Brak","George","Oudtshoorn","Wilderness","Hoekwil","Sedgefield","Knysna","Plettenberg Bay","The Crags","Nature's Valley","Storms River","Tsitsikamma"];
-var WIDE_ORDER=["Cape Town","Somerset West","Kleinmond","Pringle Bay","Hermanus","Stanford","Gansbaai","Struisbaai","L'Agulhas","Riversdale","Stilbaai","Humansdorp","St Francis Bay","Jeffreys Bay"];
+var GR_ORDER=["Still Bay","Mossel Bay","Hartenbos","Groot Brak","George","Oudtshoorn","Wilderness","Hoekwil","Sedgefield","Knysna","Plettenberg Bay","The Crags","Nature's Valley","Storms River","Tsitsikamma"];
+var WIDE_ORDER=["Cape Town","Somerset West","Kleinmond","Pringle Bay","Hermanus","Stanford","Gansbaai","Struisbaai","L'Agulhas","Riversdale","Humansdorp","St Francis Bay","Jeffreys Bay"];
 var MONTHS=(function(){ // current month through the last month that has any event (open-ended)
   var d=new Date(),y=d.getFullYear(),m=d.getMonth()+1,last=y+"-"+String(m).padStart(2,"0");
   (window.EVENTS||[]).forEach(function(e){var x=((e.occurrences&&e.occurrences.length?e.occurrences[e.occurrences.length-1]:"")||e.end_date||e.start_date||"").slice(0,7);if(x>last)last=x});
@@ -208,11 +208,13 @@ function buildTowns(){
   var have={};scoped().forEach(function(e){have[e.town]=(have[e.town]||0)+1});
   function grp(label,order,isGR){
     var extra=Object.keys(have).filter(function(t){return order.indexOf(t)<0&&EV.some(function(e){return e.town===t&&!!e.garden_route===isGR})});
-    var list=order.concat(extra).filter(function(t){return have[t]});if(!list.length)return "";
-    return '<optgroup label="'+label+'">'+list.map(function(t){return '<option value="'+esc(t)+'">'+esc(t)+' ('+have[t]+')</option>'}).join("")+'</optgroup>'}
+    /* Always list GR_ORDER / WIDE_ORDER towns (even with 0 events) so places like Still Bay stay pickable */
+    var list=order.concat(extra.filter(function(t){return order.indexOf(t)<0}));
+    if(!list.length)return "";
+    return '<optgroup label="'+label+'">'+list.map(function(t){var n=have[t]||0;return '<option value="'+esc(t)+'">'+esc(t)+(n?" ("+n+")":"")+'</option>'}).join("")+'</optgroup>'}
   var h='<option value="">All towns</option>'+grp("Garden Route",GR_ORDER,true);
   if(S.scope==="all")h+=grp("Rest of the coast",WIDE_ORDER,false);
-  $("town").innerHTML=h;if(S.town&&!have[S.town])S.town="";$("town").value=S.town;
+  $("town").innerHTML=h;if(S.town&&!(S.town in have)&&GR_ORDER.indexOf(S.town)<0&&WIDE_ORDER.indexOf(S.town)<0)S.town="";$("town").value=S.town;
 }
 function matches(e,ignoreMonth,anyStatus){
   if(S.scope==="gr"&&!e.garden_route)return false;

@@ -57,7 +57,7 @@ FUNQ={ # hand-reviewed community fun runs / charity walks on Quicket (id: note)
 "395180":"Charity run on World Homeless Day.","394744":"Charity walk.","399994":"Spring fun run at a wine farm.","398041":"Hospice charity fun run.",
 "398261":"5 km birthday charity walk on the Sea Point Promenade.","396776":"Sunset fundraiser walk.","390242":"School fun run.","383490":"Community walk.",
 "401426":"Colour fun walk.","384905":"Costumed Halloween zombie walk through the city.","391873":"Charity fun run."}
-QTOWN={"Simola Golf and Country Estate":"Knysna","Still Bay":"Stilbaai","Stormsrivier":"Storms River","Keurboomstrand":"Plettenberg Bay","Brenton-on-Sea":"Knysna","Groot-Brakrivier":"Groot Brak","Riversdale":"Riversdale","Saint Francis Bay":"St Francis Bay","St Francis Bay":"St Francis Bay","Sandbaai":"Hermanus","Onrus":"Hermanus"}
+QTOWN={"Simola Golf and Country Estate":"Knysna","Stilbaai":"Still Bay","Stillbay":"Still Bay","Stormsrivier":"Storms River","Keurboomstrand":"Plettenberg Bay","Brenton-on-Sea":"Knysna","Groot-Brakrivier":"Groot Brak","Riversdale":"Riversdale","Saint Francis Bay":"St Francis Bay","St Francis Bay":"St Francis Bay","Sandbaai":"Hermanus","Onrus":"Hermanus"}
 def qtime(ts): return datetime.datetime.fromtimestamp(ts,TZ)
 for oid,h in Q.items():
     s=qtime(h["DateFrom"]); e=qtime(h["DateTo"]) if h.get("DateTo") else None

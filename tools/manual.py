@@ -329,7 +329,7 @@ add(title="Eerste vir Alles: Frank Opperman & Margit Meyer-Rödenbeck (Afrikaans
     notes="Romantic comedy play: two of SA's best storytellers play the original 'power couple' in a classic case of he said, she said.",lat=-33.9560661,lng=22.457985,geo_source="event page",_img=HER["img"]["Eerste vir alles met Frank Opperman en Margit Meyer-Rödenbeck"])
 
 # ---- NSRI (National Sea Rescue Institute) fundraiser runs ----
-add(title="Stilbaai NSRI 10 km & 6 km Fun Run (New Year's Eve)",category="funrun",start_date="2026-12-31",time="07:00",town="Stilbaai",
+add(title="Stilbaai NSRI 10 km & 6 km Fun Run (New Year's Eve)",category="funrun",start_date="2026-12-31",time="07:00",town="Still Bay",
     venue="NSRI Station, Main Road",venue_address="National Sea Rescue Institute, Main Rd, Stilbaai",price_from="",ticket_url="",
     source_url="https://runningcalendar.co.za/events/stilbaai-10km/2026",source_name=RC,alt_sources=["https://racepass.com/za/races/stillbaai-10km"],
     notes="Annual New Year's Eve run in aid of NSRI Stilbaai: 10 km race and 6 km fun run/walk, start and finish at the NSRI building. The route runs along the Goukou River, the sea and dunes. The 2025 edition drew about 1,200 runners. RunningCalendar lists only basic details so far; entry fees are still to be confirmed.",
@@ -508,7 +508,7 @@ add(title="BirdLife Plett Feather Chase & year-end braai",category="nature",star
     notes="The club's annual Feather Chase (a morning of birding to tick as many species as possible) followed by the year-end braai. Venue still to be confirmed on the club's event page; contact info@birdlife-plett.co.za or 082 878 6662.",
     lat=-34.052778,lng=23.369444,geo_source="town centroid (venue to be confirmed)",_img="https://birdlife-plett.co.za/wp-content/uploads/2025/12/PHOTO-2025-11-21-14-59-05-845x321.jpg")
 add(title="Great Southern Bioblitz 2026 – Garden Route (iNaturalist citizen science)",category="nature",start_date="2026-11-27",end_date="2026-11-30",
-    time="All day; Wild Rescue iNaturalist workshops Sat 28 & Sun 29 Nov",town="Stilbaai",venue="Anywhere in the Garden Route; workshops at Wild Rescue nature reserve",
+    time="All day; Wild Rescue iNaturalist workshops Sat 28 & Sun 29 Nov",town="Still Bay",venue="Anywhere in the Garden Route; workshops at Wild Rescue nature reserve",
     venue_address="Wild Rescue nature reserve, Stilbaai (Hessequa)",price_from="Free",ticket_url="https://www.inaturalist.org/projects/great-southern-bioblitz-2026-garden-route",
     source_url="https://www.knysnaplettherald.com/News/Article/Local-News/wild-rescue-nature-reserve-champions-the-great-southern-bioblitz-2026-for-garden-route-district-202609211200",
     source_name="Knysna-Plett Herald",alt_sources=["https://wildrescue.co.za/wild-rescue-nature-reserve-champions-the-great-southern-bioblitz-2026-for-garden-route-district/","https://www.inaturalist.org/projects/great-southern-bioblitz-2026-garden-route","https://www.knysna.n2rs.com/knysna-diary-november.html"],
@@ -563,7 +563,7 @@ add(title="Palm Tyres Half Marathon (21.1 / 10 / 5 km)",category="funrun",start_
 add(title="Somerson Half Marathon, Hartenbos (21.1 / 10 / 5 km)",category="funrun",start_date="2026-12-12",town="Hartenbos",venue="Hartenbos",venue_address="Hartenbos",price_from="",ticket_url="",source_url="https://runningcalendar.co.za/races/city/george",source_name="RunningCalendar.co.za",notes="Hartenbos half in the December holiday cluster. Local, flat-ish coastal roads. Listed by Running Guy (Garden Route races dashboard).",alt_sources=["https://dash.streblainnovations.com/races/"])
 add(title="Louis Massyn Rocket Run (10 km & 5 km)",category="funrun",start_date="2026-12-14",town="George",venue="George",venue_address="George",price_from="",ticket_url="",source_url="https://runningcalendar.co.za/races/city/george",source_name="RunningCalendar.co.za",notes="Monday local 10/5 km in George. Festive-season club race. Listed by Running Guy (Garden Route races dashboard).",alt_sources=["https://dash.streblainnovations.com/races/"])
 add(title="Fancourt 10 km",category="funrun",start_date="2026-12-18",town="George",venue="Fancourt",venue_address="Fancourt, George",price_from="",ticket_url="",source_url="https://runningcalendar.co.za/races/city/george",source_name="RunningCalendar.co.za",notes="Estate 10 km at Fancourt. Fast, scenic, local. Listed by Running Guy (Garden Route races dashboard).",lat=-33.9679097,lng=22.4106706,geo_source="nominatim",alt_sources=["https://dash.streblainnovations.com/races/"],_img="https://d1zwi51l39apzt.cloudfront.net/uploads/events/83786/NRRm87oZGnkCGskwX81D2ADqon88KhBO8CZwKOqG.jpg")
-add(title="Lappiesbaai 10 km on the Beach (10 km & 5 km)",category="funrun",start_date="2026-12-20",town="Stilbaai",venue="Lappiesbaai Beach",venue_address="Lappiesbaai, Still Bay West, Stilbaai",price_from="",ticket_url="",source_url="https://runningcalendar.co.za/events/lappiesbaai-10km/2026",source_name="RunningCalendar.co.za",notes="Date is provisional (Running Guy estimate — often from the prior year); confirm before travelling. Beach run at Lappiesbaai, Still Bay West. Clashes with Tower-2-Sea. Confirm before travelling. RunningCalendar lists 20 Dec 2026 as estimated from the previous year — not yet confirmed by organiser. Listed by Running Guy (Garden Route races dashboard).",lat=-34.3719444,lng=21.4302778,geo_source="nominatim",alt_sources=["https://dash.streblainnovations.com/races/"])
+add(title="Lappiesbaai 10 km on the Beach (10 km & 5 km)",category="funrun",start_date="2026-12-24",town="Still Bay",venue="Lappiesbaai Beach",venue_address="Lappiesbaai, Still Bay West, Stilbaai",price_from="",ticket_url="",source_url="https://runningcalendar.co.za/events/lappiesbaai-10km/2026",source_name="RunningCalendar.co.za",notes="Date is provisional (Running Guy estimate — often from the prior year); confirm before travelling. Beach run at Lappiesbaai, Still Bay West. Clashes with Tower-2-Sea. Confirm before travelling. RunningCalendar lists 20 Dec 2026 as estimated from the previous year — not yet confirmed by organiser. Listed by Running Guy (Garden Route races dashboard).",lat=-34.3719444,lng=21.4302778,geo_source="nominatim",alt_sources=["https://dash.streblainnovations.com/races/"])
 add(title="Tower-2-Sea Trail Run (56 / 50 / 42 / 33 km)",category="funrun",start_date="2026-12-20",town="Knysna",venue="Buffelsnek Fire Tower → Thesen Island",venue_address="Buffelsnek / Thesen Island, Knysna",price_from="",ticket_url="https://entrytickets.co.za/tower2sea",source_url="https://www.wannado.co.za/t2s",source_name="WannaDo / Tower-2-Sea (official site)",notes="Sunrise start at Buffelsnek Fire Tower, descend through Knysna Forest (Outeniqua Hiking Trail / elephant paths) to Thesen Island. Distances 33–56 km (no short fun-run option). Listed by Running Guy (Garden Route races dashboard).",lat=-34.0477753,lng=23.0537836,geo_source="nominatim (finish)",alt_sources=["https://entrytickets.co.za/tower2sea","https://dash.streblainnovations.com/races/"],_img="https://static.wixstatic.com/media/b877ad_7f3f771780fb4c59a5b86f2d957ac913~mv2.jpg")
 add(title="Chasing Cheese Burgers (10 km & 5 km)",category="funrun",start_date="2027-01-13",town="George",venue="George",venue_address="George",price_from="",ticket_url="",source_url="https://runningcalendar.co.za/races/city/george",source_name="RunningCalendar.co.za",notes="Date is provisional (Running Guy estimate — often from the prior year); confirm before travelling. Quirky local midweek 10/5 km. Confirm closer to January. George city calendar lists Wed 13 Jan 2027 as date TBC. Listed by Running Guy (Garden Route races dashboard).",alt_sources=["https://dash.streblainnovations.com/races/"])
 add(title="Two Lagoons (30 km & 10 km)",category="funrun",start_date="2027-01-30",town="Hoekwil",venue="Hoekwil / Wilderness lakes",venue_address="Hoekwil",price_from="",ticket_url="",source_url="https://runningcalendar.co.za/events/two-lagoons/2026",source_name="RunningCalendar.co.za",notes="Date is provisional (Running Guy estimate — often from the prior year); confirm before travelling. Point-to-point / lake-country roads between Wilderness lakes. Organised by Cape Multisport Eden. Beautiful local long run. 2026 edition was 31 Jan at Libertas Guest Farm, Hoekwil (30/10 km). George calendar lists Sat 30 Jan 2027 — not yet independently verified. Listed by Running Guy (Garden Route races dashboard).",alt_sources=["https://dash.streblainnovations.com/races/"])
@@ -846,7 +846,7 @@ _PR=[("hartenboschvillage","Hart & Bosch Village parkrun","Hartenbos","Hart & Bo
     ("george","George parkrun","George","Garden Route Botanical Garden","49 Caledon Street, George",-33.9454,22.4648,""),
     ("knysna","Knysna parkrun","Knysna","George Rex Drive","George Rex Drive, Knysna",-34.0459,23.0693,""),
     ("harkerville","Harkerville parkrun","Plettenberg Bay","Harkerville Market","N2, opposite Airport Road, Plettenberg Bay",-34.0384,23.2413," No dogs."),
-    ("stilbaaiwestbeach","Stilbaai West Beach parkrun","Stilbaai","Stilbaai West Beach","Waterkant Street, Stilbaai",-34.3838,21.4227,""),
+    ("stilbaaiwestbeach","Stilbaai West Beach parkrun","Still Bay","Stilbaai West Beach","Waterkant Street, Stilbaai",-34.3838,21.4227,""),
     ("hopkinsland","Hopkins Land parkrun","Witsand","Hopkins Land","End of Moodie Street, Witsand / Port Beaufort",-34.3921,20.8384," June to October fog is common, and the Malgas pont can cause delays: allow extra driving time."),
     ("stormsriver","Storms River parkrun","Storms River","MTO Lottering plantation (Block L)","North of the N2, opposite the Storms River Village entrance",-33.966,23.8868,""),
     ("stfrancis","St Francis parkrun","St Francis Bay","St Francis Links","St Francis Links, St Francis Bay",-34.1623,24.8154,""),
@@ -872,7 +872,7 @@ add(title="Scarab Village Craft Market",category="market",start_date=occ[0],end_
 add(title="Hermanus Country Market",category="market",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Saturday, 09:00-13:00",time="09:00-13:00",town="Hermanus",venue="Hermanus Country Market",
     price_from="",ticket_url="",source_url=GRC+"hermanus-country-market-from-all-year-every-saturday-till_event_op_view_id_2087",source_name=_S_GRC,alt_sources=["https://hermanuscountrymarket.co.za/"],
     notes="Fresh produce, artisan food, crafts and live music. Child- and dog-friendly.")
-add(title="Stilbaai Brugmark (Saturday market)",category="market",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Saturday",time="",town="Stilbaai",venue="Stilbaai Brugmark",
+add(title="Stilbaai Brugmark (Saturday market)",category="market",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Saturday",time="",town="Still Bay",venue="Stilbaai Brugmark",
     price_from="",ticket_url="",source_url=GRG,source_name=_S_GRG,alt_sources=["https://www.facebook.com/stilbaaibrugmark"],notes="Weekly Saturday market. Times aren't listed; check the Facebook page.")
 occ=_dates("2026-10-11",HORIZON,[SUN])
 add(title="Milkwood Village Sunday Market",category="market",start_date=occ[0],end_date=occ[-1],occurrences=occ,recurrence="Every Sunday morning",time="Sunday mornings",town="Wilderness",venue="Milkwood Village",
@@ -1068,7 +1068,7 @@ add(title="Electro Music Festival 2026",category="festival",start_date="2026-11-
     ticket_url="https://www.quicket.co.za/events/367031-electro-music-festival-2026/",source_url="https://www.quicket.co.za/events/367031-electro-music-festival-2026/",source_name="Quicket",
     notes="Off-grid electronic music festival on Route 62: dancefloors by the pool, fire performances and drumming. Cheapest tickets still on sale from R400 (the R350 tiers are sold out).",
     lat=-33.5247841,lng=21.3540459,geo_source="event page",_img="https://images.quicket.co.za/0910491_0.jpeg")
-add(title="Glaskas: 20 years – live at Drie Ankers, Stilbaai",category="concert",start_date="2026-12-29",time="Doors 18:30, show 20:00",town="Stilbaai",
+add(title="Glaskas: 20 years – live at Drie Ankers, Stilbaai",category="concert",start_date="2026-12-29",time="Doors 18:30, show 20:00",town="Still Bay",
     venue="Drie Ankers",venue_address="67 Bessie Street, Still Bay West",price_from="R200",
     ticket_url="https://www.quicket.co.za/events/401624-glaskas-drie-ankers-stilbaai/",source_url="https://www.quicket.co.za/events/401624-glaskas-drie-ankers-stilbaai/",source_name="Quicket",
     notes="Glaskas' 20th-anniversary December coast tour: MK-era songs and new material. Tickets R200.",
@@ -1219,16 +1219,16 @@ _q19(402743,"/events/402743-tribute-to-neil-diamond-live-in-knysna/","1003858_0.
     title="Tribute to Neil Diamond live in Knysna (Johan Liebenberg – Solitary Man)",category="concert",start_date="2027-01-06",time="20:00",town="Knysna",
     venue="Simola Hotel, Country Club & Spa",venue_address="1 Old Cape Road, Knysna",price_from="R200",notes="Neil Diamond tribute by Johan Liebenberg. R200-R270.")
 # Stilbaai (wider coast)
-STABLES=dict(town="Stilbaai",venue="The Stables Eatery & Bar",venue_address="220 Main Road, Still Bay East")
+STABLES=dict(town="Still Bay",venue="The Stables Eatery & Bar",venue_address="220 Main Road, Still Bay East")
 _q19(402821,"/events/402821-stilbaai-jongensfontein/","1004818_0.jpeg",-34.3975372,21.3258781,
-    title="Joshua na die Reën – Stilbaai / Jongensfontein",category="concert",start_date="2026-12-22",time="Gates 18:00, show 19:00",town="Stilbaai",
+    title="Joshua na die Reën – Stilbaai / Jongensfontein",category="concert",start_date="2026-12-22",time="Gates 18:00, show 19:00",town="Still Bay",
     venue="Jongensdal",venue_address="Groot-Jongensfontein",price_from="R50",notes="R50-R250.")
 _q19(403440,"/events/403440-jan-blohm-stables-eatery-bar-stilbaai/","1006134_0.jpeg",-34.3514366,21.415163,
     title="Jan Blohm @ Stables Eatery & Bar, Stilbaai",category="concert",start_date="2026-12-26",time="18:00",price_from="R295",notes="R295.",**STABLES)
 _q19(403420,"/events/403420-juan-boucher-stables-eatery-bar-stilbaai/","1006106_0.jpeg",-34.3514366,21.415163,
     title="Juan Boucher @ Stables Eatery & Bar, Stilbaai",category="concert",start_date="2026-12-27",time="18:00",price_from="R295",notes="R295.",**STABLES)
 _q19(403580,"/events/403580-rooksein-live-by-drie-ankers-stilbaai/","1006506_0.jpeg",-34.38403,21.40435,
-    title="Rooksein live by Drie Ankers, Stilbaai",category="concert",start_date="2026-12-28",time="Doors 18:30, show 20:00",town="Stilbaai",
+    title="Rooksein live by Drie Ankers, Stilbaai",category="concert",start_date="2026-12-28",time="Doors 18:30, show 20:00",town="Still Bay",
     venue="Drie Ankers (3 Ankers)",venue_address="67 Bessie Street, Still Bay West",price_from="R200",notes="R200.")
 # Visit Mossel Bay calendar
 _S_MB19="Visit Mossel Bay (tourism calendar)"
@@ -1731,7 +1731,7 @@ _q19(405342,"/events/405342-booshle-g-love-is-free-tour-ft-jake-isaac-uk/","1012
     title="Booshle G – Love is Free Tour ft. Jake Isaac (UK)",category="concert",start_date="2027-04-11",time="Doors 17:00, show 18:15",price_from="R250",
     notes="Knysna leg of Booshle G's 2027 international Love is Free tour, with UK singer-songwriter Jake Isaac opening (18:15-18:45) and Booshle G 19:00-20:30. General R250, Priority R350, VIP R550. Presented by Better Live.",**BLEND)
 add(title="Spoegwolf en Deon Meiring live in Stilbaai",category="concert",start_date="2026-12-17",end_date="2026-12-18",occurrences=["2026-12-17","2026-12-18"],
-    time="Doors 14:00",town="Stilbaai",venue="The Stables Eatery & Bar",venue_address="220 Main Road, Still Bay East",price_from="R350",
+    time="Doors 14:00",town="Still Bay",venue="The Stables Eatery & Bar",venue_address="220 Main Road, Still Bay East",price_from="R350",
     ticket_url="https://itickets.co.za/events/487717",source_url="https://itickets.co.za/events/487717",source_name="iTickets",_img="https://itickets.co.za/parts/eimages/487717.jpg",
     notes="Spoegwolf and Deon Meiring at The Stables (Feesterrein festival grounds) on two days, Thursday 17 and Friday 18 December, doors 14:00. General admission R350 per day on iTickets.",
     lat=-34.3514366,lng=21.415163,geo_source="event page")
@@ -1890,3 +1890,26 @@ add(title="Plett Athletics Club Thursday club run (3 / 5 / 8 km)",category="funr
     venue="Plettenberg Bay Ski Boat Club",venue_address="Central Beach, Plettenberg Bay",price_from="",ticket_url="",
     source_url="https://showme.co.za/plett/event/join-plett-athletics-club-every-thursday/",source_name="ShowMe Plettenberg Bay",alt_sources=["https://www.plettskiboatclub.co.za/"],
     notes="Friendly weekly club run along the Plett coastline, about 3, 5 or 8 km; runners and walkers of all levels and visitors welcome. Start time may vary seasonally, so confirm with the club (Byron, 082 783 3138). Listed 5 Nov to 31 Dec 2026.")
+
+# Still Bay / Stilbaai — local tourism listings (My Stilbaai), Nov–Dec 2026
+add(title="Desmond Wells ‘Back to the 80’s Party’ @ Rijké (NSRI fundraiser)",category="concert",start_date="2026-11-21",
+    town="Still Bay",venue="Rijké",venue_address="blombos road, Jongensfontein, Still Bay",price_from="R150",
+    source_url="https://mystilbaai.co.za/events/",source_name="My Stilbaai",
+    notes="Back to the 80’s party at Rijké in aid of NSRI. Bookings by phone 072 248 1006 (listed on My Stilbaai events).",
+    lat=-34.40463,lng=21.343124,geo_source="known venue")
+add(title="Kerskonsert @ Rijké (NG Kerk Band)",category="concert",start_date="2026-12-01",time="18:00",
+    town="Still Bay",venue="Rijké",venue_address="blombos road, Jongensfontein, Still Bay",
+    source_url="https://mystilbaai.co.za/events/",source_name="My Stilbaai",
+    notes="Christmas concert with the NG Kerk Band. Bookings by phone 076 300 3638 (My Stilbaai events).",
+    lat=-34.40463,lng=21.343124,geo_source="known venue")
+add(title="Die Mooi Mark @ Stilbaai Gemeenskapsaal",category="market",start_date="2026-12-15",end_date="2026-12-17",
+    occurrences=["2026-12-15","2026-12-16","2026-12-17"],town="Still Bay",venue="Stilbaai Gemeenskapsaal",
+    source_url="https://mystilbaai.co.za/events/",source_name="My Stilbaai",
+    notes="Three-day market at the Stilbaai community hall. Info 082 458 8517 (My Stilbaai events).")
+add(title="Voedsel & Wynfees @ Stilbaai Gemeenskapsaal",category="festival",start_date="2026-12-18",end_date="2026-12-19",
+    time="16:00–20:00",occurrences=["2026-12-18","2026-12-19"],town="Still Bay",venue="Stilbaai Gemeenskapsaal",
+    price_from="R250",source_url="https://mystilbaai.co.za/events/",source_name="My Stilbaai",
+    notes="Food and wine festival at the Stilbaai community hall, 16:00–20:00. R250pp (My Stilbaai events).")
+add(title="Anything that Floats (charity float, Hulle by die See slipway)",category="community",start_date="2026-12-27",time="14:00",
+    town="Still Bay",venue="Hulle by die See slipway",source_url="https://mystilbaai.co.za/events/",source_name="My Stilbaai",
+    notes="Charity float event from the Hulle by die See slipway. Info 082 457 1135 (My Stilbaai events).")
