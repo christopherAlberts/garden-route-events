@@ -738,3 +738,15 @@ body.theme-run .clubjoinbtn,body.theme-run .clubsignin,body.theme-run #clubJoinS
   .wxleg-night{background:rgba(0,0,0,.35);border-color:rgba(255,255,255,.15)}
   .wxleg-rain{background:rgba(125,180,255,.55);border-color:rgba(125,180,255,.7)}
 }
+
+.wxcurve .wxraceline{stroke:#FA5400;stroke-width:2;stroke-linecap:round}
+.wxcurve .wxraceblock{fill:rgba(250,84,0,.14);stroke:none}
+.wxcurve .wxraceblock.est{fill:rgba(250,84,0,.10)}
+.wxcurve .wxracecut{stroke:#FA5400;stroke-width:1.5;stroke-dasharray:2 3}
+.wxcurve .wxracecutlbl{fill:#FA5400;font-size:8px;font-weight:800;text-anchor:end;font-family:inherit}
+.wxcurve .wxraceico{font-size:12px;text-anchor:middle;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.wxcurve .wxracelbl{fill:#FA5400;font-size:9px;font-weight:800;text-anchor:start;font-family:inherit}
+.wxleg-race{background:#FA5400;border:1px solid #FA5400}
+.wxleg-cut{background:rgba(250,84,0,.18);border:1.5px dashed #FA5400}
+.wxleg-cut.est{opacity:.9}
+.wxleg-muted{font-weight:600;font-style:italic;opacity:.85}
