@@ -290,7 +290,7 @@ function renderList(){
       .sort(function(a,b){return (b.gr-a.gr)||((a.e?ftier(a.e):0)-(b.e?ftier(b.e):0))||a.d.localeCompare(b.d)});
     if(mix.length>2)h+='<div class="sec"><h2>Happening soon</h2><span class="pill">next 10 days</span></div><div class="soon">'+mix.map(function(x){return x.m?mcard(x.m,true):card(x.e)}).join("")+'</div>';
   }
-  if(MYCLUB&&S.cat==="funrun"&&!S.starred&&!S.nye&&!S.xmas)h=clubSection()+h;
+  if(S.cat==="funrun"&&!S.starred&&!S.nye&&!S.xmas)h=clubSection()+h;
   var rgr=R.filter(function(e){return e.garden_route}),rwide=R.filter(function(e){return !e.garden_route});
   if(gr.length)h+='<div class="sec"><h2>Garden Route</h2><span class="pill">'+gr.length+'</span></div>'+grouped(gr);
   if(rgr.length)h+=restSection(rgr,"Garden Route restaurants &amp; pubs");
@@ -300,9 +300,14 @@ function renderList(){
 }
 /* Browser bar colour (Chrome / Samsung Internet top bar; installed-PWA status bar). Replacing the tag makes every browser repaint. */
 function setThemeColor(c){var o=document.querySelector('meta[name="theme-color"]');if(o&&o.getAttribute("content")===c)return;var m=document.createElement("meta");m.name="theme-color";m.content=c;if(o)o.parentNode.replaceChild(m,o);else document.head.appendChild(m)}
-function clubSection(){var c=CLUBBY[MYCLUB];if(!c)return "";
+function clubSection(){
+  if(!MYCLUB){
+    if(ME)return '<div class="clubjoin" role="region" aria-label="Join a running club"><b>No club selected yet</b><button type="button" class="clubjoinbtn" data-club-join>Join a running club ›</button></div>';
+    return '<div class="clubjoin" role="region" aria-label="Sign in to join a club"><b>Running clubs</b><a class="clubsignin" href="/login">Sign in to join a running club</a></div>';
+  }
+  var c=CLUBBY[MYCLUB];if(!c)return "";
   var up=EV.filter(function(e){return isMine(e)&&endOf(e)>=TODAY&&!isOff(e)&&(!S.town||e.town===S.town)&&(!S.month||inMonth(e,S.month))}).sort(function(a,b){return nextDate(a).localeCompare(nextDate(b))});
-  return '<div class="sec clubsec"><h2>'+(c.logo?'<img class="clublogo" src="'+esc(c.logo)+'" alt="" width="36" height="36">':'')+'My club: '+esc(c.name)+'</h2>'+(c.asa===true?'<span class="ast ok">ASA registered</span>':c.asa===false?'<span class="ast no">Not ASA registered</span>':'<span class="ast unk" title="ASA affiliation not confirmed from a source">ASA status unconfirmed</span>')+(MYASA?'<span class="asano">'+(c.asa===true?'ASA':'Running')+' no. '+esc(MYASA)+'</span>':'')+'<span class="pill">'+(up.length?up.length+' upcoming':'none listed')+'</span><a class="clubchg" href="/profile#club">Change</a></div>'+
+  return '<div class="sec clubsec"><h2>'+(c.logo?'<img class="clublogo" src="'+esc(c.logo)+'" alt="" width="36" height="36">':'')+'My club: '+esc(c.name)+'</h2>'+(c.asa===true?'<span class="ast ok">ASA registered</span>':c.asa===false?'<span class="ast no">Not ASA registered</span>':'<span class="ast unk" title="ASA affiliation not confirmed from a source">ASA status unconfirmed</span>')+(MYASA?'<span class="asano">'+(c.asa===true?'ASA':'Running')+' no. '+esc(MYASA)+'</span>':'')+'<span class="pill">'+(up.length?up.length+' upcoming':'none listed')+'</span><button type="button" class="clubchg" data-club-join>Change</button></div>'+
     (up.length?'<div class="soon">'+up.map(card).join("")+'</div>':'<div class="empty clubempty"><b>No upcoming '+esc(c.name)+' events found yet</b>We only list races and club runs we can find on a real source. When the club publishes a dated event, it will show up here.</div>')}
 function renderCal(){
   if(!S.calMonth)S.calMonth=S.month||(MONTHS.indexOf(TODAY.slice(0,7))>=0?TODAY.slice(0,7):MONTHS[0]);
@@ -624,6 +629,79 @@ function bind(){
   bindFilm();
 }
 bind();
+
+/* ---------- Join / change running club sheet (reuses profile picker UX) ---------- */
+var CLUB_PICK="";
+function clubIni(name){var w=String(name||"").split(/\s+/).filter(Boolean),GEN=/^(club|athletic|athletics|running|runners|rc|ac|sc|swd|sports|sport|the|for|of|and|&)$/i,out=[];
+  for(var i=0;i<w.length&&out.length<3;i++){if(!GEN.test(w[i]))out.push(w[i][0].toUpperCase())}
+  return out.join("")||"–"}
+function clubLogoHtml(c){return c&&c.logo?'<img class="clogo" src="'+esc(c.logo)+'" alt="" width="44" height="44" decoding="async">':'<span class="clogo cini" aria-hidden="true">'+esc(c?clubIni(c.name):"–")+'</span>'}
+function clubAsaBadge(c){return c&&c.asa===true?'<span class="asab" title="Affiliated to Athletics South Africa">ASA</span>':""}
+function clubAst(c){return c.asa===true?'<span class="ast ok">ASA registered</span>':c.asa===false?'<span class="ast no">Not ASA registered</span>':'<span class="ast unk" title="ASA affiliation not confirmed from a source">ASA status unconfirmed</span>'}
+function clubNorm(s){return String(s||"").toLowerCase().replace(/[^a-z0-9]+/g,"")}
+function clubCardHtml(c,pick){var id=c?c.id:"";
+  return '<button type="button" class="ccard'+(pick===id?" on":"")+'" data-id="'+esc(id)+'" data-q="'+esc(c?clubNorm(c.name):"noclub")+'" aria-pressed="'+(pick===id)+'">'+(c?clubLogoHtml(c)+'<span class="cn">'+esc(c.name)+'</span><span class="ct">'+esc(c.town)+(c.asa===true?" "+clubAsaBadge(c):"")+'</span>':'<span class="clogo cini" aria-hidden="true">–</span><span class="cn">No club</span><span class="ct">Nothing marked</span>')+'</button>'}
+function clubGridHtml(pick){var list=(CLUBS||[]).slice().sort(function(a,b){return a.name.localeCompare(b.name)});
+  var gr=list.filter(function(c){return c.garden_route}),wide=list.filter(function(c){return !c.garden_route});
+  var h='<div class="cgrp"><div class="cgh">Garden Route</div><div class="cg">'+clubCardHtml(null,pick)+gr.map(function(c){return clubCardHtml(c,pick)}).join("")+'</div></div>';
+  if(wide.length)h+='<div class="cgrp"><div class="cgh">Further afield</div><div class="cg">'+wide.map(function(c){return clubCardHtml(c,pick)}).join("")+'</div></div>';
+  return h}
+function clubJoinHtml(){var pick=CLUB_PICK||MYCLUB||"";
+  var c=pick&&CLUBBY[pick]?CLUBBY[pick]:null;
+  var html='<button type="button" class="mclose" data-club-close aria-label="Close">×</button>';
+  html+='<h2 id="clubJoinTitle">'+(MYCLUB?"Change running club":"Join a running club")+'</h2>';
+  html+='<p class="lede">Pick your club — its races and club runs are marked My club in the app. Same picker as in your profile.</p>';
+  html+='<p class="lbl" id="clubJoinLbl">Your club</p>';
+  html+='<details class="clubdd" id="clubJoinDd"><summary aria-labelledby="clubJoinLbl"><span class="cdsel" id="clubJoinSel">'+(c?clubLogoHtml(c)+'<span class="cdt"><b>'+esc(c.name)+'</b><small>'+esc(c.town)+" "+clubAst(c)+"</small></span>":'<span class="cdt"><b>Choose a running club</b></span>')+'</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.4 8.6L12 13.2l4.6-4.6L18 10l-6 6-6-6z"/></svg></summary>';
+  html+='<div class="cdbody"><input id="clubJoinQ" type="search" placeholder="Search clubs" autocomplete="off" spellcheck="false" aria-label="Search clubs"><div id="clubJoinGrid">'+clubGridHtml(pick)+'</div><p class="cnone" id="clubJoinNone" hidden>No clubs match</p></div></details>';
+  html+='<div id="clubJoinAsaWrap"'+(c?"":" hidden")+'><label for="clubJoinAsa">Running / ASA number (optional)</label><input id="clubJoinAsa" maxlength="20" autocomplete="off" autocapitalize="characters" spellcheck="false" pattern="[A-Za-z0-9 /\\-]*" placeholder="Your licence / running number" value="'+esc(MYASA||"")+'"></div>';
+  html+='<p class="clubinfo" id="clubJoinInfo">'+(c?((c.asa===true&&c.asa_source?'<a href="'+esc(c.asa_source)+'" target="_blank" rel="noopener">ASA source</a> · ':"")+(c.events?c.events+" upcoming event"+(c.events>1?"s":"")+" listed":"No upcoming dated events found yet")+' · <a href="'+esc(c.source_url)+'" target="_blank" rel="noopener">source: '+esc(c.source_name)+"</a>"):"No club: nothing is marked as My club.")+'</p>';
+  html+='<div class="clubactions"><button type="button" id="clubJoinSave">Save club</button><button type="button" class="clubcancel" data-club-close>Cancel</button></div>';
+  html+='<p class="clubmsg" id="clubJoinMsg" role="status"></p>';
+  return html}
+function clubJoinSyncSel(){var pick=CLUB_PICK,c=pick&&CLUBBY[pick]?CLUBBY[pick]:null,sel=$("clubJoinSel"),wrap=$("clubJoinAsaWrap"),info=$("clubJoinInfo");
+  if(sel)sel.innerHTML=c?clubLogoHtml(c)+'<span class="cdt"><b>'+esc(c.name)+'</b><small>'+esc(c.town)+" "+clubAst(c)+"</small></span>":'<span class="cdt"><b>Choose a running club</b></span>';
+  if(wrap)wrap.hidden=!c; /* number field for any selected club — matches profile */
+  if(info)info.innerHTML=c?((c.asa===true&&c.asa_source?'<a href="'+esc(c.asa_source)+'" target="_blank" rel="noopener">ASA source</a> · ':"")+(c.events?c.events+" upcoming event"+(c.events>1?"s":"")+" listed":"No upcoming dated events found yet")+' · <a href="'+esc(c.source_url)+'" target="_blank" rel="noopener">source: '+esc(c.source_name)+"</a>"):"No club: nothing is marked as My club."}
+function clubJoinOpen(){if(!ME){location.href="/login";return}
+  var m=$("clubModal"),box=$("clubBox");if(!m||!box)return;
+  CLUB_PICK=MYCLUB||"";
+  box.innerHTML=clubJoinHtml();m.hidden=false;document.body.classList.add("modal-open");
+  try{box.focus({preventScroll:true})}catch(e){}
+  var q=$("clubJoinQ"),grid=$("clubJoinGrid"),none=$("clubJoinNone"),dd=$("clubJoinDd");
+  if(q)q.addEventListener("input",function(){var n=clubNorm(q.value),hit=0;
+    Array.prototype.forEach.call(grid.querySelectorAll(".ccard"),function(b){var ok=!n||(b.getAttribute("data-q")||"").indexOf(n)>=0;b.hidden=!ok;if(ok&&b.getAttribute("data-id"))hit++});
+    Array.prototype.forEach.call(grid.querySelectorAll(".cgrp"),function(g){g.hidden=!Array.prototype.some.call(g.querySelectorAll(".ccard"),function(b){return !b.hidden})});
+    if(none)none.hidden=!n||hit>0});
+  if(grid)grid.addEventListener("click",function(ev){var b=ev.target.closest(".ccard");if(!b)return;
+    CLUB_PICK=b.getAttribute("data-id")||"";
+    Array.prototype.forEach.call(grid.querySelectorAll(".ccard"),function(x){var on=x===b;x.classList.toggle("on",on);x.setAttribute("aria-pressed",on)});
+    clubJoinSyncSel();if(dd)dd.open=false;
+    var msg=$("clubJoinMsg");if(msg){msg.textContent=CLUB_PICK!==(MYCLUB||"")?"Tap Save club to keep this choice.":"";msg.className="clubmsg"}});
+  var save=$("clubJoinSave");if(save)save.addEventListener("click",clubJoinSave)}
+function clubJoinClose(){var m=$("clubModal");if(!m||m.hidden)return;m.hidden=true;
+  if($("evModal").hidden&&$("wxModal").hidden&&$("filmOv").hidden)document.body.classList.remove("modal-open");
+  var box=$("clubBox");if(box)box.innerHTML=""}
+function clubJoinSave(){var save=$("clubJoinSave"),msg=$("clubJoinMsg"),asa=$("clubJoinAsa");if(!save)return;
+  save.disabled=true;if(msg){msg.textContent="";msg.className="clubmsg"}
+  var body={club_id:CLUB_PICK||null};if(asa&&!$("clubJoinAsaWrap").hidden)body.asa_number=asa.value.trim();
+  fetch("/api/club",{method:"PUT",credentials:"same-origin",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(body)})
+    .then(function(r){return r.json().then(function(d){return {ok:r.ok,status:r.status,d:d}})})
+    .then(function(x){
+      if(x.status===401){location.href="/login";return}
+      if(!x.ok){if(msg){msg.textContent=(x.d&&x.d.error)||"Could not save.";msg.className="clubmsg bad"}save.disabled=false;return}
+      MYCLUB=x.d.club_id&&CLUBBY[x.d.club_id]?x.d.club_id:null;
+      MYASA=typeof x.d.asa_number==="string"&&x.d.asa_number?x.d.asa_number:null;
+      clubJoinClose();render();toast(MYCLUB?"✓ Club saved":"✓ Club cleared");
+    }).catch(function(){if(msg){msg.textContent="Network error.";msg.className="clubmsg bad"}save.disabled=false})}
+function clubJoinBind(){
+  document.addEventListener("click",function(ev){
+    if(ev.target.closest("[data-club-close]")||ev.target.id==="clubModal"){ev.preventDefault();clubJoinClose();return}
+    var j=ev.target.closest("[data-club-join]");if(j){ev.preventDefault();ev.stopPropagation();clubJoinOpen()}
+  },true);
+  document.addEventListener("keydown",function(ev){if(ev.key==="Escape"&&$("clubModal")&&!$("clubModal").hidden){ev.preventDefault();clubJoinClose()}});
+}
+clubJoinBind();
 
 /* ---------- Weather (Open-Meteo) — list cards only ---------- */
 var WX={TTL:2*60*60*1000,KEY:"gre.wx.v8",mem:{},pend:{},unit:"C"};
