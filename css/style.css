@@ -131,11 +131,39 @@ main{max-width:1180px;margin:0 auto;padding:16px 22px 40px}
 .when{font-size:.86rem;font-weight:600;color:var(--forest2)}
 @media (prefers-color-scheme:dark){.when{color:var(--teal)}}
 /* ---------- Weather on list cards (not calendar) ---------- */
-.wx{display:inline-flex;align-items:center;gap:3px;margin-left:.4em;padding:1px 7px;border-radius:999px;font-size:.78rem;font-weight:700;letter-spacing:.01em;color:var(--ink);background:color-mix(in srgb,var(--ocean) 12%,var(--surface2));border:1px solid color-mix(in srgb,var(--ocean) 22%,var(--line));white-space:nowrap;vertical-align:1px;line-height:1.3}
-.wx:empty{display:none}
-.wx .wxi{font-size:.9rem;line-height:1}
-@media (prefers-color-scheme:dark){.wx{background:color-mix(in srgb,var(--teal) 16%,var(--surface2));border-color:color-mix(in srgb,var(--teal) 28%,var(--line));color:var(--ink)}}
+.wx{all:unset;box-sizing:border-box;display:inline-flex;flex-wrap:wrap;align-items:center;gap:3px 5px;max-width:100%;margin:.15em 0 0 .15em;padding:2px 8px;border-radius:999px;font:700 .74rem/1.3 var(--font);letter-spacing:.01em;color:var(--ink);background:color-mix(in srgb,var(--ocean) 12%,var(--surface2));border:1px solid color-mix(in srgb,var(--ocean) 22%,var(--line));cursor:pointer;vertical-align:middle;-webkit-tap-highlight-color:transparent}
+.wx[hidden]{display:none!important}
+.wx:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.wx[aria-expanded="true"]{border-radius:12px;background:color-mix(in srgb,var(--ocean) 18%,var(--surface2))}
+.wx .wxi{font-size:.95rem;line-height:1}
+.wx .wxtemp{font-variant-numeric:tabular-nums}
+.wxchip{display:inline-flex;align-items:center;padding:0 6px;border-radius:999px;font-size:.68rem;font-weight:800;background:color-mix(in srgb,var(--ink) 6%,transparent);border:1px solid var(--line);white-space:nowrap}
+.wxchip.rain{color:#1f5fa8;border-color:color-mix(in srgb,#1f5fa8 35%,var(--line))}
+.wxchip.wind{color:#5c6660;border-color:var(--line)}
+.wxchip.uv{color:#9a3412;border-color:color-mix(in srgb,#ea580c 40%,var(--line))}
+.wxchip.run{text-transform:none}
+.wxchip.run.great,.wxrun.great{color:#0d7a4f}
+.wxchip.run.good,.wxrun.good{color:#1f6b4a}
+.wxchip.run.fair,.wxrun.fair{color:#9a6b00}
+.wxchip.run.poor,.wxrun.poor{color:#9b2c22}
+.wxpanel{margin:6px 0 2px;padding:10px 12px;border-radius:14px;background:var(--surface2);border:1px solid var(--line);font-size:.82rem;line-height:1.35;color:var(--ink)}
+.wxpanel[hidden]{display:none!important}
+.wxrow{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding:3px 0}
+.wxrow b{font-weight:800}
+.wxrow>span:last-child{text-align:right;color:var(--mut);font-weight:600}
+.wxrow .wxrun{color:inherit;font-weight:800}
+.wxsrc{margin-top:6px;font-size:.7rem;color:var(--mut);font-weight:600}
+@media (max-width:420px){.wx{margin-left:0;padding:2px 7px}.wxchip{padding:0 5px;font-size:.64rem}.when{display:flex;flex-wrap:wrap;align-items:center;gap:2px 6px}}
+@media (prefers-color-scheme:dark){
+  .wx{background:color-mix(in srgb,var(--teal) 16%,var(--surface2));border-color:color-mix(in srgb,var(--teal) 28%,var(--line));color:var(--ink)}
+  .wx[aria-expanded="true"]{background:color-mix(in srgb,var(--teal) 22%,var(--surface2))}
+  .wxchip{background:color-mix(in srgb,#fff 6%,transparent)}
+  .wxchip.rain{color:#7db4ff}.wxchip.uv{color:#fdba74}
+  .wxpanel{background:var(--surface2);border-color:var(--line)}
+}
 body.theme-run .wx{background:color-mix(in srgb,var(--run) 14%,var(--surface2));border-color:color-mix(in srgb,var(--run) 30%,var(--line));color:var(--rundeep)}
+body.theme-run .wx[aria-expanded="true"]{background:color-mix(in srgb,var(--run) 20%,var(--surface2))}
+body.theme-run .wxpanel{border-color:color-mix(in srgb,var(--run) 28%,var(--line))}
 @media (prefers-color-scheme:dark){body.theme-run .wx{color:var(--ink);background:color-mix(in srgb,var(--run) 20%,var(--surface2));border-color:color-mix(in srgb,var(--run) 35%,var(--line))}}
 
 .where{font-size:.86rem;color:var(--mut);display:flex;gap:6px;align-items:flex-start}

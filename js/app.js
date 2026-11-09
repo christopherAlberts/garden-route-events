@@ -241,7 +241,8 @@ function card(e){
     '<a class="thumb" href="'+L+'" target="_blank" rel="noopener" aria-label="'+esc(e.title)+'">'+thumb(e)+badge+'<span class="cat '+e.category+'">'+CATS[e.category]+'</span>'+(e.recurrence?'<span class="recur">↻ '+esc(e.recurrence.split(",")[0])+'</span>':'')+stBadge(e)+(window._cinOd&&isIndoorSc(e)?'<span class="intag">Indoor</span>':'')+'</a>'+
     '<div class="body">'+(S.scope==="all"&&e.garden_route?'<span class="grtag">Garden Route</span>':'')+
       clubTag(e)+'<div class="ttl"><h3><a href="'+L+'" target="_blank" rel="noopener">'+esc(e.title)+'</a></h3>'+starBtn(e)+'</div>'+
-      '<div class="when">'+when(e)+(e.time?" · "+esc(e.time):"")+'<span class="wx" data-wx-town="'+esc(e.town||"")+'" data-wx-date="'+esc(nextDate(e))+'"></span></div>'+
+      '<div class="when">'+when(e)+(e.time?" · "+esc(e.time):"")+'<button type="button" class="wx" data-wx-town="'+esc(e.town||"")+'" data-wx-date="'+esc(nextDate(e))+'" aria-expanded="false" hidden></button></div>'+
+      '<div class="wxpanel" hidden></div>'+
       (e.status_note?'<div class="stnote'+(isOff(e)?" off":"")+'">'+esc(e.status_note)+'</div>':'')+
       '<div class="where">'+PIN+'<span>'+esc(e.venue||"")+(e.venue?", ":"")+esc(e.town)+'</span></div>'+atRest(e)+hostLine(e)+
       (e.recurrence?'<div class="notes">'+esc(e.recurrence)+'</div>':(e.notes&&!/^(Quicket|Webtickets) category/.test(e.notes)?'<div class="notes">'+esc(e.notes)+'</div>':''))+
@@ -626,29 +627,88 @@ function bind(){
 bind();
 
 /* ---------- Weather (Open-Meteo) — list cards only ---------- */
-var WX={TTL:2*60*60*1000,KEY:"gre.wx.v1",mem:{},pend:{}};
-function wxIcon(c){c=+c;if(c===0)return"☀";if(c<=3)return"⛅";if(c===45||c===48)return"🌫";if(c>=51&&c<=67)return"🌧";if(c>=71&&c<=77)return"❄";if(c>=80&&c<=82)return"🌦";if(c>=85&&c<=86)return"❄";if(c>=95)return"⛈";return"☁"}
-function wxFmt(d){if(!d)return"";var s='<span class="wxi" aria-hidden="true">'+wxIcon(d.code)+'</span> '+Math.round(d.tmax)+"°/"+Math.round(d.tmin)+"°";if(d.pop!=null&&d.pop>=30)s+=" · "+d.pop+"%";return s}
-function wxTitle(d){if(!d)return"";var n={0:"Clear",1:"Mainly clear",2:"Partly cloudy",3:"Overcast",45:"Fog",48:"Fog",51:"Light drizzle",53:"Drizzle",55:"Drizzle",61:"Light rain",63:"Rain",65:"Heavy rain",71:"Snow",73:"Snow",75:"Snow",80:"Showers",81:"Showers",82:"Heavy showers",95:"Thunderstorm",96:"Thunderstorm",99:"Thunderstorm"}[d.code]||"Forecast";return n+", high "+Math.round(d.tmax)+"° · low "+Math.round(d.tmin)+"°"+(d.pop!=null?" · rain "+d.pop+"%":"")+" (Open-Meteo)"}
+var WX={TTL:2*60*60*1000,KEY:"gre.wx.v2",mem:{},pend:{}};
+/* WMO weather-code → short label + emoji */
+function wxCond(c){c=+c;if(c===0)return{icon:"☀",label:"Sunny"};if(c===1)return{icon:"🌤",label:"Mostly clear"};if(c===2)return{icon:"⛅",label:"Partly cloudy"};if(c===3)return{icon:"☁",label:"Cloudy"};if(c===45||c===48)return{icon:"🌫",label:"Fog"};if(c>=51&&c<=57)return{icon:"🌦",label:"Drizzle"};if(c>=61&&c<=67||c>=80&&c<=82)return{icon:"🌧",label:"Rain"};if(c>=71&&c<=77||c>=85&&c<=86)return{icon:"❄",label:"Snow"};if(c>=95)return{icon:"⛈",label:"Thunderstorms"};return{icon:"☁",label:"Cloudy"}}
+function wxDir(deg){if(deg==null||isNaN(+deg))return"";var d=["N","NE","E","SE","S","SW","W","NW"];return d[Math.round(((+deg)%360)/45)%8]}
+function wxUvBand(u){if(u==null||isNaN(+u))return null;u=+u;if(u<3)return"Low";if(u<6)return"Moderate";if(u<8)return"High";if(u<11)return"Very high";return"Extreme"}
+/*
+ * Good-for-running score (0–100) per hour — similar spirit to Android outdoor/running
+ * suggestions. Thresholds (documented here, tweak carefully):
+ *   apparent_temperature (°C): ideal 12–20 → 40 pts; 8–12 or 20–24 → 30; 5–8 or 24–28 → 15; else 0
+ *   precipitation_probability (%): <10 → 25; <30 → 18; <50 → 8; else 0
+ *   wind_speed_10m (km/h): <15 → 20; <25 → 14; <35 → 6; else 0
+ *   uv_index (daytime only): <6 → 15; <8 → 10; <11 → 5; else 2; night → 12 (neutral)
+ *   is_day: slight preference for daylight (+0 already via UV); dawn/dusk hours still scored
+ * Daily rating from best 2h window average: ≥80 Great, ≥65 Good, ≥45 Fair, else Poor.
+ * Best windows: top 1–2 contiguous 2-hour blocks scoring ≥45, labelled HH:00–HH:00 SAST.
+ */
+function wxHourScore(h){if(!h)return 0;var at=h.at!=null?h.at:h.t,s=0;
+  if(at!=null){if(at>=12&&at<=20)s+=40;else if(at>=8&&at<12||at>20&&at<=24)s+=30;else if(at>=5&&at<8||at>24&&at<=28)s+=15}
+  var p=h.pop;if(p==null||p<10)s+=25;else if(p<30)s+=18;else if(p<50)s+=8;
+  var w=h.wind;if(w==null||w<15)s+=20;else if(w<25)s+=14;else if(w<35)s+=6;
+  if(!h.day)s+=12;else{var u=h.uv;if(u==null||u<6)s+=15;else if(u<8)s+=10;else if(u<11)s+=5;else s+=2}
+  return s}
+function wxRunDay(hours){if(!hours||!hours.length)return null;
+  var wins=[],i,a,b,sc;for(i=0;i<hours.length-1;i++){a=hours[i];b=hours[i+1];if(!a||!b)continue;
+    sc=(wxHourScore(a)+wxHourScore(b))/2;if(sc>=45)wins.push({sc:sc,from:a.hh,to:b.hh+1>23?24:b.hh+1,label:(a.hh<10?"0":"")+a.hh+":00–"+(b.hh+1>23?"24":(b.hh+1<10?"0":"")+(b.hh+1))+":00"})}
+  wins.sort(function(x,y){return y.sc-x.sc||x.from-y.from});
+  var best=wins[0]?wins[0].sc:Math.max.apply(null,hours.map(wxHourScore).concat([0]));
+  var rating=best>=80?"Great":best>=65?"Good":best>=45?"Fair":"Poor";
+  var picked=[];wins.forEach(function(w){if(picked.length>=2)return;if(!picked.some(function(p){return Math.abs(p.from-w.from)<2}))picked.push(w)});
+  return{rating:rating,best:best,windows:picked}}
 function wxLoadCache(){try{var r=JSON.parse(localStorage.getItem(WX.KEY)||"{}");if(r&&typeof r==="object")WX.mem=r}catch(e){WX.mem={}}}
 function wxSaveCache(){try{var now=Date.now(),o={},k;for(k in WX.mem){if(WX.mem[k]&&WX.mem[k].exp>now)o[k]=WX.mem[k]}localStorage.setItem(WX.KEY,JSON.stringify(o));WX.mem=o}catch(e){}}
 function wxTownCoords(town){var t=(window.TOWNS||{})[town];return t&&t.lat!=null&&t.lng!=null?t:null}
 function wxInWindow(ds){if(!ds||ds<TODAY)return false;var lim=pd(TODAY);lim.setDate(lim.getDate()+15);var y=lim.getFullYear(),m=String(lim.getMonth()+1).padStart(2,"0"),d=String(lim.getDate()).padStart(2,"0");return ds<=y+"-"+m+"-"+d}
 function wxGetDay(town,ds){var c=WX.mem[town];if(!c||c.exp<Date.now()||!c.days)return null;return c.days[ds]||null}
 function wxFetchTown(town){if(WX.pend[town])return WX.pend[town];var co=wxTownCoords(town);if(!co)return Promise.resolve(null);
-  var url="https://api.open-meteo.com/v1/forecast?latitude="+co.lat+"&longitude="+co.lng+"&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Africa%2FJohannesburg&forecast_days=16";
+  var url="https://api.open-meteo.com/v1/forecast?latitude="+co.lat+"&longitude="+co.lng
+    +"&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,wind_speed_10m_max,wind_gusts_10m_max,wind_direction_10m_dominant,uv_index_max"
+    +"&hourly=temperature_2m,apparent_temperature,precipitation_probability,wind_speed_10m,uv_index,is_day"
+    +"&timezone=Africa%2FJohannesburg&forecast_days=16";
   WX.pend[town]=fetch(url,{credentials:"omit",mode:"cors"}).then(function(r){return r.ok?r.json():null}).then(function(j){
     delete WX.pend[town];if(!j||!j.daily||!j.daily.time)return null;
-    var days={},i,t=j.daily.time,code=j.daily.weather_code||j.daily.weathercode||[],tmax=j.daily.temperature_2m_max||[],tmin=j.daily.temperature_2m_min||[],pop=j.daily.precipitation_probability_max||[];
-    for(i=0;i<t.length;i++)days[t[i]]={code:code[i],tmax:tmax[i],tmin:tmin[i],pop:pop[i]};
+    var days={},i,t=j.daily.time;
+    var code=j.daily.weather_code||[],tmax=j.daily.temperature_2m_max||[],tmin=j.daily.temperature_2m_min||[];
+    var pop=j.daily.precipitation_probability_max||[],psum=j.daily.precipitation_sum||[];
+    var wmax=j.daily.wind_speed_10m_max||[],gust=j.daily.wind_gusts_10m_max||[],wdir=j.daily.wind_direction_10m_dominant||[];
+    var uv=j.daily.uv_index_max||[];
+    for(i=0;i<t.length;i++)days[t[i]]={code:code[i],tmax:tmax[i],tmin:tmin[i],pop:pop[i],rain:psum[i],wind:wmax[i],gust:gust[i],dir:wdir[i],uv:uv[i],hours:[]};
+    var ht=(j.hourly&&j.hourly.time)||[];
+    var hT=j.hourly.temperature_2m||[],hA=j.hourly.apparent_temperature||[],hP=j.hourly.precipitation_probability||[];
+    var hW=j.hourly.wind_speed_10m||[],hU=j.hourly.uv_index||[],hD=j.hourly.is_day||[];
+    for(i=0;i<ht.length;i++){var ds=ht[i].slice(0,10),hh=+ht[i].slice(11,13);if(!days[ds])continue;
+      days[ds].hours.push({hh:hh,t:hT[i],at:hA[i],pop:hP[i],wind:hW[i],uv:hU[i],day:!!hD[i]})}
+    for(i=0;i<t.length;i++){var run=wxRunDay(days[t[i]].hours);if(run){days[t[i]].run=run.rating;days[t[i]].runBest=run.best;days[t[i]].windows=run.windows}}
     WX.mem[town]={exp:Date.now()+WX.TTL,days:days};wxSaveCache();return days;
   }).catch(function(){delete WX.pend[town];return null});
   return WX.pend[town]}
+function wxCompact(d){if(!d||d.tmax==null||d.tmin==null)return"";
+  var c=wxCond(d.code),s='<span class="wxi" aria-hidden="true">'+c.icon+'</span><span class="wxtemp">'+Math.round(d.tmax)+"°/"+Math.round(d.tmin)+"°</span>";
+  if(d.pop!=null&&d.pop>=30)s+='<span class="wxchip rain">'+Math.round(d.pop)+"%</span>";
+  if(d.wind!=null&&d.wind>=20)s+='<span class="wxchip wind">'+Math.round(d.wind)+" km/h</span>";
+  var band=wxUvBand(d.uv);if(band&&d.uv>=6)s+='<span class="wxchip uv">UV '+band+'</span>';
+  if(d.run)s+='<span class="wxchip run '+d.run.toLowerCase()+'">'+d.run+' run</span>';
+  return s}
+function wxDetail(d){if(!d)return"";
+  var c=wxCond(d.code),rows=[];
+  rows.push('<div class="wxrow"><b>'+c.icon+" "+c.label+"</b><span>"+Math.round(d.tmax)+"° / "+Math.round(d.tmin)+"°</span></div>");
+  if(d.pop!=null||d.rain!=null){var rain=[];if(d.pop!=null)rain.push(Math.round(d.pop)+"% chance");if(d.rain!=null)rain.push((Math.round(d.rain*10)/10)+" mm");rows.push('<div class="wxrow"><span>Rain</span><span>'+rain.join(" · ")+"</span></div>")}
+  if(d.wind!=null){var w=Math.round(d.wind)+" km/h";var dir=wxDir(d.dir);if(dir)w+=" "+dir;if(d.gust!=null)w+=" · gusts "+Math.round(d.gust)+" km/h";rows.push('<div class="wxrow"><span>Wind</span><span>'+w+"</span></div>")}
+  var band=wxUvBand(d.uv);if(d.uv!=null&&band)rows.push('<div class="wxrow"><span>UV</span><span>'+(Math.round(d.uv*10)/10)+" · "+band+"</span></div>");
+  if(d.run){var r=d.run+(d.windows&&d.windows.length?" · Best "+d.windows.map(function(w){return w.label}).join(", "):"");rows.push('<div class="wxrow"><span>Running</span><span class="wxrun '+d.run.toLowerCase()+'">'+r+"</span></div>")}
+  rows.push('<div class="wxsrc">Open-Meteo · SAST</div>');
+  return rows.join("")}
 function wxApply(){Array.prototype.forEach.call(document.querySelectorAll(".wx[data-wx-town][data-wx-date]"),function(el){
   var town=el.getAttribute("data-wx-town"),ds=el.getAttribute("data-wx-date");
-  if(!town||!ds||!wxInWindow(ds)){el.textContent="";el.removeAttribute("title");return}
-  var d=wxGetDay(town,ds);if(!d||d.tmax==null||d.tmin==null){el.textContent="";el.removeAttribute("title");return}
-  el.innerHTML=wxFmt(d);el.title=wxTitle(d);el.setAttribute("aria-label",wxTitle(d));
+  var panel=el.closest(".body")?el.closest(".body").querySelector(".wxpanel"):null;
+  if(!town||!ds||!wxInWindow(ds)){el.hidden=true;el.innerHTML="";el.removeAttribute("title");if(panel){panel.hidden=true;panel.innerHTML=""}return}
+  var d=wxGetDay(town,ds);if(!d||d.tmax==null||d.tmin==null){el.hidden=true;el.innerHTML="";if(panel){panel.hidden=true;panel.innerHTML=""}return}
+  var c=wxCond(d.code),label=c.label+", "+Math.round(d.tmax)+"°/"+Math.round(d.tmin)+"°. Tap for details.";
+  el.hidden=false;el.innerHTML=wxCompact(d);el.title=label;el.setAttribute("aria-label",label);
+  if(panel){panel.setAttribute("data-wx-town",town);panel.setAttribute("data-wx-date",ds);
+    if(el.getAttribute("aria-expanded")==="true"){panel.hidden=false;panel.innerHTML=wxDetail(d)}else{panel.hidden=true}}
 })}
 function wxHydrate(){if(S.view==="cal")return; // never on calendar
   var need={},els=document.querySelectorAll(".wx[data-wx-town][data-wx-date]");
@@ -657,7 +717,18 @@ function wxHydrate(){if(S.view==="cal")return; // never on calendar
   var towns=Object.keys(need),i=0;
   function next(){if(i>=towns.length){wxApply();return}var t=towns[i++];wxFetchTown(t).then(function(){wxApply();next()}).catch(function(){next()})}
   wxApply();if(towns.length)next()}
+function wxBind(){document.addEventListener("click",function(ev){var b=ev.target.closest("button.wx");if(!b||!b.getAttribute("data-wx-town"))return;
+  ev.preventDefault();var body=b.closest(".body");if(!body)return;var panel=body.querySelector(".wxpanel");if(!panel)return;
+  var open=b.getAttribute("aria-expanded")==="true";
+  // close other open panels in list
+  Array.prototype.forEach.call(document.querySelectorAll("button.wx[aria-expanded='true']"),function(x){if(x!==b){x.setAttribute("aria-expanded","false");var p=x.closest(".body")&&x.closest(".body").querySelector(".wxpanel");if(p)p.hidden=true}});
+  if(open){b.setAttribute("aria-expanded","false");panel.hidden=true;return}
+  var d=wxGetDay(b.getAttribute("data-wx-town"),b.getAttribute("data-wx-date"));
+  b.setAttribute("aria-expanded","true");panel.hidden=false;panel.innerHTML=d?wxDetail(d):'<div class="wxrow">Forecast unavailable</div>';
+})}
 wxLoadCache();
+wxBind();
+
 
 init(window.EVENTS||[]);
 syncStars();
