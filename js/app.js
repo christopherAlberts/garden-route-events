@@ -706,7 +706,7 @@ function clubJoinBind(){
 clubJoinBind();
 
 /* ---------- Weather (Open-Meteo) — list cards only ---------- */
-var WX={TTL:2*60*60*1000,KEY:"gre.wx.v8",mem:{},pend:{},unit:"C"};
+var WX={TTL:2*60*60*1000,KEY:"gre.wx.v9",mem:{},pend:{},unit:"C"};
 var WX_UNIT_KEY="gre.tempUnit";
 function wxLoadUnit(){try{var u=localStorage.getItem(WX_UNIT_KEY);if(u==="F"||u==="C")WX.unit=u}catch(e){} }
 function wxSaveUnit(u){WX.unit=(u==="F"?"F":"C");try{localStorage.setItem(WX_UNIT_KEY,WX.unit)}catch(e){} }
@@ -829,14 +829,14 @@ function wxCompactMini(d){if(!d||d.tmax==null)return"";
   return'<span class="wxi" aria-hidden="true">'+c.icon+'</span><span class="wxtemp">'+wxTempPair(d.tmax,d.tmin)+'</span>'}
 function wxSunFrac(iso){if(!iso)return null;var m=/T(\d{2}):(\d{2})/.exec(String(iso));if(!m)return null;return +m[1]+(+m[2])/60}
 function wxHourStrip(d,ds,runCat){if(!d||!d.hours||!d.hours.length)return'<p class="wxnostrip">Hourly forecast unavailable</p>';
-  var startH=5,endH=22,nowH=(new Date()).getHours(),srF=wxSunFrac(d.sunrise),ssF=wxSunFrac(d.sunset);
+  var startH=4,endH=22,nowH=(new Date()).getHours(),srF=wxSunFrac(d.sunrise),ssF=wxSunFrac(d.sunset);
   if(srF!=null)startH=Math.min(startH,Math.floor(srF));
   if(ssF!=null)endH=Math.max(endH,Math.ceil(ssF));
   if(startH<0)startH=0;if(endH>23)endH=23;
-  if(ds===TODAY&&nowH>startH)startH=nowH;
+  /* Keep full 04:00–22:00 range even today — wxScrollHourly jumps to the current hour */
   var byH={},i,x;for(i=0;i<d.hours.length;i++)byH[d.hours[i].hh]=d.hours[i];
   var h=[];for(i=startH;i<=endH;i++){if(byH[i])h.push(byH[i])}
-  if(!h.length){h=d.hours.filter(function(x){return x.hh>=5&&x.hh<=22});if(!h.length)h=d.hours.slice()}
+  if(!h.length){h=d.hours.filter(function(x){return x.hh>=4&&x.hh<=22});if(!h.length)h=d.hours.slice()}
   if(!h.length)return'<p class="wxnostrip">Hourly forecast unavailable</p>';
   var n=h.length,colW=56,chartW=Math.max(n*colW,n*40),padL=8,padR=8,topPad=22,curveH=78,iconY=topPad+curveH+6,rainH=28,baseY=iconY+36,svgH=baseY+rainH+18;
   var temps=h.map(function(x){return wxTemp(x.t)}).filter(function(t){return t!=null});
@@ -861,7 +861,9 @@ function wxHourStrip(d,ds,runCat){if(!d||!d.hours||!d.hours.length)return'<p cla
   else if(ssF!=null&&ssF<h[0].hh){svg+='<rect class="wxnight" x="0" y="0" width="'+chartW+'" height="'+svgH+'" />'}
   /* Best-run green bands (funrun only) */
   if(runCat&&d.windows&&d.windows.length){d.windows.forEach(function(w){var a=Math.max(w.from,h[0].hh),b=Math.min(w.to,h[n-1].hh+1);if(b<=a)return;
-    var x1=xAtFrac(a),x2=xAtFrac(b);svg+='<rect class="wxrunband" x="'+x1.toFixed(1)+'" y="'+topPad+'" width="'+(x2-x1).toFixed(1)+'" height="'+curveH+'" rx="6" />'})}
+    var x1=xAtFrac(a),x2=xAtFrac(b),bw=x2-x1;
+    svg+='<rect class="wxrunband" x="'+x1.toFixed(1)+'" y="'+topPad+'" width="'+bw.toFixed(1)+'" height="'+curveH+'" rx="6" />';
+    if(bw>=48)svg+='<text class="wxrunbandlbl" x="'+(x1+bw/2).toFixed(1)+'" y="'+(topPad+12)+'">Best run</text>'})}
   if(area)svg+='<path class="wxarea" d="'+area+'" />';
   if(path)svg+='<path class="wxline" d="'+path+'" fill="none" />';
   /* Sunrise / sunset markers at exact fractional x */
@@ -880,7 +882,12 @@ function wxHourStrip(d,ds,runCat){if(!d||!d.hours||!d.hours.length)return'<p cla
   svg+='</svg>';
   var cols=h.map(function(x,idx){var c=wxCond(x.code!=null?x.code:d.code),nowCls=(ds===TODAY&&x.hh===nowH)?" now":"";
     return '<div class="wxh'+nowCls+'" role="listitem" data-hh="'+x.hh+'" style="width:'+(100/n)+'%"><span class="wxht">'+(x.hh<10?"0":"")+x.hh+':00</span><span class="wxhi" aria-hidden="true">'+c.icon+'</span></div>'}).join("");
-  return '<div class="wxhourly" data-wx-n="'+n+'"><div class="wxscroll" data-wx-scroll><div class="wxscroll-inner" style="min-width:100%;width:'+chartW+'px">'+svg+'<div class="wxstrip" role="list" aria-label="Hourly forecast">'+cols+'</div></div></div></div>'}
+  var legend='<ul class="wxlegend" aria-label="Chart legend">';
+  if(runCat&&d.windows&&d.windows.length)legend+='<li><span class="wxlegsw wxleg-run" aria-hidden="true"></span>Best times to run</li>';
+  legend+='<li><span class="wxlegsw wxleg-night" aria-hidden="true"></span>Night</li>';
+  legend+='<li><span class="wxlegsw wxleg-rain" aria-hidden="true"></span>Rain chance %</li>';
+  legend+='<li><span class="wxlegico" aria-hidden="true">🌅🌇</span>Sunrise / sunset</li></ul>';
+  return '<div class="wxhourly" data-wx-n="'+n+'"><div class="wxscroll" data-wx-scroll><div class="wxscroll-inner" style="min-width:100%;width:'+chartW+'px">'+svg+'<div class="wxstrip" role="list" aria-label="Hourly forecast">'+cols+'</div></div></div>'+legend+'</div>'}
 function wxModalHtml(town,ds,d,runCat){if(!d)return'<button type="button" class="mclose" data-wx-close aria-label="Close">×</button><p class="wxempty">Forecast unavailable</p>';
   var c=wxCond(d.code),dateLbl="";try{dateLbl=fmt(pd(ds),true)}catch(e){dateLbl=ds}
   var html='<button type="button" class="mclose" data-wx-close aria-label="Close">×</button>';
