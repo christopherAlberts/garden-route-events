@@ -106,6 +106,14 @@ var STAR_SVG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5
    The cache lives under gre_stars_<userId>, is only read after /api/me confirms that same user, and is wiped on logout (login page) or for any other user.
    No login (static copy, expired session) = no stars shown and no star buttons. */
 var ME=null,STARS={};
+/* ---------- running club: one per user, saved on the server (/api/club); events carry clubs:[club ids] (tools/clubs.py) ---------- */
+var CLUBS=window.CLUBS||[],CLUBBY={};CLUBS.forEach(function(c){CLUBBY[c.id]=c});
+var MYCLUB=null;
+function isMine(e){return !!(MYCLUB&&e&&!e._r&&(e.clubs||[]).indexOf(MYCLUB)>=0)}
+function clubTag(e){return isMine(e)?'<span class="clubtag" title="Hosted by your club, '+esc(CLUBBY[MYCLUB].name)+'">\u25CF My club</span>':""}
+function hostLine(e){var c=(e.clubs||[]).map(function(i){return CLUBBY[i]}).filter(Boolean);return c.length?'<div class="hostline'+(isMine(e)?" mine":"")+'">Hosted by '+c.map(function(x){return esc(x.name)+(x.id===MYCLUB?" (your club)":"")}).join(", ")+'</div>':""}
+function syncClub(uid){return fetch("/api/club",{credentials:"same-origin",cache:"no-store",headers:{"Accept":"application/json"}}).then(function(r){return r.ok?r.json():null}).then(function(d){
+  if(!d||ME!==uid)return;var c=d.club_id&&CLUBBY[d.club_id]?d.club_id:null;if(c!==MYCLUB){MYCLUB=c;render();refreshModal()}}).catch(function(){})}
 function clearStarCaches(keep){try{for(var i=localStorage.length-1;i>=0;i--){var k=localStorage.key(i);if(k&&(/^gre_stars_/.test(k)&&k!==keep||k==="gre.stars"||k==="gre.starsPending"))localStorage.removeItem(k)}}catch(x){}}
 function starKey(){return ME?"gre_stars_"+ME:null}
 function saveStars(){var k=starKey();if(!k)return;try{localStorage.setItem(k,JSON.stringify(STARS))}catch(x){}}
@@ -122,12 +130,13 @@ function toggleStar(id){if(!ME)return;var uid=ME,on=!STARS[id];setStar(id,on);af
     .then(function(r){if(!r.ok)throw r}).catch(function(r){if(ME!==uid)return;setStar(id,!on);afterStar();
       if(r&&r.status===401){logoutStars();toast("Your session ended. Log in again to save stars.")}else toast("Couldn\u2019t save the star. Check your connection.")})}
 function refreshModal(){var id=$("evBox").dataset.id,e=id&&byId(id);if($("evModal").hidden||!e)return;$("evBox").innerHTML='<button type="button" class="mclose" data-close aria-label="Close">×</button>'+detailHtml(e)}
-function logoutStars(){ME=null;STARS={};clearStarCaches(null);document.body.classList.remove("signed-in");render();refreshModal()}
+function logoutStars(){ME=null;STARS={};MYCLUB=null;clearStarCaches(null);document.body.classList.remove("signed-in");render();refreshModal()}
 function syncStars(){if(!API_OK){logoutStars();return}
   fetch("/api/me",{credentials:"same-origin",cache:"no-store",headers:{"Accept":"application/json"}}).then(function(r){if(r.status===401)return "out";return r.ok?r.json():null}).then(function(me){
     if(me==="out"||(me&&!me.id)){if(ME)logoutStars();else clearStarCaches(null);return}
     if(!me)return; /* network blip: keep whatever is showing */
     var uid=String(me.id);if(ME!==uid){ME=uid;clearStarCaches("gre_stars_"+uid);try{STARS=JSON.parse(localStorage.getItem("gre_stars_"+uid)||"{}")||{}}catch(x){STARS={}}document.body.classList.add("signed-in");render();refreshModal()}
+    syncClub(uid);
     return fetch("/api/stars",{credentials:"same-origin",cache:"no-store",headers:{"Accept":"application/json"}}).then(function(r){if(r.status===401){logoutStars();return null}return r.ok?r.json():null}).then(function(d){
       if(!d||!Array.isArray(d.stars)||ME!==uid)return;var srv={};d.stars.forEach(function(x){srv[x.event_id]=Date.parse((x.created_at||"").replace(" ","T")+"Z")||1});
       var changed=JSON.stringify(Object.keys(srv).sort())!==JSON.stringify(Object.keys(STARS).sort());STARS=srv;saveStars();if(changed){render();refreshModal()}})}).catch(function(){})}
@@ -160,13 +169,13 @@ function detailHtml(e){
   var od=o?o.filter(function(d){return d>=TODAY}):[];
   return '<div class="mhead">'+(e.image?'<img src="'+esc(e.image)+'" alt="">':'<div class="ph '+e.category+'">'+ICON[e.category]+'</div>')+
       '<span class="cat '+e.category+'">'+CATS[e.category]+'</span>'+stBadge(e)+'</div>'+
-    '<div class="mbody">'+(e.garden_route?'<span class="grtag">Garden Route</span>':'')+
+    '<div class="mbody">'+(e.garden_route?'<span class="grtag">Garden Route</span>':'')+clubTag(e)+
       '<div class="ttl"><h2 id="evTitle">'+esc(e.title)+'</h2>'+starBtn(e)+'</div>'+
       '<div class="when">'+esc(datesTxt(e))+(e.time?" · "+esc(e.time):"")+'</div>'+
       (od.length>1?'<div class="occ">'+od.length+' upcoming dates: '+od.slice(0,10).map(function(d){var x=pd(d);return x.getDate()+" "+MN[x.getMonth()]}).join(", ")+(od.length>10?", …":"")+'</div>':'')+
       (e.status_note?'<div class="stnote'+(isOff(e)?" off":"")+'">'+esc(e.status_note)+'</div>':'')+
       '<div class="where">'+PIN+'<span>'+esc(e.venue||"")+(e.venue?", ":"")+esc(e.town)+(e.venue_address&&e.venue_address!==e.venue?'<br><small>'+esc(e.venue_address)+'</small>':'')+'</span></div>'+
-      (p?'<div class="price">'+esc(p)+'</div>':'')+atRest(e)+
+      (p?'<div class="price">'+esc(p)+'</div>':'')+atRest(e)+hostLine(e)+
       (e.notes&&!/^(Quicket|Webtickets) category/.test(e.notes)?'<p class="mnotes">'+esc(e.notes)+'</p>':'')+
       '<div class="mact"><a class="btn" href="'+L+'" target="_blank" rel="noopener">'+blab(e)+ARROW+'</a>'+
         (navigator.share?'<button type="button" class="btn ghostbtn" data-act-direct="native">'+SHARE_ICON+'Share</button>':'')+
@@ -228,13 +237,13 @@ function card(e){
   var nd=pd(nextDate(e)),multi=!occ(e)&&e.end_date&&e.end_date!==e.start_date;
   var badge='<div class="datebadge"><span class="d">'+nd.getDate()+'</span><span class="m">'+MN[nd.getMonth()]+'</span>'+(multi?'<span class="to">to '+pd(e.end_date).getDate()+' '+MN[pd(e.end_date).getMonth()]+'</span>':'')+'</div>';
   var L=esc(link(e)),price=priceTxt(e.price_from);
-  return '<article class="card'+(isOff(e)?" is-off":"")+(isStar(e)?" starred":"")+'">'+
+  return '<article class="card'+(isOff(e)?" is-off":"")+(isStar(e)?" starred":"")+(isMine(e)?" myclub":"")+'">'+
     '<a class="thumb" href="'+L+'" target="_blank" rel="noopener" aria-label="'+esc(e.title)+'">'+thumb(e)+badge+'<span class="cat '+e.category+'">'+CATS[e.category]+'</span>'+(e.recurrence?'<span class="recur">↻ '+esc(e.recurrence.split(",")[0])+'</span>':'')+stBadge(e)+(window._cinOd&&isIndoorSc(e)?'<span class="intag">Indoor</span>':'')+'</a>'+
     '<div class="body">'+(S.scope==="all"&&e.garden_route?'<span class="grtag">Garden Route</span>':'')+
-      '<div class="ttl"><h3><a href="'+L+'" target="_blank" rel="noopener">'+esc(e.title)+'</a></h3>'+starBtn(e)+'</div>'+
+      clubTag(e)+'<div class="ttl"><h3><a href="'+L+'" target="_blank" rel="noopener">'+esc(e.title)+'</a></h3>'+starBtn(e)+'</div>'+
       '<div class="when">'+when(e)+(e.time?" · "+esc(e.time):"")+'</div>'+
       (e.status_note?'<div class="stnote'+(isOff(e)?" off":"")+'">'+esc(e.status_note)+'</div>':'')+
-      '<div class="where">'+PIN+'<span>'+esc(e.venue||"")+(e.venue?", ":"")+esc(e.town)+'</span></div>'+atRest(e)+
+      '<div class="where">'+PIN+'<span>'+esc(e.venue||"")+(e.venue?", ":"")+esc(e.town)+'</span></div>'+atRest(e)+hostLine(e)+
       (e.recurrence?'<div class="notes">'+esc(e.recurrence)+'</div>':(e.notes&&!/^(Quicket|Webtickets) category/.test(e.notes)?'<div class="notes">'+esc(e.notes)+'</div>':''))+
       '<div class="foot"><a class="btn" href="'+L+'" target="_blank" rel="noopener">'+blab(e)+ARROW+'</a>'+(price?'<span class="price">'+esc(price)+'</span>':'')+
       shareBtn(e)+'<a class="src" href="'+esc(e.source_url)+'" target="_blank" rel="noopener" title="Source: '+esc(e.source_name)+'">via '+esc(e.source_name.replace(/\s*\(.*\)$/,""))+'</a></div>'+
@@ -280,6 +289,7 @@ function renderList(){
       .sort(function(a,b){return (b.gr-a.gr)||((a.e?ftier(a.e):0)-(b.e?ftier(b.e):0))||a.d.localeCompare(b.d)});
     if(mix.length>2)h+='<div class="sec"><h2>Happening soon</h2><span class="pill">next 10 days</span></div><div class="soon">'+mix.map(function(x){return x.m?mcard(x.m,true):card(x.e)}).join("")+'</div>';
   }
+  if(MYCLUB&&(S.cat===""||S.cat==="funrun")&&!S.starred&&!S.nye&&!S.xmas)h=clubSection()+h;
   var rgr=R.filter(function(e){return e.garden_route}),rwide=R.filter(function(e){return !e.garden_route});
   if(gr.length)h+='<div class="sec"><h2>Garden Route</h2><span class="pill">'+gr.length+'</span></div>'+grouped(gr);
   if(rgr.length)h+=restSection(rgr,"Garden Route restaurants &amp; pubs");
@@ -287,6 +297,10 @@ function renderList(){
   if(rwide.length)h+=restSection(rwide,"Restaurants &amp; pubs, rest of the coast");
   $("view-list").innerHTML=h;
 }
+function clubSection(){var c=CLUBBY[MYCLUB];if(!c)return "";
+  var up=EV.filter(function(e){return isMine(e)&&endOf(e)>=TODAY&&!isOff(e)&&(!S.town||e.town===S.town)&&(!S.month||inMonth(e,S.month))}).sort(function(a,b){return nextDate(a).localeCompare(nextDate(b))});
+  return '<div class="sec clubsec"><h2>My club: '+esc(c.name)+'</h2><span class="pill">'+(up.length?up.length+' upcoming':'none listed')+'</span><a class="clubchg" href="/profile#club">Change</a></div>'+
+    (up.length?'<div class="soon">'+up.map(card).join("")+'</div>':'<div class="empty clubempty"><b>No upcoming '+esc(c.name)+' events found yet</b>We only list races and club runs we can find on a real source. When the club publishes a dated event, it will show up here.</div>')}
 function renderCal(){
   if(!S.calMonth)S.calMonth=S.month||(MONTHS.indexOf(TODAY.slice(0,7))>=0?TODAY.slice(0,7):MONTHS[0]);
   var L=filtered(true,true);
@@ -301,10 +315,10 @@ function renderCal(){
     var on=L.filter(function(e){return onDay(e,ds)}).sort(byFreqDay);
     on=on.filter(isStar).concat(on.filter(function(e){return !isStar(e)}));
     var chips=on.slice(0,3).map(function(e){var cont=!occ(e)&&e.end_date&&e.start_date<ds;
-      return '<div class="chip '+e.category+(e.garden_route?"":" wide")+(isOff(e)?" off":"")+(isStar(e)?" starc":"")+'" title="'+esc(e.title)+(STL[e.status]?" ("+STL[e.status]+")":"")+'">'+(isStar(e)?"★ ":"")+(cont?"↳ ":"")+(STL[e.status]?"<b>"+STL[e.status]+":</b> ":"")+esc(e.title)+(e._r&&e.day_labels&&e.day_labels[ds]?": "+esc(e.day_labels[ds]):"")+'</div>'}).join("");
+      return '<div class="chip '+e.category+(e.garden_route?"":" wide")+(isOff(e)?" off":"")+(isStar(e)?" starc":"")+(isMine(e)?" clubc":"")+'" title="'+esc(e.title)+(STL[e.status]?" ("+STL[e.status]+")":"")+'">'+(isStar(e)?"★ ":"")+(cont?"↳ ":"")+(STL[e.status]?"<b>"+STL[e.status]+":</b> ":"")+esc(e.title)+(e._r&&e.day_labels&&e.day_labels[ds]?": "+esc(e.day_labels[ds]):"")+'</div>'}).join("");
     var dots='<span class="dots">'+on.slice(0,6).map(function(e){return '<i class="dot '+e.category+'"></i>'}).join("")+'</span>';
-    var hn=holName(ds),st=on.filter(isStar);
-    h+='<div class="day'+(hn?" hol":"")+(st.length?" star":"")+(on.length?" has":"")+(ds<TODAY?" past":"")+(ds===TODAY?" today":"")+(S.calDay===ds?" sel":"")+'" data-d="'+ds+'"'+(hn||st.length?' title="'+[hn?"Public holiday: "+esc(hn):"",st.length?"Want to attend: "+st.map(function(e){return esc(e.title)}).join(" · "):""].filter(Boolean).join(" | ")+'"':'')+'><span class="n">'+d+'</span>'+(hn?'<span class="holl"><span class="hollong">'+esc(hn)+'</span><span class="holshort">Holiday</span></span>':'')+(st.length?'<span class="stl"><span class="stlong">★ Want to attend'+(st.length>1?" ("+st.length+")":"")+'</span><span class="stshort">★ Going</span></span>':'')+chips+(on.length>3?'<span class="more">+'+(on.length-3)+' more</span>':'')+dots+'</div>';
+    var hn=holName(ds),st=on.filter(isStar),mc=on.filter(isMine);
+    h+='<div class="day'+(hn?" hol":"")+(st.length?" star":"")+(mc.length?" club":"")+(on.length?" has":"")+(ds<TODAY?" past":"")+(ds===TODAY?" today":"")+(S.calDay===ds?" sel":"")+'" data-d="'+ds+'"'+(hn||st.length?' title="'+[hn?"Public holiday: "+esc(hn):"",st.length?"Want to attend: "+st.map(function(e){return esc(e.title)}).join(" · "):""].filter(Boolean).join(" | ")+'"':'')+'><span class="n">'+d+'</span>'+(hn?'<span class="holl"><span class="hollong">'+esc(hn)+'</span><span class="holshort">Holiday</span></span>':'')+(st.length?'<span class="stl"><span class="stlong">★ Want to attend'+(st.length>1?" ("+st.length+")":"")+'</span><span class="stshort">★ Going</span></span>':'')+(mc.length?'<span class="cll" title="Your club: '+esc(mc.map(function(e){return e.title}).join(" · "))+'">\u25CF My club</span>':'')+chips+(on.length>3?'<span class="more">+'+(on.length-3)+' more</span>':'')+dots+'</div>';
   }
   $("calGrid").innerHTML=h;
   var inm=L.filter(function(e){return inMonth(e,S.calMonth)&&(!e._r||occ(e))});
@@ -319,7 +333,7 @@ function renderDay(L){
   $("calDay").innerHTML=(st.length?'<div class="starbar"><span class="stk">'+STAR_SVG+'Want to attend</span>'+st.map(function(e){return '<span class="sti">'+esc(e.title)+'</span>'}).join("")+'</div>':'')+(hn?'<div class="holbar"><span class="holk">Public holiday</span><span class="holi">'+esc(hn)+'</span><a class="holsrc" href="'+esc(HOL[S.calDay][0].source)+'" target="_blank" rel="noopener">gov.za</a></div>':'')+'<h3>'+fmt(pd(S.calDay),true)+' · '+countTxt(on.filter(function(e){return !e._r}).length,on.filter(function(e){return e._r}).length)+'</h3>'+(on.length?'<div class="grid">'+on.map(card).join("")+'</div>':'<p class="resultline">Nothing listed for this day.</p>');
 }
 function popup(g){
-  return '<div class="pop">'+g.map(function(e){return '<div class="pe"><a class="pt" href="'+esc(link(e))+'" target="_blank" rel="noopener">'+thumb(e)+'</a><div class="pbody"><div class="ttl"><h4>'+esc(e.title)+'</h4>'+starBtn(e)+'</div><p>'+when(e)+(e.time?" · "+esc(e.time):"")+'<br>'+esc(e.venue||"")+(e.venue?", ":"")+esc(e.town)+'</p>'+
+  return '<div class="pop">'+g.map(function(e){return '<div class="pe"><a class="pt" href="'+esc(link(e))+'" target="_blank" rel="noopener">'+thumb(e)+'</a><div class="pbody">'+clubTag(e)+'<div class="ttl"><h4>'+esc(e.title)+'</h4>'+starBtn(e)+'</div><p>'+when(e)+(e.time?" · "+esc(e.time):"")+'<br>'+esc(e.venue||"")+(e.venue?", ":"")+esc(e.town)+'</p>'+
     '<span class="pc '+e.category+'">'+CATS[e.category]+'</span>'+(STL[e.status]?'<span class="pc st'+(isOff(e)?" off":"")+'">'+STL[e.status]+'</span>':'')+(e.geo_source==="town centroid"?'<span style="font-size:.7rem;color:#888">approx.</span> ':'')+'<br><a class="go" href="'+esc(link(e))+'" target="_blank" rel="noopener">'+blab(e)+' →</a> <button type="button" class="go gshare" data-share="'+esc(e.id)+'">Share</button> <button type="button" class="go gshare" data-open="'+esc(e.id)+'">Details</button></div></div>'}).join("")+'</div>';
 }
 var FORK='<svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>';
@@ -477,7 +491,7 @@ function renderCinema2(){
   }
   $("view-cinema").innerHTML=h;
 }
-var COL={concert:"#2a6f97",festival:"#e76f51",musical:"#8e4ec6",market:"#5b8c2a",funrun:"#d63384",community:"#b7791f",arts:"#0f766e",quiz:"#4f46e5",festive:"#b4233c",nature:"#15803d",sport:"#0e7490",film:"#374151",restaurant:"#c2410c"};
+var COL={concert:"#2a6f97",festival:"#a02a9a",musical:"#8e4ec6",market:"#5b8c2a",funrun:"#e5530a",community:"#b7791f",arts:"#0f766e",quiz:"#4f46e5",festive:"#b4233c",nature:"#15803d",sport:"#0e7490",film:"#374151",restaurant:"#5b2a86"};
 var GRB=[[-33.55,21.95],[-34.2,24.0]];
 function renderMap(){
   var L=filtered(false,false).filter(function(e){return e.lat!=null&&e.lng!=null});
@@ -503,6 +517,8 @@ function stats(){
 function render(){
   ["list","cal","map","cinema"].forEach(function(v){$("view-"+v).hidden=S.view!==v});
   document.body.classList.toggle("view-cinema",S.view==="cinema");
+  var run=S.cat==="funrun"&&S.view!=="cinema";document.body.classList.toggle("theme-run",run);
+  var tc=document.querySelector('meta[name="theme-color"]');if(tc)tc.setAttribute("content",run?"#b84300":"#0d3b2e");
   Array.prototype.forEach.call(document.querySelectorAll(".views button"),function(b){b.classList.toggle("on",b.dataset.view===S.view)});
   var ft=$("filtToggle");if(ft)ft.classList.toggle("has-active",document.body.classList.contains("filters-hidden")&&filtersActive());
   Array.prototype.forEach.call(document.querySelectorAll("#catChips button"),function(b){b.classList.toggle("on",b.dataset.starred?!!S.starred:b.dataset.nye?!!S.nye:b.dataset.xmas?!!S.xmas:b.dataset.cat===S.cat);if(b.dataset.starred)b.setAttribute("aria-pressed",!!S.starred)});

@@ -1870,3 +1870,23 @@ add(title="The Music of Bee Gees and Friends (Vernon Ericson Barnard)",category=
     venue_address="Market Street, George",price_from="R120",ticket_url="",
     source_url="https://www.georgeherald.com/Entertainment/Article/eyes-on-arts-upcoming-entertainment-highlights-in-george-and-surrounds-202611050156",source_name="George Herald (Eyes on arts)",alt_sources=[],
     notes="Bookings and enquiries: Heather 072 369 3304.")
+
+# ---------------- Running-club races (added 9 Nov 2026 for the profile club picker; hosts per RunningCalendar organiser pages) ----------------
+_RC="https://runningcalendar.co.za/events/"
+add(title="Hartenbos Drawwers Aand Kersdraffie (10 km & 4 km fun run/walk)",category="funrun",start_date="2026-12-23",time="18:00",town="Mossel Bay",venue="Bayview Park",venue_address="Bayview, Mossel Bay",lat=-34.13582,lng=22.100613,geo_source="event page",
+    price_from="R50",ticket_url="https://entrytickets.net/kersdraffie",source_url=_RC+"hartenbos-drawwers-aand-kersdraffie",source_name="RunningCalendar.co.za",alt_sources=["https://runningcalendar.co.za/organisers/hartenbos-drawwers"],
+    notes="Evening Christmas 'draffie' (jog) hosted by Hartenbos Drawwers: 10 km road race and 4 km fun run/walk, both 18:00. Entries open online: 10 km R145, 4 km R50, ASA temporary licence R50 for unlicensed runners (online entries close 18 Dec, 12:00).")
+add(title="Dotsure race, George (21.1 / 10 / 5 km)",category="funrun",start_date="2027-01-23",time="06:00",town="George",venue="Outeniqua Park Rugby Stadium",venue_address="Outeniqua Park Rugby Stadium, George",
+    price_from="",ticket_url="",source_url=_RC+"dotsure",source_name="RunningCalendar.co.za",alt_sources=["https://runningcalendar.co.za/organisers/outeniqua-harriers"],
+    notes="Outeniqua Harriers race: half marathon, 10 km and 5 km road races, all starting 06:00. Entry fees not published yet.")
+add(title="Doodskis Berg Half Marathon, Albertinia (21.1 & 10 km)",category="funrun",start_date="2027-02-20",time="06:30",town="Albertinia",venue="Albertinia Golf Club",venue_address="Golf Club, Albertinia",
+    price_from="",ticket_url="",source_url=_RC+"doodskis-berg",source_name="RunningCalendar.co.za",alt_sources=["https://runningcalendar.co.za/organisers/32gi"],
+    notes="32Gi Running Club SWD race: half marathon and 10 km road race from the golf club, 06:30. Entry fees not published yet.")
+add(title="Stor-Age Edgemead 10 km Classic (10 km & 5 km fun run)",category="funrun",start_date="2026-11-14",time="06:30 (5 km 07:15)",town="Cape Town",venue="Edgemead High School",venue_address="Edgemead High School, Edgemead, Cape Town",lat=-33.872557,lng=18.551191,geo_source="event page",
+    price_from="R110",ticket_url="https://www.entryninja.com/events/84462-edgemead-10km-classic",source_url=_RC+"edgemead-classic",source_name="RunningCalendar.co.za",alt_sources=["https://runningcalendar.co.za/organisers/edgemead-runners"],
+    notes="Edgemead Runners' 10 km road race (06:30) with a 5 km fun run (07:15). Entry R110, juniors R60. RunningCalendar lists the event as sold out.")
+_PAC=_weekly({3},start="2026-11-05",end="2026-12-31")
+add(title="Plett Athletics Club Thursday club run (3 / 5 / 8 km)",category="funrun",start_date=_PAC[0],end_date=_PAC[-1],occurrences=_PAC,recurrence="Every Thursday, 17:15",time="17:15",town="Plettenberg Bay",
+    venue="Plettenberg Bay Ski Boat Club",venue_address="Central Beach, Plettenberg Bay",price_from="",ticket_url="",
+    source_url="https://showme.co.za/plett/event/join-plett-athletics-club-every-thursday/",source_name="ShowMe Plettenberg Bay",alt_sources=["https://www.plettskiboatclub.co.za/"],
+    notes="Friendly weekly club run along the Plett coastline, about 3, 5 or 8 km; runners and walkers of all levels and visitors welcome. Start time may vary seasonally, so confirm with the club (Byron, 082 783 3138). Listed 5 Nov to 31 Dec 2026.")

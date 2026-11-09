@@ -1,13 +1,13 @@
 /* Garden Route Events: coastal / forest palette */
 :root{
-  --forest:#0d3b2e; --forest2:#13563f; --ocean:#1d6f7a; --teal:#3fb6a8; --sand:#f5efe4; --sun:#e9c46a; --coral:#e76f51;
+  --forest:#0d3b2e; --forest2:#13563f; --ocean:#1d6f7a; --teal:#3fb6a8; --sand:#f5efe4; --sun:#e9c46a; --coral:#6b21a8;
   --bg:#f7f3ec; --surface:#ffffff; --surface2:#fbf8f3; --ink:#15231d; --mut:#5f6f68; --line:#e6dfd2; --shadow:0 1px 2px rgba(16,40,30,.06),0 8px 24px rgba(16,40,30,.08);
-  --concert:#2a6f97; --festival:#e76f51; --musical:#8e4ec6; --market:#5b8c2a; --funrun:#d63384; --community:#b7791f; --arts:#0f766e;
+  --concert:#2a6f97; --festival:#a02a9a; --musical:#8e4ec6; --market:#5b8c2a; --funrun:#e5530a; --community:#b7791f; --arts:#0f766e;
   --r:16px; --font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; --display:"Fraunces",Georgia,serif;
 }
 @media (prefers-color-scheme:dark){:root{
   --bg:#0e1714; --surface:#16211d; --surface2:#1b2823; --ink:#e9efe9; --mut:#9db0a7; --line:#26362f; --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
-  --concert:#5aa6d6; --festival:#f08a6c; --musical:#b98ae6; --market:#8cc152; --funrun:#f06aa8; --community:#e0a94a; --arts:#2dd4bf;
+  --coral:#9333ea; --concert:#5aa6d6; --festival:#e07ad9; --musical:#b98ae6; --market:#8cc152; --funrun:#ff6a1f; --community:#e0a94a; --arts:#2dd4bf;
 }}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -110,9 +110,9 @@ main{max-width:1180px;margin:0 auto;padding:16px 22px 40px}
 .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
 .ph svg{width:34%;height:auto;opacity:.92;fill:rgba(255,255,255,.9);filter:drop-shadow(0 4px 10px rgba(0,0,0,.18))}
 .ph.concert{background:radial-gradient(circle at 20% 20%,#7cc6e8 0,transparent 45%),linear-gradient(135deg,#1b4f72,#2a6f97 55%,#48a3b8)}
-.ph.festival{background:radial-gradient(circle at 80% 15%,#ffd38a 0,transparent 45%),linear-gradient(135deg,#c2452d,#e76f51 55%,#f4a261)}
+.ph.festival{background:radial-gradient(circle at 80% 15%,#f6c6f1 0,transparent 45%),linear-gradient(135deg,#5c1259,#a02a9a 55%,#d282cc)}
 .ph.musical{background:radial-gradient(circle at 75% 25%,#e4b8ff 0,transparent 45%),linear-gradient(135deg,#4b2a7b,#8e4ec6 60%,#c27ad8)}
-.ph.funrun{background:radial-gradient(circle at 75% 20%,#ffc2dc 0,transparent 45%),linear-gradient(135deg,#8f1d55,#d63384 55%,#f28cb8)}
+.ph.funrun{background:radial-gradient(circle at 75% 20%,#ffd3b3 0,transparent 45%),linear-gradient(135deg,#9a3300,#e5530a 55%,#ff8a3d)}
 .ph.arts{background:radial-gradient(circle at 70% 25%,#99f6e4 0,transparent 45%),linear-gradient(135deg,#134e4a,#0f766e 55%,#5eead4)}
 .ph.community{background:radial-gradient(circle at 25% 20%,#ffe2a8 0,transparent 45%),linear-gradient(135deg,#7a4d0e,#b7791f 55%,#e3b04b)}
 .ph.market{background:radial-gradient(circle at 25% 20%,#e6f2a8 0,transparent 45%),linear-gradient(135deg,#335d1a,#5b8c2a 55%,#a3b84c)}
@@ -192,7 +192,7 @@ main{max-width:1180px;margin:0 auto;padding:16px 22px 40px}
 .pe h4{margin:0 0 3px;font-size:.88rem;line-height:1.25}
 .pe p{margin:0 0 5px;font-size:.76rem;color:#55665f;line-height:1.35}
 .pe .pc{font-size:.62rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:999px;color:#fff;margin-right:4px}
-.pe .pc.concert{background:#2a6f97}.pe .pc.festival{background:#e76f51}.pe .pc.musical{background:#8e4ec6}.pe .pc.market{background:#5b8c2a}.pe .pc.funrun{background:#d63384}.pe .pc.community{background:#b7791f}.pe .pc.arts{background:#0f766e}
+.pe .pc.concert{background:#2a6f97}.pe .pc.festival{background:#a02a9a}.pe .pc.musical{background:#8e4ec6}.pe .pc.market{background:#5b8c2a}.pe .pc.funrun{background:#e5530a}.pe .pc.community{background:#b7791f}.pe .pc.arts{background:#0f766e}
 .pe a.go{font-size:.78rem;font-weight:700;color:#1d6f7a}
 .maplegend{font-size:.85rem;color:var(--mut);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
 .lg{display:inline-block;border-radius:50%}
@@ -285,7 +285,7 @@ body.v-rest #catChips,body.v-rest #month,body.v-rest #offToggle{display:none!imp
 .rintro{color:var(--mut);font-size:.9rem;margin:6px 0 4px;max-width:760px}
 .rcard .thumb{aspect-ratio:16/9}
 .rcard .cat.rest,.cat.rest{background:var(--forest2)}
-.ph.rest{background:radial-gradient(circle at 70% 25%,#fde68a 0,transparent 45%),linear-gradient(135deg,#7c2d12,#c2410c 55%,#fb923c)}
+.ph.rest{background:radial-gradient(circle at 70% 25%,#e9d5ff 0,transparent 45%),linear-gradient(135deg,#2e1048,#5b2a86 55%,#9b6fc8)}
 .ph.rest svg{width:56px;height:56px;fill:rgba(255,255,255,.85)}
 .rcard .where a{color:inherit;text-decoration:none}.rcard .where a:hover{text-decoration:underline}
 .rblurb{margin:6px 0 4px;font-size:.88rem;color:var(--mut)}
@@ -317,12 +317,12 @@ body.v-rest #catChips,body.v-rest #month,body.v-rest #offToggle{display:none!imp
 .nyebadge{display:inline-block;font-size:.72rem;font-weight:600;padding:.1rem .45rem;border-radius:999px;background:#1f2a5a;color:#fff;margin-left:.3rem}
 
 /* restaurants as a category */
-:root{--restaurant:#c2410c}
-@media (prefers-color-scheme:dark){:root{--restaurant:#fb923c}}
+:root{--restaurant:#5b2a86}
+@media (prefers-color-scheme:dark){:root{--restaurant:#b48ad8}}
 .dot.restaurant,.cat.restaurant{background:var(--restaurant)}
-.ph.restaurant{background:radial-gradient(circle at 70% 25%,#fed7aa 0,transparent 45%),linear-gradient(135deg,#7c2d12,#c2410c 55%,#fdba74)}
+.ph.restaurant{background:radial-gradient(circle at 70% 25%,#e9d5ff 0,transparent 45%),linear-gradient(135deg,#2e1048,#5b2a86 55%,#a98bd0)}
 .chip.restaurant{background:color-mix(in srgb,var(--restaurant) 14%,transparent);border-color:var(--restaurant)}
-.pe .pc.restaurant{background:#c2410c}
+.pe .pc.restaurant{background:#5b2a86}
 .atrest{display:flex;align-items:center;gap:4px;font-size:.85rem;color:var(--mut)}
 .atrest svg{width:15px;height:15px;fill:currentColor;flex:none}
 .atrest .rlink{font-weight:600;color:var(--restaurant);padding:0}
@@ -517,3 +517,29 @@ body.view-cinema #offToggle{display:none}
 .stk svg{width:13px;height:13px;fill:var(--starfill)}
 .sti{font-weight:600}
 body:not(.signed-in) #catChips .starchip{display:none}
+
+/* ---------- Running theme: the whole app turns run orange while the "Runs, walks & trails" view is open ---------- */
+:root{--run:#e5530a;--rundeep:#b84300;--runbg:#fff1e8}
+@media (prefers-color-scheme:dark){:root{--run:#ff6a1f;--rundeep:#ff6a1f;--runbg:#2e1a0e}}
+body.theme-run{--forest:#b84300;--forest2:#c44a00;--ocean:#e5530a;--teal:#ff7a2e;--sun:#ffd0a8;--coral:#b84300}
+@media (prefers-color-scheme:dark){body.theme-run{--forest:#c44a00;--forest2:#ff8a3d;--teal:#ff8a3d}}
+body.theme-run .hero{background:radial-gradient(1200px 400px at 85% -10%,rgba(255,196,150,.38),transparent 60%),radial-gradient(900px 500px at 0% 0%,rgba(255,138,61,.35),transparent 60%),linear-gradient(160deg,#6e2600 0%,#9a3300 35%,#c84800 70%,#e5530a 100%)}
+body.theme-run .chips button.on{background:var(--run);border-color:var(--run);color:#fff}
+body.theme-run .views button.on{color:var(--rundeep);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--run) 55%,transparent)}
+body.theme-run .seg button.on{background:var(--run);box-shadow:0 2px 8px rgba(229,83,10,.35)}
+body.theme-run .btn{background:var(--run)}body.theme-run .btn:hover{background:var(--rundeep)}
+body.theme-run .bar{border-bottom-color:color-mix(in srgb,var(--run) 45%,transparent)}
+body.theme-run .sec .pill,body.theme-run .grtag{background:color-mix(in srgb,var(--run) 16%,transparent);color:var(--rundeep)}
+body.theme-run .sec h2{color:var(--rundeep)}
+/* ---------- My club ---------- */
+.clubtag{display:inline-flex;align-items:center;gap:3px;font-size:.66rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--run);padding:2px 8px;border-radius:6px;width:max-content;margin:0 4px 4px 0}
+.hostline{font-size:.8rem;color:var(--mut);margin:2px 0 4px}.hostline.mine{color:var(--rundeep);font-weight:700}
+.card.myclub{box-shadow:var(--shadow),inset 0 0 0 2px color-mix(in srgb,var(--run) 55%,transparent)}
+.card.myclub.starred{box-shadow:var(--shadow),inset 0 0 0 2px color-mix(in srgb,var(--run) 55%,transparent),inset 0 0 0 4px color-mix(in srgb,var(--star) 35%,transparent)}
+.clubsec h2{color:var(--rundeep)}.clubsec .pill{background:color-mix(in srgb,var(--run) 16%,transparent)!important;color:var(--rundeep)!important}
+.clubchg{margin-left:auto;font-size:.82rem;font-weight:700;color:var(--rundeep)}
+.clubempty{border:1px dashed color-mix(in srgb,var(--run) 45%,transparent)}
+.day.club{box-shadow:inset 0 -3px 0 var(--run)}
+.cll{display:block;font-size:.62rem;font-weight:800;line-height:1.15;color:var(--rundeep);text-transform:uppercase;letter-spacing:.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:600px){.cll{font-size:.52rem;letter-spacing:-.01em;text-transform:none}}
+.chip.clubc{font-weight:700;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--run) 50%,transparent)}

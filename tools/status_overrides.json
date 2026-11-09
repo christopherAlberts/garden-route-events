@@ -26,5 +26,9 @@
  "2027-01-30-two-lagoons-30-km-10-km": {
   "status": "scheduled",
   "status_note": "Date is provisional for 2027; the RunningCalendar link still shows the sold-out 2026 edition."
+ },
+ "2026-11-14-stor-age-edgemead-10-km-classic-10-km-5-km-fun-run": {
+  "status": "sold out",
+  "status_note": "RunningCalendar lists the event as sold out (checked 2026-11-09)."
  }
 }

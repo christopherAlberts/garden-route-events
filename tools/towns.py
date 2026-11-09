@@ -25,6 +25,7 @@ TOWNS={
  "Franschhoek":("Franschhoek, Western Cape","Cape Winelands",False),
  "Gqeberha":("Gqeberha, Eastern Cape","Nelson Mandela Bay",False),
  "Stilbaai":("Stilbaai, Western Cape","Hessequa (Stilbaai)",False),
+ "Albertinia":("Albertinia, Western Cape","Hessequa (Stilbaai)",False),
  "Riversdale":("Riversdale, Western Cape","Hessequa (Stilbaai)",False),
  "Hermanus":("Hermanus, Western Cape","Overberg",False),
  "Swellendam":("Swellendam, Western Cape","Overberg",False),
