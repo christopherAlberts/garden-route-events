@@ -1,5 +1,5 @@
 /* Shared look for the login and sign-up pages — matches css/style.css */
-:root{--forest:#0d3b2e;--ocean:#1d6f7a;--teal:#3fb6a8;--sun:#e9c46a;--coral:#e76f51;--bg:#f7f3ec;--surface:#fff;--ink:#15231d;--mut:#5f6f68;--line:#e6dfd2;
+:root{--forest:#0d3b2e;--ocean:#1d6f7a;--teal:#3fb6a8;--sun:#e9c46a;--coral:#e76f51;--bg:#f7f3ec;--surface:#fff;--surface2:#fbf8f3;--ink:#15231d;--mut:#5f6f68;--line:#e6dfd2;
 --shadow:0 1px 2px rgba(16,40,30,.06),0 8px 24px rgba(16,40,30,.08);--font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--display:"Fraunces",Georgia,serif}
 *{box-sizing:border-box}body{margin:0;font:15px/1.5 var(--font);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;min-height:100vh}
 a{color:var(--ocean);font-weight:600}
@@ -23,7 +23,7 @@ input{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:12
 .alt{text-align:center;margin:14px 0 0;font-size:.9rem;color:var(--mut)}
 .perks{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:6px;font-size:.88rem;color:var(--mut)}.perks li:before{content:"🌊 "}
 .foot{text-align:center;color:var(--mut);font-size:.8rem;margin-top:14px}
-@media (prefers-color-scheme:dark){:root{--bg:#0e1714;--surface:#16211d;--ink:#e9efe9;--mut:#9db0a7;--line:#26362f}.card h2{color:#e9efe9}input{background:#1b2823;color:#e9efe9}input:focus{background:#16211d}a{color:var(--teal)}.free{color:var(--sun)}}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1714;--surface:#16211d;--surface2:#1b2823;--ink:#e9efe9;--mut:#9db0a7;--line:#26362f}.card h2{color:#e9efe9}input{background:#1b2823;color:#e9efe9}input:focus{background:#16211d}a{color:var(--teal)}.free{color:var(--sun)}}
 /* admin */
 .wide{max-width:980px}.stats{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 14px}.stats div{flex:1;min-width:100px;background:rgba(63,182,168,.1);border-radius:12px;padding:10px;text-align:center;font-size:.82rem;color:var(--mut)}.stats b{display:block;font-size:1.5rem;color:var(--ocean)}
 .tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:.88rem}th,td{padding:8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}th{background:var(--forest);color:#fff}.tag{background:var(--sun);color:var(--forest);border-radius:6px;padding:1px 6px;font-size:.72rem}

@@ -279,7 +279,7 @@ function grouped(list,keep){
 function renderList(){
   var A=filtered(false,false),L=A.filter(function(e){return !e._r}),R=A.filter(function(e){return e._r});
   $("count").textContent=countTxt(L.length,R.length);
-  if(!A.length){$("view-list").innerHTML='<div class="empty"><b>'+(S.starred&&!Object.keys(STARS).length?"No starred events yet":"Nothing matches those filters")+'</b>'+(S.starred&&!Object.keys(STARS).length?'Tap the ☆ on any event to mark it as one you want to attend.':(S.scope==="gr"?'Try “All coast”, or clear a filter.':'Try clearing a filter.'))+'</div>';return}
+  if(!A.length){$("view-list").innerHTML='<div class="empty"><b>'+(S.starred&&!Object.keys(STARS).length?"No liked events yet":"Nothing matches those filters")+'</b>'+(S.starred&&!Object.keys(STARS).length?'Tap the ☆ on any event to mark it as one you want to attend.':(S.scope==="gr"?'Try “All coast”, or clear a filter.':'Try clearing a filter.'))+'</div>';return}
   var gr=L.filter(function(e){return e.garden_route}),wide=L.filter(function(e){return !e.garden_route});
   var h="";
   if(!S.q&&!S.month&&!S.town&&L.length){
@@ -525,7 +525,7 @@ function render(){
   var ft=$("filtToggle");if(ft)ft.classList.toggle("has-active",document.body.classList.contains("filters-hidden")&&filtersActive());
   Array.prototype.forEach.call(document.querySelectorAll("#catChips button"),function(b){b.classList.toggle("on",b.dataset.starred?!!S.starred:b.dataset.nye?!!S.nye:b.dataset.xmas?!!S.xmas:b.dataset.cat===S.cat);if(b.dataset.starred)b.setAttribute("aria-pressed",!!S.starred)});
   stats();
-  var af=[];if(S.starred)af.push("★ Starred");if(S.xmas)af.push("Christmas");if(S.nye)af.push("New Year's Eve");if(S.town)af.push(S.town);if(S.month)af.push(monthLabel(S.month));if(S.q)af.push("“"+S.q+"”");
+  var af=[];if(S.starred)af.push("★ Liked");if(S.xmas)af.push("Christmas");if(S.nye)af.push("New Year's Eve");if(S.town)af.push(S.town);if(S.month)af.push(monthLabel(S.month));if(S.q)af.push("“"+S.q+"”");
   $("activeFilters").textContent=af.length?"· "+af.join(" · "):"";
   var hid=EV.filter(function(e){return isOff(e)&&endOf(e)>=TODAY&&matches(e,S.view==="cal",true)}).length;
   $("offToggle").hidden=!hid;$("offToggle").textContent=S.off?"Hide postponed/cancelled ("+hid+")":hid+" postponed/cancelled hidden · show";
