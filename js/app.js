@@ -626,7 +626,7 @@ function bind(){
 bind();
 
 /* ---------- Weather (Open-Meteo) — list cards only ---------- */
-var WX={TTL:2*60*60*1000,KEY:"gre.wx.v6",mem:{},pend:{},unit:"C"};
+var WX={TTL:2*60*60*1000,KEY:"gre.wx.v7",mem:{},pend:{},unit:"C"};
 var WX_UNIT_KEY="gre.tempUnit";
 function wxLoadUnit(){try{var u=localStorage.getItem(WX_UNIT_KEY);if(u==="F"||u==="C")WX.unit=u}catch(e){} }
 function wxSaveUnit(u){WX.unit=(u==="F"?"F":"C");try{localStorage.setItem(WX_UNIT_KEY,WX.unit)}catch(e){} }
@@ -720,7 +720,7 @@ function wxFetchTown(town){if(WX.pend[town])return WX.pend[town];var co=wxTownCo
     var hC=j.hourly.weather_code||[],hT=j.hourly.temperature_2m||[],hA=j.hourly.apparent_temperature||[],hP=j.hourly.precipitation_probability||[];
     var hW=j.hourly.wind_speed_10m||[],hU=j.hourly.uv_index||[],hD=j.hourly.is_day||[];
     for(i=0;i<ht.length;i++){
-      var raw=String(ht[i]||""),ds=raw.slice(0,10),hm=/T(\d{2})/.exec(raw),hh=hm?+hm[1]:NaN;
+      var raw=String(ht[i]||""),ds=raw.slice(0,10),hm=/[T ](\d{2})(?::\d{2})?/.exec(raw),hh=hm?+hm[1]:NaN;
       if(!days[ds]||isNaN(hh))continue;
       days[ds].hours.push({hh:hh,code:hC[i],t:hT[i],at:hA[i],pop:hP[i],wind:hW[i],uv:hU[i],day:!!hD[i]});
     }
@@ -736,17 +736,18 @@ function wxCompact(d,runCat){if(!d||d.tmax==null||d.tmin==null)return"";
   if(d.pop!=null&&d.pop>=30)s+='<span class="wxchip rain">'+Math.round(d.pop)+"%</span>";
   if(d.wind!=null&&d.wind>=20)s+='<span class="wxchip wind">'+Math.round(d.wind)+" km/h</span>";
   var band=wxUvBand(d.uv);if(band&&d.uv>=6)s+='<span class="wxchip uv">UV '+band+'</span>';
-  if(runCat&&d.run)s+='<span class="wxchip run '+d.run.toLowerCase()+'">🏃 Run: '+d.run+'</span>';
+  if(runCat&&d.run)s+='<span class="wxchip run '+d.run.toLowerCase()+'">'+d.run+' running conditions</span>';
   return s}
 function wxHourStrip(d,ds){if(!d||!d.hours||!d.hours.length)return'<p class="wxnostrip">Hourly forecast unavailable</p>';
-  var startH=6,endH=21;if(ds===TODAY){var now=new Date().getHours();if(now>startH)startH=now}
+  var startH=6,endH=21,nowH=(new Date()).getHours();
+  if(ds===TODAY&&nowH>startH)startH=nowH;
   var h=d.hours.filter(function(x){return x.hh>=startH&&x.hh<=endH});
   if(!h.length)h=d.hours.filter(function(x){return x.hh>=6&&x.hh<=21});
+  if(!h.length)h=d.hours.slice(); /* last resort: show whatever hours we have */
   if(!h.length)return'<p class="wxnostrip">Hourly forecast unavailable</p>';
-  /* every hour if ≤10 slots, else every 2–3h */
-  var step=h.length>10?3:h.length>7?2:1;
-  h=h.filter(function(x,i){return i%step===0||x.hh===21});
-  return '<div class="wxstrip" role="list">'+h.map(function(x){var c=wxCond(x.code!=null?x.code:d.code);
+  var step=h.length>12?3:h.length>8?2:1;
+  var out=[],i;for(i=0;i<h.length;i++){if(i%step===0||i===h.length-1)out.push(h[i])}
+  return '<div class="wxstrip" role="list" aria-label="Hourly forecast">'+out.map(function(x){var c=wxCond(x.code!=null?x.code:d.code);
     return '<div class="wxh" role="listitem"><span class="wxht">'+(x.hh<10?"0":"")+x.hh+':00</span><span class="wxhi" aria-hidden="true">'+c.icon+'</span><span class="wxhv">'+wxTempStr(x.t)+'</span>'+(x.pop!=null?'<span class="wxhp">'+Math.round(x.pop)+'%</span>':'')+'</div>'}).join("")+'</div>'}
 function wxModalHtml(town,ds,d,runCat){if(!d)return'<button type="button" class="mclose" data-wx-close aria-label="Close">×</button><p class="wxempty">Forecast unavailable</p>';
   var c=wxCond(d.code),dateLbl="";try{dateLbl=fmt(pd(ds),true)}catch(e){dateLbl=ds}
@@ -774,8 +775,13 @@ function wxModalHtml(town,ds,d,runCat){if(!d)return'<button type="button" class=
   html+='<p class="wxcredit">Forecast: Open-Meteo · Times SAST · °'+WX.unit+'</p>';
   return html}
 function wxOpen(town,ds,cat){var m=$("wxModal"),box=$("wxBox");if(!m||!box)return;
-  var d=wxGetDay(town,ds);box.innerHTML=wxModalHtml(town,ds,d,wxIsRunCat(cat));m.hidden=false;document.body.classList.add("modal-open");
-  try{box.focus({preventScroll:true})}catch(e){}}
+  function show(d){box.innerHTML=wxModalHtml(town,ds,d,wxIsRunCat(cat));m.hidden=false;document.body.classList.add("modal-open");try{box.focus({preventScroll:true})}catch(e){}}
+  var d=wxGetDay(town,ds);if(d&&d.hours&&d.hours.length){show(d);return}
+  box.innerHTML='<button type="button" class="mclose" data-wx-close aria-label="Close">×</button><p class="wxempty">Loading hourly forecast…</p>';
+  m.hidden=false;document.body.classList.add("modal-open");
+  /* Drop stale daily-only cache entry for this town, then refetch */
+  try{if(WX.mem[town])delete WX.mem[town];wxSaveCache()}catch(e){}
+  wxFetchTown(town).then(function(){show(wxGetDay(town,ds))}).catch(function(){show(null)})}
 function wxClose(){var m=$("wxModal");if(!m||m.hidden)return;m.hidden=true;if($("evModal").hidden&&$("filmOv").hidden)document.body.classList.remove("modal-open");
   var box=$("wxBox");if(box)box.innerHTML=""}
 function wxApply(){Array.prototype.forEach.call(document.querySelectorAll(".wx[data-wx-town][data-wx-date]"),function(el){
