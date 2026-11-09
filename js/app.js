@@ -121,15 +121,16 @@ function toggleStar(id){if(!ME)return;var uid=ME,on=!STARS[id];setStar(id,on);af
   fetch("/api/stars/"+encodeURIComponent(id),{method:on?"PUT":"DELETE",credentials:"same-origin",headers:{"Accept":"application/json"}})
     .then(function(r){if(!r.ok)throw r}).catch(function(r){if(ME!==uid)return;setStar(id,!on);afterStar();
       if(r&&r.status===401){logoutStars();toast("Your session ended. Log in again to save stars.")}else toast("Couldn\u2019t save the star. Check your connection.")})}
-function logoutStars(){ME=null;STARS={};clearStarCaches(null);document.body.classList.remove("signed-in");render()}
+function refreshModal(){var id=$("evBox").dataset.id,e=id&&byId(id);if($("evModal").hidden||!e)return;$("evBox").innerHTML='<button type="button" class="mclose" data-close aria-label="Close">×</button>'+detailHtml(e)}
+function logoutStars(){ME=null;STARS={};clearStarCaches(null);document.body.classList.remove("signed-in");render();refreshModal()}
 function syncStars(){if(!API_OK){logoutStars();return}
   fetch("/api/me",{credentials:"same-origin",cache:"no-store",headers:{"Accept":"application/json"}}).then(function(r){if(r.status===401)return "out";return r.ok?r.json():null}).then(function(me){
     if(me==="out"||(me&&!me.id)){if(ME)logoutStars();else clearStarCaches(null);return}
     if(!me)return; /* network blip: keep whatever is showing */
-    var uid=String(me.id);if(ME!==uid){ME=uid;clearStarCaches("gre_stars_"+uid);try{STARS=JSON.parse(localStorage.getItem("gre_stars_"+uid)||"{}")||{}}catch(x){STARS={}}document.body.classList.add("signed-in");render()}
+    var uid=String(me.id);if(ME!==uid){ME=uid;clearStarCaches("gre_stars_"+uid);try{STARS=JSON.parse(localStorage.getItem("gre_stars_"+uid)||"{}")||{}}catch(x){STARS={}}document.body.classList.add("signed-in");render();refreshModal()}
     return fetch("/api/stars",{credentials:"same-origin",cache:"no-store",headers:{"Accept":"application/json"}}).then(function(r){if(r.status===401){logoutStars();return null}return r.ok?r.json():null}).then(function(d){
       if(!d||!Array.isArray(d.stars)||ME!==uid)return;var srv={};d.stars.forEach(function(x){srv[x.event_id]=Date.parse((x.created_at||"").replace(" ","T")+"Z")||1});
-      var changed=JSON.stringify(Object.keys(srv).sort())!==JSON.stringify(Object.keys(STARS).sort());STARS=srv;saveStars();if(changed)render()})}).catch(function(){})}
+      var changed=JSON.stringify(Object.keys(srv).sort())!==JSON.stringify(Object.keys(STARS).sort());STARS=srv;saveStars();if(changed){render();refreshModal()}})}).catch(function(){})}
 function copy(txt){
   function fb(){var ta=document.createElement("textarea");ta.value=txt;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();
     var ok=false;try{ok=document.execCommand("copy")}catch(x){}document.body.removeChild(ta);toast(ok?"Link copied":"Copy failed, long-press to copy: "+txt)}
