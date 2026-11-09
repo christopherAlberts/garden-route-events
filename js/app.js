@@ -297,8 +297,6 @@ function renderList(){
   if(rwide.length)h+=restSection(rwide,"Restaurants &amp; pubs, rest of the coast");
   $("view-list").innerHTML=h;
 }
-/* theme-color drives the phone's status/address bar (and Samsung/Chrome bottom bars); replacing the tag makes Safari repaint */
-function setThemeColor(c){var o=document.querySelector('meta[name="theme-color"]');if(o&&o.getAttribute("content")===c)return;var m=document.createElement("meta");m.name="theme-color";m.content=c;if(o)o.parentNode.replaceChild(m,o);else document.head.appendChild(m)}
 function clubSection(){var c=CLUBBY[MYCLUB];if(!c)return "";
   var up=EV.filter(function(e){return isMine(e)&&endOf(e)>=TODAY&&!isOff(e)&&(!S.town||e.town===S.town)&&(!S.month||inMonth(e,S.month))}).sort(function(a,b){return nextDate(a).localeCompare(nextDate(b))});
   return '<div class="sec clubsec"><h2>My club: '+esc(c.name)+'</h2><span class="pill">'+(up.length?up.length+' upcoming':'none listed')+'</span><a class="clubchg" href="/profile#club">Change</a></div>'+
@@ -520,7 +518,7 @@ function render(){
   ["list","cal","map","cinema"].forEach(function(v){$("view-"+v).hidden=S.view!==v});
   document.body.classList.toggle("view-cinema",S.view==="cinema");
   var run=S.cat==="funrun"&&S.view!=="cinema";document.body.classList.toggle("theme-run",run);
-  setThemeColor(run?"#b84300":"#0d3b2e");
+
   Array.prototype.forEach.call(document.querySelectorAll(".views button"),function(b){b.classList.toggle("on",b.dataset.view===S.view)});
   var ft=$("filtToggle");if(ft)ft.classList.toggle("has-active",document.body.classList.contains("filters-hidden")&&filtersActive());
   Array.prototype.forEach.call(document.querySelectorAll("#catChips button"),function(b){b.classList.toggle("on",b.dataset.starred?!!S.starred:b.dataset.nye?!!S.nye:b.dataset.xmas?!!S.xmas:b.dataset.cat===S.cat);if(b.dataset.starred)b.setAttribute("aria-pressed",!!S.starred)});

@@ -33,7 +33,7 @@ CLUBS=[
       notes="Hosts the Fancourt 10 km.",match=[r"fancourt 10 ?km"]),
  dict(id="rainbow-ac",asa=True,asa_source='https://clubmanager.finishtime.co.za/',asa_note='Listed as Rainbow AC SWD (RBOWSWD) under Athletics South Western Districts',name="Rainbow Athletics Club",town="George",source_url=RC+"rainbow-athletics-club",source_name="RunningCalendar organiser page",alt_sources=[ASWD_RES],
       notes="Hosts the Palm Tyres Run (June).",match=[]),
- dict(id="maverick-swd",asa=True,asa_source='https://maverickathleticclub.co.za/',asa_note='The national Maverick Athletic Club site says the club is registered with ASA (and TSA/CSA); the George branch races as Maverick Athletic Club SWD',name="Maverick Athletic Club SWD (Mavericks)",town="George",source_url="https://www.localgymsandfitness.com/ZA/George/1113193705221060/Maverick-SWD",source_name="Maverick SWD Facebook page (mirrored; address George 6529)",alt_sources=["https://maverickathleticclub.co.za/","https://raceface.co.za/results/clubs/maverick-athletic-club-swd/",ASWD_RES],
+ dict(id="maverick-swd",asa=True,asa_source='https://maverickathleticclub.co.za/',asa_note='The national Maverick Athletic Club site says the club is registered with ASA (and TSA/CSA); the George branch races as Maverick Athletic Club SWD',name="Maverick Athletic Club SWD",town="George",source_url="https://www.localgymsandfitness.com/ZA/George/1113193705221060/Maverick-SWD",source_name="Maverick SWD Facebook page (mirrored; address George 6529)",alt_sources=["https://maverickathleticclub.co.za/","https://raceface.co.za/results/clubs/maverick-athletic-club-swd/",ASWD_RES],
       notes="New George branch (Nov 2026) of the national Maverick Athletic Club: weekly training and coffee runs; members race in SWD road races. No club-hosted dated events found.",match=[]),
  dict(id="boxer-ac-swd",asa=None,asa_source='',asa_note='',name="Boxer AC SWD",town="George",source_url=RC+"boxer-ac-swd",source_name="RunningCalendar organiser page",alt_sources=[],
       notes="Hosts the Boxer Fast 5 road race (June).",match=[]),
@@ -60,3 +60,22 @@ CLUBS=[
  dict(id="edgemead-runners",asa=True,asa_source='https://clubmanager.finishtime.co.za/',asa_note='Listed as Edgemead Runners (EDGE) under Western Province Athletics',name="Edgemead Runners",town="Cape Town",source_url=RC+"edgemead-runners",source_name="RunningCalendar organiser page",alt_sources=[ASWD_RES],
       notes="Hosts the Edgemead 10 km Classic.",match=[r"edgemead 10 ?km classic"]),
 ]
+
+# Club logos (img/clubs/<id>.webp, 96 px, downloaded from these sources - the club's own site or its RunningCalendar
+# organiser page). Clubs not listed here get a neutral initials badge in the picker, never a made-up logo.
+LOGOS={
+ "32gi-swd": "https://media.runningcalendar.co.za/5503/32gi.webp",
+ "cape-multisport-eden": "https://media.runningcalendar.co.za/5246/cape-multisport-eden.webp",
+ "celtic-harriers": "https://media.runningcalendar.co.za/5984/03at1d5QV7Jx3o4paWHAcmrzcLRRcYcuNH6kyNlp.webp",
+ "hartenbos-drawwers": "https://media.runningcalendar.co.za/6079/Zn8EsOb8s9kSq5woDRdMS2mYlNuPkhET2d2QtgCb.webp",
+ "mossel-bay-harriers": "https://media.runningcalendar.co.za/4337/Mosselbay-Harriers.jpg",
+ "central-athletics": "https://www.centralathletics.co.za/wp-content/uploads/2015/09/cropped-Central-White-Logo-270x270.jpg",
+ "gtr": "https://gtrtrails.run/wp-content/uploads/2020/11/GTR-LOGO-2020-512x512-1.png",
+ "knysna-marathon-club": "https://knysnamarathonclub.co.za/wp-content/uploads/2026/07/cropped-Site-Icon-White-270x270.png",
+ "maverick-swd": "https://maverickathleticclub.co.za/wp-content/uploads/2024/04/MAC-Black.webp",
+ "nedbank-rc-swd": "https://eolstoragewe.blob.core.windows.net/wm-1768198-cmsimages/logos/NBRC-Nav-Logo.png",
+ "runwalk-for-life-george": "https://runwalkforlife.co.za/wp-content/uploads/2026/09/RWFL-Logo-man.png"
+}
+for _c in CLUBS:
+    _c["logo"]=("img/clubs/"+_c["id"]+".webp") if _c["id"] in LOGOS else None
+    _c["logo_source"]=LOGOS.get(_c["id"])
