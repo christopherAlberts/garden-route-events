@@ -108,12 +108,12 @@ var STAR_SVG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5
 var ME=null,STARS={};
 /* ---------- running club: one per user, saved on the server (/api/club); events carry clubs:[club ids] (tools/clubs.py) ---------- */
 var CLUBS=window.CLUBS||[],CLUBBY={};CLUBS.forEach(function(c){CLUBBY[c.id]=c});
-var MYCLUB=null;
+var MYCLUB=null,MYASA=null;
 function isMine(e){return !!(MYCLUB&&e&&!e._r&&(e.clubs||[]).indexOf(MYCLUB)>=0)}
 function clubTag(e){return isMine(e)?'<span class="clubtag" title="Hosted by your club, '+esc(CLUBBY[MYCLUB].name)+'">\u25CF My club</span>':""}
 function hostLine(e){var c=(e.clubs||[]).map(function(i){return CLUBBY[i]}).filter(Boolean);return c.length?'<div class="hostline'+(isMine(e)?" mine":"")+'">Hosted by '+c.map(function(x){return esc(x.name)+(x.id===MYCLUB?" (your club)":"")}).join(", ")+'</div>':""}
 function syncClub(uid){return fetch("/api/club",{credentials:"same-origin",cache:"no-store",headers:{"Accept":"application/json"}}).then(function(r){return r.ok?r.json():null}).then(function(d){
-  if(!d||ME!==uid)return;var c=d.club_id&&CLUBBY[d.club_id]?d.club_id:null;if(c!==MYCLUB){MYCLUB=c;render();refreshModal()}}).catch(function(){})}
+  if(!d||ME!==uid)return;var c=d.club_id&&CLUBBY[d.club_id]?d.club_id:null,a=typeof d.asa_number==="string"&&d.asa_number?d.asa_number:null;if(c!==MYCLUB||a!==MYASA){MYCLUB=c;MYASA=a;render();refreshModal()}}).catch(function(){})}
 function clearStarCaches(keep){try{for(var i=localStorage.length-1;i>=0;i--){var k=localStorage.key(i);if(k&&(/^gre_stars_/.test(k)&&k!==keep||k==="gre.stars"||k==="gre.starsPending"))localStorage.removeItem(k)}}catch(x){}}
 function starKey(){return ME?"gre_stars_"+ME:null}
 function saveStars(){var k=starKey();if(!k)return;try{localStorage.setItem(k,JSON.stringify(STARS))}catch(x){}}
@@ -130,7 +130,7 @@ function toggleStar(id){if(!ME)return;var uid=ME,on=!STARS[id];setStar(id,on);af
     .then(function(r){if(!r.ok)throw r}).catch(function(r){if(ME!==uid)return;setStar(id,!on);afterStar();
       if(r&&r.status===401){logoutStars();toast("Your session ended. Log in again to save stars.")}else toast("Couldn\u2019t save the star. Check your connection.")})}
 function refreshModal(){var id=$("evBox").dataset.id,e=id&&byId(id);if($("evModal").hidden||!e)return;$("evBox").innerHTML='<button type="button" class="mclose" data-close aria-label="Close">×</button>'+detailHtml(e)}
-function logoutStars(){ME=null;STARS={};MYCLUB=null;clearStarCaches(null);document.body.classList.remove("signed-in");render();refreshModal()}
+function logoutStars(){ME=null;STARS={};MYCLUB=null;MYASA=null;clearStarCaches(null);document.body.classList.remove("signed-in");render();refreshModal()}
 function syncStars(){if(!API_OK){logoutStars();return}
   fetch("/api/me",{credentials:"same-origin",cache:"no-store",headers:{"Accept":"application/json"}}).then(function(r){if(r.status===401)return "out";return r.ok?r.json():null}).then(function(me){
     if(me==="out"||(me&&!me.id)){if(ME)logoutStars();else clearStarCaches(null);return}
@@ -299,7 +299,7 @@ function renderList(){
 }
 function clubSection(){var c=CLUBBY[MYCLUB];if(!c)return "";
   var up=EV.filter(function(e){return isMine(e)&&endOf(e)>=TODAY&&!isOff(e)&&(!S.town||e.town===S.town)&&(!S.month||inMonth(e,S.month))}).sort(function(a,b){return nextDate(a).localeCompare(nextDate(b))});
-  return '<div class="sec clubsec"><h2>My club: '+esc(c.name)+'</h2><span class="pill">'+(up.length?up.length+' upcoming':'none listed')+'</span><a class="clubchg" href="/profile#club">Change</a></div>'+
+  return '<div class="sec clubsec">'+(c.logo?'<img class="clublogo" src="'+esc(c.logo)+'" alt="" width="36" height="36">':'')+'<h2>My club: '+esc(c.name)+'</h2>'+(c.asa===true&&MYASA?'<span class="asano">ASA #'+esc(MYASA)+'</span>':'')+'<span class="pill">'+(up.length?up.length+' upcoming':'none listed')+'</span><a class="clubchg" href="/profile#club">Change</a></div>'+
     (up.length?'<div class="soon">'+up.map(card).join("")+'</div>':'<div class="empty clubempty"><b>No upcoming '+esc(c.name)+' events found yet</b>We only list races and club runs we can find on a real source. When the club publishes a dated event, it will show up here.</div>')}
 function renderCal(){
   if(!S.calMonth)S.calMonth=S.month||(MONTHS.indexOf(TODAY.slice(0,7))>=0?TODAY.slice(0,7):MONTHS[0]);
