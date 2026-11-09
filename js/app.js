@@ -289,7 +289,7 @@ function renderList(){
       .sort(function(a,b){return (b.gr-a.gr)||((a.e?ftier(a.e):0)-(b.e?ftier(b.e):0))||a.d.localeCompare(b.d)});
     if(mix.length>2)h+='<div class="sec"><h2>Happening soon</h2><span class="pill">next 10 days</span></div><div class="soon">'+mix.map(function(x){return x.m?mcard(x.m,true):card(x.e)}).join("")+'</div>';
   }
-  if(MYCLUB&&(S.cat===""||S.cat==="funrun")&&!S.starred&&!S.nye&&!S.xmas)h=clubSection()+h;
+  if(MYCLUB&&S.cat==="funrun"&&!S.starred&&!S.nye&&!S.xmas)h=clubSection()+h;
   var rgr=R.filter(function(e){return e.garden_route}),rwide=R.filter(function(e){return !e.garden_route});
   if(gr.length)h+='<div class="sec"><h2>Garden Route</h2><span class="pill">'+gr.length+'</span></div>'+grouped(gr);
   if(rgr.length)h+=restSection(rgr,"Garden Route restaurants &amp; pubs");
