@@ -310,8 +310,8 @@ function renderCal(){
   var p=S.calMonth.split("-"),y=+p[0],m=+p[1]-1;
   $("calTitle").textContent=MNL[m]+" "+y;
   var i=MONTHS.indexOf(S.calMonth);$("calPrev").disabled=i<=0;$("calNext").disabled=i>=MONTHS.length-1;
-  var first=new Date(y,m,1),start=(first.getDay()+6)%7,days=new Date(y,m+1,0).getDate();
-  var h=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].map(function(d){return '<div class="dow">'+d+'</div>'}).join("");
+  var first=new Date(y,m,1),start=first.getDay(),days=new Date(y,m+1,0).getDate(); /* week starts Sunday */
+  var h=DOW.map(function(d){return '<div class="dow">'+d+'</div>'}).join("");
   for(var k=0;k<start;k++)h+='<div class="day out"></div>';
   for(var d=1;d<=days;d++){
     var ds=iso(new Date(y,m,d));
