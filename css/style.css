@@ -132,6 +132,9 @@ main{max-width:1180px;margin:0 auto;padding:16px 22px 40px}
 @media (prefers-color-scheme:dark){.when{color:var(--teal)}}
 /* ---------- Weather on list cards (not calendar) ---------- */
 .wx{all:unset;box-sizing:border-box;display:inline-flex;flex-wrap:wrap;align-items:center;align-content:center;gap:4px 6px;width:auto;max-width:100%;min-width:0;height:auto;margin:.2em 0 0 .1em;padding:6px 10px;border-radius:14px;font:700 .76rem/1.35 var(--font);letter-spacing:.01em;color:var(--ink);background:color-mix(in srgb,var(--ocean) 12%,var(--surface2));border:1px solid color-mix(in srgb,var(--ocean) 22%,var(--line));cursor:pointer;vertical-align:middle;-webkit-tap-highlight-color:transparent;overflow:hidden;overflow-wrap:anywhere;word-break:break-word;white-space:normal}
+/* List/grid cards: weather bar always full content width; Happening-soon keeps content-sized pill */
+.grid .card .wx{display:flex;width:100%;max-width:100%;box-sizing:border-box}
+.soon .wx{display:inline-flex;width:auto;max-width:100%}
 .wx[hidden]{display:none!important}
 .wx:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
 .wx .wxi,.wxhi,.wxheroi{font-size:1.05rem;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Android Emoji",sans-serif;font-style:normal;font-weight:400;color:initial;filter:none;-webkit-filter:none;opacity:1;background:none;-webkit-text-fill-color:initial}
@@ -147,7 +150,9 @@ main{max-width:1180px;margin:0 auto;padding:16px 22px 40px}
 .wxchip.run.good{color:#1f6b4a}
 .wxchip.run.fair,.wxrunbox.fair .wxrunh b{color:#9a6b00}
 .wxchip.run.poor,.wxrunbox.poor .wxrunh b{color:#9b2c22}
-@media (max-width:420px){.wx{margin-left:0}.when{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}}
+.card .body .when{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;min-width:0;width:100%}
+.card .body .when .wx{flex:1 1 100%}
+@media (max-width:420px){.wx{margin-left:0}}
 @media (prefers-color-scheme:dark){
   .wx{background:color-mix(in srgb,var(--teal) 16%,var(--surface2));border-color:color-mix(in srgb,var(--teal) 28%,var(--line))}
   .wxchip{background:color-mix(in srgb,#fff 6%,transparent)}
@@ -750,3 +755,12 @@ body.theme-run .clubjoinbtn,body.theme-run .clubsignin,body.theme-run #clubJoinS
 .wxleg-cut{background:rgba(250,84,0,.18);border:1.5px dashed #FA5400}
 .wxleg-cut.est{opacity:.9}
 .wxleg-muted{font-weight:600;font-style:italic;opacity:.85}
+
+.wxcurve .wxracecut.c0{stroke:#FA5400;stroke-dasharray:3 3}
+.wxcurve .wxracecut.c1{stroke:#c45a12;stroke-dasharray:5 3}
+.wxcurve .wxracecut.c2{stroke:#a05a28;stroke-dasharray:2 2 6 2}
+.wxcurve .wxracecut.c3{stroke:#d4782a;stroke-dasharray:7 3}
+.wxcurve .wxracecutlbl.c0{fill:#FA5400}
+.wxcurve .wxracecutlbl.c1{fill:#c45a12}
+.wxcurve .wxracecutlbl.c2{fill:#a05a28}
+.wxcurve .wxracecutlbl.c3{fill:#d4782a}

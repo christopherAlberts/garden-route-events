@@ -826,51 +826,72 @@ function wxCompact(d,runCat){if(!d||d.tmax==null||d.tmin==null)return"";
   return s}
 function wxFmtHM(frac){if(frac==null||isNaN(frac))return"";var h=Math.floor(frac)%24,m=Math.round((frac-Math.floor(frac))*60);if(m===60){h=(h+1)%24;m=0}return (h<10?"0":"")+h+":"+(m<10?"0":"")+m}
 function wxParseHM(str){var m=/(\d{1,2}):(\d{2})/.exec(String(str||""));if(!m)return null;var hh=+m[1],mm=+m[2];if(hh>23||mm>59)return null;return hh+mm/60}
+function wxDistLabel(km){if(km==null)return"";if(Math.abs(km-42.2)<0.2||Math.abs(km-42)<0.2)return"42K";if(Math.abs(km-21.1)<0.2||Math.abs(km-21)<0.2)return"21K";
+  if(km===Math.round(km))return Math.round(km)+"K";return(Math.round(km*10)/10)+"K"}
 /*
- * Typical race cutoff estimates (hours after start) when no official cutoff is listed.
- * Road: ≤5 km → 1h; 10 km → 1h45; 15–16 km → 2h30; half/21.1 → 3h30; 25–32 km → 4h30;
- * marathon/42.2 → 7h; ultra 50–56 km → 7h; longer ultras → omit (start only) unless duration given.
- * Trail: ~1.5× the road equivalent (or use a listed cutoff). parkrun / social club runs → 1h.
- * Walks: same ballpark as the road distance. Prefer a listed cutoff/finish time over these estimates.
+ * Typical race cutoff estimates (hours after START) when no official cutoff is listed — per distance:
+ *   ≤5 km → 1h;  10 km → 1h45;  15–16 km → 2h30;  half/21.1 → 3h30;  25–32 km → 4h30;
+ *   marathon/42.2 → 7h;  ultra 50–56 km → 7h;  longer ultras → omit that distance.
+ * Trail / MTB: ~1.5× the road equivalent. parkrun / social / time-trial / club run → 1h (single).
+ * Walks use the same ballpark as the road distance. A listed per-distance or overall cutoff wins.
  */
-function wxEstCutoffHours(title,notes){var blob=String(title||"")+" "+String(notes||""),low=blob.toLowerCase();
-  if(/parkrun|social\s+(trail\s+)?run|time\s*trial|club\s+run/.test(low))return 1;
-  var trail=/trail|mtb|mountain/.test(low);
-  var km=null,m;
-  if(/ultra|50\s*km|56\s*km|100\s*km|comrades/.test(low)){
-    if(/100\s*km|comrades/.test(low))return null; /* too long / variable — start only */
-    return 7;
-  }
-  if(/marathon|42(?:[\.,]2)?\s*km|42\s*km/.test(low)&&!/half/.test(low))km=42.2;
-  else if(/half(?:\s|-)?marathon|21(?:[\.,]1)?\s*km|21\s*km/.test(low))km=21.1;
-  else {
-    var nums=[];var re=/(\d+(?:[\.,]\d+)?)\s*km/gi,x;while((x=re.exec(blob)))nums.push(parseFloat(x[1].replace(",",".")));
-    if(nums.length)km=Math.max.apply(null,nums);
-  }
-  if(km==null){
-    if(/\b5\s*k\b|\b5km\b/.test(low))km=5;
-    else if(/\b10\s*k\b|\b10km\b/.test(low))km=10;
-    else return null;
-  }
-  var hrs;if(km<=5)hrs=1;else if(km<=10)hrs=1.75;else if(km<=16)hrs=2.5;else if(km<=22)hrs=3.5;else if(km<=32)hrs=4.5;else if(km<=45)hrs=7;else if(km<=56)hrs=7;else return null;
-  if(trail)hrs*=1.5;
-  return hrs}
+function wxEstHoursForKm(km,trail){if(km==null||isNaN(km))return null;var hrs;
+  if(km<=5)hrs=1;else if(km<=10)hrs=1.75;else if(km<=16)hrs=2.5;else if(km<=22)hrs=3.5;else if(km<=32)hrs=4.5;else if(km<=45)hrs=7;else if(km<=56)hrs=7;else return null;
+  return trail?hrs*1.5:hrs}
+function wxCollectDistances(blob){var low=String(blob||"").toLowerCase(),found={},add=function(km){if(km!=null&&!isNaN(km)&&km>0&&km<200)found[Math.round(km*10)/10]=1};
+  if(/half(?:\s|-)?marathon|21(?:[\.,]1)?\s*km/.test(low))add(21.1);
+  /* Full marathon distance — not "Marathon Club" / club names */
+  if(/42(?:[\.,]2)?\s*km|\b42\s*k\b/.test(low)||/(?:^|[^a-z])marathon(?:s)?(?:\b)(?!\s*club)/.test(low)&&!/half/.test(low)&&!/marathon club/.test(low))add(42.2);
+  var re=/(\d+(?:[\.,]\d+)?)\s*km/gi,x;while((x=re.exec(blob)))add(parseFloat(x[1].replace(",",".")));
+  /* 5K/10K style — require K as distance unit, not a lone letter in words */
+  var rk=/\b(\d+(?:[\.,]\d+)?)\s*[kK](?![a-zA-Z])/g;while((x=rk.exec(blob))){var v=parseFloat(x[1].replace(",","."));if(v>=1&&v<=100)add(v)}
+  /* Slash lists only when followed by km/k context nearby, e.g. (21 / 10 / 5 km) */
+  var slash=/(\d+(?:[\.,]\d+)?)\s*\/\s*(\d+(?:[\.,]\d+)?)(?:\s*\/\s*(\d+(?:[\.,]\d+)?))?(?:\s*\/\s*(\d+(?:[\.,]\d+)?))?\s*(?:km|[kK]\b)/gi,s;
+  while((s=slash.exec(blob))){for(var i=1;i<=4;i++)if(s[i]){var n=parseFloat(s[i].replace(",","."));if(n<=100)add(n)}}
+  return Object.keys(found).map(Number).sort(function(a,b){return a-b})}
+function wxStaggeredStarts(timeStr,title,notes){/* km → start-hour map when the listing gives staggered gun times */
+  var blob=String(timeStr||"")+" "+String(title||"")+" "+String(notes||""),map={},m;
+  /* "21.1 km 07:00; 10 km & 5 km 07:15" */
+  var seg=blob.split(/[;|]/);
+  for(var i=0;i<seg.length;i++){var bit=seg[i],tm=wxParseHM(bit);if(tm==null)continue;
+    var ds=wxCollectDistances(bit);if(ds.length)ds.forEach(function(k){map[k]=tm})}
+  /* "08:00 (21 km), 08:15 (10 km), 08:20 (5 km)" */
+  var re2=/(\d{1,2}):(\d{2})\s*\(([^)]+)\)/g;while((m=re2.exec(blob))){var t=+m[1]+(+m[2])/60;wxCollectDistances(m[3]).forEach(function(k){map[k]=t})}
+  /* "07:00 (5 km fun run 07:15)" — time then nested time for a distance */
+  var re3=/(\d{1,2}):(\d{2})[^(]{0,40}?(\d+(?:[\.,]\d+)?)\s*km[^(]{0,20}?(\d{1,2}):(\d{2})/gi;
+  while((m=re3.exec(blob))){map[parseFloat(m[3].replace(",","."))]=+m[4]+(+m[5])/60}
+  return map}
 function wxRaceWindow(timeStr,title,notes){var blob=String(timeStr||"")+" "+String(notes||"")+" "+String(title||"");
-  var start=null,end=null,realEnd=false;
-  /* Explicit start–end range in the time field */
-  var rg=/(\d{1,2}):(\d{2})\s*[-–]\s*(\d{1,2}):(\d{2})/.exec(String(timeStr||""));
-  if(rg){start=+rg[1]+(+rg[2])/60;end=+rg[3]+(+rg[4])/60;if(end>start)realEnd=true;else end=null}
+  var low=blob.toLowerCase(),trail=/trail|mtb|mountain/.test(low);
+  var social=/parkrun|social\s+(trail\s+)?run|time\s*trial|club\s+run/.test(low);
+  var start=null,rg=/(\d{1,2}):(\d{2})\s*[-–]\s*(\d{1,2}):(\d{2})/.exec(String(timeStr||""));
+  var rangeEnd=null;if(rg){start=+rg[1]+(+rg[2])/60;rangeEnd=+rg[3]+(+rg[4])/60;if(!(rangeEnd>start))rangeEnd=null}
   if(start==null)start=wxParseHM(timeStr);
   if(start==null)return null;
-  /* Real cutoff phrasing in notes/title/time */
-  if(!realEnd){var cm=/cut[\s-]?off[^0-9]{0,24}(\d{1,2}):(\d{2})/i.exec(blob)||/finish\s+by[^0-9]{0,12}(\d{1,2}):(\d{2})/i.exec(blob)||/cutoff\s+(\d+(?:\.\d+)?)\s*h/i.exec(blob);
-    if(cm){if(cm[0].toLowerCase().indexOf("h")>=0&&cm.length>=2&&!/:/.test(cm[0])){end=start+(+cm[1]);realEnd=true}
-      else if(cm.length>=3){end=+cm[1]+(+cm[2])/60;realEnd=true}}}
-  var estimated=false;
-  if(end==null){var hrs=wxEstCutoffHours(title,notes);if(hrs!=null){end=start+hrs;estimated=true}}
-  if(end!=null&&end>24)end=24;
-  if(end!=null&&end<=start)end=null;
-  return{start:start,end:end,startLbl:wxFmtHM(start),endLbl:end!=null?wxFmtHM(end):null,estimated:!!estimated&&end!=null,kind:end==null?"start-only":(estimated?"est":"real")}}
+  var stagger=wxStaggeredStarts(timeStr,title,notes);
+  var dists=wxCollectDistances(blob);
+  if(social&&!dists.length)dists=[5];
+  /* Overall listed cutoff (applies as real end for the longest distance if no per-distance times) */
+  var overallReal=null,cm=/cut[\s-]?off[^0-9]{0,24}(\d{1,2}):(\d{2})/i.exec(blob)||/finish\s+by[^0-9]{0,12}(\d{1,2}):(\d{2})/i.exec(blob);
+  if(cm)overallReal=+cm[1]+(+cm[2])/60;
+  if(rangeEnd!=null)overallReal=rangeEnd;
+  var cuts=[];
+  if(!dists.length){var hrs=wxEstHoursForKm(10,trail); /* unknown distance → single estimate only if we can guess nothing: start-only */
+    if(overallReal!=null)cuts.push({km:null,label:"",end:overallReal,endLbl:wxFmtHM(overallReal),estimated:false,start:start});
+    else return{start:start,startLbl:wxFmtHM(start),end:null,cuts:[],estimated:false,kind:"start-only"}}
+  else {
+    dists.forEach(function(km){var s=stagger[km]!=null?stagger[km]:start,end=null,estimated=true;
+      if(overallReal!=null&&km===Math.max.apply(null,dists)){end=overallReal;estimated=false}
+      if(end==null){var eh=wxEstHoursForKm(km,trail);if(eh==null)return;end=s+eh}
+      if(end>24)end=24;if(end<=s)return;
+      cuts.push({km:km,label:wxDistLabel(km),end:end,endLbl:wxFmtHM(end),estimated:estimated,start:s})})}
+  if(!cuts.length)return{start:start,startLbl:wxFmtHM(start),end:null,cuts:[],estimated:false,kind:"start-only"};
+  cuts=cuts.filter(function(c,i,a){return a.findIndex(function(x){return x.km===c.km})===i});
+  cuts.sort(function(a,b){return a.end-b.end||((a.km||0)-(b.km||0))});
+  var earliest=Math.min.apply(null,cuts.map(function(c){return c.start}).concat([start]));
+  var latest=Math.max.apply(null,cuts.map(function(c){return c.end}));
+  var anyEst=cuts.some(function(c){return c.estimated});
+  return{start:earliest,startLbl:wxFmtHM(earliest),end:latest,endLbl:wxFmtHM(latest),estimated:anyEst,cuts:cuts,kind:anyEst?"est":"real"}}
 function wxSunFrac(iso){if(!iso)return null;var m=/T(\d{2}):(\d{2})/.exec(String(iso));if(!m)return null;return +m[1]+(+m[2])/60}
 function wxHourStrip(d,ds,runCat,raceMeta){if(!d||!d.hours||!d.hours.length)return'<p class="wxnostrip">Hourly forecast unavailable</p>';
   var startH=4,endH=22,nowH=(new Date()).getHours(),srF=wxSunFrac(d.sunrise),ssF=wxSunFrac(d.sunset);
@@ -908,17 +929,23 @@ function wxHourStrip(d,ds,runCat,raceMeta){if(!d||!d.hours||!d.hours.length)retu
     var x1=xAtFrac(a),x2=xAtFrac(b),bw=x2-x1;
     svg+='<rect class="wxrunband" x="'+x1.toFixed(1)+'" y="0" width="'+bw.toFixed(1)+'" height="'+svgH+'" />';
     if(bw>=48)svg+='<text class="wxrunbandlbl" x="'+(x1+bw/2).toFixed(1)+'" y="14">Best run</text>'})}
-  /* Race start + cutoff/estimate span (funrun only) — full height like Race start line */
+  /* Race start + per-distance cutoff lines (funrun only); shade to longest cutoff, full height */
   var race=runCat?wxRaceWindow(raceMeta&&raceMeta.time,raceMeta&&raceMeta.title,raceMeta&&raceMeta.notes):null;
   if(race&&race.start>=h[0].hh-0.01&&race.start<=h[n-1].hh+0.01){
     var rx=xAtFrac(race.start), rightMax=h[n-1].hh+0.01;
     if(race.end!=null&&race.end>race.start){
       var rx2=xAtFrac(Math.min(race.end,rightMax)), bw=Math.max(2,rx2-rx);
       svg+='<rect class="wxraceblock'+(race.estimated?" est":"")+'" x="'+rx.toFixed(1)+'" y="0" width="'+bw.toFixed(1)+'" height="'+svgH+'" />';
-      svg+='<line class="wxracecut" x1="'+rx2.toFixed(1)+'" y1="0" x2="'+rx2.toFixed(1)+'" y2="'+svgH+'" />';
-      /* Cutoff label sits below Best-run label so they do not collide */
-      svg+='<text class="wxracecutlbl" x="'+(rx2-2).toFixed(1)+'" y="28">'+(race.estimated?"Cutoff ~":"Cutoff ")+race.endLbl+(race.estimated?" (est.)":"")+'</text>';
     }
+    var cuts=race.cuts||[], labelYs=[], yi;
+    cuts.forEach(function(c,idx){if(c.end<h[0].hh-0.01||c.end>rightMax)return;
+      var cx=xAtFrac(Math.min(c.end,rightMax)), shade=idx%4;
+      svg+='<line class="wxracecut c'+shade+'" x1="'+cx.toFixed(1)+'" y1="0" x2="'+cx.toFixed(1)+'" y2="'+svgH+'" />';
+      var lbl=(c.label?c.label+" ":"")+(c.estimated?"~":"")+c.endLbl+(c.estimated?" (est.)":"");
+      var ly=16+idx*14; /* stagger labels vertically */
+      for(yi=0;yi<labelYs.length;yi++){if(Math.abs(labelYs[yi]-ly)<12&&Math.abs((cuts[yi]?xAtFrac(Math.min(cuts[yi].end,rightMax)):0)-cx)<36)ly+=14}
+      labelYs.push(ly);
+      svg+='<text class="wxracecutlbl c'+shade+'" x="'+(cx-2).toFixed(1)+'" y="'+ly+'">'+lbl+'</text>'});
     svg+='<line class="wxraceline" x1="'+rx.toFixed(1)+'" y1="0" x2="'+rx.toFixed(1)+'" y2="'+svgH+'" />';
     svg+='<text class="wxraceico" x="'+rx.toFixed(1)+'" y="'+(svgH-6)+'">🏃</text>';
     svg+='<text class="wxracelbl" x="'+(rx+4).toFixed(1)+'" y="'+(svgH-8)+'">Race start '+race.startLbl+'</text>';
@@ -944,7 +971,7 @@ function wxHourStrip(d,ds,runCat,raceMeta){if(!d||!d.hours||!d.hours.length)retu
   var legend='<ul class="wxlegend" aria-label="Chart legend">';
   if(runCat&&d.windows&&d.windows.length)legend+='<li><span class="wxlegsw wxleg-run" aria-hidden="true"></span>Best times to run</li>';
   if(runCat){if(race){legend+='<li><span class="wxlegsw wxleg-race" aria-hidden="true"></span>Race start</li>';
-      if(race.end!=null)legend+='<li><span class="wxlegsw wxleg-cut'+(race.estimated?" est":"")+'" aria-hidden="true"></span>'+(race.estimated?"Typical cutoff (estimate)":"Cutoff")+'</li>';
+      if(race.cuts&&race.cuts.length)legend+='<li><span class="wxlegsw wxleg-cut est" aria-hidden="true"></span>Cutoff by distance (estimate unless listed)</li>';
     }else legend+='<li class="wxleg-muted">(start time not listed)</li>'}
   legend+='<li><span class="wxlegsw wxleg-night" aria-hidden="true"></span>Night</li>';
   legend+='<li><span class="wxlegsw wxleg-rain" aria-hidden="true"></span>Rain chance %</li>';
