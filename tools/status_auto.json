@@ -2,17 +2,11 @@
  "2026-10-10-tsitsikamma-manor-colour-festival": [
   [
    "cancelled",
-   "schema eventStatus @ https://www.quicket.co.za/events/393493-tsitsikamma-manor-colour-festival/#tickets"
+   "schema eventStatus @ https://www.quicket.co.za/events/393493-tsitsikamma-manor-colour-festival/"
   ],
   [
    "cancelled",
-   "schema eventStatus @ https://www.quicket.co.za/events/393493-tsitsikamma-manor-colour-festival/"
-  ]
- ],
- "2026-11-06-electro-music-festival-2026": [
-  [
-   "sold out",
-   "title/notes"
+   "schema eventStatus @ https://www.quicket.co.za/events/393493-tsitsikamma-manor-colour-festival/#tickets"
   ]
  ],
  "2026-12-11-icons-cup-south-africa-2026-celebrity-golf-match-p": [
@@ -37,20 +31,6 @@
   [
    "sold out",
    "title/notes"
-  ]
- ],
- "2026-11-07-sportsmans-warehouse-winelands-marathon-42-2-21-1-": [
-  [
-   "sold out",
-   "title/notes"
-  ],
-  [
-   "sold out",
-   "all ticket types SoldOut (schema) @ https://runningcalendar.co.za/events/winelands-marathon/2026"
-  ],
-  [
-   "sold out",
-   "page text: 'This event is sold out' @ https://runningcalendar.co.za/events/winelands-marathon/2026"
   ]
  ],
  "2026-11-13-riaan-benade-live-by-kapstadt-brauhaus-durbanville": [

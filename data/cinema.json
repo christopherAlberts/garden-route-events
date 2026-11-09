@@ -1,8 +1,8 @@
 {
  "source": "https://www.sterkinekor.com",
  "source_note": "Ster-Kinekor website (sterkinekor.com), Garden Route Mall programme",
- "fetched_at": "2026-11-02 08:02",
- "fetched_date": "2026-11-02",
+ "fetched_at": "2026-11-09 08:06",
+ "fetched_date": "2026-11-09",
  "cinema": {
   "name": "Ster-Kinekor Garden Route Mall",
   "town": "George",
@@ -12,41 +12,6 @@
   "location_id": 26
  },
  "now_showing": [
-  {
-   "id": 754,
-   "title": "Al Wat Ek Weet",
-   "section": "now",
-   "url": "https://www.sterkinekor.com/f/al-wat-ek-weet/754",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/al-wat-ek-weet-754/poster/73f8a830-b79f-4440-8272-6fa0586a5e5c.jpeg?optimizer=image&width=342",
-   "release_date": "2026-10-30",
-   "date_label": "",
-   "age_rating": "No Under 13's - L V",
-   "age": 13,
-   "runtime": "1h 42m",
-   "genres": [
-    "drama"
-   ],
-   "bookable": true,
-   "trailer": "https://youtu.be/P4SLxVGQmyA",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/al-wat-ek-weet-754/backdrop/77185773-5375-4b6f-8ea6-0bea6a07b760.jpeg?optimizer=image&width=1200",
-   "synopsis": "When a car accident claims his mother's life and his father withdraws from life in a clinic, seventeen-year-old Gabriel Lombard is uprooted from his green, leafy suburb on Table Mountain and sent to live with his aunt Lotta and grandmother Lenie in a cramped house in Woodstock. Determined not to collapse like his father, he buries his grief behind a cool facade, wild lies and an overactive imagination.",
-   "director": "",
-   "cast": [
-    "Zenobia Kloppers",
-    "Gretchen Ramsden",
-    "Jonan Mouton",
-    "June van Merch",
-    "Antoinette Myburgh",
-    "Waldemar Schultz"
-   ],
-   "language": "English",
-   "country": "South Africa",
-   "imdb_id": "",
-   "tmdb_id": "1721249",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ]
-  },
   {
    "id": 750,
    "title": "Clayface",
@@ -138,13 +103,11 @@
    "poster": "https://images.filmgrail.com/mediaserver/movies/godzilla-minus-zero-758/poster/66946f22-bd46-4b73-b702-b7a7b339d7cd.jpeg?optimizer=image&width=342",
    "release_date": "2026-11-06",
    "date_label": "",
-   "age_rating": "TBA",
-   "age": null,
+   "age_rating": "No Under 13's",
+   "age": 13,
    "runtime": "1h 59m",
    "genres": [
-    "sci fi",
-    "horror",
-    "action"
+    "sci fi"
    ],
    "bookable": true,
    "trailer": "https://youtu.be/g7sgTJIWW5U",
@@ -222,34 +185,6 @@
    ]
   },
   {
-   "id": 649,
-   "title": "Macbeth (Verdi) - Metropolitan Opera",
-   "section": "now",
-   "url": "https://www.sterkinekor.com/f/macbeth-verdi-metropolitan-opera/649",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/macbeth-verdi-metropolitan-opera-649/poster/570c6a0f-6765-4280-8e20-00e0274ec367.jpeg?optimizer=image&width=342",
-   "release_date": "2026-11-01",
-   "date_label": "",
-   "age_rating": "Parental guidance for 10 - 12",
-   "age": 12,
-   "runtime": "3h 29m",
-   "genres": [
-    "opera"
-   ],
-   "bookable": true,
-   "trailer": "https://youtu.be/BEGgmm3v0tM",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/macbeth-verdi-metropolitan-opera-649/backdrop/79a28a7b-17f7-49b8-8987-2bd9cd1394a9.jpeg?optimizer=image&width=1200",
-   "synopsis": "Two of opera’s most extraordinary artists return to The Met: Live in HD for Verdi’s thrilling take on the immortal Shakespearean tale of the scheming couple determined to seize power at any cost. Following past triumphs in many of Verdi’s signature baritone roles, Quinn Kelsey is the Scottish king haunted by the ghosts of his murderous ascent to the throne, opposite Lise Davidsen—the world’s reigning dramatic soprano—as the power-mad Lady Macbeth, whose ruinous ambition damns them both. Met Music Director Yannick Nézet-Séguin takes the podium for a penetrating production by Louisa Proske, a brilliant young director making waves around the world. Rounding out the all-star cast are tenor Freddie De Tommaso as the heroic Macduff and bass-baritone Ryan Speedo Green as Macbeth’s friend-turned-victim Banquo.",
-   "director": "",
-   "cast": [],
-   "language": "English",
-   "country": "",
-   "imdb_id": "",
-   "tmdb_id": "",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ]
-  },
-  {
    "id": 786,
    "title": "Pressure",
    "section": "now",
@@ -296,52 +231,6 @@
     {
      "source": "Rotten Tomatoes",
      "value": "89%"
-    }
-   ]
-  },
-  {
-   "id": 700,
-   "title": "Resident Evil",
-   "section": "now",
-   "url": "https://www.sterkinekor.com/f/resident-evil/700",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/resident-evil-700/poster/735d56e5-ec28-45ed-b3a6-9200f7d6971c.jpeg?optimizer=image&width=342",
-   "release_date": "2026-09-25",
-   "date_label": "",
-   "age_rating": "No Under 16's - H L V",
-   "age": 16,
-   "runtime": "1h 34m",
-   "genres": [
-    "horror"
-   ],
-   "bookable": true,
-   "trailer": "https://youtu.be/uYmnlsoICdg",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/resident-evil-700/backdrop/df1a5f45-29c5-4adf-8994-ccb5761d43f4.jpeg?optimizer=image&width=1200",
-   "synopsis": "Follows a hapless courier tasked with delivering a package to a remote hospital. He soon finds himself caught in the middle of an outbreak and must fight through hordes of mutated creatures to survive.",
-   "director": "",
-   "cast": [
-    "Zach Cherry",
-    "Paul Walter Hauser",
-    "Austin Abrams",
-    "Kali Reis",
-    "Johnno Wilson",
-    "Griffin Newman"
-   ],
-   "language": "English",
-   "country": "France, Germany, United States",
-   "imdb_id": "tt35538033",
-   "tmdb_id": "1423191",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ],
-   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
-   "ratings": [
-    {
-     "source": "IMDb",
-     "value": "7.6"
-    },
-    {
-     "source": "Rotten Tomatoes",
-     "value": "96%"
     }
    ]
   },
@@ -472,55 +361,6 @@
    ]
   },
   {
-   "id": 742,
-   "title": "Verity",
-   "section": "now",
-   "url": "https://www.sterkinekor.com/f/verity/742",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/verity-742/poster/700691e8-679c-4b06-b304-98ea59ee35ed.jpeg?optimizer=image&width=342",
-   "release_date": "2026-10-02",
-   "date_label": "",
-   "age_rating": "No Under 18's - D L N S V",
-   "age": 18,
-   "runtime": "1h 58m",
-   "genres": [
-    "thriller"
-   ],
-   "bookable": true,
-   "trailer": "https://www.youtube.com/watch?v=Z_KAGVnFmmw",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/verity-742/backdrop/41f19676-3ffc-4570-ba89-2c76663a5b89.jpeg?optimizer=image&width=1200",
-   "synopsis": "Struggling writer Lowen Ashleigh is on the brink of financial ruin when she accepts the job offer of a lifetime: she's been hired to complete the remaining books in a successful series that bestselling thriller author Verity Crawford is unable to finish after a mysterious accident. Upon arrival at the lavish Crawford estate, Ashleigh slowly learns that things are not exactly as they seem.",
-   "director": "",
-   "cast": [
-    "Anne Hathaway",
-    "Dakota Johnson",
-    "Josh Hartnett",
-    "Michael Abbott Jr.",
-    "Ismael Cruz Cordova",
-    "Brady Wagner",
-    "Irina Dvorovenko",
-    "K.K. Moggie",
-    "Alex Cooper"
-   ],
-   "language": "English",
-   "country": "United States",
-   "imdb_id": "tt32261958",
-   "tmdb_id": "1283515",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ],
-   "ratings_source": "imdb.com + rottentomatoes.com (manual check), 2026-10-09 15:05",
-   "ratings": [
-    {
-     "source": "IMDb",
-     "value": "6.0"
-    },
-    {
-     "source": "Rotten Tomatoes",
-     "value": "33%"
-    }
-   ]
-  },
-  {
    "id": 753,
    "title": "Wildwood",
    "section": "now",
@@ -561,54 +401,6 @@
   }
  ],
  "coming_soon": [
-  {
-   "id": 758,
-   "title": "Godzilla Minus Zero",
-   "section": "soon",
-   "url": "https://www.sterkinekor.com/f/godzilla-minus-zero/758",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/godzilla-minus-zero-758/poster/66946f22-bd46-4b73-b702-b7a7b339d7cd.jpeg?optimizer=image&width=342",
-   "release_date": "2026-11-06",
-   "date_label": "06 Nov",
-   "age_rating": "TBA",
-   "age": null,
-   "runtime": "1h 59m",
-   "genres": [
-    "sci fi",
-    "horror",
-    "action"
-   ],
-   "bookable": true,
-   "trailer": "https://youtu.be/g7sgTJIWW5U",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/godzilla-minus-zero-758/backdrop/27565947-6729-415a-8095-7c61cadde0b5.jpeg?optimizer=image&width=1200",
-   "synopsis": "War reduced Japan to zero, and Godzilla plunged it into minus. Two years have passed since then, and the country has faced agonizing struggles to achieve recovery and finally reclaim its daily life. Just as humanity managed to cling to a hard-won peace, a new threat strikes, crushing hope in an instant.",
-   "director": "Takashi Yamazaki",
-   "cast": [
-    "Munetaka Aoki",
-    "Ryunosuke Kamiki",
-    "Minami Hamabe",
-    "Yuki Yamada",
-    "Hidetaka Yoshioka",
-    "Miou Tanaka",
-    "Sae Nagatani",
-    "Kuranosuke Sasaki",
-    "Sakura Ando",
-    "Min Tanaka"
-   ],
-   "language": "English",
-   "country": "Japan",
-   "imdb_id": "tt34384661",
-   "tmdb_id": "1381071",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ],
-   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
-   "ratings": [
-    {
-     "source": "Rotten Tomatoes",
-     "value": "97%"
-    }
-   ]
-  },
   {
    "id": 793,
    "title": "Prima Facie",
@@ -659,8 +451,7 @@
    "age": null,
    "runtime": "1h 45m",
    "genres": [
-    "drama",
-    "crime"
+    "drama"
    ],
    "bookable": false,
    "trailer": "https://youtu.be/h5oCPsJGSnY",
@@ -700,8 +491,8 @@
    "poster": "https://images.filmgrail.com/mediaserver/movies/hunger-games-the-sunrise-on-the-reaping-711/poster/2a6a2eac-24e0-44b6-b655-3f8340fe395c.jpeg?optimizer=image&width=342",
    "release_date": "2026-11-20",
    "date_label": "20 Nov",
-   "age_rating": "TBA",
-   "age": null,
+   "age_rating": "No Under 13's",
+   "age": 13,
    "runtime": "2h 38m",
    "genres": [
     "sci fi",
@@ -709,7 +500,7 @@
     "adventure"
    ],
    "bookable": true,
-   "trailer": "https://youtu.be/nDGMN1EooAo",
+   "trailer": "https://youtu.be/TCBmDN4I9sI",
    "backdrop": "https://images.filmgrail.com/mediaserver/movies/hunger-games-the-sunrise-on-the-reaping-711/backdrop/14d09c2b-eff0-4597-8f16-235ec559485a.jpeg?optimizer=image&width=1200",
    "synopsis": "Return to the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
    "director": "Francis Lawrence",
@@ -787,7 +578,7 @@
     "documentary"
    ],
    "bookable": false,
-   "trailer": "",
+   "trailer": "https://youtu.be/dBZLSHigQ-c",
    "backdrop": "https://images.filmgrail.com/mediaserver/movies/you-can-see-everything-813/backdrop/32fef996-7754-4e1c-83fd-3c170fb4ec06.jpg?optimizer=image&width=1200",
    "synopsis": "Thirty-four days before she's sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
    "director": "",
@@ -825,7 +616,7 @@
    "genres": [
     "drama"
    ],
-   "bookable": false,
+   "bookable": true,
    "trailer": "https://youtu.be/tsGVioxq10c",
    "backdrop": "https://images.filmgrail.com/mediaserver/movies/do-you-remember-781/backdrop/dbcabf29-5a9d-4baf-955d-83f0bb3812cf.png?optimizer=image&width=1200",
    "synopsis": "When tragedy erases the past, can love rewrite the future? A sweeping story of music, faith, healing, and redemption. Sometimes the song that leads you home was written long before you ever knew the words.",
@@ -887,9 +678,9 @@
    "poster": "https://images.filmgrail.com/mediaserver/movies/hexed-791/poster/29327983-6bf4-49af-955b-11810d0f7a1d.jpeg?optimizer=image&width=342",
    "release_date": "2026-11-27",
    "date_label": "27 Nov",
-   "age_rating": "",
+   "age_rating": "TBA",
    "age": null,
-   "runtime": "",
+   "runtime": "1h 30m",
    "genres": [
     "adventure",
     "animation",
@@ -907,10 +698,43 @@
     "Hailee Steinfeld",
     "Tracey Ullman"
    ],
-   "language": "",
+   "language": "English",
    "country": "United States",
    "imdb_id": "tt38077943",
    "tmdb_id": "1538497",
+   "cinemas": [
+    "Ster-Kinekor Garden Route Mall"
+   ]
+  },
+  {
+   "id": 820,
+   "title": "Above the Below",
+   "section": "soon",
+   "url": "https://www.sterkinekor.com/f/above-the-below/820",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/above-the-below-820/poster/67d72ff1-ce5e-4dfa-bf61-a2a92d1d4eb9.jpg?optimizer=image&width=342",
+   "release_date": "2026-12-04",
+   "date_label": "04 Dec",
+   "age_rating": "TBA",
+   "age": null,
+   "runtime": "1h 26m",
+   "genres": [
+    "action",
+    "thriller"
+   ],
+   "bookable": false,
+   "trailer": "https://youtu.be/V4XveGCO_lM",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/above-the-below-820/backdrop/e61852a1-5d42-44cf-8ee9-0f59ca177aa9.jpg?optimizer=image&width=1200",
+   "synopsis": "Three astronauts survive a violently destructive re-entry, only to discover their landing capsule is sinking into the uncharted depths of the ocean. Completely cut off from the world, they must battle both the sea and their isolation to survive.",
+   "director": "",
+   "cast": [
+    "Idris Elba",
+    "Caitlin FitzGerald",
+    "Hero Fiennes Tiffin"
+   ],
+   "language": "English",
+   "country": "United Kingdom, United States",
+   "imdb_id": "tt29634374",
+   "tmdb_id": "1198746",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -969,7 +793,7 @@
     "concert"
    ],
    "bookable": true,
-   "trailer": "",
+   "trailer": "https://youtu.be/DyKUSEnQapc",
    "backdrop": "https://images.filmgrail.com/mediaserver/movies/andre-rieus-2026-christmas-concert-let-it-snow-783/backdrop/a96f2b78-11f9-4842-8aab-98973c64ac57.jpeg?optimizer=image&width=1200",
    "synopsis": "This holiday season, celebrate the most wonderful time of the year on the big screen with André Rieu's 2026 Christmas Concert – Let It Snow. This heartwarming festive spectacular, filled with beloved Christmas classics, enchanting waltzes, and magical surprises, will leave you smiling long after the final encore.\n\nJoined by his world-famous Johann Strauss Orchestra, exceptional sopranos, and a powerful 120-voice male choir, André brings the spirit of Christmas to life in an unforgettable musical event. Overflowing with music, laughter, and holiday cheer, this concert is perfect for the whole family.\n\nWhether you're surrounded by snow or simply dreaming of it, experience the magic of Christmas on the big screen with those you love. Wrap up your year with Let It Snow – only in cinemas!",
    "director": "",
@@ -983,11 +807,92 @@
    ]
   },
   {
+   "id": 826,
+   "title": "Debut, The",
+   "section": "soon",
+   "url": "https://www.sterkinekor.com/f/debut-the/826",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/debut-the-826/poster/c8ed63f7-03c6-431a-97b4-0bddd2e4ea75.jpg?optimizer=image&width=342",
+   "release_date": "2026-12-11",
+   "date_label": "11 Dec",
+   "age_rating": "",
+   "age": null,
+   "runtime": "",
+   "genres": [
+    "musical",
+    "comedy",
+    "drama"
+   ],
+   "bookable": false,
+   "trailer": "",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/debut-the-826/backdrop/b2c7750b-4ac2-4614-8c58-825ddd7b8e89.jpg?optimizer=image&width=1200",
+   "synopsis": "When Mona Friedman is cast in a bit part at a small community theater, she transforms from a shy, unassuming housewife into a zealous method actor willing to do anything to protect the artistic integrity of her marginal role—even if it means waging war against the show’s domineering director.",
+   "director": "",
+   "cast": [
+    "Julianne Moore",
+    "Paul Giamatti",
+    "Jesse Eisenberg",
+    "Halle Bailey",
+    "Havana Rose Liu",
+    "Bernadette Peters",
+    "Cara Buono",
+    "Lilli Cooper",
+    "Colton Ryan",
+    "Maulik Pancholy"
+   ],
+   "language": "",
+   "country": "United States",
+   "imdb_id": "tt34718200",
+   "tmdb_id": "1391239",
+   "cinemas": [
+    "Ster-Kinekor Garden Route Mall"
+   ]
+  },
+  {
+   "id": 390,
+   "title": "Zero A.D: The Birth of Christ",
+   "section": "soon",
+   "url": "https://www.sterkinekor.com/f/zero-ad-the-birth-of-christ/390",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/zero-ad-the-birth-of-christ-390/poster/d2eddf6f-fb58-470c-8378-463915a98312.jpeg?optimizer=image&width=342",
+   "release_date": "2026-12-11",
+   "date_label": "11 Dec",
+   "age_rating": "TBA",
+   "age": null,
+   "runtime": "0h 30m",
+   "genres": [
+    "drama",
+    "thriller"
+   ],
+   "bookable": false,
+   "trailer": "https://youtu.be/wQbKYa-hXp4",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/zero-ad-the-birth-of-christ-390/backdrop/2c6891df-f408-4db5-99b2-c859942b8857.jpeg?optimizer=image&width=1200",
+   "synopsis": "A star rises over Bethlehem as Christ is born. But when Herod orders the slaughter of the innocents, Mary and Joseph must protect the child promised to save the world.",
+   "director": "Alejandro Monteverde",
+   "cast": [
+    "Sam Worthington",
+    "Ben Mendelsohn",
+    "Akin Gazi",
+    "Deva Cassel",
+    "Jamie Ward",
+    "Jim Caviezel",
+    "Gael García Bernal",
+    "James Oliver Wheatley",
+    "Yahya Mahayni",
+    "Marco Khan"
+   ],
+   "language": "English",
+   "country": "Morocco, United States",
+   "imdb_id": "tt34491649",
+   "tmdb_id": "1408207",
+   "cinemas": [
+    "Ster-Kinekor Garden Route Mall"
+   ]
+  },
+  {
    "id": 641,
    "title": "Samson Et Dalila (Saint-Saëns) - Metropolitan Opera",
    "section": "soon",
    "url": "https://www.sterkinekor.com/f/samson-et-dalila-saint-saens-metropolitan-opera/641",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/samson-et-dalila-saint-saens-metropolitan-opera-641/poster/1fc6a42f-357b-4d0c-a77f-264db19d2656.jpeg?optimizer=image&width=342",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/samson-et-dalila-saint-saens-metropolitan-opera-641/poster/f7c9ee33-e687-4f8e-a664-a22269e616ff.jpeg?optimizer=image&width=342",
    "release_date": "2026-12-13",
    "date_label": "13 Dec",
    "age_rating": "Parental guidance for 10 - 12",
@@ -998,7 +903,7 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/BEGgmm3v0tM",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/samson-et-dalila-saint-saens-metropolitan-opera-641/backdrop/4537c1df-ef3b-49c5-86db-b2f9bc43a4b6.jpeg?optimizer=image&width=1200",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/samson-et-dalila-saint-saens-metropolitan-opera-641/backdrop/4318a2d5-0e86-456a-bff7-201880d452bb.jpeg?optimizer=image&width=1200",
    "synopsis": "Sacred, scandalous, and irresistibly alluring, Saint-Saëns’s spectacular take on the biblical hero of legendary strength and the seductive Philistine whose beauty overpowers him returns in the Met’s larger-than-life production. Featuring a massive orchestra and chorus and some of opera’s most spellbinding tunes, this masterpiece of French grand opera is a feast for the eyes and ears. Giacomo Sagripanti conducts an electrifying cast led by the formidable star pairing of mezzo-soprano Aigul Akhmetshina and tenor Clay Hilley, transmitted live to cinemas worldwide.",
    "director": "",
    "cast": [],
