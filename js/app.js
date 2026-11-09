@@ -1009,7 +1009,7 @@ function wxHourStrip(d,ds,runCat,raceMeta){if(!d||!d.hours||!d.hours.length)retu
     if(race.estimated)timesTbl+='<p class="wxracetimes-note">Estimated cutoffs are typical for the distance; check the race info for official times.</p>';
     timesTbl+='</div>';
   }
-  return '<div class="wxhourly" data-wx-n="'+n+'"><div class="wxscroll" data-wx-scroll><div class="wxscroll-inner" style="min-width:100%;width:'+chartW+'px">'+svg+'<div class="wxstrip" role="list" aria-label="Hourly forecast">'+cols+'</div></div></div>'+legend+timesTbl+'</div>'}
+  return '<div class="wxhourly" data-wx-n="'+n+'"><div class="wxscroll" data-wx-scroll><div class="wxscroll-inner" style="min-width:100%;width:'+chartW+'px">'+svg+'<div class="wxstrip" role="list" aria-label="Hourly forecast" style="padding-left:'+padL+'px;padding-right:'+padR+'px;box-sizing:border-box">'+cols+'</div></div></div>'+legend+timesTbl+'</div>'}
 
 function wxModalHtml(town,ds,d,runCat,raceMeta){if(!d)return'<button type="button" class="mclose" data-wx-close aria-label="Close">×</button><p class="wxempty">Forecast unavailable</p>';
   var c=wxCond(d.code),dateLbl="";try{dateLbl=fmt(pd(ds),true)}catch(e){dateLbl=ds}
