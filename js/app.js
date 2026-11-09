@@ -28,7 +28,7 @@ var ICON={
   market:'<svg viewBox="0 0 24 24"><path d="M3 9h18l-1.8 11.2A1 1 0 0118.2 21H5.8a1 1 0 01-1-.8L3 9zm5.2-1L12 2.5 15.8 8h-2.4L12 5.9 10.6 8z"/></svg>'};
 var PIN='<svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7zm0 4.5A2.5 2.5 0 1012 11.5 2.5 2.5 0 0012 6.5z"/></svg>';
 var ARROW='<svg viewBox="0 0 24 24"><path d="M13 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.2l-4.6-4.6z"/></svg>';
-var S={gal:false,scope:"gr",q:"",town:"",cat:"",month:"",view:"list",calMonth:null,calDay:null,off:false,event:"",nye:false,xmas:false};
+var S={gal:false,scope:"gr",q:"",town:"",cat:"",month:"",view:"list",calMonth:null,calDay:null,off:false,event:"",nye:false,xmas:false,starred:false};
 /* restaurants are entries of category "restaurant": list cards, calendar days with recurring specials, map pins */
 var LAST_DAY=(function(){var l="";(window.EVENTS||[]).forEach(function(e){var x=e.end_date||e.start_date||"";if(x>l)l=x});return l||"2099-12-31"})(),EVR={};
 var RS=(window.RESTAURANTS||[]).map(function(r){var o={};for(var k in r)o[k]=r[k];
@@ -100,6 +100,28 @@ function restEvents(r){return (r.event_ids||[]).map(byId).filter(function(e){ret
 function waUrl(e){return "https://wa.me/?text="+encodeURIComponent(shareText(e))}
 function shareBtn(e){return '<button class="sharebtn" type="button" data-share="'+esc(e._r?e.key:e.id)+'" aria-haspopup="menu" aria-label="Share '+esc(e.title)+'">'+SHARE_ICON+'<span>Share</span></button>'}
 function toast(msg){var t=$("toast");t.textContent=msg;t.classList.add("on");clearTimeout(toast._t);toast._t=setTimeout(function(){t.classList.remove("on")},2200)}
+/* ---------- "want to attend" stars: per user, stored on the server (/api/stars), localStorage as optimistic cache/fallback ---------- */
+var STAR_SVG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .7-4.4 4.1 1.2 5.9L12 16.5l-5.4 2.9 1.2-5.9-4.4-4.1 6-.7z"/></svg>';
+var STK="gre.stars",SPK="gre.starsPending",STARS={},SPEND={};
+try{STARS=JSON.parse(localStorage.getItem(STK)||"{}")||{};SPEND=JSON.parse(localStorage.getItem(SPK)||"{}")||{}}catch(x){STARS={};SPEND={}}
+function saveStars(){try{localStorage.setItem(STK,JSON.stringify(STARS));localStorage.setItem(SPK,JSON.stringify(SPEND))}catch(x){}}
+function isStar(e){return !!(e&&STARS[e._r?e.key:e.id])}
+function starBtn(e){if(e._r)return "";var on=isStar(e);
+  return '<button type="button" class="starbtn'+(on?" on":"")+'" data-star="'+esc(e.id)+'" aria-pressed="'+on+'" aria-label="'+(on?"Starred: want to attend ":"Star: want to attend ")+esc(e.title)+'" title="'+(on?"Want to attend (tap to unstar)":"Want to attend")+'">'+STAR_SVG+'</button>'}
+var API_OK=/^https?:/.test(location.protocol);
+function starApi(id,on){if(!API_OK)return;
+  fetch("/api/stars/"+encodeURIComponent(id),{method:on?"PUT":"DELETE",credentials:"same-origin",headers:{"Accept":"application/json"}})
+    .then(function(r){if(r.ok||r.status===404&&!on){if(SPEND[id]===(on?1:0)){delete SPEND[id];saveStars()}}}).catch(function(){})}
+function paintStars(id){Array.prototype.forEach.call(document.querySelectorAll('.starbtn[data-star="'+(window.CSS&&CSS.escape?CSS.escape(id):id)+'"]'),function(b){var on=!!STARS[id];
+  b.classList.toggle("on",on);b.setAttribute("aria-pressed",on);b.title=on?"Want to attend (tap to unstar)":"Want to attend"})}
+function toggleStar(id){var on=!STARS[id];if(on)STARS[id]=Date.now();else delete STARS[id];SPEND[id]=on?1:0;saveStars();paintStars(id);
+  toast(on?"★ Starred: want to attend":"Star removed");starApi(id,on);
+  if(S.view==="cal")renderCal();else if(S.starred&&S.view!=="cinema")render();else if(S.view==="list"){var f=$("filtToggle");if(f)f.classList.toggle("has-active",document.body.classList.contains("filters-hidden")&&filtersActive())}}
+function syncStars(){if(!API_OK)return;
+  fetch("/api/stars",{credentials:"same-origin",cache:"no-store",headers:{"Accept":"application/json"}}).then(function(r){return r.ok?r.json():null}).then(function(d){
+    if(!d||!Array.isArray(d.stars))return;var srv={};d.stars.forEach(function(x){srv[x.event_id]=Date.parse((x.created_at||"").replace(" ","T")+"Z")||1});
+    Object.keys(SPEND).forEach(function(id){if(SPEND[id]){if(!srv[id])srv[id]=STARS[id]||Date.now();starApi(id,true)}else{delete srv[id];starApi(id,false)}});
+    var changed=JSON.stringify(Object.keys(srv).sort())!==JSON.stringify(Object.keys(STARS).sort());STARS=srv;saveStars();if(changed)render()}).catch(function(){})}
 function copy(txt){
   function fb(){var ta=document.createElement("textarea");ta.value=txt;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();
     var ok=false;try{ok=document.execCommand("copy")}catch(x){}document.body.removeChild(ta);toast(ok?"Link copied":"Copy failed, long-press to copy: "+txt)}
@@ -130,7 +152,7 @@ function detailHtml(e){
   return '<div class="mhead">'+(e.image?'<img src="'+esc(e.image)+'" alt="">':'<div class="ph '+e.category+'">'+ICON[e.category]+'</div>')+
       '<span class="cat '+e.category+'">'+CATS[e.category]+'</span>'+stBadge(e)+'</div>'+
     '<div class="mbody">'+(e.garden_route?'<span class="grtag">Garden Route</span>':'')+
-      '<h2 id="evTitle">'+esc(e.title)+'</h2>'+
+      '<div class="ttl"><h2 id="evTitle">'+esc(e.title)+'</h2>'+starBtn(e)+'</div>'+
       '<div class="when">'+esc(datesTxt(e))+(e.time?" · "+esc(e.time):"")+'</div>'+
       (od.length>1?'<div class="occ">'+od.length+' upcoming dates: '+od.slice(0,10).map(function(d){var x=pd(d);return x.getDate()+" "+MN[x.getMonth()]}).join(", ")+(od.length>10?", …":"")+'</div>':'')+
       (e.status_note?'<div class="stnote'+(isOff(e)?" off":"")+'">'+esc(e.status_note)+'</div>':'')+
@@ -181,6 +203,7 @@ function matches(e,ignoreMonth,anyStatus){
   if(S.cat&&e.category!==S.cat)return false;
   if(S.nye&&!e.nye)return false;
   if(S.xmas&&!e.xmas)return false;
+  if(S.starred&&!isStar(e))return false;
   if(!ignoreMonth&&S.month&&!inMonth(e,S.month))return false;
   if(S.q){var hay=(e.title+" "+e.venue+" "+e.town+" "+e.venue_address+" "+e.notes+" "+e.region+" "+e.category+" "+(e.recurrence||"")+" "+(e._hay||"")).toLowerCase();
     if(!S.q.toLowerCase().split(/\s+/).every(function(w){return hay.indexOf(w)>=0}))return false}
@@ -196,10 +219,10 @@ function card(e){
   var nd=pd(nextDate(e)),multi=!occ(e)&&e.end_date&&e.end_date!==e.start_date;
   var badge='<div class="datebadge"><span class="d">'+nd.getDate()+'</span><span class="m">'+MN[nd.getMonth()]+'</span>'+(multi?'<span class="to">to '+pd(e.end_date).getDate()+' '+MN[pd(e.end_date).getMonth()]+'</span>':'')+'</div>';
   var L=esc(link(e)),price=priceTxt(e.price_from);
-  return '<article class="card'+(isOff(e)?" is-off":"")+'">'+
+  return '<article class="card'+(isOff(e)?" is-off":"")+(isStar(e)?" starred":"")+'">'+
     '<a class="thumb" href="'+L+'" target="_blank" rel="noopener" aria-label="'+esc(e.title)+'">'+thumb(e)+badge+'<span class="cat '+e.category+'">'+CATS[e.category]+'</span>'+(e.recurrence?'<span class="recur">↻ '+esc(e.recurrence.split(",")[0])+'</span>':'')+stBadge(e)+(window._cinOd&&isIndoorSc(e)?'<span class="intag">Indoor</span>':'')+'</a>'+
     '<div class="body">'+(S.scope==="all"&&e.garden_route?'<span class="grtag">Garden Route</span>':'')+
-      '<h3><a href="'+L+'" target="_blank" rel="noopener">'+esc(e.title)+'</a></h3>'+
+      '<div class="ttl"><h3><a href="'+L+'" target="_blank" rel="noopener">'+esc(e.title)+'</a></h3>'+starBtn(e)+'</div>'+
       '<div class="when">'+when(e)+(e.time?" · "+esc(e.time):"")+'</div>'+
       (e.status_note?'<div class="stnote'+(isOff(e)?" off":"")+'">'+esc(e.status_note)+'</div>':'')+
       '<div class="where">'+PIN+'<span>'+esc(e.venue||"")+(e.venue?", ":"")+esc(e.town)+'</span></div>'+atRest(e)+
@@ -238,7 +261,7 @@ function grouped(list,keep){
 function renderList(){
   var A=filtered(false,false),L=A.filter(function(e){return !e._r}),R=A.filter(function(e){return e._r});
   $("count").textContent=countTxt(L.length,R.length);
-  if(!A.length){$("view-list").innerHTML='<div class="empty"><b>Nothing matches those filters</b>'+(S.scope==="gr"?'Try “All coast”, or clear a filter.':'Try clearing a filter.')+'</div>';return}
+  if(!A.length){$("view-list").innerHTML='<div class="empty"><b>'+(S.starred&&!Object.keys(STARS).length?"No starred events yet":"Nothing matches those filters")+'</b>'+(S.starred&&!Object.keys(STARS).length?'Tap the ☆ on any event to mark it as one you want to attend.':(S.scope==="gr"?'Try “All coast”, or clear a filter.':'Try clearing a filter.'))+'</div>';return}
   var gr=L.filter(function(e){return e.garden_route}),wide=L.filter(function(e){return !e.garden_route});
   var h="";
   if(!S.q&&!S.month&&!S.town&&L.length){
@@ -267,11 +290,12 @@ function renderCal(){
   for(var d=1;d<=days;d++){
     var ds=iso(new Date(y,m,d));
     var on=L.filter(function(e){return onDay(e,ds)}).sort(byFreqDay);
+    on=on.filter(isStar).concat(on.filter(function(e){return !isStar(e)}));
     var chips=on.slice(0,3).map(function(e){var cont=!occ(e)&&e.end_date&&e.start_date<ds;
-      return '<div class="chip '+e.category+(e.garden_route?"":" wide")+(isOff(e)?" off":"")+'" title="'+esc(e.title)+(STL[e.status]?" ("+STL[e.status]+")":"")+'">'+(cont?"↳ ":"")+(STL[e.status]?"<b>"+STL[e.status]+":</b> ":"")+esc(e.title)+(e._r&&e.day_labels&&e.day_labels[ds]?": "+esc(e.day_labels[ds]):"")+'</div>'}).join("");
+      return '<div class="chip '+e.category+(e.garden_route?"":" wide")+(isOff(e)?" off":"")+(isStar(e)?" starc":"")+'" title="'+esc(e.title)+(STL[e.status]?" ("+STL[e.status]+")":"")+'">'+(isStar(e)?"★ ":"")+(cont?"↳ ":"")+(STL[e.status]?"<b>"+STL[e.status]+":</b> ":"")+esc(e.title)+(e._r&&e.day_labels&&e.day_labels[ds]?": "+esc(e.day_labels[ds]):"")+'</div>'}).join("");
     var dots='<span class="dots">'+on.slice(0,6).map(function(e){return '<i class="dot '+e.category+'"></i>'}).join("")+'</span>';
-    var hn=holName(ds);
-    h+='<div class="day'+(hn?" hol":"")+(on.length?" has":"")+(ds<TODAY?" past":"")+(ds===TODAY?" today":"")+(S.calDay===ds?" sel":"")+'" data-d="'+ds+'"'+(hn?' title="Public holiday: '+esc(hn)+'"':'')+'><span class="n">'+d+'</span>'+(hn?'<span class="holl"><span class="hollong">'+esc(hn)+'</span><span class="holshort">Holiday</span></span>':'')+chips+(on.length>3?'<span class="more">+'+(on.length-3)+' more</span>':'')+dots+'</div>';
+    var hn=holName(ds),st=on.filter(isStar);
+    h+='<div class="day'+(hn?" hol":"")+(st.length?" star":"")+(on.length?" has":"")+(ds<TODAY?" past":"")+(ds===TODAY?" today":"")+(S.calDay===ds?" sel":"")+'" data-d="'+ds+'"'+(hn||st.length?' title="'+[hn?"Public holiday: "+esc(hn):"",st.length?"Want to attend: "+st.map(function(e){return esc(e.title)}).join(" · "):""].filter(Boolean).join(" | ")+'"':'')+'><span class="n">'+d+'</span>'+(hn?'<span class="holl"><span class="hollong">'+esc(hn)+'</span><span class="holshort">Holiday</span></span>':'')+(st.length?'<span class="stl"><span class="stlong">★ Want to attend'+(st.length>1?" ("+st.length+")":"")+'</span><span class="stshort">★ Going</span></span>':'')+chips+(on.length>3?'<span class="more">+'+(on.length-3)+' more</span>':'')+dots+'</div>';
   }
   $("calGrid").innerHTML=h;
   var inm=L.filter(function(e){return inMonth(e,S.calMonth)&&(!e._r||occ(e))});
@@ -282,11 +306,11 @@ function renderDay(L){
   if(!S.calDay||S.calDay.slice(0,7)!==S.calMonth){$("calDay").innerHTML='<p class="resultline">Tap a day to see what\u2019s on.</p>';return}
   L=L||filtered(true,true);
   var on=L.filter(function(e){return onDay(e,S.calDay)}).sort(byFreqDay);
-  var hn=holName(S.calDay);
-  $("calDay").innerHTML=(hn?'<div class="holbar"><span class="holk">Public holiday</span><span class="holi">'+esc(hn)+'</span><a class="holsrc" href="'+esc(HOL[S.calDay][0].source)+'" target="_blank" rel="noopener">gov.za</a></div>':'')+'<h3>'+fmt(pd(S.calDay),true)+' · '+countTxt(on.filter(function(e){return !e._r}).length,on.filter(function(e){return e._r}).length)+'</h3>'+(on.length?'<div class="grid">'+on.map(card).join("")+'</div>':'<p class="resultline">Nothing listed for this day.</p>');
+  var hn=holName(S.calDay),st=on.filter(isStar);on=st.concat(on.filter(function(e){return !isStar(e)}));
+  $("calDay").innerHTML=(st.length?'<div class="starbar"><span class="stk">'+STAR_SVG+'Want to attend</span>'+st.map(function(e){return '<span class="sti">'+esc(e.title)+'</span>'}).join("")+'</div>':'')+(hn?'<div class="holbar"><span class="holk">Public holiday</span><span class="holi">'+esc(hn)+'</span><a class="holsrc" href="'+esc(HOL[S.calDay][0].source)+'" target="_blank" rel="noopener">gov.za</a></div>':'')+'<h3>'+fmt(pd(S.calDay),true)+' · '+countTxt(on.filter(function(e){return !e._r}).length,on.filter(function(e){return e._r}).length)+'</h3>'+(on.length?'<div class="grid">'+on.map(card).join("")+'</div>':'<p class="resultline">Nothing listed for this day.</p>');
 }
 function popup(g){
-  return '<div class="pop">'+g.map(function(e){return '<div class="pe"><a class="pt" href="'+esc(link(e))+'" target="_blank" rel="noopener">'+thumb(e)+'</a><div><h4>'+esc(e.title)+'</h4><p>'+when(e)+(e.time?" · "+esc(e.time):"")+'<br>'+esc(e.venue||"")+(e.venue?", ":"")+esc(e.town)+'</p>'+
+  return '<div class="pop">'+g.map(function(e){return '<div class="pe"><a class="pt" href="'+esc(link(e))+'" target="_blank" rel="noopener">'+thumb(e)+'</a><div class="pbody"><div class="ttl"><h4>'+esc(e.title)+'</h4>'+starBtn(e)+'</div><p>'+when(e)+(e.time?" · "+esc(e.time):"")+'<br>'+esc(e.venue||"")+(e.venue?", ":"")+esc(e.town)+'</p>'+
     '<span class="pc '+e.category+'">'+CATS[e.category]+'</span>'+(STL[e.status]?'<span class="pc st'+(isOff(e)?" off":"")+'">'+STL[e.status]+'</span>':'')+(e.geo_source==="town centroid"?'<span style="font-size:.7rem;color:#888">approx.</span> ':'')+'<br><a class="go" href="'+esc(link(e))+'" target="_blank" rel="noopener">'+blab(e)+' →</a> <button type="button" class="go gshare" data-share="'+esc(e.id)+'">Share</button> <button type="button" class="go gshare" data-open="'+esc(e.id)+'">Details</button></div></div>'}).join("")+'</div>';
 }
 var FORK='<svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>';
@@ -472,9 +496,9 @@ function render(){
   document.body.classList.toggle("view-cinema",S.view==="cinema");
   Array.prototype.forEach.call(document.querySelectorAll(".views button"),function(b){b.classList.toggle("on",b.dataset.view===S.view)});
   var ft=$("filtToggle");if(ft)ft.classList.toggle("has-active",document.body.classList.contains("filters-hidden")&&filtersActive());
-  Array.prototype.forEach.call(document.querySelectorAll("#catChips button"),function(b){b.classList.toggle("on",b.dataset.nye?!!S.nye:b.dataset.xmas?!!S.xmas:b.dataset.cat===S.cat)});
+  Array.prototype.forEach.call(document.querySelectorAll("#catChips button"),function(b){b.classList.toggle("on",b.dataset.starred?!!S.starred:b.dataset.nye?!!S.nye:b.dataset.xmas?!!S.xmas:b.dataset.cat===S.cat);if(b.dataset.starred)b.setAttribute("aria-pressed",!!S.starred)});
   stats();
-  var af=[];if(S.xmas)af.push("Christmas");if(S.nye)af.push("New Year's Eve");if(S.town)af.push(S.town);if(S.month)af.push(monthLabel(S.month));if(S.q)af.push("“"+S.q+"”");
+  var af=[];if(S.starred)af.push("★ Starred");if(S.xmas)af.push("Christmas");if(S.nye)af.push("New Year's Eve");if(S.town)af.push(S.town);if(S.month)af.push(monthLabel(S.month));if(S.q)af.push("“"+S.q+"”");
   $("activeFilters").textContent=af.length?"· "+af.join(" · "):"";
   var hid=EV.filter(function(e){return isOff(e)&&endOf(e)>=TODAY&&matches(e,S.view==="cal",true)}).length;
   $("offToggle").hidden=!hid;$("offToggle").textContent=S.off?"Hide postponed/cancelled ("+hid+")":hid+" postponed/cancelled hidden · show";
@@ -486,11 +510,11 @@ function syncControls(){
   $("scopeGR").classList.toggle("on",S.scope==="gr");$("scopeAll").classList.toggle("on",S.scope==="all");
   $("scopeGR").setAttribute("aria-pressed",S.scope==="gr");$("scopeAll").setAttribute("aria-pressed",S.scope==="all");
 }
-function writeHash(){var p=[];if(S.view!=="list")p.push("view="+S.view);if(S.scope!=="gr")p.push("scope=all");if(S.off)p.push("off=1");if(S.gal)p.push("gal=1");if(S.nye)p.push("nye=1");if(S.xmas)p.push("xmas=1");if(S.event)p.push("event="+encodeURIComponent(S.event));
+function writeHash(){var p=[];if(S.view!=="list")p.push("view="+S.view);if(S.scope!=="gr")p.push("scope=all");if(S.off)p.push("off=1");if(S.gal)p.push("gal=1");if(S.nye)p.push("nye=1");if(S.xmas)p.push("xmas=1");if(S.starred)p.push("starred=1");if(S.event)p.push("event="+encodeURIComponent(S.event));
   ["town","cat","month","q"].forEach(function(k){if(S[k])p.push(k+"="+encodeURIComponent(S[k]))});
   var h=p.length?"#"+p.join("&"):"";if(location.hash!==h)history.replaceState(null,"",h||location.pathname+location.search)}
 function readHash(){location.hash.replace(/^#/,"").split("&").forEach(function(kv){var a=kv.split("=");if(!a[0])return;var v=decodeURIComponent(a[1]||"");
-  if(a[0]==="view"&&/^(list|cal|map|cinema)$/.test(v))S.view=v;else if(a[0]==="gal"&&v==="1")S.gal=true;else if(a[0]==="view"&&v==="rest")S.cat="restaurant";else if(a[0]==="rest")S.event="r:"+v;else if(a[0]==="scope"&&v==="all")S.scope="all";else if(a[0]==="off"&&v==="1")S.off=true;else if(a[0]==="nye"&&v==="1")S.nye=true;else if(a[0]==="xmas"&&v==="1")S.xmas=true;else if(a[0]==="event")S.event=v;else if(/^(town|cat|month|q)$/.test(a[0]))S[a[0]]=v})}
+  if(a[0]==="view"&&/^(list|cal|map|cinema)$/.test(v))S.view=v;else if(a[0]==="gal"&&v==="1")S.gal=true;else if(a[0]==="view"&&v==="rest")S.cat="restaurant";else if(a[0]==="rest")S.event="r:"+v;else if(a[0]==="scope"&&v==="all")S.scope="all";else if(a[0]==="off"&&v==="1")S.off=true;else if(a[0]==="nye"&&v==="1")S.nye=true;else if(a[0]==="xmas"&&v==="1")S.xmas=true;else if(a[0]==="starred"&&v==="1")S.starred=true;else if(a[0]==="event")S.event=v;else if(/^(town|cat|month|q)$/.test(a[0]))S[a[0]]=v})}
 function setScope(s){S.scope=s;buildTowns();syncControls();render();if(map)map.fitBounds(s==="all"?[[-33.5,18.3],[-34.4,25.0]]:GRB)}
 var INTRO_KEY="gre.hideIntro";
 function setIntroHidden(hide){
@@ -508,7 +532,7 @@ function initIntroToggle(){
   $("introToggle").addEventListener("click",function(){setIntroHidden(!document.body.classList.contains("intro-hidden"))});
 }
 var FILT_KEY="gre.hideFilters2";
-function filtersActive(){return !!(S.q||S.town||S.cat||S.month||S.nye||S.xmas||S.scope!=="gr"||S.off)}
+function filtersActive(){return !!(S.q||S.town||S.cat||S.month||S.nye||S.xmas||S.starred||S.scope!=="gr"||S.off)}
 function setFiltersHidden(hide){
   document.body.classList.toggle("filters-hidden",!!hide);
   var b=$("filtToggle");if(!b)return;
@@ -531,8 +555,8 @@ function bind(){
   $("scopeGR").addEventListener("click",function(){setScope("gr")});
   $("scopeAll").addEventListener("click",function(){setScope("all")});
   $("offToggle").addEventListener("click",function(){S.off=!S.off;buildTowns();syncControls();render()});
-  $("reset").addEventListener("click",function(){S.q=S.town=S.cat=S.month="";S.nye=false;S.xmas=false;S.calDay=null;buildTowns();syncControls();render()});
-  Array.prototype.forEach.call(document.querySelectorAll("#catChips button"),function(b){b.addEventListener("click",function(){if(b.dataset.nye)S.nye=!S.nye;else if(b.dataset.xmas)S.xmas=!S.xmas;else S.cat=b.dataset.cat;render()})});
+  $("reset").addEventListener("click",function(){S.q=S.town=S.cat=S.month="";S.nye=false;S.xmas=false;S.starred=false;S.calDay=null;buildTowns();syncControls();render()});
+  Array.prototype.forEach.call(document.querySelectorAll("#catChips button"),function(b){b.addEventListener("click",function(){if(b.dataset.starred)S.starred=!S.starred;else if(b.dataset.nye)S.nye=!S.nye;else if(b.dataset.xmas)S.xmas=!S.xmas;else S.cat=b.dataset.cat;render()})});
   Array.prototype.forEach.call(document.querySelectorAll(".views button"),function(b){b.addEventListener("click",function(){S.view=b.dataset.view;render();toTop();requestAnimationFrame(toTop)})});
   $("calPrev").addEventListener("click",function(){var i=MONTHS.indexOf(S.calMonth);if(i>0){S.calMonth=MONTHS[i-1];renderCal()}});
   $("calNext").addEventListener("click",function(){var i=MONTHS.indexOf(S.calMonth);if(i<MONTHS.length-1){S.calMonth=MONTHS[i+1];renderCal()}});
@@ -542,6 +566,8 @@ function bind(){
   document.addEventListener("pointerdown",function(ev){var a=document.activeElement;if(isText(a)&&!isText(ev.target)&&!(ev.target.closest&&ev.target.closest("label")))a.blur()},true);
   $("q").addEventListener("keydown",function(ev){if(ev.key==="Enter")this.blur()});
   document.addEventListener("click",function(ev){
+    var sb=ev.target.closest&&ev.target.closest("[data-star]");
+    if(sb){ev.preventDefault();ev.stopPropagation();toggleStar(sb.dataset.star);return}
     var t=ev.target.closest("[data-share],[data-open],[data-act],[data-act-direct],[data-close]");
     if(!t){if(!ev.target.closest("#shareMenu"))closeMenu();if(ev.target.id==="evModal")closeEvent();return}
     if(t.hasAttribute("data-close")){closeEvent();return}
@@ -570,6 +596,8 @@ function bind(){
 }
 bind();
 init(window.EVENTS||[]);
+syncStars();
+document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible")syncStars()});
 if(/^https?:/.test(location.protocol)){
   fetch("data/events.json",{cache:"no-cache"}).then(function(r){return r.ok?r.json():null}).then(function(d){
     if(Array.isArray(d)&&d.length&&JSON.stringify(d)!==JSON.stringify(window.EVENTS||[]))init(d);
