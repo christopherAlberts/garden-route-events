@@ -853,8 +853,9 @@ function wxCollectDistances(blob){var low=String(blob||"").toLowerCase(),found={
   var slash=/(\d+(?:[\.,]\d+)?)\s*\/\s*(\d+(?:[\.,]\d+)?)(?:\s*\/\s*(\d+(?:[\.,]\d+)?))?(?:\s*\/\s*(\d+(?:[\.,]\d+)?))?\s*(?:km|[kK]\b)/gi,s;
   while((s=slash.exec(blob))){for(var i=1;i<=4;i++)if(s[i]){var n=parseFloat(s[i].replace(",","."));if(n<=100)add(n)}}
   return Object.keys(found).map(Number).sort(function(a,b){return a-b})}
-function wxStaggeredStarts(timeStr,title,notes){/* km → start-hour map when the listing gives staggered gun times */
-  var blob=String(timeStr||"")+" "+String(title||"")+" "+String(notes||""),map={},m;
+function wxStaggeredStarts(timeStr,title,notes){/* km → start-hour map when the listing gives staggered gun times.
+   * Parse time + notes only — titles like "Half Marathon & 5 km" pollute later ;-segments. */
+  var blob=String(timeStr||"")+" "+String(notes||""),map={},m;
   /* "21.1 km 07:00; 10 km & 5 km 07:15" */
   var seg=blob.split(/[;|]/);
   for(var i=0;i<seg.length;i++){var bit=seg[i],tm=wxParseHM(bit);if(tm==null)continue;
@@ -892,7 +893,9 @@ function wxRaceWindow(timeStr,title,notes){var blob=String(timeStr||"")+" "+Stri
   if(!cuts.length)return{start:start,startLbl:wxFmtHM(start),end:null,cuts:[],estimated:false,kind:"start-only"};
   cuts=cuts.filter(function(c,i,a){return a.findIndex(function(x){return x.km===c.km})===i});
   cuts.sort(function(a,b){return a.end-b.end||((a.km||0)-(b.km||0))});
-  var earliest=Math.min.apply(null,cuts.map(function(c){return c.start}).concat([start]));
+  /* Gun time for the chart = earliest start actually used by a distance row (not a
+   * leftover parse that no cut adopted — keeps chip, line and table in sync). */
+  var earliest=Math.min.apply(null,cuts.map(function(c){return c.start}));
   var latest=Math.max.apply(null,cuts.map(function(c){return c.end}));
   var anyEst=cuts.some(function(c){return c.estimated});
   return{start:earliest,startLbl:wxFmtHM(earliest),end:latest,endLbl:wxFmtHM(latest),estimated:anyEst,cuts:cuts,kind:anyEst?"est":"real"}}
@@ -912,7 +915,9 @@ function wxHourStrip(d,ds,runCat,raceMeta){if(!d||!d.hours||!d.hours.length)retu
   var tMin=temps.length?Math.min.apply(null,temps):0,tMax=temps.length?Math.max.apply(null,temps):1;
   if(tMax-tMin<2){var mid=(tMax+tMin)/2;tMin=mid-1;tMax=mid+1}
   function xAt(i){return padL+(i+0.5)*((chartW-padL-padR)/n)}
-  function xAtFrac(fracH){var first=h[0].hh,last=h[n-1].hh,span=Math.max(1,last-first);return padL+((fracH-first)/span)*(chartW-padL-padR)}
+  /* Fractional hours share the hour-dot scale: each hour centre is xAt(index), so
+   * 07:15 sits 1/4 of the way from the 07:00 dot to the 08:00 dot. */
+  function xAtFrac(fracH){var first=h[0].hh,col=(chartW-padL-padR)/n;return padL+(fracH-first+0.5)*col}
   function yAt(t){var v=wxTemp(t);if(v==null)return topPad+curveH/2;return topPad+curveH-((v-tMin)/(tMax-tMin))*curveH}
   /* Resolve race meta before sizing so cutoff chip lane can grow the SVG */
   var race=runCat?wxRaceWindow(raceMeta&&raceMeta.time,raceMeta&&raceMeta.title,raceMeta&&raceMeta.notes):null;
