@@ -548,3 +548,4 @@ body.theme-run .sec h2{color:var(--rundeep)}
 .clubsec .asano{display:inline-block;padding:2px 9px;border-radius:999px;background:#1f5fa8;color:#fff;font-size:.78rem;font-weight:800;letter-spacing:.02em;white-space:nowrap}
 .clubsec .ast{display:inline-block;font-size:.72rem;font-weight:800;padding:2px 8px;border-radius:999px;white-space:nowrap}.clubsec .ast.ok{background:#1f5fa8;color:#fff}.clubsec .ast.no{background:#fde2e0;color:#9b2c22}.clubsec .ast.unk{background:#e6e8e6;color:#5c6660}
 .clubsec .asano{background:var(--surface2,#f1ede6);color:var(--ink);border:1px solid var(--line)}
+.clubsec h2 .clublogo{display:inline-block;vertical-align:-8px;margin-right:8px;width:34px;height:34px}
