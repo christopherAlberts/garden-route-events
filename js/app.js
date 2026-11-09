@@ -680,7 +680,7 @@ function clubJoinOpen(){if(!ME){location.href="/login";return}
     var msg=$("clubJoinMsg");if(msg){msg.textContent=CLUB_PICK!==(MYCLUB||"")?"Tap Save club to keep this choice.":"";msg.className="clubmsg"}});
   var save=$("clubJoinSave");if(save)save.addEventListener("click",clubJoinSave)}
 function clubJoinClose(){var m=$("clubModal");if(!m||m.hidden)return;m.hidden=true;
-  if($("evModal").hidden&&$("wxModal").hidden&&$("filmOv").hidden)document.body.classList.remove("modal-open");
+  if($("evModal").hidden&&$("wxModal").hidden&&$("filmOv").hidden&&(!$("clubModal")||$("clubModal").hidden))document.body.classList.remove("modal-open");
   var box=$("clubBox");if(box)box.innerHTML=""}
 function clubJoinSave(){var save=$("clubJoinSave"),msg=$("clubJoinMsg"),asa=$("clubJoinAsa");if(!save)return;
   save.disabled=true;if(msg){msg.textContent="";msg.className="clubmsg"}
@@ -917,7 +917,7 @@ function wxOpen(town,ds,cat){var m=$("wxModal"),box=$("wxBox");if(!m||!box)retur
   /* Drop stale daily-only cache entry for this town, then refetch */
   try{if(WX.mem[town])delete WX.mem[town];wxSaveCache()}catch(e){}
   wxFetchTown(town).then(function(){show(wxGetDay(town,ds))}).catch(function(){show(null)})}
-function wxClose(){var m=$("wxModal");if(!m||m.hidden)return;m.hidden=true;if($("evModal").hidden&&$("filmOv").hidden)document.body.classList.remove("modal-open");
+function wxClose(){var m=$("wxModal");if(!m||m.hidden)return;m.hidden=true;if($("evModal").hidden&&$("filmOv").hidden&&(!$("clubModal")||$("clubModal").hidden))document.body.classList.remove("modal-open");
   var box=$("wxBox");if(box)box.innerHTML=""}
 function wxApply(){Array.prototype.forEach.call(document.querySelectorAll(".wx[data-wx-town][data-wx-date]"),function(el){
   var town=el.getAttribute("data-wx-town"),ds=el.getAttribute("data-wx-date"),cat=el.getAttribute("data-wx-cat")||"";
