@@ -748,7 +748,12 @@ body.theme-run .clubjoinbtn,body.theme-run .clubsignin,body.theme-run #clubJoinS
 .wxcurve .wxraceblock{fill:rgba(250,84,0,.14);stroke:none}
 .wxcurve .wxraceblock.est{fill:rgba(250,84,0,.10)}
 .wxcurve .wxracecut{stroke:#FA5400;stroke-width:1.5;stroke-dasharray:2 3}
-.wxcurve .wxracecutlbl{fill:#FA5400;font-size:8px;font-weight:800;text-anchor:end;font-family:inherit}
+.wxcurve .wxracecutlbl{fill:#FA5400;font-size:8px;font-weight:800;text-anchor:middle;font-family:inherit;pointer-events:none}
+.wxcurve .wxracecutchip{fill:#fff;stroke:rgba(250,84,0,.35);stroke-width:1;opacity:.96}
+.wxcurve .wxracecutchip.c0{stroke:#FA5400}
+.wxcurve .wxracecutchip.c1{stroke:#c45a12}
+.wxcurve .wxracecutchip.c2{stroke:#a05a28}
+.wxcurve .wxracecutchip.c3{stroke:#d4782a}
 .wxcurve .wxraceico{font-size:12px;text-anchor:middle;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
 .wxcurve .wxracelbl{fill:#FA5400;font-size:9px;font-weight:800;text-anchor:start;font-family:inherit}
 .wxleg-race{background:#FA5400;border:1px solid #FA5400}
@@ -764,3 +769,18 @@ body.theme-run .clubjoinbtn,body.theme-run .clubsignin,body.theme-run #clubJoinS
 .wxcurve .wxracecutlbl.c1{fill:#c45a12}
 .wxcurve .wxracecutlbl.c2{fill:#a05a28}
 .wxcurve .wxracecutlbl.c3{fill:#d4782a}
+
+
+.wxracetimes{margin:12px 0 0;padding:10px 12px;border-radius:12px;background:color-mix(in srgb,var(--ocean) 8%,var(--surface2));border:1px solid color-mix(in srgb,var(--ocean) 18%,var(--line))}
+.wxracetimes-h{margin:0 0 8px;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.wxracetable{width:100%;border-collapse:collapse;font-size:.78rem;font-weight:700}
+.wxracetable th,.wxracetable td{padding:5px 6px;text-align:left;border-bottom:1px solid color-mix(in srgb,var(--line) 80%,transparent)}
+.wxracetable th{font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;color:var(--mut);font-weight:800}
+.wxracetable tr:last-child td{border-bottom:none}
+.wxracetable td:nth-child(2),.wxracetable td:nth-child(3),.wxracetable th:nth-child(2),.wxracetable th:nth-child(3){text-align:right;font-variant-numeric:tabular-nums}
+.wxracetimes-note{margin:8px 0 0;font-size:.7rem;font-weight:600;line-height:1.35;color:var(--mut)}
+
+@media (prefers-color-scheme: dark){
+  .wxcurve .wxracecutchip{fill:#1a1f2a;stroke:rgba(250,140,80,.55);opacity:.97}
+  .wxracetimes{background:color-mix(in srgb,var(--ocean) 14%,var(--surface2))}
+}

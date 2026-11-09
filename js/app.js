@@ -828,6 +828,10 @@ function wxFmtHM(frac){if(frac==null||isNaN(frac))return"";var h=Math.floor(frac
 function wxParseHM(str){var m=/(\d{1,2}):(\d{2})/.exec(String(str||""));if(!m)return null;var hh=+m[1],mm=+m[2];if(hh>23||mm>59)return null;return hh+mm/60}
 function wxDistLabel(km){if(km==null)return"";if(Math.abs(km-42.2)<0.2||Math.abs(km-42)<0.2)return"42K";if(Math.abs(km-21.1)<0.2||Math.abs(km-21)<0.2)return"21K";
   if(km===Math.round(km))return Math.round(km)+"K";return(Math.round(km*10)/10)+"K"}
+
+function wxKmTableLabel(km){if(km==null||isNaN(km))return "—";
+  if(Math.abs(km-21.1)<0.15)return "21.1 km";if(Math.abs(km-42.2)<0.15)return "42.2 km";
+  if(km===Math.round(km))return Math.round(km)+" km";return(Math.round(km*10)/10)+" km"}
 /*
  * Typical race cutoff estimates (hours after START) when no official cutoff is listed — per distance:
  *   ≤5 km → 1h;  10 km → 1h45;  15–16 km → 2h30;  half/21.1 → 3h30;  25–32 km → 4h30;
@@ -903,13 +907,19 @@ function wxHourStrip(d,ds,runCat,raceMeta){if(!d||!d.hours||!d.hours.length)retu
   var h=[];for(i=startH;i<=endH;i++){if(byH[i])h.push(byH[i])}
   if(!h.length){h=d.hours.filter(function(x){return x.hh>=4&&x.hh<=22});if(!h.length)h=d.hours.slice()}
   if(!h.length)return'<p class="wxnostrip">Hourly forecast unavailable</p>';
-  var n=h.length,colW=56,chartW=Math.max(n*colW,n*40),padL=8,padR=8,topPad=22,curveH=78,iconY=topPad+curveH+6,rainH=28,baseY=iconY+36,svgH=baseY+rainH+18;
+  var n=h.length,colW=56,chartW=Math.max(n*colW,n*40),padL=8,padR=8,topPad=22,curveH=78,iconY=topPad+curveH+6,rainH=28,baseY=iconY+36;
   var temps=h.map(function(x){return wxTemp(x.t)}).filter(function(t){return t!=null});
   var tMin=temps.length?Math.min.apply(null,temps):0,tMax=temps.length?Math.max.apply(null,temps):1;
   if(tMax-tMin<2){var mid=(tMax+tMin)/2;tMin=mid-1;tMax=mid+1}
   function xAt(i){return padL+(i+0.5)*((chartW-padL-padR)/n)}
   function xAtFrac(fracH){var first=h[0].hh,last=h[n-1].hh,span=Math.max(1,last-first);return padL+((fracH-first)/span)*(chartW-padL-padR)}
   function yAt(t){var v=wxTemp(t);if(v==null)return topPad+curveH/2;return topPad+curveH-((v-tMin)/(tMax-tMin))*curveH}
+  /* Resolve race meta before sizing so cutoff chip lane can grow the SVG */
+  var race=runCat?wxRaceWindow(raceMeta&&raceMeta.time,raceMeta&&raceMeta.title,raceMeta&&raceMeta.notes):null;
+  var rightMaxPre=h[n-1].hh+0.01, visibleCuts=[];
+  if(race&&race.cuts&&race.cuts.length)visibleCuts=race.cuts.filter(function(c){return c.end>=h[0].hh-0.01&&c.end<=rightMaxPre});
+  var cutLaneH=visibleCuts.length?Math.min(42,20+Math.min(2,visibleCuts.length)*12):0;
+  var footPad=race?16:10, cutLaneTop=baseY+rainH+footPad, svgH=cutLaneH?(cutLaneTop+cutLaneH+4):(baseY+rainH+footPad+(race?8:4));
   /* Smooth cubic path through hour points */
   var pts=[];for(i=0;i<n;i++)pts.push({x:xAt(i),y:yAt(h[i].t),t:h[i].t,pop:h[i].pop,hh:h[i].hh,code:h[i].code});
   function smoothPath(pts){if(pts.length<2)return"";var d="M"+pts[0].x.toFixed(1)+","+pts[0].y.toFixed(1),j,p0,p1,p2,p3,cp1x,cp1y,cp2x,cp2y;
@@ -929,26 +939,31 @@ function wxHourStrip(d,ds,runCat,raceMeta){if(!d||!d.hours||!d.hours.length)retu
     var x1=xAtFrac(a),x2=xAtFrac(b),bw=x2-x1;
     svg+='<rect class="wxrunband" x="'+x1.toFixed(1)+'" y="0" width="'+bw.toFixed(1)+'" height="'+svgH+'" />';
     if(bw>=48)svg+='<text class="wxrunbandlbl" x="'+(x1+bw/2).toFixed(1)+'" y="14">Best run</text>'})}
-  /* Race start + per-distance cutoff lines (funrun only); shade to longest cutoff, full height */
-  var race=runCat?wxRaceWindow(raceMeta&&raceMeta.time,raceMeta&&raceMeta.title,raceMeta&&raceMeta.notes):null;
+  /* Race start + per-distance cutoff lines; distance chips in bottom lane only */
   if(race&&race.start>=h[0].hh-0.01&&race.start<=h[n-1].hh+0.01){
-    var rx=xAtFrac(race.start), rightMax=h[n-1].hh+0.01;
+    var rx=xAtFrac(race.start), rightMax=rightMaxPre;
     if(race.end!=null&&race.end>race.start){
       var rx2=xAtFrac(Math.min(race.end,rightMax)), bw=Math.max(2,rx2-rx);
       svg+='<rect class="wxraceblock'+(race.estimated?" est":"")+'" x="'+rx.toFixed(1)+'" y="0" width="'+bw.toFixed(1)+'" height="'+svgH+'" />';
     }
-    var cuts=race.cuts||[], labelYs=[], yi;
-    cuts.forEach(function(c,idx){if(c.end<h[0].hh-0.01||c.end>rightMax)return;
+    var placed=[], pi;
+    visibleCuts.forEach(function(c,idx){
       var cx=xAtFrac(Math.min(c.end,rightMax)), shade=idx%4;
       svg+='<line class="wxracecut c'+shade+'" x1="'+cx.toFixed(1)+'" y1="0" x2="'+cx.toFixed(1)+'" y2="'+svgH+'" />';
-      var lbl=(c.label?c.label+" ":"")+(c.estimated?"~":"")+c.endLbl+(c.estimated?" (est.)":"");
-      var ly=16+idx*14; /* stagger labels vertically */
-      for(yi=0;yi<labelYs.length;yi++){if(Math.abs(labelYs[yi]-ly)<12&&Math.abs((cuts[yi]?xAtFrac(Math.min(cuts[yi].end,rightMax)):0)-cx)<36)ly+=14}
-      labelYs.push(ly);
-      svg+='<text class="wxracecutlbl c'+shade+'" x="'+(cx-2).toFixed(1)+'" y="'+ly+'">'+lbl+'</text>'});
+      var chip=(c.label?c.label:"Cut")+(c.estimated?" ~":" ")+c.endLbl;
+      var row=0;
+      for(pi=0;pi<placed.length;pi++){if(Math.abs(placed[pi].x-cx)<44&&placed[pi].row===row){row=1;break}}
+      placed.push({x:cx,row:row});
+      var chipY=cutLaneTop+11+row*13, tw=Math.max(30,chip.length*5.1), th=12;
+      var chipX=cx-tw/2; if(chipX<2)chipX=2; if(chipX+tw>chartW-2)chipX=chartW-2-tw;
+      svg+='<rect class="wxracecutchip c'+shade+'" x="'+chipX.toFixed(1)+'" y="'+(chipY-th+3).toFixed(1)+'" width="'+tw.toFixed(1)+'" height="'+th+'" rx="3" />';
+      svg+='<text class="wxracecutlbl c'+shade+'" x="'+(chipX+tw/2).toFixed(1)+'" y="'+chipY.toFixed(1)+'">'+chip+'</text>';
+    });
     svg+='<line class="wxraceline" x1="'+rx.toFixed(1)+'" y1="0" x2="'+rx.toFixed(1)+'" y2="'+svgH+'" />';
-    svg+='<text class="wxraceico" x="'+rx.toFixed(1)+'" y="'+(svgH-6)+'">🏃</text>';
-    svg+='<text class="wxracelbl" x="'+(rx+4).toFixed(1)+'" y="'+(svgH-8)+'">Race start '+race.startLbl+'</text>';
+    /* Race start tag above the cutoff chip lane (below rain bars) */
+    var startY=cutLaneH?(cutLaneTop-3):(svgH-6);
+    svg+='<text class="wxraceico" x="'+rx.toFixed(1)+'" y="'+startY+'">🏃</text>';
+    svg+='<text class="wxracelbl" x="'+(rx+4).toFixed(1)+'" y="'+startY+'">Race start '+race.startLbl+'</text>';
   }
   if(area)svg+='<path class="wxarea" d="'+area+'" />';
   if(path)svg+='<path class="wxline" d="'+path+'" fill="none" />';
@@ -976,7 +991,21 @@ function wxHourStrip(d,ds,runCat,raceMeta){if(!d||!d.hours||!d.hours.length)retu
   legend+='<li><span class="wxlegsw wxleg-night" aria-hidden="true"></span>Night</li>';
   legend+='<li><span class="wxlegsw wxleg-rain" aria-hidden="true"></span>Rain chance %</li>';
   legend+='<li><span class="wxlegico" aria-hidden="true">🌅🌇</span>Sunrise / sunset</li></ul>';
-  return '<div class="wxhourly" data-wx-n="'+n+'"><div class="wxscroll" data-wx-scroll><div class="wxscroll-inner" style="min-width:100%;width:'+chartW+'px">'+svg+'<div class="wxstrip" role="list" aria-label="Hourly forecast">'+cols+'</div></div></div>'+legend+'</div>'}
+  var timesTbl='';
+  if(runCat&&race&&race.cuts&&race.cuts.length){
+    timesTbl='<div class="wxracetimes"><h4 class="wxracetimes-h">Race times</h4><table class="wxracetable"><thead><tr><th scope="col">Distance</th><th scope="col">Start</th><th scope="col">Cutoff</th></tr></thead><tbody>';
+    race.cuts.forEach(function(c){
+      var dist=c.km!=null?wxKmTableLabel(c.km):(c.label||"—");
+      var startLbl=wxFmtHM(c.start!=null?c.start:race.start);
+      var cut=c.estimated?("~"+c.endLbl+" (est.)"):c.endLbl;
+      timesTbl+='<tr><td>'+dist+'</td><td>'+startLbl+'</td><td>'+cut+'</td></tr>';
+    });
+    timesTbl+='</tbody></table>';
+    if(race.estimated)timesTbl+='<p class="wxracetimes-note">Estimated cutoffs are typical for the distance; check the race info for official times.</p>';
+    timesTbl+='</div>';
+  }
+  return '<div class="wxhourly" data-wx-n="'+n+'"><div class="wxscroll" data-wx-scroll><div class="wxscroll-inner" style="min-width:100%;width:'+chartW+'px">'+svg+'<div class="wxstrip" role="list" aria-label="Hourly forecast">'+cols+'</div></div></div>'+legend+timesTbl+'</div>'}
+
 function wxModalHtml(town,ds,d,runCat,raceMeta){if(!d)return'<button type="button" class="mclose" data-wx-close aria-label="Close">×</button><p class="wxempty">Forecast unavailable</p>';
   var c=wxCond(d.code),dateLbl="";try{dateLbl=fmt(pd(ds),true)}catch(e){dateLbl=ds}
   var html='<button type="button" class="mclose" data-wx-close aria-label="Close">×</button>';
