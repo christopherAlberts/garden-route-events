@@ -241,7 +241,7 @@ function card(e){
     '<a class="thumb" href="'+L+'" target="_blank" rel="noopener" aria-label="'+esc(e.title)+'">'+thumb(e)+badge+'<span class="cat '+e.category+'">'+CATS[e.category]+'</span>'+(e.recurrence?'<span class="recur">↻ '+esc(e.recurrence.split(",")[0])+'</span>':'')+stBadge(e)+(window._cinOd&&isIndoorSc(e)?'<span class="intag">Indoor</span>':'')+'</a>'+
     '<div class="body">'+(S.scope==="all"&&e.garden_route?'<span class="grtag">Garden Route</span>':'')+
       clubTag(e)+'<div class="ttl"><h3><a href="'+L+'" target="_blank" rel="noopener">'+esc(e.title)+'</a></h3>'+starBtn(e)+'</div>'+
-      '<div class="when">'+when(e)+(e.time?" · "+esc(e.time):"")+'</div>'+
+      '<div class="when">'+when(e)+(e.time?" · "+esc(e.time):"")+'<span class="wx" data-wx-town="'+esc(e.town||"")+'" data-wx-date="'+esc(nextDate(e))+'"></span></div>'+
       (e.status_note?'<div class="stnote'+(isOff(e)?" off":"")+'">'+esc(e.status_note)+'</div>':'')+
       '<div class="where">'+PIN+'<span>'+esc(e.venue||"")+(e.venue?", ":"")+esc(e.town)+'</span></div>'+atRest(e)+hostLine(e)+
       (e.recurrence?'<div class="notes">'+esc(e.recurrence)+'</div>':(e.notes&&!/^(Quicket|Webtickets) category/.test(e.notes)?'<div class="notes">'+esc(e.notes)+'</div>':''))+
@@ -285,7 +285,8 @@ function renderList(){
   if(!S.q&&!S.month&&!S.town&&L.length){
     var lim=iso(new Date(Date.now()+9*864e5));
     var soon=L.filter(function(e){var n=nextDate(e);return n>=TODAY&&n<=lim}).sort(function(a,b){return (b.garden_route-a.garden_route)||ftier(a)-ftier(b)||nextDate(a).localeCompare(nextDate(b))}).slice(0,14);
-    var mv=soonMovies(lim),mix=soon.map(function(e){return {e:e,d:nextDate(e),gr:e.garden_route?1:0}}).concat(mv.map(function(x){return {m:x._m,d:x._d,gr:1}}))
+    /* Cinema coming-soon cards are not star-able and bypass matches()/isStar — omit them under the Liked filter. */
+    var mv=S.starred?[]:soonMovies(lim),mix=soon.map(function(e){return {e:e,d:nextDate(e),gr:e.garden_route?1:0}}).concat(mv.map(function(x){return {m:x._m,d:x._d,gr:1}}))
       .sort(function(a,b){return (b.gr-a.gr)||((a.e?ftier(a.e):0)-(b.e?ftier(b.e):0))||a.d.localeCompare(b.d)});
     if(mix.length>2)h+='<div class="sec"><h2>Happening soon</h2><span class="pill">next 10 days</span></div><div class="soon">'+mix.map(function(x){return x.m?mcard(x.m,true):card(x.e)}).join("")+'</div>';
   }
@@ -530,6 +531,7 @@ function render(){
   var hid=EV.filter(function(e){return isOff(e)&&endOf(e)>=TODAY&&matches(e,S.view==="cal",true)}).length;
   $("offToggle").hidden=!hid;$("offToggle").textContent=S.off?"Hide postponed/cancelled ("+hid+")":hid+" postponed/cancelled hidden · show";
   if(S.view==="list")renderList();else if(S.view==="cal")renderCal();else if(S.view==="cinema")renderCinema();else renderMap();
+  if(S.view!=="cal")wxHydrate();
   writeHash();
 }
 function syncControls(){
@@ -622,6 +624,41 @@ function bind(){
   bindFilm();
 }
 bind();
+
+/* ---------- Weather (Open-Meteo) — list cards only ---------- */
+var WX={TTL:2*60*60*1000,KEY:"gre.wx.v1",mem:{},pend:{}};
+function wxIcon(c){c=+c;if(c===0)return"☀";if(c<=3)return"⛅";if(c===45||c===48)return"🌫";if(c>=51&&c<=67)return"🌧";if(c>=71&&c<=77)return"❄";if(c>=80&&c<=82)return"🌦";if(c>=85&&c<=86)return"❄";if(c>=95)return"⛈";return"☁"}
+function wxFmt(d){if(!d)return"";var s='<span class="wxi" aria-hidden="true">'+wxIcon(d.code)+'</span> '+Math.round(d.tmax)+"°/"+Math.round(d.tmin)+"°";if(d.pop!=null&&d.pop>=30)s+=" · "+d.pop+"%";return s}
+function wxTitle(d){if(!d)return"";var n={0:"Clear",1:"Mainly clear",2:"Partly cloudy",3:"Overcast",45:"Fog",48:"Fog",51:"Light drizzle",53:"Drizzle",55:"Drizzle",61:"Light rain",63:"Rain",65:"Heavy rain",71:"Snow",73:"Snow",75:"Snow",80:"Showers",81:"Showers",82:"Heavy showers",95:"Thunderstorm",96:"Thunderstorm",99:"Thunderstorm"}[d.code]||"Forecast";return n+", high "+Math.round(d.tmax)+"° · low "+Math.round(d.tmin)+"°"+(d.pop!=null?" · rain "+d.pop+"%":"")+" (Open-Meteo)"}
+function wxLoadCache(){try{var r=JSON.parse(localStorage.getItem(WX.KEY)||"{}");if(r&&typeof r==="object")WX.mem=r}catch(e){WX.mem={}}}
+function wxSaveCache(){try{var now=Date.now(),o={},k;for(k in WX.mem){if(WX.mem[k]&&WX.mem[k].exp>now)o[k]=WX.mem[k]}localStorage.setItem(WX.KEY,JSON.stringify(o));WX.mem=o}catch(e){}}
+function wxTownCoords(town){var t=(window.TOWNS||{})[town];return t&&t.lat!=null&&t.lng!=null?t:null}
+function wxInWindow(ds){if(!ds||ds<TODAY)return false;var lim=pd(TODAY);lim.setDate(lim.getDate()+15);var y=lim.getFullYear(),m=String(lim.getMonth()+1).padStart(2,"0"),d=String(lim.getDate()).padStart(2,"0");return ds<=y+"-"+m+"-"+d}
+function wxGetDay(town,ds){var c=WX.mem[town];if(!c||c.exp<Date.now()||!c.days)return null;return c.days[ds]||null}
+function wxFetchTown(town){if(WX.pend[town])return WX.pend[town];var co=wxTownCoords(town);if(!co)return Promise.resolve(null);
+  var url="https://api.open-meteo.com/v1/forecast?latitude="+co.lat+"&longitude="+co.lng+"&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Africa%2FJohannesburg&forecast_days=16";
+  WX.pend[town]=fetch(url,{credentials:"omit",mode:"cors"}).then(function(r){return r.ok?r.json():null}).then(function(j){
+    delete WX.pend[town];if(!j||!j.daily||!j.daily.time)return null;
+    var days={},i,t=j.daily.time,code=j.daily.weather_code||j.daily.weathercode||[],tmax=j.daily.temperature_2m_max||[],tmin=j.daily.temperature_2m_min||[],pop=j.daily.precipitation_probability_max||[];
+    for(i=0;i<t.length;i++)days[t[i]]={code:code[i],tmax:tmax[i],tmin:tmin[i],pop:pop[i]};
+    WX.mem[town]={exp:Date.now()+WX.TTL,days:days};wxSaveCache();return days;
+  }).catch(function(){delete WX.pend[town];return null});
+  return WX.pend[town]}
+function wxApply(){Array.prototype.forEach.call(document.querySelectorAll(".wx[data-wx-town][data-wx-date]"),function(el){
+  var town=el.getAttribute("data-wx-town"),ds=el.getAttribute("data-wx-date");
+  if(!town||!ds||!wxInWindow(ds)){el.textContent="";el.removeAttribute("title");return}
+  var d=wxGetDay(town,ds);if(!d||d.tmax==null||d.tmin==null){el.textContent="";el.removeAttribute("title");return}
+  el.innerHTML=wxFmt(d);el.title=wxTitle(d);el.setAttribute("aria-label",wxTitle(d));
+})}
+function wxHydrate(){if(S.view==="cal")return; // never on calendar
+  var need={},els=document.querySelectorAll(".wx[data-wx-town][data-wx-date]");
+  Array.prototype.forEach.call(els,function(el){var town=el.getAttribute("data-wx-town"),ds=el.getAttribute("data-wx-date");
+    if(town&&ds&&wxInWindow(ds)&&wxTownCoords(town)&&!wxGetDay(town,ds))need[town]=1});
+  var towns=Object.keys(need),i=0;
+  function next(){if(i>=towns.length){wxApply();return}var t=towns[i++];wxFetchTown(t).then(function(){wxApply();next()}).catch(function(){next()})}
+  wxApply();if(towns.length)next()}
+wxLoadCache();
+
 init(window.EVENTS||[]);
 syncStars();
 document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible")syncStars()});
