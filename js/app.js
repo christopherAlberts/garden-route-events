@@ -102,26 +102,34 @@ function shareBtn(e){return '<button class="sharebtn" type="button" data-share="
 function toast(msg){var t=$("toast");t.textContent=msg;t.classList.add("on");clearTimeout(toast._t);toast._t=setTimeout(function(){t.classList.remove("on")},2200)}
 /* ---------- "want to attend" stars: per user, stored on the server (/api/stars), localStorage as optimistic cache/fallback ---------- */
 var STAR_SVG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.6 5.5 6 .7-4.4 4.1 1.2 5.9L12 16.5l-5.4 2.9 1.2-5.9-4.4-4.1 6-.7z"/></svg>';
-var STK="gre.stars",SPK="gre.starsPending",STARS={},SPEND={};
-try{STARS=JSON.parse(localStorage.getItem(STK)||"{}")||{};SPEND=JSON.parse(localStorage.getItem(SPK)||"{}")||{}}catch(x){STARS={};SPEND={}}
-function saveStars(){try{localStorage.setItem(STK,JSON.stringify(STARS));localStorage.setItem(SPK,JSON.stringify(SPEND))}catch(x){}}
-function isStar(e){return !!(e&&STARS[e._r?e.key:e.id])}
-function starBtn(e){if(e._r)return "";var on=isStar(e);
+/* Stars are strictly per logged-in user: the server (user_stars via /api/stars) is the only source of truth.
+   The cache lives under gre_stars_<userId>, is only read after /api/me confirms that same user, and is wiped on logout (login page) or for any other user.
+   No login (static copy, expired session) = no stars shown and no star buttons. */
+var ME=null,STARS={};
+function clearStarCaches(keep){try{for(var i=localStorage.length-1;i>=0;i--){var k=localStorage.key(i);if(k&&(/^gre_stars_/.test(k)&&k!==keep||k==="gre.stars"||k==="gre.starsPending"))localStorage.removeItem(k)}}catch(x){}}
+function starKey(){return ME?"gre_stars_"+ME:null}
+function saveStars(){var k=starKey();if(!k)return;try{localStorage.setItem(k,JSON.stringify(STARS))}catch(x){}}
+function isStar(e){return !!(ME&&e&&!e._r&&STARS[e.id])}
+function starBtn(e){if(e._r||!ME)return "";var on=isStar(e);
   return '<button type="button" class="starbtn'+(on?" on":"")+'" data-star="'+esc(e.id)+'" aria-pressed="'+on+'" aria-label="'+(on?"Starred: want to attend ":"Star: want to attend ")+esc(e.title)+'" title="'+(on?"Want to attend (tap to unstar)":"Want to attend")+'">'+STAR_SVG+'</button>'}
 var API_OK=/^https?:/.test(location.protocol);
-function starApi(id,on){if(!API_OK)return;
-  fetch("/api/stars/"+encodeURIComponent(id),{method:on?"PUT":"DELETE",credentials:"same-origin",headers:{"Accept":"application/json"}})
-    .then(function(r){if(r.ok||r.status===404&&!on){if(SPEND[id]===(on?1:0)){delete SPEND[id];saveStars()}}}).catch(function(){})}
 function paintStars(id){Array.prototype.forEach.call(document.querySelectorAll('.starbtn[data-star="'+(window.CSS&&CSS.escape?CSS.escape(id):id)+'"]'),function(b){var on=!!STARS[id];
   b.classList.toggle("on",on);b.setAttribute("aria-pressed",on);b.title=on?"Want to attend (tap to unstar)":"Want to attend"})}
-function toggleStar(id){var on=!STARS[id];if(on)STARS[id]=Date.now();else delete STARS[id];SPEND[id]=on?1:0;saveStars();paintStars(id);
-  toast(on?"★ Starred: want to attend":"Star removed");starApi(id,on);
-  if(S.view==="cal")renderCal();else if(S.starred&&S.view!=="cinema")render();else if(S.view==="list"){var f=$("filtToggle");if(f)f.classList.toggle("has-active",document.body.classList.contains("filters-hidden")&&filtersActive())}}
-function syncStars(){if(!API_OK)return;
-  fetch("/api/stars",{credentials:"same-origin",cache:"no-store",headers:{"Accept":"application/json"}}).then(function(r){return r.ok?r.json():null}).then(function(d){
-    if(!d||!Array.isArray(d.stars))return;var srv={};d.stars.forEach(function(x){srv[x.event_id]=Date.parse((x.created_at||"").replace(" ","T")+"Z")||1});
-    Object.keys(SPEND).forEach(function(id){if(SPEND[id]){if(!srv[id])srv[id]=STARS[id]||Date.now();starApi(id,true)}else{delete srv[id];starApi(id,false)}});
-    var changed=JSON.stringify(Object.keys(srv).sort())!==JSON.stringify(Object.keys(STARS).sort());STARS=srv;saveStars();if(changed)render()}).catch(function(){})}
+function afterStar(){if(S.view==="cal")renderCal();else if(S.starred&&S.view!=="cinema")render()}
+function setStar(id,on){if(on)STARS[id]=STARS[id]||Date.now();else delete STARS[id];saveStars();paintStars(id)}
+function toggleStar(id){if(!ME)return;var uid=ME,on=!STARS[id];setStar(id,on);afterStar();toast(on?"★ Starred: want to attend":"Star removed");
+  fetch("/api/stars/"+encodeURIComponent(id),{method:on?"PUT":"DELETE",credentials:"same-origin",headers:{"Accept":"application/json"}})
+    .then(function(r){if(!r.ok)throw r}).catch(function(r){if(ME!==uid)return;setStar(id,!on);afterStar();
+      if(r&&r.status===401){logoutStars();toast("Your session ended. Log in again to save stars.")}else toast("Couldn\u2019t save the star. Check your connection.")})}
+function logoutStars(){ME=null;STARS={};clearStarCaches(null);document.body.classList.remove("signed-in");render()}
+function syncStars(){if(!API_OK){logoutStars();return}
+  fetch("/api/me",{credentials:"same-origin",cache:"no-store",headers:{"Accept":"application/json"}}).then(function(r){if(r.status===401)return "out";return r.ok?r.json():null}).then(function(me){
+    if(me==="out"||(me&&!me.id)){if(ME)logoutStars();else clearStarCaches(null);return}
+    if(!me)return; /* network blip: keep whatever is showing */
+    var uid=String(me.id);if(ME!==uid){ME=uid;clearStarCaches("gre_stars_"+uid);try{STARS=JSON.parse(localStorage.getItem("gre_stars_"+uid)||"{}")||{}}catch(x){STARS={}}document.body.classList.add("signed-in");render()}
+    return fetch("/api/stars",{credentials:"same-origin",cache:"no-store",headers:{"Accept":"application/json"}}).then(function(r){if(r.status===401){logoutStars();return null}return r.ok?r.json():null}).then(function(d){
+      if(!d||!Array.isArray(d.stars)||ME!==uid)return;var srv={};d.stars.forEach(function(x){srv[x.event_id]=Date.parse((x.created_at||"").replace(" ","T")+"Z")||1});
+      var changed=JSON.stringify(Object.keys(srv).sort())!==JSON.stringify(Object.keys(STARS).sort());STARS=srv;saveStars();if(changed)render()})}).catch(function(){})}
 function copy(txt){
   function fb(){var ta=document.createElement("textarea");ta.value=txt;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();
     var ok=false;try{ok=document.execCommand("copy")}catch(x){}document.body.removeChild(ta);toast(ok?"Link copied":"Copy failed, long-press to copy: "+txt)}
@@ -203,7 +211,7 @@ function matches(e,ignoreMonth,anyStatus){
   if(S.cat&&e.category!==S.cat)return false;
   if(S.nye&&!e.nye)return false;
   if(S.xmas&&!e.xmas)return false;
-  if(S.starred&&!isStar(e))return false;
+  if(S.starred&&ME&&!isStar(e))return false;
   if(!ignoreMonth&&S.month&&!inMonth(e,S.month))return false;
   if(S.q){var hay=(e.title+" "+e.venue+" "+e.town+" "+e.venue_address+" "+e.notes+" "+e.region+" "+e.category+" "+(e.recurrence||"")+" "+(e._hay||"")).toLowerCase();
     if(!S.q.toLowerCase().split(/\s+/).every(function(w){return hay.indexOf(w)>=0}))return false}

@@ -516,3 +516,4 @@ body.view-cinema #offToggle{display:none}
 .stk{display:inline-flex;align-items:center;gap:4px;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--star)}
 .stk svg{width:13px;height:13px;fill:var(--starfill)}
 .sti{font-weight:600}
+body:not(.signed-in) #catChips .starchip{display:none}
