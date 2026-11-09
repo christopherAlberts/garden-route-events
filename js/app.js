@@ -816,17 +816,14 @@ function wxFetchTown(town){if(WX.pend[town])return WX.pend[town];var co=wxTownCo
   }).catch(function(){delete WX.pend[town];return null});
   return WX.pend[town]}
 function wxCompact(d,runCat){if(!d||d.tmax==null||d.tmin==null)return"";
-  var c=wxCond(d.code),s='<span class="wxi" aria-hidden="true">'+c.icon+'</span><span class="wxtemp">'+wxTempPair(d.tmax,d.tmin)+"</span>";
+  var c=wxCond(d.code);
+  /* Icon + temp stay on one line; chips (esp. running conditions) wrap inside the bubble */
+  var s='<span class="wxprim"><span class="wxi" aria-hidden="true">'+c.icon+'</span><span class="wxtemp">'+wxTempPair(d.tmax,d.tmin)+'</span></span>';
   if(d.pop!=null&&d.pop>=30)s+='<span class="wxchip rain">'+Math.round(d.pop)+"%</span>";
   if(d.wind!=null&&d.wind>=20)s+='<span class="wxchip wind">'+Math.round(d.wind)+" km/h</span>";
   var band=wxUvBand(d.uv);if(band&&d.uv>=6)s+='<span class="wxchip uv">UV '+band+'</span>';
   if(runCat&&d.run)s+='<span class="wxchip run '+d.run.toLowerCase()+'">'+d.run+' running conditions</span>';
   return s}
-/* Compact badge for Happening-soon strip: icon + hi/lo with unit once — never overflow the pill */
-function wxCompactMini(d){if(!d||d.tmax==null)return"";
-  var c=wxCond(d.code);
-  if(d.tmin==null)return'<span class="wxi" aria-hidden="true">'+c.icon+'</span><span class="wxtemp">'+wxTempStr(d.tmax)+'</span>';
-  return'<span class="wxi" aria-hidden="true">'+c.icon+'</span><span class="wxtemp">'+wxTempPair(d.tmax,d.tmin)+'</span>'}
 function wxSunFrac(iso){if(!iso)return null;var m=/T(\d{2}):(\d{2})/.exec(String(iso));if(!m)return null;return +m[1]+(+m[2])/60}
 function wxHourStrip(d,ds,runCat){if(!d||!d.hours||!d.hours.length)return'<p class="wxnostrip">Hourly forecast unavailable</p>';
   var startH=4,endH=22,nowH=(new Date()).getHours(),srF=wxSunFrac(d.sunrise),ssF=wxSunFrac(d.sunset);
@@ -933,9 +930,8 @@ function wxApply(){Array.prototype.forEach.call(document.querySelectorAll(".wx[d
   if(!town||!ds||!wxInWindow(ds)){el.hidden=true;el.innerHTML="";el.removeAttribute("title");el.classList.remove("wxmini");return}
   var d=wxGetDay(town,ds);if(!d||d.tmax==null||d.tmin==null){el.hidden=true;el.innerHTML="";el.classList.remove("wxmini");return}
   var c=wxCond(d.code),label=c.label+", "+wxTempPair(d.tmax,d.tmin)+". Tap for forecast.";
-  var mini=!!(el.closest&&el.closest(".soon"));
-  el.hidden=false;el.classList.toggle("wxmini",mini);
-  el.innerHTML=mini?wxCompactMini(d):wxCompact(d,wxIsRunCat(cat));
+  el.hidden=false;el.classList.remove("wxmini");
+  el.innerHTML=wxCompact(d,wxIsRunCat(cat));
   el.title=label;el.setAttribute("aria-label",label);
 })}
 function wxHydrate(){if(S.view==="cal")return;
