@@ -543,3 +543,4 @@ body.theme-run .sec h2{color:var(--rundeep)}
 .cll{display:block;font-size:.62rem;font-weight:800;line-height:1.15;color:var(--rundeep);text-transform:uppercase;letter-spacing:.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media (max-width:600px){.cll{font-size:.52rem;letter-spacing:-.01em;text-transform:none}}
 .chip.clubc{font-weight:700;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--run) 50%,transparent)}
+@media (max-width:600px){.clubsec{flex-wrap:wrap}.clubsec h2{font-size:1.3rem;line-height:1.15}}
