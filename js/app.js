@@ -297,6 +297,8 @@ function renderList(){
   if(rwide.length)h+=restSection(rwide,"Restaurants &amp; pubs, rest of the coast");
   $("view-list").innerHTML=h;
 }
+/* Browser bar colour (Chrome / Samsung Internet top bar; installed-PWA status bar). Replacing the tag makes every browser repaint. */
+function setThemeColor(c){var o=document.querySelector('meta[name="theme-color"]');if(o&&o.getAttribute("content")===c)return;var m=document.createElement("meta");m.name="theme-color";m.content=c;if(o)o.parentNode.replaceChild(m,o);else document.head.appendChild(m)}
 function clubSection(){var c=CLUBBY[MYCLUB];if(!c)return "";
   var up=EV.filter(function(e){return isMine(e)&&endOf(e)>=TODAY&&!isOff(e)&&(!S.town||e.town===S.town)&&(!S.month||inMonth(e,S.month))}).sort(function(a,b){return nextDate(a).localeCompare(nextDate(b))});
   return '<div class="sec clubsec"><h2>'+(c.logo?'<img class="clublogo" src="'+esc(c.logo)+'" alt="" width="36" height="36">':'')+'My club: '+esc(c.name)+'</h2>'+(c.asa===true?'<span class="ast ok">ASA registered</span>':c.asa===false?'<span class="ast no">Not ASA registered</span>':'<span class="ast unk" title="ASA affiliation not confirmed from a source">ASA status unconfirmed</span>')+(MYASA?'<span class="asano">'+(c.asa===true?'ASA':'Running')+' no. '+esc(MYASA)+'</span>':'')+'<span class="pill">'+(up.length?up.length+' upcoming':'none listed')+'</span><a class="clubchg" href="/profile#club">Change</a></div>'+
@@ -517,7 +519,7 @@ function stats(){
 function render(){
   ["list","cal","map","cinema"].forEach(function(v){$("view-"+v).hidden=S.view!==v});
   document.body.classList.toggle("view-cinema",S.view==="cinema");
-  var run=S.cat==="funrun"&&S.view!=="cinema";document.body.classList.toggle("theme-run",run);
+  var run=S.cat==="funrun"&&S.view!=="cinema";document.body.classList.toggle("theme-run",run);setThemeColor(run?"#2a1206":"#0d3b2e");
 
   Array.prototype.forEach.call(document.querySelectorAll(".views button"),function(b){b.classList.toggle("on",b.dataset.view===S.view)});
   var ft=$("filtToggle");if(ft)ft.classList.toggle("has-active",document.body.classList.contains("filters-hidden")&&filtersActive());
