@@ -1833,3 +1833,40 @@ _AS="https://asoka.za.com/new-years-eve/"
 add(title="New Year's Eve 2026 at ASOKA (4-course dinner and music)",category="festive",start_date="2026-12-31",time="",town="Cape Town",
     venue="ASOKA Restaurant, Bar & Lounge",venue_address="68 Kloof Street, Gardens, Cape Town",price_from="R2,750 pp",ticket_url=_AS,source_url=_AS,source_name="ASOKA (official site)",
     notes="4-course set dinner with electro-jazz by a collective of musicians and house music by January One. R2,750 per person. Bookings: info@asoka.za.com, 021 422 0909.")
+
+# ---------------- Venue watchlist check 9 Nov 2026 (Celebratio, Webtickets, Toodoo, ShowMe Plett, Marriott/Protea, George Herald arts calendar) ----------------
+add(title="Klassieke Klein Karoo Kersfees-konsert 2026",category="concert",start_date="2026-12-05",time="19:30 (food & wine stalls from 18:00)",town="Oudtshoorn",
+    venue="Celebratio",venue_address="Celebratio, outside Oudtshoorn",price_from="R290",ticket_url="https://www.celebratio.co.za",
+    source_url="https://celebratio.co.za/klassieke-klein-karoo-kersfees-2026/klassieke-klein-karoo-kersfees-konsert-2026",source_name="Celebratio (official site)",
+    alt_sources=["https://www.diehoorn.com/musiek/klassieke-klein-karoo-kersfees-spog-met-top-name-in-die-bedryf/"],
+    notes="Tenors Jannie Moolman and Louis Loock and soprano Lynelle Kenned with a classical orchestra under Paul Loeb van Zuilenburg: Christmas carols, classical hits and a singalong. Enquiries: Marita Meyer 082 335 6059.")
+add(title="George Picnic Fiesta – Summer Edition",category="festival",start_date="2026-12-12",time="12:00",town="George",venue="",price_from="R150",
+    ticket_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1604927894",source_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1604927894",source_name="Webtickets",alt_sources=[],
+    notes="Picnic-style day of live music, DJs and dancing (bring cooler box and camping chairs). The Webtickets page gives no street address, so the pin is the George town centre.")
+_BL=dict(town="George",venue="Die Bush Lapa (Herold's Bay Eco Resort)",venue_address="Herold's Bay Eco Resort, Oubaai Road, Herold's Bay, George",lat=-34.050556,lng=22.3975,geo_source="nominatim (Herolds Bay village)")
+_BLU="https://www.webticket.co.za/v2/event.aspx?itemid=1606794270"
+for _d,_a in [("2026-12-13","Roan Ash"),("2026-12-14","Sunset Sweatshop"),("2026-12-15","Jan Rhaap & Andriette Norman"),("2026-12-16","Kurt Darren"),("2026-12-18","Francois van Coke"),
+              ("2026-12-19","Jeremy Loops"),("2026-12-20","Riaan Benade"),("2026-12-21","Steve Hofmeyr"),("2026-12-22","Juan Boucher"),("2026-12-23","Matthew Mole"),
+              ("2026-12-26","Eloff"),("2026-12-27","Jan Blohm"),("2026-12-28","Jan Blohm"),("2026-12-29","Elandre"),("2026-12-30","Appel"),("2026-12-31","Spoegwolf (New Year's Eve)")]:
+    add(title="%s live at Die Bush Lapa (Desember Musiekfees)"%_a,category="concert",start_date=_d,time="18:00",price_from="R280",ticket_url=_BLU,source_url=_BLU,source_name="Webtickets",alt_sources=[],
+        notes="Night of Die Bush Lapa's December Musiekfees line-up. The Webtickets page lists the series 'from 13 Dec 2026 18:00, from R280'; per-night start times and prices are not listed, so check with the venue.",**_BL)
+_SO=[d for d in _weekly({1},start="2026-11-03",end="2026-12-31")]
+add(title="Tuesday Ribs & Live Music at Sol Fire",category="concert",start_date=_SO[0],end_date=_SO[-1],occurrences=_SO,recurrence="Every Tuesday, 17:00-21:00",time="17:00-21:00",
+    town="Plettenberg Bay",venue="Sol Fire",venue_address="1 Perestrello Street, Plettenberg Bay",price_from="",ticket_url="https://www.solkitchen.co.za/",
+    source_url="https://showme.co.za/plett/event/tuesday-ribs-live-music-at-sol-fire/",source_name="ShowMe Plettenberg Bay",alt_sources=["https://www.solkitchen.co.za/"],
+    notes="Sticky pork ribs special with live music by local musicians every Tuesday 3 Nov to 31 Dec 2026. Price not listed (contact the restaurant); bookings recommended: solkitchenplett@gmail.com.")
+add(title="Christmas Lunch Buffet at Fairway Terrace Restaurant (Protea Hotel George King George)",category="festive",start_date="2026-12-25",time="",town="George",
+    venue="Fairway Terrace Restaurant, Protea Hotel George King George",venue_address="Protea Hotel by Marriott George King George, George",price_from="R695 pp",
+    ticket_url="https://www.morecravings.com/nl/george/venues/fairway-terrace-restaurant",source_url="https://www.morecravings.com/nl/george/venues/fairway-terrace-restaurant",source_name="Marriott MoreCravings (hotel offers)",alt_sources=[],
+    notes="Festive lunch buffet with a complimentary glass of bubbly. Adults R695, children 4-12 R348, under 3 free (one free child per paying adult). Book: Protea.kinggeorge@marriott.com or 044 874 7659.")
+add(title="Nianell live in Sedgefield",category="concert",start_date="2026-11-20",time="18:00",town="Sedgefield",venue="NG Kerk Sedgefield",venue_address="",price_from="R190",
+    ticket_url="https://www.toodoo.co.za/nianell-live-in-sedgefield/",source_url="https://www.toodoo.co.za/nianell-live-in-sedgefield/",source_name="toodoo.co.za",alt_sources=[],
+    notes="Pancakes and juices before the show, prizes to be won.")
+add(title="SAM Charity Shop Festive Decoration Sale",category="community",start_date="2026-12-12",time="09:00-12:30",town="Sedgefield",venue="SAM Charity Shop",
+    venue_address="Shop 10, 4 Swallow Drive (opposite Sotheby's), Sedgefield",price_from="Free entry",ticket_url="",
+    source_url="https://www.toodoo.co.za/sam-charity-shop-festive-decoration-sale/",source_name="toodoo.co.za",alt_sources=[],
+    notes="Pre-loved Christmas decorations and seasonal goodies sold outside the shop (weather permitting) in aid of a local charity. Donations/collections: Jenny 082 452 1737.")
+add(title="The Music of Bee Gees and Friends (Vernon Ericson Barnard)",category="concert",start_date="2026-12-11",time="19:00 (doors 18:00)",town="George",venue="The Market Community Theatre",
+    venue_address="Market Street, George",price_from="R120",ticket_url="",
+    source_url="https://www.georgeherald.com/Entertainment/Article/eyes-on-arts-upcoming-entertainment-highlights-in-george-and-surrounds-202611050156",source_name="George Herald (Eyes on arts)",alt_sources=[],
+    notes="Bookings and enquiries: Heather 072 369 3304.")
