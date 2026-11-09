@@ -626,7 +626,7 @@ function bind(){
 bind();
 
 /* ---------- Weather (Open-Meteo) — list cards only ---------- */
-var WX={TTL:2*60*60*1000,KEY:"gre.wx.v4",mem:{},pend:{},focus:null};
+var WX={TTL:2*60*60*1000,KEY:"gre.wx.v5",mem:{},pend:{},focus:null};
 function wxCond(c){c=+c;if(c===0)return{icon:"☀",label:"Sunny"};if(c===1)return{icon:"🌤",label:"Mostly clear"};if(c===2)return{icon:"⛅",label:"Partly cloudy"};if(c===3)return{icon:"☁",label:"Cloudy"};if(c===45||c===48)return{icon:"🌫",label:"Fog"};if(c>=51&&c<=57)return{icon:"🌦",label:"Drizzle"};if(c>=61&&c<=67||c>=80&&c<=82)return{icon:"🌧",label:"Rain"};if(c>=71&&c<=77||c>=85&&c<=86)return{icon:"❄",label:"Snow"};if(c>=95)return{icon:"⛈",label:"Thunderstorms"};return{icon:"☁",label:"Cloudy"}}
 function wxDir(deg){if(deg==null||isNaN(+deg))return"";var d=["N","NE","E","SE","S","SW","W","NW"];return d[Math.round(((+deg)%360)/45)%8]}
 function wxUvBand(u){if(u==null||isNaN(+u))return null;u=+u;if(u<3)return"Low";if(u<6)return"Moderate";if(u<8)return"High";if(u<11)return"Very high";return"Extreme"}
@@ -665,7 +665,7 @@ function wxRunDay(hours){if(!hours||!hours.length)return null;
   wins.sort(function(x,y){return y.sc-x.sc||x.from-y.from});
   var best=wins[0]?wins[0].sc:Math.max.apply(null,hours.map(wxHourScore).concat([0]));
   var rating=best>=80?"Great":best>=65?"Good":best>=45?"Fair":"Poor";
-  var picked=[];wins.forEach(function(w){if(picked.length>=2)return;if(!picked.some(function(p){return Math.abs(p.from-w.from)<2})){w.why=wxRunWhy(hours,w);picked.push(w)}});
+  var picked=[];wins.forEach(function(w){if(picked.length>=2)return;if(!picked.some(function(p){return w.from<p.to&&w.to>p.from})){w.why=wxRunWhy(hours,w);picked.push(w)}});
   return{rating:rating,best:best,windows:picked,why:picked[0]&&picked[0].why||""}}
 function wxLoadCache(){try{var r=JSON.parse(localStorage.getItem(WX.KEY)||"{}");if(r&&typeof r==="object")WX.mem=r}catch(e){WX.mem={}}}
 function wxSaveCache(){try{var now=Date.now(),o={},k;for(k in WX.mem){if(WX.mem[k]&&WX.mem[k].exp>now)o[k]=WX.mem[k]}localStorage.setItem(WX.KEY,JSON.stringify(o));WX.mem=o}catch(e){}}
