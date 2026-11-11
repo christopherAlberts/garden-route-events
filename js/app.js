@@ -508,7 +508,7 @@ function renderMap(){
   $("count").textContent=countTxt(L.filter(function(e){return !e._r}).length,L.filter(function(e){return e._r}).length)+" on the map";
   if(typeof window.L==="undefined"){$("map").innerHTML='<div class="empty"><b>Map unavailable offline</b>The list and calendar still work.</div>';return}
   if(!map){map=window.L.map("map",{scrollWheelZoom:true,zoomControl:true}).fitBounds(S.scope==="all"?[[-33.5,18.3],[-34.4,25.0]]:GRB);
-    window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:18,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+    window.L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:18,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
     layer=window.L.layerGroup().addTo(map)}
   layer.clearLayers();
   var groups={};L.forEach(function(e){var k=(+e.lat).toFixed(4)+","+(+e.lng).toFixed(4);(groups[k]=groups[k]||[]).push(e)});
