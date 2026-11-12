@@ -51,7 +51,9 @@ body.intro-hidden .hero-search{margin-top:18px}
 .bar.stuck{box-shadow:0 6px 20px rgba(0,0,0,.08)}
 .bar-inner{max-width:1180px;margin:0 auto;padding:10px 22px;display:flex;flex-direction:column;gap:10px}
 .bar-top{display:flex;align-items:center;gap:10px;width:100%}
-.filt-panel{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;width:100%}
+/* Filter options sit in one card so they don't blend into the event cards below */
+.filt-panel{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;width:100%;box-sizing:border-box;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:12px 14px;margin:0 0 6px}
+body:not(.filters-hidden) .bar-inner{padding-bottom:14px}
 .filttoggle{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 12px;border-radius:10px;cursor:pointer;font:inherit;font-size:.88rem;font-weight:600;flex:none}
 .filttoggle:hover{border-color:var(--mut)}
 .filttoggle .chev{width:16px;height:16px;fill:currentColor;transition:transform .2s;flex:none}
@@ -318,6 +320,7 @@ footer{border-top:1px solid var(--line);margin-top:20px}
   .views{flex:1;justify-content:space-between;min-width:0}.views button{flex:1;justify-content:center}
   body.filters-hidden .views{width:auto;flex:1}
   .filttoggle{padding:7px 10px}
+  .filt-panel{padding:10px;gap:8px 8px;margin-bottom:4px}
   .grid{grid-template-columns:1fr}
   .day{min-height:58px;padding:4px}.chip{display:none}.more{display:none}.dots{display:flex}
   .dots i{width:6px;height:6px;border-radius:50%}

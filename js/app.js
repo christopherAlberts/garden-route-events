@@ -234,16 +234,16 @@ function filtered(ignoreMonth,includePast){
     .sort(function(a,b){return (b.garden_route-a.garden_route)||nextDate(a).localeCompare(nextDate(b))||a.title.localeCompare(b.title)});
 }
 
-function card(e){
+function card(e,onDay){
   if(e._r)return rcard(e);
-  var nd=pd(nextDate(e)),multi=!occ(e)&&e.end_date&&e.end_date!==e.start_date;
+  var wxDate=onDay||nextDate(e),nd=pd(wxDate),multi=!occ(e)&&e.end_date&&e.end_date!==e.start_date;
   var badge='<div class="datebadge"><span class="d">'+nd.getDate()+'</span><span class="m">'+MN[nd.getMonth()]+'</span>'+(multi?'<span class="to">to '+pd(e.end_date).getDate()+' '+MN[pd(e.end_date).getMonth()]+'</span>':'')+'</div>';
   var L=esc(link(e)),price=priceTxt(e.price_from);
   return '<article class="card'+(isOff(e)?" is-off":"")+(isStar(e)?" starred":"")+(isMine(e)?" myclub":"")+'">'+
     '<a class="thumb" href="'+L+'" target="_blank" rel="noopener" aria-label="'+esc(e.title)+'">'+thumb(e)+badge+'<span class="cat '+e.category+'">'+CATS[e.category]+'</span>'+(e.recurrence?'<span class="recur">↻ '+esc(e.recurrence.split(",")[0])+'</span>':'')+stBadge(e)+(window._cinOd&&isIndoorSc(e)?'<span class="intag">Indoor</span>':'')+'</a>'+
     '<div class="body">'+(S.scope==="all"&&e.garden_route?'<span class="grtag">Garden Route</span>':'')+
       clubTag(e)+'<div class="ttl"><h3><a href="'+L+'" target="_blank" rel="noopener">'+esc(e.title)+'</a></h3>'+starBtn(e)+'</div>'+
-      '<div class="when">'+when(e)+(e.time?" · "+esc(e.time):"")+'<button type="button" class="wx" data-wx-town="'+esc(e.town||"")+'" data-wx-date="'+esc(nextDate(e))+'" data-wx-cat="'+esc(e.category||"")+'" data-wx-time="'+esc(e.time||"")+'" data-wx-title="'+esc(e.title||"")+'" data-wx-notes="'+esc(e.notes||"")+'" hidden></button></div>'+
+      '<div class="when">'+when(e)+(e.time?" · "+esc(e.time):"")+'<button type="button" class="wx" data-wx-town="'+esc(e.town||"")+'" data-wx-date="'+esc(wxDate)+'" data-wx-cat="'+esc(e.category||"")+'" data-wx-time="'+esc(e.time||"")+'" data-wx-title="'+esc(e.title||"")+'" data-wx-notes="'+esc(e.notes||"")+'" hidden></button></div>'+
       (e.status_note?'<div class="stnote'+(isOff(e)?" off":"")+'">'+esc(e.status_note)+'</div>':'')+
       '<div class="where">'+PIN+'<span>'+esc(e.venue||"")+(e.venue?", ":"")+esc(e.town)+'</span></div>'+atRest(e)+hostLine(e)+
       (e.recurrence?'<div class="notes">'+esc(e.recurrence)+'</div>':(e.notes&&!/^(Quicket|Webtickets) category/.test(e.notes)?'<div class="notes">'+esc(e.notes)+'</div>':''))+
@@ -334,13 +334,14 @@ function renderCal(){
   var inm=L.filter(function(e){return inMonth(e,S.calMonth)&&(!e._r||occ(e))});
   $("count").textContent=countTxt(inm.filter(function(e){return !e._r}).length,inm.filter(function(e){return e._r}).length)+" in "+MNL[m];
   renderDay(L);
+  wxHydrate();
 }
 function renderDay(L){
   if(!S.calDay||S.calDay.slice(0,7)!==S.calMonth){$("calDay").innerHTML='<p class="resultline">Tap a day to see what\u2019s on.</p>';return}
   L=L||filtered(true,true);
   var on=L.filter(function(e){return onDay(e,S.calDay)}).sort(byFreqDay);
   var hn=holName(S.calDay),st=on.filter(isStar);on=st.concat(on.filter(function(e){return !isStar(e)}));
-  $("calDay").innerHTML=(st.length?'<div class="starbar"><span class="stk">'+STAR_SVG+'Want to attend</span>'+st.map(function(e){return '<span class="sti">'+esc(e.title)+'</span>'}).join("")+'</div>':'')+(hn?'<div class="holbar"><span class="holk">Public holiday</span><span class="holi">'+esc(hn)+'</span><a class="holsrc" href="'+esc(HOL[S.calDay][0].source)+'" target="_blank" rel="noopener">gov.za</a></div>':'')+'<h3>'+fmt(pd(S.calDay),true)+' · '+countTxt(on.filter(function(e){return !e._r}).length,on.filter(function(e){return e._r}).length)+'</h3>'+(on.length?'<div class="grid">'+on.map(card).join("")+'</div>':'<p class="resultline">Nothing listed for this day.</p>');
+  $("calDay").innerHTML=(st.length?'<div class="starbar"><span class="stk">'+STAR_SVG+'Want to attend</span>'+st.map(function(e){return '<span class="sti">'+esc(e.title)+'</span>'}).join("")+'</div>':'')+(hn?'<div class="holbar"><span class="holk">Public holiday</span><span class="holi">'+esc(hn)+'</span><a class="holsrc" href="'+esc(HOL[S.calDay][0].source)+'" target="_blank" rel="noopener">gov.za</a></div>':'')+'<h3>'+fmt(pd(S.calDay),true)+' · '+countTxt(on.filter(function(e){return !e._r}).length,on.filter(function(e){return e._r}).length)+'</h3>'+(on.length?'<div class="grid">'+on.map(function(e){return card(e,S.calDay)}).join("")+'</div>':'<p class="resultline">Nothing listed for this day.</p>');
 }
 function popup(g){
   return '<div class="pop">'+g.map(function(e){return '<div class="pe"><a class="pt" href="'+esc(link(e))+'" target="_blank" rel="noopener">'+thumb(e)+'</a><div class="pbody">'+clubTag(e)+'<div class="ttl"><h4>'+esc(e.title)+'</h4>'+starBtn(e)+'</div><p>'+when(e)+(e.time?" · "+esc(e.time):"")+'<br>'+esc(e.venue||"")+(e.venue?", ":"")+esc(e.town)+'</p>'+
@@ -538,7 +539,7 @@ function render(){
   var hid=EV.filter(function(e){return isOff(e)&&endOf(e)>=TODAY&&matches(e,S.view==="cal",true)}).length;
   $("offToggle").hidden=!hid;$("offToggle").textContent=S.off?"Hide postponed/cancelled ("+hid+")":hid+" postponed/cancelled hidden · show";
   if(S.view==="list")renderList();else if(S.view==="cal")renderCal();else if(S.view==="cinema")renderCinema();else renderMap();
-  if(S.view!=="cal")wxHydrate();
+  if(S.view==="list"||S.view==="cal")wxHydrate();
   writeHash();
 }
 function syncControls(){
@@ -1060,7 +1061,7 @@ function wxApply(){Array.prototype.forEach.call(document.querySelectorAll(".wx[d
   el.innerHTML=wxCompact(d,wxIsRunCat(cat));
   el.title=label;el.setAttribute("aria-label",label);
 })}
-function wxHydrate(){if(S.view==="cal")return;
+function wxHydrate(){
   var need={},els=document.querySelectorAll(".wx[data-wx-town][data-wx-date]");
   Array.prototype.forEach.call(els,function(el){var town=el.getAttribute("data-wx-town"),ds=el.getAttribute("data-wx-date");
     if(town&&ds&&wxInWindow(ds)&&wxTownCoords(town)&&!wxGetDay(town,ds))need[town]=1});
