@@ -201,11 +201,14 @@ add(title="Monties Cycles MTB & Trail Run Challenge (incl. 6 km fun walk/run)",c
     source_url="https://www.entryninja.com/events/83037",source_name="Entry Ninja",
     alt_sources=["https://startingline.co.za/events/monties-cycles-mtb-trail-run-challenge-a466e7dc"],
     notes="Post-Christmas family outing: 6 km fun walk/run (R70), 12 km trail run, MTB and gravel routes; deli, gin tasting and kids' play area.")
-add(title="Sabrina Love Summer Challenge 2026 (beach walk & more)",category="funrun",start_date="2026-12-27",end_date="2026-12-30",time="06:00-11:00",town="Plettenberg Bay",
-    venue="Central Beach & Kurland Estate",venue_address="Central Beach, Plettenberg Bay; Kurland Estate, The Crags",price_from="R150",ticket_url="",
+add(title="Sabrina Love Summer Challenge 2026 (beach walk & more)",category="funrun",start_date="2026-12-27",end_date="2026-12-30",time="From 08:00 on 27 Dec",town="Plettenberg Bay",
+    venue="Central Beach & Kurland Estate",venue_address="Central Beach, Plettenberg Bay; Kurland Estate, The Crags",price_from="R150",
+    ticket_url="https://www.entryninja.com/events/83457",
     source_url="https://www.plett-tourism.co.za/events/sabrina-love-summer-challenge-2026/",source_name="Plett Tourism",
-    alt_sources=["https://startingline.co.za/events/sabrina-love-foundation-beach-walk-surf-ski-challenge-48df92f5"],
-    notes="Fun, inclusive family challenge (beach walk, trail running, MTB, swimming, paddling) raising funds for children in need. Adults R200, children R150.")
+    alt_sources=["https://startingline.co.za/events/sabrina-love-foundation-beach-walk-surf-ski-challenge-48df92f5",
+                 "https://www.entryninja.com/events/83457","https://www.entryninja.com/events/83458",
+                 "https://www.entryninja.com/events/83460","https://www.entryninja.com/events/83461"],
+    notes="Family challenge raising funds for children in need. Entry Ninja lists: 27 Dec, Central Beach, from 08:00 — 4 km beach walk and 12 km surfski; 28 Dec, Central Beach, from 08:00 — Vitality Run 10 km and 5 km; 29 Dec, Kurland Estate, from 07:00 — MTB 40 km, 25 km and 10 km; 30 Dec, Kurland Estate, from 06:30 — trail run 21 km, 12 km and 6 km, plus a kids of steel run/swim.")
 add(title="Groot Brak Grabadoo 2026 (MTB & 4.8 km fun walk)",category="funrun",start_date="2026-12-31",time="07:00-14:00",town="Groot Brak",
     venue="Groot Brak sport fields",venue_address="67 Long Street, Great Brak River",price_from="",ticket_url="",
     source_url=MB+"groot-brak-grabadoo-2026/",source_name="Visit Mossel Bay (tourism calendar)",
@@ -333,10 +336,12 @@ add(title="Eerste vir Alles: Frank Opperman & Margit Meyer-Rödenbeck (Afrikaans
 
 # ---- NSRI (National Sea Rescue Institute) fundraiser runs ----
 add(title="Stilbaai NSRI 10 km & 6 km Fun Run (New Year's Eve)",category="funrun",start_date="2026-12-31",time="07:00",town="Still Bay",
-    venue="NSRI Station, Main Road",venue_address="National Sea Rescue Institute, Main Rd, Stilbaai",price_from="",ticket_url="",
-    source_url="https://runningcalendar.co.za/events/stilbaai-10km/2026",source_name=RC,alt_sources=["https://racepass.com/za/races/stillbaai-10km"],
-    notes="Annual New Year's Eve run in aid of NSRI Stilbaai: 10 km race and 6 km fun run/walk, start and finish at the NSRI building. The route runs along the Goukou River, the sea and dunes. The 2025 edition drew about 1,200 runners. RunningCalendar lists only basic details so far; entry fees are still to be confirmed.",
-    lat=-34.3642194,lng=21.4335508,geo_source="event page")
+    venue="NSRI Station 31, Main Road",venue_address="Main Rd, Still Bay West, Still Bay, 6674",price_from="R100",
+    ticket_url="https://www.entryninja.com/events/84625",
+    source_url="https://www.entryninja.com/events/84625",source_name="Entry Ninja",
+    alt_sources=["https://runningcalendar.co.za/events/stilbaai-10km/2026","https://racepass.com/za/races/stillbaai-10km"],
+    notes="Annual New Year's Eve run in aid of NSRI Stilbaai: 10 km race and 6 km fun run/walk, start and finish at NSRI Station 31. The route runs along the Goukou River, the sea and dunes. Entries on Entry Ninja from R100; the 6 km is listed there as a 5 km class with a 6 km distance.",
+    lat=-34.3868037,lng=21.4261681,geo_source="event page")
 
 # ---- restaurant listings (approved by Christopher, 6 Oct 2026) ----
 import datetime as _dt
@@ -566,7 +571,13 @@ add(title="Palm Tyres Half Marathon (21.1 / 10 / 5 km)",category="funrun",start_
 add(title="Somerson Half Marathon, Hartenbos (21.1 / 10 / 5 km)",category="funrun",start_date="2026-12-12",town="Hartenbos",venue="Hartenbos",venue_address="Hartenbos",price_from="",ticket_url="",source_url="https://runningcalendar.co.za/races/city/george",source_name="RunningCalendar.co.za",notes="Hartenbos half in the December holiday cluster. Local, flat-ish coastal roads. Listed by Running Guy (Garden Route races dashboard).",alt_sources=["https://dash.streblainnovations.com/races/"])
 add(title="Louis Massyn Rocket Run (10 km & 5 km)",category="funrun",start_date="2026-12-14",town="George",venue="George",venue_address="George",price_from="",ticket_url="",source_url="https://runningcalendar.co.za/races/city/george",source_name="RunningCalendar.co.za",notes="Monday local 10/5 km in George. Festive-season club race. Listed by Running Guy (Garden Route races dashboard).",alt_sources=["https://dash.streblainnovations.com/races/"])
 add(title="Fancourt 10 km",category="funrun",start_date="2026-12-18",town="George",venue="Fancourt",venue_address="Fancourt, George",price_from="",ticket_url="",source_url="https://runningcalendar.co.za/races/city/george",source_name="RunningCalendar.co.za",notes="Estate 10 km at Fancourt. Fast, scenic, local. Listed by Running Guy (Garden Route races dashboard).",lat=-33.9679097,lng=22.4106706,geo_source="nominatim",alt_sources=["https://dash.streblainnovations.com/races/"],_img="https://d1zwi51l39apzt.cloudfront.net/uploads/events/83786/NRRm87oZGnkCGskwX81D2ADqon88KhBO8CZwKOqG.jpg")
-add(title="Lappiesbaai 10 km on the Beach (10 km & 5 km)",category="funrun",start_date="2026-12-24",town="Still Bay",venue="Lappiesbaai Beach",venue_address="Lappiesbaai, Still Bay West, Stilbaai",price_from="",ticket_url="",source_url="https://runningcalendar.co.za/events/lappiesbaai-10km/2026",source_name="RunningCalendar.co.za",notes="Date is provisional (Running Guy estimate — often from the prior year); confirm before travelling. Beach run at Lappiesbaai, Still Bay West. Clashes with Tower-2-Sea. Confirm before travelling. RunningCalendar lists 20 Dec 2026 as estimated from the previous year — not yet confirmed by organiser. Listed by Running Guy (Garden Route races dashboard).",lat=-34.3719444,lng=21.4302778,geo_source="nominatim",alt_sources=["https://dash.streblainnovations.com/races/"])
+add(title="Lappiesbaai 10 km on the Beach (10 km & 5 km)",category="funrun",start_date="2026-12-24",time="08:00",town="Still Bay",
+    venue="Lappiesbaai Beach, Stilbaai East",venue_address="Main Road East, Lappies Baai, Gordon St, Still Bay East",price_from="R100",
+    ticket_url="https://www.entryninja.com/events/84724",
+    source_url="https://www.entryninja.com/events/84724",source_name="Entry Ninja",
+    alt_sources=["https://runningcalendar.co.za/events/lappiesbaai-10km/2026","https://dash.streblainnovations.com/races/"],
+    notes="Confirmed on Entry Ninja for 24 Dec 2026: 5 km and 10 km out-and-back beach run, start and finish on the main swimming beach at Lappiesbaai, Stilbaai East. Start 08:00.",
+    lat=-34.3731358,lng=21.4287405,geo_source="event page")
 add(title="Tower-2-Sea Trail Run (56 / 50 / 42 / 33 km)",category="funrun",start_date="2026-12-20",town="Knysna",venue="Buffelsnek Fire Tower → Thesen Island",venue_address="Buffelsnek / Thesen Island, Knysna",price_from="",ticket_url="https://entrytickets.co.za/tower2sea",source_url="https://www.wannado.co.za/t2s",source_name="WannaDo / Tower-2-Sea (official site)",notes="Sunrise start at Buffelsnek Fire Tower, descend through Knysna Forest (Outeniqua Hiking Trail / elephant paths) to Thesen Island. Distances 33–56 km (no short fun-run option). Listed by Running Guy (Garden Route races dashboard).",lat=-34.0477753,lng=23.0537836,geo_source="nominatim (finish)",alt_sources=["https://entrytickets.co.za/tower2sea","https://dash.streblainnovations.com/races/"],_img="https://static.wixstatic.com/media/b877ad_7f3f771780fb4c59a5b86f2d957ac913~mv2.jpg")
 add(title="Chasing Cheese Burgers (10 km & 5 km)",category="funrun",start_date="2027-01-13",town="George",venue="George",venue_address="George",price_from="",ticket_url="",source_url="https://runningcalendar.co.za/races/city/george",source_name="RunningCalendar.co.za",notes="Date is provisional (Running Guy estimate — often from the prior year); confirm before travelling. Quirky local midweek 10/5 km. Confirm closer to January. George city calendar lists Wed 13 Jan 2027 as date TBC. Listed by Running Guy (Garden Route races dashboard).",alt_sources=["https://dash.streblainnovations.com/races/"])
 add(title="Two Lagoons (30 km & 10 km)",category="funrun",start_date="2027-01-30",town="Hoekwil",venue="Hoekwil / Wilderness lakes",venue_address="Hoekwil",price_from="",ticket_url="",source_url="https://runningcalendar.co.za/events/two-lagoons/2026",source_name="RunningCalendar.co.za",notes="Date is provisional (Running Guy estimate — often from the prior year); confirm before travelling. Point-to-point / lake-country roads between Wilderness lakes. Organised by Cape Multisport Eden. Beautiful local long run. 2026 edition was 31 Jan at Libertas Guest Farm, Hoekwil (30/10 km). George calendar lists Sat 30 Jan 2027 — not yet independently verified. Listed by Running Guy (Garden Route races dashboard).",alt_sources=["https://dash.streblainnovations.com/races/"])
@@ -583,7 +594,13 @@ add(title="Sportsmans Warehouse Winelands Marathon (42.2 / 21.1 / 10 km)",catego
 add(title="RMB Ultra-trail Cape Town (100 mile / 100 / 55 / 35 / 23 / 16 km)",category="funrun",start_date="2026-11-20",end_date="2026-11-22",town="Cape Town",venue="Table Mountain / Cape Peninsula",venue_address="Cape Town",price_from="",ticket_url="https://www.ultratrailcapetown.com/",source_url="https://www.ultratrailcapetown.com/",source_name="Ultra-trail Cape Town (official site)",notes="SA's premier mountain ultra festival on Table Mountain / Peninsula. 100 miler ~7,000 m+. International field. Book travel early. Clashes with Vlakte Marathon. Listed by Running Guy (Garden Route races dashboard).",lat=-33.9249,lng=18.4241,geo_source="town centroid",alt_sources=["https://dash.streblainnovations.com/races/"],_img="https://static.wixstatic.com/media/1576ea_decfb2ed86c14c9cadafa9325df39a92%7Emv2.jpg")
 add(title="NMB 1City Marathon (42.2 / 21.1 / 10 / 5 km)",category="funrun",start_date="2026-12-06",town="Gqeberha",venue="Baywest Mall",venue_address="Baywest Mall, Gqeberha",price_from="",ticket_url="",source_url="https://runningcalendar.co.za/events/nmb-1-city-marathon/2026",source_name="RunningCalendar.co.za",notes="EP Athletics Comrades & Two Oceans qualifier from Baywest Mall. Marathon and half listed as free; 10/5 km R50. Entries via Webtickets. Strong PE destination race. Price hint from Running Guy (unverified): R50; r 21; r 10 — confirm on the entry page. Listed by Running Guy (Garden Route races dashboard).",lat=-33.9519318,lng=25.4606019,geo_source="nominatim",alt_sources=["https://dash.streblainnovations.com/races/"])
 add(title="Central Athletics 10 km Nature Run (10 km & 5 km)",category="funrun",start_date="2026-12-20",town="Cape Town",venue="False Bay Nature Reserve (Zeekoevlei)",venue_address="Zeekoevlei, Cape Town",price_from="",ticket_url="",source_url="https://runningcalendar.co.za/events/central-athletics-nature-run",source_name="RunningCalendar.co.za",notes="False Bay Nature Reserve. Flat reserve roads. Cape Town holiday 10 km. Date/venue confirmed; fees not yet published. Listed by Running Guy (Garden Route races dashboard).",lat=-34.0620199,lng=18.508325,geo_source="nominatim",alt_sources=["https://dash.streblainnovations.com/races/"])
-add(title="First Choice Race, Jeffreys Bay (21.1 / 10 / 5 km)",category="funrun",start_date="2027-01-02",town="Jeffreys Bay",venue="Jeffreys Bay",venue_address="Jeffreys Bay",price_from="",ticket_url="https://racepass.com/za/races/first-choice-race",source_url="https://racepass.com/za/races/first-choice-race",source_name="RacePass",notes="Date is provisional (Running Guy estimate — often from the prior year); confirm before travelling. Holiday coastal race in JBay. ~2.5h east of George. Confirm 2027 listing before planning. Traditionally early January in JBay (2025 was 4 Jan). 2027 date not confirmed. Listed by Running Guy (Garden Route races dashboard).",alt_sources=["https://dash.streblainnovations.com/races/"])
+add(title="First Choice Race, Jeffreys Bay (15 km & 5 km fun run)",category="funrun",start_date="2027-01-09",time="06:30 (5 km 06:40)",town="Jeffreys Bay",
+    venue="Victory Christian School",venue_address="Red Heart Cres, Noorsekloof, Jeffreys Bay, 6331",price_from="R40",
+    ticket_url="https://www.entryninja.com/events/84834",
+    source_url="https://www.entryninja.com/events/84834",source_name="Entry Ninja",
+    alt_sources=["https://racepass.com/za/races/first-choice-race","https://dash.streblainnovations.com/races/"],
+    notes="Confirmed on Entry Ninja for 9 Jan 2027 (the previous 2 Jan listing was a provisional estimate). 15 km from 06:30, 5 km fun run from 06:40, and a 60 m Milki Moo Dash later in the morning, at Victory Christian School. The 21.1 km and 10 km distances from earlier estimates are not on the 2027 entry listing.",
+    lat=-34.027996,lng=24.9083309,geo_source="event page")
 add(title="Balwin Sport Peninsula Marathon (42.2 km & 21.1 km)",category="funrun",start_date="2027-02-21",town="Cape Town",venue="Simon's Town / False Bay coastline",venue_address="Simon's Town, Cape Town",price_from="",ticket_url="",source_url="https://runningcalendar.co.za/events/cape-peninsula-marathon",source_name="RunningCalendar.co.za",notes="Date is provisional (Running Guy estimate — often from the prior year); confirm before travelling. Point-to-point along the False Bay coastline. One of SA's most scenic road marathons. Confirm official 2027 date with Celtic Harriers. Celtic Harriers / RunningCalendar list ~21 Feb 2027. Some third-party sites said 14 Feb — treat as unconfirmed late-February. Listed by Running Guy (Garden Route races dashboard).",lat=-34.193181,lng=18.433266,geo_source="nominatim",alt_sources=["https://dash.streblainnovations.com/races/"])
 add(title="Hermanus Trail Run (35 / 25 / 15 km + 18 km beach)",category="funrun",start_date="2027-02-26",end_date="2027-02-28",town="Hermanus",venue="Fernkloof Nature Reserve / Walker Bay",venue_address="Fernkloof Nature Reserve, Hermanus",price_from="",ticket_url="https://energyevents.co.za/hermanus-trail-run/",source_url="https://energyevents.co.za/hermanus-trail-run/",source_name="Energy Events (official site)",notes="Energy Events: Sat Fernkloof Nature Reserve (35/25/15 km, up to 1,500 m), Sun Walker Bay 18 km beach. Compulsory kit. Whale-coast trails. ~4h from George / easy Overberg weekend. Listed by Running Guy (Garden Route races dashboard).",lat=-34.3913049,lng=19.2797882,geo_source="nominatim",alt_sources=["https://dash.streblainnovations.com/races/"],_img="https://energyevents.co.za/wp-content/uploads/2026/07/BRAND-NEW-600-x-400-px-6.png")
 
@@ -825,8 +842,13 @@ for slug,t,d,tm,ven,tix in [
     add(title=t,category="arts",start_date=d,time=tm,town="Mossel Bay",venue=ven,venue_address=("101 Marsh Street, Mossel Bay" if "Stadsaal" in ven else ("Wassung Street, Mossel Bay" if "Town Hall" in ven else "")),
         price_from="",ticket_url=tix,source_url=MB+slug+"/",source_name=_S_MB,alt_sources=([tix] if tix else [])+([OTR8] if "Tillie" in t else []),notes="Show at the Punt in die Wind Kunste-Week (19-26 Dec).")
 # 2027
-add(title="Attakwas Extreme (MTB)",category="sport",start_date="2027-01-16",time="",town="Oudtshoorn",venue="Oudtshoorn to the coast (route)",price_from="",ticket_url="",source_url=OTR8,source_name=_S_OTR,
-    notes="One-day extreme mountain-bike race from the Klein Karoo to the coast.")
+add(title="Attakwas Extreme (MTB, 121 km)",category="sport",start_date="2027-01-16",time="06:30",town="Oudtshoorn",
+    venue="Oudtshoorn (start) to Pine Creek, Groot Brak",venue_address="Oudtshoorn",price_from="R2450",
+    ticket_url="https://www.entryninja.com/events/83328",
+    source_url="https://www.entryninja.com/events/83328",source_name="Entry Ninja",
+    alt_sources=["http://atta.co.za",OTR8],
+    notes="One-day extreme mountain-bike race from Oudtshoorn to the coast, 121 km with 2,900 m of climbing. Start 06:30. The Half (47 km) and Mini (32.3 km) start later the same day at Pine Creek, Groot Brak, and are listed separately.",
+    lat=-33.6007225,lng=22.2026347,geo_source="event page")
 add(title="PE Plett MTB stage race",category="sport",start_date="2027-02-17",end_date="2027-02-21",time="Registration 17 Feb; stage 1 starts 18 Feb 08:00",town="Nature's Valley",venue="St Francis Links → Nature's Valley Rest Camp",
     price_from="",ticket_url="https://www.peplett.co.za/",source_url="https://www.peplett.co.za/",source_name="PE Plett (official site)",alt_sources=[OTR8],notes="Four-stage mountain-bike race from St Francis Bay to Nature's Valley (finish).")
 add(title="Rattle and Rust Rally 2027",category="sport",start_date="2027-04-22",end_date="2027-04-25",time="08:00-17:00",town="Mossel Bay",venue="Bartelsfontein Farm",venue_address="Route R327, Bartelsfontein, Mossel Bay",
@@ -2061,3 +2083,136 @@ add(title="Groot Brakrivier Waterfront 5 km Fun Run/Walk",category="funrun",star
     price_from="",ticket_url="",source_url="https://visitmosselbay.co.za/event/groot-brakrivier-waterfront-5km-fun-run-walk/",
     source_name="Visit Mossel Bay (tourism calendar)",
     notes="Weekly 5 km fun run/walk at the Groot Brak waterfront, listed on Visit Mossel Bay for Saturdays from 21 Nov 2026 through 27 Feb 2027.")
+
+
+# ---------------- Race refresh 19 Nov 2026 ----------------
+# Hand-checked on Entry Ninja and Quicket the same day. Nothing invented.
+
+add(title="Eden Triathlon League 2026/27 Event #2 (Super Sprint / Sprint / Standard)",category="funrun",
+    start_date="2026-12-06",time="07:00",town="Groot Brak",venue="Great Brak River triathlon venue",
+    venue_address="Great Brak River",price_from="R60",
+    ticket_url="https://www.entryninja.com/events/84768",
+    source_url="https://www.entryninja.com/events/84768",source_name="Entry Ninja",
+    notes="Eden Triathlon Federation league event. Super Sprint (400 m swim, 10 km cycle, 2.5 km run), Sprint (750 m, 20 km, 5 km) and Standard (1.5 km, 40 km, 10 km), plus AquaBike and team options. Start 07:00.",
+    lat=-34.054045842536,lng=22.219423958722,geo_source="event page")
+
+add(title="7Passes MTB 2027 (76 km & 38 km)",category="funrun",start_date="2027-01-03",time="07:30",
+    town="Knysna",venue="The Farm Knysna",venue_address="Old Cape Rd, Simola Hill, Knysna, 6571",price_from="R300",
+    ticket_url="https://www.entryninja.com/events/84492",
+    source_url="https://www.entryninja.com/events/84492",source_name="Entry Ninja",
+    notes="Mountain-bike race at The Farm, Simola Hill. 76 km and 38 km (including e-bike classes). Entry Ninja lists the event from 07:30.",
+    lat=-34.017117485357,lng=23.028752942657,geo_source="event page")
+
+add(title="Attakwas Half & Mini (47 km & 32.3 km MTB)",category="funrun",start_date="2027-01-16",time="10:30",
+    town="Groot Brak",venue="Pine Creek Caravan Park",venue_address="Pine Creek Caravan Park, Groot Brakrivier",price_from="R300",
+    ticket_url="https://www.entryninja.com/events/83580",
+    source_url="https://www.entryninja.com/events/83580",source_name="Entry Ninja",
+    alt_sources=["https://www.entryninja.com/events/83581","http://atta.co.za"],
+    notes="Shorter Attakwas mountain-bike options, starting at 10:30 at Pine Creek, Groot Brak: Half 47 km (1,100 m climbing) and Mini 32.3 km (550 m climbing). The 121 km Extreme starts earlier the same day in Oudtshoorn.",
+    lat=-34.0403719,lng=22.219897,geo_source="event page")
+
+add(title="Leopard Crawl MTB and Trail 2027 (60 / 45 / 18 km MTB & 13 km trail)",category="funrun",
+    start_date="2027-02-20",time="06:45",town="Oudtshoorn",venue="Wesbank Primary School",
+    venue_address="Wesbank Primary School, Vrede Street, Oudtshoorn",price_from="R120",
+    ticket_url="https://www.entryninja.com/events/84817",
+    source_url="https://www.entryninja.com/events/84817",source_name="Entry Ninja",
+    notes="MTB and trail event at Wesbank Primary School. Entry Ninja lists the day from 06:45, with 60 km, 45 km and 18 km rides and a 13 km trail run.",
+    lat=-33.5975215,lng=22.1927687,geo_source="event page")
+
+add(title="Tsitsikamma 4-Day MTB (24–28 Feb 2027, 200 km)",category="funrun",
+    start_date="2027-02-24",end_date="2027-02-28",time="12:00 on 24 Feb",town="The Crags",
+    venue="Firefly Falls",venue_address="Kurland Loredo South Road, The Crags, Plettenberg Bay, 6602",price_from="",
+    ticket_url="https://www.entryninja.com/events/82486",
+    source_url="https://www.entryninja.com/events/82486",source_name="Entry Ninja",
+    notes="Four-day mountain-bike tour of about 200 km, starting at Firefly Falls in The Crags. Entry Ninja lists the event from 12:00 on 24 Feb to the end of 27 Feb (shown as 28 Feb 00:00).",
+    lat=-33.9472294,lng=23.5044094,geo_source="event page")
+
+add(title="TITAN Trail Run at Benguela Cove (10 km & 5 km)",category="funrun",
+    start_date="2026-12-06",time="07:30 (5 km 07:45)",town="Hermanus",
+    venue="Benguela Cove Lagoon Wine Estate",venue_address="R43, Botriver Lagoon, Walker Bay, Hermanus, 7200",price_from="R230",
+    ticket_url="https://www.entryninja.com/events/83448",
+    source_url="https://www.entryninja.com/events/83448",source_name="Entry Ninja",
+    notes="5 km and 10 km trail run at Benguela Cove. 10 km at 07:30, 5 km at 07:45.",
+    lat=-34.3458633,lng=19.1347293,geo_source="event page")
+
+add(title="The Stanford 100 Miler (100 / 50 / 25 mile gravel)",category="funrun",
+    start_date="2026-12-05",time="07:30",town="Stanford",venue="Stanford Hills Estate",
+    venue_address="Stanford Hills Estate, Stanford",price_from="R400",
+    ticket_url="https://www.entryninja.com/events/83965",
+    source_url="https://www.entryninja.com/events/83965",source_name="Entry Ninja",
+    alt_sources=["https://thestanford100miler.co.za/"],
+    notes="Gravel race in the Stanford Valley: 100 miles (169 km) from 07:30, 50 miles (77 km) and 25 miles (40 km). E-bike classes on the 50 and 25 mile routes.",
+    lat=-34.4226932,lng=19.4738643,geo_source="event page")
+
+add(title="Grootvadersbosch Trail Run (30 km & 14 km)",category="funrun",
+    start_date="2027-02-13",time="06:30",town="Heidelberg",venue="Grootvadersbosch Nature Reserve",
+    venue_address="Grootvadersbosch Nature Reserve",price_from="R790",
+    ticket_url="https://www.entryninja.com/events/84584",
+    source_url="https://www.entryninja.com/events/84584",source_name="Entry Ninja",
+    notes="Trail run at Grootvadersbosch Nature Reserve, near Heidelberg. Entry Ninja lists the day from 06:30, with about 30 km and 14 km options.",
+    lat=-33.985568809688,lng=20.823333402252,geo_source="event page")
+
+_sfs=["2026-12-16","2026-12-18","2026-12-19","2026-12-21","2026-12-22","2026-12-23","2026-12-27","2026-12-29","2026-12-30","2026-12-31"]
+add(title="St Francis Sport Summer Series 2026",category="funrun",start_date=_sfs[0],end_date=_sfs[-1],
+    occurrences=_sfs,recurrence="Ten events, 16–31 Dec 2026",time="08:00 on 16 Dec",
+    town="St Francis Bay",venue="Venues around St Francis Bay",venue_address="St Francis Bay",price_from="R20",
+    ticket_url="https://www.entryninja.com/events/84769",
+    source_url="https://www.entryninja.com/events/84769",source_name="Entry Ninja",
+    alt_sources=["http://www.stfrancissport.co.za"],
+    notes="Summer series in St Francis Bay, listed on Entry Ninja: 16 Dec Paradise Beach road run/walk 10/5/1 km from 08:00; 18 Dec Cape St Francis Resort 10 km and 5 km; 19 Dec pet-friendly beach walk/run 5 km; 21 Dec Seal Point Estates trail 21 km; 22 Dec River Club canal swim; 23 Dec swim-and-run duathlon; 27 Dec Harbour2Harbour swim 2.3 km; 29 Dec quadrathlon; 30 Dec Sand River trail 14 km and 5 km; 31 Dec MTB/e-bike 30/15/5 km.",
+    lat=-34.1612018,lng=24.8191001,geo_source="event page")
+
+add(title="Timbercity Red Hill Marathon & Classic 2027 (42.2 / 36 / 13 km)",category="funrun",
+    start_date="2027-01-30",time="05:00 (13 km 06:00)",town="Cape Town",venue="Fish Hoek Sports Ground",
+    venue_address="Nelson Rd, Fish Hoek, Cape Town, 7974",price_from="R71",
+    ticket_url="https://www.entryninja.com/events/84761",
+    source_url="https://www.entryninja.com/events/84761",source_name="Entry Ninja",
+    notes="42.2 km marathon and 36 km classic from 05:00, and a 13 km challenge from 06:00, starting at Fish Hoek Sports Ground. Entry Ninja also lists the event day from 06:00.",
+    lat=-34.1274766,lng=18.4080847,geo_source="event page")
+
+add(title="View Church Fun Run (10 km & 5 km)",category="funrun",start_date="2027-01-30",time="08:00 (5 km 08:15)",
+    town="Cape Town",venue="Tygerberg High School",venue_address="5 Fairfield St, De Tijger, Cape Town, 7500",price_from="R150",
+    ticket_url="https://www.entryninja.com/events/84524",
+    source_url="https://www.entryninja.com/events/84524",source_name="Entry Ninja",
+    notes="10 km from 08:00 and 5 km from 08:15 at Tygerberg High School, in support of the Ravensmead Learning Centre.",
+    lat=-33.8932999,lng=18.5944499,geo_source="event page")
+
+add(title="RCS Gugs Race Run for Unity (10 km & 4.5 km fun run)",category="funrun",
+    start_date="2026-12-16",time="06:30 (fun run 06:45)",town="Cape Town",venue="NY 49 Stadium, Gugulethu",
+    venue_address="Gugulethu, Cape Town, 7750",price_from="R40",
+    ticket_url="https://www.entryninja.com/events/84709",
+    source_url="https://www.entryninja.com/events/84709",source_name="Entry Ninja",
+    notes="10 km road race from 06:30 and 4.5 km fun run from 06:45 at NY 49 Stadium, Gugulethu. Entry Ninja lists free entry for ages 70+.",
+    lat=-33.9888311,lng=18.5678461,geo_source="event page")
+
+add(title="Aspen 10 km & 5 km",category="funrun",start_date="2026-11-28",time="06:00 (5 km 06:15)",
+    town="Gqeberha",venue="Protea Child Care Centre",
+    venue_address="Blackthorn Avenue, Forest Hill Drive, Gqeberha",price_from="R65",
+    ticket_url="https://www.entryninja.com/events/84491",
+    source_url="https://www.entryninja.com/events/84491",source_name="Entry Ninja",
+    alt_sources=["https://www.facebook.com/AspenAC/"],
+    notes="Aspen Athletics Club 10 km from 06:00 and 5 km from 06:15, hosted under EPA and ASA rules.",
+    lat=-33.985171,lng=25.634392,geo_source="event page")
+
+add(title="Pebbles Project Open Day Fun Run/Walk (4.5 km)",category="funrun",
+    start_date="2026-11-20",time="08:30",town="Stellenbosch",venue="Villiera Wine Farm / Pebbles Project",
+    venue_address="R101, Koelenhof, Stellenbosch",price_from="",
+    ticket_url="https://www.quicket.co.za/events/402233-open-day-fun-runwalk/#tickets",
+    source_url="https://www.quicket.co.za/events/402233-open-day-fun-runwalk/",source_name="Quicket",
+    notes="4.5 km run/walk at Villiera Wine Farm for the Pebbles Project Open Day, 08:30–10:00, open to runners, walkers and families.",
+    lat=-33.83628,lng=18.7913647,geo_source="event page")
+
+add(title="Sandy Bay Family Fun Run",category="funrun",start_date="2026-11-28",time="08:00",
+    town="Cape Town",venue="Sandy Bay parking area",venue_address="Sandy Bay, Hout Bay, Cape Town",price_from="",
+    ticket_url="https://www.quicket.co.za/events/403554-sandy-bay-family-fun-run/#tickets",
+    source_url="https://www.quicket.co.za/events/403554-sandy-bay-family-fun-run/",source_name="Quicket",
+    notes="Family fun day and fun run at the Sandy Bay parking area, from 08:00. Quicket does not list a race distance.",
+    lat=-34.0233345,lng=18.3308334,geo_source="event page")
+
+add(title="Majik Forest Bloom & Move Run/Walk (5 km)",category="funrun",start_date="2026-11-29",time="07:00",
+    town="Cape Town",venue="Majik Forest Shopping Centre",
+    venue_address="Koelenhof Street, Van Riebeeckshof, Cape Town",price_from="R100",
+    ticket_url="https://www.quicket.co.za/events/390726-majik-forest-bloom-move-runwalk/#tickets",
+    source_url="https://www.quicket.co.za/events/390726-majik-forest-bloom-move-runwalk/",source_name="Quicket",
+    notes="5 km family run/walk at Majik Forest Shopping Centre, from 07:00. Entry R100 on Quicket.",
+    lat=-33.8585625,lng=18.6127758,geo_source="event page")
