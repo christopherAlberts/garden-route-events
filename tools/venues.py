@@ -156,7 +156,24 @@ CHECKS=[
  ("34 Waenhout – Live Venue","Knysna","2 Nov 2026: page unchanged (Forest Jazz 7 Nov, Kevin Fraser 12 Dec already listed); no 2026 NYE event yet."),
  ("Wild Spirit Lodge & Backpackers","Nature's Valley","2 Nov 2026: line-up page still says it will be released in November 2026."),
  ("Mossel Bay Town Hall","Mossel Bay","2 Nov 2026: iTickets search: all Punt in die Wind shows already listed."),
+# 19 Nov 2026 check
+ ("Fancourt","George","19 Nov 2026: events feed still shows only guest hikes and cycles in December; ICONS Cup already listed. No new public festive programme on the events page."),
+ ("Redberry Farm","George","19 Nov 2026: What's On page still says 'No event found!'; no 2026 carol service published."),
+ ("Hope Church (Hope Family)","George","19 Nov 2026: Christmas Show, NYE, summer camp and Night Run already listed; Quicket ticket links added for the Christmas Show and Summer Camp."),
+ ("Hennie's George","George","19 Nov 2026: branch page could not be reached (404), so the December What's On poster was not checked."),
+ ("34 Waenhout – Live Venue","Knysna","19 Nov 2026: Kevin Fraser (12 Dec) already listed; Radio Kalahari Orkes (29 Dec) added from Quicket. No dated 2026 NYE or foam-party details on the site."),
+ ("The Plettenberg","Plettenberg Bay","19 Nov 2026: Christmas Eve, Christmas lunch and NYE dinner menus already listed; unchanged on the what's-on page."),
+ ("Barrington's","Plettenberg Bay","19 Nov 2026: wine festival, hospice tree lighting and NYE (DJ Mike) already listed; nothing new dated."),
+ ("Simola Golf and Country Estate","Knysna","19 Nov 2026: still no official NYE booking details on the hotel site. Art Catwalk (11 Feb 2027) added from Quicket."),
+ ("Wild Spirit Lodge & Backpackers","Nature's Valley","19 Nov 2026: Festival of Friends already listed (gates 28 Dec 2026); page confirms those dates."),
+ ("Hart & Bosch Village","Hartenbos","19 Nov 2026: no new public events found beyond those already listed."),
+ ("Diaz Hotel and Resort","Mossel Bay","19 Nov 2026: diazbeach.co.za festive pages were not reachable (404); no new menu confirmed."),
+ ("Die Bush Lapa (Herold's Bay Eco Resort)","George","19 Nov 2026: Desember Musiekfees already listed on Webtickets; heroldsbayresort.co.za/events/ still 404, main site reachable."),
+ ("Open Plan Pictures (Garden Route outdoor & indoor cinema)","Plettenberg Bay","19 Nov 2026: Bakgat at the Blue Shed (20 Nov) and Secret Life of Pets at Old Nick (28 Nov) added from Quicket / Visit Mossel Bay."),
+ ("Blackwaters River Lodge & Mashie Golf Course","Knysna","19 Nov 2026: events section still shows 2025 packages only; no 2026 Goukamma carols published."),
+ ("Nature's Valley Trust","Nature's Valley","19 Nov 2026: no 2026 carol service found on the Trust's site or events page."),
 ]
+
 for n,t,note in CHECKS:
     r=rows.get((key(n),t))
     if r: r["notes"].add(note)

@@ -15,8 +15,11 @@ KW=[("cancelled",r"\b(cancell?ed|cancell?ation of the event|gekanselleer|afgeste
     ("postponed",r"\b(postponed|uitgestel|rescheduled|new date (to be|tba|tbc))\b"),
     ("sold out",r"\b(sold[\s-]?out|uitverkoop|fully booked|vol bespreek)\b")]
 def kw(t):
+    t=t or ""
+    # Ignore closing-date boilerplate such as "entries close 30 Nov or when sold out".
+    t=re.sub(r"\b(or when|until|unless|before (it is|they are)|if not already)\s+sold[\s-]?out\b","",t,flags=re.I)
     for st,p in KW:
-        if re.search(p,t or "",re.I): return st
+        if re.search(p,t,re.I): return st
     return ""
 def page_status(u):
     s=get(u); out=[]

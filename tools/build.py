@@ -49,15 +49,23 @@ GRQ={ # id: category  (hand-reviewed Garden Route Quicket listings)
 "393772":"concert","390041":"concert","400669":"concert","389748":"concert","396754":"concert","392031":"concert","399055":"concert","388199":"concert",
 "400050":"concert","400973":"concert","398527":"concert","398838":"concert","399108":"concert","399396":"concert","399888":"concert","398219":"concert",
 "398190":"concert","349754":"concert","387081":"festival","398452":"concert","399906":"concert","399904":"concert","399672":"concert","398221":"concert",
-"390180":"concert","401267":"concert","389550":"concert","396731":"festival","392725":"festival","375254":"market"}
-QNOTES={"396731":"Book/stories festival (Grootbrak Boekeblaf).","392725":"Birding festival (not music).","395253":"Forest Edge Schools musical production.","387081":"Afrikaans music festival on the farm.","397935":"Boutique jazz festival: day & night jazz club shows.","399044":"Oktoberfest beer festival with music.","393493":"Colour festival with music."}
-Q_SKIP={"397388"}
+"390180":"concert","401267":"concert","389550":"concert","396731":"festival","392725":"festival","375254":"market",
+# 19 Nov 2026 refresh
+"406953":"concert","394610":"film","407925":"film","407704":"arts","408429":"concert","409185":"concert","409292":"concert",
+"400097":"concert","408504":"concert","409253":"concert","408506":"concert","409115":"concert","407974":"concert",
+"407750":"concert","406588":"concert","408532":"concert","407705":"festive","408302":"festival","408939":"concert",
+"409090":"concert","408544":"concert","409294":"concert","408547":"concert","409084":"concert","409309":"concert",
+"409420":"concert","409290":"concert","408917":"concert","408553":"concert","409100":"concert","408438":"concert",
+"407158":"community","406908":"concert","409102":"concert","408240":"arts","378534":"concert"}
+QNOTES={"396731":"Book/stories festival (Grootbrak Boekeblaf).","392725":"Birding festival (not music).","395253":"Forest Edge Schools musical production.","387081":"Afrikaans music festival on the farm.","397935":"Boutique jazz festival: day & night jazz club shows.","399044":"Oktoberfest beer festival with music.","393493":"Colour festival with music.","407705":"Christmas Day lunch buffet, 15:00 seating, at The Stage Coach at Santos Express.","408302":"Car show and outdoor music event.","407158":"Knysna Rotary fundraising float at the Green Hole, Leisure Island.","406588":"Christmas concert by LEFT SLEEVE at George Arts Theatre.","409292":"Live opera with dinner at Cafe Civara (40 seats).","408438":"New Year's Eve party at The Quarter Club.","407704":"Storytelling evening at In Toto Retreat."}
+Q_SKIP={"397388","398481"}
 FUNQ={ # hand-reviewed community fun runs / charity walks on Quicket (id: note)
 "361367":"4.5 km community walk for breast cancer awareness.","400477":"Charity forest cycle & walk for I Love Boobies.","400264":"Charity walk for CANSA.",
 "395180":"Charity run on World Homeless Day.","394744":"Charity walk.","399994":"Spring fun run at a wine farm.","398041":"Hospice charity fun run.",
 "398261":"5 km birthday charity walk on the Sea Point Promenade.","396776":"Sunset fundraiser walk.","390242":"School fun run.","383490":"Community walk.",
 "401426":"Colour fun walk.","384905":"Costumed Halloween zombie walk through the city.","391873":"Charity fun run."}
-QTOWN={"Simola Golf and Country Estate":"Knysna","Stilbaai":"Still Bay","Stillbay":"Still Bay","Stormsrivier":"Storms River","Keurboomstrand":"Plettenberg Bay","Brenton-on-Sea":"Knysna","Groot-Brakrivier":"Groot Brak","Riversdale":"Riversdale","Saint Francis Bay":"St Francis Bay","St Francis Bay":"St Francis Bay","Sandbaai":"Hermanus","Onrus":"Hermanus"}
+QFORCE_TOWN={"408429":"Wilderness","408544":"Hoekwil"}
+QTOWN={"Simola Golf and Country Estate":"Knysna","Stilbaai":"Still Bay","Stillbay":"Still Bay","Still Bay":"Still Bay","Stormsrivier":"Storms River","Keurboomstrand":"Plettenberg Bay","Brenton-on-Sea":"Knysna","Groot-Brakrivier":"Groot Brak","Great Brak River":"Groot Brak","Groot-Jongensfontein":"Still Bay","Riversdale":"Riversdale","Saint Francis Bay":"St Francis Bay","St Francis Bay":"St Francis Bay","Sandbaai":"Hermanus","Onrus":"Hermanus"}
 def qtime(ts): return datetime.datetime.fromtimestamp(ts,TZ)
 for oid,h in Q.items():
     s=qtime(h["DateFrom"]); e=qtime(h["DateTo"]) if h.get("DateTo") else None
@@ -78,17 +86,17 @@ for oid,h in Q.items():
         notes=FUNQ[oid]
     elif h["_box"]=="garden_route":
         if oid not in GRQ: continue
-        cat=GRQ[oid]; town=QTOWN.get(city,city)
+        cat=GRQ[oid]; town=QFORCE_TOWN.get(oid, QTOWN.get(city,city))
         if town not in TOWNS: town=town_from_geo(lat,lng) if lat else None
         if not town: continue
         notes=QNOTES.get(oid,"")
     else:
         cats=h.get("Categories") or []
         if len(h.get("Dates") or [])>6 or oid in Q_SKIP: continue
-        if sd<TODAY or oid in Q_SKIP: continue
+        if (ed or sd)<TODAY or oid in Q_SKIP: continue
         if EXCL_KW.search(title) or BADVEN.search(h.get("VenueName","")): continue
         if "Music" not in cats and not ("Arts & Culture" in cats and (MUSICAL.search(title) or MUSIC_KW.search(title))) and not FEST.search(title): continue
-        if FEST.search(title) and "Music" not in cats and not MUSIC_KW.search(title) and not re.search(r"oktober|beer|wine|food",title,re.I): continue
+        if FEST.search(title) and "Music" not in cats and not MUSIC_KW.search(title) and not re.search(r"oktober|beer|wine|food|cocktail|spirits",title,re.I): continue
         if not lat: continue
         town=town_from_geo(lat,lng)
         if not town or TOWNS[town][2]: continue  # wider coast only here
@@ -100,7 +108,7 @@ for oid,h in Q.items():
 # ---------- Webtickets ----------
 W=json.load(open(f"{RAW}/wt/all_ev.json"))
 MON={m:i for i,m in enumerate("JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC".split(),1)}
-WT_SKIP={"1598588884","1601652195","1605819550"}
+WT_SKIP={"1598588884","1601652195","1605819550","1606849899","1607723629","1580511893","1606794270","1607834971","1606196696"}
 WT_END={"1602663500":"2026-12-19","1601853362":"2026-11-14"}
 WT_ALT={"1601853362":["https://www.broadwayworld.com/south-africa/article/INTO-THE-WOODS-Will-Open-at-Theatre-on-Bay-in-October-20260924"]}
 WT_NOTE={"1602663500":"Pantomime. Shows 5, 9-11 and 16-19 Dec (per Webtickets calendar)."}  # flamenco dance show
@@ -225,6 +233,8 @@ EV=[e for e in EV if e["start_date"]<=END and (e["end_date"] or e["start_date"])
 def norm(t):
     t=unicodedata.normalize("NFKD",t).encode("ascii","ignore").decode().lower()
     t=re.sub(r"\b(live|in|at|the|and|of|a|ft|feat|presents|tribute|to|experience|2026|2027|concert|edition|show|tour|with)\b"," ",t)
+    # Drop place names so two different artists in the same town/venue are not merged.
+    t=re.sub(r"\b(plettenberg|knysna|mossel|george|wilderness|hartenbos|sedgefield|oudtshoorn|stilbaai|still|stanford|hermanus|pringle|kleinmond|cape|town|bay|river|garden|route|estate|new|year|years|eve|nye|party)\b"," ",t)
     return set(w for w in re.findall(r"[a-z0-9]+",t) if len(w)>2)
 SRC_RANK={"Quicket":1,"Webtickets":1,"Howler":1,"iTickets":1}
 EV.sort(key=lambda e:(e["_prio"],SRC_RANK.get(e["source_name"],3)))
@@ -234,7 +244,14 @@ for e in EV:
     for k in kept:
         if k["start_date"]==e["start_date"] and k["town"]==e["town"] and (k["category"]==e["category"] or not ({k["category"],e["category"]}&{"funrun","market","community","arts","quiz","festive","nature","sport","film"})) and not (e["category"] in ("quiz","festive","film","nature") and (k["venue"]!=e["venue"] or k["title"]!=e["title"])):
             a,b=norm(k["title"]),norm(e["title"])
-            if a and b and len(a&b)/min(len(a),len(b))>=0.6: dup=k;break
+            if a and b and len(a&b)/min(len(a),len(b))>=0.6:
+                only_a,only_b=a-b,b-a
+                # Two NYE parties (or two named acts) in the same town must not merge
+                # just because they share words like "live" or, after place-name
+                # stripping, "party". Merge only when one title is a subset of the other.
+                if any(len(w)>=4 for w in only_a) and any(len(w)>=4 for w in only_b):
+                    continue
+                dup=k;break
     if dup:
         for u in [e["source_url"]]+e["alt_sources"]:
             if u!=dup["source_url"] and u not in dup["alt_sources"]: dup["alt_sources"].append(u)

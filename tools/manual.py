@@ -218,12 +218,14 @@ add(title="Plett Games 2026",category="festival",start_date="2026-10-17",time="1
 # ---------------- Hope Church (Hope Family) George (added 6 Oct 2026) ----------------
 HOPE="https://hopefamily.org/event/"
 HOPE_VEN=dict(town="George",venue="Hope Church (Hope Family)",venue_address="Cnr Knysna Road & Fourth Street, Eastern Extension, George")
-add(title="Hope Family Christmas Show",category="community",start_date="2026-12-06",time="",price_from="",ticket_url="",source_url=HOPE,source_name="Hope Family / Hope Church George (official site)",
-    notes="Hope Church George's annual Christmas Show (Sunday). Times and details to be announced on the church's events page.",**HOPE_VEN)
+add(title="Hope Family Christmas Show",category="community",start_date="2026-12-06",time="",price_from="",ticket_url="https://www.quicket.co.za/events/409338-christmas-show-2026/#tickets",source_url=HOPE,source_name="Hope Family / Hope Church George (official site)",
+    alt_sources=["https://www.quicket.co.za/events/409338-christmas-show-2026/"],
+    notes="Hope Church George's annual Christmas Show (Sunday). Tickets are now on Quicket. Time not published on the church page or the ticket listing (the Quicket start is date-only).",**HOPE_VEN)
 add(title="Hope Family New Year's Eve Event",category="community",start_date="2026-12-31",time="",price_from="",ticket_url="",source_url=HOPE,source_name="Hope Family / Hope Church George (official site)",
     notes="New Year's Eve gathering at Hope Church George. Details to be announced on the church's events page.",**HOPE_VEN)
-add(title="Hope Youth Summer Camp (Grade 7-12)",category="community",start_date="2027-01-06",end_date="2027-01-09",time="",price_from="",ticket_url="",source_url=HOPE,source_name="Hope Family / Hope Church George (official site)",
-    notes="Summer camp for high-school youth (Grade 7-12) run by Hope Family George. Venue not published yet; pinned at the church.",**HOPE_VEN)
+add(title="Hope Youth Summer Camp (Grade 7-12)",category="community",start_date="2027-01-06",end_date="2027-01-09",time="",price_from="",ticket_url="https://www.quicket.co.za/events/401813-summer-camp-2027/#tickets",source_url=HOPE,source_name="Hope Family / Hope Church George (official site)",
+    alt_sources=["https://www.quicket.co.za/events/401813-summer-camp-2027/"],
+    notes="Summer camp for high-school youth (Grade 7-12) run by Hope Family George. Tickets are now on Quicket. The listing is at Nelson Mandela University (George Campus).",**HOPE_VEN)
 add(title="Hope Family Night Run 2027 (10 km forest run, 5 km & 3 km fun run/walk)",category="funrun",start_date="2027-01-22",time="18:30 (expected)",town="George",
     venue="Nelson Mandela University George Campus (expected)",venue_address="Madiba Rd, George",price_from="",ticket_url="",source_url=HOPE,source_name="Hope Family / Hope Church George (official site)",
     alt_sources=["https://runningcalendar.co.za/events/hope-church-night-trail-run","https://hopefamily.org/night-run/"],
@@ -233,8 +235,9 @@ add(title="Hope Family Night Run 2027 (10 km forest run, 5 km & 3 km fun run/wal
 # ---- club runs with a short social distance (RunningCalendar, verified listings) ----
 RC="RunningCalendar.co.za"
 add(title="Oujaarsdraffie New Year's Eve run (10 km & 4 km)",category="funrun",start_date="2026-12-31",time="06:00",town="Hartenbos",venue="ATKV Amphitheatre",venue_address="Hartenbos",
-    price_from="R65 (4 km)",ticket_url="",source_url="https://runningcalendar.co.za/events/oujaarsdraffie",source_name=RC,
-    notes="New Year's Eve morning 'draffie' (jog) in Hartenbos with a 4 km option alongside the 10 km. Listing verified by RunningCalendar; online entries open. The organiser doesn't label the 4 km a fun run.",
+    price_from="R65 (4 km)",ticket_url="https://entrytickets.net/oujaars",source_url="https://runningcalendar.co.za/events/oujaarsdraffie",source_name=RC,
+    alt_sources=["https://visitmosselbay.co.za/event/oujaars-draffie/","https://entrytickets.net/oujaars"],
+    notes="New Year's Eve morning 'draffie' (jog) in Hartenbos with a 4 km option alongside the 10 km, hosted by Hartenbos Drawwers. Visit Mossel Bay lists the same event (Kaap De Goede Hoop Street) with entries at entrytickets.net/oujaars.",
     lat=-34.122212,lng=22.117421,geo_source="event page")
 add(title="Love Life Run, Wilderness (10 km & 5 km)",category="funrun",start_date="2026-11-04",time="18:00",town="Wilderness",venue="The Wilderness Common",venue_address="Wilderness",
     price_from="R40 (5 km)",ticket_url="",source_url="https://runningcalendar.co.za/events/love-life-run",source_name=RC,
@@ -1867,9 +1870,11 @@ add(title="SAM Charity Shop Festive Decoration Sale",category="community",start_
     source_url="https://www.toodoo.co.za/sam-charity-shop-festive-decoration-sale/",source_name="toodoo.co.za",alt_sources=[],
     notes="Pre-loved Christmas decorations and seasonal goodies sold outside the shop (weather permitting) in aid of a local charity. Donations/collections: Jenny 082 452 1737.")
 add(title="The Music of Bee Gees and Friends (Vernon Ericson Barnard)",category="concert",start_date="2026-12-11",time="19:00 (doors 18:00)",town="George",venue="The Market Community Theatre",
-    venue_address="Market Street, George",price_from="R120",ticket_url="",
-    source_url="https://www.georgeherald.com/Entertainment/Article/eyes-on-arts-upcoming-entertainment-highlights-in-george-and-surrounds-202611050156",source_name="George Herald (Eyes on arts)",alt_sources=[],
-    notes="Bookings and enquiries: Heather 072 369 3304.")
+    venue_address="Market Street, George",price_from="R120",ticket_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1607834971",
+    source_url="https://www.georgeherald.com/Entertainment/Article/eyes-on-arts-upcoming-entertainment-highlights-in-george-and-surrounds-202611050156",source_name="George Herald (Eyes on arts)",
+    alt_sources=["https://www.webtickets.co.za/v2/event.aspx?itemid=1607834971"],
+    notes="Bookings and enquiries: Heather 072 369 3304. Tickets on Webtickets.",
+    lat=-33.961403,lng=22.456679,geo_source="event page")
 
 # ---------------- Running-club races (added 9 Nov 2026 for the profile club picker; hosts per RunningCalendar organiser pages) ----------------
 _RC="https://runningcalendar.co.za/events/"
@@ -1913,3 +1918,146 @@ add(title="Voedsel & Wynfees @ Stilbaai Gemeenskapsaal",category="festival",star
 add(title="Anything that Floats (charity float, Hulle by die See slipway)",category="community",start_date="2026-12-27",time="14:00",
     town="Still Bay",venue="Hulle by die See slipway",source_url="https://mystilbaai.co.za/events/",source_name="My Stilbaai",
     notes="Charity float event from the Hulle by die See slipway. Info 082 457 1135 (My Stilbaai events).")
+
+
+
+# Still listed on mystilbaai.co.za/events (checked 19 Nov 2026). It was in the
+# 9 Nov dataset but lived only in events.json, so the rebuild dropped it.
+_bf=_dates("2026-11-14",HORIZON,[SAT,SUN])
+add(title="Barefoot Market (Stilbaai West)",category="market",start_date=_bf[0],end_date=_bf[-1],occurrences=_bf,
+    recurrence="Every Saturday and Sunday, 08:00–15:00",time="08:00–15:00",town="Still Bay",
+    venue="Barefoot Market",venue_address="GK & Waterblom Drive, along the Goukou River, Stilbaai West",
+    price_from="",ticket_url="",source_url="https://mystilbaai.co.za/events/",source_name="My Stilbaai",
+    notes="Weekend market along the Goukou River (Stilbaai West). Sat & Sun 08:00–15:00. Info 083 988 1811 (My Stilbaai).",
+    lat=-34.37,lng=21.41,geo_source="tourism listing")
+
+add(title="Kan Jy Dans: Community Culture Showcase & Cypher",category="arts",start_date="2026-12-12",time="18:00",
+    town="Cape Town",venue="The Novalis Ubuntu Institute",venue_address="Wetton Road, Wynberg, Cape Town",
+    price_from="",ticket_url="https://www.quicket.co.za/events/397959-kan-jy-dans-community-culture-showcase-cypher/#tickets",
+    source_url="https://www.quicket.co.za/events/397959-kan-jy-dans-community-culture-showcase-cypher/",source_name="Quicket",
+    notes="Arts & Culture showcase and cypher at the Novalis Ubuntu Institute (listed on Quicket).",
+    lat=-34.0078354,lng=18.480423,geo_source="event page")
+
+# ---------------- Weekly refresh 19 Nov 2026 ----------------
+# Hand-checked on the source URL the same day. Nothing invented.
+
+add(title="Gospel Afternoon (16 Days of Activism launch)",category="community",start_date="2026-11-22",time="16:00-18:00",
+    town="Mossel Bay",venue="Mossel Bay Town Hall",venue_address="101 Marsh Street, Mossel Bay",
+    price_from="Free entry",ticket_url="",source_url="https://visitmosselbay.co.za/event/gospel-afternoon-in-mossel-bay-townhall/",
+    source_name="Visit Mossel Bay (tourism calendar)",
+    notes="Free gospel afternoon in the town hall, the official launch of Mossel Bay's 2026 16 Days of Activism for No Violence against Women and Children programme.")
+
+add(title="Homecoming Celebration (music, poetry and storytelling)",category="arts",start_date="2026-11-27",time="18:00",
+    town="Mossel Bay",venue="Searles Manor",venue_address="64 Bland Street, Mossel Bay",
+    price_from="",ticket_url="",source_url="https://www.georgeherald.com/Whatson",source_name="George Herald (What's On)",
+    notes="An evening of music, poetry and storytelling at Searles Manor, with Walter Blaq, Mof-Cando, Petronel Baard, Hakkiesdraad Hartman, Ashley Neriman and Mathopi Lethoba, plus food and wine. Tickets: Blaq on 083 520 3307.")
+
+add(title="Glenhoff Steam & Beer Express (Atlantic Rail)",category="community",start_date="2026-11-28",time="09:00-12:00",
+    town="Hartenbos",venue="Hennie's Hartenbos (old train station)",venue_address="Port Natal Avenue, Hartenbos",
+    price_from="",ticket_url="",source_url="https://visitmosselbay.co.za/event/glenhoff-steam-beer-express-with-atlantic-rail/",
+    source_name="Visit Mossel Bay (tourism calendar)",
+    notes="Special Steam & Beer Express trip between Die Stasie Hartenbos and Santos Express on 28 November (separate from the regular December Atlantic Rail trips). The listing mentions a group beer offer; ticket price not published on the page.")
+
+add(title="Ceramic and painting exhibition (Minda du Plessis, Kobus Spies)",category="arts",start_date="2026-12-03",end_date="2026-12-05",
+    time="10:00-18:00 (10:00-13:00 on 5 Dec)",occurrences=["2026-12-03","2026-12-04","2026-12-05"],
+    town="Mossel Bay",venue="Village on Sea",venue_address="1 Kapokbos Street, Heiderand, Mossel Bay",
+    price_from="",ticket_url="",source_url="https://visitmosselbay.co.za/event/an-art-exhibition/",
+    source_name="Visit Mossel Bay (tourism calendar)",
+    notes="Ceramic art exhibition by Minda du Plessis, with paintings by Kobus Spies and merchandise by Walter Battisse Co. Times: 10:00-18:00 on 3 and 4 Dec; 10:00-13:00 on 5 Dec.")
+
+add(title="Christmas Market at Johnson's Post",category="market",start_date="2026-12-05",time="08:00-17:00",
+    town="Mossel Bay",venue="Johnson's Post, Voëlvlei",venue_address="Johnson's Post, Voëlvlei, Mossel Bay",
+    price_from="",ticket_url="",source_url="https://visitmosselbay.co.za/event/christmas-market-at-johnsons-post/",
+    source_name="Visit Mossel Bay (tourism calendar)",
+    notes="Festive market at Johnson's Post with baked goods, coffee, food, gifts, and the launch of a new summer drink with CP Roasters. Longer hours than the regular Saturday market.")
+
+add(title="Big3 Community Street Market",category="market",start_date="2026-12-05",time="11:00-21:00",
+    town="Mossel Bay",venue="Kwano Business Park",venue_address="Kwanonqaba, Mossel Bay",
+    price_from="",ticket_url="",source_url="https://visitmosselbay.co.za/event/big3-street-market/",
+    source_name="Visit Mossel Bay (tourism calendar)",
+    notes="Community street market for local vendors, with music, food, art, culture and family-friendly entertainment.")
+
+add(title="Millennium live at Die Kuiergat",category="concert",start_date="2026-12-19",time="20:00",
+    town="Mossel Bay",venue="Die Kuiergat",venue_address="Mossel Bay",
+    price_from="",ticket_url="https://www.quicket.co.za/events/408971-die-kuiergat-mosselbaai/#tickets",
+    source_url="https://www.quicket.co.za/events/408971-die-kuiergat-mosselbaai/",source_name="Quicket",
+    notes="Millennium live at Die Kuiergat (the Quicket listing title is only the venue name; the description names the act).")
+
+add(title="Blame it on the musicals",category="musical",start_date="2026-12-04",time="18:00",
+    town="George",venue="George Arts Theatre",venue_address="125 York Street, George Central, George",
+    price_from="R120",ticket_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1606849899",
+    source_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1606849899",source_name="Webtickets",
+    lat=-33.955861,lng=22.457996,geo_source="event page",
+    notes="Musical theatre show at George Arts Theatre.")
+
+add(title="Scallywag live at Die Kuiergat",category="concert",start_date="2026-12-04",end_date="2026-12-05",
+    time="20:00",occurrences=["2026-12-04","2026-12-05"],
+    town="Mossel Bay",venue="Die Kuiergat",venue_address="Mossel Bay",
+    price_from="R100",ticket_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1607723629",
+    source_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1607723629",source_name="Webtickets",
+    lat=-34.182263,lng=22.143666,geo_source="event page",
+    notes="Two nights of live music, Friday 4 and Saturday 5 December, starting at 20:00. Tickets R100 per person.")
+
+add(title="Stanley Grootboom & Hakkiesdraad Hartman",category="concert",start_date="2026-12-10",time="18:00",
+    town="Knysna",venue="Old Jail Museum",venue_address="Knysna",
+    price_from="",ticket_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1607280458",
+    source_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1607280458",source_name="Webtickets",
+    lat=-34.036013,lng=23.050935,geo_source="event page")
+
+
+add(title="Ross Learmonth live at Mujo Bar & Restaurant",category="concert",start_date="2026-12-28",time="18:00",
+    town="George",venue="Mujo Bar & Restaurant",venue_address="George",
+    price_from="",ticket_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1606196696",
+    source_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1606196696",source_name="Webtickets",
+    lat=-33.971866,lng=22.490856,geo_source="event page",
+    notes="Webtickets lists the venue as Mojo Bar & Restaurant in George; this is Mujo Bar & Restaurant.")
+
+add(title="Jeremy Loops live in Plettenberg Bay",category="concert",start_date="2026-12-30",time="16:00",
+    town="Plettenberg Bay",venue="Forest Gate Eco Estate",venue_address="Plettenberg Bay",
+    price_from="R320",ticket_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1607743557",
+    source_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1607743557",source_name="Webtickets",
+    lat=-34.044555,lng=23.285909,geo_source="event page",
+    notes="From R320, excluding a R25 booking fee, on Webtickets.")
+
+add(title="Sokkie-Aand met Brandon Miles – Heroes Live",category="concert",start_date="2026-12-05",time="20:30",
+    town="Cape Town",venue="Heroes Live",venue_address="Cape Town",
+    price_from="",ticket_url="https://itickets.co.za/events/487827",
+    source_url="https://itickets.co.za/events/487827",source_name="iTickets",
+    notes="Live sokkie evening with Brandon Miles at Heroes Live.")
+
+add(title="Spoegwolf live at Stanford Hills Estate",category="concert",start_date="2026-12-16",time="17:00",
+    town="Stanford",venue="Stanford Hills Estate",venue_address="Stanford, Western Cape",
+    price_from="",ticket_url="https://itickets.co.za/events/487716",
+    source_url="https://itickets.co.za/events/487716",source_name="iTickets",
+    notes="Spoegwolf live at Stanford Hills Estate (Stanford, Overberg). Listed on iTickets at 17:00.")
+
+add(title="Carols by Candlelight at Harold Porter National Botanical Gardens",category="concert",start_date="2026-12-17",time="18:30",
+    town="Kleinmond",venue="Harold Porter National Botanical Gardens",venue_address="Broadwith Road, Betty's Bay",
+    price_from="R65",ticket_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1580511893",
+    source_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1580511893",source_name="Webtickets",
+    lat=-34.350833,lng=18.926944,geo_source="event page",
+    notes="Carols by Candlelight in Betty's Bay (Harold Porter gardens). Webtickets prices R65-R160. Mapped to Kleinmond, the nearest Garden Route Events town.")
+
+add(title="Studio 54 New Year's Eve Party at Dutchies",category="concert",start_date="2026-12-31",time="21:00",
+    town="Hermanus",venue="Dutchies Restaurant",venue_address="Grotto Street, Hermanus",
+    price_from="",ticket_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1607038629",
+    source_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1607038629",source_name="Webtickets")
+
+add(title="Hangklip 10 km (Hangklip Athletics Club)",category="funrun",start_date="2026-12-06",time="07:00",
+    town="Pringle Bay",venue="Pringle Bay",venue_address="Pringle Bay",
+    price_from="",ticket_url="",source_url="https://runningcalendar.co.za/events/hangklip-10km",
+    source_name="RunningCalendar.co.za",
+    notes="ASA (BOLA) 10 km road race hosted by Hangklip Athletics Club. Start 07:00. Online entries close 30 Nov 2026, or earlier if the field is full. Temporary ASA licence fee applies if you are not a club member. Exact start-street not shown on the listing.")
+
+add(title="TOP FORM Bay to Bay 2027 (30 km & 15 km)",category="funrun",start_date="2027-01-17",time="05:30",
+    town="Cape Town",venue="Glen Country Club",venue_address="Camps Bay, Cape Town",
+    price_from="",ticket_url="",source_url="https://runningcalendar.co.za/events/bay-to-bay",
+    source_name="RunningCalendar.co.za",
+    notes="30 km from 05:30 at Glen Country Club, Camps Bay, and 15 km (walkers welcome) from 07:00 at Mainstream Mall, Hout Bay. Hosted by Top Form Athletics Club (ASA WPA). Online entries are open on RunningCalendar. A limited number of T-shirts are listed at R250 with the entry.")
+
+add(title="Groot Brakrivier Waterfront 5 km Fun Run/Walk",category="funrun",start_date="2026-11-21",end_date="2027-02-27",
+    occurrences=["2026-11-21", "2026-11-28", "2026-12-05", "2026-12-12", "2026-12-19", "2026-12-26", "2027-01-02", "2027-01-09", "2027-01-16", "2027-01-23", "2027-01-30", "2027-02-06", "2027-02-13", "2027-02-20", "2027-02-27"],recurrence="Every Saturday, 07:30-09:00",
+    time="07:30-09:00",town="Groot Brak",venue="Groot Brakrivier Waterfront",venue_address="1 Station Road, Groot Brak",
+    price_from="",ticket_url="",source_url="https://visitmosselbay.co.za/event/groot-brakrivier-waterfront-5km-fun-run-walk/",
+    source_name="Visit Mossel Bay (tourism calendar)",
+    notes="Weekly 5 km fun run/walk at the Groot Brak waterfront, listed on Visit Mossel Bay for Saturdays from 21 Nov 2026 through 27 Feb 2027.")

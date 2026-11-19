@@ -45,12 +45,6 @@
   "geo_source": "nominatim",
   "region": "Garden Route",
   "occurrences": [
-   "2026-11-10",
-   "2026-11-11",
-   "2026-11-12",
-   "2026-11-13",
-   "2026-11-17",
-   "2026-11-18",
    "2026-11-19",
    "2026-11-20",
    "2026-11-24",
@@ -149,15 +143,16 @@
    "2027-05-05",
    "2027-05-06",
    "2027-05-07",
-   "2027-05-11"
+   "2027-05-11",
+   "2027-05-12",
+   "2027-05-13",
+   "2027-05-14",
+   "2027-05-18",
+   "2027-05-19",
+   "2027-05-20",
+   "2027-05-21"
   ],
   "day_labels": {
-   "2026-11-10": "Taco Tuesday",
-   "2026-11-11": "Burger special",
-   "2026-11-12": "Pizza special R120",
-   "2026-11-13": "Kids' pottery painting 30% off",
-   "2026-11-17": "Taco Tuesday",
-   "2026-11-18": "Burger special",
    "2026-11-19": "Pizza special R120",
    "2026-11-20": "Kids' pottery painting 30% off",
    "2026-11-24": "Taco Tuesday",
@@ -256,7 +251,14 @@
    "2027-05-05": "Burger special",
    "2027-05-06": "Pizza special R120",
    "2027-05-07": "Kids' pottery painting 30% off",
-   "2027-05-11": "Taco Tuesday"
+   "2027-05-11": "Taco Tuesday",
+   "2027-05-12": "Burger special",
+   "2027-05-13": "Pizza special R120",
+   "2027-05-14": "Kids' pottery painting 30% off",
+   "2027-05-18": "Taco Tuesday",
+   "2027-05-19": "Burger special",
+   "2027-05-20": "Pizza special R120",
+   "2027-05-21": "Kids' pottery painting 30% off"
   },
   "recurrence": "Tue: Taco Tuesday; Wed: Burger special; Thu: Pizza special R120; Fri: Kids' pottery painting 30% off"
  },
@@ -306,14 +308,6 @@
   "geo_source": "nominatim",
   "region": "Garden Route",
   "occurrences": [
-   "2026-11-09",
-   "2026-11-10",
-   "2026-11-11",
-   "2026-11-12",
-   "2026-11-13",
-   "2026-11-16",
-   "2026-11-17",
-   "2026-11-18",
    "2026-11-19",
    "2026-11-20",
    "2026-11-23",
@@ -437,17 +431,17 @@
    "2027-05-06",
    "2027-05-07",
    "2027-05-10",
-   "2027-05-11"
+   "2027-05-11",
+   "2027-05-12",
+   "2027-05-13",
+   "2027-05-14",
+   "2027-05-17",
+   "2027-05-18",
+   "2027-05-19",
+   "2027-05-20",
+   "2027-05-21"
   ],
   "day_labels": {
-   "2026-11-09": "Happy hour 16:00-18:00",
-   "2026-11-10": "Happy hour 16:00-18:00 · Pizza Tuesday",
-   "2026-11-11": "Happy hour 16:00-18:00",
-   "2026-11-12": "Happy hour 16:00-18:00",
-   "2026-11-13": "Happy hour 16:00-18:00",
-   "2026-11-16": "Happy hour 16:00-18:00",
-   "2026-11-17": "Happy hour 16:00-18:00 · Pizza Tuesday",
-   "2026-11-18": "Happy hour 16:00-18:00",
    "2026-11-19": "Happy hour 16:00-18:00",
    "2026-11-20": "Happy hour 16:00-18:00",
    "2026-11-23": "Happy hour 16:00-18:00",
@@ -571,7 +565,15 @@
    "2027-05-06": "Happy hour 16:00-18:00",
    "2027-05-07": "Happy hour 16:00-18:00",
    "2027-05-10": "Happy hour 16:00-18:00",
-   "2027-05-11": "Happy hour 16:00-18:00 · Pizza Tuesday"
+   "2027-05-11": "Happy hour 16:00-18:00 · Pizza Tuesday",
+   "2027-05-12": "Happy hour 16:00-18:00",
+   "2027-05-13": "Happy hour 16:00-18:00",
+   "2027-05-14": "Happy hour 16:00-18:00",
+   "2027-05-17": "Happy hour 16:00-18:00",
+   "2027-05-18": "Happy hour 16:00-18:00 · Pizza Tuesday",
+   "2027-05-19": "Happy hour 16:00-18:00",
+   "2027-05-20": "Happy hour 16:00-18:00",
+   "2027-05-21": "Happy hour 16:00-18:00"
   },
   "recurrence": "Mon/Tue/Wed/Thu/Fri: Happy hour 16:00-18:00; Tue: Pizza Tuesday"
  },
@@ -619,13 +621,6 @@
   "geo_source": "nominatim",
   "region": "Garden Route",
   "occurrences": [
-   "2026-11-09",
-   "2026-11-10",
-   "2026-11-11",
-   "2026-11-12",
-   "2026-11-16",
-   "2026-11-17",
-   "2026-11-18",
    "2026-11-19",
    "2026-11-23",
    "2026-11-24",
@@ -724,16 +719,15 @@
    "2027-05-05",
    "2027-05-06",
    "2027-05-10",
-   "2027-05-11"
+   "2027-05-11",
+   "2027-05-12",
+   "2027-05-13",
+   "2027-05-17",
+   "2027-05-18",
+   "2027-05-19",
+   "2027-05-20"
   ],
   "day_labels": {
-   "2026-11-09": "Debriefing specials 13:00-17:00",
-   "2026-11-10": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00",
-   "2026-11-11": "Debriefing specials 13:00-17:00",
-   "2026-11-12": "Debriefing specials 13:00-17:00 · Quiz night 19:00",
-   "2026-11-16": "Debriefing specials 13:00-17:00",
-   "2026-11-17": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00",
-   "2026-11-18": "Debriefing specials 13:00-17:00",
    "2026-11-19": "Debriefing specials 13:00-17:00 · Quiz night 19:00",
    "2026-11-23": "Debriefing specials 13:00-17:00",
    "2026-11-24": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00",
@@ -832,7 +826,13 @@
    "2027-05-05": "Debriefing specials 13:00-17:00",
    "2027-05-06": "Debriefing specials 13:00-17:00 · Quiz night 19:00",
    "2027-05-10": "Debriefing specials 13:00-17:00",
-   "2027-05-11": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00"
+   "2027-05-11": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00",
+   "2027-05-12": "Debriefing specials 13:00-17:00",
+   "2027-05-13": "Debriefing specials 13:00-17:00 · Quiz night 19:00",
+   "2027-05-17": "Debriefing specials 13:00-17:00",
+   "2027-05-18": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00",
+   "2027-05-19": "Debriefing specials 13:00-17:00",
+   "2027-05-20": "Debriefing specials 13:00-17:00 · Quiz night 19:00"
   },
   "recurrence": "Mon/Tue/Wed/Thu: Debriefing specials 13:00-17:00; Tue: Noot vir Noot 19:00; Thu: Quiz night 19:00"
  },
@@ -1093,7 +1093,8 @@
   "image": "images/r-cornerstone-creek-hoekwil.webp",
   "image_source": "https://static.wixstatic.com/media/661dca_572f212aba0a4edca518d7f38c57df02~mv2.jpeg",
   "event_ids": [
-   "2026-12-19-joshua-na-die-reen-cornerstone-creek-hoekwil"
+   "2026-12-19-joshua-na-die-reen-cornerstone-creek-hoekwil",
+   "2026-12-27-raaf-hoekwill-cornerstone-creek"
   ],
   "lat": -33.9727796,
   "lng": 22.6178534,
@@ -1131,7 +1132,8 @@
   "image": "",
   "image_source": "",
   "event_ids": [
-   "2026-10-07-quiz-night-at-hennie-s-hartenbos-wednesdays"
+   "2026-10-07-quiz-night-at-hennie-s-hartenbos-wednesdays",
+   "2026-11-28-glenhoff-steam-beer-express-atlantic-rail"
   ],
   "lat": -34.1252157,
   "lng": 22.1134424,
@@ -1311,7 +1313,6 @@
   "image_source": "",
   "event_ids": [
    "2026-10-06-quiz-night-at-hennie-s-durbanville-tuesdays",
-   "2026-11-13-kruger-tutu-live-at-hennie-s-durbanville",
    "2026-11-21-karel-bester-live-at-hennie-s-durbanville",
    "2026-11-27-skye-live-at-hennie-s-durbanville",
    "2026-11-28-danielle-live-at-hennie-s-durbanville"
@@ -1574,6 +1575,8 @@
   "image": "images/r-seeplaas-groot-brak.webp",
   "image_source": "https://seeplaas.co.za/wp-content/uploads/2018/12/restaurant-seeplaas-food.jpg",
   "event_ids": [
+   "2026-12-22-roan-ash-seeplaas-groot-brakrivier",
+   "2026-12-28-raaf-groot-brakrivier-seeplaas",
    "2027-01-03-watershed-live-at-seeplaas-groot-brak"
   ],
   "lat": -34.0425,
