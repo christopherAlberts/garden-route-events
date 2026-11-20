@@ -2216,3 +2216,108 @@ add(title="Majik Forest Bloom & Move Run/Walk (5 km)",category="funrun",start_da
     source_url="https://www.quicket.co.za/events/390726-majik-forest-bloom-move-runwalk/",source_name="Quicket",
     notes="5 km family run/walk at Majik Forest Shopping Centre, from 07:00. Entry R100 on Quicket.",
     lat=-33.8585625,lng=18.6127758,geo_source="event page")
+
+# ---- Cape Town / Winelands races from new weekly-checkable sources (20 Nov 2026) ----
+# Weekly-check: Western Province Athletics events calendar (https://wpa.org.za/events/ and
+# /wp-json/tribe/events/v1/events), Top Events (https://topevents.co.za/events/ and
+# /calendar/), and The Trail Series by Wildrunner (https://www.trailseries.co.za/races).
+_WPA_FIX="https://wpa.org.za/wp-content/uploads/2026/01/WPA-Fixtures-List-2026_Draft-V3.pdf"
+_WPA="Western Province Athletics (events calendar)"
+_TE="Top Events"
+
+add(title="MPTitans Road Race (21 km & 10 km)",category="funrun",start_date="2026-11-21",time="",
+    town="Cape Town",venue="Rocklands Sports Field",venue_address="Rocklands, Mitchells Plain, Cape Town",
+    price_from="",ticket_url="",
+    source_url="https://wpa.org.za/event/mptitans-road-race-3/",source_name=_WPA,
+    alt_sources=[_WPA_FIX],
+    notes="WPA lists this road race on 21 November 2026. The official 2026 fixtures list gives 21 km and 10 km at Rocklands Sports Field, hosted by MPTitans. No start time or entry fee is published on the event page.")
+
+add(title="Phoenix Emancipation of Enslaved People 10 km",category="funrun",start_date="2026-11-22",time="",
+    town="Cape Town",venue="Castle of Good Hope",venue_address="Castle of Good Hope, Cape Town",
+    price_from="",ticket_url="",
+    source_url="https://wpa.org.za/event/phoenix-emancipation-of-enslaved-people-10km-3/",source_name=_WPA,
+    alt_sources=[_WPA_FIX],
+    notes="WPA lists this 10 km road race on 22 November 2026. The official 2026 fixtures list places it at the Castle of Good Hope, hosted by Phoenix AC. No start time or entry fee is published on the event page.")
+
+add(title="Metropolitan 10 km",category="funrun",start_date="2026-11-25",time="",
+    town="Cape Town",venue="",venue_address="",price_from="",ticket_url="",
+    source_url="https://wpa.org.za/event/metropolitan-10km-4/",source_name=_WPA,
+    alt_sources=[_WPA_FIX],
+    notes="WPA lists this 10 km road race on 25 November 2026, hosted by Metropolitan AC. The event page and fixtures list do not publish a venue, start time or entry fee.")
+
+add(title="Take a Step Against Gender Based Violence 5 km",category="funrun",
+    start_date="2026-11-29",time="08:00",town="Cape Town",venue="Ratanga Park, Century City",
+    venue_address="Ratanga Park, Century City, Cape Town",price_from="R100",
+    ticket_url="https://gbv.topevents.co.za/",
+    source_url="https://topevents.co.za/event/take-a-step-against-gender-based-violence-5km-2026/",source_name=_TE,
+    notes="Smile FM 5 km run/walk at Ratanga Park, Century City, from 08:00 (event listed until 11:00). Adults R100, children under 12 R50; entries close 26 November 2026. All entry fees go to the Saartjie Baartman Centre.")
+
+add(title="AVBOB 15 km",category="funrun",start_date="2026-11-29",time="",
+    town="Cape Town",venue="Pick n Pay Centre, Table View",
+    venue_address="Table View, Cape Town",price_from="",ticket_url="",
+    source_url="https://wpa.org.za/event/avbob-15-km-4/",source_name=_WPA,
+    alt_sources=[_WPA_FIX],
+    notes="WPA lists this 15 km road race on 29 November 2026. The official 2026 fixtures list places it at the Pick n Pay Centre, Table View, hosted by Tygerberg. No start time or entry fee is published on the event page.")
+
+add(title="Robben Island Memorial Run (10 km)",category="funrun",
+    start_date="2026-12-05",end_date="2026-12-06",time="",
+    town="Cape Town",venue="Robben Island",venue_address="Robben Island, Cape Town",
+    price_from="",ticket_url="",
+    source_url="https://wpa.org.za/event/robben-island-memorial-run-3/",source_name=_WPA,
+    alt_sources=["https://wpa.org.za/event/robben-island-memorial-run-4/",_WPA_FIX],
+    notes="WPA lists the Robben Island Memorial Run as a 10 km public event on both 5 and 6 December 2026. No start time or entry fee is published on the event pages.")
+
+add(title="Growthpoint Properties Sundowner 10 km & 5 km Fun Run",category="funrun",
+    start_date="2026-12-08",time="18:00 (5 km 18:15)",town="Cape Town",
+    venue="Green Point Cricket Club",venue_address="Vlei Road, Green Point, Cape Town",price_from="R70",
+    ticket_url="https://gpps.topevents.co.za/",
+    source_url="https://topevents.co.za/event/growthpoint-properties-sundowner-10km-run-walk-and-5km-fun-run-2026/",
+    source_name=_TE,alt_sources=["https://wpa.org.za/event/growthpoint-properties-sundowner-10km-4/"],
+    notes="10 km run/walk from 18:00 and 5 km fun run from 18:15, starting on Vlei Road, Green Point, and finishing at Green Point Cricket Club. 5 km R70; 10 km licensed seniors R140, unlicensed R200. The 10 km is online pre-entry only and chip-timed. Hosted under ASA and WPA rules.")
+
+add(title="Taalmonument Night Race (10 km & 5 km)",category="funrun",
+    start_date="2026-12-09",time="18:00 (5 km 18:15)",town="Paarl",
+    venue="Taalmonument, Paarl",venue_address="Taalmonument, Paarl",price_from="R60",
+    ticket_url="https://taalmonument.topevents.co.za/",
+    source_url="https://topevents.co.za/event/taalmonument-night-race-2026/",source_name=_TE,
+    notes="Paarl Athletics Club night race at the Taalmonument: 10 km run/walk at 18:00 and 5 km fun run at 18:15, with a 20:00 cutoff. 5 km R60; 10 km licensed seniors R150, unlicensed R230. No race-day entries. Entries close 6 December 2026.")
+
+add(title="Bottelary 10 km & 5 km",category="funrun",start_date="2026-12-13",time="06:30",
+    town="Cape Town",venue="Sarepta High School, Kuils River",
+    venue_address="Sarepta High School, Kuilsriver",price_from="",ticket_url="",
+    source_url="https://wpa.org.za/event/bottelary-10km/",source_name=_WPA,
+    alt_sources=[_WPA_FIX],
+    notes="WPA lists this road race on 13 December 2026 from 06:30 to 17:00 at Sarepta High School, Kuils River, organised by Bottelary AC. The official fixtures list gives 10 km and 5 km. No entry fee is published on the event page.")
+
+add(title="30th Tokai Manor House Run (16 km & 8 km)",category="funrun",
+    start_date="2026-12-26",time="06:30 (8 km 06:45)",town="Cape Town",
+    venue="Cape Academy of Maths, Constantia",
+    venue_address="Corner of Firgrove and Spaanschemat Road, Constantia, Cape Town",price_from="R120",
+    ticket_url="https://manorhouse.topevents.co.za/",
+    source_url="https://topevents.co.za/event/30th-tokai-manor-house-run-2026/",source_name=_TE,
+    notes="Southern Striders race at the Cape Academy of Maths, Constantia: 16 km from 06:30 (licensed R150, unlicensed R235) and 8 km fun run from 06:45 (R120). Event listed until 11:00. Entries close 9 December 2026.")
+
+add(title="The Crazy Store Lighthouse Night Race (10 km & 5 km)",category="funrun",
+    start_date="2027-02-03",time="18:00 (5 km 18:15)",town="Cape Town",
+    venue="Sea Point Promenade",
+    venue_address="Beach Road, Sea Point, opposite Winchester Mansions, Cape Town",price_from="R50",
+    ticket_url="https://lighthouse.topevents.co.za/",
+    source_url="https://topevents.co.za/event/the-crazy-store-lighthouse-night-race-10km-run-walk-and-5km-fun-run-2027-2/",
+    source_name=_TE,
+    notes="Night race organised by Walmer Athletics Club (as listed on Top Events), on the Sea Point Promenade, start and finish on Beach Road opposite Winchester Mansions. 10 km at 18:00 (licensed seniors R120, unlicensed R190) and 5 km fun run at 18:15 (R50). Event listed until 20:00. Entries close 24 January 2027.")
+
+add(title="Trail Series Super League – Kirstenbosch (15 / 9.5 / 5.2 km)",category="funrun",
+    start_date="2027-02-05",time="18:30 (9.5 km 19:00, 5.2 km 19:20)",town="Cape Town",
+    venue="Kirstenbosch National Botanical Garden",
+    venue_address="Rhodes Drive, Newlands, Cape Town",price_from="",ticket_url="",
+    source_url="https://www.trailseries.co.za/kirstenbosch-1",source_name="The Trail Series (Wildrunner)",
+    alt_sources=["https://www.trailseries.co.za/races"],
+    notes="Wildrunner Trail Series Super League sunset trail run at Kirstenbosch: 15 km at 18:30, 9.5 km at 19:00 and 5.2 km at 19:20. The Trail Series page lists registration from 16:00 at the start/finish.")
+
+add(title="27 For Freedom (27 km, 10 km & 5 km)",category="funrun",
+    start_date="2027-02-06",time="06:30 (10 km 07:00, 5 km 08:30)",town="Paarl",
+    venue="Drakenstein Correctional Centre",
+    venue_address="Drakenstein Correctional Centre, Paarl",price_from="R50",
+    ticket_url="https://27ff.topevents.co.za/",
+    source_url="https://topevents.co.za/event/27-for-freedom-2027-entries-opening-soon/",source_name=_TE,
+    notes="Marks the 37th anniversary of Nelson Mandela's release from Victor Verster Prison (now Drakenstein Correctional Centre). 27 km run/walk at 06:30 (licensed R250, unlicensed R350), 10 km at 07:00 (licensed seniors R160) and 5 km at 08:30 (seniors R50, juniors 14 and under R30). Cutoff 10:30. Entries close 27 January 2027.")
