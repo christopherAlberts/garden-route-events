@@ -8,9 +8,9 @@
 RC="https://runningcalendar.co.za/organisers/"
 ASWD_RES="https://aswd.co.za/road-running/"
 CLUBS=[
- dict(id="outeniqua-harriers",asa=True,asa_source='https://clubmanager.finishtime.co.za/',asa_note='Listed as Outeniqua Harriers (OUTENH) under Athletics South Western Districts',name="Outeniqua Harriers",town="George",source_url=RC+"outeniqua-harriers",source_name="RunningCalendar organiser page",alt_sources=[ASWD_RES],
-      notes="ASWD road-running club; hosts the Louis Massyn Rocket Run, Dotsure race, Van Kervel 10 km Night Race and Outeniqua Marathon.",
-      match=[r"louis massyn rocket run",r"^dotsure",r"van kervel.*night race"]),
+ dict(id="outeniqua-harriers",asa=True,asa_source='https://clubmanager.finishtime.co.za/',asa_note='Listed as Outeniqua Harriers (OUTENH) under Athletics South Western Districts',name="Outeniqua Harriers",town="George",source_url=RC+"outeniqua-harriers",source_name="RunningCalendar organiser page",alt_sources=[ASWD_RES,"https://www.strava.com/clubs/211662"],
+      notes="ASWD road-running club; hosts the Palm Tyres Half Marathon, Louis Massyn Rocket Run, Dotsure race, Van Kervel 10 km Night Race and Outeniqua Marathon. Weekly Topgear time trial, Wednesday 17:45, from the Methodist Church parking in Plantasie (listed on the club's official Strava page).",
+      match=[r"louis massyn rocket run",r"^dotsure",r"van kervel.*night race",r"palm tyres half marathon",r"outeniqua harriers topgear time trial"]),
  dict(id="nedbank-rc-swd",asa=True,asa_source='https://clubmanager.finishtime.co.za/',asa_note='Listed as Nedbank RC SWD (NRCSWD) under Athletics South Western Districts',name="Nedbank Running Club SWD",town="George",source_url=RC+"nedbank-running-club-swd",source_name="RunningCalendar organiser page",alt_sources=["https://www.nedbankrunningclub.co.za/displaycustomlink.aspx?name=SWD+Club+Info&province=Nedbank+SWD",ASWD_RES],
       notes="The biggest club in Athletics SWD (George, with groups in Oudtshoorn and Mossel Bay). Hosts Elvis Brew 2 Brew, Eden Meander and Die Wilde Karoo Trail Run.",match=[]),
  dict(id="knysna-marathon-club",asa=True,asa_source='https://clubmanager.finishtime.co.za/',asa_note='Listed as Knysna MC (KNYSNA) under Athletics South Western Districts',name="Knysna Marathon Club (KMC)",town="Knysna",source_url=RC+"knysna-marathon-club",source_name="RunningCalendar organiser page",alt_sources=[ASWD_RES],

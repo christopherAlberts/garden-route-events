@@ -108,14 +108,15 @@
   "source_url": "https://runningcalendar.co.za/organisers/outeniqua-harriers",
   "source_name": "RunningCalendar organiser page",
   "alt_sources": [
-   "https://aswd.co.za/road-running/"
+   "https://aswd.co.za/road-running/",
+   "https://www.strava.com/clubs/211662"
   ],
-  "notes": "ASWD road-running club; hosts the Louis Massyn Rocket Run, Dotsure race, Van Kervel 10 km Night Race and Outeniqua Marathon.",
+  "notes": "ASWD road-running club; hosts the Palm Tyres Half Marathon, Louis Massyn Rocket Run, Dotsure race, Van Kervel 10 km Night Race and Outeniqua Marathon. Weekly Topgear time trial, Wednesday 17:45, from the Methodist Church parking in Plantasie (listed on the club's official Strava page).",
   "logo": null,
   "logo_source": null,
   "region": "Garden Route",
   "garden_route": true,
-  "events": 3,
+  "events": 5,
   "checked": "2026-11-22"
  },
  {

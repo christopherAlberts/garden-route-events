@@ -281,7 +281,7 @@ for e in EV:
 # ---------- finalise ----------
 EV.sort(key=lambda e:(not TOWNS[e["town"]][2],e["start_date"],e["time"] or "",e["title"]))
 import clubs as _clubs
-FIELDS=["id","title","category","status","status_note","start_date","end_date","time","recurrence","occurrences","nye","xmas","town","region","garden_route","venue","venue_address","lat","lng","geo_source","price_from","ticket_url","source_url","source_name","alt_sources","image","notes","clubs","last_checked"]
+FIELDS=["id","title","category","status","status_note","start_date","end_date","time","recurrence","occurrences","nye","xmas","town","region","garden_route","venue","venue_address","lat","lng","geo_source","price_from","ticket_url","source_url","source_name","alt_sources","image","notes","clubs","club_only","last_checked"]
 IMGDIR=os.path.join(_H,"..","images"); CAND={}
 def _lj(n):
     try: return json.load(open(os.path.join(_H,n)))
@@ -320,6 +320,7 @@ for e in EV:
     else: r["xmas"]=_xm and any(_sd<=f"{y}-12-26" and _ed>=f"{y}-11-01" for y in range(int(_sd[:4]),int(_ed[:4])+1))
     # Running clubs that host this event (tools/clubs.py; the host was read on the event's source page)
     r["clubs"]=[c["id"] for c in _clubs.CLUBS if r["category"]=="funrun" and any(re.search(p,r["title"],re.I) for p in c["match"])]
+    r["club_only"]=bool(e.get("club_only"))
     out.append({f:r[f] for f in FIELDS})
 os.makedirs(OUT,exist_ok=True)
 json.dump(out,open(f"{OUT}/events.json","w"),indent=1,ensure_ascii=False)

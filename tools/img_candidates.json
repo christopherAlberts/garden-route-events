@@ -442,6 +442,13 @@
 "https://www.quicket.co.za/events/399055-gordi-brown-his-bigtime-harmonica/"
 ]
 },
+"2026-11-25-outeniqua-harriers-topgear-time-trial-wednesdays": {
+"img": "",
+"pages": [
+"https://www.strava.com/clubs/211662",
+"https://georgemethodist.co.za/?page_id=1136"
+]
+},
 "2026-11-26-mossjazz-golf-day": {
 "img": "https://visitmosselbay.co.za/wp-content/uploads/2026/09/mossjazz-golf-day.webp",
 "pages": [
@@ -776,13 +783,6 @@
 "https://www.webtickets.co.za/v2/event.aspx?itemid=1605974564"
 ]
 },
-"2026-12-05-palm-tyres-half-marathon-21-1-10-5-km": {
-"img": "",
-"pages": [
-"https://runningcalendar.co.za/events/palm-tyres-half-marathon/2026",
-"https://dash.streblainnovations.com/races/"
-]
-},
 "2026-12-05-the-wizard-of-oz": {
 "img": "https://content.webtickets.co.za/tgsa/panel_BY ALEX JACKSON_20260908_103140.jpg",
 "pages": [
@@ -795,6 +795,16 @@
 "pages": [
 "https://www.webtickets.co.za/v2/event.aspx?itemid=1602698835",
 "https://www.webtickets.co.za/v2/event.aspx?itemid=1602698835"
+]
+},
+"2026-12-05-palm-tyres-half-marathon-21-1-10-5-km": {
+"img": "",
+"pages": [
+"https://aswd.co.za/etn/palm-tyres-half-marathon/",
+"https://runningcalendar.co.za/events/palm-tyres-half-marathon",
+"https://aswd.co.za/etn/palm-tyres-half-marathon/",
+"https://allevents.in/george/palm-tyres-marathon/200031084582925",
+"https://dash.streblainnovations.com/races/"
 ]
 },
 "2026-12-05-kurland-trail-run-kurland-athletics": {
@@ -1087,18 +1097,21 @@
 "https://www.gardenroute.com/atkv-street-mile-from-18th-dec-2026-till_event_op_view_id_3861"
 ]
 },
-"2026-12-14-louis-massyn-rocket-run-10-km-5-km": {
-"img": "",
-"pages": [
-"https://runningcalendar.co.za/races/city/george",
-"https://dash.streblainnovations.com/races/"
-]
-},
 "2026-12-14-sunset-sweatshop-live-at-die-bush-lapa-desember-mu": {
 "img": "",
 "pages": [
 "https://www.webticket.co.za/v2/event.aspx?itemid=1606794270",
 "https://www.webticket.co.za/v2/event.aspx?itemid=1606794270"
+]
+},
+"2026-12-14-louis-massyn-rocket-run-10-km-5-km": {
+"img": "",
+"pages": [
+"https://aswd.co.za/etn/louis-massyn-rocket-10km-run/",
+"https://runningcalendar.co.za/events/louis-massyn-rocket-run",
+"https://aswd.co.za/etn/louis-massyn-rocket-10km-run/",
+"https://runningcalendar.co.za/organisers/outeniqua-harriers",
+"https://dash.streblainnovations.com/races/"
 ]
 },
 "2026-12-14-see-sand-live-at-reedvalley": {
@@ -2633,6 +2646,7 @@
 "2027-02-17-van-kervel-school-10-km-night-race-10-km-5-km": {
 "img": "",
 "pages": [
+"https://runningcalendar.co.za/events/van-kervel-night-race",
 "https://runningcalendar.co.za/organisers/outeniqua-harriers",
 "https://dash.streblainnovations.com/races/"
 ]

@@ -110,6 +110,7 @@ var ME=null,STARS={};
 var CLUBS=window.CLUBS||[],CLUBBY={};CLUBS.forEach(function(c){CLUBBY[c.id]=c});
 var MYCLUB=null,MYASA=null;
 function isMine(e){return !!(MYCLUB&&e&&!e._r&&(e.clubs||[]).indexOf(MYCLUB)>=0)}
+function clubVisible(e){return !(e&&e.club_only)||isMine(e)}
 function clubTag(e){return isMine(e)?'<span class="clubtag" title="Hosted by your club, '+esc(CLUBBY[MYCLUB].name)+'">\u25CF My club</span>':""}
 function hostLine(e){var c=(e.clubs||[]).map(function(i){return CLUBBY[i]}).filter(Boolean);return c.length?'<div class="hostline'+(isMine(e)?" mine":"")+'">Hosted by '+c.map(function(x){return esc(x.name)+(x.id===MYCLUB?" (your club)":"")}).join(", ")+'</div>':""}
 function syncClub(uid){return fetch("/api/club",{credentials:"same-origin",cache:"no-store",headers:{"Accept":"application/json"}}).then(function(r){return r.ok?r.json():null}).then(function(d){
@@ -203,7 +204,7 @@ function init(data){
   readHash();buildTowns();syncControls();render();
   if(S.event){if($("evModal").hidden||$("evBox").dataset.id!==S.event)openEvent(S.event)}
 }
-function scoped(){return EV.filter(function(e){return (S.scope==="all"||e.garden_route)&&endOf(e)>=TODAY&&(S.off||!isOff(e))})}
+function scoped(){return EV.filter(function(e){return clubVisible(e)&&(S.scope==="all"||e.garden_route)&&endOf(e)>=TODAY&&(S.off||!isOff(e))})}
 function buildTowns(){
   var have={};scoped().forEach(function(e){have[e.town]=(have[e.town]||0)+1});
   function grp(label,order,isGR){
@@ -217,6 +218,7 @@ function buildTowns(){
   $("town").innerHTML=h;if(S.town&&!(S.town in have)&&GR_ORDER.indexOf(S.town)<0&&WIDE_ORDER.indexOf(S.town)<0)S.town="";$("town").value=S.town;
 }
 function matches(e,ignoreMonth,anyStatus){
+  if(!clubVisible(e))return false;
   if(S.scope==="gr"&&!e.garden_route)return false;
   if(!anyStatus&&!S.off&&isOff(e))return false;
   if(S.town&&e.town!==S.town)return false;
@@ -477,7 +479,7 @@ function renderCinema(){
 function renderCinema2(){
   if(!CIN)loadCinema();
   var h='',now=CIN?(CIN.now_showing||[]):[],cs=CIN?(CIN.coming_soon||[]).filter(function(f){return !f.release_date||f.release_date>=TODAY}):[];
-  var od=EV.filter(function(e){return !e._r&&isOutdoor(e)&&endOf(e)>=TODAY&&(S.off||!isOff(e))});
+  var od=EV.filter(function(e){return clubVisible(e)&&!e._r&&isOutdoor(e)&&endOf(e)>=TODAY&&(S.off||!isOff(e))});
   var odGR=od.filter(function(e){return e.garden_route}),odW=od.filter(function(e){return !e.garden_route});
   var showW=S.scope==="all"||S.gal,odL=(showW?odGR.concat(odW):odGR).sort(function(a,b){return (b.garden_route-a.garden_route)||nextDate(a).localeCompare(nextDate(b))||a.title.localeCompare(b.title)});
   var sub=renderCinema.sub||(function(){try{return localStorage.getItem("gre-cinsub")}catch(e){return null}})()||"sk";if(sub!=="sk"&&sub!=="od")sub="sk";renderCinema.sub=sub;
