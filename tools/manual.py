@@ -271,9 +271,14 @@ add(title="Montagu Pass Run (17 km, 10 km & 5 km trail)",category="funrun",start
 add(title="Run The Farm, Herold Wines (12-hour 5 km-loop challenge + 5 km fun run/walk)",category="funrun",start_date="2026-11-07",time="",town="George",venue="Herold Wines",venue_address="Herold, Montagu Pass, George",
     price_from="",ticket_url="",source_url="https://gotrail.run/en/event/run-the-farm-herold",source_name=GT,
     notes="12-hour trail endurance event on a 5 km mountain loop (individuals and teams of 2 or 4), plus a 5 km fun run/walk. Natural pool, vendor stalls and space for gazebos.")
-add(title="Bergplaas Challenge (10 km & 7 km trail)",category="funrun",start_date="2026-11-28",time="",town="Wilderness",venue="Bergplaas, Wilderness",venue_address="",
-    price_from="",ticket_url="",source_url="https://gotrail.run/en/event/bergplaas-challenge",source_name=GT,
-    notes="Short trail run in the forest/mountain area above Wilderness with 7 km and 10 km options. Map pin approximate (Wilderness).")
+add(title="Bergplaas Challenge (15-70 km MTB & 7-10 km trail)",category="funrun",
+    start_date="2027-02-27",time="Registration 06:00-08:00; first start 07:30",town="Hoekwil",
+    venue="Libertas Guest Farm",venue_address="Seven Passes Road, Hoekwil",
+    price_from="R150 (7 km trail)",ticket_url="https://www.entryninja.com/events/83076",
+    source_url="https://www.entryninja.com/events/83076",source_name="Entry Ninja",
+    alt_sources=["https://chaingangevents.co.za/event/bergplaas-challenge/"],
+    notes="MTB and trail event at Libertas Guest Farm, Hoekwil: 15 / 30 / 40 / 70 km MTB and 7 km (R150) and 10 km (R200) trail. Registration 06:00-08:00; 70 km starts 07:30, trail runs 08:30. CSA-sanctioned; a temp day licence is needed without a current CSA membership. Online entries have closed (Entry Ninja, checked 22 Nov 2026). GoTrail still shows the old 28 Nov 2026 date; there is no separate November event.",
+    lat=-33.963133,lng=22.696628,geo_source="venue site")
 add(title="Trail Girl Wilderness (2-day women's trail running tour)",category="funrun",start_date="2026-11-20",end_date="2026-11-22",time="Registration Fri 17:00",town="Wilderness",
     venue="Fairy Knowe Hotel",venue_address="Dumbleton Road, Wilderness",price_from="R5,800 pp sharing (incl. 2 nights & meals)",ticket_url="",
     source_url="https://trailgirl.co.za/tr-3-3-2/",source_name="Trail Girl (official site)",
