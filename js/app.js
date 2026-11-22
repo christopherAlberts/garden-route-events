@@ -238,7 +238,7 @@ function filtered(ignoreMonth,includePast){
 
 function card(e,onDay){
   if(e._r)return rcard(e);
-  var wxDate=onDay||nextDate(e),nd=pd(wxDate),multi=!occ(e)&&e.end_date&&e.end_date!==e.start_date;
+  var wxDate=(typeof onDay==="string"&&onDay)||nextDate(e),nd=pd(wxDate),multi=!occ(e)&&e.end_date&&e.end_date!==e.start_date;
   var badge='<div class="datebadge"><span class="d">'+nd.getDate()+'</span><span class="m">'+MN[nd.getMonth()]+'</span>'+(multi?'<span class="to">to '+pd(e.end_date).getDate()+' '+MN[pd(e.end_date).getMonth()]+'</span>':'')+'</div>';
   var L=esc(link(e)),price=priceTxt(e.price_from);
   return '<article class="card'+(isOff(e)?" is-off":"")+(isStar(e)?" starred":"")+(isMine(e)?" myclub":"")+'">'+
@@ -312,7 +312,7 @@ function clubSection(){
   var c=CLUBBY[MYCLUB];if(!c)return "";
   var up=EV.filter(function(e){return isMine(e)&&endOf(e)>=TODAY&&!isOff(e)&&(!S.town||e.town===S.town)&&(!S.month||inMonth(e,S.month))}).sort(function(a,b){return nextDate(a).localeCompare(nextDate(b))});
   return '<div class="sec clubsec"><h2>'+(c.logo?'<img class="clublogo" src="'+esc(c.logo)+'" alt="" width="36" height="36">':'')+'My club: '+esc(c.name)+'</h2>'+(c.asa===true?'<span class="ast ok">ASA registered</span>':c.asa===false?'<span class="ast no">Not ASA registered</span>':'<span class="ast unk" title="ASA affiliation not confirmed from a source">ASA status unconfirmed</span>')+(MYASA?'<span class="asano">'+(c.asa===true?'ASA':'Running')+' no. '+esc(MYASA)+'</span>':'')+'<span class="pill">'+(up.length?up.length+' upcoming':'none listed')+'</span><button type="button" class="clubchg" data-club-join>Change</button></div>'+
-    (up.length?'<div class="soon">'+up.map(card).join("")+'</div>':'<div class="empty clubempty"><b>No upcoming '+esc(c.name)+' events found yet</b>We only list races and club runs we can find on a real source. When the club publishes a dated event, it will show up here.</div>')}
+    (up.length?'<div class="soon">'+up.map(function(e){return card(e)}).join("")+'</div>':'<div class="empty clubempty"><b>No upcoming '+esc(c.name)+' events found yet</b>We only list races and club runs we can find on a real source. When the club publishes a dated event, it will show up here.</div>')}
 function renderCal(){
   if(!S.calMonth)S.calMonth=S.month||(MONTHS.indexOf(TODAY.slice(0,7))>=0?TODAY.slice(0,7):MONTHS[0]);
   var L=filtered(true,true);
