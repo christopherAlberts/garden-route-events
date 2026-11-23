@@ -590,7 +590,7 @@ add(title="De Dekke Spar Run, Great Brak (21.1 / 10 / 5 km)",category="funrun",s
 add(title="Knysna Heads Marathon (42.2 / 21.1 / 10 / 5 km)",category="funrun",start_date="2027-02-13",town="Knysna",venue="Thesen Islands",venue_address="Thesen Island, Knysna",price_from="",ticket_url="",source_url="https://runningcalendar.co.za/events/knysna-heads-marathon",source_name="RunningCalendar.co.za",notes="Date is provisional (Running Guy estimate — often from the prior year); confirm before travelling. Comrades & Two Oceans qualifier around the Knysna lagoon and Heads. Flagship local marathon of February if confirmed. RunningCalendar estimates Saturday 13 Feb 2027 from prior years — not yet confirmed by Knysna Marathon Club. Listed by Running Guy (Garden Route races dashboard).",lat=-34.0477753,lng=23.0537836,geo_source="nominatim",alt_sources=["https://dash.streblainnovations.com/races/"])
 add(title="Van Kervel School 10 km Night Race (10 km & 5 km)",category="funrun",start_date="2027-02-17",time="18:00",town="George",venue="Van Kervel School",venue_address="Van Kervel School, 2 Meyer Street, George",price_from="",ticket_url="",source_url="https://runningcalendar.co.za/events/van-kervel-night-race",source_name="RunningCalendar.co.za",notes="Outeniqua Harriers midweek night race at Van Kervel School, 2 Meyer Street, George: 10 km and 5 km, both starting 18:00. Date, time and venue confirmed on RunningCalendar; 2027 entry fees and an online entry link have not been published yet.",lat=-33.9581121,lng=22.4784664,geo_source="nominatim",alt_sources=["https://runningcalendar.co.za/organisers/outeniqua-harriers","https://dash.streblainnovations.com/races/"])
 add(title="Outeniqua Chair Challenge (42.2 / 21.1 / 10 / 5 km)",category="funrun",start_date="2027-02-20",town="George",venue="George",venue_address="George",price_from="",ticket_url="",source_url="https://runningcalendar.co.za/events/occ-chair-challenge",source_name="RunningCalendar.co.za",notes="Date is provisional (Running Guy estimate — often from the prior year); confirm before travelling. George marathon/half from Carpe Diem School (Bos en Dal), 07:00 start. Hilly Outeniqua course; ASWD-sanctioned. RunningCalendar estimate from previous year; 2027 date not confirmed. Listed by Running Guy (Garden Route races dashboard).",alt_sources=["https://dash.streblainnovations.com/races/"])
-add(title="Infantry School Cango Marathon (42.2 / 21.1 / 4 km)",category="funrun",start_date="2027-02-26",end_date="2027-02-27",town="Oudtshoorn",venue="Cango Caves / Ou Tol",venue_address="Cango Caves, R328, Oudtshoorn",price_from="",ticket_url="",source_url="https://runningcalendar.co.za/events/cango-marathon",source_name="RunningCalendar.co.za",notes="Date is provisional (Running Guy estimate — often from the prior year); confirm before travelling. Downhill-leaning marathon from Cango Caves / Ou Tol. Comrades/Two Oceans qualifier. ~1h over the Outeniqua from George. Clashes with Hermanus Trail Run. Estimated from previous years. Not yet confirmed. Listed by Running Guy (Garden Route races dashboard).",lat=-33.3922844,lng=22.2143761,geo_source="nominatim",alt_sources=["https://dash.streblainnovations.com/races/"])
+add(title="Infantry School Cango Marathon (42.2 / 21.1 / 10 / 4 km)",category="funrun",start_date="2027-02-26",end_date="2027-02-27",town="Oudtshoorn",venue="Cango Caves / Ou Tol (finish: Military Base Oudtshoorn sports ground)",venue_address="Cango Caves, R328, Oudtshoorn",price_from="R112",ticket_url="https://topevents.co.za/event/infantry-school-cango-42-2km-21-1km-2027-2/",source_url="https://topevents.co.za/event/infantry-school-cango-42-2km-21-1km-2027-2/",source_name="Top Events",notes="2027 entries are now on Top Events. 4 km fun run/walk on Friday 26 February 2027 at 17:00 from the Military Base Oudtshoorn sports ground. Marathon starts 06:00 at the Cango Caves, half marathon 06:00 at the Ou Tol and 10 km 06:30 at Resort Africa Inn, all finishing at the Military Base sports ground (transport from the Infantry School parade ground from 04:00). Fees: 42.2 km R350 licensed / R420 unlicensed, 21.1 km R280 / R350, 10 km R112 / R182. The Top Events page dates only the fun run; the race-morning date (27 Feb) is from RunningCalendar / Running Guy.",lat=-33.3922844,lng=22.2143761,geo_source="nominatim",alt_sources=["https://runningcalendar.co.za/events/cango-marathon","https://dash.streblainnovations.com/races/"])
 add(title="Meiringspoort Half Marathon (21.1 km & 12.5 km)",category="funrun",start_date="2026-10-10",town="De Rust",venue="Meiringspoort",venue_address="Meiringspoort, De Rust",price_from="",ticket_url="https://www.entryninja.com/events/83907-32nd-meiringspoort-2026",source_url="https://www.entryninja.com/events/83907-32nd-meiringspoort-2026",source_name="Entry Ninja",notes="Spectacular poort road race through the Swartberg. Day-trip from George via the Outeniqua Pass / N12. Listed by Running Guy (Garden Route races dashboard).",lat=-33.4527786,lng=22.5593648,geo_source="nominatim",alt_sources=["https://dash.streblainnovations.com/races/"])
 add(title="Crusaders 21.1 km & 10 km (plus 5 km fun run/walk), Gqeberha",category="funrun",start_date="2026-10-17",town="Gqeberha",venue="Crusaders, Gqeberha",venue_address="Gqeberha",price_from="",ticket_url="https://startingline.co.za/events/crusaders-211km-10km-race-5km-fun-runwalk-cc2aecd5",source_url="https://startingline.co.za/events/crusaders-211km-10km-race-5km-fun-runwalk-cc2aecd5",source_name="Starting Line",notes="Classic PE club half and 10 km with fun run. Same weekend as Fancourt — choose George or a PE road trip. Listed by Running Guy (Garden Route races dashboard).",lat=-33.9618598,lng=25.6186731,geo_source="town centroid",alt_sources=["https://dash.streblainnovations.com/races/"])
 add(title="Cape Cobra Trail Marathon (42 / 33 / 21 / 10 km)",category="funrun",start_date="2026-10-24",town="Cape Town",venue="Table Mountain / Constantia (TMNP)",venue_address="Table Mountain National Park, Cape Town",price_from="",ticket_url="https://www.capecobratrail.com/",source_url="https://www.capecobratrail.com/",source_name="Cape Cobra Trail (official site)",notes="Wild TMNP ridgelines: 42 km ~2,000 m, 33 km ~1,800 m, 21 km ~1,000 m. Technical, prestige trail marathon. Finish-line festival at Constantia Uitsig. Limited-edition technical starters tee included in every entry, plus a branded bag and collectible patch. Listed by Running Guy (Garden Route races dashboard).",lat=-33.987,lng=18.41,geo_source="town centroid (TMNP)",alt_sources=["https://dash.streblainnovations.com/races/"],_img="http://static1.squarespace.com/static/67e5bd6f1f64ea0bc9a7450e/t/6822b772e836fd0ec7c860c1/1747105650/og.jpg")
@@ -2274,8 +2274,8 @@ add(title="AVBOB 15 km",category="funrun",start_date="2026-11-29",time="",
     town="Cape Town",venue="Pick n Pay Centre, Table View",
     venue_address="Table View, Cape Town",price_from="",ticket_url="",
     source_url="https://wpa.org.za/event/avbob-15-km-4/",source_name=_WPA,
-    alt_sources=[_WPA_FIX],
-    notes="WPA lists this 15 km road race on 29 November 2026. The official 2026 fixtures list places it at the Pick n Pay Centre, Table View, hosted by Tygerberg. No start time or entry fee is published on the event page.")
+    alt_sources=[_WPA_FIX,"https://runningcalendar.co.za/events/tygerberg-ac-15-km"],
+    notes="WPA lists this 15 km road race on 29 November 2026. The official 2026 fixtures list places it at the Pick n Pay Centre, Table View, hosted by Tygerberg. No start time or entry fee is published on the event page. Note: RunningCalendar (checked 23 Nov 2026) lists this race as the Tygerberg AVBOB 15km on Saturday 28 November 2026 at 06:00 from Tableview Shopping Centre (R140), while WPA lists Sunday 29 November. Check with Tygerberg AC before race day.")
 
 add(title="Robben Island Memorial Run (10 km)",category="funrun",
     start_date="2026-12-05",end_date="2026-12-06",time="",
@@ -2339,3 +2339,146 @@ add(title="27 For Freedom (27 km, 10 km & 5 km)",category="funrun",
     ticket_url="https://27ff.topevents.co.za/",
     source_url="https://topevents.co.za/event/27-for-freedom-2027-entries-opening-soon/",source_name=_TE,
     notes="Marks the 37th anniversary of Nelson Mandela's release from Victor Verster Prison (now Drakenstein Correctional Centre). 27 km run/walk at 06:30 (licensed R250, unlicensed R350), 10 km at 07:00 (licensed seniors R160) and 5 km at 08:30 (seniors R50, juniors 14 and under R30). Cutoff 10:30. Entries close 27 January 2027.")
+
+# ---------------- Weekly refresh 23 Nov 2026 ----------------
+# Hand-checked on the source URL the same day. Nothing invented.
+_RVT="https://www.reedvalley.com/ots/order.php?vendor=1"
+_RV2=dict(town="Mossel Bay",venue="ReedValley",venue_address="ReedValley Farm, R327, Mossel Bay",category="concert",time="20:00")
+add(title="Basket Case – The Ultimate Green Day Experience (Gareth James) at ReedValley",start_date="2026-12-12",price_from="R220",
+    ticket_url=_RVT,source_url=MB+"basket-case-the-ultimate-green-day-experience/",source_name="Visit Mossel Bay (tourism calendar)",alt_sources=[_RVT],
+    notes="Live Green Day tribute concert. Food and ReedValley wines available.",**_RV2)
+add(title="Van der Aven live at ReedValley",start_date="2026-12-11",price_from="",ticket_url=_RVT,source_url=_RVT,
+    source_name="ReedValley (online ticket sales)",notes="Listed on ReedValley's own ticket page for Friday 11 December 2026, 20:00.",**_RV2)
+add(title="Country Roads – The Morning After Band live at ReedValley",start_date="2026-12-18",price_from="R250",
+    ticket_url=_RVT,source_url=MB+"country-roads-the-morning-after-band-live/",source_name="Visit Mossel Bay (tourism calendar)",alt_sources=[_RVT],
+    notes="Evening of country ballads and classic country hits with The Morning After Band. Food, ReedValley wines and a cash bar.",**_RV2)
+add(title="Radio Kalahari Orkes at ReedValley",start_date="2026-12-27",price_from="R250",
+    ticket_url=_RVT,source_url=MB+"radio-kalahari-orkes/",source_name="Visit Mossel Bay (tourism calendar)",alt_sources=[_RVT],
+    notes="Afrikaans party band Radio Kalahari Orkes live at ReedValley.",**_RV2)
+add(title="Jan Blohm at ReedValley",start_date="2026-12-29",price_from="R280",
+    ticket_url=_RVT,source_url=MB+"jan-blohm-reedvalley/",source_name="Visit Mossel Bay (tourism calendar)",alt_sources=[_RVT],
+    notes="Afrikaans rock singer-songwriter Jan Blohm live at ReedValley.",**_RV2)
+add(title="Prime Circle – Rock Show at ReedValley",start_date="2027-01-03",price_from="R300",
+    ticket_url=_RVT,source_url=MB+"prime-circle-reedvalley/",source_name="Visit Mossel Bay (tourism calendar)",alt_sources=[_RVT],
+    notes="South African rock band Prime Circle live at ReedValley.",**_RV2)
+add(title="Tina's Turn – Tina Turner Tribute Show at ReedValley",start_date="2027-02-12",price_from="",ticket_url=_RVT,source_url=_RVT,
+    source_name="ReedValley (online ticket sales)",notes="Listed on ReedValley's own ticket page as 'TINAS TURN - Tina Turner Tribute Show | Rock Music', Friday 12 February 2027, 20:00.",**_RV2)
+add(title="Chester's Got Talent live at ReedValley",start_date="2027-02-26",price_from="",ticket_url=_RVT,source_url=_RVT,
+    source_name="ReedValley (online ticket sales)",notes="Listed on ReedValley's own ticket page for Friday 26 February 2027, 20:00. No other details published yet.",**_RV2)
+
+add(title="Festive Carols – Jovann Rocher",category="concert",start_date="2026-12-18",time="18:30-20:30",town="Mossel Bay",
+    venue="Dutch Reformed Church Mossel Bay",venue_address="Corner of Church Street and George Road, Mossel Bay",price_from="Free entry",
+    source_url=MB+"festive-carols/",source_name="Visit Mossel Bay (tourism calendar)",
+    notes="Christmas music evening by young multi-instrumentalist Jovann Rocher (piano, cello, viola, violin, guitar, glockenspiel and recorders). Free entry; contributions to his music fund welcome at the door.")
+add(title="Come and Meet Santa! (Betty's Boutique Hotel)",category="community",start_date="2026-12-13",time="11:00-15:00",town="Mossel Bay",
+    venue="Betty's Boutique Hotel",price_from="",source_url=MB+"come-and-meet-santa/",source_name="Visit Mossel Bay (tourism calendar)",
+    notes="Family day to meet Santa. Spaces are limited; book a meet-and-greet slot in advance.")
+add(title="Paint a Penguin – SAPREC Christmas Craft Event",category="community",start_date="2026-12-16",time="11:00-14:00",town="Mossel Bay",
+    venue="Point Padel",venue_address="8 Point Road, Mossel Bay",price_from="R100",source_url=MB+"paint-a-penguin-saprec-christmas-craft-event/",
+    source_name="Visit Mossel Bay (tourism calendar)",
+    notes="Paint your own ceramic penguin (R100 includes penguin, paint, brush and bag) in aid of SAPREC, the Seabirds and Penguin Rehabilitation Centre. Food, drinks and spot prizes. No booking needed.")
+add(title="Mooi Uitsig Sunset Run",category="funrun",start_date="2026-12-26",time="16:00",town="Klein Brak",
+    venue="Brinkleys River Village",venue_address="Little Brak River",price_from="",ticket_url="https://aswd.co.za/etn/mooiuitsig-sunset-run/",
+    source_url=MB+"mooi-uitsig-sunset-run/",source_name="Visit Mossel Bay (tourism calendar)",alt_sources=["https://aswd.co.za/etn/mooiuitsig-sunset-run/"],
+    notes="Boxing Day sunset road race at Brinkleys River Village, Little Brak River (listed 16:00-20:00), entries via Athletics SWD. Licensed athletes who forget their IPICO chip pay R20 to borrow one. Distances and fees are on the ASWD entry page.")
+add(title="En Fanfare – film screening at the Monroe Theatre",category="film",start_date="2026-11-24",time="18:00-20:30",town="Mossel Bay",
+    venue="Monroe Theatre (De Ja Vu Vintage House)",venue_address="Marsh Street, Mossel Bay",price_from="R150",
+    source_url=MB+"en-fanfare-at-monroe-theatre/",source_name="Visit Mossel Bay (tourism calendar)",alt_sources=["https://www.facebook.com/DeJaVuVintageHouse"],
+    notes="Screening of the French comedy-drama En Fanfare, with something to eat from the kitchen (R150 per person). Limited seats; reserve in advance.")
+
+add(title="Kersliedere by Kerslig (ATKV Hartenbos)",category="concert",start_date="2026-12-24",time="",town="Hartenbos",
+    venue="ATKV Amfiteater, Hartenbos",venue_address="ATKV-Hartenbos, Hartenbos",price_from="",
+    source_url="https://www.hartenboshuiseienaars.co.za/wp-content/uploads/2026/09/HVHV_Nuusbrief_September_2026_03092026-1.pdf",
+    source_name="Hartenbos Vakansiedorp Huiseienaars Vereniging (September 2026 newsletter)",
+    alt_sources=["https://hartenbos.co.za/media/hsimv1qy/atkv-hartenbos-vermaakprogram-desember.pdf"],
+    notes="Christmas carols by candlelight in the ATKV amphitheatre on 24 December 2026, in aid of Hartenbos Bejaardesorg, as listed in the ATKV amphitheatre programme in the Hartenbos home-owners' September 2026 newsletter. No 2026 time published yet (in 2025 entry was free, gates opened 18:00 and the programme started 20:00).")
+add(title="Knysna Sedgefield Hospice Carols by Candlelight",category="concert",start_date="2026-12-16",time="18:30",town="Knysna",
+    venue="Kingsway Park, Leisure Island",venue_address="Kingsway Park, Leisure Island, Knysna",price_from="",
+    source_url="https://www.hospiceknysna.org.za/news-and-events/up-and-coming-events/",source_name="Hospice Knysna Sedgefield (events page)",
+    notes="Hospice's annual carols by candlelight on Leisure Island, Wednesday 16 December 2026 at 18:30.")
+_KDD="https://www.n2rs.com/knysna/knysna-diary-december.html"
+add(title="Christmas Tree Lighting at Barrington's (in aid of Hospice Plett)",category="community",start_date="2026-12-17",time="",town="Plettenberg Bay",
+    venue="Barrington's",venue_address="",price_from="",source_url=_KDD,source_name="Knysna Diary (n2rs.com)",
+    notes="Family evening with live music and jazzy Christmas songs, ending at sunset with the lighting of Barrington's coral tree in memory of loved ones. In aid of Hospice Plett.")
+add(title="Friends of the Library Christmas Fair",category="market",start_date="2026-12-11",time="09:00-13:00",town="Knysna",
+    venue="Cearn Hall, Leisure Isle",venue_address="Cearn Hall, Leisure Isle, Knysna",price_from="",source_url=_KDD,source_name="Knysna Diary (n2rs.com)",
+    notes="Handmade crafts, unique gifts and local talent, in support of the local library.")
+add(title="The Market @ Transnet Transport Museum (7th edition)",category="market",start_date="2026-12-11",end_date="2027-01-02",time="08:00-20:00",town="George",
+    venue="Outeniqua Transport Museum",venue_address="",price_from="",source_url=_KDD,source_name="Knysna Diary (n2rs.com)",
+    notes="Holiday market with 100+ stalls, food court, wine and craft beer, live music and big-screen entertainment, and kids' entertainment, at the heritage railway museum.")
+add(title="5 Crossings Paddle (Knysna River)",category="sport",start_date="2026-11-29",time="",town="Knysna",
+    venue="Old Drift to Knysna Yacht Club",price_from="",source_url="https://www.n2rs.com/knysna/knysna-diary-november.html",source_name="Knysna Diary (n2rs.com)",
+    notes="Social paddle down the Knysna River via the five crossings (Old Drift, Red Bridge, The Buttresses, White Bridge, Donkey Bridge), with a bring-and-braai afterwards.")
+add(title="Robberg Fine Foods Classic Beach Regatta",category="sport",start_date="2026-12-17",end_date="2026-12-19",time="",town="Plettenberg Bay",
+    venue="Hobie Beach",venue_address="Hobie Beach, Plettenberg Bay",price_from="",source_url=_KDD,source_name="Knysna Diary (n2rs.com)",
+    notes="Three days of beach-catamaran racing (Hobies, Darts, Nacras and other beach cats) on the bay; good spectating from Hobie Beach.")
+add(title="Botanique: Beach Edition at Pili Pili Sedgefield",category="concert",start_date="2026-12-12",time="12:00-22:00",town="Sedgefield",
+    venue="Pili Pili Beach Restaurant",venue_address="2 Claude Urban Drive, Myoli Beach, Sedgefield",price_from="R250",
+    ticket_url="https://www.howler.co.za/BOTANIQUE14",source_url="https://www.howler.co.za/BOTANIQUE14",source_name="Howler",
+    notes="Day-to-evening beach edition of Botanique (ONETWO Sound Solutions and The Node Events): deep funk and organic house, food from Pili Pili. Line-up to be announced. R250 online or at the door.")
+add(title="Wildfarm New Years Festival",category="festival",start_date="2026-12-31",end_date="2027-01-02",time="Gate opens 12:00 on 31 Dec",town="Wilderness",
+    venue="Wildfarm Homestead",venue_address="291 Whites Road, Wilderness",price_from="R950",
+    ticket_url="https://wildfarmbackpackers.com/new-years-festival/",source_url="https://wildfarmbackpackers.com/new-years-festival/",source_name="Wildfarm Backpackers (official site)",
+    notes="Three nights of music on the farm (31 Dec, 1 and 2 Jan), one pass for all three. Early-bird R950 until 30 November, then R1 350. Line-up to be announced. Book via WhatsApp 067 416 6773; rooms and camping booked separately.")
+add(title="Christmas Day Lunch at Earth & Fire (Blackwaters River Lodge)",category="festive",start_date="2026-12-25",time="",town="Knysna",
+    venue="Earth & Fire Restaurant, Blackwaters River Lodge",venue_address="N2 between Knysna and Sedgefield, opposite the Buffalo Bay turn-off",price_from="R495",
+    source_url="https://www.restaurants10.org/ZA/Knysna/1422419188041966/Earth-%26-Fire-Restaurant-at-Blackwaters",source_name="Earth & Fire at Blackwaters (Facebook posts, via restaurants10.org)",
+    notes="Annual Christmas lunch, two options: sit-down Christmas Feast R895 pp (kids 6-12 R450, vegan R795) or a Christmas Picnic on the river banks R495 pp (kids R250, vegan R450). Open to non-residents. Book by DM or 065 517 8923. Post dated 26 Oct 2026.")
+_RB="https://www.redberryfarm.co.za/whats-on/"
+add(title="Redberry Farm Trail Run – Run It Back (5 km & 9 km)",category="funrun",start_date="2026-11-28",time="08:00 (registration from 07:15)",town="George",
+    venue="Redberry Farm",venue_address="Redberry Farm, Blanco, George",price_from="R30",source_url=_RB,source_name="Redberry Farm (What's On)",
+    notes="Untimed 5 km (R30) or 9 km (R50) trail run through the strawberry and kiwi fields; entry on the day. Proceeds to Empower. No dogs.")
+add(title="Redberry Farm Trail Run – NSRI (5 km & 9 km)",category="funrun",start_date="2026-12-19",time="08:00 (entry from 07:15)",town="George",
+    venue="Redberry Farm",venue_address="Redberry Farm, Blanco, George",price_from="R30",source_url=_RB,source_name="Redberry Farm (What's On)",
+    notes="Untimed 5 km (R30) or 9 km (R50) trail run through the strawberry and kiwi fields with Outeniqua views; entry on the day. Proceeds to the NSRI.")
+add(title="Môreson Mile Open Water Swim 2027",category="sport",start_date="2027-02-20",time="08:30",town="Wilderness",
+    venue="Island Lake Resort",venue_address="Island Lake, Wilderness",price_from="",source_url="https://www.georgeherald.com/Whatson",source_name="George Herald (What's On)",
+    notes="Sixth Môreson Mile at Island Lake: 350 m, 800 m, 1.6 km and 3 km open-water swims. Early-bird entries until 15 January 2027. Proceeds go to the Môreson Child & Youth Care Centre in George.")
+add(title="The Parlotones live in George",category="concert",start_date="2026-12-21",time="19:30",town="George",venue="",price_from="R250",
+    ticket_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1607339456",source_url="https://www.webtickets.co.za/v2/event.aspx?itemid=1607339456",source_name="Webtickets",
+    notes="Part of The Parlotones' December summer shows. The Webtickets page does not name the George venue yet. Tickets R250-R350.")
+
+# Cape Town & coast races (RunningCalendar, 23 Nov 2026)
+_RC="https://runningcalendar.co.za/events/"
+add(title="Nedbank SportSA Run Century City (10 km)",category="funrun",start_date="2026-12-12",time="15:00",town="Cape Town",
+    venue="Ratanga Park, Century City",venue_address="Ratanga Park, Century City, Cape Town",price_from="R250",ticket_url="https://www.entryninja.com/events/84227",
+    source_url=_RC+"sportsa-run-century-city",source_name="RunningCalendar.co.za",alt_sources=["https://wpa.org.za/event/sport-sa-century-city-3/"],
+    notes="10 km road race from 15:00 at Ratanga Park. RunningCalendar shows entries sold out.")
+add(title="FinGlobal Onrus 10 km & 6 km Fun Run",category="funrun",start_date="2026-12-19",time="07:00",town="Hermanus",
+    venue="Onrus Beach (Milk on the Beach)",venue_address="Onrus Beach, Onrus",price_from="R160",ticket_url="https://entrytickets.net/onrus10k",
+    source_url=_RC+"onrus-10km",source_name="RunningCalendar.co.za",lat=-34.418513,lng=19.178267,geo_source="event page",
+    notes="Whalers Athletics Club race at Onrus Beach: 10 km and 6 km from 07:00. Online entries open until 15 December.")
+add(title="Runners Memorial Race (8 km)",category="funrun",start_date="2026-12-31",time="06:30",town="Cape Town",
+    venue="Mouille Point Lighthouse",venue_address="Mouille Point, Cape Town",price_from="",
+    source_url=_RC+"runners-memorial-race",source_name="RunningCalendar.co.za",lat=-33.901453,lng=18.399863,geo_source="event page",
+    notes="Edgemead AC's 8 km New Year's Eve morning road race from Mouille Point Lighthouse. Entry fees not published yet.")
+add(title="Hohenort 15 km",category="funrun",start_date="2027-01-09",time="06:00",town="Cape Town",
+    venue="Alphen Centre, Constantia",venue_address="Constantia Main Road, Constantia, Cape Town",price_from="R140",
+    ticket_url="https://www.pinelandsathleticclub.co.za/running/road-racing-events/hohenort-15km/hohenort-15km-enter-online/",
+    source_url=_RC+"hohenort-15km",source_name="RunningCalendar.co.za",lat=-34.019631,lng=18.445915,geo_source="event page",
+    notes="Pinelands Athletic Club's 15 km road race from the Alphen Centre, Constantia, at 06:00. Online entries open.")
+add(title="Nu Generation Homes 10 km (Brackenfell AC)",category="funrun",start_date="2027-01-30",time="07:00",town="Cape Town",
+    venue="Meridian Pinehurst, Durbanville",venue_address="6 Campus Way, Pinehurst, Durbanville",price_from="",
+    source_url=_RC+"brackenfell-10km",source_name="RunningCalendar.co.za",lat=-33.826522,lng=18.695436,geo_source="event page",
+    notes="Brackenfell Athletics Club road race: 10 km and 5 km from 07:00. 2027 fees and entry link not published yet.")
+add(title="HOKA Half Runfest Cape Town (21.1 / 10 / 5 km)",category="funrun",start_date="2027-02-13",time="06:00",town="Cape Town",
+    venue="Green Point Cricket Club",venue_address="Fritz Sonnenberg Road, Green Point, Cape Town",price_from="",ticket_url="https://www.entryninja.com/events/84275",
+    source_url=_RC+"hoka-half-runfest-cape-town",source_name="RunningCalendar.co.za",lat=-33.904422,lng=18.407572,geo_source="event page",
+    notes="Half marathon, 10 km and 5 km from 06:00, starting on Fritz Sonnenberg Road and finishing at Green Point Cricket Club. Online entries open (half marathon R469).")
+add(title="ABAX Milkwood Run (21.1 / 10 / 5 km)",category="funrun",start_date="2027-02-14",time="06:30",town="Cape Town",
+    venue="Soetwater Resort, Kommetjie",venue_address="Soetwater Resort, Kommetjie",price_from="",
+    source_url=_RC+"milkwood-run",source_name="RunningCalendar.co.za",lat=-34.173632,lng=18.340946,geo_source="event page",
+    notes="Harfield Harriers race at Soetwater, Kommetjie: 21.1 km, 10 km and 5 km from 06:30 (entry from R200 for the longest distance per RunningCalendar).")
+add(title="NG Kerk Bloubergstrand Fun Run (8 / 5 / 3 km)",category="funrun",start_date="2027-02-27",time="08:00",town="Cape Town",
+    venue="NG Kerk Bloubergstrand",venue_address="3 Batavia Road, Bloubergstrand",price_from="",
+    source_url=_RC+"ng-kerk-bloubergstrand-pretstap",source_name="RunningCalendar.co.za",lat=-33.800192,lng=18.459408,geo_source="event page",
+    notes="Church fun run (pretstap) with 8 km, 5 km and 3 km options from 08:00.")
+add(title="Century City Express with Discovery Vitality (10 km & 5 km)",category="funrun",start_date="2027-02-27",time="07:00",town="Cape Town",
+    venue="Central Park, Century City",venue_address="Century Way, Century City, Cape Town",price_from="R145",ticket_url="https://racepass.com/za/races/century-city-express",
+    source_url=_RC+"century-city-express",source_name="RunningCalendar.co.za",lat=-33.888392,lng=18.512273,geo_source="event page",
+    notes="Century City Athletics Club race from 07:00, starting on Century Way and finishing at Central Park. 10 km and 5 km; online entries open.")
+add(title="Asado de Navidad – Christmas Lunch at The BOMA, Hangklip Hotel",category="festive",start_date="2026-12-25",time="12:30",town="Pringle Bay",
+    venue="The Hangklip Hotel – The BOMA",price_from="",ticket_url="https://www.quicket.co.za/events/409895-christmas-lunch-boma-asado-de-navidad/",
+    source_url="https://www.quicket.co.za/events/409895-christmas-lunch-boma-asado-de-navidad/",source_name="Quicket",
+    notes="Christmas Day lunch feast cooked on fire at the Hangklip Hotel's BOMA.")
+add(title="Festive Opener (DJ Raywill & DJ Beekay)",category="community",start_date="2026-11-26",time="19:00-23:30",town="Groot Brak",venue="Friemersheim Community Hall",venue_address="Friemersheim, Great Brak River",price_from="",ticket_url="",source_url="https://visitmosselbay.co.za/event/festive-opener/",source_name="Visit Mossel Bay (tourism calendar)",alt_sources=[],notes="Community DJ night by Brothers On Deck Entertainment with DJ Raywill and DJ Beekay.")

@@ -15,7 +15,7 @@
   "region": "Garden Route",
   "garden_route": true,
   "events": 0,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "fancourt-ac",
@@ -33,7 +33,7 @@
   "region": "Garden Route",
   "garden_route": true,
   "events": 0,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "gtr",
@@ -53,7 +53,7 @@
   "region": "Garden Route",
   "garden_route": true,
   "events": 3,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "maverick-swd",
@@ -75,7 +75,7 @@
   "region": "Garden Route",
   "garden_route": true,
   "events": 0,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "nedbank-rc-swd",
@@ -96,7 +96,7 @@
   "region": "Garden Route",
   "garden_route": true,
   "events": 0,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "outeniqua-harriers",
@@ -117,7 +117,7 @@
   "region": "Garden Route",
   "garden_route": true,
   "events": 5,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "rainbow-ac",
@@ -137,7 +137,7 @@
   "region": "Garden Route",
   "garden_route": true,
   "events": 0,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "runwalk-for-life-george",
@@ -155,7 +155,7 @@
   "region": "Garden Route",
   "garden_route": true,
   "events": 1,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "thembalethu-wellness",
@@ -173,7 +173,7 @@
   "region": "Garden Route",
   "garden_route": true,
   "events": 0,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "hartenbos-drawwers",
@@ -193,7 +193,7 @@
   "region": "Mossel Bay",
   "garden_route": true,
   "events": 4,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "knysna-marathon-club",
@@ -213,7 +213,7 @@
   "region": "Garden Route",
   "garden_route": true,
   "events": 2,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "32gi-swd",
@@ -234,7 +234,7 @@
   "region": "Mossel Bay",
   "garden_route": true,
   "events": 1,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "mossel-bay-harriers",
@@ -252,7 +252,7 @@
   "region": "Mossel Bay",
   "garden_route": true,
   "events": 1,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "petrosa-rc",
@@ -273,7 +273,7 @@
   "region": "Mossel Bay",
   "garden_route": true,
   "events": 0,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "military-sc-oudtshoorn",
@@ -293,7 +293,7 @@
   "region": "Garden Route",
   "garden_route": true,
   "events": 1,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "kurland-athletics",
@@ -311,7 +311,7 @@
   "region": "Garden Route",
   "garden_route": true,
   "events": 1,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "plett-ac",
@@ -332,7 +332,7 @@
   "region": "Garden Route",
   "garden_route": true,
   "events": 1,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "sedgefield-striders",
@@ -352,7 +352,7 @@
   "region": "Garden Route",
   "garden_route": true,
   "events": 0,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "cape-multisport-eden",
@@ -372,7 +372,7 @@
   "region": "Garden Route",
   "garden_route": true,
   "events": 1,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "celtic-harriers",
@@ -392,7 +392,7 @@
   "region": "Cape Town",
   "garden_route": false,
   "events": 1,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "central-athletics",
@@ -410,7 +410,7 @@
   "region": "Cape Town",
   "garden_route": false,
   "events": 1,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "edgemead-runners",
@@ -430,7 +430,7 @@
   "region": "Cape Town",
   "garden_route": false,
   "events": 0,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "jbay-striders",
@@ -448,7 +448,7 @@
   "region": "Kouga/Jeffreys Bay",
   "garden_route": false,
   "events": 1,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  },
  {
   "id": "langeberg-ac",
@@ -468,6 +468,6 @@
   "region": "Overberg",
   "garden_route": false,
   "events": 0,
-  "checked": "2026-11-22"
+  "checked": "2026-11-23"
  }
 ]

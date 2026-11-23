@@ -34,5 +34,17 @@
  "2027-02-27-bergplaas-challenge-15-70-km-mtb-7-10-km-trail": {
   "status": "scheduled",
   "status_note": "Online entries have closed (Entry Ninja, checked 22 Nov 2026)."
+ },
+ "2026-11-25-metropolitan-10-km": {
+  "status": "sold out",
+  "status_note": "Sold out per RunningCalendar (entries closed 13 Nov; checked 23 Nov 2026)."
+ },
+ "2026-12-05-robben-island-memorial-run-10-km": {
+  "status": "sold out",
+  "status_note": "Sold out per RunningCalendar and its Webtickets entry link (checked 23 Nov 2026)."
+ },
+ "2026-12-12-nedbank-sportsa-run-century-city-10-km": {
+  "status": "sold out",
+  "status_note": "Sold out per RunningCalendar (Entry Ninja entries; checked 23 Nov 2026)."
  }
 }

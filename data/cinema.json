@@ -1,8 +1,8 @@
 {
  "source": "https://www.sterkinekor.com",
  "source_note": "Ster-Kinekor website (sterkinekor.com), Garden Route Mall programme",
- "fetched_at": "2026-11-19 12:07",
- "fetched_date": "2026-11-19",
+ "fetched_at": "2026-11-23 08:22",
+ "fetched_date": "2026-11-23",
  "cinema": {
   "name": "Ster-Kinekor Garden Route Mall",
   "town": "George",
@@ -12,6 +12,73 @@
   "location_id": 26
  },
  "now_showing": [
+  {
+   "id": 834,
+   "title": "Cape Route Rally: Deserts and Diamonds",
+   "section": "now",
+   "url": "https://www.sterkinekor.com/f/cape-route-rally-deserts-and-diamonds/834",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/cape-route-rally-deserts-and-diamonds-834/poster/c62fef78-ce9c-4e3b-a4c4-212edddc007a.jpeg?optimizer=image&width=342",
+   "release_date": "2026-11-27",
+   "date_label": "",
+   "age_rating": "TBA",
+   "age": null,
+   "runtime": "1h 33m",
+   "genres": [
+    "documentary"
+   ],
+   "bookable": true,
+   "trailer": "https://youtu.be/Z8o_gUi1j4c",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/cape-route-rally-deserts-and-diamonds-834/backdrop/6e511053-4e76-4e22-89f0-07c18a727593.jpeg?optimizer=image&width=1200",
+   "synopsis": "Desert & Diamonds, the first Cape Route Rally special, follows Antony Ashley, Louis Smit, and Jason Richards on an epic 2,000-kilometre expedition across Namibia in search of the perfect dune.\n\nWhat begins as the ultimate off-road adventure quickly becomes a battle against unforgiving terrain, mechanical breakdowns, and a life-changing accident that threatens to derail the mission.\n\nPacked with stunning landscapes, raw emotion, and high-stakes action, Desert & Diamonds is a powerful story of friendship, resilience, and the pursuit of adventure at its absolute limit.\n\nOne mission. One perfect dune. Everything on the line.",
+   "director": "",
+   "cast": [],
+   "language": "English",
+   "country": "",
+   "imdb_id": "",
+   "tmdb_id": "",
+   "cinemas": [
+    "Ster-Kinekor Garden Route Mall"
+   ]
+  },
+  {
+   "id": 802,
+   "title": "Cat in the Hat,The",
+   "section": "now",
+   "url": "https://www.sterkinekor.com/f/cat-in-the-hat-the/802",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/cat-in-the-hat-the-802/poster/763e111f-6934-4291-ba66-8a3d44df5dfb.jpeg?optimizer=image&width=342",
+   "release_date": "2026-12-04",
+   "date_label": "",
+   "age_rating": "Parental guidance - V PPS",
+   "age": 8,
+   "runtime": "1h 47m",
+   "genres": [
+    "animation"
+   ],
+   "bookable": true,
+   "trailer": "https://youtu.be/j3o7Xe1lVyI",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/cat-in-the-hat-the-802/backdrop/dfd82b9c-9e85-450c-a518-325f68d41a36.jpg?optimizer=image&width=1200",
+   "synopsis": "Doing what he does best, the Cat spreads joy to kids in his hilarious, signature, and singularly irreverent way, transporting them and audiences on a fantastical journey through a world they've never seen before. Our hero takes on his toughest assignment yet for the I.I.I.I. (Institute for the Institution of Imagination and Inspiration, LLC) to cheer up Gabby and Sebastian, a pair of siblings struggling to move to a new town. Known for taking things too far, this could be this agent of chaos' last chance to prove himself...or lose his magical hat!",
+   "director": "",
+   "cast": [
+    "America Ferrera",
+    "Giancarlo Esposito",
+    "Bill Hader",
+    "Paula Pell",
+    "Tituss Burgess",
+    "Matt Berry",
+    "Bowen Yang",
+    "Quinta Brunson",
+    "Xochitl Gomez",
+    "Tiago Martinez"
+   ],
+   "language": "English",
+   "country": "United Kingdom, United States",
+   "imdb_id": "tt2321555",
+   "tmdb_id": "1117898",
+   "cinemas": [
+    "Ster-Kinekor Garden Route Mall"
+   ]
+  },
   {
    "id": 750,
    "title": "Clayface",
@@ -44,6 +111,34 @@
    "country": "United States",
    "imdb_id": "tt34890576",
    "tmdb_id": "1400940",
+   "cinemas": [
+    "Ster-Kinekor Garden Route Mall"
+   ]
+  },
+  {
+   "id": 781,
+   "title": "Do You Remember",
+   "section": "now",
+   "url": "https://www.sterkinekor.com/f/do-you-remember/781",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/do-you-remember-781/poster/f84ad994-dd96-4a13-9b68-f2e8fd8df867.png?optimizer=image&width=342",
+   "release_date": "2026-11-27",
+   "date_label": "",
+   "age_rating": "TBA",
+   "age": null,
+   "runtime": "1h 42m",
+   "genres": [
+    "drama"
+   ],
+   "bookable": true,
+   "trailer": "https://youtu.be/tsGVioxq10c",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/do-you-remember-781/backdrop/dbcabf29-5a9d-4baf-955d-83f0bb3812cf.png?optimizer=image&width=1200",
+   "synopsis": "When tragedy erases the past, can love rewrite the future? A sweeping story of music, faith, healing, and redemption. Sometimes the song that leads you home was written long before you ever knew the words.",
+   "director": "",
+   "cast": [],
+   "language": "English",
+   "country": "",
+   "imdb_id": "",
+   "tmdb_id": "",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -230,7 +325,7 @@
    "poster": "https://images.filmgrail.com/mediaserver/movies/hunger-games-the-sunrise-on-the-reaping-711/poster/2a6a2eac-24e0-44b6-b655-3f8340fe395c.jpeg?optimizer=image&width=342",
    "release_date": "2026-11-20",
    "date_label": "",
-   "age_rating": "No Under 13's - L V",
+   "age_rating": "No Under 13's",
    "age": 13,
    "runtime": "2h 38m",
    "genres": [
@@ -257,94 +352,6 @@
    "country": "United States",
    "imdb_id": "tt32558705",
    "tmdb_id": "1300968",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ]
-  },
-  {
-   "id": 786,
-   "title": "Pressure",
-   "section": "now",
-   "url": "https://www.sterkinekor.com/f/pressure/786",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/pressure-786/poster/dc2f4b9e-a6f1-41f2-9e78-83ea87ca6682.jpeg?optimizer=image&width=342",
-   "release_date": "2026-10-30",
-   "date_label": "",
-   "age_rating": "No Under 13's - V",
-   "age": 13,
-   "runtime": "1h 40m",
-   "genres": [
-    "drama"
-   ],
-   "bookable": true,
-   "trailer": "https://www.youtube.com/watch?v=6ffR0oyh6YE",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/pressure-786/backdrop/6ecaa1b8-6414-48da-9ba1-4b27964ebfdd.jpeg?optimizer=image&width=1200",
-   "synopsis": "In the tense 72 hours before D-Day, and the fate of the free world hanging in the balance, General Dwight D. Eisenhower and Captain James Stagg face an impossible choice—launch the largest and most dangerous seaborne invasion in history or risk losing the war altogether.",
-   "director": "",
-   "cast": [
-    "Andrew Scott",
-    "Toby Williams",
-    "Kerry Condon",
-    "Chris Messina",
-    "Damian Lewis",
-    "Con O'Neill",
-    "Harrison Osterfield",
-    "Max Croes",
-    "Orlando Seale",
-    "Pedro Leandro"
-   ],
-   "language": "English",
-   "country": "France, United Kingdom",
-   "imdb_id": "tt32547691",
-   "tmdb_id": "1318413",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ],
-   "ratings_source": "OMDb (IMDb rating, Rotten Tomatoes), 2026-10-09 16:42",
-   "ratings": [
-    {
-     "source": "IMDb",
-     "value": "7.3"
-    },
-    {
-     "source": "Rotten Tomatoes",
-     "value": "89%"
-    }
-   ]
-  },
-  {
-   "id": 793,
-   "title": "Prima Facie",
-   "section": "now",
-   "url": "https://www.sterkinekor.com/f/prima-facie/793",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/prima-facie-793/poster/fab89395-5560-4767-b541-027652ee0880.jpg?optimizer=image&width=342",
-   "release_date": "2026-11-13",
-   "date_label": "",
-   "age_rating": "No Under 16's - L S (SV)",
-   "age": 16,
-   "runtime": "1h 48m",
-   "genres": [
-    "drama"
-   ],
-   "bookable": true,
-   "trailer": "https://www.youtube.com/watch?v=88Rdt5vGbXk",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/prima-facie-793/backdrop/89398983-a3b8-4881-be80-3602fe20a469.jpg?optimizer=image&width=1200",
-   "synopsis": "Tessa is a brilliant British defence barrister dominating London’s ruthless courtrooms. Fierce, witty, and self-made, she defends men accused of sexual assault — until she is assaulted herself by a colleague from a powerful legal dynasty. Suddenly, the system she trusted turns against her. As she faces the same tactics she once used in court, Tessa’s faith in justice unravels. Once in control, now exposed and disbelieved, she must fight to reclaim her voice and sense of self.",
-   "director": "",
-   "cast": [
-    "Cynthia Erivo",
-    "Simon Russell Beale",
-    "Elizabeth Dulau",
-    "Daniel Ings",
-    "Noma Dumezweni",
-    "Toheeb Jimoh",
-    "Harry Treadaway",
-    "Sarah Junillon",
-    "Elliot Levey"
-   ],
-   "language": "English",
-   "country": "Australia, United Kingdom",
-   "imdb_id": "tt27759858",
-   "tmdb_id": "1127282",
    "cinemas": [
     "Ster-Kinekor Garden Route Mall"
    ]
@@ -448,7 +455,7 @@
    "title": "Wicker",
    "section": "now",
    "url": "https://www.sterkinekor.com/f/wicker/801",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/wicker-801/poster/09914c35-c286-4d71-abf8-ff9cc3f50618.jpeg?optimizer=image&width=342",
+   "poster": "https://images.filmgrail.com/mediaserver/movies/wicker-801/poster/b927defa-37ef-4d8e-a7d7-78e6433f225f.jpeg?optimizer=image&width=342",
    "release_date": "2026-11-20",
    "date_label": "",
    "age_rating": "No Under 16's - L S",
@@ -459,7 +466,7 @@
    ],
    "bookable": true,
    "trailer": "https://youtu.be/jf4XQXLKD8c",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/wicker-801/backdrop/52bf6d5c-d2e2-48e5-be48-310d2918de23.jpeg?optimizer=image&width=1200",
+   "backdrop": "https://images.filmgrail.com/mediaserver/movies/wicker-801/backdrop/f3b674be-b6a0-4e6c-b195-7fc094fcd77f.jpeg?optimizer=image&width=1200",
    "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
    "director": "",
    "cast": [
@@ -563,123 +570,6 @@
  ],
  "coming_soon": [
   {
-   "id": 711,
-   "title": "Hunger Games, The: Sunrise on the Reaping",
-   "section": "soon",
-   "url": "https://www.sterkinekor.com/f/hunger-games-the-sunrise-on-the-reaping/711",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/hunger-games-the-sunrise-on-the-reaping-711/poster/2a6a2eac-24e0-44b6-b655-3f8340fe395c.jpeg?optimizer=image&width=342",
-   "release_date": "2026-11-20",
-   "date_label": "20 Nov",
-   "age_rating": "No Under 13's - L V",
-   "age": 13,
-   "runtime": "2h 38m",
-   "genres": [
-    "sci fi"
-   ],
-   "bookable": true,
-   "trailer": "https://youtu.be/nDGMN1EooAo",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/hunger-games-the-sunrise-on-the-reaping-711/backdrop/14d09c2b-eff0-4597-8f16-235ec559485a.jpeg?optimizer=image&width=1200",
-   "synopsis": "Return to the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
-   "director": "Francis Lawrence",
-   "cast": [
-    "Glenn Close",
-    "Elle Fanning",
-    "Jennifer Lawrence",
-    "Josh Hutcherson",
-    "Ralph Fiennes",
-    "Lili Taylor",
-    "Jesse Plemons",
-    "Mckenna Grace",
-    "Kelvin Harrison",
-    "Maya Hawke"
-   ],
-   "language": "English",
-   "country": "United States",
-   "imdb_id": "tt32558705",
-   "tmdb_id": "1300968",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ]
-  },
-  {
-   "id": 801,
-   "title": "Wicker",
-   "section": "soon",
-   "url": "https://www.sterkinekor.com/f/wicker/801",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/wicker-801/poster/09914c35-c286-4d71-abf8-ff9cc3f50618.jpeg?optimizer=image&width=342",
-   "release_date": "2026-11-20",
-   "date_label": "20 Nov",
-   "age_rating": "No Under 16's - L S",
-   "age": 16,
-   "runtime": "1h 45m",
-   "genres": [
-    "romance"
-   ],
-   "bookable": true,
-   "trailer": "https://youtu.be/jf4XQXLKD8c",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/wicker-801/backdrop/52bf6d5c-d2e2-48e5-be48-310d2918de23.jpeg?optimizer=image&width=1200",
-   "synopsis": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
-   "director": "",
-   "cast": [
-    "Elizabeth Debicki",
-    "Peter Dinklage",
-    "Richard E. Grant",
-    "Alexander Skarsgård",
-    "Nabhaan Rizwan",
-    "Olivia Colman",
-    "Ella Bruccoleri",
-    "Scott Alexander Young",
-    "Marli Siu",
-    "Kiell Smith-Bynoe"
-   ],
-   "language": "English",
-   "country": "United Kingdom, United States",
-   "imdb_id": "tt29611136",
-   "tmdb_id": "1195803",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ]
-  },
-  {
-   "id": 813,
-   "title": "You Can See Everything",
-   "section": "soon",
-   "url": "https://www.sterkinekor.com/f/you-can-see-everything/813",
-   "poster": "https://images.filmgrail.com/mediaserver/movies/you-can-see-everything-813/poster/869b8338-3967-4297-b0a8-7c0d8e1fef19.jpg?optimizer=image&width=342",
-   "release_date": "2026-11-20",
-   "date_label": "20 Nov",
-   "age_rating": "No Under 16's - L N",
-   "age": 16,
-   "runtime": "2h 54m",
-   "genres": [
-    "documentary"
-   ],
-   "bookable": true,
-   "trailer": "https://youtu.be/dBZLSHigQ-c",
-   "backdrop": "https://images.filmgrail.com/mediaserver/movies/you-can-see-everything-813/backdrop/32fef996-7754-4e1c-83fd-3c170fb4ec06.jpg?optimizer=image&width=1200",
-   "synopsis": "Thirty-four days before she's sent to prison, notorious Silicon Valley founder Elizabeth Holmes invites a skeptical film crew to document her every move. What begins as an intimate portrait of an enigmatic felon becomes a mind-bending three-year journey into the abyss.",
-   "director": "",
-   "cast": [
-    "Amanda Seyfried",
-    "Christopher Abbott",
-    "Nathan Fielder",
-    "Lance Oppenheim",
-    "Elizabeth Holmes",
-    "Billy Evans",
-    "Christian Rasmus Holmes IV",
-    "Noel Anne",
-    "Gary Wilmes",
-    "Phillip Andre Botello"
-   ],
-   "language": "English",
-   "country": "United States",
-   "imdb_id": "tt45368240",
-   "tmdb_id": "1765072",
-   "cinemas": [
-    "Ster-Kinekor Garden Route Mall"
-   ]
-  },
-  {
    "id": 834,
    "title": "Cape Route Rally: Deserts and Diamonds",
    "section": "soon",
@@ -693,7 +583,7 @@
    "genres": [
     "documentary"
    ],
-   "bookable": false,
+   "bookable": true,
    "trailer": "https://youtu.be/Z8o_gUi1j4c",
    "backdrop": "https://images.filmgrail.com/mediaserver/movies/cape-route-rally-deserts-and-diamonds-834/backdrop/6e511053-4e76-4e22-89f0-07c18a727593.jpeg?optimizer=image&width=1200",
    "synopsis": "Desert & Diamonds, the first Cape Route Rally special, follows Antony Ashley, Louis Smit, and Jason Richards on an epic 2,000-kilometre expedition across Namibia in search of the perfect dune.\n\nWhat begins as the ultimate off-road adventure quickly becomes a battle against unforgiving terrain, mechanical breakdowns, and a life-changing accident that threatens to derail the mission.\n\nPacked with stunning landscapes, raw emotion, and high-stakes action, Desert & Diamonds is a powerful story of friendship, resilience, and the pursuit of adventure at its absolute limit.\n\nOne mission. One perfect dune. Everything on the line.",
@@ -782,14 +672,11 @@
    "poster": "https://images.filmgrail.com/mediaserver/movies/hexed-791/poster/cf546370-c30a-4bfa-b732-dc54484cc283.jpeg?optimizer=image&width=342",
    "release_date": "2026-11-27",
    "date_label": "27 Nov",
-   "age_rating": "TBA",
+   "age_rating": "Parental guidance",
    "age": null,
-   "runtime": "1h 30m",
+   "runtime": "1h 49m",
    "genres": [
-    "adventure",
-    "animation",
-    "family",
-    "fantasy"
+    "animation"
    ],
    "bookable": false,
    "trailer": "https://youtu.be/GF7Atpu2pHY",
@@ -1230,13 +1117,13 @@
    "release_date": "2027-01-15",
    "date_label": "15 Jan",
    "age_rating": "Parental guidance for 10 - 12",
-   "age": null,
+   "age": 12,
    "runtime": "2h 27m",
    "genres": [
     "fantasy",
     "adventure"
    ],
-   "bookable": false,
+   "bookable": true,
    "trailer": "https://youtu.be/cmIQvwAYXxs",
    "backdrop": "https://images.filmgrail.com/mediaserver/movies/children-of-blood-and-bone-827/backdrop/1aee03b9-350d-4152-aee3-a15c8d345a99.jpg?optimizer=image&width=1200",
    "synopsis": "In the world of Orïsha, a young woman goes on a quest to reclaim the magic that was violently stolen from her people. She and her brother ally with the daughter and son of the king to fight back against his brutal rule.",
