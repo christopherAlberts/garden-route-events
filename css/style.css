@@ -265,7 +265,7 @@ body.theme-run .wxrunbox{border-color:color-mix(in srgb,var(--run) 30%,var(--lin
 .day.past{opacity:.45}
 .day .n{font-size:.8rem;font-weight:700;color:var(--mut);align-self:flex-start}
 .day.has .n{color:var(--ink)}
-.chip{font-size:.7rem;line-height:1.3;padding:2px 6px;border-radius:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600;border-left:3px solid}
+.chip{font-size:.7rem;line-height:1.3;padding:2px 6px;border-radius:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600;border:2px solid}
 .chip.concert{background:color-mix(in srgb,var(--concert) 14%,transparent);border-color:var(--concert)}
 .chip.festival{background:color-mix(in srgb,var(--festival) 16%,transparent);border-color:var(--festival)}
 .chip.musical{background:color-mix(in srgb,var(--musical) 16%,transparent);border-color:var(--musical)}
@@ -588,7 +588,7 @@ body.view-cinema #offToggle{display:none}
 .holl{display:block;font-size:.66rem;font-weight:700;line-height:1.15;color:var(--hol);text-transform:uppercase;letter-spacing:.03em;overflow:hidden;text-overflow:ellipsis}
 .holshort{display:none}
 @media (max-width:600px){.holl{font-size:.56rem;letter-spacing:-.01em;text-transform:none;text-overflow:clip}.hollong{display:none}.holshort{display:inline}}
-.holbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;background:var(--holbg);border:1px solid color-mix(in srgb,var(--hol) 45%,transparent);border-left:4px solid var(--hol);border-radius:10px;padding:7px 12px;margin:-2px 0 12px;font-size:.85rem;color:var(--ink)}
+.holbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;background:var(--holbg);border:2px solid color-mix(in srgb,var(--hol) 55%,transparent);border-radius:10px;padding:7px 12px;margin:-2px 0 12px;font-size:.85rem;color:var(--ink)}
 .holk{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--hol)}
 .holi b{font-weight:700}
 .holsrc{margin-left:auto;font-size:.75rem;color:var(--mut)}
@@ -607,7 +607,8 @@ body.view-cinema #offToggle{display:none}
 .starbtn:active svg{transform:scale(.85)}
 .mbody .ttl{margin:4px 0 8px}.mbody .ttl h2{margin:0}.mbody .starbtn{width:32px;height:32px;margin:0 -4px 0 0}.mbody .starbtn svg{width:21px;height:21px}
 .pe .pbody{flex:1;min-width:0}.pe .ttl{gap:4px}.pe .ttl h4{margin:0 0 3px}.pe .starbtn{width:24px;height:24px;margin:-4px -4px 0 0;color:#7b8b84}.pe .starbtn svg{width:16px;height:16px}.pe .starbtn.on{color:#f5b301}
-.card.starred{box-shadow:var(--shadow),inset 0 0 0 2px color-mix(in srgb,var(--star) 35%,transparent)}
+.card.starred{background:var(--starbg);box-shadow:var(--shadow),inset 0 0 0 2px color-mix(in srgb,var(--star) 45%,transparent)}
+.card.starred:hover{box-shadow:0 2px 4px rgba(16,40,30,.08),0 18px 40px rgba(16,40,30,.16),inset 0 0 0 2px color-mix(in srgb,var(--star) 45%,transparent)}
 #catChips .starchip{display:inline-flex;align-items:center;gap:4px;border-color:color-mix(in srgb,var(--star) 55%,var(--line))}
 #catChips .starchip svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round}
 #catChips .starchip.on{background:var(--star);border-color:var(--star);color:#fff}
@@ -621,7 +622,7 @@ body.view-cinema #offToggle{display:none}
 .stshort{display:none}
 @media (max-width:600px){.stl{font-size:.56rem;letter-spacing:-.01em;text-transform:none;text-overflow:clip}.stlong{display:none}.stshort{display:inline}}
 .chip.starc{font-weight:700;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--star) 40%,transparent)}
-.starbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;background:var(--starbg);border:1px solid color-mix(in srgb,var(--star) 45%,transparent);border-left:4px solid var(--star);border-radius:10px;padding:7px 12px;margin:-2px 0 12px;font-size:.85rem;color:var(--ink)}
+.starbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;background:var(--starbg);border:2px solid color-mix(in srgb,var(--star) 55%,transparent);border-radius:10px;padding:7px 12px;margin:-2px 0 12px;font-size:.85rem;color:var(--ink)}
 .stk{display:inline-flex;align-items:center;gap:4px;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--star)}
 .stk svg{width:13px;height:13px;fill:var(--starfill)}
 .sti{font-weight:600}
@@ -643,13 +644,25 @@ body.theme-run .sec h2{color:var(--rundeep)}
 /* ---------- My club ---------- */
 .clubtag{display:inline-flex;align-items:center;gap:3px;font-size:.66rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--run);padding:2px 8px;border-radius:6px;width:max-content;margin:0 4px 4px 0}
 .hostline{font-size:.8rem;color:var(--mut);margin:2px 0 4px}.hostline.mine{color:var(--rundeep);font-weight:700}
-.card.myclub{box-shadow:var(--shadow),inset 0 0 0 2px color-mix(in srgb,var(--run) 55%,transparent)}
-.card.myclub.starred{box-shadow:var(--shadow),inset 0 0 0 2px color-mix(in srgb,var(--run) 55%,transparent),inset 0 0 0 4px color-mix(in srgb,var(--star) 35%,transparent)}
+.card.myclub{background:var(--runbg);box-shadow:var(--shadow),inset 0 0 0 2px color-mix(in srgb,var(--run) 55%,transparent)}
+.card.myclub:hover{box-shadow:0 2px 4px rgba(16,40,30,.08),0 18px 40px rgba(16,40,30,.16),inset 0 0 0 2px color-mix(in srgb,var(--run) 55%,transparent)}
+.card.myclub.starred{background:color-mix(in srgb,var(--runbg) 60%,var(--starbg));box-shadow:var(--shadow),inset 0 0 0 2px color-mix(in srgb,var(--run) 55%,transparent),inset 0 0 0 4px color-mix(in srgb,var(--star) 40%,transparent)}
+.card.myclub.starred:hover{box-shadow:0 2px 4px rgba(16,40,30,.08),0 18px 40px rgba(16,40,30,.16),inset 0 0 0 2px color-mix(in srgb,var(--run) 55%,transparent),inset 0 0 0 4px color-mix(in srgb,var(--star) 40%,transparent)}
+.clubsec{background:var(--runbg);border:1px solid color-mix(in srgb,var(--run) 36%,var(--line));border-radius:16px;padding:12px 14px;margin:12px 0 16px;box-sizing:border-box}
 .clubsec h2{color:var(--rundeep)}.clubsec .pill{background:color-mix(in srgb,var(--run) 16%,transparent)!important;color:var(--rundeep)!important}
 .clubchg{all:unset;margin-left:auto;font-size:.82rem;font-weight:700;color:var(--rundeep);cursor:pointer;text-decoration:underline;text-underline-offset:2px}
 button.clubchg:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
 .clubempty{border:1px dashed color-mix(in srgb,var(--run) 45%,transparent)}
-.day.club{box-shadow:inset 0 -3px 0 var(--run)}
+.day.club{background:var(--runbg);border-color:color-mix(in srgb,var(--run) 55%,transparent)}
+.day.club .n{color:var(--rundeep)}
+.day.club.today .n{color:#fff}
+.day.club.star{background:linear-gradient(135deg,var(--runbg) 0 50%,var(--starbg) 50% 100%);border-color:color-mix(in srgb,var(--run) 55%,transparent)}
+.day.club.hol{background:linear-gradient(135deg,var(--runbg) 0 50%,var(--holbg) 50% 100%);border-color:color-mix(in srgb,var(--run) 55%,transparent)}
+.day.club.hol.star{background:linear-gradient(135deg,var(--runbg) 0 34%,var(--holbg) 34% 67%,var(--starbg) 67% 100%);border-color:color-mix(in srgb,var(--run) 55%,transparent)}
+.day.club:hover{border-color:color-mix(in srgb,var(--run) 70%,transparent)}
+.day.star:hover{border-color:color-mix(in srgb,var(--star) 70%,transparent)}
+.day.hol:hover{border-color:color-mix(in srgb,var(--hol) 70%,transparent)}
+.day.sel:hover,.day.sel.club:hover,.day.sel.star:hover,.day.sel.hol:hover{border-color:var(--teal);box-shadow:0 0 0 2px color-mix(in srgb,var(--teal) 40%,transparent)}
 .cll{display:block;font-size:.62rem;font-weight:800;line-height:1.15;color:var(--rundeep);text-transform:uppercase;letter-spacing:.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media (max-width:600px){.cll{font-size:.52rem;letter-spacing:-.01em;text-transform:none}}
 .chip.clubc{font-weight:700;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--run) 50%,transparent)}
