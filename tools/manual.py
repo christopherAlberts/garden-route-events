@@ -2415,7 +2415,7 @@ add(title="Robberg Fine Foods Classic Beach Regatta",category="sport",start_date
 add(title="Botanique: Beach Edition at Pili Pili Sedgefield",category="concert",start_date="2026-12-12",time="12:00-22:00",town="Sedgefield",
     venue="Pili Pili Beach Restaurant",venue_address="2 Claude Urban Drive, Myoli Beach, Sedgefield",price_from="R250",
     ticket_url="https://www.howler.co.za/BOTANIQUE14",source_url="https://www.howler.co.za/BOTANIQUE14",source_name="Howler",
-    notes="Day-to-evening beach edition of Botanique (ONETWO Sound Solutions and The Node Events): deep funk and organic house, food from Pili Pili. Line-up to be announced. R250 online or at the door.")
+    notes="Day-to-evening beach edition of Botanique (ONETWO Sound Solutions and The Node Events): deep funk and organic house, food from Pili Pili. Line-up to be announced. R250 online or at the door.",lat=-34.034889,lng=22.80686,geo_source="nominatim")
 add(title="Wildfarm New Years Festival",category="festival",start_date="2026-12-31",end_date="2027-01-02",time="Gate opens 12:00 on 31 Dec",town="Wilderness",
     venue="Wildfarm Homestead",venue_address="291 Whites Road, Wilderness",price_from="R950",
     ticket_url="https://wildfarmbackpackers.com/new-years-festival/",source_url="https://wildfarmbackpackers.com/new-years-festival/",source_name="Wildfarm Backpackers (official site)",
@@ -2423,7 +2423,7 @@ add(title="Wildfarm New Years Festival",category="festival",start_date="2026-12-
 add(title="Christmas Day Lunch at Earth & Fire (Blackwaters River Lodge)",category="festive",start_date="2026-12-25",time="",town="Knysna",
     venue="Earth & Fire Restaurant, Blackwaters River Lodge",venue_address="N2 between Knysna and Sedgefield, opposite the Buffalo Bay turn-off",price_from="R495",
     source_url="https://www.restaurants10.org/ZA/Knysna/1422419188041966/Earth-%26-Fire-Restaurant-at-Blackwaters",source_name="Earth & Fire at Blackwaters (Facebook posts, via restaurants10.org)",
-    notes="Annual Christmas lunch, two options: sit-down Christmas Feast R895 pp (kids 6-12 R450, vegan R795) or a Christmas Picnic on the river banks R495 pp (kids R250, vegan R450). Open to non-residents. Book by DM or 065 517 8923. Post dated 26 Oct 2026.")
+    notes="Annual Christmas lunch, two options: sit-down Christmas Feast R895 pp (kids 6-12 R450, vegan R795) or a Christmas Picnic on the river banks R495 pp (kids R250, vegan R450). Open to non-residents. Book by DM or 065 517 8923. Post dated 26 Oct 2026.",lat=-34.02977,lng=22.93848,geo_source="event page")
 _RB="https://www.redberryfarm.co.za/whats-on/"
 add(title="Redberry Farm Trail Run – Run It Back (5 km & 9 km)",category="funrun",start_date="2026-11-28",time="08:00 (registration from 07:15)",town="George",
     venue="Redberry Farm",venue_address="Redberry Farm, Blanco, George",price_from="R30",source_url=_RB,source_name="Redberry Farm (What's On)",

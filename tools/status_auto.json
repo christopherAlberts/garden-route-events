@@ -9,6 +9,12 @@
    "schema eventStatus @ https://www.quicket.co.za/events/393493-tsitsikamma-manor-colour-festival/"
   ]
  ],
+ "2026-11-28-vinyl-krispies-bassline-society-rooftop-session": [
+  [
+   "sold out",
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/400823-vinyl-krispies-pili-pili-sedgefield/"
+  ]
+ ],
  "2026-12-11-icons-cup-south-africa-2026-celebrity-golf-match-p": [
   [
    "sold out",
@@ -21,96 +27,56 @@
    "page text: 'This event has been cancelled' @ https://itickets.co.za/events/486591"
   ]
  ],
+ "2026-12-29-black-cat-bones-bam-bam-brown-live-in-knysna-bette": [
+  [
+   "cancelled",
+   "schema eventStatus @ https://www.quicket.co.za/events/406762-black-cat-bones-and-bam-bam-brown-live-in-knysna/"
+  ]
+ ],
  "2027-05-28-mut-mountain-ultra-trail-by-utmb-163-98-58-44-25-1": [
   [
    "sold out",
    "title/notes"
   ]
  ],
- "2026-11-19-jagged-little-crow-sheryl-crow-alanis-morissette-t": [
-  [
-   "cancelled",
-   "schema eventStatus @ https://www.quicket.co.za/events/404747-jagged-little-crow-sheryl-crow-alanis-morissette-tribute-featuring-vanessa-van/"
-  ],
-  [
-   "cancelled",
-   "schema eventStatus @ https://www.quicket.co.za/events/404747-jagged-little-crow-sheryl-crow-alanis-morissette-tribute-featuring-vanessa-van/#tickets"
-  ]
- ],
- "2026-11-20-summer-of-69-the-ultimate-bryan-adams-tribute-cafe": [
-  [
-   "cancelled",
-   "schema eventStatus @ https://www.quicket.co.za/events/386821-summer-of-69-the-ultimate-bryan-adams-tribute-caf-roux/"
-  ],
-  [
-   "cancelled",
-   "schema eventStatus @ https://www.quicket.co.za/events/386821-summer-of-69-the-ultimate-bryan-adams-tribute-caf-roux/#tickets"
-  ]
- ],
- "2026-11-20-aking-live-woodstock-brewery-featuring-morangutang": [
-  [
-   "cancelled",
-   "schema eventStatus @ https://www.quicket.co.za/events/402744-aking-live-woodstock-brewery-featuring-morangutang/"
-  ],
-  [
-   "cancelled",
-   "schema eventStatus @ https://www.quicket.co.za/events/402744-aking-live-woodstock-brewery-featuring-morangutang/#tickets"
-  ]
- ],
- "2026-11-21-unit43-live-with-contra-band": [
+ "2026-11-24-jade-olivia-mia-lord-and-friends": [
   [
    "sold out",
-   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/393593-unit43-live-with-contra-band/"
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/407256-jade-olivia-mia-lord-and-friends/#tickets"
   ],
   [
    "sold out",
-   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/393593-unit43-live-with-contra-band/#tickets"
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/407256-jade-olivia-mia-lord-and-friends/"
   ]
  ],
- "2026-11-21-hotel-california-the-ultimate-eagles-tribute": [
-  [
-   "cancelled",
-   "schema eventStatus @ https://www.quicket.co.za/events/394155-hotel-california-the-ultimate-eagles-tribute/"
-  ],
-  [
-   "cancelled",
-   "schema eventStatus @ https://www.quicket.co.za/events/394155-hotel-california-the-ultimate-eagles-tribute/#tickets"
-  ]
- ],
- "2026-11-21-yah-ways": [
+ "2026-11-25-offset-events": [
   [
    "sold out",
-   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/401829-yah-ways/"
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/408316-offset-events/"
   ],
   [
    "sold out",
-   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/401829-yah-ways/#tickets"
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/408316-offset-events/#tickets"
   ]
  ],
- "2026-11-22-rocco-de-villiers-heroes-live": [
+ "2026-11-28-sisonke": [
   [
    "cancelled",
-   "page text: 'This event has been cancelled' @ https://itickets.co.za/events/486127"
-  ]
- ],
- "2026-11-22-hotel-california-the-ultimate-eagles-tribute": [
-  [
-   "cancelled",
-   "schema eventStatus @ https://www.quicket.co.za/events/394159-hotel-california-the-ultimate-eagles-tribute/"
+   "schema eventStatus @ https://www.quicket.co.za/events/376329-sisonke/"
   ],
   [
    "cancelled",
-   "schema eventStatus @ https://www.quicket.co.za/events/394159-hotel-california-the-ultimate-eagles-tribute/#tickets"
+   "schema eventStatus @ https://www.quicket.co.za/events/376329-sisonke/#tickets"
   ]
  ],
  "2026-11-28-chunky-2026-southerntip-psychedelic": [
   [
    "sold out",
-   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/397947-chunky-2026-southerntip-psychedelic/"
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/397947-chunky-2026-southerntip-psychedelic/#tickets"
   ],
   [
    "sold out",
-   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/397947-chunky-2026-southerntip-psychedelic/#tickets"
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/397947-chunky-2026-southerntip-psychedelic/"
   ]
  ],
  "2026-11-28-dillan-oliphant-live-in-cape-town-at-protea-hotel-": [
@@ -136,11 +102,23 @@
  "2026-11-29-surreal-bass": [
   [
    "sold out",
-   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/407717-surreal-bass/#tickets"
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/407717-surreal-bass/"
   ],
   [
    "sold out",
-   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/407717-surreal-bass/"
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/407717-surreal-bass/#tickets"
+  ]
+ ],
+ "2026-12-06-the-morning-after-band-heroes-live": [
+  [
+   "cancelled",
+   "page text: 'This event has been cancelled' @ https://itickets.co.za/events/487171"
+  ]
+ ],
+ "2026-12-12-nedbank-sportsa-run-century-city-10-km": [
+  [
+   "sold out",
+   "title/notes"
   ]
  ],
  "2026-12-12-the-jazz-matinee-12th-december-2026": [
@@ -162,11 +140,11 @@
  "2026-12-16-that-70-s-band-greatest-hits": [
   [
    "sold out",
-   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/397611-that-70s-band-greatest-hits/#tickets"
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/397611-that-70s-band-greatest-hits/"
   ],
   [
    "sold out",
-   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/397611-that-70s-band-greatest-hits/"
+   "all ticket types SoldOut (schema) @ https://www.quicket.co.za/events/397611-that-70s-band-greatest-hits/#tickets"
   ]
  ],
  "2026-12-30-arno-carstens-african-sunrise-at-sandbaai-saal-her": [

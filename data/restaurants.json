@@ -45,8 +45,6 @@
   "geo_source": "nominatim",
   "region": "Garden Route",
   "occurrences": [
-   "2026-11-19",
-   "2026-11-20",
    "2026-11-24",
    "2026-11-25",
    "2026-11-26",
@@ -150,11 +148,10 @@
    "2027-05-18",
    "2027-05-19",
    "2027-05-20",
-   "2027-05-21"
+   "2027-05-21",
+   "2027-05-25"
   ],
   "day_labels": {
-   "2026-11-19": "Pizza special R120",
-   "2026-11-20": "Kids' pottery painting 30% off",
    "2026-11-24": "Taco Tuesday",
    "2026-11-25": "Burger special",
    "2026-11-26": "Pizza special R120",
@@ -258,7 +255,8 @@
    "2027-05-18": "Taco Tuesday",
    "2027-05-19": "Burger special",
    "2027-05-20": "Pizza special R120",
-   "2027-05-21": "Kids' pottery painting 30% off"
+   "2027-05-21": "Kids' pottery painting 30% off",
+   "2027-05-25": "Taco Tuesday"
   },
   "recurrence": "Tue: Taco Tuesday; Wed: Burger special; Thu: Pizza special R120; Fri: Kids' pottery painting 30% off"
  },
@@ -308,8 +306,6 @@
   "geo_source": "nominatim",
   "region": "Garden Route",
   "occurrences": [
-   "2026-11-19",
-   "2026-11-20",
    "2026-11-23",
    "2026-11-24",
    "2026-11-25",
@@ -439,11 +435,11 @@
    "2027-05-18",
    "2027-05-19",
    "2027-05-20",
-   "2027-05-21"
+   "2027-05-21",
+   "2027-05-24",
+   "2027-05-25"
   ],
   "day_labels": {
-   "2026-11-19": "Happy hour 16:00-18:00",
-   "2026-11-20": "Happy hour 16:00-18:00",
    "2026-11-23": "Happy hour 16:00-18:00",
    "2026-11-24": "Happy hour 16:00-18:00 · Pizza Tuesday",
    "2026-11-25": "Happy hour 16:00-18:00",
@@ -573,7 +569,9 @@
    "2027-05-18": "Happy hour 16:00-18:00 · Pizza Tuesday",
    "2027-05-19": "Happy hour 16:00-18:00",
    "2027-05-20": "Happy hour 16:00-18:00",
-   "2027-05-21": "Happy hour 16:00-18:00"
+   "2027-05-21": "Happy hour 16:00-18:00",
+   "2027-05-24": "Happy hour 16:00-18:00",
+   "2027-05-25": "Happy hour 16:00-18:00 · Pizza Tuesday"
   },
   "recurrence": "Mon/Tue/Wed/Thu/Fri: Happy hour 16:00-18:00; Tue: Pizza Tuesday"
  },
@@ -621,7 +619,6 @@
   "geo_source": "nominatim",
   "region": "Garden Route",
   "occurrences": [
-   "2026-11-19",
    "2026-11-23",
    "2026-11-24",
    "2026-11-25",
@@ -725,10 +722,11 @@
    "2027-05-17",
    "2027-05-18",
    "2027-05-19",
-   "2027-05-20"
+   "2027-05-20",
+   "2027-05-24",
+   "2027-05-25"
   ],
   "day_labels": {
-   "2026-11-19": "Debriefing specials 13:00-17:00 · Quiz night 19:00",
    "2026-11-23": "Debriefing specials 13:00-17:00",
    "2026-11-24": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00",
    "2026-11-25": "Debriefing specials 13:00-17:00",
@@ -832,7 +830,9 @@
    "2027-05-17": "Debriefing specials 13:00-17:00",
    "2027-05-18": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00",
    "2027-05-19": "Debriefing specials 13:00-17:00",
-   "2027-05-20": "Debriefing specials 13:00-17:00 · Quiz night 19:00"
+   "2027-05-20": "Debriefing specials 13:00-17:00 · Quiz night 19:00",
+   "2027-05-24": "Debriefing specials 13:00-17:00",
+   "2027-05-25": "Debriefing specials 13:00-17:00 · Noot vir Noot 19:00"
   },
   "recurrence": "Mon/Tue/Wed/Thu: Debriefing specials 13:00-17:00; Tue: Noot vir Noot 19:00; Thu: Quiz night 19:00"
  },
@@ -1012,7 +1012,8 @@
   "image": "",
   "image_source": "",
   "event_ids": [
-   "2026-11-28-vinyl-krispies-bassline-society-rooftop-session"
+   "2026-11-28-vinyl-krispies-bassline-society-rooftop-session",
+   "2026-12-12-botanique-beach-edition-at-pili-pili-sedgefield"
   ],
   "lat": -34.0348895,
   "lng": 22.8068601,
@@ -1313,7 +1314,6 @@
   "image_source": "",
   "event_ids": [
    "2026-10-06-quiz-night-at-hennie-s-durbanville-tuesdays",
-   "2026-11-21-karel-bester-live-at-hennie-s-durbanville",
    "2026-11-27-skye-live-at-hennie-s-durbanville",
    "2026-11-28-danielle-live-at-hennie-s-durbanville"
   ],
@@ -1353,8 +1353,7 @@
   "image": "",
   "image_source": "",
   "event_ids": [
-   "2026-10-06-quiz-night-at-hennie-s-brackenfell-tuesdays",
-   "2026-11-21-brandon-miles-live-at-hennie-s-brackenfell"
+   "2026-10-06-quiz-night-at-hennie-s-brackenfell-tuesdays"
   ],
   "lat": -33.8674704,
   "lng": 18.7062255,

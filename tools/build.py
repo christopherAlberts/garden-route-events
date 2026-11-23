@@ -61,7 +61,7 @@ GRQ={ # id: category  (hand-reviewed Garden Route Quicket listings)
 "409610":"concert","409468":"concert","409476":"concert","409544":"concert","409679":"concert","409500":"nature"}
 QNOTES={"396731":"Book/stories festival (Grootbrak Boekeblaf).","392725":"Birding festival (not music).","395253":"Forest Edge Schools musical production.","387081":"Afrikaans music festival on the farm.","397935":"Boutique jazz festival: day & night jazz club shows.","399044":"Oktoberfest beer festival with music.","393493":"Colour festival with music.","407705":"Christmas Day lunch buffet, 15:00 seating, at The Stage Coach at Santos Express.","408302":"Car show and outdoor music event.","407158":"Knysna Rotary fundraising float at the Green Hole, Leisure Island.","406588":"Christmas concert by LEFT SLEEVE at George Arts Theatre.","409292":"Live opera with dinner at Cafe Civara (40 seats).","408438":"New Year's Eve party at The Quarter Club.","407704":"Storytelling evening at In Toto Retreat.",
 "409610":"Evening concert under the stars at Featherbed Nature Reserve on Knysna's Eastern Head.","409468":"Christmas music evening with Jannie Moolman and Petronel Baard at Rijke, Jongensfontein. The Quicket ticket date is 22 Dec 18:30, but the event description says Sunday 20 December 2026; check before you go.","409476":"70s vs 80s tribute show with James Marais and Monique Cassels at Rijke, Jongensfontein.","409544":"Armand Steenkamp live at Rijke, Jongensfontein.","409679":"Watershed (Beating Hearts tour) New Year's Eve concert in The Garden at Scarab Village, Sedgefield.","409500":"Pick-your-own flower sessions at Koesterbos flower farm, George, on set dates from 20 Dec 2026 to 10 Jan 2027 (book a slot)."}
-Q_SKIP={"397388","398481"}
+Q_SKIP={"397388","398481","409709","409440"}  # 409709: no details, falsely merged with City Hall concert; 409440: Elgin (outside scope)
 FUNQ={ # hand-reviewed community fun runs / charity walks on Quicket (id: note)
 "361367":"4.5 km community walk for breast cancer awareness.","400477":"Charity forest cycle & walk for I Love Boobies.","400264":"Charity walk for CANSA.",
 "395180":"Charity run on World Homeless Day.","394744":"Charity walk.","399994":"Spring fun run at a wine farm.","398041":"Hospice charity fun run.",
@@ -111,7 +111,8 @@ for oid,h in Q.items():
 # ---------- Webtickets ----------
 W=json.load(open(f"{RAW}/wt/all_ev.json"))
 MON={m:i for i,m in enumerate("JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC".split(),1)}
-WT_SKIP={"1598588884","1601652195","1605819550","1606849899","1607723629","1580511893","1606794270","1607834971","1606196696"}
+WT_SKIP={"1607448180","1607654614","1607990408","1607990203","1607993690","1607283536",  # 23 Nov 2026: DJ/club nights
+"1598588884","1601652195","1605819550","1606849899","1607723629","1580511893","1606794270","1607834971","1606196696"}
 WT_END={"1602663500":"2026-12-19","1601853362":"2026-11-14"}
 WT_ALT={"1601853362":["https://www.broadwayworld.com/south-africa/article/INTO-THE-WOODS-Will-Open-at-Theatre-on-Bay-in-October-20260924"]}
 WT_NOTE={"1602663500":"Pantomime. Shows 5, 9-11 and 16-19 Dec (per Webtickets calendar)."}  # flamenco dance show
